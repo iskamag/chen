@@ -88,6 +88,7 @@ The requested target is 2500 on Lichess, which requires separate rating evidence
 | `hip` | Versioned HIP ABI loading and exclusive device context | Actual gfx1030 kernels, ordered batch parity and explicit failures |
 | `rules` | Full state/move packets and `RulesBackend` | Exact clocks, legal transitions and hashes across CPU/HIP |
 | `resident` | `ResidentTree` and a shared bounded scheduler | Compare host/device rules, evaluation and reduction at equal budgets |
+| `selective` | `SelectiveTree`, best-open minimax and complete sibling admission | Compare mixed-depth host/device search with explicit frontier depth and closure |
 | `device` | Safe HIP rules/tree ownership | Device-resident arena, debug downloads, perft and explicit phase errors |
 | `neural` | Bounded model admission and native inference ownership | Fingerprinted trained models and interchangeable GPU callbacks |
 | `strength` | Resource-level policy | Budget caps now; calibrated learned level policies later |
@@ -103,7 +104,10 @@ with full recomputation available as an oracle. These
 are auditable reference implementations to compare against optimized kernels.
 The evaluator uses material, simple piece placement, bishop pairs, and tapered
 king placement. Ordering uses the TT move, captures/promotions, killers, and
-quiet history. Search currently has no selective pruning.
+quiet history. The alpha-beta baseline has no selective pruning. The separate
+`cpu-selective` / `hip-selective` backends refine a bounded mixed-depth tree;
+[their contract and measurements](docs/GPU_SELECTIVE_SEARCH.md) distinguish
+completed horizons, selective depth and node budgets.
 
 Positions use `a1 = 0`. `make_move` accepts a legal move; validate external
 moves through `parse_uci_move` or `legal_moves`. FEN parsing checks structural

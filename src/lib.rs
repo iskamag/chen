@@ -12,6 +12,7 @@ pub mod neural;
 pub mod resident;
 pub mod rules;
 pub mod search;
+pub mod selective;
 pub mod strength;
 pub mod tt;
 

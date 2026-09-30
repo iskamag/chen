@@ -1,0 +1,18 @@
+{
+  "compiler-version.txt": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+  "compiler.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "defined-symbols.txt": "5102250713501768b17131051a36f958805583ecb94ed369f8fb52f809a1765b",
+  "report.json": "c1e2341901058dbae45d52b0441bc9753866f937d925b37f5280315b997f6cf0",
+  "sources/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+  "sources/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+  "sources/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+  "sources/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+  "sources/chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+  "sources/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+  "sources/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+  "sources/chen_rules.hip": "63d12b46ec00f5d817c92e78be66a77d4374ab2e39595dc936a6efa1a27ad06b",
+  "sources/chen_selective.h": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+  "sources/chen_selective.inc": "1db3c7d6d6424dff33cc898fa9e5c466509b036a65f4d18c41994123950acb5d",
+  "sources/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+}

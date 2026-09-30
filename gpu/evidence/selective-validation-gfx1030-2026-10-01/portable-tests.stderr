@@ -1,0 +1,16 @@
+   Compiling chen v0.1.0 (/home/iskam/src/vibe/chen)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.65s
+     Running unittests src/lib.rs (target/debug/deps/chen-c9627a2958f94a16)
+     Running unittests src/main.rs (target/debug/deps/chen-a9196dafd63b65fc)
+     Running tests/core.rs (target/debug/deps/core-53f5b25cbb9846af)
+     Running tests/device.rs (target/debug/deps/device-0f759ff192345c03)
+     Running tests/device_selective.rs (target/debug/deps/device_selective-e9b7592099570240)
+     Running tests/frontier.rs (target/debug/deps/frontier-832e34d2ba26e0da)
+     Running tests/hip.rs (target/debug/deps/hip-410bf8ca75cabda9)
+     Running tests/neural_selective.rs (target/debug/deps/neural_selective-49dceba6b6fb8b7e)
+     Running tests/resident.rs (target/debug/deps/resident-8ca6603515144f58)
+     Running tests/rules.rs (target/debug/deps/rules-44f6451780c865ad)
+     Running tests/search.rs (target/debug/deps/search-f778b48f672ff421)
+     Running tests/selective.rs (target/debug/deps/selective-ca65bf880dee82fd)
+     Running tests/uci.rs (target/debug/deps/uci-9181bfa0573321bc)
+   Doc-tests chen

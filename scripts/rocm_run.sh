@@ -93,7 +93,7 @@ manifest = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
 PY_MANIFEST
 fi
 if [[ "$mode" == test ]]; then
-    for test_target in hip device; do
+    for test_target in hip device device_selective; do
         manifest=$(mktemp /tmp/chen-hip-test.XXXXXXXX)
         cargo test --release --features hip --test "$test_target" --no-run --message-format=json > "$manifest"
         executable=$(python3 -c 'import json,sys; rows=[json.loads(x) for x in open(sys.argv[1])]; print(next(x["executable"] for x in rows if x.get("reason")=="compiler-artifact" and x.get("executable") and x.get("target",{}).get("name")==sys.argv[2]))' "$manifest" "$test_target")

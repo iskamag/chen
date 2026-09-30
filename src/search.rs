@@ -59,6 +59,8 @@ pub struct SearchResult {
     pub pv: Vec<Move>,
     pub stopped: bool,
     pub hashfull: usize,
+    /// Mixed-depth arena telemetry. Absent for uniform-depth backends.
+    pub selective: Option<crate::selective::SelectiveStats>,
 }
 impl SearchResult {
     pub fn nps(&self) -> u64 {
@@ -71,9 +73,13 @@ impl SearchResult {
         } else {
             format!("cp {}", self.score)
         };
+        let selective = self.selective.map_or_else(String::new, |s| {
+            format!(" seldepth {}", s.maximum_frontier_depth)
+        });
         format!(
-            "info depth {} score {} nodes {} nps {} hashfull {} time {} pv {}",
+            "info depth {}{} score {} nodes {} nps {} hashfull {} time {} pv {}",
             self.depth,
+            selective,
             score,
             self.nodes,
             self.nps(),
@@ -181,6 +187,7 @@ impl Searcher {
             pv: moves.first().copied().into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            selective: None,
         };
         if !moves.is_empty() {
             for depth in 1..=self.limits.depth.clamp(1, 64) {

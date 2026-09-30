@@ -5,6 +5,7 @@ use chen::{
     eval::evaluator,
     frontier::{FrontierConfig, FrontierSearch},
     resident::{HostTree, ResidentSearch},
+    selective::{HostSelectiveTree, SelectiveConfig, SelectiveSearch},
     strength::{BudgetStrength, StrengthPolicy},
 };
 use std::{
@@ -69,7 +70,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -147,9 +148,42 @@ fn make_backend(
     eval: &str,
     config: SearchConfig,
     frontier: FrontierConfig,
+    selective: SelectiveConfig,
 ) -> Result<Box<dyn SearchBackend>, String> {
     match name {
         "alphabeta" => Ok(Box::new(Searcher::new(evaluator(eval)?, config))),
+        "cpu-selective" => {
+            if eval == "neural" {
+                return Err("neural evaluator requires hip-selective".into());
+            }
+            Ok(Box::new(SelectiveSearch::new(
+                Box::new(HostSelectiveTree::new(frontier.max_positions)?),
+                eval,
+                selective,
+            )?))
+        }
+        "hip-selective" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(SelectiveSearch::new(
+                    if eval == "neural" {
+                        Box::new(chen::neural::HipNeuralSelectiveTree::from_environment(
+                            frontier.max_positions,
+                        )?)
+                    } else {
+                        Box::new(chen::device::HipSelectiveTree::from_environment(
+                            frontier.max_positions,
+                        )?)
+                    },
+                    eval,
+                    selective,
+                )?))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
+        }
         "cpu-frontier" => Ok(Box::new(FrontierSearch::new(
             Box::new(CpuBatchEvaluator::new(evaluator(eval)?)),
             frontier,
@@ -211,12 +245,14 @@ fn uci() -> Result<(), String> {
     let mut eval_name = "tapered".to_string();
     let mut backend_name = "alphabeta".to_string();
     let mut frontier_config = FrontierConfig::default();
+    let mut selective_config = SelectiveConfig::default();
     let mut level = 20;
     let mut engine = Some(make_backend(
         &backend_name,
         &eval_name,
         config.clone(),
         frontier_config.clone(),
+        selective_config,
     )?);
     let mut job: Option<Job> = None;
     for line in io::stdin().lock().lines() {
@@ -237,8 +273,10 @@ fn uci() -> Result<(), String> {
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident",
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective",
                 );
+                output("option name SelectiveBatch type spin default 32 min 1 max 256");
+                output("option name SelectiveCandidates type spin default 1024 min 1 max 1024");
                 output("option name BatchSize type spin default 4096 min 1 max 65536");
                 output("option name MaxPositions type spin default 250000 min 1 max 2000000");
                 output("option name Level type spin default 20 min 1 max 20");
@@ -271,6 +309,7 @@ fn uci() -> Result<(), String> {
                     let mut next_eval = eval_name.clone();
                     let mut next_backend = backend_name.clone();
                     let mut next_frontier = frontier_config.clone();
+                    let mut next_selective = selective_config;
                     let mut next_level = level;
                     let valid = match name.as_str() {
                         "level" => value
@@ -297,11 +336,27 @@ fn uci() -> Result<(), String> {
                                     | "hip-frontier"
                                     | "cpu-resident"
                                     | "hip-resident"
+                                    | "cpu-selective"
+                                    | "hip-selective"
                             ) =>
                         {
                             next_backend = value;
                             true
                         }
+                        "selectivebatch" => value
+                            .parse::<u32>()
+                            .ok()
+                            .filter(|v| {
+                                (1..=256).contains(v) && *v <= next_selective.candidate_limit
+                            })
+                            .map(|v| next_selective.batch_leaves = v)
+                            .is_some(),
+                        "selectivecandidates" => value
+                            .parse::<u32>()
+                            .ok()
+                            .filter(|v| (next_selective.batch_leaves..=1024).contains(v))
+                            .map(|v| next_selective.candidate_limit = v)
+                            .is_some(),
                         "batchsize" => value
                             .parse::<usize>()
                             .ok()
@@ -334,12 +389,14 @@ fn uci() -> Result<(), String> {
                             &next_eval,
                             next.clone(),
                             next_frontier.clone(),
+                            next_selective,
                         ) {
                             Ok(created) => {
                                 config = next;
                                 eval_name = next_eval;
                                 backend_name = next_backend;
                                 frontier_config = next_frontier;
+                                selective_config = next_selective;
                                 level = next_level;
                                 engine = Some(created);
                             }
@@ -348,6 +405,7 @@ fn uci() -> Result<(), String> {
                                 eval_name = next_eval;
                                 backend_name = next_backend;
                                 frontier_config = next_frontier;
+                                selective_config = next_selective;
                                 level = next_level;
                                 engine = None;
                                 output(format!("info string backend creation failed: {error}"));
@@ -382,6 +440,7 @@ fn uci() -> Result<(), String> {
                                 &eval_name,
                                 config.clone(),
                                 frontier_config.clone(),
+                                selective_config,
                             )?,
                         };
                         let stop = searcher.stop_handle();
@@ -517,7 +576,9 @@ fn bench(args: &[String]) -> Result<(), String> {
     let mut config = SearchConfig::default();
     let mut backend_name = "alphabeta".to_string();
     let mut frontier_config = FrontierConfig::default();
+    let mut selective_config = SelectiveConfig::default();
     let mut depth = 4;
+    let mut node_limit = None;
     let mut eval = "tapered".to_string();
     let mut suite = "benches/positions.txt".to_string();
     let mut i = 0;
@@ -526,16 +587,35 @@ fn bench(args: &[String]) -> Result<(), String> {
             "--no-tt" => config.tt = false,
             "--no-qsearch" => config.quiescence = false,
             "--no-ordering" => config.move_ordering = false,
-            "--depth" | "--eval" | "--suite" | "--hash" | "--backend" | "--batch-size"
-            | "--max-positions" => {
+            "--depth"
+            | "--nodes"
+            | "--eval"
+            | "--suite"
+            | "--hash"
+            | "--backend"
+            | "--batch-size"
+            | "--max-positions"
+            | "--selective-batch"
+            | "--selective-candidates" => {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
+                    "--nodes" => {
+                        node_limit = Some(value.parse::<u64>().map_err(|_| "invalid nodes")?)
+                    }
                     "--eval" => eval = value.clone(),
                     "--backend" => backend_name = value.clone(),
                     "--batch-size" => {
                         frontier_config.batch_size =
                             value.parse().map_err(|_| "invalid batch size")?
+                    }
+                    "--selective-batch" => {
+                        selective_config.batch_leaves =
+                            value.parse().map_err(|_| "invalid selective batch")?
+                    }
+                    "--selective-candidates" => {
+                        selective_config.candidate_limit =
+                            value.parse().map_err(|_| "invalid selective candidates")?
                     }
                     "--max-positions" => {
                         frontier_config.max_positions =
@@ -572,12 +652,13 @@ fn bench(args: &[String]) -> Result<(), String> {
             &eval,
             config.clone(),
             frontier_config.clone(),
+            selective_config,
         )?;
         let result = searcher.search(
             &mut p,
             SearchLimits {
                 depth,
-                nodes: None,
+                nodes: node_limit,
                 time: None,
             },
             &[],
@@ -592,8 +673,15 @@ fn bench(args: &[String]) -> Result<(), String> {
             "{{\"mode\":{},\"max_cached_shapes\":{},\"retained_budget_bytes\":{},\"first_used\":{},\"cached_shapes\":{},\"hits\":{},\"misses\":{},\"captures\":{},\"evictions\":{},\"retained_pool_bytes\":{},\"staging_logical_bytes\":{},\"peak_observed_pool_bytes\":{},\"capture_wall_ms\":{}}}",
             json_string(s.mode), s.max_cached_shapes, s.retained_budget_bytes, s.first_used, s.cached_shapes, s.hits, s.misses, s.captures, s.evictions, s.retained_pool_bytes, s.staging_logical_bytes, s.peak_observed_pool_bytes, s.capture_wall_ms
         ));
+        let selective = result.selective.map_or_else(|| "null".to_owned(), |s| format!(
+            "{{\"abi_version\":{},\"struct_size\":{},\"batch_leaves\":{},\"candidate_limit\":{},\"arena_positions\":{},\"classified_positions\":{},\"evaluated_positions\":{},\"completed_steps\":{},\"expanded_leaves\":{},\"open_frontier_leaves\":{},\"last_selected\":{},\"last_added\":{},\"kernel_ms\":{},\"minimum_frontier_depth\":{},\"maximum_frontier_depth\":{},\"pv_depth\":{},\"root_flags\":{},\"stop_reason\":{}}}",
+            s.abi_version, s.struct_size, selective_config.batch_leaves, selective_config.candidate_limit,
+            s.arena_positions, s.classified_positions, s.evaluated_positions, s.completed_steps,
+            s.expanded_leaves, s.open_frontier_leaves, s.last_selected, s.last_added, s.kernel_ms,
+            s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
+        ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -607,6 +695,8 @@ fn bench(args: &[String]) -> Result<(), String> {
             json_string(&eval),
             evaluator_artifact,
             execution,
+            selective,
+            node_limit.map_or_else(|| "null".to_owned(), |n| n.to_string()),
             config.tt && backend_name == "alphabeta",
             config.quiescence && backend_name == "alphabeta",
             config.move_ordering && backend_name == "alphabeta",

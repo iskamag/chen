@@ -1,0 +1,7 @@
+
+running 2 tests
+test actual_selective_atomic_limits_history_invalidation_and_thread_transfer ... ok
+test actual_selective_stepwise_arena_parity_and_complete_horizons ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.86s
+

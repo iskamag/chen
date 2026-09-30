@@ -677,6 +677,86 @@ impl ResidentTree for HipNeuralTree {
     }
 }
 
+/// External neural evaluation for the isolated selective arena. Field order
+/// destroys device tree state before unloading the evaluator and its runtime.
+pub struct HipNeuralSelectiveTree {
+    tree: crate::device::HipSelectiveTree,
+    neural: NeuralEvaluator,
+    model_sha256: String,
+}
+impl HipNeuralSelectiveTree {
+    pub fn new_with_options(
+        rules_library: &Path,
+        neural_library: &Path,
+        runtime_library: &Path,
+        model: &Path,
+        capacity: usize,
+        options: ExecutionOptions,
+    ) -> Result<Self, String> {
+        let artifact = ModelArtifact::read(model)?;
+        let neural = NeuralEvaluator::new(neural_library, runtime_library, &artifact, options)?;
+        let tree = crate::device::HipSelectiveTree::new_with_runtime(
+            rules_library,
+            capacity,
+            neural.identity,
+        )?;
+        Ok(Self {
+            tree,
+            neural,
+            model_sha256: artifact.sha256,
+        })
+    }
+    pub fn from_environment(capacity: usize) -> Result<Self, String> {
+        let (neural_library, runtime_library) = configured_libraries()?;
+        let model = std::env::var_os("CHEN_NEURAL_MODEL")
+            .map(PathBuf::from)
+            .ok_or("Eval neural requires CHEN_NEURAL_MODEL")?;
+        let rules_library = std::env::var_os("CHEN_GPU_LIBRARY")
+            .map(PathBuf::from)
+            .unwrap_or_else(|| "gpu/build/libchen_gpu.so".into());
+        Self::new_with_options(
+            &rules_library,
+            &neural_library,
+            &runtime_library,
+            &model,
+            capacity,
+            ExecutionOptions::from_environment()?,
+        )
+    }
+}
+impl crate::selective::SelectiveTree for HipNeuralSelectiveTree {
+    fn name(&self) -> &str {
+        "hip-selective"
+    }
+    fn evaluator_artifact_sha256(&self) -> Option<&str> {
+        Some(&self.model_sha256)
+    }
+    fn neural_execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        self.neural.execution_stats()
+    }
+    fn reset(
+        &mut self,
+        root: RuleState,
+        history: &[u64],
+        config: crate::selective::SelectiveConfig,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        self.tree.reset(root, history, config)
+    }
+    fn advance(
+        &mut self,
+        cap: u64,
+        evaluator: u32,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        // Submit even a wrong evaluator with the descriptor so the checked
+        // native rejection invalidates this arena; no stale finish is allowed.
+        self.tree
+            .advance_external(cap, evaluator, Some(&self.neural.descriptor()))
+    }
+    fn finish(&mut self) -> Result<(i32, Vec<Move>, crate::selective::SelectiveStats), TreeError> {
+        self.tree.finish()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

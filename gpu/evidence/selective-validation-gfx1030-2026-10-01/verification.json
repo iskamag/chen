@@ -1,0 +1,53 @@
+{
+  "kind": "selective_resident_foundation_hardware_validation",
+  "base_commit": "1da5a84026b5a92bd015b4e0926f4a55287ab648",
+  "host_suites": {
+    "portable": {
+      "passed": 44,
+      "failed": 0,
+      "ignored": 0
+    },
+    "hip_host": {
+      "passed": 50,
+      "failed": 0,
+      "ignored": 9
+    }
+  },
+  "actual_classical_hardware_tests_passed": 8,
+  "actual_neural_hardware_test_runs_passed": 3,
+  "neural_models": {
+    "square": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "relation": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "plan": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d"
+  },
+  "neural_closed_root_comparisons": 9,
+  "neural_wrong_evaluator_invalidation_reset_cases": 9,
+  "paired_same_scheduler_benchmark_rows": 36,
+  "benchmark_processes": 12,
+  "benchmark_rows": 72,
+  "median_six_search_elapsed_ms": {
+    "cpu-resident": 18.454769,
+    "hip-resident": 36.438618,
+    "cpu-selective": 18.857709,
+    "hip-selective": 159.463947
+  },
+  "binaries_sha256": {
+    "chen": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+    "device_selective-7476fdb5960a2017": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15",
+    "libchen_gpu.so": "0cf4171f1e056e281f2cca318b6b67a7616b9a7dca688001542eed8b4da2963a"
+  },
+  "scope": "Correctness and a bounded six-position/three-repeat latency-depth diagnostic; no strength, rating, equal-work speedup or long-run reliability claim. Classical hardware runs use new compiled system HIP library; neural runs use pinned producing Torch runtime and eager inference. Ordinary clocks/history/legality remain exact simulator state.",
+  "neural_plugin_sha256": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+  "producing_torch_hip_runtime_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+  "neural_sidecar_sha256": {
+    "square": "5d2b96a5e556221aa68cd84c5645f730b305db886a3420b81f74f822b2de40e7",
+    "relation": "aab4d086862b2cd1b4d9c6700203806d4c637e5fc69769e1c97a848e7cd7ce6f",
+    "plan": "41ea1b3ecae542fe8aa7b4d1cc9b43a753ba3f25a933aeb9e7cb4127889f5957"
+  },
+  "independent_root_archive_checks": {
+    "paired_benchmark_rows": 36,
+    "no_node_cap_overshoot": true,
+    "all_raw_runtime_exit_codes_zero": true,
+    "copied_source_hashes_bind_executed_rust_inputs": true
+  }
+}

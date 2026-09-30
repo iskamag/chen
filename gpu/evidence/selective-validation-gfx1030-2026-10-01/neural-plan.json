@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "-e",
+    "CHEN_GPU_LIBRARY=/tmp/chen-selective-build/libchen_gpu.so",
+    "-e",
+    "CHEN_NEURAL_LIBRARY=/tmp/chen-graph-plugin/libchen_neural.so",
+    "-e",
+    "CHEN_NEURAL_HIP_RUNTIME=/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "-e",
+    "LD_PRELOAD=/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "-e",
+    "CHEN_NEURAL_MODEL=/tmp/chen-neural-inference/trained/plan-inference.pt",
+    "-e",
+    "CHEN_NEURAL_EXECUTION=eager",
+    "-e",
+    "OMP_NUM_THREADS=1",
+    "-e",
+    "OPENBLAS_NUM_THREADS=1",
+    "cpp-rocm",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "30s",
+    "/tmp/chen-selective-build/neural_selective-tests",
+    "--ignored",
+    "--test-threads=1",
+    "--nocapture"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 11.17801376999978
+}

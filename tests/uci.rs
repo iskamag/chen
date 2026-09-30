@@ -152,7 +152,7 @@ fn frontier_uci_and_resource_levels_are_selectable() {
 #[test]
 fn unavailable_requested_gpu_backend_never_substitutes_cpu() {
     use std::io::Write;
-    for backend in ["hip-frontier", "hip-resident"] {
+    for backend in ["hip-frontier", "hip-resident", "hip-selective"] {
         let mut child = Command::new(env!("CARGO_BIN_EXE_chen"))
             .env("CHEN_GPU_LIBRARY", "/no/such/chen-test-library.so")
             .stdin(Stdio::piped())
@@ -168,4 +168,35 @@ fn unavailable_requested_gpu_backend_never_substitutes_cpu() {
         assert!(!stdout.contains("info depth"));
         assert!(!stdout.contains("bestmove"));
     }
+}
+
+#[test]
+fn selective_uci_reports_mixed_depth_and_recovers_after_invalid_option() {
+    let mut engine = Engine::new();
+    engine.send("setoption name Backend value cpu-selective");
+    engine.send("setoption name SelectiveBatch value 1");
+    engine.send("setoption name SelectiveCandidates value 1");
+    engine.send("setoption name SelectiveBatch value 2");
+    engine.until("info string invalid or unsupported option");
+    engine.send("go depth 3 nodes 41");
+    let first = engine.until("info depth ");
+    assert!(first.starts_with("info depth 1 seldepth 1"));
+    let second = engine.until("info depth ");
+    assert!(second.starts_with("info depth 1 seldepth 2"));
+    let best = engine.until("bestmove ");
+    assert!(
+        Position::startpos()
+            .parse_uci_move(best.split_whitespace().nth(1).unwrap())
+            .is_ok()
+    );
+    engine.send("setoption name SelectiveCandidates value 1024");
+    engine.send("setoption name SelectiveBatch value 8");
+    engine.send("go depth 1 nodes 21");
+    assert!(
+        engine
+            .until("info depth ")
+            .starts_with("info depth 1 seldepth 1")
+    );
+    engine.until("bestmove ");
+    engine.send("quit");
 }

@@ -1,0 +1,114 @@
+
+running 3 tests
+test search::tests::cached_mate_distance_rebases_at_another_ply ... ok
+test strength::tests::budgets_are_monotonic_and_preserve_stricter_user_limits ... ok
+test tt::tests::collisions_replacement_generation_and_clear ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test tests::clock_and_limits ... ok
+test tests::position_parse_is_transactional ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 9 tests
+test en_passant_obeys_pins_and_can_remove_a_checking_pawn ... ok
+test material_draws_are_conservative ... ok
+test fen_roundtrip_and_validation ... ok
+test castling_requires_safe_transit_and_updates_rook_and_rights ... ok
+test promotions_include_underpromotions_and_restore_exactly ... ok
+test deterministic_playout_hashes_and_undo ... ok
+test kiwipete_perft ... ok
+test reference_perft_positions_cover_checks_promotions_and_ep ... ok
+test initial_position_perft ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.34s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 4 tests
+test frontier_mate_draws_and_batch_contract ... ok
+test frontier_capacity_stop_and_node_budget_preserve_last_iteration ... ok
+test exact_node_budget_finishes_already_admitted_leaf_work ... ok
+test frontier_matches_alpha_beta_without_selectivity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.54s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test resident_history_and_phase_validation ... ok
+test resident_budget_and_overflow_preserve_completed_iterations ... ok
+test host_resident_matches_independent_frontier_full_results ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.81s
+
+
+running 3 tests
+test import_rejects_overlaps_and_move_packets_validate ... ok
+test full_rule_packet_roundtrip_and_field_offsets ... ok
+test rules_oracle_batches_special_moves_and_saturation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 10 tests
+test evaluator_orientation ... ok
+test neural_or_custom_scores_cannot_enter_mate_range ... ok
+test node_limit_and_stop_restore_position ... ok
+test draw_clock_does_not_override_checkmate ... ok
+test mate_and_stalemate ... ok
+test incremental_evaluator_hooks_are_balanced_on_abort ... ok
+test repetition_and_tt_draw_context ... ok
+test experiment_changes_invalidate_cached_scores ... ok
+test alpha_beta_matches_exhaustive_minimax ... ok
+test full_width_ablations_preserve_scores ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+
+
+running 6 tests
+test independently_versioned_config_and_stats_layout ... ok
+test reset_phase_terminal_history_and_cancellation_are_explicit ... ok
+test partial_horizon_reports_minimum_and_selective_depth_separately ... ok
+test closed_best_child_does_not_block_remaining_eligible_branches ... ok
+test atomic_siblings_respect_node_capacity_and_retain_last_publication ... ok
+test closed_sparse_tree_matches_independent_full_width_scores_and_pvs ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.71s
+
+
+running 4 tests
+test selective_uci_reports_mixed_depth_and_recovers_after_invalid_option ... ok
+test frontier_uci_and_resource_levels_are_selectable ... ok
+test unavailable_requested_gpu_backend_never_substitutes_cpu ... ok
+test uci_search_stop_options_and_recovery ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

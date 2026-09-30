@@ -487,3 +487,278 @@ impl ResidentTree for HipRules {
         Ok((result.score, moves, stats))
     }
 }
+
+// The selective ABI owns a separate private arena. It deliberately exposes no
+// raw context handle and cannot be substituted for the full-width tree API.
+type SelectiveReset = unsafe extern "C" fn(
+    *mut c_void,
+    *const RuleState,
+    *const u64,
+    u64,
+    *const crate::selective::SelectiveConfig,
+    *mut crate::selective::SelectiveStats,
+    *mut c_char,
+    u64,
+) -> i32;
+type SelectiveAdvance = unsafe extern "C" fn(
+    *mut c_void,
+    u64,
+    u32,
+    *const crate::neural::ExternalEvaluator,
+    *mut crate::selective::SelectiveStats,
+    *mut c_char,
+    u64,
+) -> i32;
+type SelectiveFinish = unsafe extern "C" fn(
+    *mut c_void,
+    *mut ResultPacket,
+    *mut RuleMove,
+    u64,
+    *mut crate::selective::SelectiveStats,
+    *mut c_char,
+    u64,
+) -> i32;
+
+pub struct HipSelectiveTree {
+    _library: Library,
+    context: NonNull<c_void>,
+    destroy: Destroy,
+    reset: SelectiveReset,
+    advance: SelectiveAdvance,
+    finish: SelectiveFinish,
+    capacity: usize,
+    poisoned: bool,
+}
+// SAFETY: uniquely owned context, exclusively serialized operations; every
+// native device call establishes the device before touching allocations.
+unsafe impl Send for HipSelectiveTree {}
+impl HipSelectiveTree {
+    pub fn new(path: impl AsRef<Path>, capacity: usize) -> Result<Self, String> {
+        Self::new_bound(path.as_ref(), capacity, None)
+    }
+    pub(crate) fn new_with_runtime(
+        path: &Path,
+        capacity: usize,
+        identity: [u64; 5],
+    ) -> Result<Self, String> {
+        Self::new_bound(path, capacity, Some(identity))
+    }
+    fn new_bound(path: &Path, capacity: usize, identity: Option<[u64; 5]>) -> Result<Self, String> {
+        if capacity == 0 {
+            return Err("selective GPU capacity must be positive".into());
+        }
+        let library = Library::open(path)?;
+        macro_rules! symbol {
+            ($name:literal, $ty:ty) => {{
+                // SAFETY: signatures match independently versioned chen_selective.h.
+                unsafe { std::mem::transmute::<*mut c_void, $ty>(library.symbol($name)?) }
+            }};
+        }
+        let abi = symbol!(c"chen_selective_abi_version", unsafe extern "C" fn() -> u32);
+        // SAFETY: no-argument metadata query before context creation.
+        if unsafe { abi() } != crate::selective::SELECTIVE_ABI {
+            return Err("unsupported selective ABI (expected1)".into());
+        }
+        if let Some(expected) = identity {
+            let token = symbol!(
+                c"chen_replay_runtime_identity",
+                unsafe extern "C" fn(u32) -> u64
+            );
+            let external = symbol!(c"chen_external_abi_version", unsafe extern "C" fn() -> u32);
+            // SAFETY: metadata-only calls, no pointer exchange before verification.
+            if unsafe { external() } != 1 {
+                return Err("unsupported selective external evaluator ABI".into());
+            }
+            for (i, value) in expected.into_iter().enumerate() {
+                if value == 0 || unsafe { token(i as u32) } != value {
+                    return Err(format!(
+                        "selective neural/rules runtime identity mismatch at selector{i}"
+                    ));
+                }
+            }
+        }
+        let create = symbol!(c"chen_selective_create", Create);
+        let destroy = symbol!(c"chen_selective_destroy", Destroy);
+        let reset = symbol!(c"chen_selective_reset", SelectiveReset);
+        let advance = symbol!(c"chen_selective_advance", SelectiveAdvance);
+        let finish = symbol!(c"chen_selective_finish", SelectiveFinish);
+        let mut error = [0 as c_char; 512];
+        // SAFETY: checked capacity and writable bounded error buffer; owned pointer.
+        let context = NonNull::new(unsafe {
+            create(0, capacity as u64, error.as_mut_ptr(), error.len() as u64)
+        })
+        .ok_or_else(|| buffer_string(&error))?;
+        Ok(Self {
+            _library: library,
+            context,
+            destroy,
+            reset,
+            advance,
+            finish,
+            capacity,
+            poisoned: true,
+        })
+    }
+    pub fn from_environment(capacity: usize) -> Result<Self, String> {
+        Self::new(
+            std::env::var_os("CHEN_GPU_LIBRARY")
+                .map(PathBuf::from)
+                .unwrap_or_else(|| "gpu/build/libchen_gpu.so".into()),
+            capacity,
+        )
+    }
+    fn checked(
+        &mut self,
+        code: i32,
+        error: &[c_char],
+        stats: crate::selective::SelectiveStats,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        let error = if code != 0 {
+            Some(buffer_string(error))
+        } else if stats.abi_version != crate::selective::SELECTIVE_ABI
+            || stats.struct_size as usize != std::mem::size_of::<crate::selective::SelectiveStats>()
+            || stats.reserved != 0
+            || stats.arena_positions > self.capacity as u64
+            || stats.classified_positions > stats.arena_positions
+            || stats.evaluated_positions > stats.classified_positions
+            || stats.open_frontier_leaves > stats.arena_positions
+            || stats.minimum_frontier_depth > stats.maximum_frontier_depth
+            || stats.maximum_frontier_depth > 64
+            || stats.pv_depth > 64
+            || stats.root_flags & !15 != 0
+            || stats.stop_reason > 5
+            || !stats.kernel_ms.is_finite()
+            || stats.kernel_ms < 0.0
+        {
+            Some("malformed selective ABI stats; reset required".into())
+        } else {
+            None
+        };
+        if let Some(error) = error {
+            self.poisoned = true;
+            return Err(TreeError::Backend(error));
+        }
+        Ok(stats)
+    }
+    pub(crate) fn advance_external(
+        &mut self,
+        cap: u64,
+        evaluator: u32,
+        descriptor: Option<&crate::neural::ExternalEvaluator>,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        if self.poisoned {
+            return Err(TreeError::Backend(
+                "selective GPU arena invalid; reset required".into(),
+            ));
+        }
+        let mut stats = crate::selective::SelectiveStats::empty();
+        let mut error = [0 as c_char; 512];
+        // SAFETY: exclusively owned live context; borrowed descriptor's plugin
+        // and owner are retained by wrapper throughout this synchronous call.
+        let code = unsafe {
+            (self.advance)(
+                self.context.as_ptr(),
+                cap,
+                evaluator,
+                descriptor.map_or(std::ptr::null(), |d| d),
+                &mut stats,
+                error.as_mut_ptr(),
+                error.len() as u64,
+            )
+        };
+        self.checked(code, &error, stats)
+    }
+}
+impl crate::selective::SelectiveTree for HipSelectiveTree {
+    fn name(&self) -> &str {
+        "hip-selective"
+    }
+    fn reset(
+        &mut self,
+        root: RuleState,
+        history: &[u64],
+        config: crate::selective::SelectiveConfig,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        self.poisoned = true;
+        config.validate()?;
+        if history.len() > u16::MAX as usize {
+            return Err(TreeError::Backend("history exceeds ABI capacity".into()));
+        }
+        let mut stats = crate::selective::SelectiveStats::empty();
+        let mut error = [0 as c_char; 512];
+        // SAFETY: root/config/history are borrowed for synchronous upload only.
+        let code = unsafe {
+            (self.reset)(
+                self.context.as_ptr(),
+                &root,
+                history.as_ptr(),
+                history.len() as u64,
+                &config,
+                &mut stats,
+                error.as_mut_ptr(),
+                error.len() as u64,
+            )
+        };
+        let stats = self.checked(code, &error, stats)?;
+        self.poisoned = false;
+        Ok(stats)
+    }
+    fn advance(
+        &mut self,
+        cap: u64,
+        evaluator: u32,
+    ) -> Result<crate::selective::SelectiveStats, TreeError> {
+        self.advance_external(cap, evaluator, None)
+    }
+    fn finish(&mut self) -> Result<(i32, Vec<Move>, crate::selective::SelectiveStats), TreeError> {
+        if self.poisoned {
+            return Err(TreeError::Backend(
+                "selective GPU arena invalid; reset required".into(),
+            ));
+        }
+        let mut packet = ResultPacket::default();
+        let mut moves = [RuleMove::default(); 64];
+        let mut stats = crate::selective::SelectiveStats::empty();
+        let mut error = [0 as c_char; 512];
+        // SAFETY: writable output storage exactly spans supplied capacities.
+        let code = unsafe {
+            (self.finish)(
+                self.context.as_ptr(),
+                &mut packet,
+                moves.as_mut_ptr(),
+                moves.len() as u64,
+                &mut stats,
+                error.as_mut_ptr(),
+                error.len() as u64,
+            )
+        };
+        let stats = self.checked(code, &error, stats)?;
+        if packet.pv_length as usize > moves.len()
+            || !stats.published()
+            || packet.score.unsigned_abs() > crate::search::MATE as u32
+        {
+            self.poisoned = true;
+            return Err(TreeError::Backend(
+                "malformed selective root/PV; reset required".into(),
+            ));
+        }
+        let pv = moves[..packet.pv_length as usize]
+            .iter()
+            .copied()
+            .map(Move::try_from)
+            .collect::<Result<Vec<_>, _>>();
+        let pv = pv.map_err(|error| {
+            self.poisoned = true;
+            TreeError::Backend(error)
+        })?;
+        Ok((packet.score, pv, stats))
+    }
+}
+impl Drop for HipSelectiveTree {
+    fn drop(&mut self) {
+        // SAFETY: unique live context, destroyed before its library is unloaded.
+        unsafe {
+            (self.destroy)(self.context.as_ptr());
+        }
+    }
+}

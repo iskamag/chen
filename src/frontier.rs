@@ -221,6 +221,7 @@ impl SearchBackend for FrontierSearch {
             pv: moves.first().copied().into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            selective: None,
         };
         if moves.is_empty() {
             result.elapsed = start.elapsed();

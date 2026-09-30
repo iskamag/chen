@@ -9,15 +9,17 @@ This checkpoint records implemented foundations and open gates.
 
 - Baseline Rust engine frozen at `d3d6e5e`.
 - Traits: `Evaluator`, `BatchEvaluator`, `SearchBackend`, `StrengthPolicy`,
-  `RulesBackend`, `ResidentTree`.
+  `RulesBackend`, `ResidentTree`, `SelectiveTree`.
 - Real gfx1030 HIP Material/Tapered kernels with persistent buffers, versioned
   ABI, runtime device checks, strict compilation, explicit errors and dispatch
   traces. Physical RX 6800: wave32, 60 CUs / 30 HIP WGPs, about 16 GiB VRAM.
 - CPU-rules batched frontier minimax selects either CPU or HIP evaluation.
   All six depth-3 suite positions match CPU-frontier by depth, score, best move,
   total nodes and PV. Alpha-beta without quiescence agrees on root scores/depths.
-- Portable build: 37 Rust tests pass. HIP-feature host build: 43 pass, with
-  six actual-hardware tests run separately and passing in `cpp-rocm`. Strict
+- Portable build: 44 Rust tests pass. HIP-feature host build: 50 pass, with
+  eight classical actual-hardware tests run separately and passing in `cpp-rocm`.
+  One neural selective hardware test passes for each of three pinned models.
+  Strict
   Clippy, formatting, Python compilation and shell syntax checks pass.
 - Hardware tests compare ordered batches of legal positions at sizes
   0/1/7/64/257/4096 for both evaluators, exercise capacity/length errors and
@@ -30,7 +32,7 @@ This checkpoint records implemented foundations and open gates.
   Rust hardware suite additionally checks 527 roots, ordered legal lists and
   every successor. GPU start-position depth-4 perft is 197281 leaves.
   [Rules contract and evidence](../GPU_RULES.md) specify phase/capacity limits.
-- Twenty harness tests pass. Four ordinary-opening smoke games finish 30 legal
+- Twenty-three harness tests pass. Four ordinary-opening smoke games finish 30 legal
   plies each without technical failure, remaining explicitly inconclusive.
   Two-game mate fixtures finish for CPU and real GPU UCI implementations;
   these verify protocol/adjudication rather than strength.
@@ -86,7 +88,7 @@ capture costs 450–1242 ms, so this remains an opt-in experiment. All 27 native
 model/count cases, borrowed-pointer changes, LRU/admission checks and tested
 failure policies pass. The [Rust integration record](../../gpu/evidence/neural-graph-integration-2026-10-01.json)
 checks 18 cases per mode against independent minimax with identical outcomes.
-Current host suites pass 37/43 tests, six Rust hardware checks pass, and the
+At that integration checkpoint, host suites passed 37/43 tests, six Rust hardware checks passed, and the
 combined neural suite passes 88 CPU/GPU tests in ROCm without skips.
 Both modes pass option ordering and resource/stop checks. Graph mode completes
 40 legal game plies; final eager play again times out on the first neural move.
@@ -191,6 +193,26 @@ acceptance of malformed deterministic checkpoint buffers. It also drove actual
 artifact capture and canonical held-out split checks.
 
 ## Next work
+
+The [selective resident foundation](../GPU_SELECTIVE_SEARCH.md) now executes
+on CPU and gfx1030 with complete legal sibling admission, exact cumulative
+node caps, explicit closure and separately reported maximum frontier depth.
+All per-step classical parity checks pass, as do nine closed-horizon neural
+comparisons and failure/reset checks across three pinned eager models. At a
+2,000-node cap and maximum ply four, all five nonmate suite positions reach
+some ply-four leaves, while full-width search completes depth one to three.
+This is mixed-depth coverage, not a uniform depth or strength gain. The first
+three-repeat diagnostic is slower on GPU: median sum of six searches is
+159.46 ms versus 18.86 ms for CPU selective search. Repeated phase fences and
+scalar readbacks are the next classical fusion target; the verified baseline
+and raw records remain frozen.
+
+Neural branch `2a08ebb` adds an untrained eight-role supervised bottleneck,
+an independent typed threat encoder, a frozen shared readout and cached blind
+sibling ties. Ten new CPU tests pass. Stockfish 19 labels are converted to a
+pinned approximate reference-material frame with reporting intervals; parent
+MultiPV and standalone position queries retain distinct provenance and search
+contexts. No new model training or heldout performance result is claimed yet.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.

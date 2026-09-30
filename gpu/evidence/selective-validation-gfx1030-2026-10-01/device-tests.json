@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "-e",
+    "CHEN_GPU_LIBRARY=/tmp/chen-selective-build/libchen_gpu.so",
+    "cpp-rocm",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "60s",
+    "/tmp/chen-selective-build/device-tests",
+    "--ignored",
+    "--test-threads=1",
+    "--nocapture"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 1.4152284439996947
+}
