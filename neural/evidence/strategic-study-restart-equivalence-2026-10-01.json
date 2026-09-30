@@ -1,0 +1,47 @@
+{
+  "kind": "cold_fingerprint_repair_mechanical_equivalence",
+  "old_source_sha256": "460ea267946a302e8499a5ef39bc1188da29652b60d12c5d6747450fb0a554db",
+  "new_source_sha256": "1c7f47d1c9d401a362715c5f8be4472f99b72e8bd4ae1bb98c6a73e55704e3c5",
+  "first5_runs": [
+    {
+      "control": "transport",
+      "parameter_tensors_bit_exact": true,
+      "parameters_max_absolute_difference": 0.0,
+      "sample_stream_sha256_exact": true,
+      "metric_max_absolute_difference": 0.000152587890625
+    },
+    {
+      "control": "conditioned",
+      "parameter_tensors_bit_exact": true,
+      "parameters_max_absolute_difference": 0.0,
+      "sample_stream_sha256_exact": true,
+      "metric_max_absolute_difference": 0.0001220703125
+    },
+    {
+      "control": "action_blind",
+      "parameter_tensors_bit_exact": true,
+      "parameters_max_absolute_difference": 0.0,
+      "sample_stream_sha256_exact": true,
+      "metric_max_absolute_difference": 0.00048828125
+    },
+    {
+      "control": "transport_fixed_encoder",
+      "parameter_tensors_bit_exact": true,
+      "parameters_max_absolute_difference": 0.0,
+      "sample_stream_sha256_exact": true,
+      "metric_max_absolute_difference": 0.000244140625
+    },
+    {
+      "control": "transport_zero_anchor",
+      "parameter_tensors_bit_exact": true,
+      "parameters_max_absolute_difference": 0.0,
+      "sample_stream_sha256_exact": true,
+      "metric_max_absolute_difference": 0.000244140625
+    }
+  ],
+  "split_source_sha256_exact": true,
+  "test_labels_produced_when_compared": false,
+  "archive_hash_equality_required": false,
+  "tolerance": "absdiff <= atol+rtol*abs(reference), per predeclared1e-4/1e-6 metric and1e-6/1e-5 tensor bounds",
+  "gate_passed": true
+}

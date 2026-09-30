@@ -18,4 +18,45 @@ Before any timing/training, the predeclaration pins sources, ordered spent-repor
 
 Milestones use atomic whole-report replacement plus an append-only JSONL journal. Restricted strategic checkpoints retain configuration, source family/simulator construction provenance and fixed target state hash; they are a separate format from existing deployment checkpoints. No outcome/WDL calibration or rating evidence is claimed.
 
-Execution and results are pending the frozen predeclaration and recovered-device checks. Evidence links and observed results will be added after the bounded run; an infrastructure interruption is reported separately from a model result.
+The bounded run is complete on gfx1030 (Torch2.10.0+rocm7.0). All 18 targeted study/transport tests executed with no skips, including independent complete-root Tapered minimax labels, GPU integer-Tapered parity and prediction/gradient CPU/GPU parity. The main 30 runs measured358.21 seconds of training; this excludes split admission, production, evaluation and artifact copies. Training retained 184/192 roots and 5725/5961 actions; validation 45/48 and 1416/1514; test 44/48 and 1314/1422. Canonical admission covered 188465/46218/46233 positions with no cross-split or previous-input collision. All 30 strict CPU checkpoint loads and source/selection/checkpoint SHA admissions passed.
+
+A cold checksum bug initially stopped after five square controls because a scalar model parameter could not be viewed directly as bytes. That partial attempt, executed source and validation exposure remain archived. Revision2 flattened before the byte view and changed no numerical training path, corpus or decision rule. The clean rerun reproduced all first-five parameter tensors bit-exactly and sample/split hashes exactly; cold aggregate differences were within declared floating tolerance. No test labels had been produced at the repair. The sealed validation selection is **none**: four configurations passed the regret-only gate, but none passed both MAE and regret. Test labels were then generated and all frozen models evaluated once, with no later training.
+
+Two-seed means below describe all frozen controls. They do not select a model using test results. Scores are ordinary child-mover CP; regret is the parent cost of selecting a child using unrounded float predictions. Material validation MAE/regret is191.81/141.18 and static Tapered189.80/137.07. Test baselines are material162.41/118.02 and static Tapered156.81/101.75.
+
+
+| Encoder | Control | Validation MAE | Validation regret | Test MAE | Test regret |
+|---|---|---:|---:|---:|---:|
+| square | transport | 200.37 | 132.37 | 192.17 | 122.66 |
+| square | conditioned | 195.26 | 136.14 | 184.85 | 114.11 |
+| square | action_blind | 207.90 | 141.18 | 200.08 | 118.02 |
+| square | transport_fixed_encoder | 205.87 | 140.54 | 196.59 | 92.34 |
+| square | transport_zero_anchor | 337.88 | 287.76 | 273.62 | 318.00 |
+| relation | transport | 205.84 | 138.82 | 184.89 | 109.16 |
+| relation | conditioned | 204.88 | 138.56 | 185.47 | 102.11 |
+| relation | action_blind | 213.18 | 141.18 | 195.65 | 118.02 |
+| relation | transport_fixed_encoder | 205.75 | 144.07 | 199.92 | 88.23 |
+| relation | transport_zero_anchor | 360.03 | 356.67 | 293.45 | 348.40 |
+| plan | transport | 208.89 | 132.33 | 193.04 | 113.31 |
+| plan | conditioned | 205.42 | 134.43 | 185.90 | 95.48 |
+| plan | action_blind | 209.47 | 140.78 | 200.23 | 116.45 |
+| plan | transport_fixed_encoder | 205.94 | 142.06 | 199.70 | 100.18 |
+| plan | transport_zero_anchor | 363.76 | 331.91 | 291.25 | 365.56 |
+
+The four validation ranking-only configurations are square/plan transport and square/plan conditioning. They remain rejected by the joint gate. Frozen-encoder controls had test regret 88.23–100.18cp versus static Tapered 101.75cp, but their validation regret 140.54–144.07cp failed the gate; this test observation cannot promote them. There is no validated advantage for slot transport over conditioning at this workload. Zero-anchor controls had test MAE 273.62–293.45cp and regret 318.00–365.56cp, showing substantial dependence on the exact material prior.
+
+The action-sensitive representation diagnostic is a narrower positive result. Across 6134 informative same-material test pairs, transported material-anchor models reached direction concordance 0.626–0.632 versus the action-blind semantic tie of 0.5. Their true-action gap RMSE 362.10/362.70/365.81cp rose to 375.44/375.72/374.60cp under legal-action shuffle while preserving the true anchor. Predicted mean absolute gap was only 72.5–75.3cp against teacher 329.2cp: learned direction does not imply calibrated magnitude or good complete-root choice. Normalized latent separation ratios 0.89/1.05/1.32 on the bounded pair sample do not show action collapse, but the target is an **initial random frozen encoder**, not a learned strategic representation. Full-refresh CP diagnostics also lagged static Tapered; this is not evidence that the refreshed representation is strong.
+
+The four material-anchor controls start with exact material predictions; the zero-anchor control starts at zero. Relation transport training MAE 175.87/196.61cp became test 174.39/195.39cp, and test regret 129.59/88.73cp crossed the static baseline in opposite directions. Plan transport training 173.47/208.67 became test 176.59/209.50cp. The fixed test corpus was easier for the static baselines than training, so raw train/test MAE changes alone do not isolate generalization. Full per-seed, family-error, saturation and shuffle diagnostics remain in the immutable report. Two seeds on one corpus do not provide independent game-level strength evidence.
+
+One raw-float caveat matters: plan action-blind GPU outputs had informative-pair mean absolute gaps of only 4.81e-6/2.70e-6cp, yet raw tie breaking produced small apparent ranking differences from material. CPU-only frozen checkpoint/root reconstruction confirmed exact semantic ties for both seeds across all 44 roots, including 10 roots spanning batch128 boundaries, and did **not** reproduce the GPU effect. The microCP GPU gaps are consistent with floating roundoff; the cause and boundary location remain unverified. Treat plan-blind ranking/concordance differences as numerically sensitive, not learned action reasoning. The original scored study was preserved; no tie-policy change or scored rerun was made.
+
+The next actionable hypotheses require a new predeclaration and fresh corpus: separate CP calibration from sibling ranking when corrections have roughly one-quarter the teacher gap magnitude; test an anchored strategic representation learned on training-only data rather than a random latent target; and establish whether slot movement adds benefit against the stronger conditioned control. This stage does not select a deployment checkpoint or justify a stronger-engine claim. Terminal/mate decision coverage and actual offline match strength remain open.
+
+Evidence and replayable cold audits:
+
+- [Revision2 predeclaration](../neural/evidence/strategic-study-predeclared-2026-10-01.json), [immutable full report](../neural/evidence/strategic-study-gfx1030-2026-10-01.json), [sealed selection](../neural/evidence/strategic-study-gfx1030-2026-10-01-selection.json), [milestone journal](../neural/evidence/strategic-study-gfx1030-2026-10-01.jsonl), [live execution log](../neural/evidence/strategic-study-gfx1030-2026-10-01.log).
+- [All 18 targeted GPU tests](../neural/evidence/strategic-study-gfx1030-tests-2026-10-01.log), [artifact/mean/admission summary](../neural/evidence/strategic-study-artifacts-2026-10-01.json), [first-five repair equivalence](../neural/evidence/strategic-study-restart-equivalence-2026-10-01.json), [closed partial attempt](../neural/evidence/strategic-study-attempt1-2026-10-01.json).
+- [CPU action-blind diagnostic](../neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json), [diagnostic source snapshot](../neural/evidence/strategic-study-actionblind-diagnostic-source-2026-10-01.py), [checkpoint admission source](../neural/evidence/strategic-study-admission-source-2026-10-01.py), [admission log](../neural/evidence/strategic-study-admission-2026-10-01.log), [cold audit commands/source hashes](../neural/evidence/strategic-study-cold-audit-sha256-2026-10-01.json).
+
+All 30 restricted strategic checkpoints are retained under ignored `results/neural/strategic-study/`. Their hashes are in the artifact summary. They use the research root-plus-action format and are not existing deployment1 value checkpoints.
