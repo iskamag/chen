@@ -83,6 +83,8 @@ def main():
     p.add_argument('--nodes', type=int)
     p.add_argument('--movetime', type=float, help='seconds per move')
     p.add_argument('--max-plies', type=int, default=300)
+    p.add_argument('--independent-opening-pairs', action='store_true',
+                   help='assert an independent opening-pair sampling design before emitting a bootstrap interval')
     p.add_argument('--out', required=True)
     args = p.parse_args()
     if sum(v is not None for v in (args.depth, args.nodes, args.movetime)) != 1:
@@ -95,7 +97,8 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     limit = chess.engine.Limit(depth=args.depth, nodes=args.nodes, time=args.movetime)
     metadata = {'config': config, 'budgets': vars(args), 'opening_sha256': sha(args.openings), 'chess_version': chess.__version__, 'platform': platform.platform(), 'concurrency': 1, 'launcher_sha256': {name: sha(entry['command'][0]) for name, entry in config.items()}, 'declared_artifact_sha256': {name: {label: sha(path) for label, path in entry.get('artifacts', {}).items()} for name, entry in config.items()}, 'artifact_scope': {name: 'declared-files' if entry.get('artifacts') else 'launcher-only' for name, entry in config.items()}, 'rating_target': '2500 Lichess in a declared time-control pool; this offline match does not certify it'}
-    metadata['inherited_runtime_environment'] = {key: os.environ[key] for key in ['CHEN_GPU_LIBRARY', 'CHEN_NEURAL_MODEL', 'CHEN_NEURAL_LIBRARY', 'CHEN_NEURAL_HIP_RUNTIME', 'HSA_OVERRIDE_GFX_VERSION', 'HIP_VISIBLE_DEVICES', 'ROCR_VISIBLE_DEVICES', 'CUDA_VISIBLE_DEVICES', 'PYTORCH_ROCM_ARCH', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS'] if key in os.environ}
+    metadata['inherited_runtime_environment'] = {key: os.environ[key] for key in ['CHEN_GPU_LIBRARY', 'CHEN_NEURAL_MODEL', 'CHEN_NEURAL_LIBRARY', 'CHEN_NEURAL_HIP_RUNTIME', 'CHEN_NEURAL_EXECUTION', 'CHEN_NEURAL_GRAPH_SHAPES', 'CHEN_NEURAL_GRAPH_BYTES', 'HSA_OVERRIDE_GFX_VERSION', 'HIP_VISIBLE_DEVICES', 'ROCR_VISIBLE_DEVICES', 'CUDA_VISIBLE_DEVICES', 'PYTORCH_ROCM_ARCH', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS'] if key in os.environ}
+    metadata['match_script_sha256'] = sha(__file__)
     (out / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
     engines = {}
     try:
@@ -127,7 +130,8 @@ def main():
                         pairs.append(tuple(pair))
                     else:
                         incomplete_pairs += 1
-        summary = summarize_pairs(pairs) if pairs else {'completed_pairs': 0, 'rating_scope': 'no strength inference: no complete pairs'}
+        summary = summarize_pairs(pairs, independent_pairs=args.independent_opening_pairs) if pairs else {'completed_pairs': 0, 'rating_scope': 'no strength inference: no complete pairs'}
+        summary['independent_opening_pairs_asserted'] = args.independent_opening_pairs
         summary.update({'incomplete_pairs': incomplete_pairs, 'technical_failures': failures})
         (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
         print(json.dumps({'results': str(out), **summary}, indent=2))

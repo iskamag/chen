@@ -1,0 +1,5 @@
+illegal san: 'Ke8' in r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4 while parsing <Game at 0x7f9db8459450 ('candidate' vs. 'base', '2026.10.01' at 'local')>
+{"control": "json_result_disagrees", "rejected": true, "reason": "PGN Result mismatch 0"}
+{"control": "illegal_pgn_move", "rejected": true, "reason": "PGN missing/parser errors 0"}
+{"control": "missing_pair_game", "rejected": true, "reason": "expected 32 openings / 64 games"}
+{"negative_controls": 3, "all_rejected": true}

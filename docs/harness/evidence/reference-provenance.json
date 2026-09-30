@@ -1,0 +1,124 @@
+{
+  "kind": "offline_reference_evidence_provenance",
+  "date": "2026-10-01",
+  "source_run": "results/stockfish-reference-20261001",
+  "match_recorded_binaries_reverified": {
+    "base/launcher": {
+      "path": "results/match-tools/stockfish/stockfish-linux-x86-64-universal",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "matches_match_metadata": true
+    },
+    "base/official-release-archive": {
+      "path": "results/match-tools/stockfish.tar.gz",
+      "sha256": "9defc0d4e55d49c65a6d042f3e571a39fcea499ade6dbe741b53b8c65e03611f",
+      "matches_match_metadata": true
+    },
+    "base/tool-manifest": {
+      "path": "results/match-tools/manifest.json",
+      "sha256": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8",
+      "matches_match_metadata": true
+    },
+    "candidate/launcher": {
+      "path": "results/reference-engine/chen",
+      "sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "matches_match_metadata": true
+    },
+    "candidate/engine": {
+      "path": "results/reference-engine/chen",
+      "sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "matches_match_metadata": true
+    },
+    "fastchess/pinned-release": {
+      "archive_sha256": "1003f920bebe841acdab5e6d7871e93171a4586857b3ec91c21ef5777f26ff96",
+      "binary_sha256": "3d0a8f3c8b837a96366ac838f3ddf6fe87b813abb4ad2852284c0ce409132566",
+      "pin_matches_current_fetcher": true
+    },
+    "stockfish/pinned-release": {
+      "archive_sha256": "9defc0d4e55d49c65a6d042f3e571a39fcea499ade6dbe741b53b8c65e03611f",
+      "binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "pin_matches_current_fetcher": true
+    }
+  },
+  "audit_checkout_head": "d2453869cbd081a53bf862596c5bdd1872e013a2",
+  "audit_checkout_scope": "audit-time only; no exact Chen source/compiler snapshot was recorded by original match metadata",
+  "source_snapshot_scope": "reference-match-current-snapshot.py and reference-stats-current-snapshot.py include post-run independent-opening-pairs safeguards, not exact historical run source",
+  "original_summary_policy": "Preserved byte-for-byte, including old diagnostic bootstrap and logistic point; excluded from accepted inferential claims because project-authored correlated openings",
+  "accepted_bootstrap_interval": null,
+  "accepted_elo_inference": null,
+  "lichess_calibration": false,
+  "sprt_completed": false,
+  "files": {
+    "reference-fetch-tools-snapshot.py": {
+      "bytes": 4964,
+      "sha256": "8101861fd8bad138f41c62e36bcb0fa227a38c5f408927fa7539edc302a1b00c"
+    },
+    "reference-games.jsonl": {
+      "bytes": 15024,
+      "sha256": "941a531adfae0fbd33ab7fc75024d100bd0aebf71d4acfa5299d756ad03968f6"
+    },
+    "reference-games.pgn": {
+      "bytes": 42523,
+      "sha256": "9cdb3dd387b6d210df386f13bb510085398b83ee5e13193d3fa92bbad1356278"
+    },
+    "reference-harness-tests.log": {
+      "bytes": 1301,
+      "sha256": "f864ac48c056b58a410ad9da19e5e43ecd7cfdf645adc8b0030c107370a812ac"
+    },
+    "reference-match-current-snapshot.py": {
+      "bytes": 7865,
+      "sha256": "d426e8b63ca24f7ea93c164fa7df6a5ec6f1a37f556fc11259b1b0e209294700"
+    },
+    "reference-metadata.json": {
+      "bytes": 2008,
+      "sha256": "fc7044cd051853f8472d870971ce2afc2385fa97a9422e20f9061467e3915cc8"
+    },
+    "reference-openings.json": {
+      "bytes": 9073,
+      "sha256": "068b1b79635c6a9a8222448a7517102fbfa80723e303ca76abae8f7a24208872"
+    },
+    "reference-openings.txt": {
+      "bytes": 2601,
+      "sha256": "d0f455b9e347f3b6a0492a5a1bd79424f23cea81f3ff9a6deaa624b3bdf078ac"
+    },
+    "reference-original-run.log": {
+      "bytes": 602,
+      "sha256": "cdafff1bfce0cb7b156001fe1f97f278a57107804e5a8fb2452f3e20cf259549"
+    },
+    "reference-replay-negative-controls.log": {
+      "bytes": 503,
+      "sha256": "4dd4cb1751464c2d8de2e959ab6873acf58fd498dc403e25504f78b98934d0db"
+    },
+    "reference-replay-negative-controls.py": {
+      "bytes": 1572,
+      "sha256": "5b76ce5e656683fd5846cdd821aa93e4d69eb3e80a78d38d17c3989981c4e254"
+    },
+    "reference-replay.json": {
+      "bytes": 17402,
+      "sha256": "2008f70a787a163ecbbef694dea34c9f1c9d3840524fa197a7269715626cc951"
+    },
+    "reference-replay.log": {
+      "bytes": 1530,
+      "sha256": "c243dd01a5cc6da2e0b04586dd0178135cfe21ae1d5acc70e399e1afa3bfeaf9"
+    },
+    "reference-replay.py": {
+      "bytes": 8640,
+      "sha256": "64f23fb21a37edf59b8ba403bb6b1b8153d3db5e3e1db34eacf4c303c7e206e2"
+    },
+    "reference-stats-current-snapshot.py": {
+      "bytes": 1867,
+      "sha256": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990"
+    },
+    "reference-summary-original.json": {
+      "bytes": 549,
+      "sha256": "8158e3660b2e3da2b28fa766541571f0ec99598eab29bf66d3679e4c664fc480"
+    },
+    "reference-tools-fetch.log": {
+      "bytes": 2606,
+      "sha256": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8"
+    },
+    "reference-tools-manifest.json": {
+      "bytes": 2606,
+      "sha256": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8"
+    }
+  }
+}

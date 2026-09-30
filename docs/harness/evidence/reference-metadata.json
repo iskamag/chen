@@ -1,0 +1,66 @@
+{
+  "config": {
+    "base": {
+      "command": [
+        "results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+      ],
+      "options": {
+        "Hash": 16,
+        "Threads": 1,
+        "UCI_LimitStrength": false,
+        "Skill Level": 20
+      },
+      "artifacts": {
+        "official-release-archive": "results/match-tools/stockfish.tar.gz",
+        "tool-manifest": "results/match-tools/manifest.json"
+      }
+    },
+    "candidate": {
+      "command": [
+        "results/reference-engine/chen"
+      ],
+      "options": {
+        "Hash": 16,
+        "Backend": "alphabeta",
+        "Eval": "tapered",
+        "Level": 20
+      },
+      "artifacts": {
+        "engine": "results/reference-engine/chen"
+      }
+    }
+  },
+  "budgets": {
+    "config": "docs/harness/stockfish-reference-config.json",
+    "openings": "benches/reference-openings.txt",
+    "rounds": 1,
+    "depth": null,
+    "nodes": 2000,
+    "movetime": null,
+    "max_plies": 600,
+    "out": "results/stockfish-reference-20261001"
+  },
+  "opening_sha256": "d0f455b9e347f3b6a0492a5a1bd79424f23cea81f3ff9a6deaa624b3bdf078ac",
+  "chess_version": "1.11.2",
+  "platform": "Linux-7.2.3-zen1-2-zen-x86_64-with-glibc2.44",
+  "concurrency": 1,
+  "launcher_sha256": {
+    "base": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "candidate": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68"
+  },
+  "declared_artifact_sha256": {
+    "base": {
+      "official-release-archive": "9defc0d4e55d49c65a6d042f3e571a39fcea499ade6dbe741b53b8c65e03611f",
+      "tool-manifest": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8"
+    },
+    "candidate": {
+      "engine": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68"
+    }
+  },
+  "artifact_scope": {
+    "base": "declared-files",
+    "candidate": "declared-files"
+  },
+  "rating_target": "2500 Lichess in a declared time-control pool; this offline match does not certify it",
+  "inherited_runtime_environment": {}
+}

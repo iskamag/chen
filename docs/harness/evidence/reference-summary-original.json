@@ -1,0 +1,21 @@
+{
+  "completed_pairs": 32,
+  "games": 64,
+  "pentanomial": [
+    29,
+    3,
+    0,
+    0,
+    0
+  ],
+  "candidate_score": 0.0234375,
+  "logistic_relative_elo_point_estimate": -647.9155033153576,
+  "paired_bootstrap_score_interval_95_diagnostic": [
+    0.0,
+    0.0546875
+  ],
+  "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+  "bootstrap_assumption": "opening pairs sampled independently; repeated/correlated openings can invalidate uncertainty estimates",
+  "incomplete_pairs": 0,
+  "technical_failures": 0
+}

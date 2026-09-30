@@ -1,0 +1,418 @@
+[
+  {
+    "id": "italian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "f8c5"
+    ],
+    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+  },
+  {
+    "id": "ruy-lopez",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1b5",
+      "a7a6"
+    ],
+    "fen": "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"
+  },
+  {
+    "id": "scotch",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "d2d4",
+      "e5d4"
+    ],
+    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "four-knights",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "b1c3",
+      "g8f6"
+    ],
+    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4"
+  },
+  {
+    "id": "petrov",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "g8f6",
+      "d2d3",
+      "d7d6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4p3/4P3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "vienna",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e5",
+      "b1c3",
+      "g8f6",
+      "f1c4",
+      "f8c5"
+    ],
+    "fen": "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 4 4"
+  },
+  {
+    "id": "sicilian-open",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "c7c5",
+      "g1f3",
+      "d7d6",
+      "d2d4",
+      "c5d4"
+    ],
+    "fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "sicilian-alapin",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "c7c5",
+      "c2c3",
+      "g8f6",
+      "e4e5",
+      "f6d5"
+    ],
+    "fen": "rnbqkb1r/pp1ppppp/8/2pnP3/8/2P5/PP1P1PPP/RNBQKBNR w KQkq - 1 4"
+  },
+  {
+    "id": "sicilian-closed",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "c7c5",
+      "b1c3",
+      "b8c6",
+      "g2g3",
+      "g7g6"
+    ],
+    "fen": "r1bqkbnr/pp1ppp1p/2n3p1/2p5/4P3/2N3P1/PPPP1P1P/R1BQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "french-advance",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e6",
+      "d2d4",
+      "d7d5",
+      "e4e5",
+      "c7c5"
+    ],
+    "fen": "rnbqkbnr/pp3ppp/4p3/2ppP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq c6 0 4"
+  },
+  {
+    "id": "french-exchange",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "e7e6",
+      "d2d4",
+      "d7d5",
+      "e4d5",
+      "e6d5"
+    ],
+    "fen": "rnbqkbnr/ppp2ppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "caro-kann",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "c7c6",
+      "d2d4",
+      "d7d5",
+      "b1c3",
+      "d5e4"
+    ],
+    "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "scandinavian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "d7d5",
+      "e4d5",
+      "d8d5",
+      "b1c3",
+      "d5a5"
+    ],
+    "fen": "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 4"
+  },
+  {
+    "id": "pirc",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "d7d6",
+      "d2d4",
+      "g8f6",
+      "b1c3",
+      "g7g6"
+    ],
+    "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "modern",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "g7g6",
+      "d2d4",
+      "f8g7",
+      "b1c3",
+      "d7d6"
+    ],
+    "fen": "rnbqk1nr/ppp1ppbp/3p2p1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "alekhine",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "e2e4",
+      "g8f6",
+      "e4e5",
+      "f6d5",
+      "d2d4",
+      "d7d6"
+    ],
+    "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "queen-gambit-declined",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  {
+    "id": "queen-gambit-accepted",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "d5c4",
+      "g1f3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/ppp1pppp/5n2/8/2pP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  {
+    "id": "slav",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "c7c6",
+      "g1f3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4"
+  },
+  {
+    "id": "semi-slav",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "c7c6"
+    ],
+    "fen": "rnbqkbnr/pp3ppp/2p1p3/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "kings-indian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "g8f6",
+      "c2c4",
+      "g7g6",
+      "b1c3",
+      "f8g7"
+    ],
+    "fen": "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  {
+    "id": "nimzo-indian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "g8f6",
+      "c2c4",
+      "e7e6",
+      "b1c3",
+      "f8b4"
+    ],
+    "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4"
+  },
+  {
+    "id": "queens-indian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "g8f6",
+      "c2c4",
+      "e7e6",
+      "g1f3",
+      "b7b6"
+    ],
+    "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "grunfeld",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "g8f6",
+      "c2c4",
+      "g7g6",
+      "b1c3",
+      "d7d5"
+    ],
+    "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq d6 0 4"
+  },
+  {
+    "id": "dutch",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "f7f5",
+      "c2c4",
+      "g8f6",
+      "g2g3",
+      "e7e6"
+    ],
+    "fen": "rnbqkb1r/pppp2pp/4pn2/5p2/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "benoni",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "g8f6",
+      "c2c4",
+      "c7c5",
+      "d4d5",
+      "e7e6"
+    ],
+    "fen": "rnbqkb1r/pp1p1ppp/4pn2/2pP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq - 0 4"
+  },
+  {
+    "id": "london",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "c1f4",
+      "e7e6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/5N2/PPP1PPPP/RN1QKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "colle",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "d2d4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "e2e3",
+      "e7e6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R w KQkq - 0 4"
+  },
+  {
+    "id": "english-symmetrical",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "c2c4",
+      "c7c5",
+      "g1f3",
+      "g8f6",
+      "b1c3",
+      "b8c6"
+    ],
+    "fen": "r1bqkb1r/pp1ppppp/2n2n2/2p5/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq - 4 4"
+  },
+  {
+    "id": "english-reversed-sicilian",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "c2c4",
+      "e7e5",
+      "b1c3",
+      "g8f6",
+      "g2g3",
+      "d7d5"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/5n2/3pp3/2P5/2N3P1/PP1PPP1P/R1BQKBNR w KQkq d6 0 4"
+  },
+  {
+    "id": "reti",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "g1f3",
+      "d7d5",
+      "c2c4",
+      "e7e6",
+      "g2g3",
+      "g8f6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2P5/5NP1/PP1PPP1P/RNBQKB1R w KQkq - 1 4"
+  },
+  {
+    "id": "birds",
+    "source": "project-authored standard legal move sequence",
+    "uci_moves": [
+      "f2f4",
+      "d7d5",
+      "g1f3",
+      "g8f6",
+      "e2e3",
+      "e7e6"
+    ],
+    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/5P2/4PN2/PPPP2PP/RNBQKB1R w KQkq - 0 4"
+  }
+]

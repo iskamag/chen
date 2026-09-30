@@ -1,0 +1,15 @@
+test_illegal_move_is_a_technical_failure (test_match.MatchTests.test_illegal_move_is_a_technical_failure) ... ok
+test_mate_at_ply_cap_is_completed (test_match.MatchTests.test_mate_at_ply_cap_is_completed) ... ok
+test_ply_cap_is_inconclusive (test_match.MatchTests.test_ply_cap_is_inconclusive) ... ok
+test_bootstrap_reproducible_and_color_pairing_preserved (test_stats.PairedStatsTests.test_bootstrap_reproducible_and_color_pairing_preserved) ... ok
+test_many_correlated_openings_do_not_create_confidence (test_stats.PairedStatsTests.test_many_correlated_openings_do_not_create_confidence) ... ok
+test_no_infinite_rating_and_no_small_sample_confidence (test_stats.PairedStatsTests.test_no_infinite_rating_and_no_small_sample_confidence) ... ok
+test_pentanomial_bins_and_score (test_stats.PairedStatsTests.test_pentanomial_bins_and_score) ... ok
+test_validation (test_stats.PairedStatsTests.test_validation) ... ok
+test_archive_cannot_escape_or_create_links (test_tools.MatchToolArchiveTests.test_archive_cannot_escape_or_create_links) ... ok
+test_release_digest_checked_before_extraction_or_execution (test_tools.MatchToolArchiveTests.test_release_digest_checked_before_extraction_or_execution) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.030s
+
+OK

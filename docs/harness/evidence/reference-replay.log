@@ -1,0 +1,41 @@
+{
+  "kind": "independent_python_chess_reference_replay",
+  "date": "2026-10-01",
+  "chess_version": "1.11.2",
+  "games": 64,
+  "completed_pairs": 32,
+  "legal_replayed_plies": 4015,
+  "candidate_wins": 0,
+  "candidate_draws": 3,
+  "candidate_losses": 61,
+  "candidate_score": 0.0234375,
+  "pentanomial": [
+    29,
+    3,
+    0,
+    0,
+    0
+  ],
+  "termination_counts": {
+    "CHECKMATE": 61,
+    "THREEFOLD_REPETITION": 3
+  },
+  "technical_failures": 0,
+  "incomplete_pairs": 0,
+  "all_headers_results_final_fens_match": true,
+  "no_moves_after_available_draw_or_terminal_outcome": true,
+  "bootstrap_interval_accepted_for_inference": null,
+  "elo_inference": null,
+  "lichess_rating_inference": null,
+  "sprt_completed": false,
+  "scope": "Replay and fixed-workload descriptive outcomes; authored correlated openings",
+  "input_sha256": {
+    "reference-games.pgn": "9cdb3dd387b6d210df386f13bb510085398b83ee5e13193d3fa92bbad1356278",
+    "reference-games.jsonl": "941a531adfae0fbd33ab7fc75024d100bd0aebf71d4acfa5299d756ad03968f6",
+    "reference-metadata.json": "fc7044cd051853f8472d870971ce2afc2385fa97a9422e20f9061467e3915cc8",
+    "reference-summary-original.json": "8158e3660b2e3da2b28fa766541571f0ec99598eab29bf66d3679e4c664fc480",
+    "reference-openings.json": "068b1b79635c6a9a8222448a7517102fbfa80723e303ca76abae8f7a24208872",
+    "reference-openings.txt": "d0f455b9e347f3b6a0492a5a1bd79424f23cea81f3ff9a6deaa624b3bdf078ac"
+  },
+  "verifier_sha256": "64f23fb21a37edf59b8ba403bb6b1b8153d3db5e3e1db34eacf4c303c7e206e2"
+}

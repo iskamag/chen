@@ -1,0 +1,31 @@
+{
+  "base": {
+    "command": [
+      "results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+    ],
+    "options": {
+      "Hash": 16,
+      "Threads": 1,
+      "UCI_LimitStrength": false,
+      "Skill Level": 20
+    },
+    "artifacts": {
+      "official-release-archive": "results/match-tools/stockfish.tar.gz",
+      "tool-manifest": "results/match-tools/manifest.json"
+    }
+  },
+  "candidate": {
+    "command": [
+      "results/reference-engine/chen"
+    ],
+    "options": {
+      "Hash": 16,
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20
+    },
+    "artifacts": {
+      "engine": "results/reference-engine/chen"
+    }
+  }
+}

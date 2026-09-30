@@ -46,14 +46,33 @@ fails the run. These remain implementation defects to fix before strength tests.
 
 Complete pairs produce a pentanomial histogram and descriptive score. A logistic
 relative-Elo point estimate is omitted at score 0 or 1. At least 30 pairs are
-required even to emit a diagnostic paired bootstrap interval; it assumes
-independently sampled opening pairs and is not a sequential acceptance test.
+required even to emit a diagnostic paired bootstrap interval, and the caller
+must explicitly pass `--independent-opening-pairs`. The default emits no interval.
+That flag asserts a defensible independent opening-pair sampling design; it
+does not establish independence or turn authored/repeated openings into a
+statistical sample. The interval is not a sequential acceptance test.
 Tiny mate fixtures exercise result/PGN handling only. Neither small samples nor
 deterministic opening repetitions justify an absolute rating inference.
 
+The [2026-10-01 Stockfish reference](reference-2026-10-01.md) records 61 losses,
+three draws and zero wins over 64 games, with a requested 2,000 nodes per move.
+All games and paired outcomes were independently replayed with python-chess.
+Its project-authored openings support a workload diagnostic; the original
+bootstrap interval is archived without being accepted for inference.
+
+`scripts/fetch_match_tools.py` pins the official Linux x86-64 archives for
+[Stockfish 19](https://github.com/official-stockfish/Stockfish/releases/tag/sf_19)
+and [Fastchess 1.8.2-alpha](https://github.com/Disservin/fastchess/releases/tag/v1.8.2-alpha),
+verifies SHA-256 before extraction/execution, and records binary hashes/version
+responses. Tools remain under ignored `results/`; they are external test tools.
+
+```sh
+python3 scripts/fetch_match_tools.py --out results/match-tools
+```
+
 For patch acceptance, use a version-pinned external runner with predeclared
 SPRT hypotheses, clocks, openings, pair model, concurrency and stopping rules.
-[Fastchess's primary manual](https://github.com/Disservin/fastchess/blob/master/man.md)
+[The pinned Fastchess manual](https://github.com/Disservin/fastchess/blob/v1.8.2-alpha/man.md)
 describes its paired-opening and SPRT options. Keep this local harness as a
 protocol/legality oracle and result collector; a full statistical acceptance
 runner remains an explicit next gate.
