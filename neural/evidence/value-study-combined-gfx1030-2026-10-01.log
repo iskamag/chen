@@ -1,0 +1,154 @@
+    Finished `release` profile [optimized] target(s) in 0.05s
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+test_abi_layout_and_exact_root_unsigned_fields (test_bridge.BridgeCPU.test_abi_layout_and_exact_root_unsigned_fields) ... ok
+test_copy_audit_rejects_deliberate_scalar_violation (test_bridge.BridgeCPU.test_copy_audit_rejects_deliberate_scalar_violation) ... ok
+test_epoch_bound_span_subsets_preserve_identity (test_bridge.BridgeCPU.test_epoch_bound_span_subsets_preserve_identity) ... ok
+test_pointer_metadata_validator_rejects_shape_stride_type_alias (test_bridge.BridgeCPU.test_pointer_metadata_validator_rejects_shape_stride_type_alias) ... ok
+test_root_raw_ep_and_effective_ep_hash_differ (test_bridge.BridgeCPU.test_root_raw_ep_and_effective_ep_hash_differ) ... ok
+test_runtime_api_mismatch_fails_before_context_create (test_bridge.BridgeCPU.test_runtime_api_mismatch_fails_before_context_create) ... ok
+test_unsupported_library_abis_fail_without_fallback (test_bridge.BridgeCPU.test_unsupported_library_abis_fail_without_fallback) ... ok
+test_cross_stream_publication_admission_and_source_retirement (test_bridge.BridgeGPU.test_cross_stream_publication_admission_and_source_retirement) ... ok
+test_direct_ingress_sample_loss_gradient_parity_and_lifecycle (test_bridge.BridgeGPU.test_direct_ingress_sample_loss_gradient_parity_and_lifecycle) ... ok
+test_failed_publication_and_admission_drain_queued_source_reads (test_bridge.BridgeGPU.test_failed_publication_and_admission_drain_queued_source_reads) ... ok
+test_multilevel_parent_parity_expanded_successors_and_stale_selectors (test_bridge.BridgeGPU.test_multilevel_parent_parity_expanded_successors_and_stale_selectors) ... ok
+test_range_capacity_epoch_and_terminal_failures (test_bridge.BridgeGPU.test_range_capacity_epoch_and_terminal_failures) ... ok
+test_retained_legal_history_third_repetition_successor (test_bridge.BridgeGPU.test_retained_legal_history_third_repetition_successor) ... ok
+test_sparse_fixtures_exact_transition_parity (test_bridge.BridgeGPU.test_sparse_fixtures_exact_transition_parity) ... ok
+test_benchmark_same_loss_schedule_no_persistent_duplicate (test_compact.CompactTests.test_benchmark_same_loss_schedule_no_persistent_duplicate) ... ok
+test_clear_keeps_ids_monotonic_and_gathered_leases_immutable (test_compact.CompactTests.test_clear_keeps_ids_monotonic_and_gathered_leases_immutable) ... ok
+test_dense_support_all_word_boundaries_sentinels_and_terminal (test_compact.CompactTests.test_dense_support_all_word_boundaries_sentinels_and_terminal) ... ok
+test_exact_unclipped_clock_bitpatterns_and_autograd_free_admission (test_compact.CompactTests.test_exact_unclipped_clock_bitpatterns_and_autograd_free_admission) ... ok
+test_generated_support_each_action_and_successor_matches_rules_oracle (test_compact.CompactTests.test_generated_support_each_action_and_successor_matches_rules_oracle) ... ok
+test_gpu_decoder_exact_all_clocks_and_signed_bitboards (test_compact.CompactTests.test_gpu_decoder_exact_all_clocks_and_signed_bitboards) ... ok
+test_hot_sampling_device_dtype_and_seed_match_dense_reference (test_compact.CompactTests.test_hot_sampling_device_dtype_and_seed_match_dense_reference) ... ok
+test_invalid_ingress_rejected_atomically_before_any_ring_mutation (test_compact.CompactTests.test_invalid_ingress_rejected_atomically_before_any_ring_mutation) ... ok
+test_model_outputs_losses_and_gradients_equal_dense_all_architectures (test_compact.CompactTests.test_model_outputs_losses_and_gradients_equal_dense_all_architectures) ... ok
+test_nonzero_history_handles_preserved_without_claiming_context (test_compact.CompactTests.test_nonzero_history_handles_preserved_without_claiming_context) ... ok
+test_ring_wrap_and_oversized_transaction_keep_newest_records (test_compact.CompactTests.test_ring_wrap_and_oversized_transaction_keep_newest_records) ... ok
+test_rule_fixtures_raw_ep_castles_promotions_and_color_canonicalization (test_compact.CompactTests.test_rule_fixtures_raw_ep_castles_promotions_and_color_canonicalization) ... ok
+test_clear_invalidation_without_realloc_or_identity_reuse (test_data.ReplayTests.test_clear_invalidation_without_realloc_or_identity_reuse) ... ok
+test_gather_is_owned_and_preserves_device_dtype (test_data.ReplayTests.test_gather_is_owned_and_preserves_device_dtype) ... ok
+test_generated_transitions_legal_and_same_seed_identical (test_data.ReplayTests.test_generated_transitions_legal_and_same_seed_identical) ... ok
+test_ingress_drops_autograd_graph (test_data.ReplayTests.test_ingress_drops_autograd_graph) ... ok
+test_ingress_rejects_dtype_shape_illegality_and_nonfinite_atomically (test_data.ReplayTests.test_ingress_rejects_dtype_shape_illegality_and_nonfinite_atomically) ... ok
+test_sampling_reproducible_and_empty_errors (test_data.ReplayTests.test_sampling_reproducible_and_empty_errors) ... ok
+test_strict_legal_sampling_terminal_and_nan (test_data.ReplayTests.test_strict_legal_sampling_terminal_and_nan) ... ok
+test_wraparound_and_oversized_append_keep_newest (test_data.ReplayTests.test_wraparound_and_oversized_append_keep_newest) ... ok
+test_checkpoint_rejects_corrupted_deterministic_buffers (test_data.TrainingTests.test_checkpoint_rejects_corrupted_deterministic_buffers) ... ok
+test_checkpoint_rejects_schema_weights_and_arbitrary_pickle (test_data.TrainingTests.test_checkpoint_rejects_schema_weights_and_arbitrary_pickle) ... ok
+test_checkpoint_roundtrip_all_architectures (test_data.TrainingTests.test_checkpoint_roundtrip_all_architectures) ... ok
+test_comparison_identical_data_and_batch_schedule (test_data.TrainingTests.test_comparison_identical_data_and_batch_schedule) ... ok
+test_loss_finite_update_and_reproducible_on_all_models (test_data.TrainingTests.test_loss_finite_update_and_reproducible_on_all_models) ... ok
+test_composition_refresh_losses_differentiate_dynamics (test_diamonds.DiamondTest.test_composition_refresh_losses_differentiate_dynamics) ... ok
+test_controls_have_identical_initial_metrics (test_diamonds.DiamondTest.test_controls_have_identical_initial_metrics) ... ok
+test_generated_corpus_replays_every_move_and_encodes_canonical_actions (test_diamonds.DiamondTest.test_generated_corpus_replays_every_move_and_encodes_canonical_actions) ... ok
+test_initial_fixture_certifies_full_fen_and_draw_context (test_diamonds.DiamondTest.test_initial_fixture_certifies_full_fen_and_draw_context) ... ok
+test_raw_ep_schema_and_canonical_split_identity (test_diamonds.DiamondTest.test_raw_ep_schema_and_canonical_split_identity) ... ok
+test_reject_dependent_moves_pawns_and_draw_boundary (test_diamonds.DiamondTest.test_reject_dependent_moves_pawns_and_draw_boundary) ... ok
+test_contrast_rejects_action_blind_and_swapped_prediction (test_dynamics.TransportTest.test_contrast_rejects_action_blind_and_swapped_prediction) ... ok
+test_declared_check_evasion_fixture_is_actually_check_and_both_alternatives_legal (test_dynamics.TransportTest.test_declared_check_evasion_fixture_is_actually_check_and_both_alternatives_legal) ... ok
+test_gpu_transport_outputs_and_gradients_match_cpu (test_dynamics.TransportTest.test_gpu_transport_outputs_and_gradients_match_cpu) ... ok
+test_neural_predictor_does_not_read_exact_successor_and_has_action_gradient (test_dynamics.TransportTest.test_neural_predictor_does_not_read_exact_successor_and_has_action_gradient) ... ok
+test_piece_algebra_exact_all_special_moves_and_colors (test_dynamics.TransportTest.test_piece_algebra_exact_all_special_moves_and_colors) ... ok
+test_random_legal_algebra_and_corpus_replay (test_dynamics.TransportTest.test_random_legal_algebra_and_corpus_replay) ... ok
+test_source_target_capture_and_castling_slot_identity (test_dynamics.TransportTest.test_source_target_capture_and_castling_slot_identity) ... ok
+test_conversion_is_symmetric_finite_static_cp_not_mate (test_inference.InferenceCPU.test_conversion_is_symmetric_finite_static_cp_not_mate) ... ok
+test_explicit_teacher_checkpoint_cli_preserves_contract_and_weights (test_inference.InferenceCPU.test_explicit_teacher_checkpoint_cli_preserves_contract_and_weights) ... /usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+ok
+test_integrity_schema_and_size_guards (test_inference.InferenceCPU.test_integrity_schema_and_size_guards) ... /usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+ok
+test_trained_architecture_integer_export_reload_and_dynamic_batch (test_inference.InferenceCPU.test_trained_architecture_integer_export_reload_and_dynamic_batch) ... /usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+ok
+test_all_architectures_remap_preserves_gpu_integer_scores (test_inference.InferenceGPU.test_all_architectures_remap_preserves_gpu_integer_scores) ... /usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:89: DeprecationWarning: `torch.jit.save` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+  warnings.warn(
+ok
+test_color_rank_flip_preserves_features (test_models.FeaturesTest.test_color_rank_flip_preserves_features) ... ok
+test_invalid_fen_and_moves_rejected (test_models.FeaturesTest.test_invalid_fen_and_moves_rejected) ... ok
+test_masks_terminal_rows_and_normalization (test_models.FeaturesTest.test_masks_terminal_rows_and_normalization) ... ok
+test_move_mapping_is_bijective_and_color_canonical (test_models.FeaturesTest.test_move_mapping_is_bijective_and_color_canonical) ... ok
+test_all_models_shapes_gradients_and_multistep (test_models.ModelsTest.test_all_models_shapes_gradients_and_multistep) ... ok
+test_attacks_and_color_symmetry_against_independent_rules_oracle (test_models.ModelsTest.test_attacks_and_color_symmetry_against_independent_rules_oracle) ... ok
+test_gpu_matches_cpu_forward_transition_and_gradients (test_models.ModelsTest.test_gpu_matches_cpu_forward_transition_and_gradients) ... ok
+test_move_changes_latent_and_legality_is_external (test_models.ModelsTest.test_move_changes_latent_and_legality_is_external) ... ok
+test_pseudoattack_blockers_and_pawn_directions (test_models.ModelsTest.test_pseudoattack_blockers_and_pawn_directions) ... ok
+test_resident_branch_and_rollout_match_individual_transitions (test_models.ModelsTest.test_resident_branch_and_rollout_match_individual_transitions) ... ok
+test_abi_and_sibling_dedup_has_one_vote_complete_edges_only (test_teacher.TeacherCPU.test_abi_and_sibling_dedup_has_one_vote_complete_edges_only) ... ok
+test_actual_search_loss_finite_update_and_mate_exclusion (test_teacher.TeacherCPU.test_actual_search_loss_finite_update_and_mate_exclusion) ... /tmp/chen-integrated.SIltjjui/neural/tests/test_teacher.py:152: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(loss["search_utility"]), 0)
+ok
+test_feature_identity_matches_exact_color_clock_ep_equivalence (test_teacher.TeacherCPU.test_feature_identity_matches_exact_color_clock_ep_equivalence) ... ok
+test_lineage_and_position_split_is_reproducible_and_disjoint (test_teacher.TeacherCPU.test_lineage_and_position_split_is_reproducible_and_disjoint) ... ok
+test_ring_label_alignment_overwrite_hot_sampling_and_atomic_validation (test_teacher.TeacherCPU.test_ring_label_alignment_overwrite_hot_sampling_and_atomic_validation) ... ok
+test_search_checkpoint_roundtrip_and_corruption_rejection (test_teacher.TeacherCPU.test_search_checkpoint_roundtrip_and_corruption_rejection) ... ok
+test_shared_comparison_heads_start_identically (test_teacher.TeacherCPU.test_shared_comparison_heads_start_identically) ... ok
+test_complete_bfs_exact_material_parent_labels_and_resident_learning (test_teacher.TeacherGPU.test_complete_bfs_exact_material_parent_labels_and_resident_learning) ... ok
+test_unreduced_and_stale_labels_rejected (test_teacher.TeacherGPU.test_unreduced_and_stale_labels_rejected) ... ok
+test_checkpoint_roundtrip_and_semantic_corruption_rejection (test_value_heads.ValueHeadsTest.test_checkpoint_roundtrip_and_semantic_corruption_rejection) ... ok
+test_gradients_update_new_heads_then_encoder_with_same_cp_loss (test_value_heads.ValueHeadsTest.test_gradients_update_new_heads_then_encoder_with_same_cp_loss) ... ok
+test_heads_preserve_encoder_and_exact_initial_control (test_value_heads.ValueHeadsTest.test_heads_preserve_encoder_and_exact_initial_control) ... ok
+test_material_matches_independent_piece_count_oracle_and_symmetry (test_value_heads.ValueHeadsTest.test_material_matches_independent_piece_count_oracle_and_symmetry) ... ok
+test_material_special_move_effects_and_quiet_action_tie (test_value_heads.ValueHeadsTest.test_material_special_move_effects_and_quiet_action_tie) ... ok
+test_scalar_cp_remains_trainable_beyond_inverse_utility_saturation (test_value_heads.ValueHeadsTest.test_scalar_cp_remains_trainable_beyond_inverse_utility_saturation) ... ok
+test_common_cp_loss_uses_unrounded_outputs_and_excludes_mates (test_value_study.ValueStudyCPU.test_common_cp_loss_uses_unrounded_outputs_and_excludes_mates) ... ok
+test_exact_current_gather_alignment_without_dense_or_next_observations (test_value_study.ValueStudyCPU.test_exact_current_gather_alignment_without_dense_or_next_observations) ... ok
+test_grouped_child_order_current_mover_sign_ties_and_singletons (test_value_study.ValueStudyCPU.test_grouped_child_order_current_mover_sign_ties_and_singletons) ... ok
+test_metrics_bins_and_paired_family_interval_match_independent_arithmetic (test_value_study.ValueStudyCPU.test_metrics_bins_and_paired_family_interval_match_independent_arithmetic) ... ok
+test_value_only_training_updates_readout_then_encoder_and_keeps_policy_fixed (test_value_study.ValueStudyCPU.test_value_only_training_updates_readout_then_encoder_and_keeps_policy_fixed) ... ok
+test_actual_gpu_gather_loss_backward_and_update_without_payload_host_copy (test_value_study.ValueStudyGPU.test_actual_gpu_gather_loss_backward_and_update_without_payload_host_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 25.982s
+
+OK

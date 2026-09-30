@@ -1,0 +1,15 @@
+test_common_cp_loss_uses_unrounded_outputs_and_excludes_mates (neural.tests.test_value_study.ValueStudyCPU.test_common_cp_loss_uses_unrounded_outputs_and_excludes_mates) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/tmp/chen-neural-methods/project/neural/tests/test_value_study.py:40: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertAlmostEqual(float(loss), ((100.25 / 800) ** 2 + (50.75 / 800) ** 2) / 4, places=7)
+ok
+test_exact_current_gather_alignment_without_dense_or_next_observations (neural.tests.test_value_study.ValueStudyCPU.test_exact_current_gather_alignment_without_dense_or_next_observations) ... ok
+test_grouped_child_order_current_mover_sign_ties_and_singletons (neural.tests.test_value_study.ValueStudyCPU.test_grouped_child_order_current_mover_sign_ties_and_singletons) ... ok
+test_metrics_bins_and_paired_family_interval_match_independent_arithmetic (neural.tests.test_value_study.ValueStudyCPU.test_metrics_bins_and_paired_family_interval_match_independent_arithmetic) ... ok
+test_value_only_training_updates_readout_then_encoder_and_keeps_policy_fixed (neural.tests.test_value_study.ValueStudyCPU.test_value_only_training_updates_readout_then_encoder_and_keeps_policy_fixed) ... ok
+test_actual_gpu_gather_loss_backward_and_update_without_payload_host_copy (neural.tests.test_value_study.ValueStudyGPU.test_actual_gpu_gather_loss_backward_and_update_without_payload_host_copy) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.679s
+
+OK

@@ -1,0 +1,10 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+{"architecture": "square", "head": "three_logit", "seed": 20261001, "training_seconds": 0.6433529870118946, "heldout_cp_mae": 306.7187194824219, "material_cp_mae": 326.87353515625, "root_regret_cp": 545.75}
+{"architecture": "square", "head": "direct_cp", "seed": 20261001, "training_seconds": 0.15217888308688998, "heldout_cp_mae": 308.4642639160156, "material_cp_mae": 326.87353515625, "root_regret_cp": 531.75}
+{"architecture": "square", "head": "material_residual", "seed": 20261001, "training_seconds": 0.16578212892636657, "heldout_cp_mae": 299.5318603515625, "material_cp_mae": 326.87353515625, "root_regret_cp": 364.5}
+{"architecture": "relation", "head": "three_logit", "seed": 20261001, "training_seconds": 0.2624136551748961, "heldout_cp_mae": 305.12396240234375, "material_cp_mae": 326.87353515625, "root_regret_cp": 476.5}
+{"architecture": "relation", "head": "direct_cp", "seed": 20261001, "training_seconds": 0.25685288198292255, "heldout_cp_mae": 311.98779296875, "material_cp_mae": 326.87353515625, "root_regret_cp": 518.0}
+{"architecture": "relation", "head": "material_residual", "seed": 20261001, "training_seconds": 0.26306436606682837, "heldout_cp_mae": 302.581298828125, "material_cp_mae": 326.87353515625, "root_regret_cp": 264.25}
+{"architecture": "plan", "head": "three_logit", "seed": 20261001, "training_seconds": 0.3776797498576343, "heldout_cp_mae": 306.7206115722656, "material_cp_mae": 326.87353515625, "root_regret_cp": 476.5}
+{"architecture": "plan", "head": "direct_cp", "seed": 20261001, "training_seconds": 0.3557795400265604, "heldout_cp_mae": 312.390625, "material_cp_mae": 326.87353515625, "root_regret_cp": 475.875}
+{"architecture": "plan", "head": "material_residual", "seed": 20261001, "training_seconds": 0.3827927028760314, "heldout_cp_mae": 304.1041259765625, "material_cp_mae": 326.87353515625, "root_regret_cp": 264.25}

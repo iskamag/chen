@@ -13,11 +13,16 @@ The research includes [square/relation/plan architectures](docs/NEURAL_ARCHITECT
 [compact resident replay](docs/COMPACT_REPLAY.md), and the
 [direct HIP-to-Torch bridge](docs/VRAM_BRIDGE.md),
 [resident search teachers](docs/SEARCH_TEACHER.md), and
-[same-model native deployment](docs/NEURAL_DEPLOYMENT.md). The first controlled
+[same-model native deployment](docs/NEURAL_DEPLOYMENT.md), plus
+[value-head controls](docs/VALUE_HEADS.md) and a
+[predeclared 27-run value study](docs/VALUE_STUDY.md). The first controlled
 search-teacher run trails material on heldout inputs. Trained static inference
 is integrated in the main GPU engine. Synthetic mechanics and mixed/negative dynamics
 results are recorded explicitly; no neural playing-strength claim is made.
-The current combined neural suite passes 76 actual gfx1030 tests without skips.
+The 27-run study also trails material on heldout score error and mean selected-child
+regret. Improved sibling concordance did not establish stronger top decisions.
+The combined suite passes 88 tests without skips in the gfx1030 ROCm environment,
+including CPU value-head contracts and the strict resident GPU training hot path.
 
 ```sh
 cargo build --release

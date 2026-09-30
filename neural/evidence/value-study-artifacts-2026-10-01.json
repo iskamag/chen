@@ -1,0 +1,537 @@
+{
+  "kind": "resident_value_study_artifact_manifest",
+  "date": "2026-10-01",
+  "strength_evidence": false,
+  "negative_result": "All27 learned runs trail material in heldoutCPMAE; all nine architecture/head three-seed averages also trail material in selected-child regret. Residual pair concordance improves, which does not establish stronger decisions.",
+  "run_configuration": {
+    "train_families": 128,
+    "heldout_families": 32,
+    "corpus_seed": 20261001,
+    "seeds": [
+      20261001,
+      20261002,
+      20261003
+    ],
+    "steps": 2048,
+    "batch_size": 128,
+    "width": 32,
+    "depth": 1,
+    "tree_depth": 3,
+    "remaining_parent_horizon": 2,
+    "evaluator": 1,
+    "arena_capacity": 250000,
+    "architectures": [
+      "square",
+      "relation",
+      "plan"
+    ],
+    "heads": [
+      "three_logit",
+      "direct_cp",
+      "material_residual"
+    ],
+    "loss": "ordinary-only SmoothL1(value_cp/800, teacher_cp/800)",
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "grad_clip": 1.0,
+    "scale_cp": 800.0,
+    "mate_band_excluded": 29000,
+    "sample_schedule": "same resident with-replacement indices for each head/architecture within seed",
+    "model_initialization": "same comparable encoder per architecture/seed; zero new scalar heads; existing3head seeded"
+  },
+  "data_fingerprints": {
+    "train": "ec5790127fb0cce68c811fd7f93d9d33238cb75276e3f1d77fb0e2688115a510",
+    "heldout": "0ee380deb356a81e87f72233b9d26022a8f734e12eb0eb59700b1e64f23d1b61",
+    "scope": "explicit post-training cold payload downloads for checksums; never training ingress"
+  },
+  "sample_stream_sha256": {
+    "20261001": "2a4411aca602fa660a39d1846c15e5239892cc0cb8196295dc29465688588a25",
+    "20261002": "2069d477f52bb0842f516a72cad36db323666252f56501160a6be7d64e52ddc0",
+    "20261003": "9458f257a54fa433d741e9d029c268ffdb66d1c4fab1dbbd61b062b5a515809f"
+  },
+  "sources": [
+    {
+      "path": "neural/value_study.py",
+      "bytes": 20617,
+      "sha256": "9ce8b91d260e6e0c60b126ded6ad251fd758b6c109788063c2f209c1b29728a7"
+    },
+    {
+      "path": "neural/tests/test_value_study.py",
+      "bytes": 6707,
+      "sha256": "3ae1f1d3f7b1dd5ede5ff05bab938a4227d1bd73407428353a29009140cd7886"
+    },
+    {
+      "path": "neural/value_heads.py",
+      "bytes": 10832,
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+    },
+    {
+      "path": "docs/VALUE_STUDY.md",
+      "bytes": 14189,
+      "sha256": "4a0ad1a88f8385a8bf29ce76c288271b517d8f7fe19360e0435b6e1ad5f52dde"
+    },
+    {
+      "path": "neural/evidence/value-study-heads-training-snapshot-2026-10-01.py",
+      "bytes": 10606,
+      "sha256": "bf1578d125be770e807c9a23a6a6f3cbccd5b69f9f07211adde4e91120cd905d"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "bytes": 3615347,
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.log",
+      "bytes": 5830,
+      "sha256": "266fa31bf5e6b9d7c39af2eb3c6e51a042a088871f46a42dbfe8252cfe341a9d"
+    },
+    {
+      "path": "neural/evidence/value-study-heads-training-snapshot-2026-10-01.py",
+      "bytes": 10606,
+      "sha256": "bf1578d125be770e807c9a23a6a6f3cbccd5b69f9f07211adde4e91120cd905d"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.json",
+      "bytes": 306141,
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.log",
+      "bytes": 1930,
+      "sha256": "9bdb257ae8593e5b65cef29e924576e6bc10dd641f05496872accb8324979594"
+    },
+    {
+      "path": "neural/evidence/value-study-predeclared-2026-10-01.json",
+      "bytes": 1368,
+      "sha256": "cf8fbcfea3828e631a1612081e3035d881c4c42b098a58de9eab927315825dda"
+    },
+    {
+      "path": "neural/evidence/value-study-tests-cpu-2026-10-01.log",
+      "bytes": 1778,
+      "sha256": "b8ac9ad1d4b848293cf2e1b59e0f9579802e3b6886594874e8f22fd2aea80aa8"
+    },
+    {
+      "path": "neural/evidence/value-study-tests-gfx1030-2026-10-01.log",
+      "bytes": 1727,
+      "sha256": "1c5ca75e5c83a9b9bdb777e497d103486e65640e13331013a52c09afb909416c"
+    }
+  ],
+  "checkpoints": {
+    "kind": "current_restricted_loader_validation_of_actual_value_study_checkpoints",
+    "strength_evidence": false,
+    "records": [
+      {
+        "checkpoint": "results/neural/value-study/square-three_logit-20261001.pt",
+        "bytes": 1732602,
+        "sha256": "b11acabdda2d75c49994970d87079acda113bbea2398629b8e249146c4d04930",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "three_logit",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          18.363338470458984,
+          -502.6155090332031
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-direct_cp-20261001.pt",
+        "bytes": 1733294,
+        "sha256": "8854e3ee9b816693689cc4d512f2823ed47e17b20ed2350ad4491180d49203b4",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "direct_cp",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          51.21821212768555,
+          -647.019775390625
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-material_residual-20261001.pt",
+        "bytes": 1733734,
+        "sha256": "219654ee3e109a9c50731a72a6bc25e1d51d6c194887acb83717552adc5905f1",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "material_residual",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          23.968591690063477,
+          530.6837768554688
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-three_logit-20261001.pt",
+        "bytes": 1752636,
+        "sha256": "e1790586f193fa7d79bc4e99674cca6a20ea703bb3543a75430546b142e4ed09",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "three_logit",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          14.618998527526855,
+          117.73726654052734
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-direct_cp-20261001.pt",
+        "bytes": 1753252,
+        "sha256": "0ff1e81258b1361215910fa4c926dd4d283483c3631185e505b03d433f1eb573",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "direct_cp",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          21.275264739990234,
+          662.5120849609375
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-material_residual-20261001.pt",
+        "bytes": 1753756,
+        "sha256": "bb39d41fcd2498e674b72452cf7e153e4382365fe7b22ca57ebc671c84f77fe9",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "material_residual",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          -6.645074367523193,
+          -154.72438049316406
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-three_logit-20261001.pt",
+        "bytes": 1773263,
+        "sha256": "0fd806905e242b9d783016af17313eee79bb0a44ff0b9119bc7b090a4a08ee1b",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "three_logit",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          15.447653770446777,
+          390.7818908691406
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-direct_cp-20261001.pt",
+        "bytes": 1773853,
+        "sha256": "a36cd1b0245cac4f4791b36f5e531cb87fca3ebe6a990f3f9329b04f25307017",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "direct_cp",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          -4.696802616119385,
+          719.3411254882812
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-material_residual-20261001.pt",
+        "bytes": 1774429,
+        "sha256": "f699ce325f45332902819119c27934a8a5c76a6ce3dcb42898c4f8fa7e26a333",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "material_residual",
+        "seed": 20261001,
+        "finite_cpu_fixture_cp": [
+          8.855713844299316,
+          -321.7366027832031
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-three_logit-20261002.pt",
+        "bytes": 1732602,
+        "sha256": "52aa94fd431112b9307c441abd53a89b1523c85158c9a7bc76d7f65b0b337c85",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "three_logit",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          134.50473022460938,
+          -945.3746948242188
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-direct_cp-20261002.pt",
+        "bytes": 1733294,
+        "sha256": "5ef99555be77301260fb3b5968b09ebd5dc7aa15087bd90c50242533276f65f4",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "direct_cp",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          138.77316284179688,
+          -1372.5076904296875
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-material_residual-20261002.pt",
+        "bytes": 1733734,
+        "sha256": "c2dfb81f4b3150a3dbe7b46f2c09e3c5d3c8baa0c8524ac33d90318351d88449",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "material_residual",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          117.21532440185547,
+          313.77471923828125
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-three_logit-20261002.pt",
+        "bytes": 1752636,
+        "sha256": "ac050b7fe03505f8bf0ba8220175c0b876a01782be44b9ab7669a7cc6605e0fb",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "three_logit",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          -47.846012115478516,
+          -1075.1953125
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-direct_cp-20261002.pt",
+        "bytes": 1753252,
+        "sha256": "32b6843bdc2ec215b4f458182abccc0daba3eff3d0480634c5ccaaed2fb6be0d",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "direct_cp",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          -6.52085542678833,
+          -563.8991088867188
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-material_residual-20261002.pt",
+        "bytes": 1753756,
+        "sha256": "b11f8b43ac358ff5f852a53dc80590f1568208035df6e5b0ba50719e6a1fe078",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "material_residual",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          43.296932220458984,
+          16.13193702697754
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-three_logit-20261002.pt",
+        "bytes": 1773263,
+        "sha256": "daa6d3620337816eebcb8637684a97e2e812a43e750880b85f2233fc55f9a3a7",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "three_logit",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          44.264610290527344,
+          -914.2130737304688
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-direct_cp-20261002.pt",
+        "bytes": 1773853,
+        "sha256": "28112a484df3bbaa830e6aac649558012fef3483796ac979c0eae98ba76da769",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "direct_cp",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          111.19596862792969,
+          -1030.091064453125
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-material_residual-20261002.pt",
+        "bytes": 1774429,
+        "sha256": "387a0bfa7a31cfdd238297be27a773da16c5ab56bc8d23a692a3919aa4e2fb8e",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "material_residual",
+        "seed": 20261002,
+        "finite_cpu_fixture_cp": [
+          17.68412208557129,
+          -23.52365493774414
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-three_logit-20261003.pt",
+        "bytes": 1732602,
+        "sha256": "f1dd17c302fcb7187cdb6cce13370c1ee9928998395168bd2f2bd0e0f403f196",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "three_logit",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          144.44190979003906,
+          -28.54115104675293
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-direct_cp-20261003.pt",
+        "bytes": 1733294,
+        "sha256": "f3c9cbe29276946fb7804a4ffcd7add45b411d6405c0fa5b57853abe8e7a2c29",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "direct_cp",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          133.96116638183594,
+          -1207.92333984375
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/square-material_residual-20261003.pt",
+        "bytes": 1733734,
+        "sha256": "3c019315fc8feb6d850c294dadb5f959afc9118238e6f50bfb6c7e1eb7da45df",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "square",
+        "head": "material_residual",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          119.59461975097656,
+          251.94342041015625
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-three_logit-20261003.pt",
+        "bytes": 1752636,
+        "sha256": "7bf4a3901113a98e5877f631005afe4577bf1a4628d80dcc79b58a6421c28f08",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "three_logit",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          6.682217121124268,
+          -440.4505310058594
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-direct_cp-20261003.pt",
+        "bytes": 1753252,
+        "sha256": "79f47a4fa3726add1985b798c0cd6882f1fde2b2aed45bba350633e39ac8642a",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "direct_cp",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          -9.835030555725098,
+          242.89295959472656
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/relation-material_residual-20261003.pt",
+        "bytes": 1753756,
+        "sha256": "a3a56b2e58b0df551672dde97aed3b75556b7931d63f47c918540a5dbedb11a7",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "relation",
+        "head": "material_residual",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          5.813096523284912,
+          21.046152114868164
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-three_logit-20261003.pt",
+        "bytes": 1773263,
+        "sha256": "7a123f7d79d9ca541f14d0248a5e81244d78852d1316db15ac1f335ce685aea3",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "three_logit",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          38.48268508911133,
+          -365.2665710449219
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-direct_cp-20261003.pt",
+        "bytes": 1773853,
+        "sha256": "461d64952bfbfd97a5169e0f7fdd67926335f6de6ff8159a5156c7af1e0e74c3",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "direct_cp",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          -15.713824272155762,
+          187.1700897216797
+        ]
+      },
+      {
+        "checkpoint": "results/neural/value-study/plan-material_residual-20261003.pt",
+        "bytes": 1774429,
+        "sha256": "bfbd7aab711ec454618bbcd52c9b0c99c6bc803a7b6ac3e4f2dffd6c3fc08be9",
+        "kind": "chen_value_adapter_checkpoint",
+        "architecture": "plan",
+        "head": "material_residual",
+        "seed": 20261003,
+        "finite_cpu_fixture_cp": [
+          -18.05972671508789,
+          7.063607215881348
+        ]
+      }
+    ],
+    "loader_source_sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "torch": "2.10.0+rocm7.0",
+    "scope": "CPU only after training; all27 actual artifacts hash-verified and strictly loaded, finite2fixture scores; no inference or strength claim"
+  },
+  "producer_library": {
+    "path": "/tmp/chen-teacher-stage/libchen_gpu.so",
+    "sha256": "5e0e0dd026211a6489c20faf90dcf0c3d3e7677daa64f5bd85a6a79765e167c4"
+  },
+  "producer_source_sha256": {
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "5440d05054a6673f42a3aa4e14e2573579d45f9bbca32aa0662b6c1d55fdebc9",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/teacher_probe.py": "e3d9ea9c02c8ecab6bb8d54cd143691c3be91c3b5d837c407dae2060a2f529d6",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "gpu/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+    "gpu/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192"
+  },
+  "head_source_scope": {
+    "training_source_sha256": "bf1578d125be770e807c9a23a6a6f3cbccd5b69f9f07211adde4e91120cd905d",
+    "final_source_sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "delta": "unused import removal; float32 base admission guard; exact integer material metadata load guard; no forward/state mathematical change",
+    "current_loader_all27_validated_cpu": true
+  },
+  "commands": {
+    "container_workdir": "cpp-rocm:/tmp/chen-neural-methods/project",
+    "environment": "PYTHONPATH=/tmp/chen-neural-methods/deps OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1",
+    "main": "python -m neural.value_study --library /tmp/chen-teacher-stage/libchen_gpu.so --producer-manifest results/neural/teacher-producer-evidence.json --output results/neural/value-study-gfx1030.json --checkpoint-dir results/neural/value-study --arena-capacity 250000",
+    "gpu_tests": "CHEN_VALUE_STUDY_TEST_GPU=1 python -m unittest neural.tests.test_value_study -v",
+    "cpu_tests": "python -m unittest neural.tests.test_value_study -v",
+    "checkpoint_validation": "PYTHONPATH=/tmp/chen-neural-methods/project:/tmp/chen-neural-methods/deps python results/neural/value-study-validate.py"
+  },
+  "checkpoint_validation_script": {
+    "path": "results/neural/value-study-validate.py",
+    "bytes": 1690,
+    "sha256": "6e05e274d3cdca61ece0a449ed153be6db4f8be41c0ffa4152584e9ac78044e7"
+  },
+  "test_scope": {
+    "gpu": {
+      "passed": 6,
+      "skipped": 0,
+      "seconds": 2.679,
+      "adapter_source": "archived training snapshot"
+    },
+    "cpu": {
+      "passed": 5,
+      "skipped": 1,
+      "adapter_source": "final guarded source"
+    }
+  },
+  "limitations": [
+    "single fixed synthetic legal-game corpus, finite-depth classical teacher, no outcomes or match strength",
+    "initialization/sample seeds vary; games held fixed, heldout metrics not independent across seeds",
+    "ordering excludes terminal/mate-band root actions; no full engine policy claim",
+    "heads differ in initialization and parameter count; base shared within architecture/seed",
+    "scalar producer/control synchronization allowed; payload checksums/checkpoints are cold explicit downloads"
+  ]
+}
