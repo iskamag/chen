@@ -3,8 +3,9 @@
 # Chen
 
 A chess engine written from scratch in Rust, and a laboratory for controlled
-architecture experiments. No runtime dependencies. The current engine is a
-single-threaded classical baseline; neural evaluation comes next.
+architecture experiments. The portable engine has no runtime dependencies.
+An optional HIP backend runs on gfx1030 through the existing ROCm container;
+neural architecture research lives in the separate `../chen-neural` worktree.
 
 ```sh
 cargo build --release
@@ -36,10 +37,36 @@ responsive. Options: `Hash` (MiB), `Eval` (`tapered` or `material`), `UseTT`,
 and multiple search workers are future work; unsupported `go` parameters
 produce an `info string` error.
 
+## GPU and neural research
+
+```sh
+scripts/rocm_run.sh test
+scripts/rocm_run.sh bench --backend hip-frontier --depth 3
+scripts/rocm_run.sh uci
+```
+
+Set UCI `Backend` to `hip-frontier` for GPU leaf batches; `cpu-frontier` is its
+full-width oracle, and `alphabeta` selects the original engine. `BatchSize` and
+`MaxPositions` bound inference batches and per-iteration trees. `Level` 1..20
+caps resource budgets; levels carry no calibrated rating labels.
+
+[GPU integration](docs/GPU_INTEGRATION.md) documents the exact execution scope;
+[GPU research](docs/GPU_RESEARCH.md) records hardware measurements and search
+alternatives. The [research program](docs/research/PROGRAM.md) coordinates teams
+and production gates; [current status](docs/research/STATUS.md) records evidence and
+remaining work. Models, latent transitions and resident replay are on
+`research/neural` in `../chen-neural`; they have not been merged into inference.
+The [offline match harness](docs/harness/README.md) saves paired games and failures.
+The requested target is 2500 on Lichess, which requires separate rating evidence.
+
 ## Components
 
 | Module | Owns | Experiment seam |
 | --- | --- | --- |
+| `backend` | Batched scoring and search scheduling contracts | CPU/HIP evaluation and alpha-beta/frontier implementations |
+| `frontier` | Bounded full-width minimax, exact draw history, batched leaves | Host rules oracle for future GPU scheduling and neural batches |
+| `hip` | Versioned HIP ABI loading and exclusive device context | Actual gfx1030 kernels, ordered batch parity and explicit failures |
+| `strength` | Resource-level policy | Budget caps now; calibrated learned level policies later |
 | `core` | Bitboards, attacks, FEN, legal moves, special moves, hashes, make/unmake, perft | Replace attack kernels or move generation against the rules oracle |
 | `eval` | Side-to-move centipawn score and evaluator state | `Evaluator` trait; material/tapered baselines; reset and make/unmake hooks |
 | `search` | Iterative deepening, fail-soft alpha-beta, check-aware quiescence, mate/draw handling, ordering, cancellation | Explicit `SearchConfig`; isolate a search policy here |

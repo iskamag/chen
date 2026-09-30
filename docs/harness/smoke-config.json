@@ -1,0 +1,10 @@
+{
+  "base": {
+    "command": ["./target/release/chen"],
+    "options": {"Hash": 1, "Quiescence": false}
+  },
+  "candidate": {
+    "command": ["./target/release/chen"],
+    "options": {"Backend": "cpu-frontier", "BatchSize": 256}
+  }
+}

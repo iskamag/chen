@@ -1,4 +1,11 @@
-use chen::{Position, SearchConfig, SearchLimits, Searcher, core::perft, eval::evaluator};
+use chen::{
+    Position, SearchConfig, SearchLimits, Searcher,
+    backend::{CpuBatchEvaluator, SearchBackend},
+    core::perft,
+    eval::evaluator,
+    frontier::{FrontierConfig, FrontierSearch},
+    strength::{BudgetStrength, StrengthPolicy},
+};
 use std::{
     env,
     io::{self, BufRead, Write},
@@ -58,7 +65,7 @@ fn run() -> Result<(), String> {
         Some("bench") => bench(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen bench [--depth N] [--eval material|tapered] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen bench [--depth N] [--eval material|tapered] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -71,9 +78,9 @@ fn output(line: impl AsRef<str>) {
 }
 struct Job {
     stop: Arc<AtomicBool>,
-    worker: JoinHandle<Searcher>,
+    worker: JoinHandle<Box<dyn SearchBackend>>,
 }
-fn finish(job: &mut Option<Job>, searcher: &mut Option<Searcher>) {
+fn finish(job: &mut Option<Job>, searcher: &mut Option<Box<dyn SearchBackend>>) {
     if let Some(job) = job.take() {
         job.stop.store(true, Ordering::Relaxed);
         if let Ok(engine) = job.worker.join() {
@@ -81,12 +88,51 @@ fn finish(job: &mut Option<Job>, searcher: &mut Option<Searcher>) {
         }
     }
 }
+fn make_backend(
+    name: &str,
+    eval: &str,
+    config: SearchConfig,
+    frontier: FrontierConfig,
+) -> Result<Box<dyn SearchBackend>, String> {
+    match name {
+        "alphabeta" => Ok(Box::new(Searcher::new(evaluator(eval)?, config))),
+        "cpu-frontier" => Ok(Box::new(FrontierSearch::new(
+            Box::new(CpuBatchEvaluator::new(evaluator(eval)?)),
+            frontier,
+        )?)),
+        "hip-frontier" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(FrontierSearch::new(
+                    Box::new(chen::hip::HipBatchEvaluator::from_environment(
+                        eval,
+                        frontier.batch_size,
+                    )?),
+                    frontier,
+                )?))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
+        }
+        _ => Err(format!("unknown search backend: {name}")),
+    }
+}
 fn uci() -> Result<(), String> {
     let mut position = Position::startpos();
     let mut history = Vec::new();
     let mut config = SearchConfig::default();
     let mut eval_name = "tapered".to_string();
-    let mut engine = Some(Searcher::new(evaluator(&eval_name)?, config.clone()));
+    let mut backend_name = "alphabeta".to_string();
+    let mut frontier_config = FrontierConfig::default();
+    let mut level = 20;
+    let mut engine = Some(make_backend(
+        &backend_name,
+        &eval_name,
+        config.clone(),
+        frontier_config.clone(),
+    )?);
     let mut job: Option<Job> = None;
     for line in io::stdin().lock().lines() {
         let line = line.map_err(|e| e.to_string())?;
@@ -103,6 +149,12 @@ fn uci() -> Result<(), String> {
                 output("option name UseTT type check default true");
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
+                output(
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier",
+                );
+                output("option name BatchSize type spin default 4096 min 1 max 65536");
+                output("option name MaxPositions type spin default 250000 min 1 max 2000000");
+                output("option name Level type spin default 20 min 1 max 20");
                 output("uciok");
             }
             "isready" => output("readyok"),
@@ -130,7 +182,16 @@ fn uci() -> Result<(), String> {
                     let value = tokens[v + 1..].join(" ");
                     let mut next = config.clone();
                     let mut next_eval = eval_name.clone();
+                    let mut next_backend = backend_name.clone();
+                    let mut next_frontier = frontier_config.clone();
+                    let mut next_level = level;
                     let valid = match name.as_str() {
+                        "level" => value
+                            .parse::<u8>()
+                            .ok()
+                            .filter(|v| (1..=20).contains(v))
+                            .map(|v| next_level = v)
+                            .is_some(),
                         "hash" => value
                             .parse::<usize>()
                             .ok()
@@ -141,6 +202,27 @@ fn uci() -> Result<(), String> {
                             next_eval = value;
                             true
                         }
+                        "backend"
+                            if matches!(
+                                value.as_str(),
+                                "alphabeta" | "cpu-frontier" | "hip-frontier"
+                            ) =>
+                        {
+                            next_backend = value;
+                            true
+                        }
+                        "batchsize" => value
+                            .parse::<usize>()
+                            .ok()
+                            .filter(|v| (1..=65536).contains(v))
+                            .map(|v| next_frontier.batch_size = v)
+                            .is_some(),
+                        "maxpositions" => value
+                            .parse::<usize>()
+                            .ok()
+                            .filter(|v| (1..=2_000_000).contains(v))
+                            .map(|v| next_frontier.max_positions = v)
+                            .is_some(),
                         "usett" | "quiescence" | "moveordering" => {
                             if let Ok(enabled) = value.parse::<bool>() {
                                 match name.as_str() {
@@ -156,9 +238,30 @@ fn uci() -> Result<(), String> {
                         _ => false,
                     };
                     if valid {
-                        config = next;
-                        eval_name = next_eval;
-                        engine = Some(Searcher::new(evaluator(&eval_name)?, config.clone()));
+                        match make_backend(
+                            &next_backend,
+                            &next_eval,
+                            next.clone(),
+                            next_frontier.clone(),
+                        ) {
+                            Ok(created) => {
+                                config = next;
+                                eval_name = next_eval;
+                                backend_name = next_backend;
+                                frontier_config = next_frontier;
+                                level = next_level;
+                                engine = Some(created);
+                            }
+                            Err(error) => {
+                                config = next;
+                                eval_name = next_eval;
+                                backend_name = next_backend;
+                                frontier_config = next_frontier;
+                                level = next_level;
+                                engine = None;
+                                output(format!("info string backend creation failed: {error}"));
+                            }
+                        }
                     } else {
                         output("info string invalid or unsupported option");
                     }
@@ -180,20 +283,33 @@ fn uci() -> Result<(), String> {
                 finish(&mut job, &mut engine);
                 match parse_limits(&tokens[1..], &position) {
                     Ok(limits) => {
-                        let mut searcher = engine.take().unwrap_or_else(|| {
-                            Searcher::new(evaluator(&eval_name).unwrap(), config.clone())
-                        });
+                        let limits = BudgetStrength::new(level)?.apply(limits);
+                        let mut searcher = match engine.take() {
+                            Some(searcher) => searcher,
+                            None => make_backend(
+                                &backend_name,
+                                &eval_name,
+                                config.clone(),
+                                frontier_config.clone(),
+                            )?,
+                        };
                         let stop = searcher.stop_handle();
                         stop.store(false, Ordering::Relaxed);
                         let mut p = position;
                         let h = history.clone();
                         let worker = thread::spawn(move || {
                             let result =
-                                searcher.search(&mut p, limits, &h, |r| output(r.uci_info()));
-                            output(format!(
-                                "bestmove {}",
-                                result.best_move.map_or("0000".into(), |m| m.to_string())
-                            ));
+                                searcher.search(&mut p, limits, &h, &mut |r| output(r.uci_info()));
+                            match result {
+                                Ok(result) => output(format!(
+                                    "bestmove {}",
+                                    result.best_move.map_or("0000".into(), |m| m.to_string())
+                                )),
+                                Err(error) => {
+                                    output(format!("info string search backend failed: {error}"));
+                                    output("bestmove 0000");
+                                }
+                            }
                             searcher
                         });
                         job = Some(Job { stop, worker });
@@ -308,6 +424,8 @@ fn json_string(s: &str) -> String {
 }
 fn bench(args: &[String]) -> Result<(), String> {
     let mut config = SearchConfig::default();
+    let mut backend_name = "alphabeta".to_string();
+    let mut frontier_config = FrontierConfig::default();
     let mut depth = 4;
     let mut eval = "tapered".to_string();
     let mut suite = "benches/positions.txt".to_string();
@@ -317,11 +435,21 @@ fn bench(args: &[String]) -> Result<(), String> {
             "--no-tt" => config.tt = false,
             "--no-qsearch" => config.quiescence = false,
             "--no-ordering" => config.move_ordering = false,
-            "--depth" | "--eval" | "--suite" | "--hash" => {
+            "--depth" | "--eval" | "--suite" | "--hash" | "--backend" | "--batch-size"
+            | "--max-positions" => {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
                     "--eval" => eval = value.clone(),
+                    "--backend" => backend_name = value.clone(),
+                    "--batch-size" => {
+                        frontier_config.batch_size =
+                            value.parse().map_err(|_| "invalid batch size")?
+                    }
+                    "--max-positions" => {
+                        frontier_config.max_positions =
+                            value.parse().map_err(|_| "invalid frontier capacity")?
+                    }
                     "--suite" => suite = value.clone(),
                     _ => config.hash_mb = value.parse().map_err(|_| "invalid hash size")?,
                 };
@@ -348,7 +476,12 @@ fn bench(args: &[String]) -> Result<(), String> {
     }
     for (name, mut p) in positions {
         let fen = p.to_fen();
-        let mut searcher = Searcher::new(evaluator(&eval)?, config.clone());
+        let mut searcher = make_backend(
+            &backend_name,
+            &eval,
+            config.clone(),
+            frontier_config.clone(),
+        )?;
         let result = searcher.search(
             &mut p,
             SearchLimits {
@@ -357,18 +490,30 @@ fn bench(args: &[String]) -> Result<(), String> {
                 time: None,
             },
             &[],
-            |_| {},
-        );
+            &mut |_| {},
+        )?;
+        let telemetry = searcher.batch_telemetry();
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"position\":{},\"fen\":{},\"eval\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
+            json_string(&backend_name),
+            frontier_config.batch_size,
+            frontier_config.max_positions,
+            telemetry.positions,
+            telemetry.h2d_ms,
+            telemetry.kernel_ms,
+            telemetry.d2h_ms,
             json_string(name),
             json_string(&fen),
             json_string(&eval),
-            config.tt,
-            config.quiescence,
-            config.move_ordering,
-            config.hash_mb,
+            config.tt && backend_name == "alphabeta",
+            config.quiescence && backend_name == "alphabeta",
+            config.move_ordering && backend_name == "alphabeta",
+            if backend_name == "alphabeta" {
+                config.hash_mb
+            } else {
+                0
+            },
             depth,
             result.depth,
             result.score,

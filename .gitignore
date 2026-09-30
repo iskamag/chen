@@ -1,3 +1,4 @@
 /target/
 /results/
 __pycache__/
+/gpu/build/
