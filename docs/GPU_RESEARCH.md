@@ -239,6 +239,38 @@ same-field accesses, but a one-time transpose and small-batch latency must be
 counted. Query model operators on the real RDNA2 GPU before choosing a network
 that depends on accelerator-specific instructions.
 
+## Paired resident search comparison
+
+`scripts/rocm_run.sh compare --depth 3 --repeats 5` runs both resident backends
+with the same Rust executable, suite, capacity, evaluator and container runtime.
+One warmup precedes five alternating AB/BA pairs. Every pair must preserve
+completed depth, score, best move, PV, node/evaluation counts and effective
+configuration. Capacity-limited searches reject the timing comparison.
+Use `CHEN_RESULTS_DIR` for output and `CHEN_ARTIFACT_DIR` to retain the actual
+executable, library, compiler and source manifest.
+
+The [captured report](../gpu/evidence/resident-paired-2026-09-30.json) records
+an explicitly identified dirty source snapshot based on `45f3fb6`, including
+the initial export helper, library and runner hashes. Export was not called in
+this experiment. Search intervals exclude backend construction; the report also
+retains full per-process wall time, which includes context allocations and
+startup. Each suite position creates a fresh backend. UCI normally reuses it.
+
+| Position | Nodes | Host median | HIP median | Median paired HIP/host |
+| --- | ---: | ---: | ---: | ---: |
+| Start | 9765 | 14.58 ms | 7.80 ms | 0.535 |
+| Kiwipete | 102087 | 267.59 ms | 10.76 ms | 0.040 |
+| Rook ending | 3239 | 4.81 ms | 5.33 ms | 1.108 |
+| Middlegame | 44140 | 81.97 ms | 7.56 ms | 0.093 |
+| Promotion | 855 | 0.88 ms | 5.19 ms | 5.924 |
+| Mate (depth 1) | 27 | 0.019 ms | 2.19 ms | 114.067 |
+
+These measurements support batching on the larger tested full-width trees.
+They also expose substantial launch/dispatch costs on small trees. They compare
+one algorithm's host/device implementations; alpha-beta with pruning performs
+different work. Five pairs do not establish general performance or strength,
+and GPU clocks, power state and unrelated load were not controlled.
+
 ## Experiment gates
 
 1. **Rules parity:** sorted legal moves, applied state, hash/history, perft, and

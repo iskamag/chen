@@ -44,6 +44,7 @@ scripts/rocm_run.sh test
 scripts/rocm_run.sh bench --backend hip-frontier --depth 3
 scripts/rocm_run.sh bench --backend hip-resident --depth 3
 scripts/rocm_run.sh gpu-perft 4 --max-positions 250000
+scripts/rocm_run.sh compare --depth 3 --repeats 5
 scripts/rocm_run.sh uci
 ```
 
