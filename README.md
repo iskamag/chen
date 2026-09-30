@@ -72,7 +72,10 @@ strength gain. Optional [exact-shape graph inference](GPU_INFERENCE_PERF.md)
 reduces warm small-batch callback latency, with cold capture costs and explicit
 cache telemetry; eager remains the default. The neural branch also retains a
 [27-run value-head study](../chen-neural/docs/VALUE_STUDY.md) whose models trail
-material on heldout score error.
+material on heldout score error. A subsequent
+[30-run action-sensitive transport study](../chen-neural/docs/STRATEGIC_STUDY.md)
+uses fresh resident data and complete legal root choices; no model passes its
+joint validation error and move-regret gate against material and static Tapered.
 The [offline match harness](docs/harness/README.md) saves paired games and failures.
 The requested target is 2500 on Lichess, which requires separate rating evidence.
 

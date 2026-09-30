@@ -16,7 +16,7 @@ This checkpoint records implemented foundations and open gates.
 - CPU-rules batched frontier minimax selects either CPU or HIP evaluation.
   All six depth-3 suite positions match CPU-frontier by depth, score, best move,
   total nodes and PV. Alpha-beta without quiescence agrees on root scores/depths.
-- Portable build: 37 Rust tests pass. HIP-feature host build: 41 pass, with
+- Portable build: 37 Rust tests pass. HIP-feature host build: 43 pass, with
   six actual-hardware tests run separately and passing in `cpp-rocm`. Strict
   Clippy, formatting, Python compilation and shell syntax checks pass.
 - Hardware tests compare ordered batches of legal positions at sizes
@@ -30,7 +30,7 @@ This checkpoint records implemented foundations and open gates.
   Rust hardware suite additionally checks 527 roots, ordered legal lists and
   every successor. GPU start-position depth-4 perft is 197281 leaves.
   [Rules contract and evidence](../GPU_RULES.md) specify phase/capacity limits.
-- Seven harness tests pass. Four ordinary-opening smoke games finish 30 legal
+- Twenty harness tests pass. Four ordinary-opening smoke games finish 30 legal
   plies each without technical failure, remaining explicitly inconclusive.
   Two-game mate fixtures finish for CPU and real GPU UCI implementations;
   these verify protocol/adjudication rather than strength.
@@ -112,6 +112,29 @@ selected-child regret across seeds. Improved sibling concordance does not
 produce stronger top decisions. Low-score corrections and a training/heldout
 gap suggest specific regularization/ranking experiments on a fresh split;
 saturation was not observed. These adapters remain outside production inference.
+
+Neural commit `ce63edd` retains the subsequent
+[strategic transport study](../../../chen-neural/docs/STRATEGIC_STUDY.md), which
+completes 30 resident training runs over three encoders, five action/anchor
+controls and two seeds. Prediction receives the root and legal action only;
+exact piece transport, material and pseudoattack covariates are declared priors.
+Fresh whole-lineage splits exclude previously consumed inputs. Native depth-3
+Tapered supervision retains all legal actions for 184 training, 45 validation
+and 44 test roots, omitting incomplete/terminal/mate-band groups explicitly.
+No model passes the predeclared joint validation MAE and root-regret gate against
+both material and static Tapered. Selection is sealed before all 30 frozen models
+are scored once on test. Test baselines are 162.4/156.8 cp MAE and 118.0/101.8 cp
+regret respectively; individual ranking gains do not override failed selection.
+Plan action-blind predictions show micro-centipawn same-material gaps on the GPU;
+their raw-float ranking differences are not evidence of learned action awareness.
+A CPU-only frozen-checkpoint diagnostic preserves exact material ties and does
+not reproduce the GPU effect; the specific numerical cause remains unverified.
+The original five-run attempt stopped at a scalar-parameter checksum defect;
+its results remain archived. The bookkeeping-only repair passes 18 actual-GPU
+tests, and repeated initial controls have bit-exact parameters/sample streams.
+Independent cold artifact admission verifies all 30 checkpoint hashes, source
+pins and the observed selection/test journal ordering. These research predictors
+are separate from deployed inference and establish no match or rating gain.
 
 Main commit `c51e78c` pins official offline tools and records a
 [64-game reference match](../harness/reference-2026-10-01.md) against Stockfish 19
