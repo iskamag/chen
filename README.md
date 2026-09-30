@@ -10,8 +10,9 @@ experiments; the main `../chen` worktree owns current GPU engine integration.
 The research includes [square/relation/plan architectures](docs/NEURAL_ARCHITECTURES.md),
 [legal-diamond dynamics](docs/DIAMOND_EXPERIMENT.md),
 [observed move transport](docs/ACTION_DYNAMICS.md), and
-[compact resident replay](docs/COMPACT_REPLAY.md). The latest combined suite
-passes 48 tests on gfx1030. Synthetic mechanics and mixed/negative dynamics
+[compact resident replay](docs/COMPACT_REPLAY.md), and the
+[direct HIP-to-Torch bridge](docs/VRAM_BRIDGE.md). The latest combined suite
+passes 62 tests on gfx1030 without skips. Synthetic mechanics and mixed/negative dynamics
 results are recorded explicitly; no neural playing-strength claim is made.
 
 ```sh

@@ -1,0 +1,19 @@
+test_abi_layout_and_exact_root_unsigned_fields (neural.tests.test_bridge.BridgeCPU.test_abi_layout_and_exact_root_unsigned_fields) ... ok
+test_copy_audit_rejects_deliberate_scalar_violation (neural.tests.test_bridge.BridgeCPU.test_copy_audit_rejects_deliberate_scalar_violation) ... ok
+test_epoch_bound_span_subsets_preserve_identity (neural.tests.test_bridge.BridgeCPU.test_epoch_bound_span_subsets_preserve_identity) ... ok
+test_pointer_metadata_validator_rejects_shape_stride_type_alias (neural.tests.test_bridge.BridgeCPU.test_pointer_metadata_validator_rejects_shape_stride_type_alias) ... ok
+test_root_raw_ep_and_effective_ep_hash_differ (neural.tests.test_bridge.BridgeCPU.test_root_raw_ep_and_effective_ep_hash_differ) ... ok
+test_runtime_api_mismatch_fails_before_context_create (neural.tests.test_bridge.BridgeCPU.test_runtime_api_mismatch_fails_before_context_create) ... ok
+test_unsupported_library_abis_fail_without_fallback (neural.tests.test_bridge.BridgeCPU.test_unsupported_library_abis_fail_without_fallback) ... ok
+test_cross_stream_publication_admission_and_source_retirement (neural.tests.test_bridge.BridgeGPU.test_cross_stream_publication_admission_and_source_retirement) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_direct_ingress_sample_loss_gradient_parity_and_lifecycle (neural.tests.test_bridge.BridgeGPU.test_direct_ingress_sample_loss_gradient_parity_and_lifecycle) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_failed_publication_and_admission_drain_queued_source_reads (neural.tests.test_bridge.BridgeGPU.test_failed_publication_and_admission_drain_queued_source_reads) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_multilevel_parent_parity_expanded_successors_and_stale_selectors (neural.tests.test_bridge.BridgeGPU.test_multilevel_parent_parity_expanded_successors_and_stale_selectors) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_range_capacity_epoch_and_terminal_failures (neural.tests.test_bridge.BridgeGPU.test_range_capacity_epoch_and_terminal_failures) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_retained_legal_history_third_repetition_successor (neural.tests.test_bridge.BridgeGPU.test_retained_legal_history_third_repetition_successor) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+test_sparse_fixtures_exact_transition_parity (neural.tests.test_bridge.BridgeGPU.test_sparse_fixtures_exact_transition_parity) ... skipped 'set CHEN_BRIDGE_TEST_GPU=1 with CHEN_GPU_LIBRARY for actual HIP tests'
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.006s
+
+OK (skipped=7)

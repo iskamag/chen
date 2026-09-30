@@ -1,0 +1,44 @@
+{
+  "kind": "direct_resident_bridge_source_evidence",
+  "date": "2026-09-30",
+  "source_sha256": {
+    "neural/bridge.py": "02a05f0919cc82ed97f5b5243649d57284644d6ffb16ae2a0db212d7dd27d477",
+    "neural/tests/test_bridge.py": "7864421305b34c60fb02f1ad4c4c54fc76a40127d85129f5238147b6de44b924",
+    "docs/VRAM_BRIDGE.md": "f86295d802154c093c54bbef57365809cceb6714d07aa094e4e4898718e2fa60",
+    "docs/VRAM_BRIDGE_CONTRACT.md": "11c88e075937a680fe788f1380968a5f4e22738455e280ab220b0bf1d82bb831",
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+  },
+  "commands": {
+    "cpu_tests": "python -m unittest neural.tests.test_bridge -v",
+    "gpu_tests": "CHEN_BRIDGE_TEST_GPU=1 CHEN_GPU_LIBRARY=/tmp/chen-gpu/build/libchen_gpu.so python -m unittest neural.tests.test_bridge -v",
+    "smoke": "CHEN_GPU_LIBRARY=/tmp/chen-gpu/build/libchen_gpu.so python -m neural.bridge --steps 4 --batch-size 32 --seed 20260930 --producer-revision 45f3fb6 --gpu-source-root /tmp/chen-gpu --output results/neural/bridge-gfx1030.json"
+  },
+  "runtime_environment": {
+    "container": "cpp-rocm",
+    "working_directory": "/tmp/chen-neural-methods/project",
+    "PYTHONPATH": "/tmp/chen-neural-methods/deps",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "evidence_sha256": {
+    "neural/evidence/bridge-tests-gfx1030-2026-09-30.log": "3453f923353f7bcf4cd55d1c6daac2467331794667201fbb9e0327ee52747124",
+    "neural/evidence/bridge-tests-cpu-2026-09-30.log": "fe5e7b36165eafcfd1d8b881ecf23272a7c9ea5f5017b87c33856fc173c34ebd",
+    "neural/evidence/bridge-smoke-gfx1030-2026-09-30.json": "ed2a67b1a81c760e6041fce30c11b43968cc17a5bbab64205a99e1efa360205e",
+    "neural/evidence/bridge-smoke-gfx1030-2026-09-30.log": "361ee33bde128779bfb7ff7627f6845db2c3462b401d6ccdc06147bc90b59172",
+    "neural/evidence/combined-bridge-tests-gfx1030-2026-09-30.txt": "45a4f4313334015ac4ea69397f9145e0b0a5f5f591c078b69613e60ea78380af"
+  },
+  "native_export_evidence_sha256": {
+    "gpu/evidence/replay-gfx1030-2026-09-30.json": "7a683b65aa47fcfd27333559e245f7f1a9bc1c454bcdb527bd3dc27be709c7a1",
+    "gpu/evidence/replay-gfx1030-2026-09-30.jsonl": "8ec008ae7fe43344e099b8d04071ac6d3e16987c0fc6fb6fca5f8b8d4898df56"
+  },
+  "scope": [
+    "All 14 tests pass on actual gfx1030; separate CPU run has 7 passed and 7 hardware tests skipped.",
+    "Native copy diagnostic marks C export only and interposes hipMemcpy/hipMemcpyAsync only; the Torch path is audited independently by dispatch and source.",
+    "Oracle state downloads occur exclusively outside the guarded producer/consumer path.",
+    "No strength, outcome or throughput acceptance claim.",
+    "A later source-identical wrapper build passed all 62 combined neural tests without skips; the combined log and main integration report identify that separate artifact."
+  ]
+}
