@@ -53,6 +53,11 @@ commit no static score until every chunk succeeds and every required output is
 in range. Rules retain exact terminal scores, independent of neural predictions.
 Context/evaluator identity is fixed until reset; Rust drops the arena before
 the inference context and keeps both libraries live until their contexts die.
+Rust admits one immutable native-plugin file identity per process, retains its
+DSO with `NODELETE`, and rejects switching to a distinct copy even in eager mode.
+This preserves the plugin's capture-fault guard across backend recreation;
+changing native implementations requires a fresh process. Raw C clients must
+enforce the same single-provider ownership rule.
 
 Rust reads bounded archive bytes once, verifies SHA256, validates the sidecar's
 exact embedded JSON, feature/model configuration, scalar interpretation and
@@ -68,6 +73,43 @@ When `CHEN_NEURAL_MODEL` is configured, Rust preloads and retains the producing
 runtime for the entire CLI session, before any backend creates a HIP context.
 Both UCI option orders therefore bind consistently; the wrapper also preloads
 that runtime. There is no silent CPU substitution.
+
+## Optional exact-shape graph execution
+
+Eager is the default. Select graph execution explicitly:
+
+```sh
+CHEN_NEURAL_MODEL=../chen-neural/results/neural/deployment/square-inference.pt \
+CHEN_NEURAL_EXECUTION=graph CHEN_NEURAL_GRAPH_SHAPES=4 \
+CHEN_NEURAL_GRAPH_BYTES=268435456 CHEN_ARTIFACT_DIR=results/graph-artifacts \
+    scripts/rocm_run.sh bench --backend hip-resident --eval neural --depth 2
+```
+
+The additive execution ABI configures an exact-count LRU with 1..16 shapes and
+a retained private-pool budget of 1 byte..4 GiB. Defaults are four shapes and
+256 MiB in graph mode. Eager sends zero native graph limits. Invalid policies
+and unsupported graph plugins fail explicitly. Legacy plugins remain usable
+in eager mode. Benchmark `neural_execution` records admitted mode, shape and
+pool limits, hits, misses, captures, evictions, retained/observed peak pool bytes,
+staging bytes and capture time. The wrapper saves requested environment and
+the producing runtime SHA256, and its device probe uses that same runtime.
+
+Packets are staged D2D into context-owned addresses. Graphs capture decoding,
+the unchanged frozen model and its range predicate; validation and score copies
+complete before the borrowed arena addresses retire. No padding changes the
+batch's numerical contract. The retained pool budget excludes transient capture,
+staging, model and other allocator memory. Capture requires exclusive GPU work
+within the process, including resident rules; the serial Rust scheduler fences
+rules before invoking the plugin. Raw callers must maintain that exclusion.
+
+An actual capture fault poisons the same provider for the process lifetime;
+restart is required. If retirement cannot be proved, the plugin exits with code
+70 before freeing potentially live storage. Tested host injection and memory
+admission failures recover only after successful cleanup. These guarantees and
+the measured cold/warm costs are detailed in
+[the inference report](../GPU_INFERENCE_PERF.md). Warm small-batch callbacks
+improve, while first-use captures take hundreds of milliseconds to seconds.
+This does not establish faster end-to-end search; graph mode remains opt-in.
 
 ## Score and timing meaning
 
@@ -121,3 +163,17 @@ an open gate.
 These results establish the tested numerical/protocol mechanics. The first
 training run trails material on heldout teacher metrics; it establishes neither
 a playing-strength improvement nor the eventual Lichess target.
+
+The [2026-10-01 graph integration checkpoint](../gpu/evidence/neural-graph-integration-2026-10-01.json)
+adds 18 graph-mode oracle comparisons and checks that eager and graph scores,
+moves, nodes, evaluated positions and PV agree across all three architectures.
+Both modes pass option-order, exact-node-budget, level and immediate-stop/
+subsequent-search checks. Graph mode completes 40 legal game plies. The final
+eager run times out on its first neural game move after those numerical/protocol
+checks; its actual stdout/stderr and process diagnostics are retained. This
+repeated reliability failure remains under investigation. Host checks pass
+37 portable and 43 feature-enabled Rust tests; six hardware tests and the
+combined 88-test neural suite pass in ROCm. The combined suite includes CPU
+contracts as well as actual GPU tests. Six model-bearing graph wrapper fixtures
+agree with the independent oracle, and its captured probe binds HIP 7.0 from
+Torch rather than the system HIP 7.2 runtime.

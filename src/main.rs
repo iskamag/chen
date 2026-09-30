@@ -588,8 +588,12 @@ fn bench(args: &[String]) -> Result<(), String> {
             .evaluator_artifact_sha256()
             .map(json_string)
             .unwrap_or_else(|| "null".to_owned());
+        let execution = searcher.neural_execution_stats()?.map_or_else(|| "null".to_owned(), |s| format!(
+            "{{\"mode\":{},\"max_cached_shapes\":{},\"retained_budget_bytes\":{},\"first_used\":{},\"cached_shapes\":{},\"hits\":{},\"misses\":{},\"captures\":{},\"evictions\":{},\"retained_pool_bytes\":{},\"staging_logical_bytes\":{},\"peak_observed_pool_bytes\":{},\"capture_wall_ms\":{}}}",
+            json_string(s.mode), s.max_cached_shapes, s.retained_budget_bytes, s.first_used, s.cached_shapes, s.hits, s.misses, s.captures, s.evictions, s.retained_pool_bytes, s.staging_logical_bytes, s.peak_observed_pool_bytes, s.capture_wall_ms
+        ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -602,6 +606,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             json_string(&fen),
             json_string(&eval),
             evaluator_artifact,
+            execution,
             config.tt && backend_name == "alphabeta",
             config.quiescence && backend_name == "alphabeta",
             config.move_ordering && backend_name == "alphabeta",

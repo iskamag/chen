@@ -78,6 +78,11 @@ impl Library {
     pub(crate) fn open_global(path: &Path) -> Result<Self, String> {
         Self::open_flags(path, 2 | 0x100)
     }
+    /// Graph capture can poison process-wide Torch allocator state. Keep that
+    /// plugin's poison guard and dependencies alive across backend recreation.
+    pub(crate) fn open_global_permanent(path: &Path) -> Result<Self, String> {
+        Self::open_flags(path, 2 | 0x100 | 0x1000)
+    }
     fn open_flags(path: &Path, flags: c_int) -> Result<Self, String> {
         use std::os::unix::ffi::OsStrExt;
         let path = CString::new(path.as_os_str().as_bytes())

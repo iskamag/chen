@@ -2,7 +2,7 @@
 //! All node state, rules, evaluation and minimax operations belong to the arena.
 use crate::{
     Move, Position, SearchLimits, SearchResult,
-    backend::{BatchTelemetry, SearchBackend},
+    backend::{BatchTelemetry, NeuralExecutionStats, SearchBackend},
     eval::{Evaluator, Material, Tapered},
     rules::RuleState,
     search::{MATE, MAX_EVAL},
@@ -62,6 +62,9 @@ pub trait ResidentTree: Send {
     fn name(&self) -> &str;
     fn evaluator_artifact_sha256(&self) -> Option<&str> {
         None
+    }
+    fn neural_execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        Ok(None)
     }
     fn reset(&mut self, root: RuleState, history: &[u64]) -> Result<(), TreeError>;
     fn classify(&mut self, span: TreeSpan, adjudicate: bool) -> Result<TreeStats, TreeError>;
@@ -212,6 +215,9 @@ impl SearchBackend for ResidentSearch {
     }
     fn evaluator_artifact_sha256(&self) -> Option<&str> {
         self.tree.evaluator_artifact_sha256()
+    }
+    fn neural_execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        self.tree.neural_execution_stats()
     }
     fn stop_handle(&self) -> Arc<AtomicBool> {
         self.stop.clone()

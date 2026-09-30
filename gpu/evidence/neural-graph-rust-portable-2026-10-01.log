@@ -1,0 +1,105 @@
+   Compiling chen v0.1.0 (/home/iskam/src/vibe/chen)
+    Finished `release` profile [optimized] target(s) in 24.93s
+     Running unittests src/lib.rs (target/release/deps/chen-0d5506ce7f5175b6)
+
+running 3 tests
+test search::tests::cached_mate_distance_rebases_at_another_ply ... ok
+test strength::tests::budgets_are_monotonic_and_preserve_stricter_user_limits ... ok
+test tt::tests::collisions_replacement_generation_and_clear ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/release/deps/chen-bb3b9a9768f2b378)
+
+running 2 tests
+test tests::clock_and_limits ... ok
+test tests::position_parse_is_transactional ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core.rs (target/release/deps/core-1160548a2e9d56fb)
+
+running 9 tests
+test castling_requires_safe_transit_and_updates_rook_and_rights ... ok
+test en_passant_obeys_pins_and_can_remove_a_checking_pawn ... ok
+test fen_roundtrip_and_validation ... ok
+test material_draws_are_conservative ... ok
+test promotions_include_underpromotions_and_restore_exactly ... ok
+test deterministic_playout_hashes_and_undo ... ok
+test kiwipete_perft ... ok
+test reference_perft_positions_cover_checks_promotions_and_ep ... ok
+test initial_position_perft ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/device.rs (target/release/deps/device-0e62fc1d0306405d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/frontier.rs (target/release/deps/frontier-c8e73d6dfced48f1)
+
+running 4 tests
+test frontier_capacity_stop_and_node_budget_preserve_last_iteration ... ok
+test frontier_mate_draws_and_batch_contract ... ok
+test exact_node_budget_finishes_already_admitted_leaf_work ... ok
+test frontier_matches_alpha_beta_without_selectivity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/hip.rs (target/release/deps/hip-cf421a762c44004a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/resident.rs (target/release/deps/resident-115333852b83966c)
+
+running 3 tests
+test resident_history_and_phase_validation ... ok
+test resident_budget_and_overflow_preserve_completed_iterations ... ok
+test host_resident_matches_independent_frontier_full_results ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/rules.rs (target/release/deps/rules-3216832c82000116)
+
+running 3 tests
+test import_rejects_overlaps_and_move_packets_validate ... ok
+test full_rule_packet_roundtrip_and_field_offsets ... ok
+test rules_oracle_batches_special_moves_and_saturation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/search.rs (target/release/deps/search-84c1cfad9875c34a)
+
+running 10 tests
+test evaluator_orientation ... ok
+test neural_or_custom_scores_cannot_enter_mate_range ... ok
+test node_limit_and_stop_restore_position ... ok
+test incremental_evaluator_hooks_are_balanced_on_abort ... ok
+test draw_clock_does_not_override_checkmate ... ok
+test mate_and_stalemate ... ok
+test repetition_and_tt_draw_context ... ok
+test experiment_changes_invalidate_cached_scores ... ok
+test alpha_beta_matches_exhaustive_minimax ... ok
+test full_width_ablations_preserve_scores ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/uci.rs (target/release/deps/uci-507a265f9d6dbb01)
+
+running 3 tests
+test frontier_uci_and_resource_levels_are_selectable ... ok
+test unavailable_requested_gpu_backend_never_substitutes_cpu ... ok
+test uci_search_stop_options_and_recovery ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests chen
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

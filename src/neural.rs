@@ -2,6 +2,7 @@
 //! The portable engine retains no Torch dependency; HIP builds load it on request.
 use crate::{
     Move,
+    backend::NeuralExecutionStats,
     device::HipRules,
     hip::{Library, buffer_string},
     resident::{ResidentTree, TreeError, TreeSpan, TreeStats},
@@ -15,9 +16,31 @@ use std::{
     io::Read,
     path::{Path, PathBuf},
     ptr::NonNull,
+    sync::Mutex,
 };
 const ARCHIVE_LIMIT: u64 = 64 * 1024 * 1024;
 const MANIFEST_LIMIT: u64 = 65536;
+static PLUGIN_IDENTITY: Mutex<Option<(u64, u64)>> = Mutex::new(None);
+
+fn claim_plugin_identity(identity: &Mutex<Option<(u64, u64)>>, path: &Path) -> Result<(), String> {
+    use std::os::unix::fs::MetadataExt;
+    let metadata = std::fs::metadata(path).map_err(|e| format!("{}: {e}", path.display()))?;
+    let key = (metadata.dev(), metadata.ino());
+    let mut admitted = identity
+        .lock()
+        .map_err(|_| "neural plugin identity lock poisoned")?;
+    match *admitted {
+        Some(previous) if previous != key => Err(
+            "one neural plugin file per process; restart to change the native implementation"
+                .into(),
+        ),
+        Some(_) => Ok(()),
+        None => {
+            *admitted = Some(key);
+            Ok(())
+        }
+    }
+}
 
 fn bounded_read(path: &Path, limit: u64) -> Result<Vec<u8>, String> {
     let file = File::open(path).map_err(|e| format!("{}: {e}", path.display()))?;
@@ -230,12 +253,124 @@ type Create = unsafe extern "C" fn(
     u64,
 ) -> *mut c_void;
 type Destroy = unsafe extern "C" fn(*mut c_void);
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ExecutionMode {
+    Eager,
+    Graph,
+}
+#[derive(Clone, Copy, Debug)]
+pub struct ExecutionOptions {
+    pub mode: ExecutionMode,
+    pub max_cached_shapes: u32,
+    pub retained_budget_bytes: u64,
+}
+impl Default for ExecutionOptions {
+    fn default() -> Self {
+        Self {
+            mode: ExecutionMode::Eager,
+            max_cached_shapes: 4,
+            retained_budget_bytes: 256 * 1024 * 1024,
+        }
+    }
+}
+impl ExecutionOptions {
+    fn validate(self) -> Result<Self, String> {
+        if !(1..=16).contains(&self.max_cached_shapes)
+            || !(1..=4 * 1024 * 1024 * 1024).contains(&self.retained_budget_bytes)
+        {
+            return Err(
+                "neural execution requires 1..16 shapes and a retained pool budget of 1 byte..4 GiB".into(),
+            );
+        }
+        Ok(self)
+    }
+    pub fn from_environment() -> Result<Self, String> {
+        fn value(name: &str) -> Result<Option<String>, String> {
+            match std::env::var(name) {
+                Ok(value) => Ok(Some(value)),
+                Err(std::env::VarError::NotPresent) => Ok(None),
+                Err(error) => Err(format!("invalid {name}: {error}")),
+            }
+        }
+        let mode = value("CHEN_NEURAL_EXECUTION")?;
+        let shapes = value("CHEN_NEURAL_GRAPH_SHAPES")?;
+        let bytes = value("CHEN_NEURAL_GRAPH_BYTES")?;
+        Self::parse(mode.as_deref(), shapes.as_deref(), bytes.as_deref())
+    }
+    fn parse(
+        mode: Option<&str>,
+        shapes: Option<&str>,
+        bytes: Option<&str>,
+    ) -> Result<Self, String> {
+        let mode = match mode {
+            None | Some("eager") => ExecutionMode::Eager,
+            Some("graph") => ExecutionMode::Graph,
+            Some(_) => return Err("CHEN_NEURAL_EXECUTION must be eager or graph".into()),
+        };
+        let mut options = Self {
+            mode,
+            ..Self::default()
+        };
+        if let Some(value) = shapes {
+            options.max_cached_shapes = value
+                .parse()
+                .map_err(|_| "invalid neural graph shape limit")?;
+        }
+        if let Some(value) = bytes {
+            options.retained_budget_bytes = value
+                .parse()
+                .map_err(|_| "invalid neural graph pool budget")?;
+        }
+        options.validate()
+    }
+    fn native_config(self) -> ExecutionConfig {
+        let graph = self.mode == ExecutionMode::Graph;
+        ExecutionConfig {
+            abi_version: 1,
+            mode: u32::from(graph),
+            max_cached_shapes: if graph { self.max_cached_shapes } else { 0 },
+            reserved: 0,
+            retained_budget_bytes: if graph { self.retained_budget_bytes } else { 0 },
+        }
+    }
+}
+#[repr(C)]
+struct ExecutionConfig {
+    abi_version: u32,
+    mode: u32,
+    max_cached_shapes: u32,
+    reserved: u32,
+    retained_budget_bytes: u64,
+}
+#[repr(C)]
+#[derive(Default)]
+struct NativeExecutionStats {
+    abi_version: u32,
+    mode: u32,
+    max_cached_shapes: u32,
+    first_used: u32,
+    cached_shapes: u64,
+    hits: u64,
+    misses: u64,
+    captures: u64,
+    evictions: u64,
+    retained_pool_bytes: u64,
+    staging_logical_bytes: u64,
+    peak_observed_pool_bytes: u64,
+    capture_wall_ms: f64,
+}
+type SetExecution =
+    unsafe extern "C" fn(*mut c_void, *const ExecutionConfig, *mut c_char, u64) -> i32;
+type GetExecutionStats =
+    unsafe extern "C" fn(*const c_void, *mut NativeExecutionStats, *mut c_char, u64) -> i32;
 struct NeuralEvaluator {
     context: NonNull<c_void>,
     destroy: Destroy,
     evaluate: Evaluate,
     identity: [u64; 5],
     max_batch: u64,
+    execution_stats: Option<GetExecutionStats>,
+    execution_pool_budget: u64,
     _library: Library,
     _runtime: Library,
 }
@@ -243,10 +378,19 @@ struct NeuralEvaluator {
 // calls restore device; plugin context cannot be shared across host threads.
 unsafe impl Send for NeuralEvaluator {}
 impl NeuralEvaluator {
-    fn new(path: &Path, runtime_path: &Path, artifact: &ModelArtifact) -> Result<Self, String> {
+    fn new(
+        path: &Path,
+        runtime_path: &Path,
+        artifact: &ModelArtifact,
+        options: ExecutionOptions,
+    ) -> Result<Self, String> {
+        let options = options.validate()?;
+        // Capture poisoning belongs to one loaded DSO. Never allow another
+        // plugin, including a legacy eager implementation, to bypass its guard.
+        claim_plugin_identity(&PLUGIN_IDENTITY, path)?;
         // Load the verified producing runtime first, then the plugin, then rules.
         let runtime = Library::open_global(runtime_path)?;
-        let library = Library::open_global(path)?;
+        let library = Library::open_global_permanent(path)?;
         macro_rules! symbol {
             ($name:literal,$ty:ty) => {{
                 // SAFETY: exact signatures in chen_neural.h ABI1.
@@ -301,6 +445,24 @@ impl NeuralEvaluator {
         let create = symbol!(c"chen_neural_create", Create);
         let destroy = symbol!(c"chen_neural_destroy", Destroy);
         let evaluate = symbol!(c"chen_neural_evaluate", Evaluate);
+        let execution_api =
+            if let Ok(pointer) = library.symbol(c"chen_neural_execution_abi_version") {
+                // SAFETY: additive metadata signature in chen_neural.h.
+                let abi = unsafe {
+                    std::mem::transmute::<*mut c_void, unsafe extern "C" fn() -> u32>(pointer)
+                };
+                if unsafe { abi() } != 1 {
+                    return Err("unsupported neural execution ABI".into());
+                }
+                Some((
+                    symbol!(c"chen_neural_set_execution", SetExecution),
+                    symbol!(c"chen_neural_execution_stats", GetExecutionStats),
+                ))
+            } else if options.mode == ExecutionMode::Graph {
+                return Err("neural plugin does not support graph execution".into());
+            } else {
+                None
+            };
         let mut error = [0 as c_char; 1024];
         // SAFETY: frozen owned archive/manifest bytes live throughout synchronous
         // deserialization; validated lengths and error buffer. Returned ctx owned.
@@ -317,15 +479,89 @@ impl NeuralEvaluator {
             )
         })
         .ok_or_else(|| buffer_string(&error))?;
-        Ok(Self {
+        let owner = Self {
             context,
             destroy,
             evaluate,
             identity,
             max_batch: artifact.max_batch,
+            execution_stats: execution_api.map(|(_, stats)| stats),
+            execution_pool_budget: options.native_config().retained_budget_bytes,
             _library: library,
             _runtime: runtime,
-        })
+        };
+        if let Some((configure, _)) = execution_api {
+            let config = options.native_config();
+            // SAFETY: exclusive context has not evaluated; bounded ABI1 config/error.
+            if unsafe {
+                configure(
+                    owner.context.as_ptr(),
+                    &config,
+                    error.as_mut_ptr(),
+                    error.len() as u64,
+                )
+            } != 0
+            {
+                return Err(buffer_string(&error));
+            }
+            let actual = owner
+                .execution_stats()?
+                .ok_or("missing configured execution metadata")?;
+            let expected = if options.mode == ExecutionMode::Graph {
+                "graph"
+            } else {
+                "eager"
+            };
+            if actual.mode != expected || actual.max_cached_shapes != config.max_cached_shapes {
+                return Err("native execution policy disagrees with requested policy".into());
+            }
+        }
+        Ok(owner)
+    }
+    fn execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        let Some(query) = self.execution_stats else {
+            return Ok(None);
+        };
+        let mut stats = NativeExecutionStats::default();
+        let mut error = [0 as c_char; 1024];
+        // SAFETY: immutable metadata query of an exclusively owned live context.
+        if unsafe {
+            query(
+                self.context.as_ptr(),
+                &mut stats,
+                error.as_mut_ptr(),
+                error.len() as u64,
+            )
+        } != 0
+        {
+            return Err(buffer_string(&error));
+        }
+        if stats.abi_version != 1
+            || stats.mode > 1
+            || stats.first_used > 1
+            || (stats.mode == 0 && stats.max_cached_shapes != 0)
+            || (stats.mode == 1 && !(1..=16).contains(&stats.max_cached_shapes))
+            || stats.cached_shapes > u64::from(stats.max_cached_shapes)
+            || !stats.capture_wall_ms.is_finite()
+            || stats.capture_wall_ms < 0.0
+        {
+            return Err("invalid native neural execution metadata".into());
+        }
+        Ok(Some(NeuralExecutionStats {
+            mode: if stats.mode == 1 { "graph" } else { "eager" },
+            max_cached_shapes: stats.max_cached_shapes,
+            retained_budget_bytes: self.execution_pool_budget,
+            first_used: stats.first_used == 1,
+            cached_shapes: stats.cached_shapes,
+            hits: stats.hits,
+            misses: stats.misses,
+            captures: stats.captures,
+            evictions: stats.evictions,
+            retained_pool_bytes: stats.retained_pool_bytes,
+            staging_logical_bytes: stats.staging_logical_bytes,
+            peak_observed_pool_bytes: stats.peak_observed_pool_bytes,
+            capture_wall_ms: stats.capture_wall_ms,
+        }))
     }
     fn descriptor(&self) -> ExternalEvaluator {
         ExternalEvaluator {
@@ -362,8 +598,25 @@ impl HipNeuralTree {
         model: &Path,
         capacity: usize,
     ) -> Result<Self, String> {
+        Self::new_with_options(
+            rules_library,
+            neural_library,
+            runtime_library,
+            model,
+            capacity,
+            ExecutionOptions::default(),
+        )
+    }
+    pub fn new_with_options(
+        rules_library: &Path,
+        neural_library: &Path,
+        runtime_library: &Path,
+        model: &Path,
+        capacity: usize,
+        options: ExecutionOptions,
+    ) -> Result<Self, String> {
         let artifact = ModelArtifact::read(model)?;
-        let neural = NeuralEvaluator::new(neural_library, runtime_library, &artifact)?;
+        let neural = NeuralEvaluator::new(neural_library, runtime_library, &artifact, options)?;
         let tree = HipRules::new_with_runtime(rules_library, capacity, neural.identity)?;
         Ok(Self {
             tree,
@@ -379,12 +632,13 @@ impl HipNeuralTree {
         let rules_library = std::env::var_os("CHEN_GPU_LIBRARY")
             .map(PathBuf::from)
             .unwrap_or_else(|| "gpu/build/libchen_gpu.so".into());
-        Self::new(
+        Self::new_with_options(
             &rules_library,
             &neural_library,
             &runtime_library,
             &model,
             capacity,
+            ExecutionOptions::from_environment()?,
         )
     }
 }
@@ -394,6 +648,9 @@ impl ResidentTree for HipNeuralTree {
     }
     fn evaluator_artifact_sha256(&self) -> Option<&str> {
         Some(&self.model_sha256)
+    }
+    fn neural_execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        self.neural.execution_stats()
     }
     fn reset(&mut self, root: RuleState, history: &[u64]) -> Result<(), TreeError> {
         self.tree.reset(root, history)
@@ -424,6 +681,28 @@ impl ResidentTree for HipNeuralTree {
 mod tests {
     use super::*;
     #[test]
+    fn process_plugin_identity_accepts_aliases_and_rejects_alternate_copies() {
+        let root =
+            std::env::temp_dir().join(format!("chen-plugin-identity-{}", std::process::id()));
+        std::fs::create_dir_all(&root).unwrap();
+        let first = root.join("first.so");
+        let alias = root.join("alias.so");
+        let other = root.join("other.so");
+        std::fs::write(&first, b"identity fixture").unwrap();
+        std::fs::hard_link(&first, &alias).unwrap();
+        std::fs::copy(&first, &other).unwrap();
+        let identity = Mutex::new(None);
+        claim_plugin_identity(&identity, &first).unwrap();
+        claim_plugin_identity(&identity, &alias).unwrap();
+        assert!(
+            claim_plugin_identity(&identity, &other)
+                .unwrap_err()
+                .contains("restart")
+        );
+        claim_plugin_identity(&identity, &first).unwrap();
+        std::fs::remove_dir_all(root).unwrap();
+    }
+    #[test]
     fn external_descriptor_layout() {
         assert_eq!(std::mem::size_of::<ExternalEvaluator>(), 80);
         assert_eq!(
@@ -431,6 +710,45 @@ mod tests {
             24
         );
         assert_eq!(std::mem::offset_of!(ExternalEvaluator, max_batch), 64);
+        assert_eq!(std::mem::size_of::<ExecutionConfig>(), 24);
+        assert_eq!(
+            std::mem::offset_of!(ExecutionConfig, retained_budget_bytes),
+            16
+        );
+        assert_eq!(std::mem::size_of::<NativeExecutionStats>(), 88);
+        assert_eq!(
+            std::mem::offset_of!(NativeExecutionStats, capture_wall_ms),
+            80
+        );
+    }
+    #[test]
+    fn graph_policy_admission_is_explicit_and_bounded() {
+        let defaults = ExecutionOptions::parse(None, None, None).unwrap();
+        assert_eq!(defaults.mode, ExecutionMode::Eager);
+        let eager_config = defaults.native_config();
+        assert_eq!(eager_config.mode, 0);
+        assert_eq!(eager_config.max_cached_shapes, 0);
+        assert_eq!(eager_config.retained_budget_bytes, 0);
+        let options = ExecutionOptions::parse(Some("graph"), Some("8"), Some("1048576")).unwrap();
+        assert_eq!(options.mode, ExecutionMode::Graph);
+        assert_eq!(options.max_cached_shapes, 8);
+        assert_eq!(options.retained_budget_bytes, 1048576);
+        let graph_config = options.native_config();
+        assert_eq!(graph_config.mode, 1);
+        assert_eq!(graph_config.max_cached_shapes, 8);
+        assert_eq!(graph_config.retained_budget_bytes, 1048576);
+        for (mode, shapes, bytes) in [
+            (Some("auto"), None, None),
+            (Some("Graph"), None, None),
+            (None, Some("0"), None),
+            (None, Some("17"), None),
+            (None, Some("-1"), None),
+            (None, None, Some("0")),
+            (Some("graph"), None, Some("4294967297")),
+            (None, None, Some("18446744073709551616")),
+        ] {
+            assert!(ExecutionOptions::parse(mode, shapes, bytes).is_err());
+        }
     }
     #[test]
     fn artifact_admission_rejects_tampering_and_wrong_contracts() {

@@ -68,7 +68,11 @@ Models, latent transitions and resident replay are on
 now runs their trained static encoders inside `hip-resident`; set `Eval=neural`
 and supply a fingerprinted deployment archive. Current search-teacher models
 underperform material on heldout positions; they establish integration, not a
-strength gain.
+strength gain. Optional [exact-shape graph inference](GPU_INFERENCE_PERF.md)
+reduces warm small-batch callback latency, with cold capture costs and explicit
+cache telemetry; eager remains the default. The neural branch also retains a
+[27-run value-head study](../chen-neural/docs/VALUE_STUDY.md) whose models trail
+material on heldout score error.
 The [offline match harness](docs/harness/README.md) saves paired games and failures.
 The requested target is 2500 on Lichess, which requires separate rating evidence.
 

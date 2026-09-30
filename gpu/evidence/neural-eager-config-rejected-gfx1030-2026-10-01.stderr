@@ -1,0 +1,10 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 375, in <module>
+    main()
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 248, in main
+    completed = subprocess.run(command, env=environment(args, model), check=True, capture_output=True, text=True, timeout=90)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/tmp/chen-graph-plugin/chen', 'bench', '--backend', 'hip-resident', '--eval', 'neural', '--depth', '2', '--max-positions', '50000', '--suite', '/tmp/chen-native-plugin/benches/positions.txt']' returned non-zero exit status 1.

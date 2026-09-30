@@ -1,0 +1,13 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 375, in <module>
+    main()
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 353, in main
+    move, info = chooser.search(board, 'go depth 2 nodes 20000')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 147, in search
+    lines = self.wait("bestmove ")
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 130, in wait
+    raise AssertionError(("UCI timeout", prefix, self.process.poll(), self.diagnostic, collected, self.errors))
+AssertionError: ('UCI timeout', 'bestmove ', None, {'evaluator': 'neural', 'backend': 'hip-resident', 'option_order': 'neural-first', 'engine_pid': 11964, 'last_command': 'quit', 'game_index': 0, 'ply_after_opening': 0, 'chooser': 'neural', 'board_fen': 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3', 'history': ['e2e4', 'e7e5', 'g1f3', 'b8c6']}, [], ['/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory'])

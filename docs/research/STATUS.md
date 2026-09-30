@@ -1,4 +1,4 @@
-# Research checkpoint — 2026-09-30
+# Research checkpoint — 2026-10-01
 
 The original scope remains active: gfx1030 GPU execution, modular comparable
 search, independent neural architecture/latent research, resident training data,
@@ -77,6 +77,39 @@ This checkpoint records implemented foundations and open gates.
 
 ## Research findings
 
+The latest checkpoint adds optional exact-count native HIP graph inference,
+Rust execution-policy admission/telemetry, and process-lifetime single-provider
+ownership. [Native timings](../../GPU_INFERENCE_PERF.md) measure 1.75/2.04/2.00x
+warm batch-one callback gains for square/relation/plan, including owned input
+staging and unchanged guards. Batch 256 gains fall to 1.05–1.06x. Cold small-shape
+capture costs 450–1242 ms, so this remains an opt-in experiment. All 27 native
+model/count cases, borrowed-pointer changes, LRU/admission checks and tested
+failure policies pass. The [Rust integration record](../../gpu/evidence/neural-graph-integration-2026-10-01.json)
+checks 18 cases per mode against independent minimax with identical outcomes.
+Current host suites pass 37/43 tests, six Rust hardware checks pass, and the
+combined neural suite passes 88 CPU/GPU tests in ROCm without skips.
+Both modes pass option ordering and resource/stop checks. Graph mode completes
+40 legal game plies; final eager play again times out on the first neural move.
+The raw failure is preserved and long-play reliability remains open.
+
+Neural commit `090f2a4` retains a
+[predeclared 27-run value study](../../../chen-neural/docs/VALUE_STUDY.md): three
+encoders, three readouts, three seeds, 2048 updates each on the same resident
+corpus/sample streams. All learned runs trail material's 227.1 cp heldout MAE.
+Residual heads reach 232.0/246.9/241.4 cp mean MAE; none improves aggregate
+selected-child regret across seeds. Improved sibling concordance does not
+produce stronger top decisions. Low-score corrections and a training/heldout
+gap suggest specific regularization/ranking experiments on a fresh split;
+saturation was not observed. These adapters remain outside production inference.
+
+Main commit `c51e78c` pins official offline tools and records a
+[64-game reference match](../harness/reference-2026-10-01.md) against Stockfish 19
+at requested 2000 nodes per move: 61 losses, 3 draws, 0 wins, 32 complete color-swapped
+pairs, 4015 independently replayed legal plies. The original bootstrap output is
+retained historically and excluded from inference because the authored openings
+are correlated. New intervals require an explicit independence assertion.
+This diagnostic does not calibrate Elo or complete the Fastchess/SPRT gate.
+
 The standalone tapered kernel reaches roughly 100 million positions/second at
 batch 32768 in one measured sweep. This excludes position packing, rules,
 search and network inference. Small-batch launch latency is substantial; a
@@ -112,7 +145,9 @@ artifact capture and canonical held-out split checks.
 2. Compare full-width frontier, faithful regularized batched search and a
    separately declared adaptive scheduler at equal wall-clock budgets.
 3. Optimize the executed trained batched inference and sustained resident data
-   generation, retaining its stream/lifetime/ownership contract.
+   generation, retaining its stream/lifetime/ownership contract. Measure graph
+   shape reuse and cold costs before cache admission changes; investigate the
+   repeated eager-game timeout with thread diagnostics.
 4. Improve action-sensitive dynamics with exact transition reconstruction and
    counterfactual tactical probes; test multistep held-out drift before latent
    search. Fully observed static inference is already an experimental option;
@@ -124,4 +159,5 @@ artifact capture and canonical held-out split checks.
    the chosen Lichess pool; no account deployment or rating result exists yet.
 
 No requirement has been dropped. Selective resident search and GPU self-play,
-strong trained evaluation, optimized inference, long matches/SPRT and the final rating target remain incomplete.
+strong trained evaluation, sustained inference optimization, reliable long
+matches/SPRT and the final rating target remain incomplete.

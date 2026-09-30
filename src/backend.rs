@@ -9,6 +9,23 @@ pub struct BatchTelemetry {
     pub kernel_ms: f64,
     pub d2h_ms: f64,
 }
+/// Optional execution-policy telemetry, separate from the model's identity.
+#[derive(Clone, Copy, Debug)]
+pub struct NeuralExecutionStats {
+    pub mode: &'static str,
+    pub max_cached_shapes: u32,
+    pub retained_budget_bytes: u64,
+    pub first_used: bool,
+    pub cached_shapes: u64,
+    pub hits: u64,
+    pub misses: u64,
+    pub captures: u64,
+    pub evictions: u64,
+    pub retained_pool_bytes: u64,
+    pub staging_logical_bytes: u64,
+    pub peak_observed_pool_bytes: u64,
+    pub capture_wall_ms: f64,
+}
 impl BatchTelemetry {
     pub fn accumulate(&mut self, other: Self) {
         self.positions += other.positions;
@@ -62,6 +79,9 @@ pub trait SearchBackend: Send {
     fn name(&self) -> &str;
     fn evaluator_artifact_sha256(&self) -> Option<&str> {
         None
+    }
+    fn neural_execution_stats(&self) -> Result<Option<NeuralExecutionStats>, String> {
+        Ok(None)
     }
     fn stop_handle(&self) -> Arc<AtomicBool>;
     fn clear(&mut self);

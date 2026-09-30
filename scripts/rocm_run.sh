@@ -46,6 +46,11 @@ if [[ -n "${CHEN_NEURAL_MODEL:-}" ]]; then
     neural_env=(-e "CHEN_NEURAL_MODEL=$remote/model.pt" -e "CHEN_NEURAL_LIBRARY=$remote/libchen_neural.so" \
         -e "CHEN_NEURAL_HIP_RUNTIME=$torch_runtime" -e "LD_PRELOAD=$torch_runtime" \
         -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1)
+    for execution_key in CHEN_NEURAL_EXECUTION CHEN_NEURAL_GRAPH_SHAPES CHEN_NEURAL_GRAPH_BYTES; do
+        if [[ -v "$execution_key" ]]; then
+            neural_env+=(-e "$execution_key=${!execution_key}")
+        fi
+    done
 fi
 if [[ -n "${CHEN_ARTIFACT_DIR:-}" ]]; then
     mkdir -p -- "$CHEN_ARTIFACT_DIR"
@@ -56,6 +61,17 @@ if [[ -n "${CHEN_ARTIFACT_DIR:-}" ]]; then
         for neural_artifact in model.pt model.pt.json libchen_neural.so libchen_neural.so.runtime; do
             docker cp "$container:$remote/$neural_artifact" "$CHEN_ARTIFACT_DIR/$neural_artifact"
         done
+        docker exec -i "${neural_env[@]}" "$container" python3 - "$torch_runtime" > "$CHEN_ARTIFACT_DIR/neural-execution.json" <<'PY_EXECUTION'
+import hashlib, json, os, sys
+from pathlib import Path
+path = Path(sys.argv[1])
+keys = ('CHEN_NEURAL_EXECUTION', 'CHEN_NEURAL_GRAPH_SHAPES', 'CHEN_NEURAL_GRAPH_BYTES',
+        'CHEN_NEURAL_HIP_RUNTIME', 'LD_PRELOAD', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS')
+print(json.dumps({'requested_environment': {key: os.environ[key] for key in keys if key in os.environ},
+                  'producing_hip_runtime': str(path),
+                  'producing_hip_runtime_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+                  'scope': 'Requested policy; bench neural_execution records admitted mode and limits.'}, indent=2))
+PY_EXECUTION
     fi
     if [[ "$mode" == compare ]]; then
         docker cp "$container:$remote/resident_bench.py" "$CHEN_ARTIFACT_DIR/resident_bench.py"
@@ -66,7 +82,7 @@ if [[ -n "${CHEN_ARTIFACT_DIR:-}" ]]; then
     fi
     docker exec "$container" hipcc --version > "$CHEN_ARTIFACT_DIR/hipcc.txt"
     docker inspect "$container" --format '{{.Image}}' > "$CHEN_ARTIFACT_DIR/container-image.txt"
-    docker exec "$container" python3 "$remote/gpu/probe.py" "$remote/libchen_gpu.so" --max-batch 1 --repetitions 1 > "$CHEN_ARTIFACT_DIR/device-probe.jsonl"
+    docker exec "${neural_env[@]}" "$container" python3 "$remote/gpu/probe.py" "$remote/libchen_gpu.so" --max-batch 1 --repetitions 1 > "$CHEN_ARTIFACT_DIR/device-probe.jsonl"
     python3 - "$CHEN_ARTIFACT_DIR" <<'PY_MANIFEST'
 import hashlib, json, sys
 from pathlib import Path
@@ -86,7 +102,7 @@ if [[ "$mode" == test ]]; then
         docker exec -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" "$container" "$remote/$test_target-tests" --ignored --test-threads=1 --nocapture
     done
 elif [[ "$mode" == neural-test ]]; then
-    docker exec -w "$remote" -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" -e CHEN_TEST_DEVICE=cuda -e CHEN_DYNAMICS_GPU=1 -e CHEN_BRIDGE_TEST_GPU=1 -e CHEN_TEACHER_TEST_GPU=1 -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 "$container" python3 -m unittest discover -s neural/tests -v
+    docker exec -w "$remote" -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" -e CHEN_TEST_DEVICE=cuda -e CHEN_DYNAMICS_GPU=1 -e CHEN_BRIDGE_TEST_GPU=1 -e CHEN_TEACHER_TEST_GPU=1 -e CHEN_VALUE_STUDY_TEST_GPU=1 -e OMP_NUM_THREADS=1 -e OPENBLAS_NUM_THREADS=1 "$container" python3 -m unittest discover -s neural/tests -v
 elif [[ "$mode" == compare ]]; then
     docker exec -w "$remote" -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" -e "CHEN_SOURCE_COMMIT=$(git rev-parse HEAD)" -e "CHEN_SOURCE_STATUS=$(git status --short)" "$container" python3 resident_bench.py "$@" --output resident-comparison.json
     result_dir=${CHEN_RESULTS_DIR:-results/resident-comparison}
