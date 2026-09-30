@@ -1,0 +1,123 @@
+{
+  "kind": "pinned_fastchess_paired_experiment",
+  "argv": [
+    "/home/iskam/src/vibe/chen/results/match-tools/fastchess-linux-x86-64/fastchess",
+    "-concurrency",
+    "1",
+    "-rounds",
+    "2",
+    "-games",
+    "2",
+    "-repeat",
+    "-srand",
+    "20261001",
+    "-report",
+    "penta=true",
+    "-strict",
+    "-openings",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-ep-match/openings.epd",
+    "format=epd",
+    "order=sequential",
+    "-pgnout",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-ep-match/games.pgn",
+    "append=false",
+    "min=false",
+    "nodes=true",
+    "-config",
+    "outname=/home/iskam/src/vibe/chen/results/fastchess-ep-match/runner-state.json",
+    "-log",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-ep-match/runner.log",
+    "append=false",
+    "engine=true",
+    "compress=false",
+    "-engine",
+    "cmd=/home/iskam/src/vibe/chen/results/fastchess-ep-match/candidate-launcher.py",
+    "name=candidate",
+    "proto=uci",
+    "option.Backend=alphabeta",
+    "option.Eval=tapered",
+    "option.Level=20",
+    "option.Hash=1",
+    "-engine",
+    "cmd=/home/iskam/src/vibe/chen/results/fastchess-ep-match/base-launcher.py",
+    "name=base",
+    "proto=uci",
+    "option.Backend=alphabeta",
+    "option.Eval=tapered",
+    "option.Level=20",
+    "option.Hash=1",
+    "-each",
+    "depth=2"
+  ],
+  "parameters": {
+    "config": "results/fastchess-ep-inputs/config.json",
+    "tools": "results/match-tools",
+    "openings": "results/fastchess-ep-inputs/openings.txt",
+    "max_games": 4,
+    "nodes": null,
+    "depth": 2,
+    "tc": null,
+    "sprt": null,
+    "wall_seconds": 20.0,
+    "seed": 20261001,
+    "out": "results/fastchess-ep-match"
+  },
+  "engines": {
+    "candidate": {
+      "command": [
+        "/home/iskam/src/vibe/chen/results/fastchess-ep-inputs/chen"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen",
+      "env": {},
+      "launcher_sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "adapter_sha256": "6d287a2bfc50a28c13d55b5ca34c0a7522062c1950cc25a8f8082252e93eb196",
+      "declared_artifacts": {
+        "rust_binary": {
+          "path": "/home/iskam/src/vibe/chen/results/fastchess-ep-inputs/chen",
+          "sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b"
+        }
+      }
+    },
+    "base": {
+      "command": [
+        "/home/iskam/src/vibe/chen/results/fastchess-ep-inputs/chen"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen",
+      "env": {},
+      "launcher_sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "adapter_sha256": "6d287a2bfc50a28c13d55b5ca34c0a7522062c1950cc25a8f8082252e93eb196",
+      "declared_artifacts": {
+        "rust_binary": {
+          "path": "/home/iskam/src/vibe/chen/results/fastchess-ep-inputs/chen",
+          "sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b"
+        }
+      }
+    }
+  },
+  "runner": {
+    "pin": {
+      "version": "v1.8.2-alpha",
+      "url": "https://github.com/Disservin/fastchess/releases/download/v1.8.2-alpha/fastchess-linux-x86-64.tar",
+      "sha256": "1003f920bebe841acdab5e6d7871e93171a4586857b3ec91c21ef5777f26ff96",
+      "archive": "fastchess.tar",
+      "binary": "fastchess-linux-x86-64/fastchess",
+      "license": "MIT; bundled dependency licenses retained in archive"
+    },
+    "binary_sha256": "3d0a8f3c8b837a96366ac838f3ddf6fe87b813abb4ad2852284c0ce409132566",
+    "reported_version": "fastchess alpha 1.8.2 compiled for ubuntu-22.04 20260726-f618e34 (CI)"
+  },
+  "input_sha256": {
+    "config": "3709bfdcde4c26e43624d0407664123b78a3fa4d3bf406a82cd2cc4c42be826e",
+    "openings": "cbdc616c7b2cf60341efc996d8b0b77e0aa9da09d47ae56b85ec7c022ed17320"
+  },
+  "opening_normalization": "Legal effective EP, preserving rights/clocks/fullmove; raw declarations retained in input-openings.txt and per-game audit rows",
+  "runner_openings_sha256": "f8531890c71674cd2b2374f52ce04e291314ee09c73dac1475c40cf7a15db6ad",
+  "sprt_declaration": null,
+  "chess_version": "1.11.2",
+  "platform": "Linux-7.2.7-zen1-1-zen-x86_64-with-glibc2.44",
+  "script_sha256": "14b1ce8b4f2084a56b7b132735e5936aac8bb4dac9ad947c962f7e6b43abc0c0",
+  "audit_sha256": "8b5f83e1f7af841c270ac830dfc555dd6c4a5ec28ae172266453fa7f70dfaf59",
+  "selected_inherited_environment": {},
+  "rating_scope": "Relative offline experiment; no Lichess rating certification",
+  "sampling_scope": "Workload diagnostic; no statistical acceptance"
+}

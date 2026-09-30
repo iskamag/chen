@@ -13,7 +13,7 @@ import sys
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from harness.fastchess import audit_configuration, audit_pgn, audit_scoreboard, decision, descriptive, validate_sprt
+from harness.fastchess import audit_configuration, audit_pgn, audit_scoreboard, decision, descriptive, validate_sprt, normalized_opening_fen, opening_identity
 from scripts.fetch_match_tools import PINS, sha
 from scripts.match import opening_rows
 
@@ -134,7 +134,7 @@ def main():
     # A finite sequential suite repeated within the run is not an independent
     # sample; reject it for statistical mode before any engines are launched.
     if sprt:
-        identities = [' '.join(fen.split()[:4]) for _, fen in openings]
+        identities = [opening_identity(fen) for _, fen in openings]
         if args.max_games // 2 > len(openings) or len(set(identities)) != len(identities):
             raise ValueError('SPRT mode requires distinct declared openings and no suite cycling')
     out = Path(args.out).resolve()
@@ -143,7 +143,7 @@ def main():
     shutil.copyfile(args.openings, out / 'input-openings.txt')
     if args.sprt:
         shutil.copyfile(args.sprt, out / 'input-sprt.json')
-    (out / 'openings.epd').write_text('\n'.join(fen for _, fen in openings) + '\n')
+    (out / 'openings.epd').write_text('\n'.join(normalized_opening_fen(fen) for _, fen in openings) + '\n')
     command = [str(runner), '-concurrency', '1', '-rounds', str(args.max_games // 2), '-games', '2', '-repeat',
                '-srand', str(args.seed), '-report', 'penta=true', '-strict',
                '-openings', 'file=' + str(out / 'openings.epd'), 'format=epd', 'order=sequential',
@@ -169,6 +169,8 @@ def main():
     metadata = {'kind': 'pinned_fastchess_paired_experiment', 'argv': command,
                 'parameters': vars(args), 'engines': engine_records, 'runner': runner_record,
                 'input_sha256': {'config': sha(args.config), 'openings': sha(args.openings)},
+                'opening_normalization': 'Legal effective EP, preserving rights/clocks/fullmove; raw declarations retained in input-openings.txt and per-game audit rows',
+                'runner_openings_sha256': sha(out / 'openings.epd'),
                 'sprt_declaration': sprt, 'chess_version': __import__('chess').__version__,
                 'platform': platform.platform(), 'script_sha256': sha(__file__),
                 'audit_sha256': sha(Path(__file__).resolve().parents[1] / 'harness/fastchess.py'),

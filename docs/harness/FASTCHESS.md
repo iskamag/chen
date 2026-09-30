@@ -62,7 +62,14 @@ rules after inspecting their match results.
 
 Every admitted game must have a normal termination, legal replay, exact result,
 matching header/body result tokens, ply count, expected initial FEN and expected
-pair/round/color identity.
+pair/round/color identity. The pinned runner removes en-passant targets unless
+a legal capture exists, including when a pseudo-legal capture exposes the king.
+The driver writes this effective-EP FEN and compares PGN openings under the same
+normalization, preserving side, pieces, castling rights, halfmove and fullmove.
+Raw declared FENs remain in the copied input and per-game audit rows. Distinct
+opening checks also use effective EP, so an ineffective target cannot disguise
+a repeated board. This runner normalization is part of the actual engine input,
+including when a neural feature schema represents raw EP.
 Available rule draw claims are admitted. Scoreboard WDL and all six native paired
 bins must match the replay. Adjudication, time forfeit, illegal move, abandonment,
 interruption, parse failure or missing pair fails the run. No score adjudication,
@@ -97,9 +104,16 @@ control. Ordinary fixtures contain both mover colors and a nonzero halfmove
 clock; all four games per successful fixture independently replay and match the
 native scoreboard. Final configuration guards also recheck the earlier node/
 clock records. Recorded source hashes distinguish execution snapshots from the
-final audit source. All 20 harness tests pass, including header/body result
+final audit source. All 23 harness tests pass, including header/body result
 corruption, configuration corruption, literal argv/environment/PATH, technical
 forfeits, capped stopping and a live orphan-child retirement control.
+
+The [effective en passant regression](evidence/fastchess-ep-2026-10-01/verification.json)
+also executes four games with the pinned runner: ineffective targets are removed,
+legal targets survive, and both clocks are preserved. All four archived games
+independently replay to one-ply checkmate. Equivalent ineffective-EP openings are
+rejected before launch in SPRT mode. The unit regressions also cover pinned EP
+and reject a PGN that drops a legal target.
 
 These authored mate fixtures establish protocol and result handling. No actual
 SPRT boundary crossing, independent strength sample, long GPU match, remote

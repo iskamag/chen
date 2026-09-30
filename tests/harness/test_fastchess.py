@@ -8,7 +8,7 @@ import unittest
 import chess
 import chess.pgn
 
-from harness.fastchess import audit_configuration, audit_pgn, audit_scoreboard, decision, validate_sprt
+from harness.fastchess import audit_configuration, audit_pgn, audit_scoreboard, decision, validate_sprt, normalized_opening_fen, opening_identity
 from scripts.fastchess_match import launcher, retire
 
 FEN = '7k/5Q2/6K1/8/8/8/8/8 w - - 0 1'
@@ -16,8 +16,8 @@ DECLARATION = {'elo0': 0, 'elo1': 5, 'alpha': .05, 'beta': .05,
                'model': 'normalized', 'sampling_design': 'Independent held-out opening-pair sample'}
 
 
-def mate_game(candidate_white, round_id=1):
-    board = chess.Board(FEN)
+def mate_game(candidate_white, round_id=1, fen=FEN):
+    board = chess.Board(fen)
     game = chess.pgn.Game()
     game.setup(board)
     game.headers.update({'White': 'candidate' if candidate_white else 'base',
@@ -55,6 +55,45 @@ class FastchessAuditTests(unittest.TestCase):
         state['stats']['candidate vs base']['wins'] = 2
         with self.assertRaises(ValueError):
             audit_scoreboard(state, pairs)
+
+    def test_ineffective_ep_normalization_preserves_declared_opening(self):
+        raw = '7k/5Q2/6K1/p7/8/8/8/8 w - a6 0 12'
+        games = [mate_game(True, fen=raw), mate_game(False, fen=raw)]
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'games.pgn'
+            path.write_text('\n\n'.join(str(game) for game in games) + '\n\n')
+            rows, pairs = audit_pgn(path, [('ineffective-ep', raw)], 2)
+        self.assertEqual(pairs, [(1., 0.)])
+        self.assertEqual([row['declared_opening_fen'] for row in rows], [raw, raw])
+        self.assertTrue(all(row['initial_fen'].split()[3] == '-' for row in rows))
+        self.assertTrue(all(row['initial_fen'].endswith('0 12') for row in rows))
+
+    def test_effective_ep_cannot_be_dropped_from_game(self):
+        raw = '7k/5Q2/6K1/pP6/8/8/8/8 w - a6 0 12'
+        self.assertTrue(chess.Board(raw).has_legal_en_passant())
+        games = [mate_game(True, fen=raw), mate_game(False, fen=raw)]
+        games[0].headers['FEN'] = raw.replace('a6', '-')
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'games.pgn'
+            path.write_text('\n\n'.join(str(game) for game in games) + '\n\n')
+            with self.assertRaises(ValueError):
+                audit_pgn(path, [('effective-ep', raw)], 2)
+
+    def test_ep_identity_uses_legal_capture_and_preserves_clock_rights(self):
+        ineffective = '7k/5Q2/6K1/p7/8/8/8/8 w - a6 0 12'
+        legal = '7k/5Q2/6K1/pP6/8/8/8/8 w - a6 0 12'
+        pinned = '4k3/8/8/r4pPK/8/8/8/8 w - f6 0 12'
+        self.assertTrue(chess.Board(pinned).has_pseudo_legal_en_passant())
+        self.assertFalse(chess.Board(pinned).has_legal_en_passant())
+        for fen in (ineffective, pinned):
+            target = fen.split()[3]
+            without = fen.replace(' ' + target + ' ', ' - ')
+            self.assertEqual(opening_identity(fen), opening_identity(without))
+            self.assertEqual(normalized_opening_fen(fen), without)
+        self.assertEqual(normalized_opening_fen(legal), legal)
+        self.assertNotEqual(opening_identity(legal), opening_identity(legal.replace('a6', '-')))
+        clocks = chess.Board().fen().replace('0 1', '17 42')
+        self.assertEqual(normalized_opening_fen(clocks), clocks)
 
     def test_forfeit_is_failure_even_with_legal_mate_moves(self):
         for termination in ('time forfeit', 'abandoned', 'illegal move', 'adjudication', 'unterminated'):

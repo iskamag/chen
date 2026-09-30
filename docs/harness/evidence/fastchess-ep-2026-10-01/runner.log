@@ -1,0 +1,136 @@
+[Engine] [03:43:20.280804] <     140053030198064>  candidate <--- uci
+[Engine] [03:43:20.291315] <     140053030198064>  candidate ---> id name Chen 0.1.0
+[Engine] [03:43:20.291343] <     140053030198064>  candidate ---> id author Chen contributors
+[Engine] [03:43:20.291348] <     140053030198064>  candidate ---> option name Hash type spin default 16 min 1 max 1024
+[Engine] [03:43:20.291353] <     140053030198064>  candidate ---> option name Eval type combo default tapered var tapered var material var neural
+[Engine] [03:43:20.291358] <     140053030198064>  candidate ---> option name UseTT type check default true
+[Engine] [03:43:20.291363] <     140053030198064>  candidate ---> option name Quiescence type check default true
+[Engine] [03:43:20.291367] <     140053030198064>  candidate ---> option name MoveOrdering type check default true
+[Engine] [03:43:20.291372] <     140053030198064>  candidate ---> option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident
+[Engine] [03:43:20.291377] <     140053030198064>  candidate ---> option name BatchSize type spin default 4096 min 1 max 65536
+[Engine] [03:43:20.291382] <     140053030198064>  candidate ---> option name MaxPositions type spin default 250000 min 1 max 2000000
+[Engine] [03:43:20.291386] <     140053030198064>  candidate ---> option name Level type spin default 20 min 1 max 20
+[Engine] [03:43:20.291391] <     140053030198064>  candidate ---> uciok
+[Engine] [03:43:20.291622] <     140053030198064>  base <--- uci
+[Engine] [03:43:20.301961] <     140053030198064>  base ---> id name Chen 0.1.0
+[Engine] [03:43:20.301991] <     140053030198064>  base ---> id author Chen contributors
+[Engine] [03:43:20.301996] <     140053030198064>  base ---> option name Hash type spin default 16 min 1 max 1024
+[Engine] [03:43:20.302001] <     140053030198064>  base ---> option name Eval type combo default tapered var tapered var material var neural
+[Engine] [03:43:20.302005] <     140053030198064>  base ---> option name UseTT type check default true
+[Engine] [03:43:20.302010] <     140053030198064>  base ---> option name Quiescence type check default true
+[Engine] [03:43:20.302015] <     140053030198064>  base ---> option name MoveOrdering type check default true
+[Engine] [03:43:20.302020] <     140053030198064>  base ---> option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident
+[Engine] [03:43:20.302024] <     140053030198064>  base ---> option name BatchSize type spin default 4096 min 1 max 65536
+[Engine] [03:43:20.302029] <     140053030198064>  base ---> option name MaxPositions type spin default 250000 min 1 max 2000000
+[Engine] [03:43:20.302034] <     140053030198064>  base ---> option name Level type spin default 20 min 1 max 20
+[Engine] [03:43:20.302038] <     140053030198064>  base ---> uciok
+[Engine] [03:43:20.302189] <     140053030198064>  candidate <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.302201] <     140053030198064>  candidate <--- setoption name Eval value tapered
+[Engine] [03:43:20.302208] <     140053030198064>  candidate <--- setoption name Level value 20
+[Engine] [03:43:20.302214] <     140053030198064>  candidate <--- setoption name Hash value 1
+[Engine] [03:43:20.302219] <     140053030198064>  candidate <--- ucinewgame
+[Engine] [03:43:20.302234] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.308827] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.308869] <     140053030198064>  base <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.308882] <     140053030198064>  base <--- setoption name Eval value tapered
+[Engine] [03:43:20.308890] <     140053030198064>  base <--- setoption name Level value 20
+[Engine] [03:43:20.308938] <     140053030198064>  base <--- setoption name Hash value 1
+[Engine] [03:43:20.308983] <     140053030198064>  base <--- ucinewgame
+[Engine] [03:43:20.309001] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.315590] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.315634] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.315657] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.315670] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.315682] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.315688] <     140053030198064>  candidate <--- position fen 7k/5Q2/6K1/p7/8/8/8/8 w - - 0 12
+[Engine] [03:43:20.315694] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.315705] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.315710] <     140053030198064>  candidate <--- go depth 2
+[Engine] [03:43:20.315929] <     140053030198064>  candidate ---> info depth 1 score mate 1 nodes 29 nps 915115 hashfull 0 time 0 pv f7g7
+[Engine] [03:43:20.315954] <     140053030198064>  candidate ---> bestmove f7g7
+[Engine] [03:43:20.315964] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.316095] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.316290] <     140053030198064>  base <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.316301] <     140053030198064>  base <--- setoption name Eval value tapered
+[Engine] [03:43:20.316308] <     140053030198064>  base <--- setoption name Level value 20
+[Engine] [03:43:20.316315] <     140053030198064>  base <--- setoption name Hash value 1
+[Engine] [03:43:20.316321] <     140053030198064>  base <--- ucinewgame
+[Engine] [03:43:20.316327] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.316491] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.316506] <     140053030198064>  candidate <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.316515] <     140053030198064>  candidate <--- setoption name Eval value tapered
+[Engine] [03:43:20.316543] <     140053030198064>  candidate <--- setoption name Level value 20
+[Engine] [03:43:20.316558] <     140053030198064>  candidate <--- setoption name Hash value 1
+[Engine] [03:43:20.316565] <     140053030198064>  candidate <--- ucinewgame
+[Engine] [03:43:20.316571] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.316695] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.316701] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.316717] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.316728] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.316742] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.316747] <     140053030198064>  base <--- position fen 7k/5Q2/6K1/p7/8/8/8/8 w - - 0 12
+[Engine] [03:43:20.316753] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.316763] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.316768] <     140053030198064>  base <--- go depth 2
+[Engine] [03:43:20.316919] <     140053030198064>  base ---> info depth 1 score mate 1 nodes 29 nps 950819 hashfull 0 time 0 pv f7g7
+[Engine] [03:43:20.316927] <     140053030198064>  base ---> bestmove f7g7
+[Engine] [03:43:20.316933] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.316971] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.317145] <     140053030198064>  candidate <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.317154] <     140053030198064>  candidate <--- setoption name Eval value tapered
+[Engine] [03:43:20.317160] <     140053030198064>  candidate <--- setoption name Level value 20
+[Engine] [03:43:20.317166] <     140053030198064>  candidate <--- setoption name Hash value 1
+[Engine] [03:43:20.317171] <     140053030198064>  candidate <--- ucinewgame
+[Engine] [03:43:20.317177] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.317362] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.317369] <     140053030198064>  base <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.317375] <     140053030198064>  base <--- setoption name Eval value tapered
+[Engine] [03:43:20.317380] <     140053030198064>  base <--- setoption name Level value 20
+[Engine] [03:43:20.317386] <     140053030198064>  base <--- setoption name Hash value 1
+[Engine] [03:43:20.317395] <     140053030198064>  base <--- ucinewgame
+[Engine] [03:43:20.317401] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.317611] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.317618] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.317632] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.317641] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.317652] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.317657] <     140053030198064>  candidate <--- position fen 7k/5Q2/6K1/pP6/8/8/8/8 w - a6 0 12
+[Engine] [03:43:20.317663] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.317671] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.317676] <     140053030198064>  candidate <--- go depth 2
+[Engine] [03:43:20.317772] <     140053030198064>  candidate ---> info depth 1 score mate 1 nodes 31 nps 966635 hashfull 0 time 0 pv f7g7
+[Engine] [03:43:20.317780] <     140053030198064>  candidate ---> bestmove f7g7
+[Engine] [03:43:20.317785] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.317802] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.317958] <     140053030198064>  base <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.317966] <     140053030198064>  base <--- setoption name Eval value tapered
+[Engine] [03:43:20.317972] <     140053030198064>  base <--- setoption name Level value 20
+[Engine] [03:43:20.317978] <     140053030198064>  base <--- setoption name Hash value 1
+[Engine] [03:43:20.317984] <     140053030198064>  base <--- ucinewgame
+[Engine] [03:43:20.317989] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.318128] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.318135] <     140053030198064>  candidate <--- setoption name Backend value alphabeta
+[Engine] [03:43:20.318141] <     140053030198064>  candidate <--- setoption name Eval value tapered
+[Engine] [03:43:20.318147] <     140053030198064>  candidate <--- setoption name Level value 20
+[Engine] [03:43:20.318152] <     140053030198064>  candidate <--- setoption name Hash value 1
+[Engine] [03:43:20.318157] <     140053030198064>  candidate <--- ucinewgame
+[Engine] [03:43:20.318163] <     140053030198064>  candidate <--- isready
+[Engine] [03:43:20.318286] <     140053030198064>  candidate ---> readyok
+[Engine] [03:43:20.318291] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.318305] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.318313] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.318325] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.318330] <     140053030198064>  base <--- position fen 7k/5Q2/6K1/pP6/8/8/8/8 w - a6 0 12
+[Engine] [03:43:20.318337] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.318347] <     140053030198064>  base ---> readyok
+[Engine] [03:43:20.318352] <     140053030198064>  base <--- go depth 2
+[Engine] [03:43:20.318429] <     140053030198064>  base ---> info depth 1 score mate 1 nodes 31 nps 1035404 hashfull 0 time 0 pv f7g7
+[Engine] [03:43:20.318436] <     140053030198064>  base ---> bestmove f7g7
+[Engine] [03:43:20.318442] <     140053030198064>  base <--- isready
+[Engine] [03:43:20.318474] <     140053030198064>  base ---> readyok
+[Engine] [03:43:21.280785] <             8769744>  candidate <--- stop
+[Engine] [03:43:21.280806] <             8769744>  candidate <--- quit
+[Engine] [03:43:21.380910] <             8769744>  <stderr> candidate ---> Process exited normally with status 0
+[Engine] [03:43:21.380959] <             8769744>  base <--- stop
+[Engine] [03:43:21.380970] <             8769744>  base <--- quit
+[Engine] [03:43:21.481502] <             8769744>  <stderr> base ---> Process exited normally with status 0

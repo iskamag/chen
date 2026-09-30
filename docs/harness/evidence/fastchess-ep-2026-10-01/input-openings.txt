@@ -1,0 +1,2 @@
+ineffective-ep | 7k/5Q2/6K1/p7/8/8/8/8 w - a6 0 12
+effective-ep | 7k/5Q2/6K1/pP6/8/8/8/8 w - a6 0 12

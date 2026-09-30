@@ -47,6 +47,23 @@ def validate_sprt(value):
     return value
 
 
+def normalized_opening_fen(fen):
+    """Pinned Fastchess retains EP only when a legal capture exists.
+
+    Normalize that field while preserving the other five FEN fields. A pinned
+    pawn's pseudo-legal EP capture is insufficient to retain the target.
+    """
+    board = chess.Board(fen)
+    if not board.is_valid():
+        raise ValueError('invalid opening position')
+    return board.fen(en_passant='legal')
+
+
+def opening_identity(fen):
+    """Conservative board/turn/rights/effective-EP identity for deduplication."""
+    return ' '.join(normalized_opening_fen(fen).split()[:4])
+
+
 def audit_pgn(path, openings, max_games):
     """Replay legal normal endpoints, verify paired FENs/colors and all results."""
     rows = []
@@ -63,6 +80,7 @@ def audit_pgn(path, openings, max_games):
             initial = board.fen(en_passant='fen')
             if not board.is_valid():
                 raise ValueError('invalid initial position')
+            effective_initial = board.fen(en_passant='legal')
             plies = 0
             for move in game.mainline_moves():
                 if move not in board.legal_moves:
@@ -79,6 +97,7 @@ def audit_pgn(path, openings, max_games):
             color = headers['White'] == 'candidate'
             rows.append({'round': int(headers['Round']), 'candidate_white': color,
                          'initial_fen': initial, 'result': result,
+                         'effective_initial_fen': effective_initial,
                          'candidate_score': white_score if color else 1 - white_score,
                          'plies': plies, 'termination': outcome.termination.name,
                          'final_fen': board.fen(en_passant='fen')})
@@ -89,10 +108,14 @@ def audit_pgn(path, openings, max_games):
         first, second = rows[i:i + 2]
         pair_index = i // 2
         expected = openings[pair_index % len(openings)][1]
+        effective_expected = normalized_opening_fen(expected)
         if (first['round'] != pair_index + 1 or second['round'] != pair_index + 1
                 or first['candidate_white'] == second['candidate_white']
-                or first['initial_fen'] != expected or second['initial_fen'] != expected):
+                or first['effective_initial_fen'] != effective_expected
+                or second['effective_initial_fen'] != effective_expected):
             raise ValueError('opening order, round, FEN or color pairing disagrees')
+        for row in (first, second):
+            row['declared_opening_fen'] = expected
         pairs.append((first['candidate_score'], second['candidate_score']))
     return rows, pairs
 

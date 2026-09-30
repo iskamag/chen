@@ -1,0 +1,8 @@
+{
+  "elo0": 0,
+  "elo1": 5,
+  "alpha": 0.05,
+  "beta": 0.05,
+  "model": "normalized",
+  "sampling_design": "Two authored mate protocol fixtures; explicitly no independence or strength interpretation."
+}

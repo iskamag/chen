@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "results/qa-venv/bin/python",
+    "scripts/fastchess_match.py",
+    "--config",
+    "results/fastchess-ep-inputs/config.json",
+    "--tools",
+    "results/match-tools",
+    "--openings",
+    "results/fastchess-ep-inputs/duplicates.txt",
+    "--sprt",
+    "results/fastchess-ep-inputs/sprt.json",
+    "--max-games",
+    "4",
+    "--depth",
+    "2",
+    "--wall-seconds",
+    "20",
+    "--out",
+    "results/fastchess-ep-duplicates-rejected"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/iskam/src/vibe/chen/scripts/fastchess_match.py\", line 225, in <module>\n    main()\n    ~~~~^^\n  File \"/home/iskam/src/vibe/chen/scripts/fastchess_match.py\", line 139, in main\n    raise ValueError('SPRT mode requires distinct declared openings and no suite cycling')\nValueError: SPRT mode requires distinct declared openings and no suite cycling\n",
+  "out_created": false,
+  "scope": "Equivalent ineffective-EP inputs rejected before output directory or engine launch"
+}

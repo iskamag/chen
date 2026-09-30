@@ -155,8 +155,8 @@ This diagnostic does not calibrate Elo or complete the Fastchess/SPRT gate.
 The [pinned Fastchess integration](../harness/FASTCHESS.md) now freezes paired
 experiments, delegates SPRT to the pinned release, independently checks PGN body/
 header results, normal rule endpoints, pair identities, native configuration and
-scoreboard, and treats the finite game cap as inconclusive. Twenty harness tests
-and actual node/depth/clock/failure/interrupt fixtures pass. These authored
+scoreboard, and treats the finite game cap as inconclusive. Twenty-three harness tests
+and actual node/depth/clock/failure/interrupt/effective-EP fixtures pass. These authored
 protocol fixtures establish result handling; real strength matches and actual
 statistical boundary acceptance remain unverified. Container matches run the
 whole harness beside local engine executables; host remote-wrapper retirement
