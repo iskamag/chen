@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "target": "actual gfx1030",
+  "decision": "candidate rejected as a reliability fix; production unchanged",
+  "experiment": "Before eager decode, checked hipDeviceSynchronize; exact installed Torch API at::cuda::getCurrentCUDABlasHandle; checked hipDeviceSynchronize. Existing plugin mutex, module/math/NODELETE/watchdog unchanged; graph branch unchanged.",
+  "trials": [
+    {
+      "status": "timeout",
+      "provenance": {
+        "record": "eager_stall_provenance",
+        "case": "full",
+        "watchdog_seconds": 30,
+        "gdb_version": "GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1",
+        "artifacts_sha256": {
+          "/tmp/chen-native-plugin/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c",
+          "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+          "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+          "/tmp/chen-blas-priming/libchen_neural.so": "09251d5624cc400624a332b219275b36d87dc8fd9f9308a794f55d7b999a72d8",
+          "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+          "/tmp/chen-blas-priming/run1/launcher.c": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+          "/tmp/chen-blas-priming/run1/chen-ptrace": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be"
+        },
+        "environment": {
+          "CHEN_NEURAL_EXECUTION": "eager",
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "AMD_DIRECT_DISPATCH": null,
+          "LD_PRELOAD": null
+        }
+      },
+      "exact_oracles": 18,
+      "oracle_evaluated_leaves": 11982,
+      "option_orders": 2,
+      "limit_records": 1,
+      "completed_game_plies": 0,
+      "timeouts": [
+        {
+          "record": "eager_stall_timeout",
+          "waiting_for": "bestmove ",
+          "returncode": null,
+          "diagnostic": {
+            "evaluator": "neural",
+            "backend": "hip-resident",
+            "option_order": "neural-first",
+            "engine_pid": 13683,
+            "last_command": "go depth 2 nodes 20000",
+            "game_index": 0,
+            "ply_after_opening": 0,
+            "chooser": "neural",
+            "board_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+            "history": [
+              "e2e4",
+              "e7e5",
+              "g1f3",
+              "b8c6"
+            ]
+          },
+          "stdout": [],
+          "stderr": [
+            "/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory"
+          ]
+        }
+      ],
+      "timeout_stacks": [
+        {
+          "record": "eager_stall_thread_snapshot",
+          "pid": 13683,
+          "label": "timeout-first",
+          "threads": [
+            {
+              "tid": 13683,
+              "comm": "chen",
+              "wchan": "anon_pipe_read",
+              "stat": "13683 (chen) S 13569 13569 13569 0 -1 4194560 66372 0 0 0 37 12 0 0 20 0 4 0 177522649 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 17 10 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13686,
+              "comm": "chen",
+              "wchan": "kfd_wait_on_events",
+              "stat": "13686 (chen) S 13569 13569 13569 0 -1 4194368 1 0 0 0 0 0 0 0 20 0 4 0 177522681 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 -1 1 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13688,
+              "comm": "chen",
+              "wchan": "kfd_wait_on_events",
+              "stat": "13688 (chen) S 13569 13569 13569 0 -1 4194368 2 0 0 0 0 0 0 0 20 0 4 0 177522683 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 -1 4 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13689,
+              "comm": "chen",
+              "wchan": "0",
+              "stat": "13689 (chen) R 13569 13569 13569 0 -1 4194368 3075 0 0 0 2983 1 0 0 20 0 4 0 177522700 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 0 0 0 -1 10 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            }
+          ],
+          "status": "/tmp/chen-blas-priming/run1/timeout-first-13683-status.txt",
+          "maps": "/tmp/chen-blas-priming/run1/timeout-first-13683-maps.txt",
+          "wchan": "/tmp/chen-blas-priming/run1/timeout-first-13683-wchan.txt",
+          "sched": "/tmp/chen-blas-priming/run1/timeout-first-13683-sched.txt",
+          "gdb_output": "/tmp/chen-blas-priming/run1/timeout-first-13683-gdb.txt",
+          "gdb_returncode": 0,
+          "gdb_sha256": "475f006bbc1c4678a2714050755c438d5dc3e433295d05a1d8a501afd6aa7280",
+          "gdb_attached": true
+        },
+        {
+          "record": "eager_stall_thread_snapshot",
+          "pid": 13683,
+          "label": "timeout-second",
+          "threads": [
+            {
+              "tid": 13683,
+              "comm": "chen",
+              "wchan": "anon_pipe_read",
+              "stat": "13683 (chen) S 13569 13569 13569 0 -1 4194560 66372 0 0 0 37 12 0 0 20 0 4 0 177522649 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 17 3 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13686,
+              "comm": "chen",
+              "wchan": "kfd_wait_on_events",
+              "stat": "13686 (chen) S 13569 13569 13569 0 -1 4194368 1 0 0 0 0 0 0 0 20 0 4 0 177522681 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 -1 1 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13688,
+              "comm": "chen",
+              "wchan": "kfd_wait_on_events",
+              "stat": "13688 (chen) S 13569 13569 13569 0 -1 4194368 2 0 0 0 0 0 0 0 20 0 4 0 177522683 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 1 0 0 -1 9 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            },
+            {
+              "tid": 13689,
+              "comm": "chen",
+              "wchan": "0",
+              "stat": "13689 (chen) R 13569 13569 13569 0 -1 4194368 3075 0 0 0 3040 1 0 0 20 0 4 0 177522700 10337398784 181330 18446744073709551615 94227001536672 94227002040000 140726947705488 0 0 0 0 4096 1088 0 0 0 -1 10 0 0 0 0 0 94227002064600 94227002067184 94227916333056 140726947712407 140726947712439 140726947712439 140726947712988 0"
+            }
+          ],
+          "status": "/tmp/chen-blas-priming/run1/timeout-second-13683-status.txt",
+          "maps": "/tmp/chen-blas-priming/run1/timeout-second-13683-maps.txt",
+          "wchan": "/tmp/chen-blas-priming/run1/timeout-second-13683-wchan.txt",
+          "sched": "/tmp/chen-blas-priming/run1/timeout-second-13683-sched.txt",
+          "gdb_output": "/tmp/chen-blas-priming/run1/timeout-second-13683-gdb.txt",
+          "gdb_returncode": 0,
+          "gdb_sha256": "26ea2f3f0489cc0a5cc41893eb75f029e92d92a60e4bfa68e4b9f1387cc0d2f9",
+          "gdb_attached": true
+        }
+      ],
+      "retirement": [
+        {
+          "record": "eager_stall_owned_child_retired",
+          "pid": 13683,
+          "returncode": -15,
+          "stderr": [
+            "/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory"
+          ]
+        }
+      ],
+      "summary": []
+    },
+    {
+      "status": "pass",
+      "provenance": {
+        "record": "eager_stall_provenance",
+        "case": "full",
+        "watchdog_seconds": 30,
+        "gdb_version": "GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1",
+        "artifacts_sha256": {
+          "/tmp/chen-native-plugin/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c",
+          "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+          "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+          "/tmp/chen-blas-priming/libchen_neural.so": "09251d5624cc400624a332b219275b36d87dc8fd9f9308a794f55d7b999a72d8",
+          "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+          "/tmp/chen-blas-priming/run2/launcher.c": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+          "/tmp/chen-blas-priming/run2/chen-ptrace": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be"
+        },
+        "environment": {
+          "CHEN_NEURAL_EXECUTION": "eager",
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "AMD_DIRECT_DISPATCH": null,
+          "LD_PRELOAD": null
+        }
+      },
+      "exact_oracles": 18,
+      "oracle_evaluated_leaves": 11982,
+      "option_orders": 2,
+      "limit_records": 1,
+      "completed_game_plies": 40,
+      "timeouts": [],
+      "timeout_stacks": [],
+      "retirement": [],
+      "summary": [
+        {
+          "record": "neural_search_summary",
+          "model_position_comparisons": 18,
+          "exact_scores": 18,
+          "iterative_oracle_evaluated_leaves": 11982,
+          "inputs_unchanged": true,
+          "limitations": [
+            "Finite six-position/two-ply oracle, not exhaustive search verification.",
+            "Optimal tie set compared; python-chess and Rust move orders differ.",
+            "Benchmark times include cold model/runtime work and are not steady-state speed claims.",
+            "Inherited resident h2d_ms/d2h_ms are unmeasured zero placeholders.",
+            "Legal games and UCI limits do not establish playing strength or 2500 Lichess."
+          ]
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "Trial1 reproduced first-game30-second failure after 18 exact comparisons/11982 leaves/orders/limits. Both stacks now show HSA signal wait -> AqlQueue::ExecutePM4 -> GpuAgent::InvalidateCodeCaches -> executable freeze -> HIP code-object load -> Tensile lazy loading -> rocBLAS GEMM.",
+    "Trial2 fresh process passed the same complete prelude and40gameplies.",
+    "These two predeclared trials are not a failure-rate estimate. Priming alone cannot establish reliable eager inference; no production adoption."
+  ],
+  "causal_limitations": [
+    "Baseline stalls in BLAS workspace hipFree synchronization, while candidate trial1 reaches BLAS kernel code-object freeze. This locates different wait boundaries but does not establish which underlying HSA/driver/runtime mechanism prevents completion.",
+    "No numerical architecture/score contract changed; 18 scoped search oracles passed in both candidate trials. Separate native27batch matrix has not been rerun for rejected candidate."
+  ],
+  "primary_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/pytorch/pytorch/v2.10.0/aten/src/ATen/cuda/CublasHandlePool.cpp",
+      "supports": "ROCm workspace replacement, lazy per-thread handle reservation and current-stream workspace installation."
+    }
+  ],
+  "source_sha256": {
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/build_neural.sh": "e1d19a970caa01ec24641d5c59aa3ed252c4c795af804d3159fe08035446bb19",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/Torch2.10-HIPContextLight.h": "a411c7c3ae4b2bc02bc8bc20372c03d5c4ec18f161c299ec785486ccc0572dc3",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_neural.cpp": "2b5837a791eadefd15e63ae237d0be0cd11eef57edb95bb31482e3d75b92748a",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-source/chen_neural_decode.hip": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce"
+  },
+  "evidence_sha256": {
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1.jsonl": "eaea15cd64ca577479d5ebbf8361a0f272031f65e86ff05086e87bd938deb17d",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1.stderr": "5e40548aa49fca6869f69887aac578edc33721b2476f0fb4fd898fcc1ea9be3c",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-first-13683-gdb.txt": "475f006bbc1c4678a2714050755c438d5dc3e433295d05a1d8a501afd6aa7280",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-first-13683-maps.txt": "30453675bc33e8979f9e87cc014f6ea690f5f4d31251c6fe2d264f927c0c3ef4",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-first-13683-sched.txt": "f5dc12aa7a7059bc1f7ae9e922a7869a12c2505a04f3c26c85d9274141c1ebd7",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-first-13683-status.txt": "1d11c1fb48100b17d8df129872ecb3de662def6e53015279ed74bffbf80dad05",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-first-13683-wchan.txt": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-second-13683-gdb.txt": "26ea2f3f0489cc0a5cc41893eb75f029e92d92a60e4bfa68e4b9f1387cc0d2f9",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-second-13683-maps.txt": "30453675bc33e8979f9e87cc014f6ea690f5f4d31251c6fe2d264f927c0c3ef4",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-second-13683-sched.txt": "8d2c534c36c387cabce2ad71c915e1f8d1731b4b18e95f7b8c3bfe385df12619",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-second-13683-status.txt": "8daaaf8154634424a4086b543fe98429ebfb4e49c4e0038eb6226261be0d7b10",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run1-timeout-second-13683-wchan.txt": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run2.jsonl": "a54064ee379717b08e82fe4917d6d2956812d05ea3b4679e1aa8bf02eb7e48a2",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-run2.stderr": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inference-blas-priming-candidate-gfx1030-2026-10-01-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

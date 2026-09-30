@@ -1,0 +1,118 @@
+[New LWP 13689]
+[New LWP 13688]
+[New LWP 13686]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f53f41d9aca in read () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 4 (Thread 0x7f52b9fff6c0 (LWP 13686) "chen"):
+#0  0x00007f53f41e2e1d in ioctl () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f53e86c0e70 in hsakmt_ioctl () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#2  0x00007f53e86b8387 in hsaKmtWaitOnMultipleEvents_Ext () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#3  0x00007f53e8644417 in rocr::core::Signal::WaitAnyExceptions(unsigned int, hsa_signal_s const*, hsa_signal_condition_t const*, long const*, long*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#4  0x00007f53e8628928 in rocr::core::Runtime::AsyncEventsLoop(void*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#5  0x00007f53e85c5b4d in rocr::os::ThreadTrampoline(void*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#6  0x00007f53f415aaa4 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#7  0x00007f53f41e7a64 in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 3 (Thread 0x7f52b29ff6c0 (LWP 13688) "chen"):
+#0  0x00007f53f41e2e1d in ioctl () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007f53e86c0e70 in hsakmt_ioctl () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#2  0x00007f53e86b8387 in hsaKmtWaitOnMultipleEvents_Ext () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#3  0x00007f53e8628563 in rocr::core::Runtime::AsyncEventsLoop(void*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#4  0x00007f53e85c5b4d in rocr::os::ThreadTrampoline(void*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#5  0x00007f53f415aaa4 in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#6  0x00007f53f41e7a64 in clone () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 2 (Thread 0x7f519efff6c0 (LWP 13689) "chen"):
+#0  0x00007f53e86075f3 in rocr::core::InterruptSignal::WaitRelaxed(hsa_signal_condition_t, long, unsigned long, hsa_wait_state_t) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#1  0x00007f53e86074da in rocr::core::InterruptSignal::WaitAcquire(hsa_signal_condition_t, long, unsigned long, hsa_wait_state_t) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#2  0x00007f53e85fb941 in rocr::HSA::hsa_signal_wait_scacquire(hsa_signal_s, hsa_signal_condition_t, long, unsigned long, hsa_wait_state_t) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#3  0x00007f53ba4beaac in roctracer::hsa_support::detail::hsa_signal_wait_scacquire_callback(hsa_signal_s, hsa_signal_condition_t, long, unsigned long, hsa_wait_state_t) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+#4  0x00007f53e85ed56b in rocr::AMD::AqlQueue::ExecutePM4(unsigned int*, unsigned long, hsa_fence_scope_t, hsa_fence_scope_t, hsa_signal_s*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#5  0x00007f53e85dcb2d in rocr::AMD::GpuAgent::InvalidateCodeCaches(void*, unsigned long) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#6  0x00007f53e85f0375 in rocr::(anonymous namespace)::RegionMemory::Freeze() () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#7  0x00007f53e864ccaa in rocr::amd::hsa::loader::ExecutableImpl::Freeze(char const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#8  0x00007f53e864dca7 in rocr::amd::hsa::loader::AmdHsaCodeLoader::FreezeExecutable(rocr::amd::hsa::loader::Executable*, char const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#9  0x00007f53e85fdf57 in rocr::HSA::hsa_executable_freeze(hsa_executable_s, char const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+#10 0x00007f53ba4c6d1f in roctracer::hsa_support::(anonymous namespace)::ExecutableFreezeIntercept(hsa_executable_s, char const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+#11 0x00007f53ba4c5e1c in roctracer::hsa_support::detail::hsa_executable_freeze_callback(hsa_executable_s, char const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+#12 0x00007f53f2b5e09f in amd::roc::LightningProgram::setKernels(void*, unsigned long, int, unsigned long, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#13 0x00007f53f2b1169a in amd::device::Program::loadLC() () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#14 0x00007f53f2b116cf in amd::device::Program::load() () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#15 0x00007f53f2b425f7 in amd::Program::load(std::vector<amd::Device*, std::allocator<amd::Device*> > const&) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#16 0x00007f53f2835a0a in hip::FatBinaryInfo::BuildProgram(int) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#17 0x00007f53f27dcdf6 in hip::DynCO::loadCodeObject(char const*, void const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#18 0x00007f53f2a4e58c in hip::PlatformState::loadModule(ihipModule_t**, char const*, void const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#19 0x00007f53f29fa223 in hip::hipModuleLoadData(ihipModule_t**, void const*) () from /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+#20 0x00007f533b8c9e17 in Tensile::hip::SolutionAdapter::loadCodeObjectFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) () from /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+#21 0x00007f533b8cb648 in Tensile::hip::SolutionAdapter::initializeLazyLoading(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) () from /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+#22 0x00007f533ae8899b in (anonymous namespace)::get_library_and_adapter(std::shared_ptr<Tensile::MasterSolutionLibrary<Tensile::ContractionProblem, Tensile::ContractionSolution> >*, std::shared_ptr<hipDeviceProp_tR0600>*, int) () from /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+#23 0x00007f533ae9a13d in rocblas_status_ runContractionProblem<float, float, float>(RocblasContractionProblem<float, float, float> const&, rocblas_gemm_algo_, int) () from /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+#24 0x00007f533abcb868 in rocblas_status_ rocblas_internal_gemm<false, float, float const*, float*>(_rocblas_handle*, rocblas_operation_, rocblas_operation_, int, int, int, float const*, float const*, long, int, long, float const*, long, int, long, float const*, float*, long, int, long, int) () from /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+
+Thread 1 (Thread 0x7f53f40bb780 (LWP 13683) "chen"):
+#0  0x00007f53f41d9aca in read () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x000055b2eef9833f in std::io::read_until::<std::io::buffered::bufreader::BufReader<std::io::stdio::StdinRaw>> ()
+#2  0x000055b2eef6c3c8 in chen::uci ()
+#3  0x000055b2eef70063 in chen::main ()
+#4  0x000055b2eef6a6a3 in std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()> ()
+#5  0x000055b2eef6ab19 in std::rt::lang_start::<()>::{closure#0} ()
+#6  0x000055b2eefb68ae in std::rt::lang_start_internal ()
+#7  0x000055b2eef754c5 in main ()
+From                To                  Syms Read   Shared Object Library
+0x00007f53f42d4780  0x00007f53f42f7745  Yes (*)     /lib/x86_64-linux-gnu/libgcc_s.so.1
+0x00007f53f40e6800  0x00007f53f426dd39  Yes (*)     /lib/x86_64-linux-gnu/libc.so.6
+0x00007f53f430e000  0x00007f53f4338195  Yes (*)     /lib64/ld-linux-x86-64.so.2
+0x00007f53f27b2660  0x00007f53f2ba77b5  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+0x00007f53f2785040  0x00007f53f2785105  Yes (*)     /lib/x86_64-linux-gnu/libdl.so.2
+0x00007f53f26c5da0  0x00007f53f2748587  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+0x00007f53f26a6080  0x00007f53f26a62b1  Yes (*)     /lib/x86_64-linux-gnu/librt.so.1
+0x00007f53e905a800  0x00007f53ef51e4c4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+0x00007f53e85b13a0  0x00007f53e86cb8c0  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+0x00007f53e8203ac0  0x00007f53e8208a87  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+0x00007f53e80275c0  0x00007f53e8166ce2  Yes (*)     /lib/x86_64-linux-gnu/libstdc++.so.6
+0x00007f53e84ba420  0x00007f53e85383a6  Yes (*)     /lib/x86_64-linux-gnu/libm.so.6
+0x00007f53e84a6040  0x00007f53e84a6105  Yes (*)     /lib/x86_64-linux-gnu/libpthread.so.0
+0x00007f53e848b260  0x00007f53e849cc40  Yes (*)     /lib/x86_64-linux-gnu/libz.so.1
+0x00007f53e7ecc400  0x00007f53e7f727b2  Yes (*)     /lib/x86_64-linux-gnu/libzstd.so.1
+0x00007f53e7c03660  0x00007f53e7c13e7f  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libelf.so
+0x00007f53e8478630  0x00007f53e848164f  Yes         /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+0x00007f53e84684e0  0x00007f53e846cbf5  Yes         /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+0x00007f53e8436400  0x00007f53e84575cf  Yes (*)     /lib/x86_64-linux-gnu/liblzma.so.5
+0x00007f53e8421280  0x00007f53e842dff3  Yes (*)     /lib/x86_64-linux-gnu/libbz2.so.1
+0x00007f53e7eafce0  0x00007f53e7ebc562  Yes (*)     /tmp/chen-blas-priming/libchen_neural.so
+0x00007f53e7e91490  0x00007f53e7e9be48  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+0x00007f53d325d200  0x00007f53e3d0c520  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+0x00007f53bb0ee6b0  0x00007f53bd4e3562  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+0x00007f53ba6ae4c0  0x00007f53ba756f99  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+0x00007f53ba54ed90  0x00007f53ba5909e7  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+0x00007f53ba2092a0  0x00007f53ba22d3a2  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+0x00007f53ba4b3ab0  0x00007f53ba50a237  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+0x00007f53ae549580  0x00007f53b83d85d4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+0x00007f538133ab80  0x00007f53813748e8  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+0x00007f538127bc20  0x00007f53812d00f0  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+0x00007f53e7e7c4d0  0x00007f53e7e85a24  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+0x00007f53e841a040  0x00007f53e841a7b8  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+0x00007f53e7e3bf00  0x00007f53e7e535ff  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+0x00007f53ba471320  0x00007f53ba493d68  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+0x00007f538045ab50  0x00007f53811e7964  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+0x00007f5353a9dd00  0x00007f5353dc55d4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+0x00007f534fbc3770  0x00007f53500a5e05  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+0x00007f534f7fb160  0x00007f534f912ce4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+0x00007f533a98dc70  0x00007f533b8cef90  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+0x00007f5338518160  0x00007f5338988040  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+0x00007f5335423a00  0x00007f5337dbb004  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+0x00007f53f278a140  0x00007f53f278a478  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+0x00007f53e8413050  0x00007f53e84132a8  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+0x00007f52e9e3f440  0x00007f52ea5d0104  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+0x00007f52e9172420  0x00007f52e9bd9fe4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+0x00007f52d29a5bf0  0x00007f52d490dd44  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+0x00007f52bd3ffc80  0x00007f52bd4e7ed8  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+0x00007f52baead950  0x00007f52bce489f4  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+0x00007f52ba29c110  0x00007f52ba29d709  Yes (*)     /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+0x00007f52ba28f860  0x00007f52ba295234  Yes (*)     /tmp/chen-gpu/build/libchen_gpu.so
+(*): Shared library is missing debugging information.
+[Inferior 1 (process 13683) detached]
+
+--- debugger stderr ---

@@ -91,6 +91,10 @@ combined neural suite passes 88 CPU/GPU tests in ROCm without skips.
 Both modes pass option ordering and resource/stop checks. Graph mode completes
 40 legal game plies; final eager play again times out on the first neural move.
 The raw failure is preserved and long-play reliability remains open.
+The [follow-up investigation](../GPU_NEURAL_RELIABILITY.md) reproduces the stall
+and captures native waits in BLAS/HIP completion. Handle priming fails its
+reliability criterion and is rejected. A single original-plugin run with direct
+dispatch disabled passes; repeated controls are required before adopting it.
 
 Neural commit `090f2a4` retains a
 [predeclared 27-run value study](../../../chen-neural/docs/VALUE_STUDY.md): three

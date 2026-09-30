@@ -177,3 +177,10 @@ combined 88-test neural suite pass in ROCm. The combined suite includes CPU
 contracts as well as actual GPU tests. Six model-bearing graph wrapper fixtures
 agree with the independent oracle, and its captured probe binds HIP 7.0 from
 Torch rather than the system HIP 7.2 runtime.
+
+The [reliability investigation](GPU_NEURAL_RELIABILITY.md) now reproduces the
+eager stall with two native stacks in BLAS workspace installation/HIP completion.
+An isolated handle-priming candidate also stalls, at GPU code-cache invalidation,
+and is rejected. An original-plugin direct-dispatch-disabled control passes one
+full sequence; it remains an experiment pending repeated controls. Production
+code and configuration are unchanged by these diagnostic experiments.

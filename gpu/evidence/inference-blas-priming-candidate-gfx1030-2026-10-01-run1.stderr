@@ -1,0 +1,15 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/chen-native-plugin/eager_game_probe.py", line 215, in <module>
+    main()
+  File "/tmp/chen-native-plugin/eager_game_probe.py", line 168, in main
+    reference.main()
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 353, in main
+    move, info = chooser.search(board, 'go depth 2 nodes 20000')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 147, in search
+    lines = self.wait("bestmove ")
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-plugin/eager_game_probe.py", line 148, in wait
+    raise AssertionError(('eager UCI timeout', prefix, self.process.pid))
+AssertionError: ('eager UCI timeout', 'bestmove ', 13683)

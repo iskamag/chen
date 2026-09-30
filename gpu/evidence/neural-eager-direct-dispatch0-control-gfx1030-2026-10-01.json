@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "target": "actual gfx1030",
+  "status": "one bounded runtime-control run passed; not a validated permanent workaround",
+  "change": "AMD_DIRECT_DISPATCH=0 set in docker exec environment before Python/Torch import, inherited by all reference engine environments. Original production Rust/plugin/rules/model artifacts retained; eager mode and30-second watchdog unchanged.",
+  "provenance": {
+    "record": "eager_stall_provenance",
+    "case": "full",
+    "watchdog_seconds": 30,
+    "gdb_version": "GNU gdb (Ubuntu 15.1-1ubuntu1~24.04.1) 15.1",
+    "artifacts_sha256": {
+      "/tmp/chen-native-plugin/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c",
+      "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+      "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+      "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+      "/tmp/chen-direct-dispatch0-control/launcher.c": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "/tmp/chen-direct-dispatch0-control/chen-ptrace": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be"
+    },
+    "environment": {
+      "CHEN_NEURAL_EXECUTION": "eager",
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "AMD_DIRECT_DISPATCH": "0",
+      "LD_PRELOAD": null
+    }
+  },
+  "full_source_provenance": {
+    "record": "neural_search_provenance",
+    "target": "gfx1030",
+    "torch_version": "2.10.0+rocm7.0",
+    "torch_hip_version": "7.0.51831",
+    "artifacts_sha256": {
+      "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+      "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+      "/tmp/chen-graph-plugin/libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+      "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+      "/tmp/chen-native-plugin/benches/positions.txt": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+      "/tmp/chen-native-plugin/neural/bridge.py": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+      "/tmp/chen-native-plugin/neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+      "/tmp/chen-native-plugin/neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+      "/tmp/chen-native-plugin/neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+      "/tmp/chen-native-plugin/neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+      "/tmp/chen-native-plugin/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+      "/tmp/chen-native-plugin/neural/inference.py": "1d9800e055460ca7d26367c70a341770b8977db129ec3322d2b3f7ba5948fff2",
+      "/tmp/chen-native-plugin/neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+      "/tmp/chen-native-plugin/neural/teacher.py": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
+      "/tmp/chen-native-plugin/neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f",
+      "/tmp/chen-native-plugin/gpu/chen_neural.cpp": "fb2b74419261e5ccc015b08b1b7396743bd1bfb20e4128f323fcf5ebd833ea55",
+      "/tmp/chen-native-plugin/gpu/chen_neural.h": "5499a4306cc9ed843d5aca808e708d9a6b2f5ed98ee3d3477f7883b82bc26d9b",
+      "/tmp/chen-native-plugin/gpu/chen_neural_decode.hip": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce",
+      "/tmp/chen-gpu/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266",
+      "/tmp/chen-neural-graph-source/main.rs": "aa1f2d71f08b36def411ed0dba7e4a7a706064ea05d2d8af15b4995a9cf5c9e7",
+      "/tmp/chen-neural-graph-source/neural.rs": "d7f81c64e30dd185f299847246172a6bd0e482a38ead61e26567a79f6b0847b7",
+      "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+    },
+    "inspection_scope": "CPU rules/feature ingestion and Tensor payload reads are independent oracle diagnostics only."
+  },
+  "checks": {
+    "exit_code": 0,
+    "exact_oracles": 18,
+    "oracle_evaluated_leaves": 11982,
+    "option_orders": 2,
+    "limit_records": 1,
+    "completed_game_plies": 40,
+    "timeouts": [],
+    "summary": [
+      {
+        "record": "neural_search_summary",
+        "model_position_comparisons": 18,
+        "exact_scores": 18,
+        "iterative_oracle_evaluated_leaves": 11982,
+        "inputs_unchanged": true,
+        "limitations": [
+          "Finite six-position/two-ply oracle, not exhaustive search verification.",
+          "Optimal tie set compared; python-chess and Rust move orders differ.",
+          "Benchmark times include cold model/runtime work and are not steady-state speed claims.",
+          "Inherited resident h2d_ms/d2h_ms are unmeasured zero placeholders.",
+          "Legal games and UCI limits do not establish playing strength or 2500 Lichess."
+        ]
+      }
+    ]
+  },
+  "primary_sources": [
+    {
+      "url": "https://rocm.docs.amd.com/projects/HIP/en/docs-7.0.0/reference/env_variables.html",
+      "supports": "AMD_DIRECT_DISPATCH default1 on Linux,0disable direct kernel dispatch,1enable."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ROCm/clr/rocm-7.0.0/rocclr/utils/flags.hpp",
+      "supports": "Released boolean AMD_DIRECT_DISPATCH runtime flag."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ROCm/clr/rocm-7.0.0/rocclr/platform/command.cpp",
+      "supports": "Runtime flag selects direct command submission versus host-queue append/flush and separate event-wait notification branches."
+    }
+  ],
+  "limitations": [
+    "Single successful controlled execution cannot establish reliability, causality, or a deployment recommendation. Baseline and priming have both also passed selected executions.",
+    "No actual runtime flag-variable introspection was added; recorded launch environment and upstream flag semantics define this control.",
+    "No production wrapper/source/config changed, no mathematical score or model artifact change, and no CPU substitution.",
+    "No general engine-speed or playing-strength claim."
+  ],
+  "evidence_sha256": {
+    "neural-eager-direct-dispatch0-control-gfx1030-2026-10-01.jsonl": "a73d288e8b0fad5942b8449a4bc2319e3bdde40270c228e3edd4e380340e209f",
+    "neural-eager-direct-dispatch0-control-gfx1030-2026-10-01.stderr": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+  }
+}
