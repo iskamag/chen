@@ -1,0 +1,451 @@
+560869d39000-560869d5d000 r--p 00000000 00:27 51420472                   /tmp/chen-graph-plugin/chen
+560869d5d000-560869dd8000 r-xp 00023000 00:27 51420472                   /tmp/chen-graph-plugin/chen
+560869dd8000-560869ddd000 r--p 0009d000 00:27 51420472                   /tmp/chen-graph-plugin/chen
+560869ddd000-560869ddf000 rw-p 000a1000 00:27 51420472                   /tmp/chen-graph-plugin/chen
+5608a316a000-5608ac2b1000 rw-p 00000000 00:00 0                          [heap]
+7f6b28000000-7f6b28127000 rw-p 00000000 00:00 0 
+7f6b28127000-7f6b2c000000 ---p 00000000 00:00 0 
+7f6b2fc00000-7f6b31c00000 rw-s 1eb10a000 00:3c 14                        /dev/dri/renderD128
+7f6b32c00000-7f6b33025000 rw-p 00000000 00:00 0 
+7f6b33200000-7f6b33625000 rw-s 16c530000 00:3c 14                        /dev/dri/renderD128
+7f6b33800000-7f6b33e90000 rw-p 00000000 00:00 0 
+7f6b34000000-7f6b3719a000 rw-p 00000000 00:00 0 
+7f6b3719a000-7f6b38000000 ---p 00000000 00:00 0 
+7f6b38200000-7f6b38326000 rw-p 00000000 00:00 0 
+7f6b38400000-7f6b38526000 rw-s 1a8e55000 00:3c 14                        /dev/dri/renderD128
+7f6b38600000-7f6b38c90000 rw-s 183b42000 00:3c 14                        /dev/dri/renderD128
+7f6b38dff000-7f6b38e00000 ---p 00000000 00:00 0 
+7f6b38e00000-7f6b39600000 rw-p 00000000 00:00 0 
+7f6b39600000-7f6b3b000000 rw-s 1d2612000 00:3c 14                        /dev/dri/renderD128
+7f6b3b1ff000-7f6b3b200000 ---p 00000000 00:00 0 
+7f6b3b200000-7f6b3b400000 rw-p 00000000 00:00 0 
+7f6b3b400000-7f6b3e4d4000 rw-p 00000000 00:00 0 
+7f6b3e600000-7f6b3ec1b000 rw-p 00000000 00:00 0 
+7f6b3ee00000-7f6b3f200000 rw-s 1083d7000 00:3c 14                        /dev/dri/renderD128
+7f6b3f400000-7f6b3f600000 rw-s 19939c000 00:3c 14                        /dev/dri/renderD128
+7f6b3f800000-7f6b42a00000 rw-s 1a52f5000 00:3c 14                        /dev/dri/renderD128
+7f6b42c00000-7f6b43400000 rw-s 17439b000 00:3c 14                        /dev/dri/renderD128
+7f6b43600000-7f6b43e00000 rw-s 1a36ce000 00:3c 14                        /dev/dri/renderD128
+7f6b44000000-7f6b44400000 rw-p 00000000 00:00 0 
+7f6b44600000-7f6b44700000 rw-p 00000000 00:00 0 
+7f6b44800000-7f6b45c01000 rw-p 00000000 00:00 0 
+7f6b45e00000-7f6b45f00000 rw-p 00000000 00:00 0 
+7f6b46000000-7f6b47400000 rw-s 1aae96000 00:3c 14                        /dev/dri/renderD128
+7f6b47600000-7f6b47772000 rw-p 00000000 00:00 0 
+7f6b47800000-7f6b47972000 rw-s 134e45000 00:3c 14                        /dev/dri/renderD128
+7f6b47a00000-7f6b47f9c000 rw-p 00000000 00:00 0 
+7f6b48000000-7f6b48021000 rw-p 00000000 00:00 0 
+7f6b48021000-7f6b4c000000 ---p 00000000 00:00 0 
+7f6b4c200000-7f6b4d601000 rw-p 00000000 00:00 0 
+7f6b4d800000-7f6b56400000 ---s 1e050a000 00:3c 14                        /dev/dri/renderD128
+7f6b56400000-7f6b565e0000 ---s 166861000 00:3c 14                        /dev/dri/renderD128
+7f6b565e0000-7f6b56f40000 ---s 1a84f5000 00:3c 14                        /dev/dri/renderD128
+7f6b56f40000-7f6b587a0000 ---s 1bf5a1000 00:3c 14                        /dev/dri/renderD128
+7f6b587a0000-7f6c4d800000 ---p 00000000 00:00 0 
+7f6c4da00000-7f6c4df9c000 rw-s 1579b7000 00:3c 14                        /dev/dri/renderD128
+7f6c4e000000-7f6c4e400000 rw-p 00000000 00:00 0 
+7f6c4e600000-7f6c4e700000 rw-p 00000000 00:00 0 
+7f6c4e800000-7f6c4e900000 rw-p 00000000 00:00 0 
+7f6c4ea00000-7f6c4fe01000 rw-p 00000000 00:00 0 
+7f6c50000000-7f6c50021000 rw-p 00000000 00:00 0 
+7f6c50021000-7f6c54000000 ---p 00000000 00:00 0 
+7f6c54100000-7f6c541b5000 rw-p 00000000 00:00 0 
+7f6c541ff000-7f6c54200000 ---p 00000000 00:00 0 
+7f6c54200000-7f6c54a00000 rw-p 00000000 00:00 0 
+7f6c54a00000-7f6c54c00000 rw-s 15d160000 00:3c 14                        /dev/dri/renderD128
+7f6c54d00000-7f6c54db5000 rw-s 18911b000 00:3c 14                        /dev/dri/renderD128
+7f6c54e00000-7f6c55200000 rw-p 00000000 00:00 0 
+7f6c55240000-7f6c55289000 rw-p 00000000 00:00 0 
+7f6c552c0000-7f6c55309000 rw-s 1b7f1c000 00:3c 14                        /dev/dri/renderD128
+7f6c55320000-7f6c55351000 rw-p 00000000 00:00 0 
+7f6c55360000-7f6c55391000 rw-p 00000000 00:00 0 
+7f6c553a3000-7f6c553f5000 r--p 00000000 00:27 51420055                   /tmp/chen-gpu/build/libchen_gpu.so
+7f6c553f5000-7f6c553fc000 r-xp 00051000 00:27 51420055                   /tmp/chen-gpu/build/libchen_gpu.so
+7f6c553fc000-7f6c553fd000 r--p 00057000 00:27 51420055                   /tmp/chen-gpu/build/libchen_gpu.so
+7f6c553fd000-7f6c553fe000 rw-p 00057000 00:27 51420055                   /tmp/chen-gpu/build/libchen_gpu.so
+7f6c553fe000-7f6c553ff000 ---p 00000000 00:00 0 
+7f6c553ff000-7f6c55bff000 rw-p 00000000 00:00 0 
+7f6c55bff000-7f6c55c00000 ---p 00000000 00:00 0 
+7f6c55c00000-7f6c56400000 rw-p 00000000 00:00 0 
+7f6c56400000-7f6c56600000 rw-p 00000000 00:00 0 
+7f6c56620000-7f6c56624000 rw-p 00000000 00:00 0 
+7f6c56626000-7f6c56627000 rw-p 00000000 00:00 0 
+7f6c56628000-7f6c5662c000 rw-s 1ba13a000 00:3c 14                        /dev/dri/renderD128
+7f6c5662d000-7f6c5662e000 ---p 00000000 00:00 0 
+7f6c5662e000-7f6c56630000 rw-p 00000000 00:00 0 
+7f6c56630000-7f6c56631000 rw-p 00000000 00:00 0 
+7f6c56632000-7f6c56633000 ---s 130dc4000 00:3c 14                        /dev/dri/renderD128
+7f6c56634000-7f6c56635000 rw-s 130dc3000 00:3c 14                        /dev/dri/renderD128
+7f6c56636000-7f6c56637000 rw-p 00000000 00:00 0 
+7f6c56638000-7f6c56639000 rw-p 00000000 00:00 0 
+7f6c5663a000-7f6c5663c000 r--p 00000000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c5663c000-7f6c5663e000 r-xp 00002000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c5663e000-7f6c5663f000 r--p 00004000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c5663f000-7f6c56640000 r--p 00004000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c56640000-7f6c56641000 rw-p 00005000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c56641000-7f6c56642000 rw-p 00008000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c56642000-7f6c56644000 rw-p 00009000 00:27 51787865                   /usr/local/lib/python3.12/dist-packages/torch/lib/libcaffe2_nvrtc.so
+7f6c56644000-7f6c56645000 rw-p 00000000 00:00 0 
+7f6c56646000-7f6c56647000 rw-p 00000000 00:00 0 
+7f6c56648000-7f6c56653000 rw-p 00000000 00:00 0 
+7f6c56654000-7f6c56656000 rw-p 00000000 00:00 0 
+7f6c56658000-7f6c56663000 rw-s 1afc9c000 00:3c 14                        /dev/dri/renderD128
+7f6c56665000-7f6c56666000 rw-p 00000000 00:00 0 
+7f6c56667000-7f6c56668000 rw-p 00000000 00:00 0 
+7f6c56669000-7f6c5666a000 ---s 141dc3000 00:3c 14                        /dev/dri/renderD128
+7f6c5666b000-7f6c5666c000 rw-s 141dc2000 00:3c 14                        /dev/dri/renderD128
+7f6c5666d000-7f6c5666e000 rw-p 00000000 00:00 0 
+7f6c5666f000-7f6c57255000 r--p 00000000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c57255000-7f6c59205000 r-xp 00be5000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c59205000-7f6c59272000 r--p 02b94000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c59272000-7f6c5927f000 rw-p 02c00000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c5927f000-7f6c5928d000 rw-p 00000000 00:00 0 
+7f6c5928d000-7f6c5951e000 rw-p 05475000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c5951e000-7f6c59776000 rw-p 05706000 00:27 51787888                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocroller.so
+7f6c59776000-7f6c597a5000 r--p 00000000 00:27 51787885                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+7f6c597a5000-7f6c59890000 r-xp 0002f000 00:27 51787885                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+7f6c59890000-7f6c598c0000 r--p 0011a000 00:27 51787885                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+7f6c598c0000-7f6c598c3000 r--p 0014a000 00:27 51787885                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+7f6c598c3000-7f6c598c4000 rw-p 0014d000 00:27 51787885                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm_smi64.so
+7f6c598c4000-7f6c598c5000 rw-p 00000000 00:00 0 
+7f6c598c5000-7f6c6ed4d000 r--p 00000000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c6ed4d000-7f6c70cb7000 r-xp 15487000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c70cb7000-7f6c70cd8000 r--p 173f0000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c70cd8000-7f6c70cdb000 rw-p 17410000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c70cdb000-7f6c70cdd000 rw-p 00000000 00:00 0 
+7f6c70cdd000-7f6c70da8000 rw-p 17440000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c70da8000-7f6c70e59000 rw-p 1750b000 00:27 51787890                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsparse.so
+7f6c70e59000-7f6c8551a000 r--p 00000000 00:27 51787887                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+7f6c8551a000-7f6c85f83000 r-xp 146c0000 00:27 51787887                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+7f6c85f83000-7f6c85f89000 r--p 15128000 00:27 51787887                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+7f6c85f89000-7f6c85fa8000 rw-p 1512d000 00:27 51787887                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+7f6c85fa8000-7f6c85fa9000 rw-p 00000000 00:00 0 
+7f6c85fa9000-7f6c85fc9000 rw-p 1515a000 00:27 51787887                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocrand.so
+7f6c85fc9000-7f6c861e7000 r--p 00000000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c861e7000-7f6c8697b000 r-xp 0021d000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c8697b000-7f6c86985000 r--p 009b0000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c86985000-7f6c8698a000 rw-p 009b9000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c8698a000-7f6c8698d000 rw-p 00000000 00:00 0 
+7f6c8698d000-7f6c8699f000 rw-p 009cf000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c8699f000-7f6c869ac000 rw-p 009e1000 00:27 51787883                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocfft.so
+7f6c869ac000-7f6cd17cb000 r--p 00000000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd17cb000-7f6cd4181000 r-xp 4ae1e000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd4181000-7f6cd41a6000 r--p 4d7d3000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd41a6000-7f6cd41a7000 ---p 4d7fa000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd41a7000-7f6cd41d2000 rw-p 4d7f8000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd41d2000-7f6cd421c000 rw-p 00000000 00:00 0 
+7f6cd421c000-7f6cd43de000 rw-p 4db86000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd43de000-7f6cd450f000 rw-p 4dd48000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd450f000-7f6cd4640000 rw-p 4de79000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd4640000-7f6cd4771000 rw-p 4dfaa000 00:27 51787879                   /usr/local/lib/python3.12/dist-packages/torch/lib/libmagma.so
+7f6cd4771000-7f6cd48c0000 r--p 00000000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd48c0000-7f6cd4d34000 r-xp 0014e000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4d34000-7f6cd4d47000 r--p 005c1000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4d47000-7f6cd4d4a000 rw-p 005d3000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4d4a000-7f6cd4d4c000 rw-p 00000000 00:00 0 
+7f6cd4d4c000-7f6cd4d79000 rw-p 00838000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4d79000-7f6cd4d9a000 rw-p 00865000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4d9a000-7f6cd4dbb000 rw-p 00886000 00:27 51787871                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblaslt.so
+7f6cd4dbb000-7f6cd6d35000 r--p 00000000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd6d35000-7f6cd7c7d000 r-xp 01f79000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd7c7d000-7f6cd7c9c000 r--p 02ec0000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd7c9c000-7f6cd7ca1000 rw-p 02ede000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd7ca1000-7f6cd7cbd000 rw-p 00000000 00:00 0 
+7f6cd7cbd000-7f6cd7d01000 rw-p 033fb000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd7d01000-7f6cd7d33000 rw-p 0343f000 00:27 51787882                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocblas.so
+7f6cd7d33000-7f6cebba3000 r--p 00000000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebba3000-7f6cebcbe000 r-xp 13e6f000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebcbe000-7f6cebd31000 r--p 13f89000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebd31000-7f6cebd4a000 rw-p 13ffb000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebd4a000-7f6cebde6000 rw-p 00000000 00:00 0 
+7f6cebde6000-7f6cebdfc000 rw-p 1401b000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebdfc000-7f6cebe0b000 rw-p 14031000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebe0b000-7f6cebe1a000 rw-p 14040000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebe1a000-7f6cebe29000 rw-p 1404f000 00:27 51787881                   /usr/local/lib/python3.12/dist-packages/torch/lib/librccl.so
+7f6cebe29000-7f6cebf6b000 r--p 00000000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cebf6b000-7f6cec44e000 r-xp 00142000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cec44e000-7f6cec7bd000 r--p 00625000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cec7bd000-7f6cec7e5000 r--p 00994000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cec7e5000-7f6ceccb1000 rw-p 009bc000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6ceccb1000-7f6cefd0f000 rw-p 00000000 00:00 0 
+7f6cefd0f000-7f6cefd14000 rw-p 00e88000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cefd14000-7f6cefd18000 rw-p 00e8d000 00:27 51787862                   /usr/local/lib/python3.12/dist-packages/torch/lib/libaotriton_v2.so.0.11.1
+7f6cefd18000-7f6cefe45000 r--p 00000000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cefe45000-7f6cf0170000 r-xp 0012c000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cf0170000-7f6cf0180000 r--p 00456000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cf0180000-7f6cf0183000 rw-p 00465000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cf0183000-7f6cf019a000 rw-p 00649000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cf019a000-7f6cf01ab000 rw-p 00660000 00:27 51787877                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparselt.so
+7f6cf01ab000-7f6d1c802000 r--p 00000000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1c802000-7f6d1d592000 r-xp 2c656000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1d592000-7f6d1d5b3000 r--p 2d3e5000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1d5b3000-7f6d1d5b7000 rw-p 2d405000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1d5b7000-7f6d1d5b9000 rw-p 00000000 00:00 0 
+7f6d1d5b9000-7f6d1d5dd000 rw-p 2d42d000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1d5dd000-7f6d1d5f6000 rw-p 2d451000 00:27 51787889                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocsolver.so
+7f6d1d5f6000-7f6d1d613000 r--p 00000000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d613000-7f6d1d638000 r-xp 0001c000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d638000-7f6d1d639000 r--p 00040000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d639000-7f6d1d63b000 rw-p 00040000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d63b000-7f6d1d644000 rw-p 00044000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d644000-7f6d1d649000 rw-p 0004d000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d649000-7f6d1d64e000 rw-p 00052000 00:27 51787875                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsolver.so
+7f6d1d64e000-7f6d1d677000 r--p 00000000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d677000-7f6d1d6d1000 r-xp 00029000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d6d1000-7f6d1d701000 r--p 00083000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d701000-7f6d1d702000 r--p 000b3000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d702000-7f6d1d705000 rw-p 000b4000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d705000-7f6d1d715000 rw-p 000bb000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d715000-7f6d1d723000 rw-p 000cb000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d723000-7f6d1d731000 rw-p 000d9000 00:27 51787870                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipblas.so
+7f6d1d731000-7f6d1d73a000 r--p 00000000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d73a000-7f6d1d775000 r-xp 00009000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d775000-7f6d1d814000 r--p 00044000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d814000-7f6d1d816000 r--p 000e2000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d816000-7f6d1d818000 rw-p 000e4000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d818000-7f6d1d81b000 rw-p 00000000 00:00 0 
+7f6d1d81b000-7f6d1d81d000 rw-p 000e9000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d81d000-7f6d1d821000 rw-p 000eb000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d821000-7f6d1d823000 rw-p 000ef000 00:27 51787874                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprtc.so
+7f6d1d823000-7f6d4a949000 r--p 00000000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d4a949000-7f6d547e9000 r-xp 2d125000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d547e9000-7f6d54dcb000 r--p 36fc4000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d54dcb000-7f6d54dfd000 rw-p 375a5000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d54dfd000-7f6d54e70000 rw-p 00000000 00:00 0 
+7f6d54e70000-7f6d5524a000 rw-p 375d8000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d5524a000-7f6d55593000 rw-p 379b2000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d55593000-7f6d558dc000 rw-p 37cfb000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d558dc000-7f6d55c25000 rw-p 38044000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d55c25000-7f6d55f6e000 rw-p 3838d000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d55f6e000-7f6d562b7000 rw-p 386d6000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d562b7000-7f6d56600000 rw-p 38a1f000 00:27 51787858                   /usr/local/lib/python3.12/dist-packages/torch/lib/libMIOpen.so
+7f6d56600000-7f6d56637000 r-xp 00000000 00:27 51787869                   /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+7f6d56637000-7f6d56836000 ---p 00037000 00:27 51787869                   /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+7f6d56836000-7f6d56837000 r--p 00036000 00:27 51787869                   /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+7f6d56837000-7f6d56838000 rw-p 00037000 00:27 51787869                   /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+7f6d56838000-7f6d5683c000 rw-p 0003a000 00:27 51787869                   /usr/local/lib/python3.12/dist-packages/torch/lib/libgomp.so
+7f6d5683e000-7f6d5683f000 rw-p 00000000 00:00 0 
+7f6d56840000-7f6d56842000 rw-s c936000000000000 00:3c 11                 /dev/kfd
+7f6d56844000-7f6d56845000 ---s 142249000 00:3c 14                        /dev/dri/renderD128
+7f6d56846000-7f6d56847000 rw-s 142248000 00:3c 14                        /dev/dri/renderD128
+7f6d56848000-7f6d56850000 rw-s 103a40000 00:3c 14                        /dev/dri/renderD128
+7f6d56852000-7f6d56853000 rw-p 00000000 00:00 0 
+7f6d56854000-7f6d56855000 rw-p 00000000 00:00 0 
+7f6d56856000-7f6d56868000 r--p 00000000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d56868000-7f6d56882000 r-xp 00012000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d56882000-7f6d56893000 r--p 0002c000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d56893000-7f6d56894000 r--p 0003c000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d56894000-7f6d56895000 rw-p 0003d000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d56895000-7f6d5689d000 rw-p 00041000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d5689d000-7f6d568a4000 rw-p 00049000 00:27 51787876                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipsparse.so
+7f6d568a4000-7f6d568a7000 r--p 00000000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568a7000-7f6d568a8000 r-xp 00002000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568a8000-7f6d568a9000 r--p 00002000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568a9000-7f6d568aa000 rw-p 00002000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568aa000-7f6d568ab000 rw-p 00004000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568ab000-7f6d568ac000 rw-p 00005000 00:27 51787873                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhiprand.so
+7f6d568ac000-7f6d568b3000 r--p 00000000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d568b3000-7f6d5690b000 r-xp 00007000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d5690b000-7f6d56926000 r--p 0005f000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d56926000-7f6d56927000 r--p 0007a000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d56927000-7f6d56928000 rw-p 0007b000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d56928000-7f6d56941000 rw-p 00000000 00:00 0 
+7f6d56941000-7f6d56944000 rw-p 00081000 00:27 51787891                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctracer64.so
+7f6d56944000-7f6d5694e000 r--p 00000000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d5694e000-7f6d56991000 r-xp 0000a000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d56991000-7f6d569a2000 r--p 0004d000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d569a2000-7f6d569a3000 ---p 0005e000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d569a3000-7f6d569a4000 r--p 0005e000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d569a4000-7f6d569a5000 rw-p 0005f000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d569a5000-7f6d56a7d000 rw-p 00000000 00:00 0 
+7f6d56a7d000-7f6d56a82000 rw-p 0007d000 00:27 51787864                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10_hip.so
+7f6d56a82000-7f6d56aac000 r--p 00000000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56aac000-7f6d56b57000 r-xp 0002a000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56b57000-7f6d56b8c000 r--p 000d5000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56b8c000-7f6d56b8f000 r--p 00109000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56b8f000-7f6d56b96000 rw-p 0010c000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56b96000-7f6d56b98000 rw-p 00000000 00:00 0 
+7f6d56b98000-7f6d56bad000 rw-p 00158000 00:27 51787863                   /usr/local/lib/python3.12/dist-packages/torch/lib/libc10.so
+7f6d56bad000-7f6d574be000 r--p 00000000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d574be000-7f6d598e4000 r-xp 00911000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d598e4000-7f6d69605000 r--p 02d37000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d69605000-7f6d696a3000 r--p 12a57000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d696a3000-7f6d696be000 rw-p 12af5000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d696be000-7f6d69716000 rw-p 00000000 00:00 0 
+7f6d69716000-7f6d69d54000 rw-p 144e1000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d69d54000-7f6d6a35e000 rw-p 14b1f000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6a35e000-7f6d6a968000 rw-p 15129000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6a968000-7f6d6af72000 rw-p 15733000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6af72000-7f6d6b57c000 rw-p 15d3d000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6b57c000-7f6d6bb86000 rw-p 16347000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6bb86000-7f6d6c190000 rw-p 16951000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6c190000-7f6d6c79a000 rw-p 16f5b000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6c79a000-7f6d6cda4000 rw-p 17565000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6cda4000-7f6d6d3ae000 rw-p 17b6f000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6d3ae000-7f6d6d9b8000 rw-p 18179000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6d9b8000-7f6d6dfc2000 rw-p 18783000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6dfc2000-7f6d6e5cc000 rw-p 18d8d000 00:27 51787905                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_hip.so
+7f6d6e5cc000-7f6d6f5e3000 r--p 00000000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d6f5e3000-7f6d8010d000 r-xp 01017000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d8010d000-7f6d82b67000 r--p 11b41000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d82b67000-7f6d82e23000 r--p 1459a000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d82e23000-7f6d82e90000 rw-p 14856000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d82e90000-7f6d82fa3000 rw-p 00000000 00:00 0 
+7f6d82fa3000-7f6d8356a000 rw-p 1a062000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d8356a000-7f6d83ab5000 rw-p 1a629000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d83ab5000-7f6d84000000 rw-p 1ab74000 00:27 51787903                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch_cpu.so
+7f6d84000000-7f6d84019000 r-xp 00000000 00:27 51787868                   /usr/local/lib/python3.12/dist-packages/torch/lib/libelf.so
+7f6d84019000-7f6d84218000 ---p 00019000 00:27 51787868                   /usr/local/lib/python3.12/dist-packages/torch/lib/libelf.so
+7f6d84218000-7f6d84219000 r--p 00018000 00:27 51787868                   /usr/local/lib/python3.12/dist-packages/torch/lib/libelf.so
+7f6d84219000-7f6d8421a000 rw-p 00000000 00:00 0 
+7f6d8421a000-7f6d8421b000 rw-p 0001b000 00:27 51787868                   /usr/local/lib/python3.12/dist-packages/torch/lib/libelf.so
+7f6d8421c000-7f6d8421d000 rw-p 00000000 00:00 0 
+7f6d8421e000-7f6d8421f000 rw-p 00000000 00:00 0 
+7f6d84220000-7f6d84221000 rw-s 936000000000000 00:3c 11                  /dev/kfd
+7f6d84222000-7f6d84228000 r--p 00000000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84228000-7f6d84232000 r-xp 00005000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84232000-7f6d84234000 r--p 0000e000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84234000-7f6d84235000 rw-p 0000f000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84235000-7f6d84237000 rw-p 00011000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84237000-7f6d84238000 rw-p 00013000 00:27 51787872                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhipfft.so
+7f6d84238000-7f6d8423d000 r--p 00000000 00:27 51787902                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+7f6d8423d000-7f6d84248000 r-xp 00005000 00:27 51787902                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+7f6d84248000-7f6d8424c000 r--p 00010000 00:27 51787902                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+7f6d8424c000-7f6d8424d000 r--p 00013000 00:27 51787902                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+7f6d8424d000-7f6d8424e000 rw-p 00014000 00:27 51787902                   /usr/local/lib/python3.12/dist-packages/torch/lib/libtorch.so
+7f6d8424e000-7f6d8425b000 r--p 00000000 00:27 51420469                   /tmp/chen-graph-plugin/libchen_neural.so
+7f6d8425b000-7f6d84269000 r-xp 0000d000 00:27 51420469                   /tmp/chen-graph-plugin/libchen_neural.so
+7f6d84269000-7f6d84272000 r--p 0001b000 00:27 51420469                   /tmp/chen-graph-plugin/libchen_neural.so
+7f6d84272000-7f6d84273000 r--p 00024000 00:27 51420469                   /tmp/chen-graph-plugin/libchen_neural.so
+7f6d84273000-7f6d84274000 rw-p 00025000 00:27 51420469                   /tmp/chen-graph-plugin/libchen_neural.so
+7f6d84274000-7f6d84276000 r--p 00000000 00:27 51122160                   /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f6d84276000-7f6d84284000 r-xp 00002000 00:27 51122160                   /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f6d84284000-7f6d84286000 r--p 00010000 00:27 51122160                   /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f6d84286000-7f6d84287000 r--p 00011000 00:27 51122160                   /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f6d84287000-7f6d84288000 rw-p 00012000 00:27 51122160                   /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7f6d84288000-7f6d8428b000 r--p 00000000 00:27 51122204                   /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+7f6d8428b000-7f6d842ad000 r-xp 00003000 00:27 51122204                   /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+7f6d842ad000-7f6d842b8000 r--p 00025000 00:27 51122204                   /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+7f6d842b8000-7f6d842b9000 r--p 00030000 00:27 51122204                   /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+7f6d842b9000-7f6d842ba000 rw-p 00031000 00:27 51122204                   /usr/lib/x86_64-linux-gnu/liblzma.so.5.4.5
+7f6d842ba000-7f6d842bd000 r--p 00000000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842bd000-7f6d842c2000 r-xp 00003000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842c2000-7f6d842c4000 r--p 00008000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842c4000-7f6d842c5000 r--p 00009000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842c5000-7f6d842c6000 rw-p 0000a000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842c6000-7f6d842c8000 rw-p 00037000 00:27 51787867                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm_amdgpu.so
+7f6d842c8000-7f6d842cc000 r--p 00000000 00:27 51122282                   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+7f6d842cc000-7f6d84373000 r-xp 00004000 00:27 51122282                   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+7f6d84373000-7f6d84380000 r--p 000ab000 00:27 51122282                   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+7f6d84380000-7f6d84381000 r--p 000b7000 00:27 51122282                   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+7f6d84381000-7f6d84382000 rw-p 000b8000 00:27 51122282                   /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.5
+7f6d84382000-7f6d8441f000 r--p 00000000 00:27 51122258                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f6d8441f000-7f6d84567000 r-xp 0009d000 00:27 51122258                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f6d84567000-7f6d845ee000 r--p 001e5000 00:27 51122258                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f6d845ee000-7f6d845f9000 r--p 0026b000 00:27 51122258                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f6d845f9000-7f6d845fc000 rw-p 00276000 00:27 51122258                   /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f6d845fc000-7f6d84600000 rw-p 00000000 00:00 0 
+7f6d84600000-7f6d8460b000 r-xp 00000000 00:27 51787880                   /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+7f6d8460b000-7f6d8480a000 ---p 0000b000 00:27 51787880                   /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+7f6d8480a000-7f6d8480b000 r--p 0000a000 00:27 51787880                   /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+7f6d8480b000-7f6d8480c000 rw-p 0000b000 00:27 51787880                   /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+7f6d8480c000-7f6d8480d000 rw-p 0000d000 00:27 51787880                   /usr/local/lib/python3.12/dist-packages/torch/lib/libnuma.so
+7f6d8480f000-7f6d84810000 r--p 00000000 00:27 51787892                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+7f6d84810000-7f6d84811000 r-xp 00001000 00:27 51787892                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+7f6d84811000-7f6d84812000 r--p 00002000 00:27 51787892                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+7f6d84812000-7f6d84813000 r--p 00002000 00:27 51787892                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+7f6d84813000-7f6d84814000 rw-p 00003000 00:27 51787892                   /usr/local/lib/python3.12/dist-packages/torch/lib/libroctx64.so
+7f6d84814000-7f6d84819000 r--p 00000000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d84819000-7f6d84823000 r-xp 00005000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d84823000-7f6d84827000 r--p 0000f000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d84827000-7f6d84828000 ---p 00013000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d84828000-7f6d84829000 r--p 00013000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d84829000-7f6d8482a000 rw-p 00014000 00:27 51787866                   /usr/local/lib/python3.12/dist-packages/torch/lib/libdrm.so
+7f6d8482a000-7f6d8482c000 r--p 00000000 00:27 51122280                   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+7f6d8482c000-7f6d8483e000 r-xp 00002000 00:27 51122280                   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+7f6d8483e000-7f6d84844000 r--p 00014000 00:27 51122280                   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+7f6d84844000-7f6d84845000 r--p 0001a000 00:27 51122280                   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+7f6d84845000-7f6d84846000 rw-p 0001b000 00:27 51122280                   /usr/lib/x86_64-linux-gnu/libz.so.1.3
+7f6d84846000-7f6d84847000 r--p 00000000 00:27 51122244                   /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f6d84847000-7f6d84848000 r-xp 00001000 00:27 51122244                   /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f6d84848000-7f6d84849000 r--p 00002000 00:27 51122244                   /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f6d84849000-7f6d8484a000 r--p 00002000 00:27 51122244                   /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f6d8484a000-7f6d8484b000 rw-p 00003000 00:27 51122244                   /usr/lib/x86_64-linux-gnu/libpthread.so.0
+7f6d8484b000-7f6d8485b000 r--p 00000000 00:27 51122205                   /usr/lib/x86_64-linux-gnu/libm.so.6
+7f6d8485b000-7f6d848da000 r-xp 00010000 00:27 51122205                   /usr/lib/x86_64-linux-gnu/libm.so.6
+7f6d848da000-7f6d84932000 r--p 0008f000 00:27 51122205                   /usr/lib/x86_64-linux-gnu/libm.so.6
+7f6d84932000-7f6d84933000 r--p 000e7000 00:27 51122205                   /usr/lib/x86_64-linux-gnu/libm.so.6
+7f6d84933000-7f6d84934000 rw-p 000e8000 00:27 51122205                   /usr/lib/x86_64-linux-gnu/libm.so.6
+7f6d84934000-7f6d84951000 r--p 00000000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84951000-7f6d84a6d000 r-xp 0001d000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84a6d000-7f6d84ae6000 r--p 00139000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84ae6000-7f6d84aef000 r--p 001b2000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84aef000-7f6d84c94000 rw-p 001bb000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84c94000-7f6d84c97000 rw-p 00000000 00:00 0 
+7f6d84c97000-7f6d84c9c000 rw-p 00370000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84c9c000-7f6d84ca1000 rw-p 00375000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84ca1000-7f6d84ca6000 rw-p 0037a000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84ca6000-7f6d84cab000 rw-p 0037f000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84cab000-7f6d84cb0000 rw-p 00384000 00:27 51787878                   /usr/local/lib/python3.12/dist-packages/torch/lib/libhsa-runtime64.so
+7f6d84cb0000-7f6d853fa000 r--p 00000000 00:27 51787859                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+7f6d853fa000-7f6d8b8c0000 r-xp 0074a000 00:27 51787859                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+7f6d8b8c0000-7f6d8e581000 r--p 06c10000 00:27 51787859                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+7f6d8e581000-7f6d8e94b000 r--p 098d0000 00:27 51787859                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+7f6d8e94b000-7f6d8e99b000 rw-p 09c9a000 00:27 51787859                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamd_comgr.so
+7f6d8e99b000-7f6d8ea46000 rw-p 00000000 00:00 0 
+7f6d8ea46000-7f6d8ea47000 r--p 00000000 00:27 51122246                   /usr/lib/x86_64-linux-gnu/librt.so.1
+7f6d8ea47000-7f6d8ea48000 r-xp 00001000 00:27 51122246                   /usr/lib/x86_64-linux-gnu/librt.so.1
+7f6d8ea48000-7f6d8ea49000 r--p 00002000 00:27 51122246                   /usr/lib/x86_64-linux-gnu/librt.so.1
+7f6d8ea49000-7f6d8ea4a000 r--p 00002000 00:27 51122246                   /usr/lib/x86_64-linux-gnu/librt.so.1
+7f6d8ea4a000-7f6d8ea4b000 rw-p 00003000 00:27 51122246                   /usr/lib/x86_64-linux-gnu/librt.so.1
+7f6d8ea4b000-7f6d8ea65000 r--p 00000000 00:27 51787886                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+7f6d8ea65000-7f6d8eaea000 r-xp 0001a000 00:27 51787886                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+7f6d8eaea000-7f6d8eb08000 r--p 0009f000 00:27 51787886                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+7f6d8eb08000-7f6d8eb0a000 r--p 000bd000 00:27 51787886                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+7f6d8eb0a000-7f6d8eb0c000 rw-p 000bf000 00:27 51787886                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocprofiler-register.so
+7f6d8eb0c000-7f6d8eb25000 rw-p 00000000 00:00 0 
+7f6d8eb25000-7f6d8eb26000 r--p 00000000 00:27 51122175                   /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f6d8eb26000-7f6d8eb27000 r-xp 00001000 00:27 51122175                   /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f6d8eb27000-7f6d8eb28000 r--p 00002000 00:27 51122175                   /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f6d8eb28000-7f6d8eb29000 r--p 00002000 00:27 51122175                   /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f6d8eb29000-7f6d8eb2a000 rw-p 00003000 00:27 51122175                   /usr/lib/x86_64-linux-gnu/libdl.so.2
+7f6d8eb2a000-7f6d8eb2b000 r--p 00000000 00:27 51787884                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+7f6d8eb2b000-7f6d8eb2c000 r-xp 00001000 00:27 51787884                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+7f6d8eb2c000-7f6d8eb2d000 r--p 00002000 00:27 51787884                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+7f6d8eb2d000-7f6d8eb2e000 r--p 00002000 00:27 51787884                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+7f6d8eb2e000-7f6d8eb2f000 rw-p 00003000 00:27 51787884                   /usr/local/lib/python3.12/dist-packages/torch/lib/librocm-core.so
+7f6d8eb2f000-7f6d8eb52000 r--p 00000000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d8eb52000-7f6d8ef49000 r-xp 00023000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d8ef49000-7f6d8efe8000 r--p 0041a000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d8efe8000-7f6d8eff0000 r--p 004b8000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d8eff0000-7f6d9043e000 rw-p 004c0000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d9043e000-7f6d90443000 rw-p 00000000 00:00 0 
+7f6d90443000-7f6d9044a000 rw-p 01921000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d9044a000-7f6d90450000 rw-p 01928000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d90450000-7f6d90456000 rw-p 0192e000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d90456000-7f6d9045c000 rw-p 01934000 00:27 51787860                   /usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so
+7f6d9045c000-7f6d9045f000 rw-p 00000000 00:00 0 
+7f6d9045f000-7f6d90487000 r--p 00000000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6d90487000-7f6d9060f000 r-xp 00028000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6d9060f000-7f6d9065e000 r--p 001b0000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6d9065e000-7f6d90662000 r--p 001fe000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6d90662000-7f6d90664000 rw-p 00202000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6d90664000-7f6d90671000 rw-p 00000000 00:00 0 
+7f6d90671000-7f6d90675000 r--p 00000000 00:27 51122188                   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6d90675000-7f6d90699000 r-xp 00004000 00:27 51122188                   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6d90699000-7f6d9069d000 r--p 00028000 00:27 51122188                   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6d9069d000-7f6d9069e000 r--p 0002b000 00:27 51122188                   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6d9069e000-7f6d9069f000 rw-p 0002c000 00:27 51122188                   /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f6d906a1000-7f6d906a2000 ---p 00000000 00:00 0 
+7f6d906a2000-7f6d906a4000 rw-p 00000000 00:00 0 
+7f6d906a4000-7f6d906a6000 rw-p 00000000 00:00 0 
+7f6d906a6000-7f6d906aa000 r--p 00000000 00:00 0                          [vvar]
+7f6d906aa000-7f6d906ac000 r--p 00000000 00:00 0                          [vvar_vclock]
+7f6d906ac000-7f6d906ae000 r-xp 00000000 00:00 0                          [vdso]
+7f6d906ae000-7f6d906af000 r--p 00000000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f6d906af000-7f6d906da000 r-xp 00001000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f6d906da000-7f6d906e4000 r--p 0002c000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f6d906e4000-7f6d906e6000 r--p 00036000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f6d906e6000-7f6d906e8000 rw-p 00038000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffd8303b000-7ffd83062000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

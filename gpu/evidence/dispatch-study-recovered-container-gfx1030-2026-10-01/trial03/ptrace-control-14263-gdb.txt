@@ -1,0 +1,18 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fa5f2f97a7a in clock_nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+
+Thread 1 (Thread 0x7fa5f2ea8740 (LWP 14263) "sleep"):
+#0  0x00007fa5f2f97a7a in clock_nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+#1  0x00007fa5f2fa4a27 in nanosleep () from /lib/x86_64-linux-gnu/libc.so.6
+#2  0x0000562fa7947a7f in ?? ()
+#3  0x00007fa5f2ed51ca in ?? () from /lib/x86_64-linux-gnu/libc.so.6
+#4  0x00007fa5f2ed528b in __libc_start_main () from /lib/x86_64-linux-gnu/libc.so.6
+#5  0x0000562fa7947ba5 in ?? ()
+From                To                  Syms Read   Shared Object Library
+0x00007fa5f2ed3800  0x00007fa5f305ad39  Yes (*)     /lib/x86_64-linux-gnu/libc.so.6
+0x00007fa5f30cd000  0x00007fa5f30f7195  Yes (*)     /lib64/ld-linux-x86-64.so.2
+(*): Shared library is missing debugging information.
+[Inferior 1 (process 14263) detached]
+
+--- debugger stderr ---

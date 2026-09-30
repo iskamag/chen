@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "declared_utc": "2026-09-30T21:09:17.257817+00:00",
+  "repo_commit": "22cbd309a249664a4996170fbae9fce1a9824918",
+  "scope": "Exploratory repeated reliability comparison on actual gfx1030; not a reliability guarantee or failure-rate/rating claim.",
+  "schedule": [
+    {
+      "trial": 1,
+      "pair": 1,
+      "amd_direct_dispatch": 1
+    },
+    {
+      "trial": 2,
+      "pair": 1,
+      "amd_direct_dispatch": 0
+    },
+    {
+      "trial": 3,
+      "pair": 2,
+      "amd_direct_dispatch": 0
+    },
+    {
+      "trial": 4,
+      "pair": 2,
+      "amd_direct_dispatch": 1
+    },
+    {
+      "trial": 5,
+      "pair": 3,
+      "amd_direct_dispatch": 1
+    },
+    {
+      "trial": 6,
+      "pair": 3,
+      "amd_direct_dispatch": 0
+    }
+  ],
+  "fixed": {
+    "engine": "/tmp/chen-graph-plugin/chen",
+    "plugin": "/tmp/chen-graph-plugin/libchen_neural.so",
+    "rules": "/tmp/chen-gpu/build/libchen_gpu.so",
+    "models": "/tmp/chen-neural-inference/trained",
+    "probe": "/tmp/chen-native-plugin/eager_game_probe.py",
+    "reference": "/tmp/chen-native-plugin/neural_search_probe.py",
+    "case": "full",
+    "execution": "eager",
+    "watchdog_seconds": 30,
+    "game_plies_each": 20,
+    "graph_config": "eager defaults; no capture/cache",
+    "LD_PRELOAD": null
+  },
+  "artifact_sha256": {
+    "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+    "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+    "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+    "/tmp/chen-native-plugin/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c",
+    "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c"
+  },
+  "model_sha256": {
+    "square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d"
+  },
+  "host_source_sha256": {
+    "src/main.rs": "aa1f2d71f08b36def411ed0dba7e4a7a706064ea05d2d8af15b4995a9cf5c9e7",
+    "src/neural.rs": "d7f81c64e30dd185f299847246172a6bd0e482a38ead61e26567a79f6b0847b7",
+    "gpu/chen_neural.cpp": "166e184ca8d628ea69be2e1e49235d16017cb6f5277e5cd2c90acf83b1818db2",
+    "gpu/chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "gpu/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266",
+    "gpu/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c"
+  },
+  "container": {
+    "id": "277c563c6a572e531c986ef4d1dd6141bc8a50af3eae832c56d2ef04c1889060",
+    "image_sha256": "2c994c96a13e075b29282fc38547051cc2d4695a9f02dfc1571682c0b517e191",
+    "image_name": "pufferlib-rocm:4.0"
+  },
+  "protocol": [
+    "Set AMD_DIRECT_DISPATCH before parent Python starts; all reference engine environments inherit it.",
+    "Record requested flag, parent observed environment and selected child /proc/environ values; do not equate environment observation with inaccessible internal runtime flag introspection.",
+    "Check frozen source/model/library hashes before every trial and reference unchanged check at successful end.",
+    "Original probe full prelude:18exacttwo-ply oracle comparisons, option-order/config recovery, level/node/stop checks, two20-ply protocol games.",
+    "Preserve stdout/stderr for every trial and both thread snapshots/maps on timeout before owned-child retirement.",
+    "Complete six in declared order then release GPU; no adaptive extra runs or production/candidate edits."
+  ],
+  "primary_sources": [
+    "https://rocm.docs.amd.com/projects/HIP/en/docs-7.0.0/reference/env_variables.html",
+    "https://raw.githubusercontent.com/ROCm/clr/rocm-7.0.0/rocclr/platform/command.cpp"
+  ],
+  "replacement_for_invalid_launches": {
+    "config_sha256": "c1c4500e02cdeb4c315aa228beac625fd724dba044553ab6546031fb223dd316",
+    "reason": "Original batch excluded due immediate /proc observation assertion, not engine failures. Parent explicitly authorized replacement after correction."
+  },
+  "runner_sha256": "619b1ad3b1004782e4c165a7579b45c2c7a1a22ef3b07518863297f76a526ed1",
+  "observation_protocol": "Read child selected /proc environment only after readyok, at most3tries separated5ms; absent observation explicitly unavailable. No Popen-constructor instrumentation or exception. Observed differing nonabsent flag closes complete owner then aborts."
+}

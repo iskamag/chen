@@ -1,0 +1,31 @@
+{
+  "status": "six invalid instrumentation attempts; excluded from reliability comparison",
+  "reason": "strict assertion on immediate child /proc/environ observation rejected empty selected fields; runner failed before full prescribed checks, and Popen constructor exceptions bypassed ordinary child owner cleanup. All live owned children now gone, extra zombies retained by container init.",
+  "search_scope": {
+    "trial1": "6 square-model engine/oracle comparisons completed before instrumentation failure at relation benchmark spawn",
+    "trial2": "first benchmark spawn observation failed; no completed comparisons",
+    "trial3": "6 square-model comparisons completed before relation spawn observation failure",
+    "trial4": "18 comparisons +bothUCIoption-orders completed; limits client spawn observation failed",
+    "trial5": "first benchmark observation failed",
+    "trial6": "first benchmark observation failed"
+  },
+  "unexpected_native_waits": "No stack-observed GPU/native timeout in these invalid attempts; trial4 elapsed60s is not classified as a native wait.",
+  "not_counted_as_engine_failures": true,
+  "evidence_sha256": {
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial06.stderr": "81b0b3ef069c7b50844ea523955ae4ae75e3921ed0e6ae377e52cedaea17755f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial06.jsonl": "168659fda3a2e84f737e21f466ddf2d8b01aac74db168277e7e849ed15606c65",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial05.stderr": "81b0b3ef069c7b50844ea523955ae4ae75e3921ed0e6ae377e52cedaea17755f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial05.jsonl": "b0a9cae903505ff5f01cbeaca82450d499cd1d7dcc2c5782ae772a2d69ac264f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial04.stderr": "3da15edba4ad0fc1312b3421a7fb27214938fd016be1cd278862a1b0440fe35e",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial04.jsonl": "5dbab116a1e0d91060ab7fc831ea659707bb60bd2cbd31201a013ae4f8636302",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial03.stderr": "81b0b3ef069c7b50844ea523955ae4ae75e3921ed0e6ae377e52cedaea17755f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial03.jsonl": "9e6ea7b82ac43351b754cf98d28c6a1301df4fdf8bd1e279d02dff016307fd84",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial02.stderr": "81b0b3ef069c7b50844ea523955ae4ae75e3921ed0e6ae377e52cedaea17755f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial02.jsonl": "35fd8760858e0803d53a2a09c9c5214a0ef6c5c9389e6b8c5a727f48186b7633",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-results.json": "501185080c8fc55abcfdaff28f9224e4450734e455c358639b56ffd39e0f620b",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial01.stderr": "81b0b3ef069c7b50844ea523955ae4ae75e3921ed0e6ae377e52cedaea17755f",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-trial01.jsonl": "aef4760e46d8215a0a17907412f93a0a91829c162cc85e2f58059b236cb648df",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-active.json": "6c3973e4c2ca8108e9f9ef2ba1719222821a872e7a532698945e8f49ca0b9d41",
+    "dispatch-study-invalid-launches-gfx1030-2026-10-01-runner.py": "23d05fefe9b4a1c1ab4da895f69f8f1c9c4916831a6e641543a9e5a4d46cf054"
+  }
+}

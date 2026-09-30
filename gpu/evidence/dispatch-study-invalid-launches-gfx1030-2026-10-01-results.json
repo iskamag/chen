@@ -1,0 +1,50 @@
+[
+  {
+    "trial": 1,
+    "pair": 1,
+    "amd_direct_dispatch": 1,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 14.217866589082405,
+    "utc": "2026-09-30T21:03:29.837743+00:00"
+  },
+  {
+    "trial": 2,
+    "pair": 1,
+    "amd_direct_dispatch": 0,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 4.758442199090496,
+    "utc": "2026-09-30T21:03:34.596591+00:00"
+  },
+  {
+    "trial": 3,
+    "pair": 2,
+    "amd_direct_dispatch": 0,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 11.435407062992454,
+    "utc": "2026-09-30T21:03:46.032194+00:00"
+  },
+  {
+    "trial": 4,
+    "pair": 2,
+    "amd_direct_dispatch": 1,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 60.29855749197304,
+    "utc": "2026-09-30T21:04:46.330918+00:00"
+  },
+  {
+    "trial": 5,
+    "pair": 3,
+    "amd_direct_dispatch": 1,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 2.1291968361474574,
+    "utc": "2026-09-30T21:04:48.460296+00:00"
+  },
+  {
+    "trial": 6,
+    "pair": 3,
+    "amd_direct_dispatch": 0,
+    "exit_code": 1,
+    "elapsed_wall_seconds_including_docker": 2.466453895904124,
+    "utc": "2026-09-30T21:04:50.926909+00:00"
+  }
+]

@@ -1,0 +1,26 @@
+55f06e7b7000-55f06e7b9000 r--p 00000000 00:27 50879637                   /usr/bin/sleep
+55f06e7b9000-55f06e7bd000 r-xp 00002000 00:27 50879637                   /usr/bin/sleep
+55f06e7bd000-55f06e7be000 r--p 00006000 00:27 50879637                   /usr/bin/sleep
+55f06e7be000-55f06e7bf000 r--p 00007000 00:27 50879637                   /usr/bin/sleep
+55f06e7bf000-55f06e7c0000 rw-p 00008000 00:27 50879637                   /usr/bin/sleep
+55f073a4d000-55f073a6e000 rw-p 00000000 00:00 0                          [heap]
+7f9eee93d000-7f9eee944000 r--s 00000000 00:27 51122131                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f9eee944000-7f9eee99d000 r--p 00000000 00:27 51121821                   /usr/lib/locale/C.utf8/LC_CTYPE
+7f9eee99d000-7f9eee9a0000 rw-p 00000000 00:00 0 
+7f9eee9a0000-7f9eee9c8000 r--p 00000000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9eee9c8000-7f9eeeb50000 r-xp 00028000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9eeeb50000-7f9eeeb9f000 r--p 001b0000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9eeeb9f000-7f9eeeba3000 r--p 001fe000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9eeeba3000-7f9eeeba5000 rw-p 00202000 00:27 51122161                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7f9eeeba5000-7f9eeebb2000 rw-p 00000000 00:00 0 
+7f9eeebb7000-7f9eeebb9000 rw-p 00000000 00:00 0 
+7f9eeebb9000-7f9eeebbd000 r--p 00000000 00:00 0                          [vvar]
+7f9eeebbd000-7f9eeebbf000 r--p 00000000 00:00 0                          [vvar_vclock]
+7f9eeebbf000-7f9eeebc1000 r-xp 00000000 00:00 0                          [vdso]
+7f9eeebc1000-7f9eeebc2000 r--p 00000000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9eeebc2000-7f9eeebed000 r-xp 00001000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9eeebed000-7f9eeebf7000 r--p 0002c000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9eeebf7000-7f9eeebf9000 r--p 00036000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f9eeebf9000-7f9eeebfb000 rw-p 00038000 00:27 51122141                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffc6a795000-7ffc6a7b6000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

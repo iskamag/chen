@@ -1,0 +1,603 @@
+{
+  "recovered_utc": "2026-09-30T21:29:51.456231+00:00",
+  "container_id": "277c563c6a572e531c986ef4d1dd6141bc8a50af3eae832c56d2ef04c1889060",
+  "container_image": "sha256:2c994c96a13e075b29282fc38547051cc2d4695a9f02dfc1571682c0b517e191",
+  "container_state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 6614,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-09-30T21:29:08.837964808Z",
+    "FinishedAt": "2026-09-30T21:17:28.601890849Z"
+  },
+  "recovery_method": "docker cp existing stopped-container writable layer; no container restart or GPU execution by this agent",
+  "artifact_sha256": {
+    "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+    "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+    "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+    "/tmp/chen-native-plugin/eager_game_probe.py": "e8bf2de6c6543d8851336736470def68dcb9129c929e485324f9bf9f168fe30c",
+    "/tmp/chen-native-plugin/neural_search_probe.py": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+    "/tmp/chen-neural-inference/trained/square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "/tmp/chen-neural-inference/trained/relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "/tmp/chen-neural-inference/trained/plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d"
+  },
+  "predeclared_artifacts_match": true,
+  "predeclared_models_match": true,
+  "recovered_file_manifest": {
+    "__pycache__/runner.cpython-312.pyc": {
+      "sha256": "cde4fd8b73ef9c1266b96a2bb7475c71018e174cb6ecf73e361f5548ecc684bd",
+      "bytes": 8351,
+      "mtime_utc": "2026-09-30T21:08:12+00:00"
+    },
+    "config.json": {
+      "sha256": "c1c4500e02cdeb4c315aa228beac625fd724dba044553ab6546031fb223dd316",
+      "bytes": 4039,
+      "mtime_utc": "2026-09-30T21:01:24+00:00"
+    },
+    "replacement-config.json": {
+      "sha256": "69cf4b72420d58d799d31d6cc0ff8d89306d773fd978c35f14d063f9a9464e75",
+      "bytes": 4701,
+      "mtime_utc": "2026-09-30T21:09:17+00:00"
+    },
+    "runner.py": {
+      "sha256": "619b1ad3b1004782e4c165a7579b45c2c7a1a22ef3b07518863297f76a526ed1",
+      "bytes": 5332,
+      "mtime_utc": "2026-09-30T21:08:11+00:00"
+    },
+    "trial01/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/ptrace-control-14146-gdb.txt": {
+      "sha256": "bd0e3d09c0d12eb5c62c0470bdce328e739d2de349c3960294846830e6306c5a",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:03:17+00:00"
+    },
+    "trial01/ptrace-control-14146-maps.txt": {
+      "sha256": "8667b99a0e161cd74adc56020d6aef75c3efe387db06f8e50470ea5eb01cb3a4",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:03:17+00:00"
+    },
+    "trial01/ptrace-control-14146-sched.txt": {
+      "sha256": "c23cd6a5e2b27b41e35c0f5c835ac4d81fdf0262dbd725df1311d989853aca62",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:03:17+00:00"
+    },
+    "trial01/ptrace-control-14146-status.txt": {
+      "sha256": "293540936cc83300fe9684b0fc407baca43bc31ac157d9d1570229b537b927a6",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:03:17+00:00"
+    },
+    "trial01/ptrace-control-14146-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:03:17+00:00"
+    },
+    "trial01/ptrace-control-14570-gdb.txt": {
+      "sha256": "b2f6230fad042a9d1018ad51e2ec67a72b2da223e766598ef098af1394cd02f1",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/ptrace-control-14570-maps.txt": {
+      "sha256": "cbda9adee574bd123e9b599016fa835844d46c4933727b19624a82044da1b99c",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/ptrace-control-14570-sched.txt": {
+      "sha256": "5e3e16db9819eb5fa787a263211dfb9d1a0e359ff0ab4b4a2603da6c970fc627",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/ptrace-control-14570-status.txt": {
+      "sha256": "b0c012de82b13895e8d2c301e97fcb6f27103b31fc689e6e70bc3f3ce8aa253b",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/ptrace-control-14570-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:09:19+00:00"
+    },
+    "trial01/timeout-first-14657-gdb.txt": {
+      "sha256": "1dfc219dd5ca37477503a2982c305a119a074387e05dcbd19f1f05e9da600165",
+      "bytes": 13567,
+      "mtime_utc": "2026-09-30T21:10:57+00:00"
+    },
+    "trial01/timeout-first-14657-maps.txt": {
+      "sha256": "1130a41609846b0973a679113f3a1bb90b9cad58558ee93c8a9899a40934050a",
+      "bytes": 52326,
+      "mtime_utc": "2026-09-30T21:10:54+00:00"
+    },
+    "trial01/timeout-first-14657-sched.txt": {
+      "sha256": "0c5a333764d85c888a5e7cc447bd001d8cb001c6cf06859668df3019fbc4bfc9",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:10:54+00:00"
+    },
+    "trial01/timeout-first-14657-status.txt": {
+      "sha256": "fb17e47c1caaa3907d10453a7efe2dfc0b579d18b37c5da3a4aac2b0e2cc8ca8",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:10:54+00:00"
+    },
+    "trial01/timeout-first-14657-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:10:54+00:00"
+    },
+    "trial01/timeout-second-14657-gdb.txt": {
+      "sha256": "75dcdda765f6cc50715e8ab30e66f0de76f74f4db35d6dd886b9733d9aa1cc78",
+      "bytes": 13567,
+      "mtime_utc": "2026-09-30T21:11:00+00:00"
+    },
+    "trial01/timeout-second-14657-maps.txt": {
+      "sha256": "1130a41609846b0973a679113f3a1bb90b9cad58558ee93c8a9899a40934050a",
+      "bytes": 52326,
+      "mtime_utc": "2026-09-30T21:10:57+00:00"
+    },
+    "trial01/timeout-second-14657-sched.txt": {
+      "sha256": "4465d02480f9e52d02f86e9d1b33406e634b2a06f40973ca159a87adb5b8dfeb",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:10:57+00:00"
+    },
+    "trial01/timeout-second-14657-status.txt": {
+      "sha256": "2e8ae5ab26aaef5a7b90e7190bb574af551ff19a13da245ce56d49590372506e",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:10:57+00:00"
+    },
+    "trial01/timeout-second-14657-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:10:57+00:00"
+    },
+    "trial02/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/ptrace-control-14205-gdb.txt": {
+      "sha256": "1f53c815130fb6c2e911657ce53ade0837308ba9488a276750ddd55195e0b58b",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:03:33+00:00"
+    },
+    "trial02/ptrace-control-14205-maps.txt": {
+      "sha256": "3fe67870a03cf7b2eafcd8a0841a2e9f89b9fa7d107ab131f30d109ba25b9854",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:03:33+00:00"
+    },
+    "trial02/ptrace-control-14205-sched.txt": {
+      "sha256": "42dcefa069b145ca6bce1c45c50986504d8fe98be2739ea50aa50a920309074e",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:03:33+00:00"
+    },
+    "trial02/ptrace-control-14205-status.txt": {
+      "sha256": "d821330e97b0bb8bcba685dbbe23db721f340c0a03e7c9ed8e662fb92c63654c",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:03:33+00:00"
+    },
+    "trial02/ptrace-control-14205-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:03:33+00:00"
+    },
+    "trial02/ptrace-control-14732-gdb.txt": {
+      "sha256": "3e5b39ebc6c4c8565eefd10253a63146db48434b16efbc78df34ee71f36e4414",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/ptrace-control-14732-maps.txt": {
+      "sha256": "fa7082705cb424568051bc0ec0a02bd4d371578dd4461b9e8b395bdccfac52d3",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/ptrace-control-14732-sched.txt": {
+      "sha256": "b23ac4642db475f776c178fdbf0491de4a7f51b438e20ec4a755ecd760c35735",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/ptrace-control-14732-status.txt": {
+      "sha256": "7f3e66e8228a138fbbf4435a22b5f126b1b3232d7a9c91f95a2b81b638a82eb1",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/ptrace-control-14732-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:11:03+00:00"
+    },
+    "trial02/timeout-first-14851-gdb.txt": {
+      "sha256": "2f99e532eb155cdf3755bdc5b62ab48b2879430cd0fbdf63db5177a019c4933c",
+      "bytes": 17918,
+      "mtime_utc": "2026-09-30T21:12:39+00:00"
+    },
+    "trial02/timeout-first-14851-maps.txt": {
+      "sha256": "2abc55ee56007a254f48b42c3dc4228f1ae3af867424ad61fecc52ce2a36236c",
+      "bytes": 50480,
+      "mtime_utc": "2026-09-30T21:12:35+00:00"
+    },
+    "trial02/timeout-first-14851-sched.txt": {
+      "sha256": "f7df9318763b0382e6a1cbffb1ae20527cf784968a1b8397886684e486e7c38b",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:12:35+00:00"
+    },
+    "trial02/timeout-first-14851-status.txt": {
+      "sha256": "7b9f0db20f941dca1a148e458c947bbe2cbe4c2b8f2d1b14a79b88134b879215",
+      "bytes": 1491,
+      "mtime_utc": "2026-09-30T21:12:35+00:00"
+    },
+    "trial02/timeout-first-14851-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:12:35+00:00"
+    },
+    "trial02/timeout-second-14851-gdb.txt": {
+      "sha256": "e9ae12cddbe858ef4197e6e2e9a0361bb3eff5874f287eef5ac3a193b2c267e1",
+      "bytes": 17918,
+      "mtime_utc": "2026-09-30T21:12:42+00:00"
+    },
+    "trial02/timeout-second-14851-maps.txt": {
+      "sha256": "2abc55ee56007a254f48b42c3dc4228f1ae3af867424ad61fecc52ce2a36236c",
+      "bytes": 50480,
+      "mtime_utc": "2026-09-30T21:12:39+00:00"
+    },
+    "trial02/timeout-second-14851-sched.txt": {
+      "sha256": "1d5314f357b4c6ea434ccfc3d733e312913a9d2a003e8004044bd0facea7328f",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:12:39+00:00"
+    },
+    "trial02/timeout-second-14851-status.txt": {
+      "sha256": "f12a6229d34be7e643a5ed6c4287edeaa8c47ae5f16dafe303bf6be2cd498887",
+      "bytes": 1491,
+      "mtime_utc": "2026-09-30T21:12:39+00:00"
+    },
+    "trial02/timeout-second-14851-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:12:39+00:00"
+    },
+    "trial03/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/ptrace-control-14263-gdb.txt": {
+      "sha256": "b7a3ab408b87fb25c82f560bd2a3b998fe4083a1e7e035e9aad9addd219d3297",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:03:36+00:00"
+    },
+    "trial03/ptrace-control-14263-maps.txt": {
+      "sha256": "581215abe747146acfd1375a628ecb3d1182c03f2b2cd9c2a32e7d782ad0e175",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:03:36+00:00"
+    },
+    "trial03/ptrace-control-14263-sched.txt": {
+      "sha256": "e97aed48b649ce210e5f51bc7efe730df9f446ee7f11344fa913be6f7f6f380e",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:03:36+00:00"
+    },
+    "trial03/ptrace-control-14263-status.txt": {
+      "sha256": "4ad48f78a24726a38db309d385cc7b1a38cfc1afeb54ce9fff37030d0950b683",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:03:36+00:00"
+    },
+    "trial03/ptrace-control-14263-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:03:36+00:00"
+    },
+    "trial03/ptrace-control-14923-gdb.txt": {
+      "sha256": "c9fff3907656969b6d7c0075fc1a9743d6d6b592d7fc084637e86199bd041d0f",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/ptrace-control-14923-maps.txt": {
+      "sha256": "a77e40995de867257dc6df7c61d37c83a8d7e783baab8d1c225371ebd560739a",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/ptrace-control-14923-sched.txt": {
+      "sha256": "d5c8d5f761f4c17c41d91631ef038a98341c3a3c2ea46a1923eec18a6fe6e811",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/ptrace-control-14923-status.txt": {
+      "sha256": "cd77836d2e251fd403b2e3747a01bc708f53888ca990cb558a9e5abdfa8d01a7",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/ptrace-control-14923-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:12:44+00:00"
+    },
+    "trial03/timeout-first-15053-gdb.txt": {
+      "sha256": "f5d00052b13dbbe2c01ea6a57d0fd01224e13836e260ee5d7008242297137b6b",
+      "bytes": 17918,
+      "mtime_utc": "2026-09-30T21:14:17+00:00"
+    },
+    "trial03/timeout-first-15053-maps.txt": {
+      "sha256": "de84b9978c2bcfb151e412af132b9c6e41ffa5167c4971eace5fcaab72f1d440",
+      "bytes": 50480,
+      "mtime_utc": "2026-09-30T21:14:15+00:00"
+    },
+    "trial03/timeout-first-15053-sched.txt": {
+      "sha256": "3e64ad67efe3620354baae8b12b044d1f11ca51ce28c486b62bc7cb4c8422ec2",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:14:15+00:00"
+    },
+    "trial03/timeout-first-15053-status.txt": {
+      "sha256": "6ea92c6dadcd9db600d8a7433ceab7906a300ad780aee67dbb42bc6e1ea647af",
+      "bytes": 1491,
+      "mtime_utc": "2026-09-30T21:14:15+00:00"
+    },
+    "trial03/timeout-first-15053-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:14:15+00:00"
+    },
+    "trial03/timeout-second-15053-gdb.txt": {
+      "sha256": "bb52517615d6f814a9666b7a2d10c0ed0616a7259afe7e5deedeee7f24f9abbd",
+      "bytes": 17918,
+      "mtime_utc": "2026-09-30T21:14:20+00:00"
+    },
+    "trial03/timeout-second-15053-maps.txt": {
+      "sha256": "de84b9978c2bcfb151e412af132b9c6e41ffa5167c4971eace5fcaab72f1d440",
+      "bytes": 50480,
+      "mtime_utc": "2026-09-30T21:14:17+00:00"
+    },
+    "trial03/timeout-second-15053-sched.txt": {
+      "sha256": "9d557e9fbb8b8c5ae67356f119907a2392099e334bc9558ca0a3ef3db827e332",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:14:17+00:00"
+    },
+    "trial03/timeout-second-15053-status.txt": {
+      "sha256": "fc79ae1147bef1e93d2ac105c1bfc5cd60b6d334f30759e3d1289310aa877205",
+      "bytes": 1491,
+      "mtime_utc": "2026-09-30T21:14:17+00:00"
+    },
+    "trial03/timeout-second-15053-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:14:17+00:00"
+    },
+    "trial04/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:14:22+00:00"
+    },
+    "trial04/ptrace-control-14335-gdb.txt": {
+      "sha256": "49b6e4740a5013e055bf47c73e1ec73d127c572465f034634a45db11deee5f5e",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:03:48+00:00"
+    },
+    "trial04/ptrace-control-14335-maps.txt": {
+      "sha256": "ab3b2fc8c7309b2aef94b47a01b248966601fd2e0c3926c0affb9ee57565fe74",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:03:48+00:00"
+    },
+    "trial04/ptrace-control-14335-sched.txt": {
+      "sha256": "4b21315a11f7ff1e2ae60a8e6c23eaf4ee2d278c0371182cebed4184c045b34d",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:03:48+00:00"
+    },
+    "trial04/ptrace-control-14335-status.txt": {
+      "sha256": "889f8a752b4457213b877dbfd0121fcc33dfeb323c2e6c9971d077d334c615e6",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:03:48+00:00"
+    },
+    "trial04/ptrace-control-14335-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:03:48+00:00"
+    },
+    "trial04/ptrace-control-15119-gdb.txt": {
+      "sha256": "bfc7c130a8e938fbedfebb073f23c3962aa71f8af86fdbd07b0e3cb4eaf734b9",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/ptrace-control-15119-maps.txt": {
+      "sha256": "50bda7e2c090fcab2be0aa313cf5eba69f073a67076da84fe508bbbf7f44ea33",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/ptrace-control-15119-sched.txt": {
+      "sha256": "00417de7d33c6390bd26b4fe4501dbb7e8cf0c338b65b03b49cec65d0fea09f0",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/ptrace-control-15119-status.txt": {
+      "sha256": "6565d64f1d6e17e25a1ea7a41d12355712ad48ffa530ffff8b450fca5729f713",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/ptrace-control-15119-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:14:23+00:00"
+    },
+    "trial04/timeout-first-15189-gdb.txt": {
+      "sha256": "df3e02bb985aebb29204f03dd3456878725fd32fbe59518894938345c96c60b8",
+      "bytes": 13939,
+      "mtime_utc": "2026-09-30T21:15:56+00:00"
+    },
+    "trial04/timeout-first-15189-maps.txt": {
+      "sha256": "3d9a46978c058dd61d0a8a0de863f7282630139d01dcdb49e51153f205cef699",
+      "bytes": 50759,
+      "mtime_utc": "2026-09-30T21:15:52+00:00"
+    },
+    "trial04/timeout-first-15189-sched.txt": {
+      "sha256": "d314d0209294e68957613d21c22f2e634a2aaaae177c9e600f258ac70226a5ac",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:15:52+00:00"
+    },
+    "trial04/timeout-first-15189-status.txt": {
+      "sha256": "b3416c1809fe8160e33b7522b80cbcc933f848f9b523807462b91e4e40254acd",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:15:52+00:00"
+    },
+    "trial04/timeout-first-15189-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:15:52+00:00"
+    },
+    "trial04/timeout-second-15189-gdb.txt": {
+      "sha256": "c49a91f54c9735ba73b57b8c7594ff37ee6f37c46fea8824adb607d9788dac9d",
+      "bytes": 13939,
+      "mtime_utc": "2026-09-30T21:15:59+00:00"
+    },
+    "trial04/timeout-second-15189-maps.txt": {
+      "sha256": "3d9a46978c058dd61d0a8a0de863f7282630139d01dcdb49e51153f205cef699",
+      "bytes": 50759,
+      "mtime_utc": "2026-09-30T21:15:56+00:00"
+    },
+    "trial04/timeout-second-15189-sched.txt": {
+      "sha256": "afd009d6a9a8c7b9f43aa5cae5a7cd95cecc6e532bee11aa49e52f887850cc5a",
+      "bytes": 2177,
+      "mtime_utc": "2026-09-30T21:15:56+00:00"
+    },
+    "trial04/timeout-second-15189-status.txt": {
+      "sha256": "2b64a37a25dabadd9ed656d4e774a92793f95c7e29834a7c0c3a3e722eca2e0c",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:15:56+00:00"
+    },
+    "trial04/timeout-second-15189-wchan.txt": {
+      "sha256": "a1b7e199bf88b6ec841892392a957f8983098405cd360fb133517702d06513f4",
+      "bytes": 14,
+      "mtime_utc": "2026-09-30T21:15:56+00:00"
+    },
+    "trial05/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:16:01+00:00"
+    },
+    "trial05/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:16:01+00:00"
+    },
+    "trial05/ptrace-control-14426-gdb.txt": {
+      "sha256": "8647faa1841cf5d633434a222dd0c965b5be87b079bbc5fd364ba891de6b135e",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:04:47+00:00"
+    },
+    "trial05/ptrace-control-14426-maps.txt": {
+      "sha256": "f861086536530c4d07fa9f9532f6e48ac0d6605de2f5123d2db7cbfdd55c16d6",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:04:47+00:00"
+    },
+    "trial05/ptrace-control-14426-sched.txt": {
+      "sha256": "2a008d8cda725e15a6c22463f24f30328f794aeeabdec6d88d790f8ef2ea24cb",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:04:47+00:00"
+    },
+    "trial05/ptrace-control-14426-status.txt": {
+      "sha256": "eafb1c87f26961005f2655f45f6affdc9d284c8bab4fdae8f77f64772a0e9805",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:04:47+00:00"
+    },
+    "trial05/ptrace-control-14426-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:04:47+00:00"
+    },
+    "trial05/ptrace-control-15253-gdb.txt": {
+      "sha256": "62f0fb38ea3263f8c74e61a445e7d8d6515f4732098ef86c75088ba3e7944ca7",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:16:02+00:00"
+    },
+    "trial05/ptrace-control-15253-maps.txt": {
+      "sha256": "0046187a31ef0cfa12f28ff9f08476b6c5a5c7ce44f612b854e1bae9cc7bf41b",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:16:02+00:00"
+    },
+    "trial05/ptrace-control-15253-sched.txt": {
+      "sha256": "f0d9943705033924043b56f444a086c478fa6ea128f9f434ab56c465f43c0c31",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:16:02+00:00"
+    },
+    "trial05/ptrace-control-15253-status.txt": {
+      "sha256": "a038c65815e77d37a55ee0d9ec10744d569f7dfb90d357d4553ede195aaccac7",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:16:02+00:00"
+    },
+    "trial05/ptrace-control-15253-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:16:02+00:00"
+    },
+    "trial06/chen-ptrace": {
+      "sha256": "7076a8f0f29e56c41300153b1fa754252b3d049ffcb35a363481501b841b97be",
+      "bytes": 16128,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    },
+    "trial06/launcher.c": {
+      "sha256": "379e5c08c4c35da7fd33009d2f6008a8f920124bba6647251f8a53f889331a26",
+      "bytes": 393,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    },
+    "trial06/ptrace-control-14479-gdb.txt": {
+      "sha256": "6fc96a53f6336174a75c33b006548fa8d31970e2aba3211f637282c00fa4a2e5",
+      "bytes": 984,
+      "mtime_utc": "2026-09-30T21:04:50+00:00"
+    },
+    "trial06/ptrace-control-14479-maps.txt": {
+      "sha256": "f83d51e4909b735a58b232f7347706407b2ec13146ba7a0d262878509729ecd9",
+      "bytes": 2454,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    },
+    "trial06/ptrace-control-14479-sched.txt": {
+      "sha256": "1f03038d2457df8b849e8c1423bb8087a9a00a7fdb8906c0d01fb3fad80b1755",
+      "bytes": 2178,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    },
+    "trial06/ptrace-control-14479-status.txt": {
+      "sha256": "b347a119c213b04c3e556af98ef8cc07ac1489a17339315ef513044e8308a52a",
+      "bytes": 1490,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    },
+    "trial06/ptrace-control-14479-wchan.txt": {
+      "sha256": "d219f557a2b0cb82b3797466226ba7b3332eebe88fe1bd63afcd00607c1609d5",
+      "bytes": 17,
+      "mtime_utc": "2026-09-30T21:04:49+00:00"
+    }
+  },
+  "raw_log_loss": "Replacement trial stdout/stderr/results were hosted only under host /tmp/chen-dispatch-study-replacement-host, which disappeared externally. They are unavailable. Recovered container folder contains configs/runner/launchers and debugger files, including controls from excluded initial batch; it contains no replacement stdout/stderr JSONL.",
+  "prior_stopped_state_tool_observation": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 137,
+    "Error": "",
+    "StartedAt": "2026-09-19T16:34:11.358383067Z",
+    "FinishedAt": "2026-09-30T21:17:28.601890849Z"
+  },
+  "prior_stopped_state_source": "Verbatim docker inspect .State tool output captured before this agent copied the stopped container folder. Root restarted container before later revalidation inspect; current container_state above is separate."
+}

@@ -41,6 +41,12 @@ This single pass does not validate a workaround or establish a causal link.
 Production configuration remains unchanged. A next predeclared experiment needs
 repeated original-plugin controls for both dispatch settings, with identical
 artifacts, watchdogs and workload, plus latency/copy checks before any adoption.
+The [repeated control attempt](GPU_DISPATCH_STUDY.md) subsequently ended partially
+after an external container stop. Timeout stacks survive for both requested
+settings, but complete replacement logs were lost; no completed six-run or
+replayable numerical-parity result is claimed. The production policy remains
+unchanged. The next causal control separates a CPU-only protocol parent from
+an idle Torch/HIP parent, with durable milestone logs.
 
 ## Diagnostic scope
 

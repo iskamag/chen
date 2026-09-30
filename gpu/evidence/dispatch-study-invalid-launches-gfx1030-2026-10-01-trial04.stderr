@@ -1,0 +1,20 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "/tmp/chen-dispatch-study/runner.py", line 96, in <module>
+    main()
+  File "/tmp/chen-dispatch-study/runner.py", line 83, in main
+    probe.main()
+  File "/tmp/chen-native-plugin/eager_game_probe.py", line 168, in main
+    reference.main()
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 316, in main
+    client = UCI(args.engine, env, 'neural')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-plugin/eager_game_probe.py", line 128, in __init__
+    super().__init__(str(launcher), marked, evaluator, backend, order)
+  File "/tmp/chen-native-plugin/neural_search_probe.py", line 91, in __init__
+    self.process = subprocess.Popen([binary, "uci"], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-dispatch-study/runner.py", line 75, in __init__
+    assert observed['actual_environment']['AMD_DIRECT_DISPATCH'] == expected
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

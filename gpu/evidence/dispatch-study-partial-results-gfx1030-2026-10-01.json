@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "partial study externally interrupted, raw logs partially lost",
+  "schedule_completed": false,
+  "declared_replacement_config": "dispatch-study-replacement-config-gfx1030-2026-10-01.json",
+  "declared_config_sha256": "69cf4b72420d58d799d31d6cc0ff8d89306d773fd978c35f14d063f9a9464e75",
+  "external_interruption": {
+    "container_id": "277c563c6a572e531c986ef4d1dd6141bc8a50af3eae832c56d2ef04c1889060",
+    "state": {
+      "Status": "exited",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 137,
+      "Error": "",
+      "StartedAt": "2026-09-19T16:34:11.358383067Z",
+      "FinishedAt": "2026-09-30T21:17:28.601890849Z"
+    },
+    "scope": "Container stopped externally; host /tmp disappeared and original orchestration session became unknown. Not classified as a chess engine failure or OOM diagnosis. Agent did not restart or resume study."
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "requested_amd_direct_dispatch": 1,
+      "status": "two timeout-triggered debugger captures archived; full run raw log unavailable",
+      "engine_pid": 14657,
+      "archived_snapshots": [
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial01/timeout-first-14657-gdb.txt",
+          "sha256": "1dfc219dd5ca37477503a2982c305a119a074387e05dcbd19f1f05e9da600165",
+          "observed_wait_kind": "HSA code-object freeze/blit wait in Torch score-range scalar comparison"
+        },
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial01/timeout-second-14657-gdb.txt",
+          "sha256": "75dcdda765f6cc50715e8ab30e66f0de76f74f4db35d6dd886b9733d9aa1cc78",
+          "observed_wait_kind": "HSA code-object freeze/blit wait in Torch score-range scalar comparison"
+        }
+      ],
+      "independently_replayable_full_prelude_result": null,
+      "raw_stdout_stderr_available": false,
+      "actual_environment_after_ready_archive": null
+    },
+    {
+      "trial": 2,
+      "requested_amd_direct_dispatch": 0,
+      "status": "two timeout-triggered debugger captures archived; full run raw log unavailable",
+      "engine_pid": 14851,
+      "archived_snapshots": [
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial02/timeout-first-14851-gdb.txt",
+          "sha256": "2f99e532eb155cdf3755bdc5b62ab48b2879430cd0fbdf63db5177a019c4933c",
+          "observed_wait_kind": "BLAS workspace installation/free -> HIP SyncAllStreams -> Event awaitCompletion"
+        },
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial02/timeout-second-14851-gdb.txt",
+          "sha256": "e9ae12cddbe858ef4197e6e2e9a0361bb3eff5874f287eef5ac3a193b2c267e1",
+          "observed_wait_kind": "BLAS workspace installation/free -> HIP SyncAllStreams -> Event awaitCompletion"
+        }
+      ],
+      "independently_replayable_full_prelude_result": null,
+      "raw_stdout_stderr_available": false,
+      "actual_environment_after_ready_archive": null
+    },
+    {
+      "trial": 3,
+      "requested_amd_direct_dispatch": 0,
+      "status": "two timeout-triggered debugger captures archived; full run raw log unavailable",
+      "engine_pid": 15053,
+      "archived_snapshots": [
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial03/timeout-first-15053-gdb.txt",
+          "sha256": "f5d00052b13dbbe2c01ea6a57d0fd01224e13836e260ee5d7008242297137b6b",
+          "observed_wait_kind": "BLAS workspace installation/free -> HIP SyncAllStreams -> Event awaitCompletion"
+        },
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial03/timeout-second-15053-gdb.txt",
+          "sha256": "bb52517615d6f814a9666b7a2d10c0ed0616a7259afe7e5deedeee7f24f9abbd",
+          "observed_wait_kind": "BLAS workspace installation/free -> HIP SyncAllStreams -> Event awaitCompletion"
+        }
+      ],
+      "independently_replayable_full_prelude_result": null,
+      "raw_stdout_stderr_available": false,
+      "actual_environment_after_ready_archive": null
+    },
+    {
+      "trial": 4,
+      "requested_amd_direct_dispatch": 1,
+      "status": "two timeout-triggered debugger captures archived; full run raw log unavailable",
+      "engine_pid": 15189,
+      "archived_snapshots": [
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial04/timeout-first-15189-gdb.txt",
+          "sha256": "df3e02bb985aebb29204f03dd3456878725fd32fbe59518894938345c96c60b8",
+          "observed_wait_kind": "HSA code-object freeze/blit wait in Torch mean reduction"
+        },
+        {
+          "path": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial04/timeout-second-15189-gdb.txt",
+          "sha256": "c49a91f54c9735ba73b57b8c7594ff37ee6f37c46fea8824adb607d9788dac9d",
+          "observed_wait_kind": "HSA code-object freeze/blit wait in Torch mean reduction"
+        }
+      ],
+      "independently_replayable_full_prelude_result": null,
+      "raw_stdout_stderr_available": false,
+      "actual_environment_after_ready_archive": null
+    },
+    {
+      "trial": 5,
+      "requested_amd_direct_dispatch": 1,
+      "status": "externally interrupted; no timeout/result artifact",
+      "replacement_ptrace_control": "dispatch-study-recovered-container-gfx1030-2026-10-01/trial05/ptrace-control-15253-gdb.txt",
+      "raw_stdout_stderr_available": false
+    },
+    {
+      "trial": 6,
+      "requested_amd_direct_dispatch": 0,
+      "status": "not observed to start; no replacement artifacts",
+      "existing_directory_scope": "Only ptrace-control14479 from excluded initial instrumentation attempt predates replacement start; it is not trial6 completion evidence."
+    }
+  ],
+  "surviving_evidence_scope": [
+    "Two actual attached debugger stacks each for trials1\u20134, plus proc maps/status/sched/wchan, predeclarations, corrected runner and startup debugger controls.",
+    "At captured timeout windows, actual GPU/HIP/Torch/plugin worker stacks are observable. This is not CPU-substitution evidence from score metadata: replacement bench stdout/model metadata are lost.",
+    "Earlier live tool reads observed18comparison records and first-game waits, but complete stdout/stderr and exact-score/ready-environment records cannot now be independently rechecked. They are not counted as replayable completed oracle comparisons.",
+    "Initial six instrumentation attempts are excluded and their original raw logs remain separately archived.",
+    "Original binary/plugin/rules/model archive SHA fingerprints rechecked against declaration after root infrastructure restart; all match."
+  ],
+  "interpretation": "The surviving timeout snapshots document unresolved eager runtime waits at multiple HIP/HSA boundaries under the requested dispatch controls. A complete matched six-run reliability comparison was not obtained; no failure rate, permanent dispatch-zero workaround, playing strength, or speed conclusion is supported.",
+  "recovery_manifest": "dispatch-study-recovery-gfx1030-2026-10-01.json",
+  "initial_invalid_attempts_manifest": "dispatch-study-invalid-launches-gfx1030-2026-10-01.json",
+  "limitations": [
+    "Replacement raw stdout/stderr and host end-event journal were lost externally before durable repository archival.",
+    "No internal runtime-flag variable read was possible; surviving requested settings do not substitute for lost ready-time environment observations.",
+    "Device history/caches were not reset or randomized; prior experiments and invalid setup attempts preceded this exploratory sequence.",
+    "An external container stop interrupted trial5; replacement trial6 has no execution record. No extra adaptive runs were made."
+  ]
+}

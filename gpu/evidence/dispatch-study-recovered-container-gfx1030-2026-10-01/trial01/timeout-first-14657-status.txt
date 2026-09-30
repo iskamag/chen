@@ -1,0 +1,61 @@
+Name:	chen
+Umask:	0022
+State:	S (sleeping)
+Tgid:	14657
+Ngid:	0
+Pid:	14657
+PPid:	14538
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	0 39 44 109 
+NStgid:	14657
+NSpid:	14657
+NSpgid:	14538
+NSsid:	14538
+Kthread:	0
+VmPeak:	10286368 kB
+VmSize:	10284316 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  934260 kB
+VmRSS:	  934260 kB
+RssAnon:	  552900 kB
+RssFile:	  381360 kB
+RssShmem:	       0 kB
+VmData:	  739880 kB
+VmStk:	     156 kB
+VmExe:	     492 kB
+VmLib:	  759528 kB
+VmPTE:	    2892 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffffff
+Threads:	4
+SigQ:	3/127812
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	0000000100000440
+CapInh:	0000000000000000
+CapPrm:	00000000a80425fb
+CapEff:	00000000a80425fb
+CapBnd:	00000000a80425fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	thread vulnerable
+SpeculationIndirectBranch:	conditional enabled
+Cpus_allowed:	fff
+Cpus_allowed_list:	0-11
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	4
+nonvoluntary_ctxt_switches:	98
+x86_Thread_features:	
+x86_Thread_features_locked:	
