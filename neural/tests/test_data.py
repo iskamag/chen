@@ -194,6 +194,8 @@ class TrainingTests(unittest.TestCase):
             good = torch.load(path, weights_only=True)
             for mutate in (
                 lambda data: data.update(schema_version=999),
+                lambda data: data.update(schema_version=True),
+                lambda data: data.update(checkpoint_version=True),
                 lambda data: data["model_config"].update(width=100000),
                 lambda data: data["state_dict"].pop("position"),
                 lambda data: data["state_dict"]["position"].fill_(float("nan")),
@@ -207,6 +209,34 @@ class TrainingTests(unittest.TestCase):
             torch.save(SimpleNamespace(unexpected="object payload"), path)
             with self.assertRaises(ValueError):
                 load_checkpoint(path)
+
+    def test_checkpoint_rejects_corrupted_deterministic_buffers(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "model.pt"
+            for name in ("square", "relation", "plan"):
+                save_checkpoint(build_model(name, width=8, depth=1), path,
+                                corpus_manifest={"kind": "synthetic_legal_smoke"},
+                                training_config={"steps": 0})
+                good = torch.load(path, weights_only=True)
+                for buffer_name, corrupted in (
+                    ("next_orientation", good["state_dict"]["next_orientation"].clone()),
+                    ("geometry", good["state_dict"]["geometry"].clone()),
+                    ("attack_patterns", good["state_dict"]["attack_patterns"].clone()),
+                    ("between", good["state_dict"]["between"].clone()),
+                ):
+                    if buffer_name == "next_orientation":
+                        corrupted[0] = 64  # valid dtype/shape, later transition index failure
+                    else:
+                        corrupted.flatten()[0] += 1  # finite and valid-shaped, wrong definition
+                    bad = {**good, "state_dict": {**good["state_dict"], buffer_name: corrupted}}
+                    torch.save(bad, path)
+                    with self.assertRaisesRegex(ValueError, "deterministic buffer mismatch"):
+                        load_checkpoint(path, device=DEVICE)
+                bad = {**good, "state_dict": {**good["state_dict"],
+                                              "next_orientation": good["state_dict"]["next_orientation"].int()}}
+                torch.save(bad, path)
+                with self.assertRaisesRegex(ValueError, "deterministic buffer mismatch"):
+                    load_checkpoint(path, device=DEVICE)
 
 
 if __name__ == "__main__":

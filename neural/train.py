@@ -98,9 +98,9 @@ def load_checkpoint(path, *, device="cpu"):
         payload = torch.load(path, map_location="cpu", weights_only=True)
     except Exception as error:
         raise ValueError("checkpoint failed restricted tensor-only loading") from error
-    if not isinstance(payload, dict) or payload.get("checkpoint_version") != 1:
+    if not isinstance(payload, dict) or type(payload.get("checkpoint_version")) is not int or payload["checkpoint_version"] != 1:
         raise ValueError("unsupported checkpoint format")
-    if payload.get("schema_version") != SCHEMA_VERSION:
+    if type(payload.get("schema_version")) is not int or payload["schema_version"] != SCHEMA_VERSION:
         raise ValueError("checkpoint feature/action schema mismatch")
     if payload.get("kind") != "synthetic_legal_smoke_checkpoint" or payload.get("strength_evidence") is not False:
         raise ValueError("unsupported checkpoint evidence status")
@@ -122,6 +122,13 @@ def load_checkpoint(path, *, device="cpu"):
         if not isinstance(payload.get(key), dict):
             raise ValueError(f"checkpoint missing {key}")
     model = build_model(**config)
+    # Geometry and canonical orientation are architecture definitions, not learned
+    # checkpoint state. A valid-shaped but corrupted buffer can otherwise pass
+    # strict loading and change rules or fail only on a later transition.
+    for name, expected in model.named_buffers():
+        actual = weights.get(name)
+        if actual is None or actual.dtype != expected.dtype or actual.shape != expected.shape or not torch.equal(actual, expected):
+            raise ValueError(f"checkpoint deterministic buffer mismatch: {name}")
     try:
         model.load_state_dict(weights, strict=True)
     except RuntimeError as error:

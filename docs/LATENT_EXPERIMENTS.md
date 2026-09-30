@@ -62,7 +62,9 @@ the same architecture/data with the diamond loss disabled and a matched extra
 one-step-data baseline. Measure exact endpoint reconstruction, rule-state error,
 eight-ply latent consistency and paired-match score at equal wall time. Reject
 if gains disappear after equalizing sample/compute or if tactical errors rise.
-Implementation and endpoint corpus remain future work.
+The initial corpus, controls and measured null result are implemented in
+[DIAMOND_EXPERIMENT.md](DIAMOND_EXPERIMENT.md). Stronger training and search
+validation remain future work.
 
 ## H2: persistent threat plans survive opponent interference
 
