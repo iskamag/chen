@@ -4,7 +4,15 @@
 
 A chess engine written from scratch in Rust, and a laboratory for controlled
 architecture experiments. No runtime dependencies. The current engine is a
-single-threaded classical baseline; neural evaluation comes next.
+classical baseline. This `research/neural` branch hosts independent neural
+experiments; the main `../chen` worktree owns current GPU engine integration.
+
+The research includes [square/relation/plan architectures](docs/NEURAL_ARCHITECTURES.md),
+[legal-diamond dynamics](docs/DIAMOND_EXPERIMENT.md),
+[observed move transport](docs/ACTION_DYNAMICS.md), and
+[compact resident replay](docs/COMPACT_REPLAY.md). The latest combined suite
+passes 48 tests on gfx1030. Synthetic mechanics and mixed/negative dynamics
+results are recorded explicitly; no neural playing-strength claim is made.
 
 ```sh
 cargo build --release
@@ -91,8 +99,9 @@ the dirty patch, including an uncommitted initial checkout.
 An incremental evaluator gets `reset`, `after_make`, and `after_unmake` callbacks
 for its own accumulator stack. The rules kernel does not know about a network.
 Start with a scalar full-refresh oracle, specify features and serialization,
-then compare incremental state and SIMD output bit-for-bit. The neural model,
-training pipeline, and optimized delta interface are future work.
+then compare incremental state and SIMD output bit-for-bit. This branch contains
+neural model/training experiments and resident replay; production Rust inference
+and a trained playing-strength evaluator remain open.
 
 Optional independent QA uses python-chess in a separate development environment:
 

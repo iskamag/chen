@@ -1,0 +1,13 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+test_contrast_rejects_action_blind_and_swapped_prediction (neural.tests.test_dynamics.TransportTest.test_contrast_rejects_action_blind_and_swapped_prediction) ... ok
+test_declared_check_evasion_fixture_is_actually_check_and_both_alternatives_legal (neural.tests.test_dynamics.TransportTest.test_declared_check_evasion_fixture_is_actually_check_and_both_alternatives_legal) ... ok
+test_gpu_transport_outputs_and_gradients_match_cpu (neural.tests.test_dynamics.TransportTest.test_gpu_transport_outputs_and_gradients_match_cpu) ... ok
+test_neural_predictor_does_not_read_exact_successor_and_has_action_gradient (neural.tests.test_dynamics.TransportTest.test_neural_predictor_does_not_read_exact_successor_and_has_action_gradient) ... ok
+test_piece_algebra_exact_all_special_moves_and_colors (neural.tests.test_dynamics.TransportTest.test_piece_algebra_exact_all_special_moves_and_colors) ... ok
+test_random_legal_algebra_and_corpus_replay (neural.tests.test_dynamics.TransportTest.test_random_legal_algebra_and_corpus_replay) ... ok
+test_source_target_capture_and_castling_slot_identity (neural.tests.test_dynamics.TransportTest.test_source_target_capture_and_castling_slot_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.940s
+
+OK

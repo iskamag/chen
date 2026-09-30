@@ -1,0 +1,18 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+test_benchmark_same_loss_schedule_no_persistent_duplicate (test_compact.CompactTests.test_benchmark_same_loss_schedule_no_persistent_duplicate) ... ok
+test_clear_keeps_ids_monotonic_and_gathered_leases_immutable (test_compact.CompactTests.test_clear_keeps_ids_monotonic_and_gathered_leases_immutable) ... ok
+test_dense_support_all_word_boundaries_sentinels_and_terminal (test_compact.CompactTests.test_dense_support_all_word_boundaries_sentinels_and_terminal) ... ok
+test_exact_unclipped_clock_bitpatterns_and_autograd_free_admission (test_compact.CompactTests.test_exact_unclipped_clock_bitpatterns_and_autograd_free_admission) ... ok
+test_generated_support_each_action_and_successor_matches_rules_oracle (test_compact.CompactTests.test_generated_support_each_action_and_successor_matches_rules_oracle) ... ok
+test_gpu_decoder_exact_all_clocks_and_signed_bitboards (test_compact.CompactTests.test_gpu_decoder_exact_all_clocks_and_signed_bitboards) ... ok
+test_hot_sampling_device_dtype_and_seed_match_dense_reference (test_compact.CompactTests.test_hot_sampling_device_dtype_and_seed_match_dense_reference) ... ok
+test_invalid_ingress_rejected_atomically_before_any_ring_mutation (test_compact.CompactTests.test_invalid_ingress_rejected_atomically_before_any_ring_mutation) ... ok
+test_model_outputs_losses_and_gradients_equal_dense_all_architectures (test_compact.CompactTests.test_model_outputs_losses_and_gradients_equal_dense_all_architectures) ... ok
+test_nonzero_history_handles_preserved_without_claiming_context (test_compact.CompactTests.test_nonzero_history_handles_preserved_without_claiming_context) ... ok
+test_ring_wrap_and_oversized_transaction_keep_newest_records (test_compact.CompactTests.test_ring_wrap_and_oversized_transaction_keep_newest_records) ... ok
+test_rule_fixtures_raw_ep_castles_promotions_and_color_canonicalization (test_compact.CompactTests.test_rule_fixtures_raw_ep_castles_promotions_and_color_canonicalization) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.783s
+
+OK

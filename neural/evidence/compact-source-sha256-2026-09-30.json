@@ -1,0 +1,19 @@
+{
+  "kind": "compact_source_sha256",
+  "date": "2026-09-30",
+  "files": {
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/tests/test_compact.py": "473bfd8320bade52a74537402e73d57caecf9668e0a2106f9e4b98ad5d4df685",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f",
+    "neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+    "docs/COMPACT_REPLAY.md": "86ec5ee70265c98e478043d0fbded965d2891d41d871f4f5bebfa44d95e097cb"
+  },
+  "validation": {
+    "final_cpu_command": "CHEN_TEST_DEVICE=cpu python -m unittest neural.tests.test_compact",
+    "gpu_command": "CHEN_TEST_DEVICE=cuda python -m unittest discover -s neural/tests -p test_compact.py -v",
+    "final_gpu_benchmark_command": "python -m neural.compact --device cuda --capacity 65536 --source-samples 192 --batch-size 128 --repeats 100 --steps 16 --output results/neural/compact-gfx1030-final.json",
+    "scope": "GPU 12-test run precedes reporting-only baseline/cleanup field addition; final CPU 12-test run and final GPU benchmark use this source hash."
+  }
+}

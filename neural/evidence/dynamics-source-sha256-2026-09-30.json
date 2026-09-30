@@ -1,0 +1,12 @@
+{
+  "base_commit": "0ea312adb7edaefa2aaea833fafe4b1d4fd17f5c",
+  "source_sha256": {
+    "neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "neural/tests/test_dynamics.py": "fae069a7ec44891cac8066e1193abac2e4fdaa77a101966b18c6a362675b3976",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854"
+  },
+  "full_local_report_sha256": "1f3ca749dcb8f213d1c542f97415e70370e78b2d933c7bac331908e02837f81b",
+  "test_log_sha256": "34d639829f016fa7ca0fe9e77cc2ec4ac61756f40df5a4f7b5e3efde1a984bfd"
+}
