@@ -7,11 +7,11 @@ container=${CHEN_ROCM_CONTAINER:-cpp-rocm}
 mode=${1:-help}
 if [[ $# -gt 0 ]]; then shift; fi
 if [[ "$mode" == help ]]; then
-    echo 'Usage: scripts/rocm_run.sh test | bench [ARGS] | uci'
+    echo 'Usage: scripts/rocm_run.sh test | bench [ARGS] | gpu-perft [ARGS] | uci'
     exit 0
 fi
-if [[ "$mode" != test && "$mode" != bench && "$mode" != uci ]]; then
-    echo 'Expected test, bench, or uci' >&2
+if [[ "$mode" != test && "$mode" != bench && "$mode" != uci && "$mode" != gpu-perft ]]; then
+    echo 'Expected test, bench, gpu-perft, or uci' >&2
     exit 1
 fi
 cargo build --release --features hip
@@ -40,12 +40,14 @@ manifest = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
 PY_MANIFEST
 fi
 if [[ "$mode" == test ]]; then
-    manifest=$(mktemp /tmp/chen-hip-test.XXXXXXXX)
-    cargo test --release --features hip --test hip --no-run --message-format=json > "$manifest"
-    executable=$(python3 -c 'import json,sys; rows=[json.loads(x) for x in open(sys.argv[1])]; print(next(x["executable"] for x in rows if x.get("reason")=="compiler-artifact" and x.get("executable") and x.get("target",{}).get("name")=="hip"))' "$manifest")
-    rm -- "$manifest"
-    docker cp "$executable" "$container:$remote/hip-tests"
-    docker exec -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" "$container" "$remote/hip-tests" --ignored --test-threads=1 --nocapture
+    for test_target in hip device; do
+        manifest=$(mktemp /tmp/chen-hip-test.XXXXXXXX)
+        cargo test --release --features hip --test "$test_target" --no-run --message-format=json > "$manifest"
+        executable=$(python3 -c 'import json,sys; rows=[json.loads(x) for x in open(sys.argv[1])]; print(next(x["executable"] for x in rows if x.get("reason")=="compiler-artifact" and x.get("executable") and x.get("target",{}).get("name")==sys.argv[2]))' "$manifest" "$test_target")
+        rm -- "$manifest"
+        docker cp "$executable" "$container:$remote/$test_target-tests"
+        docker exec -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" "$container" "$remote/$test_target-tests" --ignored --test-threads=1 --nocapture
+    done
 else
     docker exec -i -w "$remote" -e "CHEN_GPU_LIBRARY=$remote/libchen_gpu.so" "$container" "$remote/chen" "$mode" "$@"
 fi

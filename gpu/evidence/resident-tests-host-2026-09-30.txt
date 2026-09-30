@@ -1,0 +1,114 @@
+    Blocking waiting for file lock on build directory
+   Compiling chen v0.1.0 (/home/iskam/src/vibe/chen)
+    Finished `release` profile [optimized] target(s) in 28.05s
+     Running unittests src/lib.rs (target/release/deps/chen-b2aac53f2db265f8)
+
+running 5 tests
+test hip::tests::abi_layout_matches_header ... ok
+test hip::tests::missing_library_is_an_error ... ok
+test search::tests::cached_mate_distance_rebases_at_another_ply ... ok
+test strength::tests::budgets_are_monotonic_and_preserve_stricter_user_limits ... ok
+test tt::tests::collisions_replacement_generation_and_clear ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/release/deps/chen-f0d32ee24b814e83)
+
+running 2 tests
+test tests::clock_and_limits ... ok
+test tests::position_parse_is_transactional ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core.rs (target/release/deps/core-77f6ccf494f925b7)
+
+running 9 tests
+test castling_requires_safe_transit_and_updates_rook_and_rights ... ok
+test fen_roundtrip_and_validation ... ok
+test material_draws_are_conservative ... ok
+test en_passant_obeys_pins_and_can_remove_a_checking_pawn ... ok
+test promotions_include_underpromotions_and_restore_exactly ... ok
+test deterministic_playout_hashes_and_undo ... ok
+test kiwipete_perft ... ok
+test reference_perft_positions_cover_checks_promotions_and_ep ... ok
+test initial_position_perft ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/device.rs (target/release/deps/device-6e488febda9907c2)
+
+running 4 tests
+test actual_resident_perft_special_moves_and_draws ... ignored, requires real gfx1030 HIP; scripts/rocm_run.sh test
+test actual_resident_phase_and_download_contracts ... ignored, requires real gfx1030 HIP; scripts/rocm_run.sh test
+test actual_resident_search_matches_host_and_exact_budgets ... ignored, requires real gfx1030 HIP; scripts/rocm_run.sh test
+test actual_rules_and_every_legal_transition_match_rust ... ignored, requires real gfx1030 HIP; scripts/rocm_run.sh test
+
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/frontier.rs (target/release/deps/frontier-9538076fcaf2f3ee)
+
+running 4 tests
+test exact_node_budget_finishes_already_admitted_leaf_work ... ok
+test frontier_mate_draws_and_batch_contract ... ok
+test frontier_capacity_stop_and_node_budget_preserve_last_iteration ... ok
+test frontier_matches_alpha_beta_without_selectivity ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/hip.rs (target/release/deps/hip-5c9bedd457c06112)
+
+running 2 tests
+test actual_gfx1030_batch_parity_and_thread_transfer ... ignored, requires real gfx1030 HIP runtime and CHEN_GPU_LIBRARY; run explicitly in ROCm container
+test actual_gpu_search_matches_cpu_frontier ... ignored, requires real gfx1030 HIP runtime and CHEN_GPU_LIBRARY; run explicitly in ROCm container
+
+test result: ok. 0 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/resident.rs (target/release/deps/resident-c0a442f867c1446b)
+
+running 3 tests
+test resident_history_and_phase_validation ... ok
+test resident_budget_and_overflow_preserve_completed_iterations ... ok
+test host_resident_matches_independent_frontier_full_results ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/rules.rs (target/release/deps/rules-9f7490556cd1773f)
+
+running 3 tests
+test full_rule_packet_roundtrip_and_field_offsets ... ok
+test import_rejects_overlaps_and_move_packets_validate ... ok
+test rules_oracle_batches_special_moves_and_saturation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/search.rs (target/release/deps/search-3f8f52a3a5445fa8)
+
+running 10 tests
+test evaluator_orientation ... ok
+test incremental_evaluator_hooks_are_balanced_on_abort ... ok
+test neural_or_custom_scores_cannot_enter_mate_range ... ok
+test draw_clock_does_not_override_checkmate ... ok
+test node_limit_and_stop_restore_position ... ok
+test mate_and_stalemate ... ok
+test repetition_and_tt_draw_context ... ok
+test experiment_changes_invalidate_cached_scores ... ok
+test full_width_ablations_preserve_scores ... ok
+test alpha_beta_matches_exhaustive_minimax ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/uci.rs (target/release/deps/uci-9e74569ed01aaad7)
+
+running 3 tests
+test frontier_uci_and_resource_levels_are_selectable ... ok
+test unavailable_requested_gpu_backend_never_substitutes_cpu ... ok
+test uci_search_stop_options_and_recovery ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests chen
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

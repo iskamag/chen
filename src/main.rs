@@ -4,6 +4,7 @@ use chen::{
     core::perft,
     eval::evaluator,
     frontier::{FrontierConfig, FrontierSearch},
+    resident::{HostTree, ResidentSearch},
     strength::{BudgetStrength, StrengthPolicy},
 };
 use std::{
@@ -63,9 +64,10 @@ fn run() -> Result<(), String> {
             Ok(())
         }
         Some("bench") => bench(&args[1..]),
+        Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen bench [--depth N] [--eval material|tapered] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--eval material|tapered] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -75,6 +77,56 @@ fn run() -> Result<(), String> {
 fn output(line: impl AsRef<str>) {
     println!("{}", line.as_ref());
     let _ = io::stdout().flush();
+}
+fn gpu_perft(args: &[String]) -> Result<(), String> {
+    #[cfg(all(feature = "hip", target_os = "linux"))]
+    {
+        let depth = args
+            .first()
+            .ok_or("usage: chen gpu-perft DEPTH [--max-positions N] [FEN]")?
+            .parse::<u32>()
+            .map_err(|_| "invalid depth")?;
+        if depth > 10 {
+            return Err("GPU perft CLI depth must be <=10".into());
+        }
+        let mut index = 1;
+        let mut capacity = 1_000_000;
+        if args.get(index).is_some_and(|s| s == "--max-positions") {
+            capacity = args
+                .get(index + 1)
+                .ok_or("missing arena capacity")?
+                .parse()
+                .map_err(|_| "invalid arena capacity")?;
+            index += 2;
+        }
+        let p = if args.len() > index {
+            Position::from_fen(&args[index..].join(" "))?
+        } else {
+            Position::startpos()
+        };
+        let mut gpu = chen::device::HipRules::from_environment(capacity)?;
+        let start = Instant::now();
+        let (nodes, stats) = gpu
+            .perft(&chen::rules::RuleState::from(&p), depth)
+            .map_err(|e| e.to_string())?;
+        println!(
+            "{{\"backend\":\"hip-resident\",\"fen\":{},\"depth\":{},\"nodes\":{},\"max_positions\":{},\"arena_positions\":{},\"classified_positions\":{},\"kernel_ms\":{},\"elapsed_ns\":{}}}",
+            json_string(&p.to_fen()),
+            depth,
+            nodes,
+            capacity,
+            stats.arena_positions,
+            stats.classified_positions,
+            stats.kernel_ms,
+            start.elapsed().as_nanos()
+        );
+        Ok(())
+    }
+    #[cfg(not(all(feature = "hip", target_os = "linux")))]
+    {
+        let _ = args;
+        Err("HIP requires Linux and cargo build --release --features hip".into())
+    }
 }
 struct Job {
     stop: Arc<AtomicBool>,
@@ -100,6 +152,25 @@ fn make_backend(
             Box::new(CpuBatchEvaluator::new(evaluator(eval)?)),
             frontier,
         )?)),
+        "cpu-resident" => Ok(Box::new(ResidentSearch::new(
+            Box::new(HostTree::new(frontier.max_positions)?),
+            eval,
+        )?)),
+        "hip-resident" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(ResidentSearch::new(
+                    Box::new(chen::device::HipRules::from_environment(
+                        frontier.max_positions,
+                    )?),
+                    eval,
+                )?))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
+        }
         "hip-frontier" => {
             #[cfg(all(feature = "hip", target_os = "linux"))]
             {
@@ -150,7 +221,7 @@ fn uci() -> Result<(), String> {
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier",
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident",
                 );
                 output("option name BatchSize type spin default 4096 min 1 max 65536");
                 output("option name MaxPositions type spin default 250000 min 1 max 2000000");
@@ -205,7 +276,11 @@ fn uci() -> Result<(), String> {
                         "backend"
                             if matches!(
                                 value.as_str(),
-                                "alphabeta" | "cpu-frontier" | "hip-frontier"
+                                "alphabeta"
+                                    | "cpu-frontier"
+                                    | "hip-frontier"
+                                    | "cpu-resident"
+                                    | "hip-resident"
                             ) =>
                         {
                             next_backend = value;

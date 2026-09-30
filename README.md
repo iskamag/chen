@@ -42,13 +42,18 @@ produce an `info string` error.
 ```sh
 scripts/rocm_run.sh test
 scripts/rocm_run.sh bench --backend hip-frontier --depth 3
+scripts/rocm_run.sh bench --backend hip-resident --depth 3
+scripts/rocm_run.sh gpu-perft 4 --max-positions 250000
 scripts/rocm_run.sh uci
 ```
 
-Set UCI `Backend` to `hip-frontier` for GPU leaf batches; `cpu-frontier` is its
-full-width oracle, and `alphabeta` selects the original engine. `BatchSize` and
+Set UCI `Backend` to `hip-resident` for GPU legal expansion, transitions,
+evaluation and minimax reduction. `cpu-resident` runs the same scheduler over a
+host arena. `hip-frontier` uses host rules with GPU leaf batches;
+`cpu-frontier` is its full-width oracle, and `alphabeta` selects the original engine. `BatchSize` and
 `MaxPositions` bound inference batches and per-iteration trees. `Level` 1..20
 caps resource budgets; levels carry no calibrated rating labels.
+Resident trees use `MaxPositions`; `BatchSize` applies to frontier scoring.
 
 [GPU integration](docs/GPU_INTEGRATION.md) documents the exact execution scope;
 [GPU research](docs/GPU_RESEARCH.md) records hardware measurements and search
@@ -66,6 +71,9 @@ The requested target is 2500 on Lichess, which requires separate rating evidence
 | `backend` | Batched scoring and search scheduling contracts | CPU/HIP evaluation and alpha-beta/frontier implementations |
 | `frontier` | Bounded full-width minimax, exact draw history, batched leaves | Host rules oracle for future GPU scheduling and neural batches |
 | `hip` | Versioned HIP ABI loading and exclusive device context | Actual gfx1030 kernels, ordered batch parity and explicit failures |
+| `rules` | Full state/move packets and `RulesBackend` | Exact clocks, legal transitions and hashes across CPU/HIP |
+| `resident` | `ResidentTree` and a shared bounded scheduler | Compare host/device rules, evaluation and reduction at equal budgets |
+| `device` | Safe HIP rules/tree ownership | Device-resident arena, debug downloads, perft and explicit phase errors |
 | `strength` | Resource-level policy | Budget caps now; calibrated learned level policies later |
 | `core` | Bitboards, attacks, FEN, legal moves, special moves, hashes, make/unmake, perft | Replace attack kernels or move generation against the rules oracle |
 | `eval` | Side-to-move centipawn score and evaluator state | `Evaluator` trait; material/tapered baselines; reset and make/unmake hooks |

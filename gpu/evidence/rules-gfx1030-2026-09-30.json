@@ -1,0 +1,318 @@
+{
+  "kind": "gfx1030_rules_and_resident_tree_oracle",
+  "date": "2026-09-30",
+  "base_commit": "6c3121e8f6f0697cf5859bc1025bd4707e79d7c9",
+  "target_architecture": "gfx1030",
+  "compile_command": "hipcc -O3 -std=c++17 --offload-arch=gfx1030 -fPIC -shared -Wall -Wextra -Werror -x hip chen_gpu.hip chen_rules.hip",
+  "probe_command": "python3 gpu/rules_probe.py libchen_gpu.so --positions 256 --capacity 250000 --max-depth 4",
+  "source_sha256": {
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "31d66dda7537f8187b72e63155e8ae2a52ba3638c16c790592dc6524c287c029",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5"
+  },
+  "shared_library_sha256": "40564069bef1ab75c134c1c96d031a090311dd69b9cfe2d3a768632acdaeb289",
+  "compiler": "HIP version: 7.2.53211-97f5574fe2\nAMD clang version 22.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-7.2.4 26084 f58b06dce1f9c15707c5f808fd002e18c2accf7e)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /opt/rocm-7.2.4/lib/llvm/bin\nConfiguration file: /opt/rocm-7.2.4/lib/llvm/bin/clang++.cfg",
+  "python_chess_core_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "records": [
+    {
+      "record": "rules_oracle",
+      "positions": 256,
+      "legal_transitions": 7090,
+      "python_chess": "1.11.2",
+      "seed": 206442544,
+      "exact_packet_and_hash": true
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.016481000930070877,
+      "wall_ms": 0.10963995009660721
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 1,
+      "nodes": 20,
+      "arena_positions": 21,
+      "classified_positions": 1,
+      "kernel_ms": 0.20308100432157516,
+      "wall_ms": 0.47606020234525204
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 2,
+      "nodes": 400,
+      "arena_positions": 421,
+      "classified_positions": 21,
+      "kernel_ms": 0.40344300772994757,
+      "wall_ms": 0.79741096124053
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 3,
+      "nodes": 8902,
+      "arena_positions": 9323,
+      "classified_positions": 421,
+      "kernel_ms": 0.7374490099027753,
+      "wall_ms": 1.2721698731184006
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 4,
+      "nodes": 197281,
+      "arena_positions": 206604,
+      "classified_positions": 9323,
+      "kernel_ms": 3.5172679042443633,
+      "wall_ms": 4.2093119118362665
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.013199999928474426,
+      "wall_ms": 0.11247000657022
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 1,
+      "nodes": 48,
+      "arena_positions": 49,
+      "classified_positions": 1,
+      "kernel_ms": 0.3599629979580641,
+      "wall_ms": 0.5964110605418682
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 2,
+      "nodes": 2039,
+      "arena_positions": 2088,
+      "classified_positions": 49,
+      "kernel_ms": 0.8727279799059033,
+      "wall_ms": 1.2645900715142488
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 3,
+      "nodes": 97862,
+      "arena_positions": 99950,
+      "classified_positions": 2088,
+      "kernel_ms": 1.978813965804875,
+      "wall_ms": 2.557551022619009
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.011800000444054604,
+      "wall_ms": 0.09826081804931164
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 1,
+      "nodes": 14,
+      "arena_positions": 15,
+      "classified_positions": 1,
+      "kernel_ms": 0.16244200058281422,
+      "wall_ms": 0.4075199831277132
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 2,
+      "nodes": 191,
+      "arena_positions": 206,
+      "classified_positions": 15,
+      "kernel_ms": 0.38780300691723824,
+      "wall_ms": 0.7748599164187908
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 3,
+      "nodes": 2812,
+      "arena_positions": 3018,
+      "classified_positions": 206,
+      "kernel_ms": 0.7012839931994677,
+      "wall_ms": 1.2532609980553389
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.012799999676644802,
+      "wall_ms": 0.0975700095295906
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 1,
+      "nodes": 6,
+      "arena_positions": 7,
+      "classified_positions": 1,
+      "kernel_ms": 0.2091619959101081,
+      "wall_ms": 0.4422299098223448
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 2,
+      "nodes": 264,
+      "arena_positions": 271,
+      "classified_positions": 7,
+      "kernel_ms": 0.6110439971089363,
+      "wall_ms": 1.0074609890580177
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 3,
+      "nodes": 9467,
+      "arena_positions": 9738,
+      "classified_positions": 271,
+      "kernel_ms": 1.1590490005910397,
+      "wall_ms": 1.7006800044327974
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.012679999694228172,
+      "wall_ms": 0.09477999992668629
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 1,
+      "nodes": 44,
+      "arena_positions": 45,
+      "classified_positions": 1,
+      "kernel_ms": 0.3276020083576441,
+      "wall_ms": 0.5579811986535788
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 2,
+      "nodes": 1486,
+      "arena_positions": 1531,
+      "classified_positions": 45,
+      "kernel_ms": 0.6998449955135584,
+      "wall_ms": 1.085369847714901
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 3,
+      "nodes": 62379,
+      "arena_positions": 63910,
+      "classified_positions": 1531,
+      "kernel_ms": 1.6190539598464966,
+      "wall_ms": 2.16843094676733
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.013040999881923199,
+      "wall_ms": 0.0987399835139513
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 1,
+      "nodes": 46,
+      "arena_positions": 47,
+      "classified_positions": 1,
+      "kernel_ms": 0.32356199715286493,
+      "wall_ms": 0.5792709998786449
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 2,
+      "nodes": 2079,
+      "arena_positions": 2126,
+      "classified_positions": 47,
+      "kernel_ms": 0.7680849833413959,
+      "wall_ms": 1.1686698999255896
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 3,
+      "nodes": 89890,
+      "arena_positions": 92016,
+      "classified_positions": 2126,
+      "kernel_ms": 1.7127740234136581,
+      "wall_ms": 2.2596910130232573
+    },
+    {
+      "record": "resident_minimax",
+      "depth": 3,
+      "score": 36,
+      "pv": [
+        "b1c3",
+        "b8c6",
+        "g1f3"
+      ],
+      "arena_positions": 9323,
+      "classified_positions": 9323,
+      "evaluated_positions": 8902,
+      "kernel_ms": 1.0568089969456196
+    },
+    {
+      "record": "rules_boundaries",
+      "empty_batches": true,
+      "hash_and_illegal_move_rejected": true,
+      "repetition": true,
+      "idempotent_evaluation": true,
+      "mode_and_evaluator_lock": true,
+      "PV_capacity": true
+    },
+    {
+      "record": "rules_capacity",
+      "capacity": 20,
+      "overflow_explicit": true,
+      "root_preserved": true,
+      "classify_and_evaluate_recovery": true
+    }
+  ],
+  "limitations": [
+    "Single unprofiled correctness run; timings are observations, not a throughput comparison.",
+    "Batched generic legality/transition oracle plus six standard perft families; not exhaustive chess-state verification.",
+    "Full-width resident minimax only; no neural inference or playing-strength evidence."
+  ],
+  "additional_executed_assertions": [
+    "mixed-level reduction rejected before score mutation",
+    "static-evaluated nonterminal expansion rejected"
+  ]
+}

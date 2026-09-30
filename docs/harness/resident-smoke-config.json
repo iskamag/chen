@@ -1,0 +1,11 @@
+{
+  "base": {
+    "command": ["./target/release/chen"],
+    "options": {"Backend": "cpu-resident", "MaxPositions": 250000}
+  },
+  "candidate": {
+    "command": ["./scripts/rocm_run.sh", "uci"],
+    "options": {"Backend": "hip-resident", "MaxPositions": 250000},
+    "capture_rocm_artifacts": true
+  }
+}

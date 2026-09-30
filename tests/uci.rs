@@ -138,24 +138,34 @@ fn frontier_uci_and_resource_levels_are_selectable() {
             .nth(1)
             .is_some()
     );
+    engine.send("setoption name Backend value cpu-resident");
+    engine.send("go depth 64");
+    assert!(engine.until("info depth ").starts_with("info depth 1 "));
+    assert!(
+        Position::startpos()
+            .parse_uci_move(engine.until("bestmove ").split_whitespace().nth(1).unwrap())
+            .is_ok()
+    );
     engine.send("quit");
 }
 
 #[test]
 fn unavailable_requested_gpu_backend_never_substitutes_cpu() {
     use std::io::Write;
-    let mut child = Command::new(env!("CARGO_BIN_EXE_chen"))
-        .env("CHEN_GPU_LIBRARY", "/no/such/chen-test-library.so")
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .spawn()
-        .unwrap();
-    child.stdin.take().unwrap().write_all(b"setoption name Backend value hip-frontier\nsetoption name BatchSize value 8\ngo depth 1\n").unwrap();
-    let result = child.wait_with_output().unwrap();
-    assert!(!result.status.success());
-    let stdout = String::from_utf8(result.stdout).unwrap();
-    assert!(stdout.contains("backend creation failed"));
-    assert!(!stdout.contains("info depth"));
-    assert!(!stdout.contains("bestmove"));
+    for backend in ["hip-frontier", "hip-resident"] {
+        let mut child = Command::new(env!("CARGO_BIN_EXE_chen"))
+            .env("CHEN_GPU_LIBRARY", "/no/such/chen-test-library.so")
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        child.stdin.take().unwrap().write_all(format!("setoption name Backend value {backend}\nsetoption name BatchSize value 8\ngo depth 1\n").as_bytes()).unwrap();
+        let result = child.wait_with_output().unwrap();
+        assert!(!result.status.success());
+        let stdout = String::from_utf8(result.stdout).unwrap();
+        assert!(stdout.contains("backend creation failed"));
+        assert!(!stdout.contains("info depth"));
+        assert!(!stdout.contains("bestmove"));
+    }
 }

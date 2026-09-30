@@ -69,9 +69,9 @@ type Evaluate = unsafe extern "C" fn(
     u64,
 ) -> i32;
 type Destroy = unsafe extern "C" fn(*mut c_void);
-struct Library(NonNull<c_void>);
+pub(crate) struct Library(NonNull<c_void>);
 impl Library {
-    fn open(path: &Path) -> Result<Self, String> {
+    pub(crate) fn open(path: &Path) -> Result<Self, String> {
         use std::os::unix::ffi::OsStrExt;
         let path = CString::new(path.as_os_str().as_bytes())
             .map_err(|_| "HIP library path contains NUL")?;
@@ -81,7 +81,7 @@ impl Library {
             .map(Self)
             .ok_or_else(|| format!("cannot load HIP library: {}", loader_error()))
     }
-    fn symbol(&self, name: &CStr) -> Result<*mut c_void, String> {
+    pub(crate) fn symbol(&self, name: &CStr) -> Result<*mut c_void, String> {
         // SAFETY: the library is live and the requested symbol is NUL-terminated.
         let ptr = unsafe { dlsym(self.0.as_ptr(), name.as_ptr()) };
         if ptr.is_null() {
@@ -110,7 +110,7 @@ fn loader_error() -> String {
             .into_owned()
     }
 }
-fn buffer_string(buffer: &[c_char]) -> String {
+pub(crate) fn buffer_string(buffer: &[c_char]) -> String {
     let bytes: Vec<u8> = buffer
         .iter()
         .take_while(|&&b| b != 0)

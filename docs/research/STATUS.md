@@ -8,19 +8,28 @@ This checkpoint records implemented foundations and open gates.
 ## Verified foundations
 
 - Baseline Rust engine frozen at `d3d6e5e`.
-- Traits: `Evaluator`, `BatchEvaluator`, `SearchBackend`, `StrengthPolicy`.
+- Traits: `Evaluator`, `BatchEvaluator`, `SearchBackend`, `StrengthPolicy`,
+  `RulesBackend`, `ResidentTree`.
 - Real gfx1030 HIP Material/Tapered kernels with persistent buffers, versioned
   ABI, runtime device checks, strict compilation, explicit errors and dispatch
   traces. Physical RX 6800: wave32, 60 CUs / 30 HIP WGPs, about 16 GiB VRAM.
 - CPU-rules batched frontier minimax selects either CPU or HIP evaluation.
   All six depth-3 suite positions match CPU-frontier by depth, score, best move,
   total nodes and PV. Alpha-beta without quiescence agrees on root scores/depths.
-- Portable build: 31 Rust tests pass. HIP-feature host build: 33 pass, with
-  two actual-hardware tests run separately and passing in `cpp-rocm`. Strict
+- Portable build: 37 Rust tests pass. HIP-feature host build: 39 pass, with
+  six actual-hardware tests run separately and passing in `cpp-rocm`. Strict
   Clippy, formatting, Python compilation and shell syntax checks pass.
 - Hardware tests compare ordered batches of legal positions at sizes
   0/1/7/64/257/4096 for both evaluators, exercise capacity/length errors and
   exclusive thread transfer, and compare GPU search including exact node cap.
+- Full-rule 128-byte state and GPU legal generation, incremental transitions,
+  draw adjudication, leaf evaluation and minimax reduction now run in a bounded
+  resident arena. `cpu-resident` and `hip-resident` share one scheduler; all six
+  depth-3 suite results agree by completed depth, score, move, nodes and PV.
+  Independent Python rules compare 256 roots and 7090 legal transitions; the
+  Rust hardware suite additionally checks 527 roots, ordered legal lists and
+  every successor. GPU start-position depth-4 perft is 197281 leaves.
+  [Rules contract and evidence](../GPU_RULES.md) specify phase/capacity limits.
 - Seven harness tests pass. Four ordinary-opening smoke games finish 30 legal
   plies each without technical failure, remaining explicitly inconclusive.
   Two-game mate fixtures finish for CPU and real GPU UCI implementations;
@@ -32,7 +41,12 @@ This checkpoint records implemented foundations and open gates.
   `697fee7` establishes square/relation/plan models, latent transitions,
   resident replay, controlled legal-data training, and saved smoke checkpoints.
   Additional audited checkpoint validation and legal-diamond experiments are
-  retained on that branch. Latest combined GPU suite passes 29 tests.
+  retained on that branch; its earlier combined GPU suite passed 29 tests.
+  `e262feb` adds compact replay and observed-action transport experiments;
+  the latest combined actual-GPU suite passes 48 tests without skips.
+  Compact payload is 801 B/record versus 29733 B dense (37.1x smaller), with
+  byte-exact decoded inputs/losses/gradients. Sampling is slower; two short
+  training runs reach 96–99.3% of dense throughput. Ingestion is still CPU-made.
 
 ## Research findings
 
@@ -48,18 +62,24 @@ from crosspath consistency. Learned action separation is only 2.4–7.2% of the
 corresponding exact re-encoding separation. Reconstruction is weak. This is a
 negative architectural result to retain, not playing-strength evidence.
 
+Observed move transport raises learned action separation from about 5% to 34%
+in a controlled four-model smoke. Action-delta error and successor semantics
+remain worse than the previous transition control; this is mixed/negative
+evidence. Exact piece transport is simulator-owned and kept separate from
+learned predictions. The neural branch retains full metrics, logs and hashes.
+
 Independent review found and fixed an exact-node-limit frontier bug and unsafe
 acceptance of malformed deterministic checkpoint buffers. It also drove actual
 artifact capture and canonical held-out split checks.
 
 ## Next work
 
-1. Freeze a richer full-rule device state and test GPU move/transition kernels
-   against the Rust perft/hash oracle. Resident expansion/reduction remains open.
+1. Optimize the executed GPU rules/resident arena against its frozen oracles:
+   attack generation, parallel prefix assignment, compact edges and level reuse.
 2. Compare full-width frontier, faithful regularized batched search and a
    separately declared adaptive scheduler at equal wall-clock budgets.
-3. Add compact resident replay/feature decoding and an ordered HIP-to-neural
-   inference boundary with explicit stream/lifetime/ownership semantics.
+3. Connect the implemented compact replay to a HIP device producer and learned
+   batched inference, with explicit stream/lifetime/ownership semantics.
 4. Improve action-sensitive dynamics with exact transition reconstruction and
    counterfactual tactical probes; test multistep held-out drift before latent
    search. Integrate a trained evaluator only after these gates.
@@ -69,6 +89,6 @@ artifact capture and canonical held-out split checks.
    adjustable levels separately. The 2500 Lichess claim requires evidence in
    the chosen Lichess pool; no account deployment or rating result exists yet.
 
-No requirement has been dropped. Device-resident full search/self-play,
+No requirement has been dropped. Selective resident search and GPU self-play,
 direct HIP–Torch experience ingestion, production trained inference, long
 matches/SPRT and the final rating target remain incomplete.

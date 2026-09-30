@@ -258,6 +258,41 @@ impl Position {
         Ok(position)
     }
 
+    /// Construct validated local rule state from bitboards; overlap is rejected.
+    /// This is the import boundary for device and compact-state experiments.
+    pub fn from_bitboards(
+        boards: [[u64; 6]; 2],
+        side: Color,
+        castling: u8,
+        ep: Option<u8>,
+        halfmove: u16,
+        fullmove: u32,
+    ) -> Result<Self, String> {
+        if castling & !15 != 0 || ep.is_some_and(|square| square >= 64) {
+            return Err("invalid raw rule metadata".into());
+        }
+        let mut occupied = 0;
+        for board in boards.iter().flatten() {
+            if occupied & board != 0 {
+                return Err("overlapping piece bitboards".into());
+            }
+            occupied |= board;
+        }
+        let raw = Self {
+            boards,
+            side,
+            castling,
+            ep,
+            halfmove,
+            fullmove,
+            key: 0,
+        };
+        Self::from_fen(&raw.to_fen())
+    }
+    pub const fn castling_rights(&self) -> u8 {
+        self.castling
+    }
+
     pub fn to_fen(&self) -> String {
         let mut board = String::new();
         for rank in (0..8).rev() {
