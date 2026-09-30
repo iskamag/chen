@@ -60,6 +60,9 @@ impl BatchEvaluator for CpuBatchEvaluator {
 /// Search scheduling is independent from the evaluation backend and UCI transport.
 pub trait SearchBackend: Send {
     fn name(&self) -> &str;
+    fn evaluator_artifact_sha256(&self) -> Option<&str> {
+        None
+    }
     fn stop_handle(&self) -> Arc<AtomicBool>;
     fn clear(&mut self);
     fn search(

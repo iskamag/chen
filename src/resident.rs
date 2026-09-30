@@ -60,6 +60,9 @@ impl From<String> for TreeError {
 }
 pub trait ResidentTree: Send {
     fn name(&self) -> &str;
+    fn evaluator_artifact_sha256(&self) -> Option<&str> {
+        None
+    }
     fn reset(&mut self, root: RuleState, history: &[u64]) -> Result<(), TreeError>;
     fn classify(&mut self, span: TreeSpan, adjudicate: bool) -> Result<TreeStats, TreeError>;
     fn expand(&mut self, span: TreeSpan, adjudicate: bool) -> Result<TreeStats, TreeError>;
@@ -78,7 +81,8 @@ impl ResidentSearch {
         let evaluator = match evaluator {
             "material" => 0,
             "tapered" => 1,
-            _ => return Err("resident baseline evaluator must be material or tapered".into()),
+            "neural" => 2,
+            _ => return Err("unknown resident evaluator".into()),
         };
         Ok(Self {
             tree,
@@ -205,6 +209,9 @@ impl ResidentSearch {
 impl SearchBackend for ResidentSearch {
     fn name(&self) -> &str {
         self.tree.name()
+    }
+    fn evaluator_artifact_sha256(&self) -> Option<&str> {
+        self.tree.evaluator_artifact_sha256()
     }
     fn stop_handle(&self) -> Arc<AtomicBool> {
         self.stop.clone()

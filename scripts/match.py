@@ -95,7 +95,7 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     limit = chess.engine.Limit(depth=args.depth, nodes=args.nodes, time=args.movetime)
     metadata = {'config': config, 'budgets': vars(args), 'opening_sha256': sha(args.openings), 'chess_version': chess.__version__, 'platform': platform.platform(), 'concurrency': 1, 'launcher_sha256': {name: sha(entry['command'][0]) for name, entry in config.items()}, 'declared_artifact_sha256': {name: {label: sha(path) for label, path in entry.get('artifacts', {}).items()} for name, entry in config.items()}, 'artifact_scope': {name: 'declared-files' if entry.get('artifacts') else 'launcher-only' for name, entry in config.items()}, 'rating_target': '2500 Lichess in a declared time-control pool; this offline match does not certify it'}
-    metadata['inherited_runtime_environment'] = {key: os.environ[key] for key in ['CHEN_GPU_LIBRARY', 'HSA_OVERRIDE_GFX_VERSION', 'HIP_VISIBLE_DEVICES', 'ROCR_VISIBLE_DEVICES', 'CUDA_VISIBLE_DEVICES', 'PYTORCH_ROCM_ARCH', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS'] if key in os.environ}
+    metadata['inherited_runtime_environment'] = {key: os.environ[key] for key in ['CHEN_GPU_LIBRARY', 'CHEN_NEURAL_MODEL', 'CHEN_NEURAL_LIBRARY', 'CHEN_NEURAL_HIP_RUNTIME', 'HSA_OVERRIDE_GFX_VERSION', 'HIP_VISIBLE_DEVICES', 'ROCR_VISIBLE_DEVICES', 'CUDA_VISIBLE_DEVICES', 'PYTORCH_ROCM_ARCH', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS'] if key in os.environ}
     (out / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
     engines = {}
     try:

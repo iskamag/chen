@@ -16,7 +16,7 @@ This checkpoint records implemented foundations and open gates.
 - CPU-rules batched frontier minimax selects either CPU or HIP evaluation.
   All six depth-3 suite positions match CPU-frontier by depth, score, best move,
   total nodes and PV. Alpha-beta without quiescence agrees on root scores/depths.
-- Portable build: 37 Rust tests pass. HIP-feature host build: 39 pass, with
+- Portable build: 37 Rust tests pass. HIP-feature host build: 41 pass, with
   six actual-hardware tests run separately and passing in `cpp-rocm`. Strict
   Clippy, formatting, Python compilation and shell syntax checks pass.
 - Hardware tests compare ordered batches of legal positions at sizes
@@ -55,6 +55,26 @@ This checkpoint records implemented foundations and open gates.
   handoff and failure-path completion are tested. Scoped copy diagnostics see
   only two 16-byte status copies during each successful C export call.
 
+- The [search-teacher export](../GPU_TEACHER.md) now supplies exact backed-up
+  classical minimax labels. Its independent Rust oracle checks 140 parents and
+  1358 edge rows, including mate-distance frames. A resident training run uses
+  3872 train and 1048 heldout unique parents from disjoint source-game families,
+  with zero canonical overlap. All three trained models trail material on
+  heldout score/action metrics; artifacts and failures are retained.
+- The [external evaluator contract](../GPU_EXTERNAL_EVAL.md) supports interchangeable
+  synchronous GPU inference callbacks. Partial callback failures commit no static
+  scores. [Native same-model inference](../GPU_NEURAL.md) preserves the trained
+  square/relation/plan encoders and scalar heads; their 255 trained numerical
+  rows and 510 architecture-fixture rows match eager/scripted GPU scores exactly.
+  Schema features match bit-for-bit. Rust `Eval=neural` selects the loaded model,
+  and bench records the archive SHA256. Learned latent planning is still open.
+  The hardened combined neural suite passes all 76 actual-GPU tests without
+  skips; all six Rust hardware tests pass. Both UCI option orders work after
+  startup prebinding of the producing HIP runtime. Independent Python minimax
+  agrees on all 18 trained-model/position cases and 11982 iterative leaf
+  evaluations. [Integration evidence](../../gpu/evidence/neural-integration-2026-09-30.json)
+  separates current verification from earlier source snapshots.
+
 ## Research findings
 
 The standalone tapered kernel reaches roughly 100 million positions/second at
@@ -75,6 +95,12 @@ remain worse than the previous transition control; this is mixed/negative
 evidence. Exact piece transport is simulator-owned and kept separate from
 learned predictions. The neural branch retains full metrics, logs and hashes.
 
+The finite-depth search-teacher comparison is a negative result: the best neural
+model has 308 cp heldout MAE and 49.6% action agreement; material has 191 cp
+MAE and a greedy material policy has 54.7% agreement. Shared heads and sample
+streams control initialization/data, but architectures are not parameter-matched.
+This single-seed, short run has no rating interpretation.
+
 Independent review found and fixed an exact-node-limit frontier bug and unsafe
 acceptance of malformed deterministic checkpoint buffers. It also drove actual
 artifact capture and canonical held-out split checks.
@@ -85,17 +111,17 @@ artifact capture and canonical held-out split checks.
    attack generation, parallel prefix assignment, compact edges and level reuse.
 2. Compare full-width frontier, faithful regularized batched search and a
    separately declared adaptive scheduler at equal wall-clock budgets.
-3. Extend the executed HIP-to-compact-replay bridge to learned batched inference
-   and sustained data generation, retaining its stream/lifetime/ownership contract.
+3. Optimize the executed trained batched inference and sustained resident data
+   generation, retaining its stream/lifetime/ownership contract.
 4. Improve action-sensitive dynamics with exact transition reconstruction and
    counterfactual tactical probes; test multistep held-out drift before latent
-   search. Integrate a trained evaluator only after these gates.
+   search. Fully observed static inference is already an experimental option;
+   imagined latent planning requires these additional gates.
 5. Select licensed real training data and game/position holdouts, train with
-   meaningful outcome/search targets, and measure equal-budget paired play.
+   stronger outcome/search targets, and measure equal-budget paired play.
 6. Establish offline reference pools and statistical acceptance. Calibrate
    adjustable levels separately. The 2500 Lichess claim requires evidence in
    the chosen Lichess pool; no account deployment or rating result exists yet.
 
 No requirement has been dropped. Selective resident search and GPU self-play,
-production trained inference, long
-matches/SPRT and the final rating target remain incomplete.
+strong trained evaluation, optimized inference, long matches/SPRT and the final rating target remain incomplete.

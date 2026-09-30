@@ -1,0 +1,18 @@
+    Finished `release` profile [optimized] target(s) in 0.01s
+    Finished `release` profile [optimized] target(s) in 0.01s
+
+running 2 tests
+test actual_gfx1030_batch_parity_and_thread_transfer ... ok
+test actual_gpu_search_matches_cpu_frontier ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+    Finished `release` profile [optimized] target(s) in 0.01s
+
+running 4 tests
+test actual_resident_perft_special_moves_and_draws ... ok
+test actual_resident_phase_and_download_contracts ... ok
+test actual_resident_search_matches_host_and_exact_budgets ... ok
+test actual_rules_and_every_legal_transition_match_rust ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.42s

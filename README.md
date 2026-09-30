@@ -32,7 +32,7 @@ quit
 UCI supports `position startpos|fen … moves …`, iterative `info` with PV,
 `go depth|nodes|movetime`, clocks/increments/`movestogo`, `go infinite`, `stop`,
 `ucinewgame`, and `quit`. Search runs on a worker so `stop` and `isready` stay
-responsive. Options: `Hash` (MiB), `Eval` (`tapered` or `material`), `UseTT`,
+responsive. Options: `Hash` (MiB), `Eval` (`tapered`, `material`, or GPU `neural`), `UseTT`,
 `Quiescence`, and `MoveOrdering`. `searchmoves`, pondering, Chess960, MultiPV,
 and multiple search workers are future work; unsupported `go` parameters
 produce an `info string` error.
@@ -63,9 +63,12 @@ alternatives. The [research program](docs/research/PROGRAM.md) coordinates teams
 and production gates; [current status](docs/research/STATUS.md) records evidence and
 remaining work. The [replay export](docs/GPU_REPLAY_EXPORT.md) connects resident
 HIP transitions to Torch-owned VRAM and compact replay in the neural worktree.
-The combined GPU suite passes 62 tests, including a bounded training smoke with
-toy labels. Models, latent transitions and resident replay are on
-`research/neural` in `../chen-neural`; they have not been merged into inference.
+Models, latent transitions and resident replay are on
+`research/neural` in `../chen-neural`. The [native neural evaluator](docs/GPU_NEURAL.md)
+now runs their trained static encoders inside `hip-resident`; set `Eval=neural`
+and supply a fingerprinted deployment archive. Current search-teacher models
+underperform material on heldout positions; they establish integration, not a
+strength gain.
 The [offline match harness](docs/harness/README.md) saves paired games and failures.
 The requested target is 2500 on Lichess, which requires separate rating evidence.
 
@@ -79,6 +82,7 @@ The requested target is 2500 on Lichess, which requires separate rating evidence
 | `rules` | Full state/move packets and `RulesBackend` | Exact clocks, legal transitions and hashes across CPU/HIP |
 | `resident` | `ResidentTree` and a shared bounded scheduler | Compare host/device rules, evaluation and reduction at equal budgets |
 | `device` | Safe HIP rules/tree ownership | Device-resident arena, debug downloads, perft and explicit phase errors |
+| `neural` | Bounded model admission and native inference ownership | Fingerprinted trained models and interchangeable GPU callbacks |
 | `strength` | Resource-level policy | Budget caps now; calibrated learned level policies later |
 | `core` | Bitboards, attacks, FEN, legal moves, special moves, hashes, make/unmake, perft | Replace attack kernels or move generation against the rules oracle |
 | `eval` | Side-to-move centipawn score and evaluator state | `Evaluator` trait; material/tapered baselines; reset and make/unmake hooks |
@@ -131,9 +135,10 @@ the dirty patch, including an uncommitted initial checkout.
 An incremental evaluator gets `reset`, `after_make`, and `after_unmake` callbacks
 for its own accumulator stack. The rules kernel does not know about a network.
 Start with a scalar full-refresh oracle, specify features and serialization,
-then compare incremental state and SIMD output bit-for-bit. Neural models and a GPU replay/training path exist in the research worktree.
-Production Rust neural inference, meaningful training targets and an optimized
-incremental interface remain open.
+then compare incremental state and SIMD output bit-for-bit. Neural models, finite-depth search teachers and GPU replay/training live in the
+research worktree. A version-pinned native plugin preserves the same trained
+architectures for resident batched inference. Stronger training targets,
+optimized inference and meaningful playing-strength gains remain open.
 
 Optional independent QA uses python-chess in a separate development environment:
 

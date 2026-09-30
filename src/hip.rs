@@ -72,11 +72,18 @@ type Destroy = unsafe extern "C" fn(*mut c_void);
 pub(crate) struct Library(NonNull<c_void>);
 impl Library {
     pub(crate) fn open(path: &Path) -> Result<Self, String> {
+        Self::open_flags(path, 2)
+    }
+    /// Load a plugin's dependency symbols before creating another HIP context.
+    pub(crate) fn open_global(path: &Path) -> Result<Self, String> {
+        Self::open_flags(path, 2 | 0x100)
+    }
+    fn open_flags(path: &Path, flags: c_int) -> Result<Self, String> {
         use std::os::unix::ffi::OsStrExt;
         let path = CString::new(path.as_os_str().as_bytes())
             .map_err(|_| "HIP library path contains NUL")?;
         // SAFETY: filename is NUL-terminated; ownership ends at Library::drop.
-        let ptr = unsafe { dlopen(path.as_ptr(), 2) };
+        let ptr = unsafe { dlopen(path.as_ptr(), flags) };
         NonNull::new(ptr)
             .map(Self)
             .ok_or_else(|| format!("cannot load HIP library: {}", loader_error()))

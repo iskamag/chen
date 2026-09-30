@@ -104,10 +104,20 @@ fn status(code: i32, error: &[c_char]) -> Result<(), TreeError> {
 }
 impl HipRules {
     pub fn new(path: impl AsRef<Path>, capacity: usize) -> Result<Self, String> {
+        Self::new_bound(path.as_ref(), capacity, None)
+    }
+    pub(crate) fn new_with_runtime(
+        path: &Path,
+        capacity: usize,
+        identity: [u64; 5],
+    ) -> Result<Self, String> {
+        Self::new_bound(path, capacity, Some(identity))
+    }
+    fn new_bound(path: &Path, capacity: usize, identity: Option<[u64; 5]>) -> Result<Self, String> {
         if capacity == 0 {
             return Err("GPU tree capacity must be positive".into());
         }
-        let library = Library::open(path.as_ref())?;
+        let library = Library::open(path)?;
         macro_rules! symbol {
             ($name:literal, $ty:ty) => {{
                 // SAFETY: signatures exactly match gpu/chen_rules.h ABI 1.
@@ -118,6 +128,24 @@ impl HipRules {
         // SAFETY: no-argument version query; no context functions used before check.
         if unsafe { abi() } != 1 {
             return Err("unsupported Chen rules ABI (expected 1)".into());
+        }
+        if let Some(expected) = identity {
+            let token = symbol!(
+                c"chen_replay_runtime_identity",
+                unsafe extern "C" fn(u32) -> u64
+            );
+            let external = symbol!(c"chen_external_abi_version", unsafe extern "C" fn() -> u32);
+            // SAFETY: metadata queries, before context creation or pointer exchange.
+            if unsafe { external() } != 1 {
+                return Err("unsupported external evaluator ABI".into());
+            }
+            for (i, expected_token) in expected.into_iter().enumerate() {
+                if expected_token == 0 || unsafe { token(i as u32) } != expected_token {
+                    return Err(format!(
+                        "neural/rules HIP runtime identity mismatch at selector {i}"
+                    ));
+                }
+            }
         }
         let create = symbol!(c"chen_rules_create", Create);
         let destroy = symbol!(c"chen_rules_destroy", Destroy);
@@ -161,6 +189,46 @@ impl HipRules {
                 .unwrap_or_else(|| "gpu/build/libchen_gpu.so".into()),
             capacity,
         )
+    }
+    pub(crate) fn evaluate_external(
+        &mut self,
+        span: TreeSpan,
+        descriptor: &crate::neural::ExternalEvaluator,
+    ) -> Result<TreeStats, TreeError> {
+        type External = unsafe extern "C" fn(
+            *mut c_void,
+            u64,
+            u64,
+            *const crate::neural::ExternalEvaluator,
+            *mut TreeStats,
+            *mut c_char,
+            u64,
+        ) -> i32;
+        let ptr = self
+            ._library
+            .symbol(c"chen_rules_evaluate_external")
+            .map_err(TreeError::Backend)?;
+        // SAFETY: exact independently versioned chen_external.h ABI.
+        let evaluate = unsafe { std::mem::transmute::<*mut c_void, External>(ptr) };
+        let mut stats = TreeStats::default();
+        let mut error = [0 as c_char; 512];
+        // SAFETY: exclusively owned live context, borrowed descriptor and owner
+        // live throughout synchronous call, valid stats/error output buffers.
+        status(
+            unsafe {
+                evaluate(
+                    self.context.as_ptr(),
+                    span.start,
+                    span.count,
+                    descriptor,
+                    &mut stats,
+                    error.as_mut_ptr(),
+                    error.len() as u64,
+                )
+            },
+            &error,
+        )?;
+        Ok(stats)
     }
     pub fn perft(&mut self, root: &RuleState, depth: u32) -> Result<(u64, TreeStats), TreeError> {
         let mut nodes = 0;

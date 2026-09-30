@@ -107,6 +107,9 @@ CHEN_QA_PYTHON=/tmp/chen-oracle/bin/python scripts/rocm_run.sh neural-test
 the existing container; the wrapper copies the neural sources and development
 oracle into its isolated task directory. Root/history ingress happens on the
 host; subsequent exported board payload, replay sampling and training stay on
-the GPU. The current material/action targets test mechanics only. Learned
-batched engine scoring, GPU self-play and a policy-guided scheduler remain open. See [GPU_RESEARCH.md](GPU_RESEARCH.md) for
+the GPU. The later [search teacher](GPU_TEACHER.md) supplies exact backed-up finite-tree
+scores and chosen actions. [Native neural inference](GPU_NEURAL.md) uses trained
+square/relation/plan static encoders as resident leaf evaluators. Both are
+experimental: the first heldout comparison trails material. GPU self-play,
+stronger training and a policy-guided scheduler remain open. See [GPU_RESEARCH.md](GPU_RESEARCH.md) for
 the hardware/literature ledger.

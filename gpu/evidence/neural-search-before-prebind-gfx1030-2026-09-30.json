@@ -1,0 +1,1578 @@
+{
+  "kind": "independent_python_chess_same_model_GPU_minimax_vs_Rust",
+  "date": "2026-09-30",
+  "records": [
+    {
+      "record": "neural_search_provenance",
+      "target": "gfx1030",
+      "torch_version": "2.10.0+rocm7.0",
+      "torch_hip_version": "7.0.51831",
+      "artifacts_sha256": {
+        "/tmp/chen-native-plugin/neural_search_probe.py": "ab25a00087def86100a2d989d27f7b1a254f1c649d4039fb4c98613921fd05b1",
+        "/tmp/chen-native-plugin/chen": "2745d8e325e2c4822e4c1a3de685ee4653b182d0abdf1b964705cf3fbdc5ec5c",
+        "/tmp/chen-native-plugin/libchen_neural.so": "36496c587824dc3b61c4d0e96108f6e29e092f5f2bc17e505d54fb9be959ec2e",
+        "/tmp/chen-native-plugin/libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+        "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+        "/tmp/chen-native-plugin/benches/positions.txt": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+        "/tmp/chen-native-plugin/neural/bridge.py": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+        "/tmp/chen-native-plugin/neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+        "/tmp/chen-native-plugin/neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+        "/tmp/chen-native-plugin/neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+        "/tmp/chen-native-plugin/neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+        "/tmp/chen-native-plugin/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+        "/tmp/chen-native-plugin/neural/inference.py": "8c96c1d375b6021a862de0bfa78919dfa7839c8d3ce495b84cecd649d09f5d0f",
+        "/tmp/chen-native-plugin/neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+        "/tmp/chen-native-plugin/neural/teacher.py": "619a42838958a0b773b901a5eefdf2326911ece18453a7f665f9e71da28ba957",
+        "/tmp/chen-native-plugin/neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f",
+        "/tmp/chen-native-plugin/gpu/chen_neural.cpp": "fb2b74419261e5ccc015b08b1b7396743bd1bfb20e4128f323fcf5ebd833ea55",
+        "/tmp/chen-native-plugin/gpu/chen_neural.h": "5499a4306cc9ed843d5aca808e708d9a6b2f5ed98ee3d3477f7883b82bc26d9b",
+        "/tmp/chen-native-plugin/gpu/chen_neural_decode.hip": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce",
+        "/tmp/chen-gpu/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266"
+      },
+      "inspection_scope": "CPU rules/feature ingestion and Tensor payload reads are independent oracle diagnostics only."
+    },
+    {
+      "record": "neural_search_model",
+      "model": "square-inference",
+      "archive_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "sidecar_sha256": "5d2b96a5e556221aa68cd84c5645f730b305db886a3420b81f74f822b2de40e7",
+      "max_batch": 256,
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "square",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "ce8bdbf4ca3ed61cdb69c1c7b2695693c3bdef34e918160658989890f3afd2e6",
+        "checkpoint_sha256": "9578e63d0b59f7164be15c3fca649243ad90b39d3e629a79c040f1606e711ea2",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "2d42af46bf2301dc58974d9ff0749fb9bd49a5814d0fc9b1e25f47b3e4c883b0",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "start",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 420,
+        "h2d_ms": 0,
+        "kernel_ms": 1463.010503009893,
+        "d2h_ms": 0,
+        "position": "start",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 149,
+        "bestmove": "h2h3",
+        "nodes": 442,
+        "qnodes": 0,
+        "elapsed_ns": 1464676029,
+        "nps": 301,
+        "stopped": false,
+        "pv": "h2h3 e7e5"
+      },
+      "oracle": {
+        "score_cp": 149,
+        "optimal_moves": [
+          "h2h3"
+        ],
+        "visited_positions": 421,
+        "evaluated_leaves": 400,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 421,
+      "oracle_iterative_nodes": 442,
+      "oracle_iterative_evaluated_leaves": 420,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "kiwipete",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 2087,
+        "h2d_ms": 0,
+        "kernel_ms": 1019.1216512983665,
+        "d2h_ms": 0,
+        "position": "kiwipete",
+        "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 87,
+        "bestmove": "h1g1",
+        "nodes": 2137,
+        "qnodes": 0,
+        "elapsed_ns": 1020956117,
+        "nps": 2093,
+        "stopped": false,
+        "pv": "h1g1 h8h4"
+      },
+      "oracle": {
+        "score_cp": 87,
+        "optimal_moves": [
+          "h1g1"
+        ],
+        "visited_positions": 2088,
+        "evaluated_leaves": 2039,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 2088,
+      "oracle_iterative_nodes": 2137,
+      "oracle_iterative_evaluated_leaves": 2087,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "rook-ending",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 205,
+        "h2d_ms": 0,
+        "kernel_ms": 536.9481869507581,
+        "d2h_ms": 0,
+        "position": "rook-ending",
+        "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 71,
+        "bestmove": "g2g3",
+        "nodes": 221,
+        "qnodes": 0,
+        "elapsed_ns": 538516587,
+        "nps": 410,
+        "stopped": false,
+        "pv": "g2g3 h4g3"
+      },
+      "oracle": {
+        "score_cp": 71,
+        "optimal_moves": [
+          "b4f4",
+          "g2g3"
+        ],
+        "visited_positions": 206,
+        "evaluated_leaves": 191,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 206,
+      "oracle_iterative_nodes": 221,
+      "oracle_iterative_evaluated_leaves": 205,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "middlegame",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 1193,
+        "h2d_ms": 0,
+        "kernel_ms": 992.5490971868858,
+        "d2h_ms": 0,
+        "position": "middlegame",
+        "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 54,
+        "bestmove": "d3h7",
+        "nodes": 1232,
+        "qnodes": 0,
+        "elapsed_ns": 994201544,
+        "nps": 1239,
+        "stopped": false,
+        "pv": "d3h7 g8h8"
+      },
+      "oracle": {
+        "score_cp": 54,
+        "optimal_moves": [
+          "d3h7"
+        ],
+        "visited_positions": 1194,
+        "evaluated_leaves": 1156,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 1194,
+      "oracle_iterative_nodes": 1232,
+      "oracle_iterative_evaluated_leaves": 1193,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "promotion",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 77,
+        "h2d_ms": 0,
+        "kernel_ms": 500.7613665657118,
+        "d2h_ms": 0,
+        "position": "promotion",
+        "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 80,
+        "bestmove": "a7a8r",
+        "nodes": 89,
+        "qnodes": 0,
+        "elapsed_ns": 502547659,
+        "nps": 177,
+        "stopped": false,
+        "pv": "a7a8r e8f7"
+      },
+      "oracle": {
+        "score_cp": 80,
+        "optimal_moves": [
+          "a7a8r"
+        ],
+        "visited_positions": 79,
+        "evaluated_leaves": 68,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 79,
+      "oracle_iterative_nodes": 89,
+      "oracle_iterative_evaluated_leaves": 77,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "square-inference",
+      "position": "mate",
+      "requested_depth": 2,
+      "completed_depth": 1,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 12,
+        "h2d_ms": 0,
+        "kernel_ms": 6.382963861338794,
+        "d2h_ms": 0,
+        "position": "mate",
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 1,
+        "score_cp": 29999,
+        "bestmove": "f7g7",
+        "nodes": 27,
+        "qnodes": 0,
+        "elapsed_ns": 7049713,
+        "nps": 3829,
+        "stopped": false,
+        "pv": "f7g7"
+      },
+      "oracle": {
+        "score_cp": 29999,
+        "optimal_moves": [
+          "f7f8",
+          "f7e8",
+          "f7h7",
+          "f7g7"
+        ],
+        "visited_positions": 27,
+        "evaluated_leaves": 12,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 27,
+      "oracle_iterative_nodes": 27,
+      "oracle_iterative_evaluated_leaves": 12,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_model",
+      "model": "relation-inference",
+      "archive_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+      "sidecar_sha256": "aab4d086862b2cd1b4d9c6700203806d4c637e5fc69769e1c97a848e7cd7ce6f",
+      "max_batch": 256,
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "relation",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "d3174d63aad01edd2fc9072313743d45cfc94b6fa8df0fe19b17628686888820",
+        "checkpoint_sha256": "1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "c3ac422dc675c607348483a3f6eb3dca5a33c8437ec556cb078286e02db1760e",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!",
+            "Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "start",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 420,
+        "h2d_ms": 0,
+        "kernel_ms": 3134.490752922371,
+        "d2h_ms": 0,
+        "position": "start",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 119,
+        "bestmove": "b1a3",
+        "nodes": 442,
+        "qnodes": 0,
+        "elapsed_ns": 3136352095,
+        "nps": 140,
+        "stopped": false,
+        "pv": "b1a3 a7a5"
+      },
+      "oracle": {
+        "score_cp": 119,
+        "optimal_moves": [
+          "b1a3"
+        ],
+        "visited_positions": 421,
+        "evaluated_leaves": 400,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 421,
+      "oracle_iterative_nodes": 442,
+      "oracle_iterative_evaluated_leaves": 420,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "kiwipete",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 2087,
+        "h2d_ms": 0,
+        "kernel_ms": 2406.753686618991,
+        "d2h_ms": 0,
+        "position": "kiwipete",
+        "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 88,
+        "bestmove": "h1f1",
+        "nodes": 2137,
+        "qnodes": 0,
+        "elapsed_ns": 2408621588,
+        "nps": 887,
+        "stopped": false,
+        "pv": "h1f1 h8h6"
+      },
+      "oracle": {
+        "score_cp": 88,
+        "optimal_moves": [
+          "h1f1"
+        ],
+        "visited_positions": 2088,
+        "evaluated_leaves": 2039,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 2088,
+      "oracle_iterative_nodes": 2137,
+      "oracle_iterative_evaluated_leaves": 2087,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "rook-ending",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 205,
+        "h2d_ms": 0,
+        "kernel_ms": 1170.0747519489378,
+        "d2h_ms": 0,
+        "position": "rook-ending",
+        "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 152,
+        "bestmove": "g2g3",
+        "nodes": 221,
+        "qnodes": 0,
+        "elapsed_ns": 1172085859,
+        "nps": 188,
+        "stopped": false,
+        "pv": "g2g3 h4g3"
+      },
+      "oracle": {
+        "score_cp": 152,
+        "optimal_moves": [
+          "g2g3"
+        ],
+        "visited_positions": 206,
+        "evaluated_leaves": 191,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 206,
+      "oracle_iterative_nodes": 221,
+      "oracle_iterative_evaluated_leaves": 205,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "middlegame",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 1193,
+        "h2d_ms": 0,
+        "kernel_ms": 2346.9922392247245,
+        "d2h_ms": 0,
+        "position": "middlegame",
+        "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 71,
+        "bestmove": "d3h7",
+        "nodes": 1232,
+        "qnodes": 0,
+        "elapsed_ns": 2348661489,
+        "nps": 524,
+        "stopped": false,
+        "pv": "d3h7 g8h8"
+      },
+      "oracle": {
+        "score_cp": 71,
+        "optimal_moves": [
+          "d3h7"
+        ],
+        "visited_positions": 1194,
+        "evaluated_leaves": 1156,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 1194,
+      "oracle_iterative_nodes": 1232,
+      "oracle_iterative_evaluated_leaves": 1193,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "promotion",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 77,
+        "h2d_ms": 0,
+        "kernel_ms": 1182.2554746605456,
+        "d2h_ms": 0,
+        "position": "promotion",
+        "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 155,
+        "bestmove": "a7a8q",
+        "nodes": 89,
+        "qnodes": 0,
+        "elapsed_ns": 1184210395,
+        "nps": 75,
+        "stopped": false,
+        "pv": "a7a8q e8e7"
+      },
+      "oracle": {
+        "score_cp": 155,
+        "optimal_moves": [
+          "a7a8q"
+        ],
+        "visited_positions": 79,
+        "evaluated_leaves": 68,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 79,
+      "oracle_iterative_nodes": 89,
+      "oracle_iterative_evaluated_leaves": 77,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "relation-inference",
+      "position": "mate",
+      "requested_depth": 2,
+      "completed_depth": 1,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 12,
+        "h2d_ms": 0,
+        "kernel_ms": 9.930689760483801,
+        "d2h_ms": 0,
+        "position": "mate",
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 1,
+        "score_cp": 29999,
+        "bestmove": "f7g7",
+        "nodes": 27,
+        "qnodes": 0,
+        "elapsed_ns": 10854425,
+        "nps": 2487,
+        "stopped": false,
+        "pv": "f7g7"
+      },
+      "oracle": {
+        "score_cp": 29999,
+        "optimal_moves": [
+          "f7f8",
+          "f7e8",
+          "f7h7",
+          "f7g7"
+        ],
+        "visited_positions": 27,
+        "evaluated_leaves": 12,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 27,
+      "oracle_iterative_nodes": 27,
+      "oracle_iterative_evaluated_leaves": 12,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_model",
+      "model": "plan-inference",
+      "archive_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+      "sidecar_sha256": "41ea1b3ecae542fe8aa7b4d1cc9b43a753ba3f25a933aeb9e7cb4127889f5957",
+      "max_batch": 256,
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "plan",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "eaa909d81b1baba547f639191ebed9042a883d79138c6cf616c4f388153496d6",
+        "checkpoint_sha256": "280abd80bdc0d8d365d46731d0bc6a39cd9ea2d3d3e8e5ce9075d2007d908a10",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "80772fd80fc9af0f3e0e71a9c16386083341b72d7eea47c2ad90113a00253439",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!",
+            "Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "start",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 420,
+        "h2d_ms": 0,
+        "kernel_ms": 3136.131667059846,
+        "d2h_ms": 0,
+        "position": "start",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 123,
+        "bestmove": "a2a3",
+        "nodes": 442,
+        "qnodes": 0,
+        "elapsed_ns": 3137926597,
+        "nps": 140,
+        "stopped": false,
+        "pv": "a2a3 b7b5"
+      },
+      "oracle": {
+        "score_cp": 123,
+        "optimal_moves": [
+          "b1a3",
+          "h2h3",
+          "a2a3",
+          "b2b4"
+        ],
+        "visited_positions": 421,
+        "evaluated_leaves": 400,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 421,
+      "oracle_iterative_nodes": 442,
+      "oracle_iterative_evaluated_leaves": 420,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "kiwipete",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 2087,
+        "h2d_ms": 0,
+        "kernel_ms": 2408.8772549731657,
+        "d2h_ms": 0,
+        "position": "kiwipete",
+        "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 113,
+        "bestmove": "h1f1",
+        "nodes": 2137,
+        "qnodes": 0,
+        "elapsed_ns": 2410683540,
+        "nps": 886,
+        "stopped": false,
+        "pv": "h1f1 h8f8"
+      },
+      "oracle": {
+        "score_cp": 113,
+        "optimal_moves": [
+          "h1f1"
+        ],
+        "visited_positions": 2088,
+        "evaluated_leaves": 2039,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 2088,
+      "oracle_iterative_nodes": 2137,
+      "oracle_iterative_evaluated_leaves": 2087,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "rook-ending",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 205,
+        "h2d_ms": 0,
+        "kernel_ms": 1226.8178151389584,
+        "d2h_ms": 0,
+        "position": "rook-ending",
+        "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 130,
+        "bestmove": "g2g3",
+        "nodes": 221,
+        "qnodes": 0,
+        "elapsed_ns": 1229114656,
+        "nps": 179,
+        "stopped": false,
+        "pv": "g2g3 h4g4"
+      },
+      "oracle": {
+        "score_cp": 130,
+        "optimal_moves": [
+          "g2g3"
+        ],
+        "visited_positions": 206,
+        "evaluated_leaves": 191,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 206,
+      "oracle_iterative_nodes": 221,
+      "oracle_iterative_evaluated_leaves": 205,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "middlegame",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 1193,
+        "h2d_ms": 0,
+        "kernel_ms": 2346.1144652422518,
+        "d2h_ms": 0,
+        "position": "middlegame",
+        "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 76,
+        "bestmove": "d3h7",
+        "nodes": 1232,
+        "qnodes": 0,
+        "elapsed_ns": 2347774160,
+        "nps": 524,
+        "stopped": false,
+        "pv": "d3h7 g8h8"
+      },
+      "oracle": {
+        "score_cp": 76,
+        "optimal_moves": [
+          "d3h7"
+        ],
+        "visited_positions": 1194,
+        "evaluated_leaves": 1156,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 1194,
+      "oracle_iterative_nodes": 1232,
+      "oracle_iterative_evaluated_leaves": 1193,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "promotion",
+      "requested_depth": 2,
+      "completed_depth": 2,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 77,
+        "h2d_ms": 0,
+        "kernel_ms": 1228.6632125889882,
+        "d2h_ms": 0,
+        "position": "promotion",
+        "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 2,
+        "score_cp": 131,
+        "bestmove": "a7a8r",
+        "nodes": 89,
+        "qnodes": 0,
+        "elapsed_ns": 1230243947,
+        "nps": 72,
+        "stopped": false,
+        "pv": "a7a8r e8d7"
+      },
+      "oracle": {
+        "score_cp": 131,
+        "optimal_moves": [
+          "a7a8r"
+        ],
+        "visited_positions": 79,
+        "evaluated_leaves": 68,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 79,
+      "oracle_iterative_nodes": 89,
+      "oracle_iterative_evaluated_leaves": 77,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_search_comparison",
+      "model": "plan-inference",
+      "position": "mate",
+      "requested_depth": 2,
+      "completed_depth": 1,
+      "Rust": {
+        "engine": "chen",
+        "version": "0.1.0",
+        "backend": "hip-resident",
+        "batch_size": 4096,
+        "max_positions": 50000,
+        "evaluated_positions": 12,
+        "h2d_ms": 0,
+        "kernel_ms": 16.851726785302162,
+        "d2h_ms": 0,
+        "position": "mate",
+        "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+        "eval": "neural",
+        "evaluator_artifact_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+        "tt": false,
+        "quiescence": false,
+        "ordering": false,
+        "hash_mb": 0,
+        "requested_depth": 2,
+        "depth": 1,
+        "score_cp": 29999,
+        "bestmove": "f7g7",
+        "nodes": 27,
+        "qnodes": 0,
+        "elapsed_ns": 17550949,
+        "nps": 1538,
+        "stopped": false,
+        "pv": "f7g7"
+      },
+      "oracle": {
+        "score_cp": 29999,
+        "optimal_moves": [
+          "f7f8",
+          "f7e8",
+          "f7h7",
+          "f7g7"
+        ],
+        "visited_positions": 27,
+        "evaluated_leaves": 12,
+        "terminal_positions": 0
+      },
+      "exact_score": true,
+      "best_in_optimal_tie_set": true,
+      "oracle_single_iteration_nodes": 27,
+      "oracle_iterative_nodes": 27,
+      "oracle_iterative_evaluated_leaves": 12,
+      "iterative_nodes_match": true,
+      "evaluated_leaves_match": true,
+      "PV_legal": true
+    },
+    {
+      "record": "neural_UCI_limits",
+      "model_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "configuration": [
+        "info string backend creation failed: unknown evaluator: neural",
+        "readyok"
+      ],
+      "nodes20": {
+        "bestmove": "a2a3",
+        "depths": [],
+        "node_counts": [],
+        "lines": [
+          "bestmove a2a3"
+        ]
+      },
+      "nodes21": {
+        "bestmove": "e2e4",
+        "depths": [
+          1
+        ],
+        "node_counts": [
+          21
+        ],
+        "lines": [
+          "info depth 1 score cp -148 nodes 21 nps 49 hashfull 0 time 425 pv e2e4",
+          "bestmove e2e4"
+        ]
+      },
+      "level1": {
+        "bestmove": "e2e4",
+        "depths": [
+          1
+        ],
+        "node_counts": [
+          21
+        ],
+        "lines": [
+          "info depth 1 score cp -148 nodes 21 nps 3671 hashfull 0 time 5 pv e2e4",
+          "bestmove e2e4"
+        ]
+      },
+      "immediate_stop": {
+        "bestmove": "a2a3",
+        "depths": [],
+        "node_counts": [],
+        "lines": [
+          "bestmove a2a3"
+        ]
+      },
+      "recovery": {
+        "bestmove": "h2h3",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          21,
+          442
+        ],
+        "lines": [
+          "info depth 1 score cp -148 nodes 21 nps 4493 hashfull 0 time 4 pv e2e4",
+          "info depth 2 score cp 149 nodes 442 nps 459 hashfull 0 time 962 pv h2h3 e7e5",
+          "bestmove h2h3"
+        ]
+      },
+      "scope": "Legal fallback, budget, stop and subsequent-search protocol proof."
+    },
+    {
+      "record": "neural_UCI_legal_game",
+      "opening": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6"
+      ],
+      "neural_color": "white",
+      "plies_after_opening": 20,
+      "moves": [
+        {
+          "engine": "neural",
+          "move": "h1g1",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "g8f6",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "a2a3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "f6e4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "c2c4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "a7a5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "b2b4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "a5b4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "g2g4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b4a3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "h2h3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b7b5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "d2d3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "f8b4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "b1d2",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b4d2",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "f3d2",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "e4d2",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "c1d2",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b5c4",
+          "completed_depth": 2
+        }
+      ],
+      "final_fen": "r1bqk2r/2pp1ppp/2n5/4p3/2p3P1/p2P3P/3B1P2/R2QKBR1 w Qkq - 0 13",
+      "outcome": "None",
+      "scope": "Legal nonterminal protocol exercise, no strength inference."
+    },
+    {
+      "record": "neural_UCI_legal_game",
+      "opening": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6"
+      ],
+      "neural_color": "black",
+      "plies_after_opening": 20,
+      "moves": [
+        {
+          "engine": "resident-tapered",
+          "move": "c4d5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "f8b4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b1c3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "b4c3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "b2c3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "d8g5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "c1g5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "e6d5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "g1f3",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "c7c5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "d4c5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "a7a6",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "d1d5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "f7f6",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "g5f4",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "b7b5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "d5a8",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "g7g5",
+          "completed_depth": 2
+        },
+        {
+          "engine": "resident-tapered",
+          "move": "f4b8",
+          "completed_depth": 2
+        },
+        {
+          "engine": "neural",
+          "move": "g5g4",
+          "completed_depth": 2
+        }
+      ],
+      "final_fen": "QBb1k1nr/7p/p4p2/1pP5/6p1/2P2N2/P3PPPP/R3KB1R w KQk - 0 13",
+      "outcome": "None",
+      "scope": "Legal nonterminal protocol exercise, no strength inference."
+    },
+    {
+      "record": "neural_search_summary",
+      "model_position_comparisons": 18,
+      "exact_scores": 18,
+      "iterative_oracle_evaluated_leaves": 11982,
+      "inputs_unchanged": true,
+      "limitations": [
+        "Finite six-position/two-ply oracle, not exhaustive search verification.",
+        "Optimal tie set compared; python-chess and Rust move orders differ.",
+        "Benchmark times include cold model/runtime work and are not steady-state speed claims.",
+        "Inherited resident h2d_ms/d2h_ms are unmeasured zero placeholders.",
+        "Legal games and UCI limits do not establish playing strength or 2500 Lichess."
+      ]
+    }
+  ],
+  "raw_log_sha256": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af",
+  "executed_script_sha256": "ab25a00087def86100a2d989d27f7b1a254f1c649d4039fb4c98613921fd05b1",
+  "snapshot_container_path": "/tmp/chen-neural-search-stage",
+  "probe_command": "python3 /tmp/chen-native-plugin/neural_search_probe.py",
+  "scope_notes": [
+    "Terminal_positions in raw oracle records counts terminals strictly before depth limit; exact evaluated leaf counts include depth-limit terminal adjudication.",
+    "Completed-depth oracle compared to exact same trained TorchScript GPU archive; model and artifact checks mandatory.",
+    "Additional backend-first UCI configuration check after primary probe failed with no-ROCm-capable-device at neural creation and exit1 upon go. Primary limits/games used working neural-first order. This defect is reported to root for repair; no universal option-order claim."
+  ]
+}

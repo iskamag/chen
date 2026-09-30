@@ -25,6 +25,8 @@ fn main() {
     }
 }
 fn run() -> Result<(), String> {
+    #[cfg(all(feature = "hip", target_os = "linux"))]
+    let _configured_runtime = chen::neural::preload_configured_runtime()?;
     let args: Vec<String> = env::args().skip(1).collect();
     match args.first().map(String::as_str) {
         None | Some("uci") => uci(),
@@ -67,7 +69,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--eval material|tapered] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident] [--batch-size N] [--max-positions N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -153,16 +155,28 @@ fn make_backend(
             frontier,
         )?)),
         "cpu-resident" => Ok(Box::new(ResidentSearch::new(
-            Box::new(HostTree::new(frontier.max_positions)?),
+            Box::new(HostTree::new(frontier.max_positions).and_then(|tree| {
+                if eval == "neural" {
+                    Err("neural evaluator requires hip-resident".into())
+                } else {
+                    Ok(tree)
+                }
+            })?),
             eval,
         )?)),
         "hip-resident" => {
             #[cfg(all(feature = "hip", target_os = "linux"))]
             {
                 Ok(Box::new(ResidentSearch::new(
-                    Box::new(chen::device::HipRules::from_environment(
-                        frontier.max_positions,
-                    )?),
+                    if eval == "neural" {
+                        Box::new(chen::neural::HipNeuralTree::from_environment(
+                            frontier.max_positions,
+                        )?)
+                    } else {
+                        Box::new(chen::device::HipRules::from_environment(
+                            frontier.max_positions,
+                        )?)
+                    },
                     eval,
                 )?))
             }
@@ -216,7 +230,9 @@ fn uci() -> Result<(), String> {
                 output("id name Chen 0.1.0");
                 output("id author Chen contributors");
                 output("option name Hash type spin default 16 min 1 max 1024");
-                output("option name Eval type combo default tapered var tapered var material");
+                output(
+                    "option name Eval type combo default tapered var tapered var material var neural",
+                );
                 output("option name UseTT type check default true");
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
@@ -269,7 +285,7 @@ fn uci() -> Result<(), String> {
                             .filter(|v| (1..=1024).contains(v))
                             .map(|v| next.hash_mb = v)
                             .is_some(),
-                        "eval" if value == "material" || value == "tapered" => {
+                        "eval" if matches!(value.as_str(), "material" | "tapered" | "neural") => {
                             next_eval = value;
                             true
                         }
@@ -568,8 +584,12 @@ fn bench(args: &[String]) -> Result<(), String> {
             &mut |_| {},
         )?;
         let telemetry = searcher.batch_telemetry();
+        let evaluator_artifact = searcher
+            .evaluator_artifact_sha256()
+            .map(json_string)
+            .unwrap_or_else(|| "null".to_owned());
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -581,6 +601,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             json_string(name),
             json_string(&fen),
             json_string(&eval),
+            evaluator_artifact,
             config.tt && backend_name == "alphabeta",
             config.quiescence && backend_name == "alphabeta",
             config.move_ordering && backend_name == "alphabeta",

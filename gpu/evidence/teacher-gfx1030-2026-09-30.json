@@ -1,0 +1,69 @@
+{
+  "kind": "gfx1030_classical_resident_minimax_teacher_export",
+  "date": "2026-09-30",
+  "base_commit": "37ce4a9",
+  "source_sha256": {
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "5440d05054a6673f42a3aa4e14e2573579d45f9bbca32aa0662b6c1d55fdebc9",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/teacher_probe.py": "e3d9ea9c02c8ecab6bb8d54cd143691c3be91c3b5d837c407dae2060a2f529d6",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "gpu/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+    "gpu/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192"
+  },
+  "teacher_library_sha256": "5e0e0dd026211a6489c20faf90dcf0c3d3e7677daa64f5bd85a6a79765e167c4",
+  "oracle_log_sha256": "dfd6eee5853efc64c870e0a24b85b28cfae0ace6e026c573a987e8cbec10a54c",
+  "records": [
+    {
+      "record": "resident_teacher_oracle",
+      "fixtures": 7,
+      "evaluators": [
+        "material",
+        "tapered"
+      ],
+      "Rust_unique_parent_comparisons": 140,
+      "edge_rows": 1358,
+      "mate_distance_rows": 196,
+      "Material_tied_start_rows": 420,
+      "root_and_source_ply1": true,
+      "exact_scores_actions_parent_ply": true,
+      "Rust_engine_sha256": "9f8b43cfee4fbe0326b23054dbf19ce8f17379a831196fa04270facab6d91abf"
+    },
+    {
+      "record": "resident_teacher_boundaries",
+      "unscored_and_unreduced_rejected": true,
+      "invalid_schema_reserved_device_pointer_overlap": true,
+      "row_capacity": true,
+      "stale_epoch_alias_rejected": true,
+      "same_replay_edge_parents": true
+    },
+    {
+      "record": "resident_teacher_copy_scope",
+      "successful_marked_calls": 28,
+      "interposed_APIs": [
+        "hipMemcpy",
+        "hipMemcpyAsync"
+      ],
+      "per_call_D2H_bytes": 32,
+      "per_call_D2H_copies": 2,
+      "largest_copy_bytes": 16,
+      "H2D_bytes": 0,
+      "D2D_bytes": 0,
+      "scope": "Teacher export C calls only; Rust oracle and diagnostic Tensor/packet downloads excluded."
+    }
+  ],
+  "compile_command": "hipcc -O3 -std=c++17 --offload-arch=gfx1030 -fPIC -shared -Wall -Wextra -Werror -x hip chen_gpu.hip chen_rules.hip",
+  "probe_command": "LD_PRELOAD=/tmp/chen-gpu/build/libreplay_copy_trace.so:/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so python3 teacher_probe.py libchen_gpu.so --rust-engine chen-cpu-oracle --trace-copies",
+  "immutable_container_snapshot": "/tmp/chen-teacher-stage",
+  "limitations": [
+    "Scored finite-tree classical minimax, not outcomes or playing-strength evidence.",
+    "Uniform depth follows this probe BFS sequence; arbitrary ABI callers have no uniform-horizon guarantee.",
+    "Finite seven-fixture oracle, not exhaustive state-space correctness.",
+    "Copy diagnostic covers hipMemcpy and hipMemcpyAsync, not all runtime traffic.",
+    "Rust executable hash captured independently; no inference from current mutable build output."
+  ]
+}

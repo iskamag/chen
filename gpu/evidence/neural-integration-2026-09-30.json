@@ -1,0 +1,1228 @@
+{
+  "kind": "resident_teacher_same_model_native_inference_integration",
+  "date_UTC": "2026-09-30",
+  "target": "gfx1030",
+  "rating_target": "2500 Lichess; pool/timecontrol not selected",
+  "strength_evidence": false,
+  "neural_commit": "208ee3e832ee022c0a26abbedb2bcd629211bbca",
+  "portable_tests": 37,
+  "HIP_host_tests": 41,
+  "hardware_tests": 6,
+  "combined_neural_GPU_tests": 76,
+  "combined_neural_skips": 0,
+  "harness_tests": 7,
+  "native_numerical_comparisons": [
+    {
+      "kind": "fixtures",
+      "log": {
+        "path": "gpu/evidence/neural-native-fixtures-2026-09-30.log",
+        "bytes": 11193,
+        "sha256": "0428c8c584063f9181613a236e1b4364d28243f1f1d6d10fff521b21663ef47e"
+      },
+      "cases": 24,
+      "rows": 510,
+      "summary": {
+        "record": "native_neural_probe_complete",
+        "rows": 510,
+        "library_sha256": "36496c587824dc3b61c4d0e96108f6e29e092f5f2bc17e505d54fb9be959ec2e",
+        "runtime_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+        "torch": "2.10.0+rocm7.0",
+        "hip": "7.0.51831",
+        "scope": "same-model numerical parity, no playing-strength claim"
+      },
+      "monitored_API_H2D_bytes": 0,
+      "maximum_single_monitored_D2H_copy_bytes": 8,
+      "negative_control": {
+        "record": "native_payload_copy_negative_control",
+        "D2H_bytes": 384,
+        "largest": 128
+      }
+    },
+    {
+      "kind": "trained",
+      "log": {
+        "path": "gpu/evidence/neural-native-trained-2026-09-30.log",
+        "bytes": 5862,
+        "sha256": "ad240fc58d04f47e3eabf03fa0caf196948a8acd33de53c5a0a72e88e67a2c0f"
+      },
+      "cases": 12,
+      "rows": 255,
+      "summary": {
+        "record": "native_neural_probe_complete",
+        "rows": 255,
+        "library_sha256": "36496c587824dc3b61c4d0e96108f6e29e092f5f2bc17e505d54fb9be959ec2e",
+        "runtime_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+        "torch": "2.10.0+rocm7.0",
+        "hip": "7.0.51831",
+        "scope": "same-model numerical parity, no playing-strength claim"
+      },
+      "monitored_API_H2D_bytes": 0,
+      "maximum_single_monitored_D2H_copy_bytes": 8,
+      "negative_control": {
+        "record": "native_payload_copy_negative_control",
+        "D2H_bytes": 384,
+        "largest": 128
+      }
+    }
+  ],
+  "wrapper_bench_records": [
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 420,
+      "h2d_ms": 0,
+      "kernel_ms": 1440.2393232584,
+      "d2h_ms": 0,
+      "position": "start",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 2,
+      "score_cp": 149,
+      "bestmove": "h2h3",
+      "nodes": 442,
+      "qnodes": 0,
+      "elapsed_ns": 1441856067,
+      "nps": 306,
+      "stopped": false,
+      "pv": "h2h3 e7e5"
+    },
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 2087,
+      "h2d_ms": 0,
+      "kernel_ms": 989.664849916473,
+      "d2h_ms": 0,
+      "position": "kiwipete",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 2,
+      "score_cp": 87,
+      "bestmove": "h1g1",
+      "nodes": 2137,
+      "qnodes": 0,
+      "elapsed_ns": 991312812,
+      "nps": 2155,
+      "stopped": false,
+      "pv": "h1g1 h8h4"
+    },
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 205,
+      "h2d_ms": 0,
+      "kernel_ms": 497.7616738062352,
+      "d2h_ms": 0,
+      "position": "rook-ending",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 2,
+      "score_cp": 71,
+      "bestmove": "g2g3",
+      "nodes": 221,
+      "qnodes": 0,
+      "elapsed_ns": 499264029,
+      "nps": 442,
+      "stopped": false,
+      "pv": "g2g3 h4g3"
+    },
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 1193,
+      "h2d_ms": 0,
+      "kernel_ms": 918.2918993756175,
+      "d2h_ms": 0,
+      "position": "middlegame",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 2,
+      "score_cp": 54,
+      "bestmove": "d3h7",
+      "nodes": 1232,
+      "qnodes": 0,
+      "elapsed_ns": 919836229,
+      "nps": 1339,
+      "stopped": false,
+      "pv": "d3h7 g8h8"
+    },
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 77,
+      "h2d_ms": 0,
+      "kernel_ms": 462.6552495956421,
+      "d2h_ms": 0,
+      "position": "promotion",
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 2,
+      "score_cp": 80,
+      "bestmove": "a7a8r",
+      "nodes": 89,
+      "qnodes": 0,
+      "elapsed_ns": 464204822,
+      "nps": 191,
+      "stopped": false,
+      "pv": "a7a8r e8f7"
+    },
+    {
+      "engine": "chen",
+      "version": "0.1.0",
+      "backend": "hip-resident",
+      "batch_size": 4096,
+      "max_positions": 50000,
+      "evaluated_positions": 12,
+      "h2d_ms": 0,
+      "kernel_ms": 6.14962197933346,
+      "d2h_ms": 0,
+      "position": "mate",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "eval": "neural",
+      "evaluator_artifact_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "tt": false,
+      "quiescence": false,
+      "ordering": false,
+      "hash_mb": 0,
+      "requested_depth": 2,
+      "depth": 1,
+      "score_cp": 29999,
+      "bestmove": "f7g7",
+      "nodes": 27,
+      "qnodes": 0,
+      "elapsed_ns": 6799313,
+      "nps": 3970,
+      "stopped": false,
+      "pv": "f7g7"
+    }
+  ],
+  "wrapper_executed_artifact_manifest": {
+    "target": "gfx1030",
+    "files_sha256": {
+      "chen": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "container-image.txt": "f1c0f364f9fc2999a87cce039c21dd60aa177ef915116f9b8aac30a35f253f35",
+      "device-probe.jsonl": "970a7719c363748ef4a15460a14343620b99bc79439943c791000d6cae4b7875",
+      "gpu-source/.gitignore": "309ef3d2c15a0c40b562f59bfc054db87342c55d6c926cc639112c5d8c12303f",
+      "gpu-source/__pycache__/external_probe.cpython-314.pyc": "3223c616c1227d95ce352efc5450d4558170bfec5e2ca9b098f9e7c60e075406",
+      "gpu-source/__pycache__/neural_probe.cpython-314.pyc": "fd00d3f4b049e690e79aaa705e24ab5003c8400c46d6072d68fe20942580cb2f",
+      "gpu-source/__pycache__/neural_search_probe.cpython-314.pyc": "e5c55d444d811c568b7bd0b8292394adedcaa49cb4a4d3300f2ff14ff85113ac",
+      "gpu-source/__pycache__/probe.cpython-314.pyc": "ba2e318d50f6917e095ff5b1d47827e81d25ff787f4dfcb9ac95476676a355ae",
+      "gpu-source/__pycache__/replay_probe.cpython-314.pyc": "efac5f8c5cd4c5bd3694ebadd29c01d773fb9c7fe2ee18b9123137fca82853ea",
+      "gpu-source/__pycache__/rules_probe.cpython-314.pyc": "abe8518d4ad8615af1efe31b47e54e24ed3a417f0fc71b96d57b5eb13e68a255",
+      "gpu-source/__pycache__/teacher_probe.cpython-314.pyc": "54802943bb1cb271eec72cc0d0226c7437cd98fabfa97bf753f74858db4a1a7c",
+      "gpu-source/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "gpu-source/build_neural.sh": "e1d19a970caa01ec24641d5c59aa3ed252c4c795af804d3159fe08035446bb19",
+      "gpu-source/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "gpu-source/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "gpu-source/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "gpu-source/chen_neural.cpp": "13ce5154da19d0e042a08d31500d58cc0a18933a0e28507424780544341554f4",
+      "gpu-source/chen_neural.h": "5499a4306cc9ed843d5aca808e708d9a6b2f5ed98ee3d3477f7883b82bc26d9b",
+      "gpu-source/chen_neural_decode.hip": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce",
+      "gpu-source/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "gpu-source/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "gpu-source/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266",
+      "gpu-source/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+      "gpu-source/evidence/bridge-integration-2026-09-30.json": "816c3bd4816f7c890986671b72d8ae59c7ba885d098219ee7f1ed7411df8353a",
+      "gpu-source/evidence/external-gfx1030-2026-09-30.json": "5af1575aba551443246e183c0b185ef0d6d37ffd874a3f90fbcaab7881aaa7ed",
+      "gpu-source/evidence/external-gfx1030-2026-09-30.jsonl": "41d0622b914f0061b42a733265eaa5e2ebe2a2ffc309d269593c23eee8d76d1d",
+      "gpu-source/evidence/gfx1030-agent-info-2026-09-30.csv": "a79d100845d29262dc04786d4b08514461f1096f3a833b630d95d9fe49c8b415",
+      "gpu-source/evidence/gfx1030-eval-2026-09-30.jsonl": "76c857b2d4bc2def29a18eca2ccd5e444e0e5d49a46060d16e643d17e818d846",
+      "gpu-source/evidence/gfx1030-kernel-trace-2026-09-30.csv": "f70b239b500cde293ca36391e149fec58286d40e049d97472de55045bd5f2a47",
+      "gpu-source/evidence/neural-native-fixtures-2026-09-30.log": "0428c8c584063f9181613a236e1b4364d28243f1f1d6d10fff521b21663ef47e",
+      "gpu-source/evidence/neural-native-trained-2026-09-30.log": "ad240fc58d04f47e3eabf03fa0caf196948a8acd33de53c5a0a72e88e67a2c0f",
+      "gpu-source/evidence/neural-search-before-prebind-gfx1030-2026-09-30.json": "46ac40e0186cd9cc4befc366cfddd83a874a7a6685f97d4f163d5f38bdc6340c",
+      "gpu-source/evidence/neural-search-before-prebind-gfx1030-2026-09-30.jsonl": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af",
+      "gpu-source/evidence/neural-search-gfx1030-2026-09-30.json": "46ac40e0186cd9cc4befc366cfddd83a874a7a6685f97d4f163d5f38bdc6340c",
+      "gpu-source/evidence/neural-search-gfx1030-2026-09-30.jsonl": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af",
+      "gpu-source/evidence/replay-gfx1030-2026-09-30.json": "7a683b65aa47fcfd27333559e245f7f1a9bc1c454bcdb527bd3dc27be709c7a1",
+      "gpu-source/evidence/replay-gfx1030-2026-09-30.jsonl": "8ec008ae7fe43344e099b8d04071ac6d3e16987c0fc6fb6fca5f8b8d4898df56",
+      "gpu-source/evidence/resident-integration-2026-09-30.json": "164c1ad082db7e45f11305562676cd5f502077d05da59d31ef15b788ea6e4d56",
+      "gpu-source/evidence/resident-paired-2026-09-30.json": "69e719ebdae72c20f7f189430574d2c2dee5ee72225d85fc76755dfdb6f6e3a5",
+      "gpu-source/evidence/resident-tests-gfx1030-2026-09-30.txt": "c2a2a1ea2c141ce1284858706bcd66658909c89e80d877913e1c9cd7f372d714",
+      "gpu-source/evidence/resident-tests-host-2026-09-30.txt": "1b9c55fa51fe7fece0c4427801ecf97e6e776b9d07b5a7839e5a547adf11b8ee",
+      "gpu-source/evidence/rules-after-bridge-rust-gfx1030-2026-09-30.txt": "fb0d99d9af6439960d2b12902efecadfd6b6576c964aeb20a717d94e6ac5d8fc",
+      "gpu-source/evidence/rules-after-replay-gfx1030-2026-09-30.jsonl": "a9ac8776fefb4dceea2dffe4654f4d6adae23dceaddd751748719bde7d59e6d6",
+      "gpu-source/evidence/rules-gfx1030-2026-09-30.json": "9d7e73255da737afe590dfeebd540d45641c19ce731ee352c1286dcf637f33f2",
+      "gpu-source/evidence/teacher-gfx1030-2026-09-30.json": "6b16f187f8130226afbedb7b134bcd10db6101b8e50e6fbd174c1860a5ca907d",
+      "gpu-source/evidence/teacher-gfx1030-2026-09-30.jsonl": "dfd6eee5853efc64c870e0a24b85b28cfae0ace6e026c573a987e8cbec10a54c",
+      "gpu-source/external_probe.hip": "e457dde674d4f5897ebc33d359e4648c4d2ea71b11aeda2347b89eeb522620e1",
+      "gpu-source/external_probe.py": "e8f1da3c529ebf9c7f98d358b43eaaf843df56421f4ee63ab30c530b1d0ec889",
+      "gpu-source/neural_copy_trace.cpp": "88fb04d65cca2893272f938fdb7b167b1bb084963514fb74b2b96aced1a7f8af",
+      "gpu-source/neural_probe.py": "cf449fe8d5389bba426b487b3357e850650bd2b9679b83cddce1ffc7899a3f9b",
+      "gpu-source/neural_search_probe.py": "967547a2446807eaa3933a096fda77ce05b89fa84db7c2944614686278173040",
+      "gpu-source/probe.py": "9a531ffbda9d18af1a9fd5392ecc8a0306c300746e109047f69a1f7854563996",
+      "gpu-source/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192",
+      "gpu-source/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+      "gpu-source/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+      "gpu-source/teacher_probe.py": "e3d9ea9c02c8ecab6bb8d54cd143691c3be91c3b5d837c407dae2060a2f529d6",
+      "hipcc.txt": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+      "libchen_gpu.so": "29c7bfe81793d2d3fa95382f25c892df3ba4f3cc3455c3c19bc1de8ec778336b",
+      "libchen_neural.so": "8afc031586370426ec62fc8d26c2a70a4ce5a1d2c8ced9a00bf1758cb53848ba",
+      "libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+      "model.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "model.pt.json": "5d2b96a5e556221aa68cd84c5645f730b305db886a3420b81f74f822b2de40e7"
+    }
+  },
+  "combined_suite_executed_artifact_manifest": {
+    "target": "gfx1030",
+    "files_sha256": {
+      "chen": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "chess-oracle/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+      "chess-oracle/__pycache__/__init__.cpython-314.pyc": "3e7abdaecf26f0e043f4e9319c256f00006a58c05ca2b1ad97badf3d9249345b",
+      "chess-oracle/__pycache__/engine.cpython-314.pyc": "4ad6ffabbb91bcf598113b41f703310d949569d19a5a404d2a1479da58936730",
+      "chess-oracle/__pycache__/gaviota.cpython-314.pyc": "e0a9614f05846f54e41b0628a6bbe6408a4f08a75a03dbd93bdbe6ced50ca0bc",
+      "chess-oracle/__pycache__/pgn.cpython-314.pyc": "c8c8ac81031c596a9f3074ef0b44f15e3d0146e2c461395399a5f59abd783ae9",
+      "chess-oracle/__pycache__/polyglot.cpython-314.pyc": "54870004f0353529218b8ce5b633d0eff1811c928ae6ad63f6397988feb249f6",
+      "chess-oracle/__pycache__/svg.cpython-314.pyc": "723761cc129b329e42314d506ff50761a5e243bb2fd36cc643cf27c982dc2d27",
+      "chess-oracle/__pycache__/syzygy.cpython-314.pyc": "e8fced130bea230fa09c0ed8a585f1c87bdfcbc0c786b81b6ef5658199286e81",
+      "chess-oracle/__pycache__/variant.cpython-314.pyc": "6c8e83352cfc27bd8bad38f92da24e66a6d9d04a3737f9be8bd1b7f079ec6238",
+      "chess-oracle/engine.py": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+      "chess-oracle/gaviota.py": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+      "chess-oracle/pgn.py": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+      "chess-oracle/polyglot.py": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+      "chess-oracle/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "chess-oracle/svg.py": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+      "chess-oracle/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+      "chess-oracle/variant.py": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+      "container-image.txt": "f1c0f364f9fc2999a87cce039c21dd60aa177ef915116f9b8aac30a35f253f35",
+      "device-probe.jsonl": "d1d6c185fc025fc0bbd7943e2a28e83780d1cef279a21cfadac993c5fb7cf1fb",
+      "gpu-source/.gitignore": "309ef3d2c15a0c40b562f59bfc054db87342c55d6c926cc639112c5d8c12303f",
+      "gpu-source/__pycache__/external_probe.cpython-314.pyc": "3223c616c1227d95ce352efc5450d4558170bfec5e2ca9b098f9e7c60e075406",
+      "gpu-source/__pycache__/neural_probe.cpython-314.pyc": "fd00d3f4b049e690e79aaa705e24ab5003c8400c46d6072d68fe20942580cb2f",
+      "gpu-source/__pycache__/neural_search_probe.cpython-314.pyc": "e5c55d444d811c568b7bd0b8292394adedcaa49cb4a4d3300f2ff14ff85113ac",
+      "gpu-source/__pycache__/probe.cpython-314.pyc": "ba2e318d50f6917e095ff5b1d47827e81d25ff787f4dfcb9ac95476676a355ae",
+      "gpu-source/__pycache__/replay_probe.cpython-314.pyc": "efac5f8c5cd4c5bd3694ebadd29c01d773fb9c7fe2ee18b9123137fca82853ea",
+      "gpu-source/__pycache__/rules_probe.cpython-314.pyc": "abe8518d4ad8615af1efe31b47e54e24ed3a417f0fc71b96d57b5eb13e68a255",
+      "gpu-source/__pycache__/teacher_probe.cpython-314.pyc": "54802943bb1cb271eec72cc0d0226c7437cd98fabfa97bf753f74858db4a1a7c",
+      "gpu-source/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "gpu-source/build_neural.sh": "e1d19a970caa01ec24641d5c59aa3ed252c4c795af804d3159fe08035446bb19",
+      "gpu-source/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "gpu-source/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "gpu-source/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "gpu-source/chen_neural.cpp": "13ce5154da19d0e042a08d31500d58cc0a18933a0e28507424780544341554f4",
+      "gpu-source/chen_neural.h": "5499a4306cc9ed843d5aca808e708d9a6b2f5ed98ee3d3477f7883b82bc26d9b",
+      "gpu-source/chen_neural_decode.hip": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce",
+      "gpu-source/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "gpu-source/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "gpu-source/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266",
+      "gpu-source/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+      "gpu-source/evidence/bridge-integration-2026-09-30.json": "816c3bd4816f7c890986671b72d8ae59c7ba885d098219ee7f1ed7411df8353a",
+      "gpu-source/evidence/external-gfx1030-2026-09-30.json": "5af1575aba551443246e183c0b185ef0d6d37ffd874a3f90fbcaab7881aaa7ed",
+      "gpu-source/evidence/external-gfx1030-2026-09-30.jsonl": "41d0622b914f0061b42a733265eaa5e2ebe2a2ffc309d269593c23eee8d76d1d",
+      "gpu-source/evidence/gfx1030-agent-info-2026-09-30.csv": "a79d100845d29262dc04786d4b08514461f1096f3a833b630d95d9fe49c8b415",
+      "gpu-source/evidence/gfx1030-eval-2026-09-30.jsonl": "76c857b2d4bc2def29a18eca2ccd5e444e0e5d49a46060d16e643d17e818d846",
+      "gpu-source/evidence/gfx1030-kernel-trace-2026-09-30.csv": "f70b239b500cde293ca36391e149fec58286d40e049d97472de55045bd5f2a47",
+      "gpu-source/evidence/neural-native-fixtures-2026-09-30.log": "0428c8c584063f9181613a236e1b4364d28243f1f1d6d10fff521b21663ef47e",
+      "gpu-source/evidence/neural-native-trained-2026-09-30.log": "ad240fc58d04f47e3eabf03fa0caf196948a8acd33de53c5a0a72e88e67a2c0f",
+      "gpu-source/evidence/neural-search-before-prebind-gfx1030-2026-09-30.json": "46ac40e0186cd9cc4befc366cfddd83a874a7a6685f97d4f163d5f38bdc6340c",
+      "gpu-source/evidence/neural-search-before-prebind-gfx1030-2026-09-30.jsonl": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af",
+      "gpu-source/evidence/neural-search-gfx1030-2026-09-30.json": "46ac40e0186cd9cc4befc366cfddd83a874a7a6685f97d4f163d5f38bdc6340c",
+      "gpu-source/evidence/neural-search-gfx1030-2026-09-30.jsonl": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af",
+      "gpu-source/evidence/replay-gfx1030-2026-09-30.json": "7a683b65aa47fcfd27333559e245f7f1a9bc1c454bcdb527bd3dc27be709c7a1",
+      "gpu-source/evidence/replay-gfx1030-2026-09-30.jsonl": "8ec008ae7fe43344e099b8d04071ac6d3e16987c0fc6fb6fca5f8b8d4898df56",
+      "gpu-source/evidence/resident-integration-2026-09-30.json": "164c1ad082db7e45f11305562676cd5f502077d05da59d31ef15b788ea6e4d56",
+      "gpu-source/evidence/resident-paired-2026-09-30.json": "69e719ebdae72c20f7f189430574d2c2dee5ee72225d85fc76755dfdb6f6e3a5",
+      "gpu-source/evidence/resident-tests-gfx1030-2026-09-30.txt": "c2a2a1ea2c141ce1284858706bcd66658909c89e80d877913e1c9cd7f372d714",
+      "gpu-source/evidence/resident-tests-host-2026-09-30.txt": "1b9c55fa51fe7fece0c4427801ecf97e6e776b9d07b5a7839e5a547adf11b8ee",
+      "gpu-source/evidence/rules-after-bridge-rust-gfx1030-2026-09-30.txt": "fb0d99d9af6439960d2b12902efecadfd6b6576c964aeb20a717d94e6ac5d8fc",
+      "gpu-source/evidence/rules-after-replay-gfx1030-2026-09-30.jsonl": "a9ac8776fefb4dceea2dffe4654f4d6adae23dceaddd751748719bde7d59e6d6",
+      "gpu-source/evidence/rules-gfx1030-2026-09-30.json": "9d7e73255da737afe590dfeebd540d45641c19ce731ee352c1286dcf637f33f2",
+      "gpu-source/evidence/teacher-gfx1030-2026-09-30.json": "6b16f187f8130226afbedb7b134bcd10db6101b8e50e6fbd174c1860a5ca907d",
+      "gpu-source/evidence/teacher-gfx1030-2026-09-30.jsonl": "dfd6eee5853efc64c870e0a24b85b28cfae0ace6e026c573a987e8cbec10a54c",
+      "gpu-source/external_probe.hip": "e457dde674d4f5897ebc33d359e4648c4d2ea71b11aeda2347b89eeb522620e1",
+      "gpu-source/external_probe.py": "e8f1da3c529ebf9c7f98d358b43eaaf843df56421f4ee63ab30c530b1d0ec889",
+      "gpu-source/neural_copy_trace.cpp": "88fb04d65cca2893272f938fdb7b167b1bb084963514fb74b2b96aced1a7f8af",
+      "gpu-source/neural_probe.py": "cf449fe8d5389bba426b487b3357e850650bd2b9679b83cddce1ffc7899a3f9b",
+      "gpu-source/neural_search_probe.py": "967547a2446807eaa3933a096fda77ce05b89fa84db7c2944614686278173040",
+      "gpu-source/probe.py": "9a531ffbda9d18af1a9fd5392ecc8a0306c300746e109047f69a1f7854563996",
+      "gpu-source/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192",
+      "gpu-source/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+      "gpu-source/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+      "gpu-source/teacher_probe.py": "e3d9ea9c02c8ecab6bb8d54cd143691c3be91c3b5d837c407dae2060a2f529d6",
+      "hipcc.txt": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+      "libchen_gpu.so": "fd344402754b39cbadd27859cb978ff14165a5f6d60728257ab849b71afd3574",
+      "neural-source/README.md": "55f0fb20c7e212175322e8ed7a829994ce76649ea1fdd031548663df628bf75b",
+      "neural-source/__pycache__/bridge.cpython-314.pyc": "5fc20b23cf5b59c1d38be9e9ccbb92e772d85cebb175b7af7f0a25b98aa42d1a",
+      "neural-source/__pycache__/compact.cpython-314.pyc": "6992c26f895e6f6111a548197fd497b77b16619115be9bd925fc590527184603",
+      "neural-source/__pycache__/data.cpython-314.pyc": "b88a255b886347083f3a0bc659e5ab966d39b78fc44b328741911d7cacea113e",
+      "neural-source/__pycache__/diamonds.cpython-314.pyc": "2373ee0fbba9acfc2f11b9ba4d428dd1df6f884379d2fa4480ac0a195214eb46",
+      "neural-source/__pycache__/dynamics.cpython-314.pyc": "0af7ca040d619ce5eb5b541e4c8fd2a2059f3715fc60b488b0b2ee3bdc4585c5",
+      "neural-source/__pycache__/features.cpython-314.pyc": "c953970a342920f30eb428e725288e465c4272de7142b6ad4b28881b04176517",
+      "neural-source/__pycache__/inference.cpython-314.pyc": "3a64645a99e94200dc6f123a56e1f6d638656486dafdc223454b0717abf65f34",
+      "neural-source/__pycache__/models.cpython-314.pyc": "89973cdfffbe99e5378e4b04c85db879d2058e223b85f6c56d70f67b2f929a01",
+      "neural-source/__pycache__/teacher.cpython-314.pyc": "b850a3cf618568a6824ed005d705f7a199c874bba97205dafd79f44c51a3bf61",
+      "neural-source/__pycache__/train.cpython-314.pyc": "4ac2f714295ec0f669ce2883dded1829cc114261b035db7701b9390abae68ec8",
+      "neural-source/bridge.py": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+      "neural-source/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+      "neural-source/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+      "neural-source/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+      "neural-source/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+      "neural-source/evidence/bridge-smoke-gfx1030-2026-09-30.json": "ed2a67b1a81c760e6041fce30c11b43968cc17a5bbab64205a99e1efa360205e",
+      "neural-source/evidence/bridge-smoke-gfx1030-2026-09-30.log": "361ee33bde128779bfb7ff7627f6845db2c3462b401d6ccdc06147bc90b59172",
+      "neural-source/evidence/bridge-source-sha256-2026-09-30.json": "e0917bd5b461291bbbdabafcf8036cc685066a02d7031daa46448fb5831f1860",
+      "neural-source/evidence/bridge-tests-cpu-2026-09-30.log": "fe5e7b36165eafcfd1d8b881ecf23272a7c9ea5f5017b87c33856fc173c34ebd",
+      "neural-source/evidence/bridge-tests-gfx1030-2026-09-30.log": "3453f923353f7bcf4cd55d1c6daac2467331794667201fbb9e0327ee52747124",
+      "neural-source/evidence/combined-bridge-tests-gfx1030-2026-09-30.txt": "45a4f4313334015ac4ea69397f9145e0b0a5f5f591c078b69613e60ea78380af",
+      "neural-source/evidence/combined-tests-gfx1030-2026-09-30.txt": "58eba79b4002189337a6e655a3611c33a5322571fe38c1daec743f0833aa9a43",
+      "neural-source/evidence/compact-cpu-tests-2026-09-30.log": "546931719e5bf9fe307656b41e0e5efd4c1952c304dd21984d66933bf5277f56",
+      "neural-source/evidence/compact-gfx1030-2026-09-30.json": "b93637325695fea9f4987ecd312b73b1dd8aa213ef55400c372bd8c4c28a46cb",
+      "neural-source/evidence/compact-gfx1030-2026-09-30.log": "7dea3f71c3ccf7c82b28b94f6fa016f663bb5334f379065fb2021d8edf75309b",
+      "neural-source/evidence/compact-gfx1030-initial-2026-09-30.json": "60c48cfdfa90ac0c89adb85f009f2d96402143113f234b31fdf225e9d35d2652",
+      "neural-source/evidence/compact-gpu-tests-2026-09-30.log": "74e796e2727039d57ccd50218ff9802a43b512973206663512d505605af1c82e",
+      "neural-source/evidence/compact-source-sha256-2026-09-30.json": "c6be3abb3fa963a25d1e64f3d8c9f89eae1b3bf2fa48c5ce8cf6fcd975082111",
+      "neural-source/evidence/dynamics-gfx1030-2026-09-30.json": "0c0d07f468180365288394fb91f1af24bf3dfa9822e18d7ccc6b307b274c6b1d",
+      "neural-source/evidence/dynamics-source-sha256-2026-09-30.json": "6ba6eb9cdc6f192a96df05b183659ebfb1ecdab72c14a61dd278be784b4d63f2",
+      "neural-source/evidence/dynamics-tests-gfx1030-2026-09-30.txt": "34d639829f016fa7ca0fe9e77cc2ec4ac61756f40df5a4f7b5e3efde1a984bfd",
+      "neural-source/evidence/final-source-hashes-2026-09-30.json": "4362aa7c31ea2bd67f4450a1071f30d069b05d0b53841711af94303cf8a8534c",
+      "neural-source/evidence/gfx1030-diamonds-2026-09-30.json": "a752c42014ea8db7db6e3496ed34dbcac81ed049f01214bc668fab26683761f5",
+      "neural-source/evidence/gfx1030-final-tests-2026-09-30.log": "2e720a80d2089a2924577bdf9607a9f19671b449d28ee5c5dcdb411e2b3e4d79",
+      "neural-source/evidence/gfx1030-smoke-2026-09-30.json": "0fc576ba2731bee041a100be9473a99c0fe3f0774746715aa91b3afe5c7d0991",
+      "neural-source/evidence/gfx1030-tests-2026-09-30.log": "40279254bd2e8774d76dd25c1ace5f68362c3afa6cd4f695eac1ac0c5c922f3d",
+      "neural-source/evidence/inference-gfx1030-2026-09-30.json": "b7273d9a0229695b766e59f3e3aa21fc22cccc7a7bb1419e32407ce8261f83ce",
+      "neural-source/evidence/search-teacher-gfx1030-2026-09-30.json": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19",
+      "neural-source/evidence/search-teacher-gfx1030-2026-09-30.log": "be3e6d20bc3e6854d5dbebb3ef89a5dbafbd8b217906880752c33b899d8bf133",
+      "neural-source/evidence/search-teacher-source-sha256-2026-09-30.json": "b168969f769b31ed186809a76302291b70ff679624fd09c6addb0c86136873a2",
+      "neural-source/evidence/search-teacher-tests-cpu-2026-09-30.log": "c7369aa7a077e8287018a5d5ad12a1fa113a4dbdf2dfc6b22d5011d9faff8c9a",
+      "neural-source/evidence/search-teacher-tests-gfx1030-2026-09-30.log": "be7e391f2ff5bc3547c6232eefe56eb7ebaf17ea117e81aed15d44e4d4f79bad",
+      "neural-source/evidence/source-hashes-2026-09-30.json": "732f5beffac97a3ffe3427ba38bc709e013bbd04def246d84f9dbf0605d58fb6",
+      "neural-source/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+      "neural-source/inference.py": "1d9800e055460ca7d26367c70a341770b8977db129ec3322d2b3f7ba5948fff2",
+      "neural-source/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+      "neural-source/teacher.py": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
+      "neural-source/tests/__pycache__/test_bridge.cpython-314.pyc": "87442f4e7764d1e17c833fc2b00114ccf0a0ba7022a5d5f1988806eec6f3bc5f",
+      "neural-source/tests/__pycache__/test_compact.cpython-314.pyc": "bd06db8971f7a43ffe990eaf91b325b53f93b6cae98e5232c973f47258f9f30d",
+      "neural-source/tests/__pycache__/test_data.cpython-314.pyc": "374de4b85964cee94e03bd67c3a90dda4e71e801271c38b18978fa2ddc6fa5af",
+      "neural-source/tests/__pycache__/test_diamonds.cpython-314.pyc": "366a58a28b7da11734489a0577ce43cccef96b06de82cd54a7bf738e461e790e",
+      "neural-source/tests/__pycache__/test_dynamics.cpython-314.pyc": "a37e062908fe58735be97654764c95a1bbc9e32bc2523fa4abe232575a0c3baa",
+      "neural-source/tests/__pycache__/test_inference.cpython-314.pyc": "d2de61a174fb7eb1995728d4a4a22feafe37fad8ec73037449c0a7a009bc0c70",
+      "neural-source/tests/__pycache__/test_models.cpython-314.pyc": "0e4cbe8857faa3c15d3ceae2cfa02b10c0745fb73a50f4a93d31e20400ed32f3",
+      "neural-source/tests/__pycache__/test_teacher.cpython-314.pyc": "6d2bee5ec6175df55da6c6b152b18ad15959898dbdf912707c85e789710d095a",
+      "neural-source/tests/test_bridge.py": "7864421305b34c60fb02f1ad4c4c54fc76a40127d85129f5238147b6de44b924",
+      "neural-source/tests/test_compact.py": "473bfd8320bade52a74537402e73d57caecf9668e0a2106f9e4b98ad5d4df685",
+      "neural-source/tests/test_data.py": "e82e69fc92284532281cdd9a9fd011fd8e14491b08065b632dda8a8a57d1667c",
+      "neural-source/tests/test_diamonds.py": "42a66bafd1aa60396a570875f2f6b56f73e64f3817e68a5c6402dfa438f5ef0a",
+      "neural-source/tests/test_dynamics.py": "fae069a7ec44891cac8066e1193abac2e4fdaa77a101966b18c6a362675b3976",
+      "neural-source/tests/test_inference.py": "a71fa95fa1fd5b649af6aa00128e3ac3d08e5135dd9be3515cf11f5551a5dff4",
+      "neural-source/tests/test_models.py": "2539b0fb30b49837b1380c324d42b37a9fb010304f1df045476a47ddfa38e07f",
+      "neural-source/tests/test_teacher.py": "1b6f386d93f95d14f1ae3c68adb8a0a9d1867bb16e035145c1f3244f2f3f00f8",
+      "neural-source/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+    }
+  },
+  "native_reference_executed_source_artifacts": [
+    {
+      "path": "results/neural-native-reference/artifacts/executed-chen-neural.cpp",
+      "bytes": 5354,
+      "sha256": "fb2b74419261e5ccc015b08b1b7396743bd1bfb20e4128f323fcf5ebd833ea55"
+    },
+    {
+      "path": "results/neural-native-reference/artifacts/executed-neural-probe.py",
+      "bytes": 9431,
+      "sha256": "1c997bb01fd9f0c770568244c9773d59a310f8e5548c631cd4c98625a0d7d9b7"
+    },
+    {
+      "path": "results/neural-native-reference/artifacts/libchen_gpu.so",
+      "bytes": 370720,
+      "sha256": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271"
+    },
+    {
+      "path": "results/neural-native-reference/artifacts/libchen_neural.so",
+      "bytes": 129184,
+      "sha256": "36496c587824dc3b61c4d0e96108f6e29e092f5f2bc17e505d54fb9be959ec2e"
+    },
+    {
+      "path": "results/neural-native-reference/artifacts/libchen_neural.so.runtime",
+      "bytes": 65,
+      "sha256": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d"
+    }
+  ],
+  "current_sources": [
+    {
+      "path": "Cargo.toml",
+      "bytes": 536,
+      "sha256": "ebe79a1590695ed5d572e4413e59a965e2a967c92a1bc45d9286b54d85a8fdc1"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 4831,
+      "sha256": "60caf9457598997c7c66cde70eb4893b051ac6d9abc51ea47fc6f5e6180bc547"
+    },
+    {
+      "path": "src/backend.rs",
+      "bytes": 2977,
+      "sha256": "a6c9565ca9df970c2c38c5ea335fa6024b6bf51d82f1f8ff255d73ec3bb9b84a"
+    },
+    {
+      "path": "src/core.rs",
+      "bytes": 27751,
+      "sha256": "a454e83a8421780e87d4882319970fb9c6f8b2cf4fc3e03db3674827954153ec"
+    },
+    {
+      "path": "src/device.rs",
+      "bytes": 16609,
+      "sha256": "c9ee1be59e34f507d77b5e2b7168bc6978f71b7b6ce3aa9a8be6d02ae64e641f"
+    },
+    {
+      "path": "src/eval.rs",
+      "bytes": 4014,
+      "sha256": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369"
+    },
+    {
+      "path": "src/frontier.rs",
+      "bytes": 8507,
+      "sha256": "2f97234c7a261fc65fe4484083cdf147b90f80b9be55be70559e2855ffd13574"
+    },
+    {
+      "path": "src/hip.rs",
+      "bytes": 10199,
+      "sha256": "636d0b7e7efa2b087530f58432e8d7632495e64889542bf92843adea27964d4c"
+    },
+    {
+      "path": "src/lib.rs",
+      "bytes": 592,
+      "sha256": "d3ec3d36b35028d0e10d5fd6fae2b93b8f5d692cc0978ff5478579c9c995f10d"
+    },
+    {
+      "path": "src/main.rs",
+      "bytes": 26097,
+      "sha256": "fa578c8c46e880b750cff7e921d70700ee8c7aaa9d40f450645bd7579d55c833"
+    },
+    {
+      "path": "src/neural.rs",
+      "bytes": 19103,
+      "sha256": "ab76a2d8d804fe6ebab5614a13553dd2f18e62a2a6831bc0caf3e40e4eac4ae5"
+    },
+    {
+      "path": "src/resident.rs",
+      "bytes": 19194,
+      "sha256": "77d02c950d6cf9e105cdce8447717815455f27b80decc5b7a0f132ab20c921ce"
+    },
+    {
+      "path": "src/rules.rs",
+      "bytes": 5442,
+      "sha256": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6"
+    },
+    {
+      "path": "src/search.rs",
+      "bytes": 14863,
+      "sha256": "6b35f780611cd8d5c10bdd21597587430819d5a5953390731b7bbd044b3ed450"
+    },
+    {
+      "path": "src/strength.rs",
+      "bytes": 2076,
+      "sha256": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5"
+    },
+    {
+      "path": "src/tt.rs",
+      "bytes": 2643,
+      "sha256": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558"
+    },
+    {
+      "path": "gpu/chen_external.h",
+      "bytes": 2415,
+      "sha256": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3"
+    },
+    {
+      "path": "gpu/chen_gpu.h",
+      "bytes": 2001,
+      "sha256": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8"
+    },
+    {
+      "path": "gpu/chen_gpu.hip",
+      "bytes": 9513,
+      "sha256": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5"
+    },
+    {
+      "path": "gpu/chen_neural.cpp",
+      "bytes": 5430,
+      "sha256": "13ce5154da19d0e042a08d31500d58cc0a18933a0e28507424780544341554f4"
+    },
+    {
+      "path": "gpu/chen_neural.h",
+      "bytes": 1676,
+      "sha256": "5499a4306cc9ed843d5aca808e708d9a6b2f5ed98ee3d3477f7883b82bc26d9b"
+    },
+    {
+      "path": "gpu/chen_neural_decode.hip",
+      "bytes": 1311,
+      "sha256": "dcb0924bc30447be182bf591ad45a93a8df03a4f5096b599e349a6295c6026ce"
+    },
+    {
+      "path": "gpu/chen_replay.h",
+      "bytes": 3873,
+      "sha256": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6"
+    },
+    {
+      "path": "gpu/chen_rules.h",
+      "bytes": 5198,
+      "sha256": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391"
+    },
+    {
+      "path": "gpu/chen_rules.hip",
+      "bytes": 62694,
+      "sha256": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266"
+    },
+    {
+      "path": "gpu/chen_teacher.h",
+      "bytes": 2514,
+      "sha256": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    {
+      "path": "gpu/build_neural.sh",
+      "bytes": 1303,
+      "sha256": "e1d19a970caa01ec24641d5c59aa3ed252c4c795af804d3159fe08035446bb19"
+    },
+    {
+      "path": "gpu/neural_probe.py",
+      "bytes": 9428,
+      "sha256": "cf449fe8d5389bba426b487b3357e850650bd2b9679b83cddce1ffc7899a3f9b"
+    },
+    {
+      "path": "gpu/neural_copy_trace.cpp",
+      "bytes": 2307,
+      "sha256": "88fb04d65cca2893272f938fdb7b167b1bb084963514fb74b2b96aced1a7f8af"
+    },
+    {
+      "path": "scripts/rocm_run.sh",
+      "bytes": 5888,
+      "sha256": "ff2bc8787d50b821e51a91d7846c4b5acbe73e2be2ea70b1d69fc75b5009cb01"
+    },
+    {
+      "path": "scripts/match.py",
+      "bytes": 7410,
+      "sha256": "66da1c94c59e65e2ea6d561be198c5bf63491264b156ad76906d9fab4055af34"
+    },
+    {
+      "path": "../chen-neural/neural/bridge.py",
+      "bytes": 26867,
+      "sha256": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e"
+    },
+    {
+      "path": "../chen-neural/neural/compact.py",
+      "bytes": 25337,
+      "sha256": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3"
+    },
+    {
+      "path": "../chen-neural/neural/data.py",
+      "bytes": 11611,
+      "sha256": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16"
+    },
+    {
+      "path": "../chen-neural/neural/diamonds.py",
+      "bytes": 18005,
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854"
+    },
+    {
+      "path": "../chen-neural/neural/dynamics.py",
+      "bytes": 23362,
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc"
+    },
+    {
+      "path": "../chen-neural/neural/features.py",
+      "bytes": 4380,
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+    },
+    {
+      "path": "../chen-neural/neural/inference.py",
+      "bytes": 13850,
+      "sha256": "1d9800e055460ca7d26367c70a341770b8977db129ec3322d2b3f7ba5948fff2"
+    },
+    {
+      "path": "../chen-neural/neural/models.py",
+      "bytes": 11476,
+      "sha256": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b"
+    },
+    {
+      "path": "../chen-neural/neural/teacher.py",
+      "bytes": 36360,
+      "sha256": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918"
+    },
+    {
+      "path": "../chen-neural/neural/train.py",
+      "bytes": 14562,
+      "sha256": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_bridge.py",
+      "bytes": 22229,
+      "sha256": "7864421305b34c60fb02f1ad4c4c54fc76a40127d85129f5238147b6de44b924"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_compact.py",
+      "bytes": 14945,
+      "sha256": "473bfd8320bade52a74537402e73d57caecf9668e0a2106f9e4b98ad5d4df685"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_data.py",
+      "bytes": 12889,
+      "sha256": "e82e69fc92284532281cdd9a9fd011fd8e14491b08065b632dda8a8a57d1667c"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_diamonds.py",
+      "bytes": 5509,
+      "sha256": "42a66bafd1aa60396a570875f2f6b56f73e64f3817e68a5c6402dfa438f5ef0a"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_dynamics.py",
+      "bytes": 7409,
+      "sha256": "fae069a7ec44891cac8066e1193abac2e4fdaa77a101966b18c6a362675b3976"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_inference.py",
+      "bytes": 10483,
+      "sha256": "a71fa95fa1fd5b649af6aa00128e3ac3d08e5135dd9be3515cf11f5551a5dff4"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_models.py",
+      "bytes": 8344,
+      "sha256": "2539b0fb30b49837b1380c324d42b37a9fb010304f1df045476a47ddfa38e07f"
+    },
+    {
+      "path": "../chen-neural/neural/tests/test_teacher.py",
+      "bytes": 15801,
+      "sha256": "1b6f386d93f95d14f1ae3c68adb8a0a9d1867bb16e035145c1f3244f2f3f00f8"
+    }
+  ],
+  "logs": [
+    {
+      "path": "gpu/evidence/neural-clippy-2026-09-30.log",
+      "bytes": 125,
+      "sha256": "e54926fc788a4b771c23a631109a92d6da5bcca8e6fa1543f5c7b8cd039ca912"
+    },
+    {
+      "path": "gpu/evidence/neural-combined-gfx1030-2026-09-30.log",
+      "bytes": 16530,
+      "sha256": "fd3d246d4db1da1e3374d6c54ba03cf55b44dc8de62b10171219df9ff5c56592"
+    },
+    {
+      "path": "gpu/evidence/neural-harness-2026-09-30.log",
+      "bytes": 865,
+      "sha256": "80e1401c3f75ca29fd286df78eb457addc1a08648ee6bde50004b053b3672aef"
+    },
+    {
+      "path": "gpu/evidence/neural-native-fixtures-2026-09-30.log",
+      "bytes": 11193,
+      "sha256": "0428c8c584063f9181613a236e1b4364d28243f1f1d6d10fff521b21663ef47e"
+    },
+    {
+      "path": "gpu/evidence/neural-native-trained-2026-09-30.log",
+      "bytes": 5862,
+      "sha256": "ad240fc58d04f47e3eabf03fa0caf196948a8acd33de53c5a0a72e88e67a2c0f"
+    },
+    {
+      "path": "gpu/evidence/neural-rust-hardware-gfx1030-2026-09-30.log",
+      "bytes": 766,
+      "sha256": "1276f91e1f3e435cd02a74f1cdd4faee920144d295f34088f2a838ca1cb3efe5"
+    },
+    {
+      "path": "gpu/evidence/neural-rust-host-2026-09-30.log",
+      "bytes": 5205,
+      "sha256": "f4497c6ab02b5ede4cf4abbad55d46f8f5cc4e2afbbd8eba8bdbcf3f12026260"
+    },
+    {
+      "path": "gpu/evidence/neural-rust-portable-2026-09-30.log",
+      "bytes": 4187,
+      "sha256": "b28bef23c86b4a65e506b691e10e9171749cc9f302e9c3b635cda564ae79ca15"
+    },
+    {
+      "path": "gpu/evidence/neural-wrapper-bench-gfx1030-2026-09-30.log",
+      "bytes": 3602,
+      "sha256": "2c6697602442e92945a908975d84dec3bf02cf864687326cdd816f1be2f8d7db"
+    }
+  ],
+  "trained_models": [
+    {
+      "name": "square",
+      "archive_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "checkpoint_sha256": "9578e63d0b59f7164be15c3fca649243ad90b39d3e629a79c040f1606e711ea2",
+      "state_sha256": "ce8bdbf4ca3ed61cdb69c1c7b2695693c3bdef34e918160658989890f3afd2e6",
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "square",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "ce8bdbf4ca3ed61cdb69c1c7b2695693c3bdef34e918160658989890f3afd2e6",
+        "checkpoint_sha256": "9578e63d0b59f7164be15c3fca649243ad90b39d3e629a79c040f1606e711ea2",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "2d42af46bf2301dc58974d9ff0749fb9bd49a5814d0fc9b1e25f47b3e4c883b0",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    },
+    {
+      "name": "relation",
+      "archive_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+      "checkpoint_sha256": "1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83",
+      "state_sha256": "d3174d63aad01edd2fc9072313743d45cfc94b6fa8df0fe19b17628686888820",
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "relation",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "d3174d63aad01edd2fc9072313743d45cfc94b6fa8df0fe19b17628686888820",
+        "checkpoint_sha256": "1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "c3ac422dc675c607348483a3f6eb3dca5a33c8437ec556cb078286e02db1760e",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!",
+            "Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    },
+    {
+      "name": "plan",
+      "archive_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+      "checkpoint_sha256": "280abd80bdc0d8d365d46731d0bc6a39cd9ea2d3d3e8e5ce9075d2007d908a10",
+      "state_sha256": "eaa909d81b1baba547f639191ebed9042a883d79138c6cf616c4f388153496d6",
+      "manifest": {
+        "deployment_version": 1,
+        "feature_schema": 1,
+        "format": "torchscript_static_reference",
+        "torch_version": "2.10.0+rocm7.0",
+        "model_config": {
+          "name": "plan",
+          "width": 32,
+          "depth": 1,
+          "plan_tokens": 8
+        },
+        "state_sha256": "eaa909d81b1baba547f639191ebed9042a883d79138c6cf616c4f388153496d6",
+        "checkpoint_sha256": "280abd80bdc0d8d365d46731d0bc6a39cd9ea2d3d3e8e5ce9075d2007d908a10",
+        "target_kind": "finite_depth_minimax_cp_utility",
+        "input_dtype": "float32",
+        "input_shape": [
+          "B",
+          18,
+          8,
+          8
+        ],
+        "output_dtype": "int32",
+        "output_shape": [
+          "B"
+        ],
+        "max_batch": 256,
+        "perspective": "side_to_move",
+        "head_readout": "softmax_logits_2_minus_0",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "rounding": "nearest_even",
+        "score_limit": 29000,
+        "terminal_responsibility": "simulator",
+        "strength_evidence": false,
+        "provenance": {
+          "kind": "search_teacher_cp_utility_checkpoint",
+          "checkpoint_metadata_sha256": "80772fd80fc9af0f3e0e71a9c16386083341b72d7eea47c2ad90113a00253439",
+          "utility_contract": {
+            "kind": "bounded_search_cp_regression",
+            "scale_cp": 800.0,
+            "epsilon": 1e-06,
+            "mate_band": 29000,
+            "mate_value_loss_excluded": true
+          },
+          "training_config": {
+            "steps": 256,
+            "batch_size": 64,
+            "seed": 20260930,
+            "optimizer": "AdamW",
+            "learning_rate": 0.0003,
+            "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+            "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+          },
+          "teacher_manifest": {
+            "teacher_kind": "finite_depth_classical_minimax_search_targets",
+            "tree_depth": 3,
+            "parent_horizon": 2,
+            "evaluator": 1,
+            "scale_cp": 800.0,
+            "records": 3872,
+            "deduplication": "one resident first-ply parent, not repeated sibling edges"
+          },
+          "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+        },
+        "export_validation": {
+          "device": "cpu",
+          "batches": [
+            1,
+            3,
+            17
+          ],
+          "integer_scores_equal": true,
+          "tracer_warnings": [
+            "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!",
+            "Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Heldout teacher agreement trails material: best neural308cpMAE/49.6% action, material191cp/54.7%. Single seed short run; architectures not parameter matched.",
+    "Earlier teacher/inference/native/oracle reports retain their actual execution-stage source and binary hashes. Native C++ and copy probe comments were later clarified; wrapper recompiles current source.",
+    "Scoped3API nativecopy audit permits scalar-sized downloads, no observed board/feature H2D through those APIs; not a universal PCIe/runtime trace.",
+    "CPU artifact ingress, diagnostic inspection and small scalar/status transfers remain explicit boundaries.",
+    "Resident h2d_ms/d2h_ms0 are uninstrumented placeholders; kernel_ms includes host callback/barrier gaps. Cold timing is not steady-state throughput.",
+    "Static features omit repetition history; simulator terminals and retained history govern actual search.",
+    "Trusted generated version-pinned TorchScript reference; interchangeable callback supports future independently verified native/AOT replacements.",
+    "Long games, playing strength, selective resident scheduling, GPU selfplay and final Lichess rating remain open.",
+    "One fixed-binary diagnostic run timed out in a game and shutdown. Cause unexplained; fresh fourcase isolation and complete rerun passed unchanged30s watchdog. Failure logs retained; no claimed engine fix for this transient timeout."
+  ],
+  "independent_neural_search": {
+    "report": {
+      "path": "gpu/evidence/neural-search-gfx1030-2026-09-30.json",
+      "bytes": 62193,
+      "sha256": "7af2bb320f94858ff276a3d525a7f1e89a95d33dcc6c3db32d612b9e7bed90ab"
+    },
+    "raw_log": {
+      "path": "gpu/evidence/neural-search-gfx1030-2026-09-30.jsonl",
+      "bytes": 45455,
+      "sha256": "4c3d6669d17419bb63a3a4d693c4e7113ae1344f38a0c71ab6675888b8d983a0"
+    },
+    "summary": {
+      "record": "neural_search_summary",
+      "model_position_comparisons": 18,
+      "exact_scores": 18,
+      "iterative_oracle_evaluated_leaves": 11982,
+      "inputs_unchanged": true,
+      "limitations": [
+        "Finite six-position/two-ply oracle, not exhaustive search verification.",
+        "Optimal tie set compared; python-chess and Rust move orders differ.",
+        "Benchmark times include cold model/runtime work and are not steady-state speed claims.",
+        "Inherited resident h2d_ms/d2h_ms are unmeasured zero placeholders.",
+        "Legal games and UCI limits do not establish playing strength or 2500 Lichess."
+      ]
+    },
+    "legal_game_plies": 40,
+    "UCI_option_orders": [
+      {
+        "record": "neural_UCI_option_order",
+        "order": "neural-first",
+        "configuration": [
+          "info string backend creation failed: unknown evaluator: neural",
+          "readyok"
+        ],
+        "search": {
+          "bestmove": "h2h3",
+          "depths": [
+            1,
+            2
+          ],
+          "node_counts": [
+            21,
+            442
+          ],
+          "lines": [
+            "info depth 1 score cp -148 nodes 21 nps 46 hashfull 0 time 455 pv e2e4",
+            "info depth 2 score cp 149 nodes 442 nps 302 hashfull 0 time 1460 pv h2h3 e7e5",
+            "bestmove h2h3"
+          ]
+        },
+        "invalid_syntax": [
+          "info string invalid or unsupported option",
+          "readyok"
+        ],
+        "unsupported_configuration": [
+          "info string backend creation failed: neural evaluator requires hip-resident",
+          "readyok"
+        ],
+        "restored_configuration": [
+          "readyok"
+        ],
+        "recovered_search": {
+          "bestmove": "h2h3",
+          "depths": [
+            1,
+            2
+          ],
+          "node_counts": [
+            21,
+            442
+          ],
+          "lines": [
+            "info depth 1 score cp -148 nodes 21 nps 3025 hashfull 0 time 6 pv e2e4",
+            "info depth 2 score cp 149 nodes 442 nps 433 hashfull 0 time 1020 pv h2h3 e7e5",
+            "bestmove h2h3"
+          ]
+        },
+        "without_LD_PRELOAD": true,
+        "scope": "Startup binding/order and rejected-configuration recovery, no CPU substitution."
+      },
+      {
+        "record": "neural_UCI_option_order",
+        "order": "backend-first",
+        "configuration": [
+          "readyok"
+        ],
+        "search": {
+          "bestmove": "h2h3",
+          "depths": [
+            1,
+            2
+          ],
+          "node_counts": [
+            21,
+            442
+          ],
+          "lines": [
+            "info depth 1 score cp -148 nodes 21 nps 58 hashfull 0 time 357 pv e2e4",
+            "info depth 2 score cp 149 nodes 442 nps 334 hashfull 0 time 1321 pv h2h3 e7e5",
+            "bestmove h2h3"
+          ]
+        },
+        "invalid_syntax": [
+          "info string invalid or unsupported option",
+          "readyok"
+        ],
+        "unsupported_configuration": [
+          "info string backend creation failed: neural evaluator requires hip-resident",
+          "readyok"
+        ],
+        "restored_configuration": [
+          "readyok"
+        ],
+        "recovered_search": {
+          "bestmove": "h2h3",
+          "depths": [
+            1,
+            2
+          ],
+          "node_counts": [
+            21,
+            442
+          ],
+          "lines": [
+            "info depth 1 score cp -148 nodes 21 nps 2948 hashfull 0 time 7 pv e2e4",
+            "info depth 2 score cp 149 nodes 442 nps 465 hashfull 0 time 949 pv h2h3 e7e5",
+            "bestmove h2h3"
+          ]
+        },
+        "without_LD_PRELOAD": true,
+        "scope": "Startup binding/order and rejected-configuration recovery, no CPU substitution."
+      }
+    ],
+    "game_scope": "Two20-ply nonterminal legal protocol exercises, not rating/strength evidence."
+  },
+  "failure_and_isolation_evidence": [
+    {
+      "path": "gpu/evidence/neural-search-before-prebind-gfx1030-2026-09-30.json",
+      "bytes": 49617,
+      "sha256": "46ac40e0186cd9cc4befc366cfddd83a874a7a6685f97d4f163d5f38bdc6340c"
+    },
+    {
+      "path": "gpu/evidence/neural-search-before-prebind-gfx1030-2026-09-30.jsonl",
+      "bytes": 35902,
+      "sha256": "2f87ac9027d6bda89b4875f132a36b9d68aad2cc4bc6942a6b422ac58893d1af"
+    },
+    {
+      "path": "gpu/evidence/neural-search-game-isolation-gfx1030-2026-10-01.json",
+      "bytes": 5705,
+      "sha256": "5ac1e04b2a1dc1f12af9387ff0aebc13a61681fec97f6111d77c4b93b2caa8c2"
+    },
+    {
+      "path": "gpu/evidence/neural-search-game-isolation-gfx1030-2026-10-01.jsonl",
+      "bytes": 3843,
+      "sha256": "ce46d0ba5598dedda9dbcba689cd94f9d613c0e375e0d4a73a763376138412a9"
+    },
+    {
+      "path": "gpu/evidence/neural-search-pre-diagnostic-timeout-gfx1030-2026-09-30.json",
+      "bytes": 46812,
+      "sha256": "e3ee4956d99e92ee25de3297b5769071aaca1019216ae92781939254510bce7f"
+    },
+    {
+      "path": "gpu/evidence/neural-search-pre-diagnostic-timeout-gfx1030-2026-09-30.jsonl",
+      "bytes": 34491,
+      "sha256": "9e95ef6c6425a0d8b6dc3aede1ab13afe038a87dd3a71f8197d8d068f2d7cfbf"
+    }
+  ],
+  "console_log_normalization": [
+    {
+      "path": "gpu/evidence/neural-rust-hardware-gfx1030-2026-09-30.log",
+      "change": "Remove trailing empty console lines only",
+      "raw_console_sha256": "1a90323a6985a88feb96beb2513cef133cdcd4ca36642e264a9a5abe66faf738",
+      "stored_sha256": "1276f91e1f3e435cd02a74f1cdd4faee920144d295f34088f2a838ca1cb3efe5"
+    },
+    {
+      "path": "gpu/evidence/neural-rust-host-2026-09-30.log",
+      "change": "Remove trailing empty console lines only",
+      "raw_console_sha256": "fdf18399e9377b82aae833c4f4ddcc954b6160b9d24e6a02f8af00ec6806552d",
+      "stored_sha256": "f4497c6ab02b5ede4cf4abbad55d46f8f5cc4e2afbbd8eba8bdbcf3f12026260"
+    },
+    {
+      "path": "gpu/evidence/neural-rust-portable-2026-09-30.log",
+      "change": "Remove trailing empty console lines only",
+      "raw_console_sha256": "a83e03f95e1f297686e7d5fc25650562451efadcfa01ef67e605123f5a6df8f0",
+      "stored_sha256": "b28bef23c86b4a65e506b691e10e9171749cc9f302e9c3b635cda564ae79ca15"
+    }
+  ]
+}

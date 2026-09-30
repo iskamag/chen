@@ -1,0 +1,12 @@
+test_illegal_move_is_a_technical_failure (test_match.MatchTests.test_illegal_move_is_a_technical_failure) ... ok
+test_mate_at_ply_cap_is_completed (test_match.MatchTests.test_mate_at_ply_cap_is_completed) ... ok
+test_ply_cap_is_inconclusive (test_match.MatchTests.test_ply_cap_is_inconclusive) ... ok
+test_bootstrap_reproducible_and_color_pairing_preserved (test_stats.PairedStatsTests.test_bootstrap_reproducible_and_color_pairing_preserved) ... ok
+test_no_infinite_rating_and_no_small_sample_confidence (test_stats.PairedStatsTests.test_no_infinite_rating_and_no_small_sample_confidence) ... ok
+test_pentanomial_bins_and_score (test_stats.PairedStatsTests.test_pentanomial_bins_and_score) ... ok
+test_validation (test_stats.PairedStatsTests.test_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.027s
+
+OK

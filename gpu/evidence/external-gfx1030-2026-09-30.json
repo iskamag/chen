@@ -1,0 +1,46 @@
+{
+  "kind": "gfx1030_external_leaf_callback_commit_protocol",
+  "date": "2026-09-30",
+  "base_commit": "37ce4a9",
+  "source_sha256": {
+    "gpu/chen_rules.hip": "a67a9333bc8299b65bb5ad69e5f34ee76127402ff265fbd5dd8fe40a81a41266",
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/external_probe.py": "e8f1da3c529ebf9c7f98d358b43eaaf843df56421f4ee63ab30c530b1d0ec889",
+    "gpu/external_probe.hip": "e457dde674d4f5897ebc33d359e4648c4d2ea71b11aeda2347b89eeb522620e1",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4"
+  },
+  "library_sha256": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+  "callback_fixture_library_sha256": "1716352f7be0c46e13155c97825f5f176e13734217a1e643d4a708209d5dbbfa",
+  "probe_log_sha256": "41d0622b914f0061b42a733265eaa5e2ebe2a2ffc309d269593c23eee8d76d1d",
+  "probe_command": "python3 gpu/external_probe.py libchen_gpu.so libexternal_probe.so",
+  "fixture_compile_command": "hipcc -O2 -std=c++17 --offload-arch=gfx1030 -fPIC -shared -Wall -Wextra -Werror external_probe.hip -o libexternal_probe.so",
+  "records": [
+    {
+      "record": "external_callback_contract",
+      "target": "gfx1030",
+      "device_only_synthetic_fixture": true,
+      "chunk_failure_no_static_commit": true,
+      "missing_or_out_of_range_rejected": true,
+      "retry_success": true,
+      "idempotent_no_callback": true,
+      "terminal_and_empty_no_callback": true,
+      "mate_before_halfmove_draw": true,
+      "descriptor_runtime_and_mode_locks": true,
+      "expanded_phase_rejected": true,
+      "static_score17_root_negamax_minus17": true,
+      "scope": "GPU callback lifecycle/commit protocol only, not learned inference or strength."
+    }
+  ],
+  "timing_scope": "Cumulative kernel_ms includes callback event spans, inference and host/barrier/dispatch gaps; not pure GPU active time.",
+  "limitations": [
+    "Device-only synthetic callback contract test; no learned model inference or strength proof.",
+    "Callback completes its own streams by trusted contract; rules cannot independently detect a malicious asynchronous callback.",
+    "Terminal classification can persist on callback failure; only static external outputs have whole-range commit preflight."
+  ]
+}

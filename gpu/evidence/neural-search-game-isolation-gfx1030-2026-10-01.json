@@ -1,0 +1,193 @@
+{
+  "kind": "bounded_fresh_UCI_process_isolations",
+  "status": "pass",
+  "cases": 4,
+  "completed_searches": 6,
+  "scope": "Exact initial first-game board, neural alone, Tapered alone and both engine creation orders with both processes alive. This does not reproduce every earlier lifecycle step.",
+  "exit_code": 0,
+  "without_LD_PRELOAD": true,
+  "raw_log_sha256": "ce46d0ba5598dedda9dbcba689cd94f9d613c0e375e0d4a73a763376138412a9",
+  "records": [
+    {
+      "record": "neural_game_isolation_begin",
+      "case": "neural-alone",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "engine_sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "model_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3"
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "neural-alone",
+      "evaluator": "neural",
+      "configuration": [
+        "info string backend creation failed: unknown evaluator: neural",
+        "readyok"
+      ],
+      "move": "h1g1",
+      "search": {
+        "bestmove": "h1g1",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp -45 nodes 28 nps 67 hashfull 0 time 415 pv h1g1",
+          "info depth 2 score cp 158 nodes 891 nps 670 hashfull 0 time 1329 pv h1g1 e8e7",
+          "bestmove h1g1"
+        ]
+      }
+    },
+    {
+      "record": "neural_game_isolation_begin",
+      "case": "tapered-alone",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "engine_sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "model_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3"
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "tapered-alone",
+      "evaluator": "tapered",
+      "configuration": [
+        "readyok"
+      ],
+      "move": "b1c3",
+      "search": {
+        "bestmove": "b1c3",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp 172 nodes 28 nps 6021 hashfull 0 time 4 pv f3e5",
+          "info depth 2 score cp 0 nodes 891 nps 143872 hashfull 0 time 6 pv b1c3 g8f6",
+          "bestmove b1c3"
+        ]
+      }
+    },
+    {
+      "record": "neural_game_isolation_begin",
+      "case": "tapered-then-neural",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "engine_sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "model_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3"
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "tapered-then-neural",
+      "evaluator": "tapered",
+      "configuration": [
+        "readyok"
+      ],
+      "move": "b1c3",
+      "search": {
+        "bestmove": "b1c3",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp 172 nodes 28 nps 6206 hashfull 0 time 4 pv f3e5",
+          "info depth 2 score cp 0 nodes 891 nps 149080 hashfull 0 time 5 pv b1c3 g8f6",
+          "bestmove b1c3"
+        ]
+      }
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "tapered-then-neural",
+      "evaluator": "neural",
+      "configuration": [
+        "info string backend creation failed: unknown evaluator: neural",
+        "readyok"
+      ],
+      "move": "h1g1",
+      "search": {
+        "bestmove": "h1g1",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp -45 nodes 28 nps 62 hashfull 0 time 444 pv h1g1",
+          "info depth 2 score cp 158 nodes 891 nps 640 hashfull 0 time 1390 pv h1g1 e8e7",
+          "bestmove h1g1"
+        ]
+      }
+    },
+    {
+      "record": "neural_game_isolation_begin",
+      "case": "neural-then-tapered",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "engine_sha256": "6a908f52a0fd6d6bbb0cb9a0abf4a429b771593a0c4b3128b4dfea0958b2be68",
+      "model_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3"
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "neural-then-tapered",
+      "evaluator": "neural",
+      "configuration": [
+        "info string backend creation failed: unknown evaluator: neural",
+        "readyok"
+      ],
+      "move": "h1g1",
+      "search": {
+        "bestmove": "h1g1",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp -45 nodes 28 nps 62 hashfull 0 time 446 pv h1g1",
+          "info depth 2 score cp 158 nodes 891 nps 631 hashfull 0 time 1410 pv h1g1 e8e7",
+          "bestmove h1g1"
+        ]
+      }
+    },
+    {
+      "record": "neural_game_isolation_search",
+      "case": "neural-then-tapered",
+      "evaluator": "tapered",
+      "configuration": [
+        "readyok"
+      ],
+      "move": "b1c3",
+      "search": {
+        "bestmove": "b1c3",
+        "depths": [
+          1,
+          2
+        ],
+        "node_counts": [
+          28,
+          891
+        ],
+        "lines": [
+          "info depth 1 score cp 172 nodes 28 nps 6913 hashfull 0 time 4 pv f3e5",
+          "info depth 2 score cp 0 nodes 891 nps 161126 hashfull 0 time 5 pv b1c3 g8f6",
+          "bestmove b1c3"
+        ]
+      }
+    }
+  ]
+}

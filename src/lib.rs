@@ -7,6 +7,8 @@ pub mod eval;
 pub mod frontier;
 #[cfg(all(feature = "hip", target_os = "linux"))]
 pub mod hip;
+#[cfg(all(feature = "hip", target_os = "linux"))]
+pub mod neural;
 pub mod resident;
 pub mod rules;
 pub mod search;

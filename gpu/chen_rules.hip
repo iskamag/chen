@@ -1,5 +1,7 @@
 #include "chen_rules.h"
 #include "chen_replay.h"
+#include "chen_teacher.h"
+#include "chen_external.h"
 #include <hip/hip_runtime.h>
 #include <cmath>
 #include <cstdio>
@@ -422,6 +424,9 @@ struct ChenRulesContext {
     Summary *summary=nullptr;ChenRulesResult *result=nullptr;
     hipStream_t stream=nullptr;hipEvent_t begin=nullptr,end=nullptr;
     hipEvent_t transfers[4]={};
+    ChenExternalEvaluate external_callback=nullptr;
+    void *external_owner=nullptr;
+    uint64_t external_max_batch=0;
 };
 namespace {
 int32_t fail(char *error,uint64_t capacity,const char *message,int32_t code=-1) {
@@ -454,6 +459,7 @@ int32_t complete(ChenRulesContext *ctx,double *ms,char *error,uint64_t capacity)
         case 1:return fail(error,capacity,"invalid rules position or mismatched hash");
         case 2:return fail(error,capacity,"rules arena/move capacity exceeded",CHEN_RULES_CAPACITY);
         case 3:return fail(error,capacity,"requested move is not legal");
+        case 5:return fail(error,capacity,"external evaluator score missing or outside +/-29000");
         default:return fail(error,capacity,"invalid resident tree stage or incomplete child scores");
     }
 }
@@ -603,6 +609,7 @@ extern "C" int32_t chen_rules_reset(ChenRulesContext *ctx,const ChenRulePosition
     if(history_count>65535) return fail(error,cap,"root history exceeds 65535 hashes",CHEN_RULES_CAPACITY);
     if(ctx->root_epoch==UINT64_MAX) return fail(error,cap,"root epoch exhausted; create a new context");
     ctx->used=0;ctx->history_count=history_count;ctx->kernel_total_ms=0;ctx->mode=-1;ctx->evaluator=-1;
+    ctx->external_callback=nullptr;ctx->external_owner=nullptr;ctx->external_max_batch=0;
     *ctx->host_positions=*root;int32_t result=prepare(ctx,error,cap);if(result) return result;
     hipError_t code=hipMemcpyAsync(ctx->positions,ctx->host_positions,sizeof(*root),hipMemcpyHostToDevice,ctx->stream);
     if(code==hipSuccess && history_count) code=hipMemcpyAsync(ctx->history,history,history_count*sizeof(*history),hipMemcpyHostToDevice,ctx->stream);
@@ -782,19 +789,12 @@ struct ReplayRange { uint64_t address,bytes; };
 bool overlaps(ReplayRange a,ReplayRange b) {
     return a.address<b.address+b.bytes && b.address<a.address+a.bytes;
 }
-int32_t replay_sink_valid(ChenRulesContext *ctx,const ChenReplaySink &sink,
+int32_t export_intervals_valid(ChenRulesContext *ctx,const uint64_t *addresses,
+    const uint64_t *strides,const uint64_t *alignments,uint32_t n,uint64_t capacity,
     char *error,uint64_t cap) {
-    if(sink.abi_version!=1 || sink.struct_size!=sizeof(ChenReplaySink) ||
-        sink.device!=ctx->device || !sink.legal_slots || sink.legal_slots>CHEN_RULES_MAX_MOVES ||
-        sink.capacity>uint64_t(INT32_MAX)) return fail(error,cap,"invalid replay sink schema/device/capacity");
-    const uint64_t addresses[]={sink.pieces,sink.state,sink.next_pieces,sink.next_state,
-        sink.legal_actions,sink.legal_counts,sink.actions,sink.material_proxy,sink.terminal,
-        sink.parent_hash,sink.child_hash,sink.parent_node,sink.child_node,sink.root_epoch};
-    const uint64_t strides[]={96,20,96,20,uint64_t(sink.legal_slots)*2,4,8,4,1,8,8,8,8,8};
-    const uint64_t alignments[]={8,4,8,4,2,4,8,4,1,8,8,8,8,8};
     ReplayRange ranges[14]{};
-    for(int i=0;i<14;++i) {
-        const uint64_t bytes=sink.capacity*strides[i],address=addresses[i];
+    for(uint32_t i=0;i<n;++i) {
+        const uint64_t bytes=capacity*strides[i],address=addresses[i];
         if(!bytes) continue;
         if(!address || address%alignments[i] || address>UINT64_MAX-bytes)
             return fail(error,cap,"null, misaligned or overflowing replay sink interval");
@@ -810,7 +810,7 @@ int32_t replay_sink_valid(ChenRulesContext *ctx,const ChenReplaySink &sink,
         if(address<beginning || address-beginning>allocation || bytes>allocation-(address-beginning))
             return fail(error,cap,"replay sink interval exceeds GPU allocation bounds");
         ranges[i]={address,bytes};
-        for(int j=0;j<i;++j) if(ranges[j].bytes && overlaps(ranges[i],ranges[j]))
+        for(uint32_t j=0;j<i;++j) if(ranges[j].bytes && overlaps(ranges[i],ranges[j]))
             return fail(error,cap,"replay sink output intervals overlap");
     }
     // Even guessed internal pointers cannot turn the snapshot into a live alias.
@@ -831,6 +831,18 @@ int32_t replay_sink_valid(ChenRulesContext *ctx,const ChenReplaySink &sink,
         for(const auto internal:arena) if(overlaps(range,internal))
             return fail(error,cap,"replay sink aliases private arena memory");
     return 0;
+}
+int32_t replay_sink_valid(ChenRulesContext *ctx,const ChenReplaySink &sink,
+    char *error,uint64_t cap) {
+    if(sink.abi_version!=1 || sink.struct_size!=sizeof(ChenReplaySink) ||
+        sink.device!=ctx->device || !sink.legal_slots || sink.legal_slots>CHEN_RULES_MAX_MOVES ||
+        sink.capacity>uint64_t(INT32_MAX)) return fail(error,cap,"invalid replay sink schema/device/capacity");
+    const uint64_t addresses[]={sink.pieces,sink.state,sink.next_pieces,sink.next_state,
+        sink.legal_actions,sink.legal_counts,sink.actions,sink.material_proxy,sink.terminal,
+        sink.parent_hash,sink.child_hash,sink.parent_node,sink.child_node,sink.root_epoch};
+    const uint64_t strides[]={96,20,96,20,uint64_t(sink.legal_slots)*2,4,8,4,1,8,8,8,8,8};
+    const uint64_t alignments[]={8,4,8,4,2,4,8,4,1,8,8,8,8,8,8};
+    return export_intervals_valid(ctx,addresses,strides,alignments,14,sink.capacity,error,cap);
 }
 }
 extern "C" uint32_t chen_replay_abi_version() { return 1; }
@@ -873,4 +885,184 @@ extern "C" int32_t chen_rules_export_transitions(ChenRulesContext *ctx,uint64_t 
         ctx->positions,ctx->nodes,ctx->moves,ctx->flags,child_start,count,ctx->root_epoch,*sink);
     double export_ms=0;status=complete(ctx,&export_ms,error,cap);if(status) return status;
     *out=ChenReplayExport{count,ctx->root_epoch,validation_ms+export_ms};return 0;
+}
+
+namespace {
+__global__ void teacher_preflight(const Node *nodes,const ChenRuleMove *moves,
+    const uint32_t *counts,uint64_t start,uint64_t count,uint64_t used,uint32_t *error) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t child_id=start+row;
+    const Node edge=nodes[child_id];
+    if(edge.parent>=used) { device_error(error,4);return; }
+    const Node parent=nodes[edge.parent];
+    if(!(parent.flags&EXPANDED) || !(parent.flags&SCORED) || (parent.flags&TERMINAL) ||
+        !parent.child_count || parent.first_child>=used || parent.child_count>used-parent.first_child ||
+        child_id<parent.first_child || child_id-parent.first_child>=parent.child_count ||
+        parent.child_count!=counts[edge.parent]) { device_error(error,4);return; }
+    const ChenRuleMove expected=moves[edge.parent*CHEN_RULES_MAX_MOVES+child_id-parent.first_child];
+    if(edge.move.from!=expected.from || edge.move.to!=expected.to ||
+        edge.move.promotion!=expected.promotion || edge.move.reserved) { device_error(error,4);return; }
+    int best=-MATE-1;uint64_t winner=NONE;
+    for(uint32_t i=0;i<parent.child_count;++i) {
+        const uint64_t child=parent.first_child+i;
+        if(!(nodes[child].flags&SCORED)) { device_error(error,4);return; }
+        const int score=-nodes[child].score;
+        if(score>best) { best=score;winner=child; }
+    }
+    if(parent.best!=winner || parent.score!=best) device_error(error,4);
+}
+__global__ void teacher_export_kernel(const ChenRulePosition *positions,const Node *nodes,
+    uint64_t start,uint64_t count,ChenTeacherSink sink) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t parent_id=nodes[start+row].parent;
+    const Node parent=nodes[parent_id];
+    reinterpret_cast<int32_t *>(sink.scores)[row]=parent.score;
+    reinterpret_cast<int64_t *>(sink.best_actions)[row]=replay_action(nodes[parent.best].move,positions[parent_id].side);
+    reinterpret_cast<int32_t *>(sink.parent_ply)[row]=int32_t(parent.ply);
+}
+}
+extern "C" uint32_t chen_teacher_abi_version() { return 1; }
+extern "C" int32_t chen_rules_export_teacher(ChenRulesContext *ctx,uint64_t child_start,
+    uint64_t count,uint64_t expected_epoch,const ChenTeacherSink *sink,ChenTeacherExport *out,
+    char *error,uint64_t cap) {
+    clear_error(error,cap);
+    if(ctx && expected_epoch!=ctx->root_epoch) return fail(error,cap,"stale teacher root epoch");
+    if(!ctx || !sink || !out || !range_valid(ctx,child_start,count) || (count && !child_start) || ctx->mode!=1 || ctx->evaluator>1)
+        return fail(error,cap,"invalid teacher selection or non-search arena");
+    if(sink->abi_version!=1 || sink->struct_size!=sizeof(ChenTeacherSink) || sink->device!=ctx->device ||
+        sink->reserved || sink->capacity>uint64_t(INT32_MAX)) return fail(error,cap,"invalid teacher sink schema/device/capacity");
+    hipError_t code=hipSetDevice(ctx->device);
+    if(code!=hipSuccess) return hip_fail(error,cap,code);
+    const uint64_t addresses[]={sink->scores,sink->best_actions,sink->parent_ply};
+    const uint64_t strides[]={4,8,4},alignments[]={4,8,4};
+    int32_t status=export_intervals_valid(ctx,addresses,strides,alignments,3,sink->capacity,error,cap);
+    if(status) return status;
+    if(count>sink->capacity) return fail(error,cap,"teacher sink row capacity exceeded",CHEN_RULES_CAPACITY);
+    if(!count) { *out=ChenTeacherExport{0,ctx->root_epoch,0,ctx->evaluator,1};return 0; }
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(teacher_preflight,grid(count),dim3(64),0,ctx->stream,
+        ctx->nodes,ctx->moves,ctx->counts,child_start,count,ctx->used,&ctx->summary->error);
+    double validation_ms=0;status=complete(ctx,&validation_ms,error,cap);if(status) return status;
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(teacher_export_kernel,grid(count),dim3(64),0,ctx->stream,
+        ctx->positions,ctx->nodes,child_start,count,*sink);
+    double export_ms=0;status=complete(ctx,&export_ms,error,cap);if(status) return status;
+    *out=ChenTeacherExport{count,ctx->root_epoch,validation_ms+export_ms,ctx->evaluator,1};return 0;
+}
+
+namespace {
+__global__ void external_phase_preflight(const Node *nodes,uint64_t start,uint64_t count,uint32_t *error) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row<count && (nodes[start+row].flags&EXPANDED)) device_error(error,4);
+}
+__global__ void external_scores_initialize(const Node *nodes,uint32_t *scratch,uint64_t start,
+    uint64_t count,Summary *summary) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t i=start+row;
+    scratch[i]=uint32_t(INT32_MIN);
+    if(!(nodes[i].flags&SCORED)) atomicAdd(reinterpret_cast<unsigned long long *>(&summary->next_count),1ull);
+}
+__global__ void external_score_preflight(const Node *nodes,const uint32_t *scratch,uint64_t start,
+    uint64_t count,uint32_t *error) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t i=start+row;
+    if(!(nodes[i].flags&SCORED)) {
+        const int32_t score=int32_t(scratch[i]);
+        if(score<-MAX_EVAL || score>MAX_EVAL) device_error(error,5);
+    }
+}
+__global__ void external_score_commit(Node *nodes,const uint32_t *scratch,uint64_t start,
+    uint64_t count,unsigned long long *evaluated) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t i=start+row;
+    if(!(nodes[i].flags&SCORED)) {
+        nodes[i].score=int32_t(scratch[i]);nodes[i].flags|=SCORED;
+        atomicAdd(evaluated,1ull);
+    }
+}
+}
+extern "C" uint32_t chen_external_abi_version() { return 1; }
+extern "C" int32_t chen_rules_evaluate_external(ChenRulesContext *ctx,uint64_t start,uint64_t count,
+    const ChenExternalEvaluator *desc,ChenRulesStats *stats,char *error,uint64_t cap) {
+    clear_error(error,cap);
+    if(!ctx || !desc || !stats || !range_valid(ctx,start,count))
+        return fail(error,cap,"invalid external evaluation range/buffers");
+    if(desc->abi_version!=1 || desc->struct_size!=sizeof(ChenExternalEvaluator) ||
+        !desc->evaluate || !desc->max_batch || desc->max_batch>uint64_t(INT32_MAX) || desc->reserved)
+        return fail(error,cap,"invalid external evaluator descriptor");
+    for(uint32_t i=0;i<5;++i)
+        if(desc->runtime_identity[i]!=chen_replay_runtime_identity(i))
+            return fail(error,cap,"external evaluator HIP runtime identity mismatch");
+    if(ctx->evaluator>=0 && ctx->evaluator!=2)
+        return fail(error,cap,"resident evaluator cannot change before reset");
+    if(ctx->external_callback && (ctx->external_callback!=desc->evaluate || ctx->external_owner!=desc->owner ||
+        ctx->external_max_batch!=desc->max_batch)) return fail(error,cap,"external evaluator identity cannot change before reset");
+    int32_t status=lock_mode(ctx,1,error,cap);if(status) return status;
+    ctx->evaluator=2;ctx->external_callback=desc->evaluate;ctx->external_owner=desc->owner;ctx->external_max_batch=desc->max_batch;
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    if(count) hipLaunchKernelGGL(external_phase_preflight,grid(count),dim3(64),0,ctx->stream,
+        ctx->nodes,start,count,&ctx->summary->error);
+    status=complete(ctx,nullptr,error,cap);if(status) return status;
+    // Terminal adjudication remains owned by rules. It may commit exact terminal
+    // scores even if the later external callback fails; no static scores commit.
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    if(count) hipLaunchKernelGGL(classify_kernel,grid(count),dim3(64),0,ctx->stream,
+        ctx->positions,ctx->nodes,ctx->moves,ctx->counts,start,count,1,
+        ctx->history,ctx->history_count,ctx->classified,&ctx->summary->error);
+    status=complete(ctx,nullptr,error,cap);if(status) return status;
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    if(count) hipLaunchKernelGGL(external_scores_initialize,grid(count),dim3(64),0,ctx->stream,
+        ctx->nodes,ctx->flags,start,count,ctx->summary);
+    status=complete(ctx,nullptr,error,cap);if(status) return status;
+    Summary pending{};
+    hipError_t code=hipMemcpy(&pending,ctx->summary,sizeof(pending),hipMemcpyDeviceToHost);
+    if(code!=hipSuccess) return hip_fail(error,cap,code);
+    if(!pending.next_count) return statistics(ctx,stats,0,error,cap);
+    for(uint64_t offset=0;offset<count;) {
+        const uint64_t n=(count-offset<desc->max_batch)?count-offset:desc->max_batch;
+        code=hipSetDevice(ctx->device);
+        if(code==hipSuccess) code=hipEventRecord(ctx->begin,ctx->stream);
+        if(code==hipSuccess) code=hipStreamSynchronize(ctx->stream);
+        if(code!=hipSuccess) { (void)hipStreamSynchronize(ctx->stream);return hip_fail(error,cap,code); }
+        int32_t callback_status=0;
+        try {
+            callback_status=desc->evaluate(desc->owner,ctx->device,ctx->positions+start+offset,n,
+                reinterpret_cast<int32_t *>(ctx->flags+start+offset),error,cap);
+        } catch(...) {
+            fail(error,cap,"external callback crossed C ABI with an exception");
+            callback_status=-1;
+        }
+        code=hipSetDevice(ctx->device);
+        if(code==hipSuccess) code=hipEventRecord(ctx->end,ctx->stream);
+        if(code==hipSuccess) code=hipStreamSynchronize(ctx->stream);
+        float callback_ms=0;
+        if(code==hipSuccess) code=hipEventElapsedTime(&callback_ms,ctx->begin,ctx->end);
+        if(code==hipSuccess) ctx->kernel_total_ms+=callback_ms;
+        if(callback_status) {
+            if(error && cap && !*error) fail(error,cap,"external evaluator callback failed");
+            return -1;
+        }
+        if(code!=hipSuccess) return hip_fail(error,cap,code);
+        offset+=n;
+    }
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(external_score_preflight,grid(count),dim3(64),0,ctx->stream,
+        ctx->nodes,ctx->flags,start,count,&ctx->summary->error);
+    status=complete(ctx,nullptr,error,cap);if(status) return status;
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(external_score_commit,grid(count),dim3(64),0,ctx->stream,
+        ctx->nodes,ctx->flags,start,count,ctx->evaluated);
+    status=complete(ctx,nullptr,error,cap);return status?status:statistics(ctx,stats,0,error,cap);
 }

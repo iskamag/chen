@@ -17,6 +17,10 @@ Launcher-only provenance is explicitly labeled. For `scripts/rocm_run.sh uci`,
 set `capture_rocm_artifacts: true` in that engine entry: the wrapper saves the
 actual copied Rust executable, compiled HIP library, copied GPU sources,
 compiler version, container image ID and SHA-256 manifest beneath the run.
+For neural runs, declare `CHEN_NEURAL_MODEL` in the entry environment and select
+`Backend=hip-resident`, `Eval=neural`. Wrapper artifact capture also saves the
+actual model/manifest and native inference plugin. Compare identical opening
+pairs with predeclared budgets; numerical inference parity is not strength evidence.
 Relevant environment overrides must be declared in the engine's `env` mapping;
 undeclared inherited environment remains a reproducibility limit.
 
