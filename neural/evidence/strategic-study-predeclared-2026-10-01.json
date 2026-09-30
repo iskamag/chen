@@ -1,0 +1,115 @@
+{
+  "kind": "strategic_action_study_predeclaration",
+  "strength_evidence": false,
+  "status": "sealed_before_timing_or_study_training",
+  "configuration": {
+    "families": {
+      "train": 96,
+      "validation": 24,
+      "test": 24
+    },
+    "corpus_seed": 20261003,
+    "seeds": [
+      20261003,
+      20261004
+    ],
+    "steps": 1024,
+    "pairs": 8,
+    "width": 16,
+    "depth": 1,
+    "tree_depth": 3,
+    "root_horizon": 3,
+    "child_target_horizon": 2,
+    "evaluator": "classical_tapered1",
+    "arena_capacity": 250000,
+    "architectures": [
+      "square",
+      "relation",
+      "plan"
+    ],
+    "controls": [
+      "transport",
+      "conditioned",
+      "action_blind",
+      "transport_fixed_encoder",
+      "transport_zero_anchor"
+    ],
+    "loss_weights": {
+      "value": 1.0,
+      "score_delta": 0.5,
+      "refresh": 0.05,
+      "latent_delta": 0.05
+    },
+    "loss_scale_cp": 800.0,
+    "teacher_gap_cp": 100,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "grad_clip": 1.0,
+    "latent_target": "frozen initial comparable encoder; never updated or optimized",
+    "batch": "8 broad root-uniform sibling pairs plus8 informative same-material pairs when available; 32rows with informative pool",
+    "selection": "seed-mean CP MAE AND complete-root regret beat BOTH material and static Tapered; choose lowest regret then MAE then names",
+    "test_protocol": "test labels produced only after validation selection JSON written and sealed; all final models evaluated once; no later optimization"
+  },
+  "source_sha256": {
+    "neural/strategic_study.py": "460ea267946a302e8499a5ef39bc1188da29652b60d12c5d6747450fb0a554db",
+    "neural/tests/test_strategic_study.py": "70602b1f6f9b90adc9c82d201c7cdc0d209705fa95caff32cfb45020efc65e6c",
+    "neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "neural/tests/test_strategic_transport.py": "10a0d75f1d6d2d14f189b6673185632060b6c35965b554eea17ce0f076f47ef3",
+    "neural/teacher.py": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
+    "neural/bridge.py": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/value_study.py": "9ce8b91d260e6e0c60b126ded6ad251fd758b6c109788063c2f209c1b29728a7"
+  },
+  "spent_reports": [
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.json",
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+      "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+    },
+    {
+      "path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+      "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+    }
+  ],
+  "producer_manifest_sha256": "6b16f187f8130226afbedb7b134bcd10db6101b8e50e6fbd174c1860a5ca907d",
+  "teacher_library_sha256": "5e0e0dd026211a6489c20faf90dcf0c3d3e7677daa64f5bd85a6a79765e167c4",
+  "timing_pilot": {
+    "seed": 999907,
+    "steps": 64,
+    "architecture": "relation",
+    "controls": [
+      "transport",
+      "conditioned",
+      "action_blind",
+      "transport_fixed_encoder",
+      "transport_zero_anchor"
+    ],
+    "width": 16,
+    "depth": 1,
+    "pairs": 8,
+    "arena_capacity": 250000,
+    "split_path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "split_sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38",
+    "main_corpus_overlap": "pilot entire admitted lineage excluded from main split",
+    "scope": "timing/finite-mechanics only; no main validation or test labels; no objective/selection tuning"
+  },
+  "verification": {
+    "gpu_log": "neural/evidence/strategic-study-gfx1030-tests-2026-10-01.log",
+    "gpu_all17_executed": true,
+    "cpu_log": "neural/evidence/strategic-study-cpu-2026-10-01.log",
+    "scope": "new study and transport only; old seams unmodified"
+  }
+}

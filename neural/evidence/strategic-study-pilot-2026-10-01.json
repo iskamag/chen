@@ -1,0 +1,2331 @@
+{
+  "kind": "disposable_strategic_timing_pilot",
+  "strength_evidence": false,
+  "configuration": {
+    "seed": 999907,
+    "steps": 64,
+    "architecture": "relation",
+    "controls": [
+      "transport",
+      "conditioned",
+      "action_blind",
+      "transport_fixed_encoder",
+      "transport_zero_anchor"
+    ],
+    "width": 16,
+    "depth": 1,
+    "pairs": 8,
+    "arena_capacity": 250000,
+    "split_path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "split_sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38",
+    "main_corpus_overlap": "pilot entire admitted lineage excluded from main split",
+    "scope": "timing/finite-mechanics only; no main validation or test labels; no objective/selection tuning"
+  },
+  "corpus": {
+    "coverage": {
+      "input_roots": 12,
+      "input_actions": 383,
+      "retained_roots": 12,
+      "retained_actions": 383,
+      "omissions": {}
+    },
+    "lineage": [
+      {
+        "root": {
+          "family_id": 0,
+          "ply": 12,
+          "fen": "rnbqkbnr/1pp1ppp1/p7/3p4/P4NPp/2P4P/1P1PPP2/RNBQKB1R w KQkq - 0 7",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            9458435230513942161,
+            18335794103184952799,
+            5497402903851824846,
+            16483680557705177667,
+            8811962222200758027,
+            6942281959479973869,
+            6827273304927045370,
+            1082289293722746458,
+            12916678994787628810,
+            138601800553243996
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 1,
+                "count": 24
+              },
+              "arena_positions": 25
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 1,
+                "count": 24
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 25,
+                "count": 644
+              },
+              "arena_positions": 669
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 25,
+                "count": 644
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 669,
+                "count": 16793
+              },
+              "arena_positions": 17462
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 669,
+                "count": 16793
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 25,
+                "count": 644
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 1,
+                "count": 24
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 1,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 1,
+          "root_epoch": 1,
+          "root_packet_sha256": "6a796c2647a0029c0446f23d75afbaa78aca05a4a9c878a074aef506e3805476",
+          "root_hash_hex": "1cfa10dce7bd7ced",
+          "history_count": 12,
+          "previous_history_sha256": "0105ff2349f2fc8f93d92c4da5054d6ff43d8a5a95e25d66f4090f8924e1d9f0",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 24,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.07676000241190195,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 1,
+          "child_start": 1,
+          "rows": 24,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.022760000079870224,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 1,
+          "child_start": 25,
+          "rows": 644,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.02431999985128641,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 0,
+          "ply": 24,
+          "fen": "r1bq1bn1/n1pkp1p1/p3N2r/3p2p1/P6p/1QP1P2P/1P1P1P2/RNB1KB1R w KQ - 5 13",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            9458435230513942161,
+            18335794103184952799,
+            5497402903851824846,
+            16483680557705177667,
+            8811962222200758027,
+            6942281959479973869,
+            6827273304927045370,
+            1082289293722746458,
+            12916678994787628810,
+            138601800553243996,
+            2087999918206450925,
+            3936789010010429872,
+            11763212855559265937,
+            10620819303163069996,
+            2403756323702766909,
+            620866734933798638,
+            5381528036263563472,
+            11599266554770285777,
+            17202653869589328262,
+            641212167494905656,
+            6817412100575399948,
+            9612772480316953620
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 1,
+                "count": 39
+              },
+              "arena_positions": 40
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 1,
+                "count": 39
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 40,
+                "count": 782
+              },
+              "arena_positions": 822
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 40,
+                "count": 782
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 822,
+                "count": 29625
+              },
+              "arena_positions": 30447
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 822,
+                "count": 29625
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 40,
+                "count": 782
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 1,
+                "count": 39
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 2,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 2,
+          "root_epoch": 2,
+          "root_packet_sha256": "1bb03c59587fe366fab3cbda1b40701c21fb54adb0af149707d99b32491e4fa0",
+          "root_hash_hex": "6e8dcfcab11193fa",
+          "history_count": 24,
+          "previous_history_sha256": "44279e944f17937a94e92b382deb050827c4c1125f06b313985b5d68f5b04fce",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 39,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.1844810014590621,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 2,
+          "child_start": 1,
+          "rows": 39,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024000000208616257,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 2,
+          "child_start": 40,
+          "rows": 782,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024240000173449516,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 1,
+          "ply": 12,
+          "fen": "r1bqkb1r/1ppppp2/2n3pn/p4PPp/P7/7B/1PPPP2P/RNBQK1NR w KQkq a6 0 7",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            12401699419000760247,
+            8757552859553577653,
+            14679046116023386532,
+            16316658062206554743,
+            12161906106632804054,
+            21598636023401051,
+            17195524566663885026,
+            11226226756347257606,
+            13714417845732340621,
+            4192433569157307099
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 1,
+                "count": 21
+              },
+              "arena_positions": 22
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 1,
+                "count": 21
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 22,
+                "count": 485
+              },
+              "arena_positions": 507
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 22,
+                "count": 485
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 507,
+                "count": 11463
+              },
+              "arena_positions": 11970
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 507,
+                "count": 11463
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 22,
+                "count": 485
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 1,
+                "count": 21
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 3,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 3,
+          "root_epoch": 3,
+          "root_packet_sha256": "4ae0bb7f96c02972061f518d4606aac5544210be2aeb79d1cf717d1d557d3ce8",
+          "root_hash_hex": "1ff12394b0b7a339",
+          "history_count": 12,
+          "previous_history_sha256": "6ada633ed72b34a58ffb24dd24b75d13abb38d261e17406519e282a77454b806",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 21,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.06432099919766188,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 3,
+          "child_start": 1,
+          "rows": 21,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.02143999934196472,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 3,
+          "child_start": 22,
+          "rows": 485,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.055560000240802765,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 1,
+          "ply": 24,
+          "fen": "r1bqk1r1/n1pppp2/6pn/1p2bPPp/Pp6/8/2PPP1KP/RNBQ1BNR w q - 0 13",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            12401699419000760247,
+            8757552859553577653,
+            14679046116023386532,
+            16316658062206554743,
+            12161906106632804054,
+            21598636023401051,
+            17195524566663885026,
+            11226226756347257606,
+            13714417845732340621,
+            4192433569157307099,
+            2301660006089990969,
+            14583675474470731323,
+            6543268671866863342,
+            6128035978286586172,
+            248106447732991496,
+            16564781173092327423,
+            8323252652821325394,
+            10069159931033839124,
+            13665649295240876357,
+            1589247776115583476,
+            7748056154016081408,
+            6979353496901071576
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 1,
+                "count": 25
+              },
+              "arena_positions": 26
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 1,
+                "count": 25
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 26,
+                "count": 770
+              },
+              "arena_positions": 796
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 26,
+                "count": 770
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 796,
+                "count": 20073
+              },
+              "arena_positions": 20869
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 796,
+                "count": 20073
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 26,
+                "count": 770
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 1,
+                "count": 25
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 4,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 4,
+          "root_epoch": 4,
+          "root_packet_sha256": "f4c03769092bbc96245dc9c24cca5229656ed511b9cb384c4e8f19bd926362eb",
+          "root_hash_hex": "fe18e744877b3467",
+          "history_count": 24,
+          "previous_history_sha256": "3408337192df6922134e886b95808bbaf6a7fa399c78f7a0cc5a17470a6c34fb",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 25,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.09544199891388416,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 4,
+          "child_start": 1,
+          "rows": 25,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.04456100054085255,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 4,
+          "child_start": 26,
+          "rows": 770,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.023880000226199627,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 2,
+          "ply": 12,
+          "fen": "1nb1kbnr/1p2pppp/r1p5/p2p1P2/2P1P3/P1N5/1P1P2PP/R1BQKBqR w KQk d6 0 7",
+          "previous_hashes": [
+            2739153840427306153,
+            18067443773219945747,
+            16096942487421240561,
+            17689548433183157861,
+            15973343446820967253,
+            12161373216283246769,
+            17096421756087481339,
+            13756550493879666122,
+            7775442436479752426,
+            2823969160211479079,
+            12175674178557080589,
+            3208055417970515291
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 1,
+                "count": 31
+              },
+              "arena_positions": 32
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 1,
+                "count": 31
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 32,
+                "count": 1060
+              },
+              "arena_positions": 1092
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 32,
+                "count": 1060
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 1092,
+                "count": 30042
+              },
+              "arena_positions": 31134
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 1092,
+                "count": 30042
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 32,
+                "count": 1060
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 1,
+                "count": 31
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 5,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 5,
+          "root_epoch": 5,
+          "root_packet_sha256": "220685d28a17b6c12334349db9a3fce2b14049a8e8e4f9b342c5ba410c237087",
+          "root_hash_hex": "90c11e1b0d7bd40b",
+          "history_count": 12,
+          "previous_history_sha256": "aebfed6d8d15c31fbd7bdd225970c99f16254bc25b28bef297ac2aa40224adda",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 31,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.10980099719017744,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 5,
+          "child_start": 1,
+          "rows": 31,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.022880000062286854,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 5,
+          "child_start": 32,
+          "rows": 1060,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024600000120699406,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 2,
+          "ply": 24,
+          "fen": "rn2kbnr/3bpppp/1p3P2/p1p5/1PPpP3/PQ6/3PBKPP/RNB4R w k - 1 13",
+          "previous_hashes": [
+            2739153840427306153,
+            18067443773219945747,
+            16096942487421240561,
+            17689548433183157861,
+            15973343446820967253,
+            12161373216283246769,
+            17096421756087481339,
+            13756550493879666122,
+            7775442436479752426,
+            2823969160211479079,
+            12175674178557080589,
+            3208055417970515291,
+            10430651313505948683,
+            15858921777485084358,
+            5185783555819863728,
+            16626665838508950898,
+            1898313580087504434,
+            12821798627772913283,
+            17177345177064919824,
+            17752431492988515346,
+            9435126769786089433,
+            12874565276773807972,
+            14235925929425962862,
+            8979550233908099244
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 1,
+                "count": 41
+              },
+              "arena_positions": 42
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 1,
+                "count": 41
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 42,
+                "count": 1130
+              },
+              "arena_positions": 1172
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 42,
+                "count": 1130
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 1172,
+                "count": 42970
+              },
+              "arena_positions": 44142
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 1172,
+                "count": 42970
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 42,
+                "count": 1130
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 1,
+                "count": 41
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 6,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 6,
+          "root_epoch": 6,
+          "root_packet_sha256": "5746102346c88b676ae2df2dc797e5b7770087f6832d7ae1be37bb0453366a85",
+          "root_hash_hex": "c2237195325f96ff",
+          "history_count": 24,
+          "previous_history_sha256": "cd510d90e3b5811b9ba7c1de2ed1856441c28b07e793a82eeb49621c97c12f6c",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 41,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.1946020070463419,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 6,
+          "child_start": 1,
+          "rows": 41,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.02420100010931492,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 6,
+          "child_start": 42,
+          "rows": 1130,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024039999581873417,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 3,
+          "ply": 12,
+          "fen": "rn1qkbnr/p1ppp1p1/b7/1p5p/P1B1p3/7N/1PPPQPPP/RNB1K2R w KQkq - 1 7",
+          "previous_hashes": [
+            2739153840427306153,
+            6572338227821760487,
+            14290608662562840016,
+            17027060872804857668,
+            8804408768159633129,
+            14214440590527477010,
+            3638282393608406158,
+            15794872465896942953,
+            3881211682393724880,
+            11658698448401174691,
+            13005578698808399492,
+            2086967735003302409
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 1,
+                "count": 39
+              },
+              "arena_positions": 40
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 1,
+                "count": 39
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 40,
+                "count": 771
+              },
+              "arena_positions": 811
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 40,
+                "count": 771
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 811,
+                "count": 30574
+              },
+              "arena_positions": 31385
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 811,
+                "count": 30574
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 40,
+                "count": 771
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 1,
+                "count": 39
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 7,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 7,
+          "root_epoch": 7,
+          "root_packet_sha256": "5a2cee588e5be6cf9901261504caec25da8ac874b442e70b14f8446cadf8b84e",
+          "root_hash_hex": "9a970243389b7c04",
+          "history_count": 12,
+          "previous_history_sha256": "7a8241532210a33bebbec5b16dc4af8b94a56934aa92606ccafdaed86307acea",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 39,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.1870409958064556,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 7,
+          "child_start": 1,
+          "rows": 39,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024360000155866146,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 7,
+          "child_start": 40,
+          "rows": 771,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.022321000695228577,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 3,
+          "ply": 24,
+          "fen": "rn2qbn1/p2ppk1r/b1p5/1p4pp/P2Pp3/Q5PN/1PP2P1P/RNB1K2R w KQ - 0 13",
+          "previous_hashes": [
+            2739153840427306153,
+            6572338227821760487,
+            14290608662562840016,
+            17027060872804857668,
+            8804408768159633129,
+            14214440590527477010,
+            3638282393608406158,
+            15794872465896942953,
+            3881211682393724880,
+            11658698448401174691,
+            13005578698808399492,
+            2086967735003302409,
+            11139374691059989508,
+            9534723642758176613,
+            8217367461373863175,
+            12832819251446222629,
+            3651510797653111304,
+            12209357614449596026,
+            8554582646941441168,
+            13418929159980540602,
+            12171137121423452921,
+            3723703284677115678,
+            15988639287299222278,
+            14785644637001297013
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 1,
+                "count": 37
+              },
+              "arena_positions": 38
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 1,
+                "count": 37
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 38,
+                "count": 815
+              },
+              "arena_positions": 853
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 38,
+                "count": 815
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 853,
+                "count": 29654
+              },
+              "arena_positions": 30507
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 853,
+                "count": 29654
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 38,
+                "count": 815
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 1,
+                "count": 37
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 8,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 8,
+          "root_epoch": 8,
+          "root_packet_sha256": "b8d5a97e88dedf614209b79abffd98cb58d6bc85eec802a10d409620f76b1ea1",
+          "root_hash_hex": "e5e078da087fd145",
+          "history_count": 24,
+          "previous_history_sha256": "18b528d812c9d172e69acd6eac2d782531bd74024151d9551cf8e4ec206b93a2",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 37,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.17704199999570847,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 8,
+          "child_start": 1,
+          "rows": 37,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024561000056564808,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 8,
+          "child_start": 38,
+          "rows": 815,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.023560999892652035,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 4,
+          "ply": 12,
+          "fen": "r2qk1nr/pbpp1p1p/np2p2b/6p1/P5P1/1PN2N2/2PPPP1P/1RBQKB1R w Kkq - 1 7",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            13013168595652700389,
+            3655406070350720408,
+            5250061125960492881,
+            291851657346139548,
+            15106532709881712721,
+            5779992948926293438,
+            9577326440157382247,
+            10255775271872352860,
+            8265854767842425116,
+            15725806766781965713
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 1,
+                "count": 24
+              },
+              "arena_positions": 25
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 1,
+                "count": 24
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 25,
+                "count": 678
+              },
+              "arena_positions": 703
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 25,
+                "count": 678
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 703,
+                "count": 17885
+              },
+              "arena_positions": 18588
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 703,
+                "count": 17885
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 25,
+                "count": 678
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 1,
+                "count": 24
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 9,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 9,
+          "root_epoch": 9,
+          "root_packet_sha256": "ced367c7ee1fb1debb76d32607c1a12f1c7dcc145f7d23d1fce1368aa2971d4e",
+          "root_hash_hex": "74925e927f472cfe",
+          "history_count": 12,
+          "previous_history_sha256": "569d2c38df3ca8200f6645416da0f90782b0cb120b3e89f5cf3b7446f930dc76",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 24,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.07212100178003311,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 9,
+          "child_start": 1,
+          "rows": 24,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.022400000132620335,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 9,
+          "child_start": 25,
+          "rows": 678,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.045120999217033386,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 4,
+          "ply": 24,
+          "fen": "r2qkbnr/p1pp1p2/n3p1Bp/6N1/Pp4P1/1PN4P/2PP1Pb1/1RBQK1R1 w kq - 0 13",
+          "previous_hashes": [
+            2739153840427306153,
+            3565863529906025856,
+            13013168595652700389,
+            3655406070350720408,
+            5250061125960492881,
+            291851657346139548,
+            15106532709881712721,
+            5779992948926293438,
+            9577326440157382247,
+            10255775271872352860,
+            8265854767842425116,
+            15725806766781965713,
+            8399880238293003518,
+            6812938988787517034,
+            9967517902948853171,
+            10984988290275741392,
+            2081010134226344803,
+            12559432390187469109,
+            2797934133032092319,
+            9719362959877616954,
+            100823734949837329,
+            1369543470514662148,
+            16930948339260729277,
+            15367750036101393562
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 1,
+                "count": 32
+              },
+              "arena_positions": 33
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 1,
+                "count": 32
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 33,
+                "count": 1020
+              },
+              "arena_positions": 1053
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 33,
+                "count": 1020
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 1053,
+                "count": 33429
+              },
+              "arena_positions": 34482
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 1053,
+                "count": 33429
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 33,
+                "count": 1020
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 1,
+                "count": 32
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 10,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 10,
+          "root_epoch": 10,
+          "root_packet_sha256": "aba27b8ccc82675cf84961062f106c08dcdba5bb36e60ab8258412b3758c8b2d",
+          "root_hash_hex": "4822e52a93f53ead",
+          "history_count": 24,
+          "previous_history_sha256": "92282aefe9b8979dc9799bfe713261096c4b4c1b8fd94a0fb5a6e1f20fdc6cf6",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 32,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.12572100199759007,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 10,
+          "child_start": 1,
+          "rows": 32,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.023161000572144985,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 10,
+          "child_start": 33,
+          "rows": 1020,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024399999529123306,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 5,
+          "ply": 12,
+          "fen": "rnb1kb1r/ppqp1ppp/4p3/3n4/1pP5/NQ3N2/P2PPPPP/R1BK1B1R w kq - 5 7",
+          "previous_hashes": [
+            2739153840427306153,
+            3222825834938587282,
+            11407928001507199086,
+            13451305774221604416,
+            13892982416887938185,
+            7738818212842619960,
+            2572713877255358749,
+            16813451729062830890,
+            7194304204655924959,
+            6020367845376069218,
+            8216242780037312119,
+            8264763748235659643
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 1,
+                "count": 32
+              },
+              "arena_positions": 33
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 1,
+                "count": 32
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 33,
+                "count": 1210
+              },
+              "arena_positions": 1243
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 33,
+                "count": 1210
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 1243,
+                "count": 38838
+              },
+              "arena_positions": 40081
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 1243,
+                "count": 38838
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 33,
+                "count": 1210
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 1,
+                "count": 32
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 11,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 11,
+          "root_epoch": 11,
+          "root_packet_sha256": "578a08f46571d8e8522e163b6772c50f578337faaf95162c153e00591e3344b6",
+          "root_hash_hex": "39154e9befd9f85d",
+          "history_count": 12,
+          "previous_history_sha256": "6b0c6e6e82239803337adc1c71f1edd11b2fa3492f7356d289c502c1723d72d6",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 32,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.10596100054681301,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 11,
+          "child_start": 1,
+          "rows": 32,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.036840999498963356,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 11,
+          "child_start": 33,
+          "rows": 1210,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.02555999904870987,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      },
+      {
+        "root": {
+          "family_id": 5,
+          "ply": 24,
+          "fen": "rnbk1b1r/pp1pqp1p/4p3/1N1n2p1/1pP5/1Q2P3/PR1PBPPP/2BKN2R w - g6 0 13",
+          "previous_hashes": [
+            2739153840427306153,
+            3222825834938587282,
+            11407928001507199086,
+            13451305774221604416,
+            13892982416887938185,
+            7738818212842619960,
+            2572713877255358749,
+            16813451729062830890,
+            7194304204655924959,
+            6020367845376069218,
+            8216242780037312119,
+            8264763748235659643,
+            4113280266323753053,
+            1455814894852053173,
+            10674016281616666267,
+            15473802155536820721,
+            6396981033573903687,
+            12691071132969429894,
+            14910907204496936165,
+            16480491252885907896,
+            15337347395427737234,
+            7268044840585247037,
+            10464479069946145745,
+            9873634528136170707
+          ]
+        },
+        "construction": {
+          "tree_depth": 3,
+          "source_parent_level": 1,
+          "remaining_parent_horizon": 2,
+          "evaluator": 1,
+          "schedule": [
+            {
+              "operation": "expand",
+              "source_level": 0,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 0,
+                "count": 1
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 1,
+                "count": 38
+              },
+              "arena_positions": 39
+            },
+            {
+              "operation": "expand",
+              "source_level": 1,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 1,
+                "count": 38
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 39,
+                "count": 1002
+              },
+              "arena_positions": 1041
+            },
+            {
+              "operation": "expand",
+              "source_level": 2,
+              "source_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 39,
+                "count": 1002
+              },
+              "next_span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 1041,
+                "count": 35395
+              },
+              "arena_positions": 36436
+            },
+            {
+              "operation": "evaluate",
+              "source_level": 3,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 1041,
+                "count": 35395
+              },
+              "evaluator": 1
+            },
+            {
+              "operation": "reduce",
+              "source_level": 2,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 39,
+                "count": 1002
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 1,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 1,
+                "count": 38
+              }
+            },
+            {
+              "operation": "reduce",
+              "source_level": 0,
+              "span": {
+                "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+                "epoch": 12,
+                "start": 0,
+                "count": 1
+              }
+            }
+          ],
+          "early_terminal_branches": "exact scored terminals, not static horizon truncation"
+        },
+        "source": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "python_reset_generation": 12,
+          "root_epoch": 12,
+          "root_packet_sha256": "4f4f461f761cc109c43fefd9ecae9b38f9a65a08f5adb5ece74ca7a243bc8ed3",
+          "root_hash_hex": "0ce24052a022d1b6",
+          "history_count": 24,
+          "previous_history_sha256": "d7d6a2ed9d467342a5d2fe84b717a5f1e91a38261589cc2da00e410e993508a1",
+          "history_contract": "caller-supplied previous positions only, root excluded",
+          "rules_abi": 1,
+          "export_abi": 1,
+          "rows": 38,
+          "child_start": 1,
+          "legal_slots": 256,
+          "export_kernel_ms": 0.15828100498765707,
+          "device": "cuda:0",
+          "policy_target": "executed legal action imitation; no best-move teacher",
+          "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+          "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+          "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+          "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+          "hip_runtime": {
+            "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+            "checked_bound_apis": [
+              "hipPointerGetAttributes",
+              "hipMemGetAddressRange",
+              "hipMalloc",
+              "hipFree",
+              "hipStreamSynchronize"
+            ]
+          },
+          "state_download_api_used": false,
+          "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+          "strength_evidence": false
+        },
+        "root_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 12,
+          "child_start": 1,
+          "rows": 38,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.024160999804735184,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        },
+        "child_teacher": {
+          "context_uuid": "3c00eecb-83ed-44a7-89f8-b870fd41e7b1",
+          "root_epoch": 12,
+          "child_start": 39,
+          "rows": 1002,
+          "evaluator": 1,
+          "label_kind": 1,
+          "kernel_ms": 0.023439999669790268,
+          "score_kind": "scored_resident_finite_tree_classical_minimax_cp",
+          "perspective": "current parent mover; mate uses absolute root ply"
+        }
+      }
+    ],
+    "producer_seconds": 0.8316830070000378,
+    "root_horizon": 3,
+    "child_horizon": 2,
+    "evaluator": 1,
+    "same_material_gap_threshold_cp": 100,
+    "same_material_pairs": 1586,
+    "root_sizes": [
+      24,
+      39,
+      21,
+      25,
+      31,
+      41,
+      39,
+      37,
+      24,
+      32,
+      32,
+      38
+    ],
+    "family_ids": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5
+    ],
+    "input_source": "CPU roots/history only; root/child observations, actions and score labels exported resident",
+    "score_perspective": "child side-to-move; root action value is negative child score",
+    "coverage_policy": "whole root omitted if any terminal, missing or mate-band child target; all retained legal actions complete"
+  },
+  "runs": [
+    {
+      "control": "transport",
+      "steps": 64,
+      "seconds": 2.187006083000142,
+      "last_loss": 0.13205108046531677,
+      "rows_per_step": 32
+    },
+    {
+      "control": "conditioned",
+      "steps": 64,
+      "seconds": 0.8973697970000103,
+      "last_loss": 0.13200470805168152,
+      "rows_per_step": 32
+    },
+    {
+      "control": "action_blind",
+      "steps": 64,
+      "seconds": 0.6610398150000947,
+      "last_loss": 0.1320296972990036,
+      "rows_per_step": 32
+    },
+    {
+      "control": "transport_fixed_encoder",
+      "steps": 64,
+      "seconds": 0.7060056359998725,
+      "last_loss": 0.13219839334487915,
+      "rows_per_step": 32
+    },
+    {
+      "control": "transport_zero_anchor",
+      "steps": 64,
+      "seconds": 0.9018964399999732,
+      "last_loss": 0.20916621387004852,
+      "rows_per_step": 32
+    }
+  ],
+  "main_validation_or_test_labels_read": false,
+  "estimated_30run_training_seconds": 513.9185060160089
+}

@@ -1,0 +1,24 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+test_causal_prediction_fixed_target_gradients_and_same_material_blind_ties (neural.tests.test_strategic_study.StrategicStudyCPU.test_causal_prediction_fixed_target_gradients_and_same_material_blind_ties) ... ok
+test_complete_node_join_child_frame_and_full_root_backup (neural.tests.test_strategic_study.StrategicStudyCPU.test_complete_node_join_child_frame_and_full_root_backup) ... ok
+test_missing_terminal_or_mate_child_omits_whole_root (neural.tests.test_strategic_study.StrategicStudyCPU.test_missing_terminal_or_mate_child_omits_whole_root) ... ok
+test_resident_complete_group_sampling_and_atomic_bad_admission (neural.tests.test_strategic_study.StrategicStudyCPU.test_resident_complete_group_sampling_and_atomic_bad_admission) ... ok
+test_tapered_oracle_colors_special_moves_and_truncation (neural.tests.test_strategic_study.StrategicStudyCPU.test_tapered_oracle_colors_special_moves_and_truncation) ... ok
+test_three_way_split_excludes_spent_canonical_positions (neural.tests.test_strategic_study.StrategicStudyCPU.test_three_way_split_excludes_spent_canonical_positions) ... ok
+test_validation_selection_cannot_see_test_and_requires_both_baselines (neural.tests.test_strategic_study.StrategicStudyCPU.test_validation_selection_cannot_see_test_and_requires_both_baselines) ... ok
+test_gpu_tapered_exact_integer_color_and_special_move_oracle (neural.tests.test_strategic_study.StrategicStudyGPU.test_gpu_tapered_exact_integer_color_and_special_move_oracle) ... skipped 'GPU slot not granted'
+test_native_complete_root_child_horizon2_against_independent_tapered_oracle (neural.tests.test_strategic_study.StrategicStudyGPU.test_native_complete_root_child_horizon2_against_independent_tapered_oracle) ... skipped 'GPU slot not granted'
+test_resident_sampler_loss_backward_and_update_on_actual_gpu (neural.tests.test_strategic_study.StrategicStudyGPU.test_resident_sampler_loss_backward_and_update_on_actual_gpu) ... skipped 'GPU slot not granted'
+test_effects_exact_on_special_moves_both_colors_and_random_roots (neural.tests.test_strategic_transport.StrategicTransportTests.test_effects_exact_on_special_moves_both_colors_and_random_roots) ... ok
+test_gpu_prediction_and_gradients_scoped_parity (neural.tests.test_strategic_transport.StrategicTransportTests.test_gpu_prediction_and_gradients_scoped_parity) ... skipped 'GPU slot not requested'
+test_initial_anchor_modes_common_state_shapes_and_canonical_color_symmetry (neural.tests.test_strategic_transport.StrategicTransportTests.test_initial_anchor_modes_common_state_shapes_and_canonical_color_symmetry) ... ok
+test_learning_semantic_sibling_delta_gradients_and_frozen_encoder (neural.tests.test_strategic_transport.StrategicTransportTests.test_learning_semantic_sibling_delta_gradients_and_frozen_encoder) ... ok
+test_no_successor_ingress_action_blind_control_cached_latent_and_host_reads (neural.tests.test_strategic_transport.StrategicTransportTests.test_no_successor_ingress_action_blind_control_cached_latent_and_host_reads) ... ok
+test_pseudoattacks_match_oracle_and_blocker_interventions (neural.tests.test_strategic_transport.StrategicTransportTests.test_pseudoattacks_match_oracle_and_blocker_interventions) ... ok
+test_strict_checkpoint_roundtrip_and_negative_semantics_buffers (neural.tests.test_strategic_transport.StrategicTransportTests.test_strict_checkpoint_roundtrip_and_negative_semantics_buffers) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 3.188s
+
+OK (skipped=4)
