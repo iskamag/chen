@@ -161,5 +161,6 @@ are separate evidence supplied by the integration suite.
 
 This establishes an executed device rules/search path with bounded storage.
 It does not establish exhaustive rule correctness, neural engine inference,
-direct device-produced Torch replay, selective-search strength, or the requested
-2500 Lichess performance.
+selective-search strength, or the requested 2500 Lichess performance. Direct
+device-produced Torch replay has separate, later
+[export evidence](GPU_REPLAY_EXPORT.md); it does not change this rules benchmark.

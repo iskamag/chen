@@ -92,6 +92,21 @@ Arena event spans accumulate since reset and include enqueue gaps, but exclude
 root/history uploads and debug/result downloads. End-to-end `elapsed_ns`
 includes scheduler and transfer overhead, excluding context construction.
 
-Direct HIP-to-Torch ingestion, learned batched scoring, GPU self-play and a
-policy-guided scheduler remain open. See [GPU_RESEARCH.md](GPU_RESEARCH.md) for
+Direct HIP-to-Torch ingestion now exports resident transitions into Torch-owned
+VRAM and admits them to compact replay in `../chen-neural`. The
+[export contract](GPU_REPLAY_EXPORT.md) covers runtime identity, epochs, allocation
+bounds and completion. A combined suite runs 62 tests on actual gfx1030:
+
+```sh
+python3 -m venv /tmp/chen-oracle
+/tmp/chen-oracle/bin/pip install chess==1.11.2
+CHEN_QA_PYTHON=/tmp/chen-oracle/bin/python scripts/rocm_run.sh neural-test
+```
+
+`CHEN_NEURAL_WORKTREE` can override the sibling checkout. Torch is supplied by
+the existing container; the wrapper copies the neural sources and development
+oracle into its isolated task directory. Root/history ingress happens on the
+host; subsequent exported board payload, replay sampling and training stay on
+the GPU. The current material/action targets test mechanics only. Learned
+batched engine scoring, GPU self-play and a policy-guided scheduler remain open. See [GPU_RESEARCH.md](GPU_RESEARCH.md) for
 the hardware/literature ledger.

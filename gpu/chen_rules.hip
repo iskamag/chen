@@ -1,5 +1,7 @@
 #include "chen_rules.h"
+#include "chen_replay.h"
 #include <hip/hip_runtime.h>
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -178,7 +180,8 @@ __device__ void candidate(const ChenRulePosition &p,int from,int to,int promotio
     const ChenRulePosition next=apply<false>(p,move);
     if(in_check(next,p.side)) return;
     if(count>=CHEN_RULES_MAX_MOVES) { device_error(error,2); return; }
-    moves[count++]=move;
+    if(moves) moves[count]=move;
+    ++count;
 }
 __device__ void pawn_candidate(const ChenRulePosition &p,int from,int to,
     ChenRuleMove *moves,uint32_t &count,uint32_t *error) {
@@ -410,7 +413,7 @@ __global__ void finish_kernel(const Node *nodes,ChenRulesResult *result,ChenRule
 }
 
 struct ChenRulesContext {
-    int device=0,mode=-1,evaluator=-1;uint64_t capacity=0,used=0,history_count=0;double kernel_total_ms=0;
+    int device=0,mode=-1,evaluator=-1;uint64_t capacity=0,used=0,history_count=0,root_epoch=0;double kernel_total_ms=0;
     ChenRulePosition *positions=nullptr,*scratch=nullptr,*host_positions=nullptr;
     ChenRuleMove *moves=nullptr,*requested=nullptr,*host_moves=nullptr;
     uint32_t *counts=nullptr,*flags=nullptr,*host_counts=nullptr,*host_flags=nullptr;
@@ -548,7 +551,8 @@ extern "C" int32_t chen_rules_legal(ChenRulesContext *ctx,const ChenRulePosition
     clear_error(error,cap);
     if(!ctx || !timing || (count&&(!positions||!moves||!counts||!flags))) return fail(error,cap,"null rules legal buffer");
     if(count>ctx->capacity) return fail(error,cap,"rules batch exceeds capacity",CHEN_RULES_CAPACITY);
-    *timing=ChenTimings{0,0,0,count,ctx->capacity};ctx->used=0;
+    if(ctx->root_epoch==UINT64_MAX) return fail(error,cap,"root epoch exhausted; create a new context");
+    *timing=ChenTimings{0,0,0,count,ctx->capacity};ctx->used=0;++ctx->root_epoch;
     if(!count) return 0;
     std::memcpy(ctx->host_positions,positions,count*sizeof(*positions));
     int32_t result=prepare(ctx,error,cap);if(result) return result;
@@ -573,7 +577,8 @@ extern "C" int32_t chen_rules_make(ChenRulesContext *ctx,const ChenRulePosition 
     clear_error(error,cap);
     if(!ctx || !timing || (count&&(!positions||!moves||!out))) return fail(error,cap,"null rules make buffer");
     if(count>ctx->capacity) return fail(error,cap,"rules batch exceeds capacity",CHEN_RULES_CAPACITY);
-    *timing=ChenTimings{0,0,0,count,ctx->capacity};ctx->used=0;
+    if(ctx->root_epoch==UINT64_MAX) return fail(error,cap,"root epoch exhausted; create a new context");
+    *timing=ChenTimings{0,0,0,count,ctx->capacity};ctx->used=0;++ctx->root_epoch;
     if(!count) return 0;
     std::memcpy(ctx->host_positions,positions,count*sizeof(*positions));std::memcpy(ctx->host_moves,moves,count*sizeof(*moves));
     int32_t result=prepare(ctx,error,cap);if(result) return result;
@@ -596,6 +601,7 @@ extern "C" int32_t chen_rules_reset(ChenRulesContext *ctx,const ChenRulePosition
     clear_error(error,cap);
     if(!ctx || !root || (history_count&&!history)) return fail(error,cap,"null rules root/history");
     if(history_count>65535) return fail(error,cap,"root history exceeds 65535 hashes",CHEN_RULES_CAPACITY);
+    if(ctx->root_epoch==UINT64_MAX) return fail(error,cap,"root epoch exhausted; create a new context");
     ctx->used=0;ctx->history_count=history_count;ctx->kernel_total_ms=0;ctx->mode=-1;ctx->evaluator=-1;
     *ctx->host_positions=*root;int32_t result=prepare(ctx,error,cap);if(result) return result;
     hipError_t code=hipMemcpyAsync(ctx->positions,ctx->host_positions,sizeof(*root),hipMemcpyHostToDevice,ctx->stream);
@@ -605,7 +611,7 @@ extern "C" int32_t chen_rules_reset(ChenRulesContext *ctx,const ChenRulePosition
     if(code==hipSuccess) code=hipEventRecord(ctx->begin,ctx->stream);
     if(code!=hipSuccess) return transfer_failure(ctx,code,error,cap);
     hipLaunchKernelGGL(reset_root,dim3(1),dim3(1),0,ctx->stream,ctx->positions,ctx->nodes,&ctx->summary->error);
-    result=complete(ctx,nullptr,error,cap);if(!result) ctx->used=1;return result;
+    result=complete(ctx,nullptr,error,cap);if(!result) { ctx->used=1;++ctx->root_epoch; }return result;
 }
 extern "C" int32_t chen_rules_classify(ChenRulesContext *ctx,uint64_t start,uint64_t count,
     uint32_t adjudicate,ChenRulesStats *stats,char *error,uint64_t cap) {
@@ -699,4 +705,172 @@ extern "C" int32_t chen_rules_perft(ChenRulesContext *ctx,const ChenRulePosition
     }
     *nodes=count;result=statistics(ctx,stats,0,error,cap);
     if(!result) { stats->next_start=start;stats->next_count=count; }return result;
+}
+
+// Replay export ABI is independent of rules ABI; mutable arena pointers stay private.
+namespace {
+__device__ int64_t replay_action(ChenRuleMove move,uint32_t side) {
+    const uint32_t flip=side?56:0;
+    return int64_t(((uint32_t(move.from)^flip)*64+(uint32_t(move.to)^flip))*5+move.promotion);
+}
+__global__ void replay_preflight(const ChenRulePosition *positions,const Node *nodes,
+    const ChenRuleMove *moves,const uint32_t *counts,uint32_t *terminals,
+    uint64_t start,uint64_t count,uint64_t used,uint32_t slots,
+    const uint64_t *history,uint64_t history_count,uint32_t *error) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t child_id=start+row;
+    const Node child=nodes[child_id];
+    if(child.parent>=used) { device_error(error,4);return; }
+    const Node parent=nodes[child.parent];
+    if(!(parent.flags&EXPANDED) || (parent.flags&TERMINAL) ||
+        !parent.child_count || parent.first_child>child_id ||
+        child_id-parent.first_child>=parent.child_count ||
+        parent.child_count!=counts[child.parent]) { device_error(error,4);return; }
+    if(parent.child_count>slots) { device_error(error,2);return; }
+    const ChenRuleMove expected=moves[child.parent*CHEN_RULES_MAX_MOVES+child_id-parent.first_child];
+    if(child.move.from!=expected.from || child.move.to!=expected.to ||
+        child.move.promotion!=expected.promotion || child.move.reserved) {
+        device_error(error,4);return;
+    }
+    if(child.flags&CLASSIFIED) terminals[row]=(child.flags&TERMINAL)?1:0;
+    else {
+        const ChenRulePosition p=positions[child_id];
+        const uint32_t legal=legal_moves(p,nullptr,error);
+        terminals[row]=!legal || p.halfmove>=100 || insufficient(p) ||
+            repeated(positions,nodes,child_id,history,history_count);
+    }
+}
+__device__ void replay_state(const ChenRulePosition &p,uint64_t boards_address,
+    uint64_t state_address,uint64_t row) {
+    auto *boards=reinterpret_cast<uint64_t *>(boards_address)+row*12;
+    auto *state=reinterpret_cast<uint32_t *>(state_address)+row*5;
+    for(int i=0;i<12;++i) boards[i]=p.boards[i];
+    state[0]=p.side;state[1]=p.castling;state[2]=uint32_t(p.ep_square);
+    state[3]=p.halfmove;state[4]=p.fullmove;
+}
+__global__ void replay_export_kernel(const ChenRulePosition *positions,const Node *nodes,
+    const ChenRuleMove *moves,const uint32_t *terminals,uint64_t start,uint64_t count,
+    uint64_t epoch,ChenReplaySink sink) {
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=count) return;
+    const uint64_t child_id=start+row,parent_id=nodes[child_id].parent;
+    const ChenRulePosition parent=positions[parent_id],child=positions[child_id];
+    replay_state(parent,sink.pieces,sink.state,row);
+    replay_state(child,sink.next_pieces,sink.next_state,row);
+    auto *legal=reinterpret_cast<int16_t *>(sink.legal_actions)+row*sink.legal_slots;
+    const uint32_t n=nodes[parent_id].child_count;
+    for(uint32_t i=0;i<sink.legal_slots;++i) legal[i]=-1;
+    // Bounded insertion sort avoids a dense 20480-action support allocation.
+    for(uint32_t i=0;i<n;++i) {
+        const int16_t action=int16_t(replay_action(moves[parent_id*CHEN_RULES_MAX_MOVES+i],parent.side));
+        uint32_t j=i;
+        while(j && legal[j-1]>action) { legal[j]=legal[j-1];--j; }
+        legal[j]=action;
+    }
+    reinterpret_cast<int32_t *>(sink.legal_counts)[row]=int32_t(n);
+    reinterpret_cast<int64_t *>(sink.actions)[row]=replay_action(nodes[child_id].move,parent.side);
+    reinterpret_cast<float *>(sink.material_proxy)[row]=tanhf(float(evaluate(parent,0))/800.0f);
+    reinterpret_cast<uint8_t *>(sink.terminal)[row]=uint8_t(terminals[row]);
+    reinterpret_cast<uint64_t *>(sink.parent_hash)[row]=parent.hash;
+    reinterpret_cast<uint64_t *>(sink.child_hash)[row]=child.hash;
+    reinterpret_cast<uint64_t *>(sink.parent_node)[row]=parent_id;
+    reinterpret_cast<uint64_t *>(sink.child_node)[row]=child_id;
+    reinterpret_cast<uint64_t *>(sink.root_epoch)[row]=epoch;
+}
+struct ReplayRange { uint64_t address,bytes; };
+bool overlaps(ReplayRange a,ReplayRange b) {
+    return a.address<b.address+b.bytes && b.address<a.address+a.bytes;
+}
+int32_t replay_sink_valid(ChenRulesContext *ctx,const ChenReplaySink &sink,
+    char *error,uint64_t cap) {
+    if(sink.abi_version!=1 || sink.struct_size!=sizeof(ChenReplaySink) ||
+        sink.device!=ctx->device || !sink.legal_slots || sink.legal_slots>CHEN_RULES_MAX_MOVES ||
+        sink.capacity>uint64_t(INT32_MAX)) return fail(error,cap,"invalid replay sink schema/device/capacity");
+    const uint64_t addresses[]={sink.pieces,sink.state,sink.next_pieces,sink.next_state,
+        sink.legal_actions,sink.legal_counts,sink.actions,sink.material_proxy,sink.terminal,
+        sink.parent_hash,sink.child_hash,sink.parent_node,sink.child_node,sink.root_epoch};
+    const uint64_t strides[]={96,20,96,20,uint64_t(sink.legal_slots)*2,4,8,4,1,8,8,8,8,8};
+    const uint64_t alignments[]={8,4,8,4,2,4,8,4,1,8,8,8,8,8};
+    ReplayRange ranges[14]{};
+    for(int i=0;i<14;++i) {
+        const uint64_t bytes=sink.capacity*strides[i],address=addresses[i];
+        if(!bytes) continue;
+        if(!address || address%alignments[i] || address>UINT64_MAX-bytes)
+            return fail(error,cap,"null, misaligned or overflowing replay sink interval");
+        hipPointerAttribute_t attributes{};
+        hipError_t code=hipPointerGetAttributes(&attributes,reinterpret_cast<void *>(address));
+        if(code!=hipSuccess) return hip_fail(error,cap,code);
+        if(attributes.type!=hipMemoryTypeDevice || attributes.isManaged || attributes.device!=ctx->device)
+            return fail(error,cap,"replay sink requires device allocations on the context device");
+        hipDeviceptr_t base=nullptr;size_t allocation=0;
+        code=hipMemGetAddressRange(&base,&allocation,reinterpret_cast<hipDeviceptr_t>(address));
+        if(code!=hipSuccess) return hip_fail(error,cap,code);
+        const uint64_t beginning=reinterpret_cast<uint64_t>(base);
+        if(address<beginning || address-beginning>allocation || bytes>allocation-(address-beginning))
+            return fail(error,cap,"replay sink interval exceeds GPU allocation bounds");
+        ranges[i]={address,bytes};
+        for(int j=0;j<i;++j) if(ranges[j].bytes && overlaps(ranges[i],ranges[j]))
+            return fail(error,cap,"replay sink output intervals overlap");
+    }
+    // Even guessed internal pointers cannot turn the snapshot into a live alias.
+    const ReplayRange arena[]={
+        {reinterpret_cast<uint64_t>(ctx->positions),ctx->capacity*sizeof(*ctx->positions)},
+        {reinterpret_cast<uint64_t>(ctx->scratch),ctx->capacity*sizeof(*ctx->scratch)},
+        {reinterpret_cast<uint64_t>(ctx->moves),ctx->capacity*CHEN_RULES_MAX_MOVES*sizeof(*ctx->moves)},
+        {reinterpret_cast<uint64_t>(ctx->requested),ctx->capacity*sizeof(*ctx->requested)},
+        {reinterpret_cast<uint64_t>(ctx->counts),ctx->capacity*sizeof(*ctx->counts)},
+        {reinterpret_cast<uint64_t>(ctx->flags),ctx->capacity*sizeof(*ctx->flags)},
+        {reinterpret_cast<uint64_t>(ctx->nodes),ctx->capacity*sizeof(*ctx->nodes)},
+        {reinterpret_cast<uint64_t>(ctx->history),65535*sizeof(*ctx->history)},
+        {reinterpret_cast<uint64_t>(ctx->classified),sizeof(*ctx->classified)},
+        {reinterpret_cast<uint64_t>(ctx->evaluated),sizeof(*ctx->evaluated)},
+        {reinterpret_cast<uint64_t>(ctx->summary),sizeof(*ctx->summary)},
+        {reinterpret_cast<uint64_t>(ctx->result),sizeof(*ctx->result)}};
+    for(const auto range:ranges) if(range.bytes)
+        for(const auto internal:arena) if(overlaps(range,internal))
+            return fail(error,cap,"replay sink aliases private arena memory");
+    return 0;
+}
+}
+extern "C" uint32_t chen_replay_abi_version() { return 1; }
+extern "C" uint64_t chen_replay_runtime_identity(uint32_t selector) {
+    switch(selector) {
+        case 0:return reinterpret_cast<uint64_t>(&hipPointerGetAttributes);
+        case 1:return reinterpret_cast<uint64_t>(&hipMemGetAddressRange);
+        case 2:return reinterpret_cast<uint64_t>(static_cast<hipError_t (*)(void **,size_t)>(&hipMalloc));
+        case 3:return reinterpret_cast<uint64_t>(&hipFree);
+        case 4:return reinterpret_cast<uint64_t>(&hipStreamSynchronize);
+        default:return 0;
+    }
+}
+extern "C" int32_t chen_replay_epoch(ChenRulesContext *ctx,uint64_t *epoch,
+    char *error,uint64_t cap) {
+    clear_error(error,cap);
+    if(!ctx || !epoch) return fail(error,cap,"null replay epoch context/output");
+    *epoch=ctx->root_epoch;return 0;
+}
+extern "C" int32_t chen_rules_export_transitions(ChenRulesContext *ctx,uint64_t child_start,
+    uint64_t count,uint64_t expected_epoch,const ChenReplaySink *sink,ChenReplayExport *out,char *error,uint64_t cap) {
+    clear_error(error,cap);
+    if(ctx && expected_epoch!=ctx->root_epoch) return fail(error,cap,"stale replay root epoch");
+    if(!ctx || !sink || !out || !range_valid(ctx,child_start,count) ||
+        (count && !child_start) || ctx->mode!=1) return fail(error,cap,"invalid replay selection or non-search arena");
+    hipError_t code=hipSetDevice(ctx->device);
+    if(code!=hipSuccess) return hip_fail(error,cap,code);
+    int32_t status=replay_sink_valid(ctx,*sink,error,cap);if(status) return status;
+    if(count>sink->capacity) return fail(error,cap,"replay sink row capacity exceeded",CHEN_RULES_CAPACITY);
+    if(!count) { *out=ChenReplayExport{0,ctx->root_epoch,0};return 0; }
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(replay_preflight,grid(count),dim3(64),0,ctx->stream,
+        ctx->positions,ctx->nodes,ctx->moves,ctx->counts,ctx->flags,child_start,count,
+        ctx->used,sink->legal_slots,ctx->history,ctx->history_count,&ctx->summary->error);
+    double validation_ms=0;status=complete(ctx,&validation_ms,error,cap);if(status) return status;
+    status=prepare(ctx,error,cap);
+    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    hipLaunchKernelGGL(replay_export_kernel,grid(count),dim3(64),0,ctx->stream,
+        ctx->positions,ctx->nodes,ctx->moves,ctx->flags,child_start,count,ctx->root_epoch,*sink);
+    double export_ms=0;status=complete(ctx,&export_ms,error,cap);if(status) return status;
+    *out=ChenReplayExport{count,ctx->root_epoch,validation_ms+export_ms};return 0;
 }

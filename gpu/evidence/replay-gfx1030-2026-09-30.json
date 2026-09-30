@@ -1,0 +1,401 @@
+{
+  "kind": "gfx1030_resident_tree_to_Torch_replay_oracle",
+  "date": "2026-09-30",
+  "base_commit": "0d05ce07b2ab27465c02af8a8a0981e024d672d9",
+  "target_architecture": "gfx1030",
+  "source_sha256": {
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "76b2173a9e0061cbaf78ddba0450e03324d0323dcb5be376b7b6ad70e42a1b7e",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "gpu/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+    "gpu/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192"
+  },
+  "shared_library_sha256": "333e3427c23c9de726387e62cc85f28bf20f8af27d8d8abc48882e586c101444",
+  "copy_interposer_sha256": "a84dfd8a42061b0b9f2b72dbc377642b503f715cf5e99f5c9804dc2fb0e4beb8",
+  "log_sha256": {
+    "gpu/evidence/replay-gfx1030-2026-09-30.jsonl": "8ec008ae7fe43344e099b8d04071ac6d3e16987c0fc6fb6fca5f8b8d4898df56",
+    "gpu/evidence/rules-after-replay-gfx1030-2026-09-30.jsonl": "a9ac8776fefb4dceea2dffe4654f4d6adae23dceaddd751748719bde7d59e6d6"
+  },
+  "compiler": "HIP version: 7.2.53211-97f5574fe2\nAMD clang version 22.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-7.2.4 26084 f58b06dce1f9c15707c5f808fd002e18c2accf7e)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /opt/rocm-7.2.4/lib/llvm/bin\nConfiguration file: /opt/rocm-7.2.4/lib/llvm/bin/clang++.cfg",
+  "producer_build_command": "hipcc -O3 -std=c++17 --offload-arch=gfx1030 -fPIC -shared -Wall -Wextra -Werror -I/tmp/chen-gpu -x hip /tmp/chen-gpu/chen_gpu.hip /tmp/chen-gpu/chen_rules.hip -o /tmp/chen-gpu/build/libchen_gpu.so",
+  "copy_interposer_build_command": "g++ -O2 -std=c++17 -D__HIP_PLATFORM_AMD__ -I/opt/rocm/include -fPIC -shared -Wall -Wextra -Werror /tmp/chen-gpu/replay_copy_trace.cpp -ldl -o /tmp/chen-gpu/build/libreplay_copy_trace.so",
+  "probe_command": "LD_PRELOAD=/tmp/chen-gpu/build/libreplay_copy_trace.so:/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so python3 /tmp/chen-gpu/replay_probe.py /tmp/chen-gpu/build/libchen_gpu.so --trace-copies",
+  "regression_command": "python3 /tmp/chen-gpu/rules_probe.py /tmp/chen-gpu/build/libchen_gpu.so",
+  "records": [
+    {
+      "record": "resident_replay_oracle",
+      "device": "gfx1030",
+      "fixtures": 7,
+      "transitions": 136,
+      "exact_boards_fields_hashes": true,
+      "sorted_canonical_support": true,
+      "retained_history_terminal": true,
+      "expanded_successor": true,
+      "kernel_ms": 0.9116480108350515
+    },
+    {
+      "record": "resident_replay_runtime_bindings",
+      "producer_consumer_tokens_match": true,
+      "Torch_hip_build_version": "7.0.51831",
+      "runtime_bindings": {
+        "hipPointerGetAttributes": {
+          "actual_runtime": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+          "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+        },
+        "hipMemGetAddressRange": {
+          "actual_runtime": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+          "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+        },
+        "hipMalloc": {
+          "actual_runtime": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+          "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+        },
+        "hipFree": {
+          "actual_runtime": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+          "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+        },
+        "hipStreamSynchronize": {
+          "actual_runtime": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+          "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+        }
+      }
+    },
+    {
+      "record": "resident_replay_boundaries",
+      "host_null_misaligned_freed_pointer": true,
+      "actual_allocation_bounds": true,
+      "advertised_output_overlap": true,
+      "schema_and_device_rejection": true,
+      "row_and_legal_capacity": true,
+      "stale_reset_and_generic_epochs": true,
+      "perft_mode_rejection": true,
+      "empty_export": true,
+      "snapshot_survives_reset_and_destroy": true,
+      "limitations": [
+        "One physical GPU; foreign-device allocation rejection not exercised.",
+        "HIP allocation bounds cannot prove Torch logical-view ownership."
+      ]
+    },
+    {
+      "record": "resident_replay_copy_boundary",
+      "interposed_APIs": [
+        "hipMemcpy",
+        "hipMemcpyAsync"
+      ],
+      "marked_successful_calls": 9,
+      "per_call_D2H_copies": 2,
+      "per_call_D2H_bytes": 32,
+      "largest_copy_bytes": 16,
+      "H2D_bytes": 0,
+      "D2D_bytes": 0,
+      "payload_negative_control": {
+        "APIs": 2,
+        "D2H_bytes": 256,
+        "largest_copy_bytes": 128
+      },
+      "scope": "Synchronous export C call only; diagnostic Torch output inspection excluded."
+    }
+  ],
+  "regression_records": [
+    {
+      "record": "rules_oracle",
+      "positions": 256,
+      "legal_transitions": 7090,
+      "python_chess": "1.11.2",
+      "seed": 206442544,
+      "exact_packet_and_hash": true
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.01375999953597784,
+      "wall_ms": 0.10209018364548683
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 1,
+      "nodes": 20,
+      "arena_positions": 21,
+      "classified_positions": 1,
+      "kernel_ms": 0.2050810009241104,
+      "wall_ms": 0.46271015889942646
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 2,
+      "nodes": 400,
+      "arena_positions": 421,
+      "classified_positions": 21,
+      "kernel_ms": 0.453085002489388,
+      "wall_ms": 0.8719598408788443
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 3,
+      "nodes": 8902,
+      "arena_positions": 9323,
+      "classified_positions": 421,
+      "kernel_ms": 0.739607990719378,
+      "wall_ms": 1.294221030548215
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 4,
+      "nodes": 197281,
+      "arena_positions": 206604,
+      "classified_positions": 9323,
+      "kernel_ms": 3.51390699762851,
+      "wall_ms": 4.27789194509387
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.013279999606311321,
+      "wall_ms": 0.1860298216342926
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 1,
+      "nodes": 48,
+      "arena_positions": 49,
+      "classified_positions": 1,
+      "kernel_ms": 0.36032399628311396,
+      "wall_ms": 0.6213909946382046
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 2,
+      "nodes": 2039,
+      "arena_positions": 2088,
+      "classified_positions": 49,
+      "kernel_ms": 0.8747260123491287,
+      "wall_ms": 1.278350129723549
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 3,
+      "nodes": 97862,
+      "arena_positions": 99950,
+      "classified_positions": 2088,
+      "kernel_ms": 1.9778560446575284,
+      "wall_ms": 2.555351937189698
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.011880000121891499,
+      "wall_ms": 0.10351999662816525
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 1,
+      "nodes": 14,
+      "arena_positions": 15,
+      "classified_positions": 1,
+      "kernel_ms": 0.1634400011971593,
+      "wall_ms": 0.42351009324193
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 2,
+      "nodes": 191,
+      "arena_positions": 206,
+      "classified_positions": 15,
+      "kernel_ms": 0.38944200053811073,
+      "wall_ms": 0.7927599363029003
+    },
+    {
+      "record": "resident_perft",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 3,
+      "nodes": 2812,
+      "arena_positions": 3018,
+      "classified_positions": 206,
+      "kernel_ms": 0.7043650019913912,
+      "wall_ms": 1.3197909574955702
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.012919999659061432,
+      "wall_ms": 0.1009001862257719
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 1,
+      "nodes": 6,
+      "arena_positions": 7,
+      "classified_positions": 1,
+      "kernel_ms": 0.2536030067130923,
+      "wall_ms": 0.503910006955266
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 2,
+      "nodes": 264,
+      "arena_positions": 271,
+      "classified_positions": 7,
+      "kernel_ms": 0.6067669922485948,
+      "wall_ms": 1.0163311380892992
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1",
+      "depth": 3,
+      "nodes": 9467,
+      "arena_positions": 9738,
+      "classified_positions": 271,
+      "kernel_ms": 1.1650529894977808,
+      "wall_ms": 1.7335009761154652
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.012719999998807907,
+      "wall_ms": 0.10119006037712097
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 1,
+      "nodes": 44,
+      "arena_positions": 45,
+      "classified_positions": 1,
+      "kernel_ms": 0.32180299796164036,
+      "wall_ms": 0.5666299257427454
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 2,
+      "nodes": 1486,
+      "arena_positions": 1531,
+      "classified_positions": 45,
+      "kernel_ms": 0.702485017478466,
+      "wall_ms": 1.1009401641786098
+    },
+    {
+      "record": "resident_perft",
+      "fen": "rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8",
+      "depth": 3,
+      "nodes": 62379,
+      "arena_positions": 63910,
+      "classified_positions": 1531,
+      "kernel_ms": 1.6088139992207289,
+      "wall_ms": 2.163040917366743
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 0,
+      "nodes": 1,
+      "arena_positions": 1,
+      "classified_positions": 0,
+      "kernel_ms": 0.012959999963641167,
+      "wall_ms": 0.10125013068318367
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 1,
+      "nodes": 46,
+      "arena_positions": 47,
+      "classified_positions": 1,
+      "kernel_ms": 0.3252020003274083,
+      "wall_ms": 0.5873399786651134
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 2,
+      "nodes": 2079,
+      "arena_positions": 2126,
+      "classified_positions": 47,
+      "kernel_ms": 0.7645660107955337,
+      "wall_ms": 1.1857098434120417
+    },
+    {
+      "record": "resident_perft",
+      "fen": "r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10",
+      "depth": 3,
+      "nodes": 89890,
+      "arena_positions": 92016,
+      "classified_positions": 2126,
+      "kernel_ms": 1.7142150104045868,
+      "wall_ms": 2.2805719636380672
+    },
+    {
+      "record": "resident_minimax",
+      "depth": 3,
+      "score": 36,
+      "pv": [
+        "b1c3",
+        "b8c6",
+        "g1f3"
+      ],
+      "arena_positions": 9323,
+      "classified_positions": 9323,
+      "evaluated_positions": 8902,
+      "kernel_ms": 1.0444929953664541
+    },
+    {
+      "record": "rules_boundaries",
+      "empty_batches": true,
+      "hash_and_illegal_move_rejected": true,
+      "repetition": true,
+      "idempotent_evaluation": true,
+      "mode_and_evaluator_lock": true,
+      "PV_capacity": true
+    },
+    {
+      "record": "rules_capacity",
+      "capacity": 20,
+      "overflow_explicit": true,
+      "root_preserved": true,
+      "classify_and_evaluate_recovery": true
+    }
+  ],
+  "limitations": [
+    "Finite independent fixtures and canonical rules/perft regression, not exhaustive chess verification.",
+    "Only hipMemcpy and hipMemcpyAsync are interposed; runtime internal traffic and other transfer APIs are outside the diagnostic scope.",
+    "One physical GPU: actual foreign-device allocation rejection untested.",
+    "HIP range checks cover allocator intervals; caller logical tensor shape/dtype/storage/exclusive lifetime checks remain mandatory.",
+    "A prior system-HIP-linked preload created mismatched runtime bindings; those diagnostic results are discarded. Five actual producer/consumer API binding identities are matched in this captured run.",
+    "Correctness run, not a paired throughput/strength comparison; no neural UCI inference or Elo claim."
+  ]
+}

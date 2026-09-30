@@ -43,10 +43,17 @@ This checkpoint records implemented foundations and open gates.
   Additional audited checkpoint validation and legal-diamond experiments are
   retained on that branch; its earlier combined GPU suite passed 29 tests.
   `e262feb` adds compact replay and observed-action transport experiments;
-  the latest combined actual-GPU suite passes 48 tests without skips.
+  its compact/dynamics suite passes 48 actual-GPU tests without skips.
   Compact payload is 801 B/record versus 29733 B dense (37.1x smaller), with
   byte-exact decoded inputs/losses/gradients. Sampling is slower; two short
-  training runs reach 96–99.3% of dense throughput. Ingestion is still CPU-made.
+  training runs reach 96–99.3% of dense throughput. Those measurements used
+  CPU-made ingress. The later [HIP–Torch bridge](../GPU_REPLAY_EXPORT.md) exports
+  resident edges into Torch-owned VRAM, admits compact records and trains all
+  three model families with toy targets. Its final combined GPU suite passes
+  62 tests without skips; all six Rust hardware tests also pass after the export
+  extension. Runtime identity, stale selections, allocation bounds, cross-stream
+  handoff and failure-path completion are tested. Scoped copy diagnostics see
+  only two 16-byte status copies during each successful C export call.
 
 ## Research findings
 
@@ -78,8 +85,8 @@ artifact capture and canonical held-out split checks.
    attack generation, parallel prefix assignment, compact edges and level reuse.
 2. Compare full-width frontier, faithful regularized batched search and a
    separately declared adaptive scheduler at equal wall-clock budgets.
-3. Connect the implemented compact replay to a HIP device producer and learned
-   batched inference, with explicit stream/lifetime/ownership semantics.
+3. Extend the executed HIP-to-compact-replay bridge to learned batched inference
+   and sustained data generation, retaining its stream/lifetime/ownership contract.
 4. Improve action-sensitive dynamics with exact transition reconstruction and
    counterfactual tactical probes; test multistep held-out drift before latent
    search. Integrate a trained evaluator only after these gates.
@@ -90,5 +97,5 @@ artifact capture and canonical held-out split checks.
    the chosen Lichess pool; no account deployment or rating result exists yet.
 
 No requirement has been dropped. Selective resident search and GPU self-play,
-direct HIP–Torch experience ingestion, production trained inference, long
+production trained inference, long
 matches/SPRT and the final rating target remain incomplete.

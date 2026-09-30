@@ -1,0 +1,64 @@
+{
+  "kind": "resident_gpu_replay_combined_integration",
+  "date": "2026-09-30",
+  "container": "cpp-rocm",
+  "target": "gfx1030",
+  "commands": {
+    "neural": "CHEN_QA_PYTHON=/tmp/chen-qa-venv/bin/python CHEN_ARTIFACT_DIR=results/bridge-final/artifacts scripts/rocm_run.sh neural-test",
+    "rust": "scripts/rocm_run.sh test"
+  },
+  "results": {
+    "neural_tests_passed": 62,
+    "neural_tests_skipped": 0,
+    "neural_test_seconds": 7.297,
+    "rust_actual_hardware_tests_passed": 6
+  },
+  "source_revisions_before_export": {
+    "main": "0d05ce0",
+    "neural": "e262feb"
+  },
+  "wrapper_sha256": "9c2c831b4ceb15e7ef8ce437bcc72010d3c83540ab4c21e34378e949e65d6071",
+  "artifact_directory": "results/bridge-final/artifacts",
+  "artifact_manifest_sha256": "6041780770c2c64baaa300544e16d71a43764ca874ab6b67f9c8e507af96e76d",
+  "verified_artifact_files_sha256": {
+    "chen": "9f8b43cfee4fbe0326b23054dbf19ce8f17379a831196fa04270facab6d91abf",
+    "container-image.txt": "f1c0f364f9fc2999a87cce039c21dd60aa177ef915116f9b8aac30a35f253f35",
+    "device-probe.jsonl": "eaa644b49dfd302265e3f572612e2507d9a26d1cca4ad0d02412781a665f4fdc",
+    "gpu-source/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu-source/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu-source/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu-source/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu-source/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu-source/chen_rules.hip": "76b2173a9e0061cbaf78ddba0450e03324d0323dcb5be376b7b6ad70e42a1b7e",
+    "libchen_gpu.so": "da7ab44f551317ad8c788a1e4a9677308ed0f01fdad5ecdc02ce15b0812d47bb",
+    "neural-source/bridge.py": "02a05f0919cc82ed97f5b5243649d57284644d6ffb16ae2a0db212d7dd27d477",
+    "neural-source/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural-source/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+    "neural-source/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "neural-source/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "neural-source/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural-source/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural-source/tests/test_bridge.py": "7864421305b34c60fb02f1ad4c4c54fc76a40127d85129f5238147b6de44b924",
+    "neural-source/tests/test_compact.py": "473bfd8320bade52a74537402e73d57caecf9668e0a2106f9e4b98ad5d4df685",
+    "neural-source/tests/test_data.py": "e82e69fc92284532281cdd9a9fd011fd8e14491b08065b632dda8a8a57d1667c",
+    "neural-source/tests/test_diamonds.py": "42a66bafd1aa60396a570875f2f6b56f73e64f3817e68a5c6402dfa438f5ef0a",
+    "neural-source/tests/test_dynamics.py": "fae069a7ec44891cac8066e1193abac2e4fdaa77a101966b18c6a362675b3976",
+    "neural-source/tests/test_models.py": "2539b0fb30b49837b1380c324d42b37a9fb010304f1df045476a47ddfa38e07f",
+    "neural-source/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+  },
+  "evidence_sha256": {
+    "gpu/evidence/rules-after-bridge-rust-gfx1030-2026-09-30.txt": "fb0d99d9af6439960d2b12902efecadfd6b6576c964aeb20a717d94e6ac5d8fc",
+    "../chen-neural/neural/evidence/combined-bridge-tests-gfx1030-2026-09-30.txt": "45a4f4313334015ac4ea69397f9145e0b0a5f5f591c078b69613e60ea78380af",
+    "gpu/evidence/replay-gfx1030-2026-09-30.json": "7a683b65aa47fcfd27333559e245f7f1a9bc1c454bcdb527bd3dc27be709c7a1",
+    "gpu/evidence/rules-after-replay-gfx1030-2026-09-30.jsonl": "a9ac8776fefb4dceea2dffe4654f4d6adae23dceaddd751748719bde7d59e6d6"
+  },
+  "scope": [
+    "The wrapper artifact manifest was verified against all captured files; selected executable, library and source fingerprints are retained here.",
+    "GPU and neural executable sources match the executed wrapper snapshot. Documentation was updated afterward.",
+    "The wrapper library and the independently compiled native copy-diagnostic library have different binary fingerprints, despite identical HIP sources; each run records its own artifact.",
+    "Standalone Rust binds system HIP; the Python bridge verifies binding to Torch bundled HIP before context creation.",
+    "Root/history ingress is host-controlled. Exported board payload, compact replay sampling and bounded training execute on the GPU. Toy material/action targets establish mechanics only.",
+    "Six hardware tests pass after the C ABI extension. The separate independent rules rerun checks 7090 legal transitions and canonical perft fixtures.",
+    "No trained engine inference, sustained self-play throughput, long strength match, calibrated levels or 2500 Lichess rating claim."
+  ]
+}

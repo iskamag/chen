@@ -45,6 +45,7 @@ scripts/rocm_run.sh bench --backend hip-frontier --depth 3
 scripts/rocm_run.sh bench --backend hip-resident --depth 3
 scripts/rocm_run.sh gpu-perft 4 --max-positions 250000
 scripts/rocm_run.sh compare --depth 3 --repeats 5
+CHEN_QA_PYTHON=/tmp/chen-oracle/bin/python scripts/rocm_run.sh neural-test
 scripts/rocm_run.sh uci
 ```
 
@@ -60,7 +61,10 @@ Resident trees use `MaxPositions`; `BatchSize` applies to frontier scoring.
 [GPU research](docs/GPU_RESEARCH.md) records hardware measurements and search
 alternatives. The [research program](docs/research/PROGRAM.md) coordinates teams
 and production gates; [current status](docs/research/STATUS.md) records evidence and
-remaining work. Models, latent transitions and resident replay are on
+remaining work. The [replay export](docs/GPU_REPLAY_EXPORT.md) connects resident
+HIP transitions to Torch-owned VRAM and compact replay in the neural worktree.
+The combined GPU suite passes 62 tests, including a bounded training smoke with
+toy labels. Models, latent transitions and resident replay are on
 `research/neural` in `../chen-neural`; they have not been merged into inference.
 The [offline match harness](docs/harness/README.md) saves paired games and failures.
 The requested target is 2500 on Lichess, which requires separate rating evidence.
@@ -127,8 +131,9 @@ the dirty patch, including an uncommitted initial checkout.
 An incremental evaluator gets `reset`, `after_make`, and `after_unmake` callbacks
 for its own accumulator stack. The rules kernel does not know about a network.
 Start with a scalar full-refresh oracle, specify features and serialization,
-then compare incremental state and SIMD output bit-for-bit. The neural model,
-training pipeline, and optimized delta interface are future work.
+then compare incremental state and SIMD output bit-for-bit. Neural models and a GPU replay/training path exist in the research worktree.
+Production Rust neural inference, meaningful training targets and an optimized
+incremental interface remain open.
 
 Optional independent QA uses python-chess in a separate development environment:
 
