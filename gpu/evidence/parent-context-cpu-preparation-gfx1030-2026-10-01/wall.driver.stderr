@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 777, in <module>
+    main()
+    ~~~~^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 758, in main
+    {'declare': declare, 'produce': producer, 'consume': consumer, 'mirror': mirror}[args.command](args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 671, in mirror
+    raise TimeoutError('host transport wall deadline exceeded')
+TimeoutError: host transport wall deadline exceeded

@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+import sys
+for line in sys.stdin:
+ if line.strip() == 'uci': print('uciok',flush=True)
+ elif line.strip() == 'isready': print('readyok',flush=True)
+ elif line.strip() == 'quit': break

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 777, in <module>
+    main()
+    ~~~~^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 758, in main
+    {'declare': declare, 'produce': producer, 'consume': consumer, 'mirror': mirror}[args.command](args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 676, in mirror
+    raise TimeoutError('output pipes still inherited after transport exit')
+TimeoutError: output pipes still inherited after transport exit

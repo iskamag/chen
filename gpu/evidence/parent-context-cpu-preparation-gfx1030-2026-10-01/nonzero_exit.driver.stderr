@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 777, in <module>
+    main()
+    ~~~~^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 758, in main
+    {'declare': declare, 'produce': producer, 'consume': consumer, 'mirror': mirror}[args.command](args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/iskam/src/vibe/chen/gpu/parent_context_probe.py", line 716, in mirror
+    assert code == 0, ('remote command failed; inspect durable consumer retirement journal', code)
+           ^^^^^^^^^
+AssertionError: ('remote command failed; inspect durable consumer retirement journal', 7)

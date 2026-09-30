@@ -1,0 +1,37 @@
+{
+  "scope": "CPU-only source, transport and ownership controls; GPU producer/consumers unexecuted",
+  "probe_sha256": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701",
+  "exact_reference_helpers_and_game_protocol": true,
+  "CPU_parent_guard": {
+    "torch_neural_modules": [],
+    "HIP_Torch_DSO_maps": []
+  },
+  "controls": [
+    {
+      "name": "success",
+      "returncode": 0,
+      "elapsed_seconds": 0.20029263600008562
+    },
+    {
+      "name": "wall",
+      "returncode": 1,
+      "elapsed_seconds": 3.28110614399975
+    },
+    {
+      "name": "inherited_pipe",
+      "returncode": 1,
+      "elapsed_seconds": 1.1593098530001953,
+      "descendant_pid": 21394,
+      "descendant_final_state": "absent"
+    },
+    {
+      "name": "nonzero_exit",
+      "returncode": 1,
+      "elapsed_seconds": 0.15901740600020275
+    }
+  ],
+  "owned_child_reaped": true,
+  "owned_children_remaining": 0,
+  "test_only_UCI_timeout_seconds": 0.02,
+  "declared_UCI_timeout_seconds": 30
+}
