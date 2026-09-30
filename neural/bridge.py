@@ -350,6 +350,33 @@ class RuleArena:
             return {**{name: getattr(stats, name) for name, _ in stats._fields_},
                     "span": ResidentSpan(self.context_uuid, self._epoch, stats.next_start, stats.next_count)}
 
+    def evaluate(self, span, evaluator=1):
+        """Classify and statically score a resident leaf span (0 material/1 tapered)."""
+        with self._lock:
+            self._require_open()
+            source = self._validate_span(span)
+            if type(evaluator) is not int or evaluator not in (0, 1):
+                raise ValueError("evaluator must be 0 material or 1 tapered")
+            fn = self._lib.chen_rules_evaluate
+            fn.argtypes = [c.c_void_p, c.c_uint64, c.c_uint64, c.c_uint32,
+                           c.POINTER(RuleStats), c.c_char_p, c.c_uint64]
+            fn.restype = c.c_int32
+            stats = RuleStats()
+            self._call("evaluate", source.start, source.count, evaluator, c.byref(stats))
+            return {name: getattr(stats, name) for name, _ in stats._fields_}
+
+    def reduce(self, span):
+        """Back up one complete parent level after all immediate children scored."""
+        with self._lock:
+            self._require_open()
+            source = self._validate_span(span)
+            fn = self._lib.chen_rules_reduce
+            fn.argtypes = [c.c_void_p, c.c_uint64, c.c_uint64, c.POINTER(RuleStats), c.c_char_p, c.c_uint64]
+            fn.restype = c.c_int32
+            stats = RuleStats()
+            self._call("reduce", source.start, source.count, c.byref(stats))
+            return {name: getattr(stats, name) for name, _ in stats._fields_}
+
     def export(self, span, *, legal_slots=256, game_id=0):
         """Export existing contiguous child nodes into independent device tensors."""
         with self._lock:

@@ -1,0 +1,18 @@
+test_abi_and_sibling_dedup_has_one_vote_complete_edges_only (neural.tests.test_teacher.TeacherCPU.test_abi_and_sibling_dedup_has_one_vote_complete_edges_only) ... ok
+test_actual_search_loss_finite_update_and_mate_exclusion (neural.tests.test_teacher.TeacherCPU.test_actual_search_loss_finite_update_and_mate_exclusion) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/tmp/chen-neural-methods/project/neural/tests/test_teacher.py:152: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  self.assertEqual(float(loss["search_utility"]), 0)
+ok
+test_feature_identity_matches_exact_color_clock_ep_equivalence (neural.tests.test_teacher.TeacherCPU.test_feature_identity_matches_exact_color_clock_ep_equivalence) ... ok
+test_lineage_and_position_split_is_reproducible_and_disjoint (neural.tests.test_teacher.TeacherCPU.test_lineage_and_position_split_is_reproducible_and_disjoint) ... ok
+test_ring_label_alignment_overwrite_hot_sampling_and_atomic_validation (neural.tests.test_teacher.TeacherCPU.test_ring_label_alignment_overwrite_hot_sampling_and_atomic_validation) ... ok
+test_search_checkpoint_roundtrip_and_corruption_rejection (neural.tests.test_teacher.TeacherCPU.test_search_checkpoint_roundtrip_and_corruption_rejection) ... ok
+test_shared_comparison_heads_start_identically (neural.tests.test_teacher.TeacherCPU.test_shared_comparison_heads_start_identically) ... ok
+test_complete_bfs_exact_material_parent_labels_and_resident_learning (neural.tests.test_teacher.TeacherGPU.test_complete_bfs_exact_material_parent_labels_and_resident_learning) ... skipped 'set CHEN_TEACHER_TEST_GPU=1 for actual teacher tests'
+test_unreduced_and_stale_labels_rejected (neural.tests.test_teacher.TeacherGPU.test_unreduced_and_stale_labels_rejected) ... skipped 'set CHEN_TEACHER_TEST_GPU=1 for actual teacher tests'
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.322s
+
+OK (skipped=2)

@@ -1,0 +1,178 @@
+{
+  "kind": "same_model_static_inference_artifact_parity",
+  "strength_evidence": false,
+  "device": {
+    "torch": "2.10.0+rocm7.0",
+    "hip": "7.0.51831",
+    "gpu": "AMD Radeon Graphics",
+    "architecture": "gfx1030"
+  },
+  "tests": {
+    "run": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "seconds": 20.670143995899707
+  },
+  "gpu_cases": [
+    {
+      "model": "square",
+      "width": 8,
+      "depth": 1,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "square",
+      "width": 8,
+      "depth": 1,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "square",
+      "width": 8,
+      "depth": 1,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "square",
+      "width": 16,
+      "depth": 2,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "square",
+      "width": 16,
+      "depth": 2,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "square",
+      "width": 16,
+      "depth": 2,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 8,
+      "depth": 1,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 8,
+      "depth": 1,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 8,
+      "depth": 1,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 16,
+      "depth": 2,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 16,
+      "depth": 2,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "relation",
+      "width": 16,
+      "depth": 2,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 8,
+      "depth": 1,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 8,
+      "depth": 1,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 8,
+      "depth": 1,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 16,
+      "depth": 2,
+      "batch": 1,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 16,
+      "depth": 2,
+      "batch": 3,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    },
+    {
+      "model": "plan",
+      "width": 16,
+      "depth": 2,
+      "batch": 17,
+      "gpu_integer_scores_equal": true,
+      "cpu_gpu_max_difference_cp": 0
+    }
+  ],
+  "source_sha256": {
+    "neural/inference.py": "1d9800e055460ca7d26367c70a341770b8977db129ec3322d2b3f7ba5948fff2",
+    "neural/tests/test_inference.py": "a71fa95fa1fd5b649af6aa00128e3ac3d08e5135dd9be3515cf11f5551a5dff4",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/teacher.py": "619a42838958a0b773b901a5eefdf2326911ece18453a7f665f9e71da28ba957"
+  },
+  "scope": [
+    "updated tensor parity fixtures, not a real teacher training run",
+    "six configurations; GPU eager and CPU-exported frozen/reloaded scores; batches1/3/17",
+    "oracle tests intentionally download scores for CPU comparison; no resident copy-traffic claim",
+    "CPU artifact and explicit teacher checkpoint loader fixture tests included"
+  ],
+  "log": "test_conversion_is_symmetric_finite_static_cp_not_mate (neural.tests.test_inference.InferenceCPU.test_conversion_is_symmetric_finite_static_cp_not_mate) ... ok\ntest_explicit_teacher_checkpoint_cli_preserves_contract_and_weights (neural.tests.test_inference.InferenceCPU.test_explicit_teacher_checkpoint_cli_preserves_contract_and_weights) ... ok\ntest_integrity_schema_and_size_guards (neural.tests.test_inference.InferenceCPU.test_integrity_schema_and_size_guards) ... ok\ntest_trained_architecture_integer_export_reload_and_dynamic_batch (neural.tests.test_inference.InferenceCPU.test_trained_architecture_integer_export_reload_and_dynamic_batch) ... ok\ntest_all_architectures_remap_preserves_gpu_integer_scores (neural.tests.test_inference.InferenceGPU.test_all_architectures_remap_preserves_gpu_integer_scores) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 20.670s\n\nOK\n"
+}

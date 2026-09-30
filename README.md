@@ -11,9 +11,13 @@ The research includes [square/relation/plan architectures](docs/NEURAL_ARCHITECT
 [legal-diamond dynamics](docs/DIAMOND_EXPERIMENT.md),
 [observed move transport](docs/ACTION_DYNAMICS.md), and
 [compact resident replay](docs/COMPACT_REPLAY.md), and the
-[direct HIP-to-Torch bridge](docs/VRAM_BRIDGE.md). The latest combined suite
-passes 62 tests on gfx1030 without skips. Synthetic mechanics and mixed/negative dynamics
+[direct HIP-to-Torch bridge](docs/VRAM_BRIDGE.md),
+[resident search teachers](docs/SEARCH_TEACHER.md), and
+[same-model native deployment](docs/NEURAL_DEPLOYMENT.md). The first controlled
+search-teacher run trails material on heldout inputs. Trained static inference
+is integrated in the main GPU engine. Synthetic mechanics and mixed/negative dynamics
 results are recorded explicitly; no neural playing-strength claim is made.
+The current combined neural suite passes 76 actual gfx1030 tests without skips.
 
 ```sh
 cargo build --release
@@ -101,8 +105,8 @@ An incremental evaluator gets `reset`, `after_make`, and `after_unmake` callback
 for its own accumulator stack. The rules kernel does not know about a network.
 Start with a scalar full-refresh oracle, specify features and serialization,
 then compare incremental state and SIMD output bit-for-bit. This branch contains
-neural model/training experiments and resident replay; production Rust inference
-and a trained playing-strength evaluator remain open.
+neural model/training experiments and resident replay; same-model Rust/GPU static inference lives in the main worktree. Strong trained
+evaluation, latent planning and calibrated playing strength remain open.
 
 Optional independent QA uses python-chess in a separate development environment:
 
