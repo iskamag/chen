@@ -1,0 +1,28 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+test_clear_invalidation_without_realloc_or_identity_reuse (test_data.ReplayTests.test_clear_invalidation_without_realloc_or_identity_reuse) ... ok
+test_gather_is_owned_and_preserves_device_dtype (test_data.ReplayTests.test_gather_is_owned_and_preserves_device_dtype) ... ok
+test_generated_transitions_legal_and_same_seed_identical (test_data.ReplayTests.test_generated_transitions_legal_and_same_seed_identical) ... ok
+test_ingress_drops_autograd_graph (test_data.ReplayTests.test_ingress_drops_autograd_graph) ... ok
+test_ingress_rejects_dtype_shape_illegality_and_nonfinite_atomically (test_data.ReplayTests.test_ingress_rejects_dtype_shape_illegality_and_nonfinite_atomically) ... ok
+test_sampling_reproducible_and_empty_errors (test_data.ReplayTests.test_sampling_reproducible_and_empty_errors) ... ok
+test_strict_legal_sampling_terminal_and_nan (test_data.ReplayTests.test_strict_legal_sampling_terminal_and_nan) ... ok
+test_wraparound_and_oversized_append_keep_newest (test_data.ReplayTests.test_wraparound_and_oversized_append_keep_newest) ... ok
+test_checkpoint_rejects_schema_weights_and_arbitrary_pickle (test_data.TrainingTests.test_checkpoint_rejects_schema_weights_and_arbitrary_pickle) ... ok
+test_checkpoint_roundtrip_all_architectures (test_data.TrainingTests.test_checkpoint_roundtrip_all_architectures) ... ok
+test_comparison_identical_data_and_batch_schedule (test_data.TrainingTests.test_comparison_identical_data_and_batch_schedule) ... ok
+test_loss_finite_update_and_reproducible_on_all_models (test_data.TrainingTests.test_loss_finite_update_and_reproducible_on_all_models) ... ok
+test_color_rank_flip_preserves_features (test_models.FeaturesTest.test_color_rank_flip_preserves_features) ... ok
+test_invalid_fen_and_moves_rejected (test_models.FeaturesTest.test_invalid_fen_and_moves_rejected) ... ok
+test_masks_terminal_rows_and_normalization (test_models.FeaturesTest.test_masks_terminal_rows_and_normalization) ... ok
+test_move_mapping_is_bijective_and_color_canonical (test_models.FeaturesTest.test_move_mapping_is_bijective_and_color_canonical) ... ok
+test_all_models_shapes_gradients_and_multistep (test_models.ModelsTest.test_all_models_shapes_gradients_and_multistep) ... ok
+test_attacks_and_color_symmetry_against_independent_rules_oracle (test_models.ModelsTest.test_attacks_and_color_symmetry_against_independent_rules_oracle) ... ok
+test_gpu_matches_cpu_forward_transition_and_gradients (test_models.ModelsTest.test_gpu_matches_cpu_forward_transition_and_gradients) ... ok
+test_move_changes_latent_and_legality_is_external (test_models.ModelsTest.test_move_changes_latent_and_legality_is_external) ... ok
+test_pseudoattack_blockers_and_pawn_directions (test_models.ModelsTest.test_pseudoattack_blockers_and_pawn_directions) ... ok
+test_resident_branch_and_rollout_match_individual_transitions (test_models.ModelsTest.test_resident_branch_and_rollout_match_individual_transitions) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 4.434s
+
+OK

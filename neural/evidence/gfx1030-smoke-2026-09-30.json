@@ -1,0 +1,162 @@
+{
+  "kind": "synthetic_legal_smoke",
+  "strength_evidence": false,
+  "environment": {
+    "torch": "2.10.0+rocm7.0",
+    "hip": "7.0.51831",
+    "device": "cuda:0",
+    "seed": 20260930,
+    "deterministic_algorithms": false,
+    "gpu": "AMD Radeon Graphics",
+    "architecture": "gfx1030"
+  },
+  "data": {
+    "schema_version": 1,
+    "kind": "synthetic_legal_smoke",
+    "seed": 20260930,
+    "count": 192,
+    "max_plies": 48,
+    "games": 4,
+    "oracle": "chess==1.11.2",
+    "fingerprint_sha256": "863923c05e93a25649240fc9afdc36acb44d6f8964006c031d95e1e83dc8c069",
+    "labels": "immediate capture/check/mate heuristic + material proxy",
+    "strength_evidence": false,
+    "ingestion_device": "cuda"
+  },
+  "replay": {
+    "schema_version": 1,
+    "device": "cuda:0",
+    "capacity": 192,
+    "size": 192,
+    "cursor": 0,
+    "total_inserted": 192,
+    "bytes_per_record": 29733,
+    "allocated_bytes": 5708736
+  },
+  "results": [
+    {
+      "model": "square",
+      "parameters": 19908,
+      "width": 32,
+      "depth": 1,
+      "steps": 8,
+      "batch_size": 16,
+      "seconds": 0.4120807668659836,
+      "training_positions_per_second": 310.6187191736323,
+      "first_loss": {
+        "total": 5.084659099578857,
+        "policy": 3.455906867980957,
+        "material_proxy": 0.26051753759384155,
+        "board": 0.7378566265106201,
+        "successor_board": 0.7621871829032898,
+        "rules": 5.118100643157959,
+        "successor_rules": 4.792529106140137,
+        "latent_consistency": 0.021607117727398872
+      },
+      "final_loss": {
+        "total": 4.865015983581543,
+        "policy": 3.4812331199645996,
+        "material_proxy": 0.13309983909130096,
+        "board": 0.7103061079978943,
+        "successor_board": 0.7281780242919922,
+        "rules": 4.766839981079102,
+        "successor_rules": 4.124223709106445,
+        "latent_consistency": 0.019556310027837753
+      },
+      "training_heuristic_policy_accuracy": 0.3125,
+      "sample_sequence_sha256": "2ea0656c9a6e735ebd210eff8e99d2a4dcfe7e12803844b047110c725cc872c5",
+      "checkpoint": {
+        "path": "results/neural/checkpoints/square.pt",
+        "sha256": "53a2d86e0bd1ed36e7750f961bf5c14156d961c93ef62f9c08dfa933871b6d27",
+        "kind": "synthetic_legal_smoke_checkpoint",
+        "strength_evidence": false
+      },
+      "greedy_moves_legal": true
+    },
+    {
+      "model": "relation",
+      "parameters": 24203,
+      "width": 32,
+      "depth": 1,
+      "steps": 8,
+      "batch_size": 16,
+      "seconds": 0.09594704583287239,
+      "training_positions_per_second": 1334.069213792781,
+      "first_loss": {
+        "total": 5.003377437591553,
+        "policy": 3.36352801322937,
+        "material_proxy": 0.27851200103759766,
+        "board": 0.7186673879623413,
+        "successor_board": 0.7110590934753418,
+        "rules": 4.951876163482666,
+        "successor_rules": 5.067793369293213,
+        "latent_consistency": 0.019388902932405472
+      },
+      "final_loss": {
+        "total": 4.686237812042236,
+        "policy": 3.317943811416626,
+        "material_proxy": 0.16723987460136414,
+        "board": 0.6933913230895996,
+        "successor_board": 0.6886516809463501,
+        "rules": 4.417097091674805,
+        "successor_rules": 4.123106002807617,
+        "latent_consistency": 0.015230976045131683
+      },
+      "training_heuristic_policy_accuracy": 0.4375,
+      "sample_sequence_sha256": "2ea0656c9a6e735ebd210eff8e99d2a4dcfe7e12803844b047110c725cc872c5",
+      "checkpoint": {
+        "path": "results/neural/checkpoints/relation.pt",
+        "sha256": "09224d5be66372831e69e6d1ce976dcd5e64ae11b60481d3a69a481b9022f683",
+        "kind": "synthetic_legal_smoke_checkpoint",
+        "strength_evidence": false
+      },
+      "greedy_moves_legal": true
+    },
+    {
+      "model": "plan",
+      "parameters": 28683,
+      "width": 32,
+      "depth": 1,
+      "steps": 8,
+      "batch_size": 16,
+      "seconds": 0.09530481602996588,
+      "training_positions_per_second": 1343.0590953531043,
+      "first_loss": {
+        "total": 5.05648946762085,
+        "policy": 3.415954113006592,
+        "material_proxy": 0.21264490485191345,
+        "board": 0.725581169128418,
+        "successor_board": 0.7309719920158386,
+        "rules": 5.356079578399658,
+        "successor_rules": 5.263376712799072,
+        "latent_consistency": 0.018065929412841797
+      },
+      "final_loss": {
+        "total": 4.705234527587891,
+        "policy": 3.2833404541015625,
+        "material_proxy": 0.16959220170974731,
+        "board": 0.6696571111679077,
+        "successor_board": 0.6692801713943481,
+        "rules": 4.816689968109131,
+        "successor_rules": 4.344343662261963,
+        "latent_consistency": 0.014645181596279144
+      },
+      "training_heuristic_policy_accuracy": 0.0625,
+      "sample_sequence_sha256": "2ea0656c9a6e735ebd210eff8e99d2a4dcfe7e12803844b047110c725cc872c5",
+      "checkpoint": {
+        "path": "results/neural/checkpoints/plan.pt",
+        "sha256": "50a0c6e1b6bddfe05f538e7e852914bd0ef9a0759f290c75404fb299074be297",
+        "kind": "synthetic_legal_smoke_checkpoint",
+        "strength_evidence": false
+      },
+      "greedy_moves_legal": true
+    }
+  ],
+  "limitations": [
+    "random legal games, no teacher search or outcome targets",
+    "training-set metrics, no held-out strength evidence",
+    "CPU data ingestion, device-resident replay sampling",
+    "timing includes first optimizer-state allocation",
+    "seeded reproducibility; backend determinism not guaranteed"
+  ]
+}

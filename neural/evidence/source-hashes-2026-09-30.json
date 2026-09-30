@@ -1,0 +1,8 @@
+{
+  "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+  "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+  "neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+  "neural/train.py": "b8a4a52a778ca81c1c80665d5945520c88b5b556b118ef1b67645943a2a620e7",
+  "neural/tests/test_models.py": "2539b0fb30b49837b1380c324d42b37a9fb010304f1df045476a47ddfa38e07f",
+  "neural/tests/test_data.py": "e134942d90e14cd3e4c64374487f4a2442318d31850c2aef92cb4b91689509cf"
+}
