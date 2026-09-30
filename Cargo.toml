@@ -1,0 +1,23 @@
+[package]
+name = "chen"
+version = "0.1.0"
+edition = "2024"
+description = "A modular chess engine and architecture experiment laboratory"
+license = "MIT"
+default-run = "chen"
+
+[lib]
+name = "chen"
+path = "src/lib.rs"
+
+[[bin]]
+name = "chen"
+path = "src/main.rs"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.bench]
+lto = "thin"
+codegen-units = 1

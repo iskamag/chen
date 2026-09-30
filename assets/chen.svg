@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1152" height="480" viewBox="0 0 1152 480" role="img" aria-labelledby="title desc">
+  <title id="title">CHEN — Rust chess engine</title>
+  <desc id="desc">Chen, an original chess-coded catgirl mascot in a green seal, beside hand-drawn CHEN lettering and a four-square chess motif.</desc>
+
+  <defs>
+    <linearGradient id="cap" x1="0" y1="0" x2="0.9" y2="1">
+      <stop stop-color="#3b8e69"/><stop offset="1" stop-color="#145347"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="0.8" y2="1">
+      <stop stop-color="#ea9d4f"/><stop offset="1" stop-color="#b6502e"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0.8" y2="1">
+      <stop stop-color="#e8684b"/><stop offset="1" stop-color="#bb3836"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(34 24) scale(.84375)">
+  <g stroke="#253d36" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Rounded tournament seal, with a warm paper face. -->
+    <rect x="16" y="16" width="480" height="480" rx="108" fill="#153f37" stroke="none"/>
+    <rect x="28" y="28" width="456" height="456" rx="97" fill="none" stroke="#44836a" stroke-width="2"/>
+    <circle cx="256" cy="262" r="193" fill="#f6e7c7" stroke="none"/>
+    <path d="M97 154l11-12 12 12-12 12zM394 374l11-12 12 12-12 12z" fill="#d09b50" stroke="none"/>
+    <path d="M106 346v24m-12-12h24M403 175v24m-12-12h24" stroke="#d09b50" stroke-width="3"/>
+    <!-- Two independent curled tails frame the silhouette. -->
+    <path d="M181 395C96 412 61 359 75 313c8-26 35-40 57-23 16 13 12 35-2 44 19-1 26 16 38 31l35 20" fill="url(#hair)" stroke-width="9"/>
+    <path d="M331 395c84 17 119-36 105-82-8-26-35-40-57-23-16 13-12 35 2 44-19-1-26 16-38 31l-35 20" fill="url(#hair)" stroke-width="9"/>
+    <path d="M81 314c11-27 30-33 47-19-9 2-15 9-15 20-12-6-22-4-32-1zM431 314c-11-27-30-33-47-19 9 2 15 9 15 20 12-6 22-4 32-1z" fill="#f8dca4" stroke="none"/>
+    <path d="M83 352l16-11m-6 32 20-13m303-8-16-11m6 32-20-13" fill="none" stroke="#91442d" stroke-width="9"/>
+    <!-- Cat ears are inset behind the green cap. -->
+    <path d="M147 180c-15-31-16-72-10-106 32 12 57 34 73 64z" fill="#bd5d35" stroke-width="9"/>
+    <path d="M365 180c15-31 16-72 10-106-32 12-57 34-73 64z" fill="#bd5d35" stroke-width="9"/>
+    <path d="M148 96l9 65 34-23zM364 96l-9 65-34-23z" fill="#edb187" stroke="none"/>
+    <!-- Hair and face. -->
+    <path d="M154 179c-32 32-37 69-27 104l-17 42 36-8-1 30 41-15c16 17 41 27 70 27s54-10 70-27l41 15-1-30 36 8-17-42c10-35 5-72-27-104z" fill="url(#hair)" stroke-width="9"/>
+    <path d="M172 207c-18 8-27 30-20 54 2 8 7 14 13 16 9 36 41 58 91 58s82-22 91-58c6-2 11-8 13-16 7-24-2-46-20-54z" fill="#ffe5bc" stroke-width="7"/>
+    <path d="M165 238c13-13 31-38 34-55 12 26 39 40 65 40l-6-23c19 19 39 24 56 20l-2-18c15 15 23 28 35 34 3-28-5-57-25-73H191c-22 18-30 44-26 75z" fill="url(#hair)" stroke-width="7"/>
+    <path d="M146 267l20-22-2 53-18 19m220-50-20-22 2 53 18 19" fill="none" stroke="#9c472e" stroke-width="6"/>
+    <!-- Soft amber eyes and tiny cat smile. -->
+    <path d="M188 248c9-12 26-12 37-2m62 0c11-10 28-10 37 2" fill="none" stroke-width="7"/>
+    <ellipse cx="211" cy="260" rx="12" ry="17" fill="#563e2e" stroke="none"/>
+    <ellipse cx="301" cy="260" rx="12" ry="17" fill="#563e2e" stroke="none"/>
+    <path d="M203 267q8 7 16 0m74 0q8 7 16 0" fill="none" stroke="#d5a347" stroke-width="5"/>
+    <circle cx="207" cy="253" r="4" fill="#fff8e5" stroke="none"/>
+    <circle cx="297" cy="253" r="4" fill="#fff8e5" stroke="none"/>
+    <ellipse cx="180" cy="279" rx="13" ry="7" fill="#ed9a7f" stroke="none"/>
+    <ellipse cx="332" cy="279" rx="13" ry="7" fill="#ed9a7f" stroke="none"/>
+    <path d="M251 282l5 4 5-4" fill="#b3694b" stroke="#b3694b" stroke-width="3"/>
+    <path d="M238 296q8 11 18 0 10 11 18 0" fill="none" stroke-width="4"/>
+    <!-- Chen's low green cap, crowned with three chess pawns. -->
+    <path d="M148 162c-5-29 9-51 40-58 20-20 48-27 71-18 27-9 57 0 73 18 30 7 43 28 34 58-27 14-60 17-109 14-49 3-82 0-109-14z" fill="url(#cap)" stroke-width="9"/>
+    <path d="M168 151c44 12 132 12 177-1l13 26c-42 20-148 20-204 0z" fill="#28694f" stroke-width="7"/>
+    <path d="M183 160c34 7 106 7 143 0" fill="none" stroke="#72ad7c" stroke-width="4"/>
+    <path d="M225 123l7 25h49l7-25-16 9-16-17-16 17z" fill="#e7b859" stroke-width="4"/>
+    <circle cx="225" cy="119" r="5" fill="#f9d586" stroke-width="3"/>
+    <circle cx="256" cy="111" r="6" fill="#f9d586" stroke-width="3"/>
+    <circle cx="288" cy="119" r="5" fill="#f9d586" stroke-width="3"/>
+    <path d="M234 144h44" stroke="#fff0b4" stroke-width="3"/>
+    <!-- The gold charm is a miniature knight. -->
+    <path d="M352 163l-5 12" stroke="#e7b859" stroke-width="7"/>
+    <path d="M339 174l25 6-10 44-25-6z" fill="#e9bd63" stroke-width="5"/>
+    <path d="M341 211l4-10-8-1 2-9 8-5 5 6-1 6-1 14z" fill="#365c47" stroke="none"/>
+    <path d="M338 214l14 3" stroke="#365c47" stroke-width="3"/>
+    <circle cx="344" cy="192" r="1.5" fill="#f9d586" stroke="none"/>
+    <!-- Vermilion coat and checkerboard collar. -->
+    <path d="M181 342c-22 14-38 49-42 78 45 29 189 29 234 0-4-29-20-64-42-78l-37-12h-76z" fill="url(#coat)" stroke-width="9"/>
+    <path d="M200 335l29 30 27-18 27 18 29-30-19-9c-23 10-51 10-74 0z" fill="#fff0d1" stroke-width="6"/>
+    <path d="M208 331l14 14 14-12-17-7zm21 34 13-9-11-14-9 3zm83-30-14 14-13-16 8-7zm-29 30-13-9 11-14 17 7z" fill="#253d36" stroke="none"/>
+    <path d="M256 354v78" stroke="#923c35" stroke-width="4"/>
+    <path d="M244 356l-22-9-7 17 23 5m30-13 22-9 7 17-23 5" fill="#e8b853" stroke-width="4"/>
+    <circle cx="256" cy="359" r="9" fill="#e8b853" stroke-width="4"/>
+    <!-- Small queen insignia grounds the chess identity. -->
+    <path d="M294 389l5 15h21l5-15-9 5-6-8-7 8z" fill="#f8dca4" stroke="none"/>
+    <circle cx="294" cy="386" r="3" fill="#f8dca4" stroke="none"/>
+    <circle cx="310" cy="382" r="3" fill="#f8dca4" stroke="none"/>
+    <circle cx="325" cy="386" r="3" fill="#f8dca4" stroke="none"/>
+    <path d="M300 409h19" stroke="#f8dca4" stroke-width="3"/>
+    <!-- Four squares make a quiet base under the mascot. -->
+    <path d="M177 443h158" fill="none" stroke="#d09b50" stroke-width="3"/>
+    <path d="M220 451h18v18h-18zm36 0h18v18h-18z" fill="#ead1a0" stroke="none"/>
+    <path d="M238 451h18v18h-18zm36 0h18v18h-18z" fill="#438369" stroke="none"/>
+  </g></g>
+  <g fill="none" stroke="#153f37" stroke-width="25" stroke-linecap="square" stroke-linejoin="round">
+    <path d="M671 162h-48q-47 0-47 48v45q0 48 47 48h48"/>
+    <path d="M713 162v141m86-141v141m-86-72h86"/>
+    <path d="M923 162h-78v141h78m-78-72h66"/>
+    <path d="M968 303V162l91 141V162"/>
+</g>
+  <path d="M577 341h346" stroke="#d09b50" stroke-width="4"/>
+  <g stroke="none">
+    <path d="M969 332h22v22h-22zm44 0h22v22h-22z" fill="#d09b50"/>
+    <path d="M991 332h22v22h-22zm44 0h22v22h-22z" fill="#28694f"/>
+  </g>
+</svg>
