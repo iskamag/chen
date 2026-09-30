@@ -95,6 +95,13 @@ The [follow-up investigation](../GPU_NEURAL_RELIABILITY.md) reproduces the stall
 and captures native waits in BLAS/HIP completion. Handle priming fails its
 reliability criterion and is rejected. A single original-plugin run with direct
 dispatch disabled passes; repeated controls are required before adopting it.
+The [repeated dispatch study](../GPU_DISPATCH_STUDY.md) ended partially after an
+external container stop. Eight actual timeout stacks survive across four trial
+directories, under both requested settings. Full replacement stdout/stderr and
+ready-time environment records were lost from host temporary storage; they are
+not counted as replayable numerical verification. No dispatch workaround is
+adopted. The same container was restarted for infrastructure recovery after
+archiving the interrupted state; the partial study was not resumed.
 
 Neural commit `090f2a4` retains a
 [predeclared 27-run value study](../../../chen-neural/docs/VALUE_STUDY.md): three
@@ -113,6 +120,15 @@ pairs, 4015 independently replayed legal plies. The original bootstrap output is
 retained historically and excluded from inference because the authored openings
 are correlated. New intervals require an explicit independence assertion.
 This diagnostic does not calibrate Elo or complete the Fastchess/SPRT gate.
+The [pinned Fastchess integration](../harness/FASTCHESS.md) now freezes paired
+experiments, delegates SPRT to the pinned release, independently checks PGN body/
+header results, normal rule endpoints, pair identities, native configuration and
+scoreboard, and treats the finite game cap as inconclusive. Twenty harness tests
+and actual node/depth/clock/failure/interrupt fixtures pass. These authored
+protocol fixtures establish result handling; real strength matches and actual
+statistical boundary acceptance remain unverified. Container matches run the
+whole harness beside local engine executables; host remote-wrapper retirement
+is outside this integration's ownership contract.
 
 The standalone tapered kernel reaches roughly 100 million positions/second at
 batch 32768 in one measured sweep. This excludes position packing, rules,

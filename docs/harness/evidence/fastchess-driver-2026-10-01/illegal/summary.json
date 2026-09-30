@@ -1,0 +1,13 @@
+{
+  "returncode": 1,
+  "timed_out": false,
+  "wall_seconds": 1.223176502999877,
+  "decision": "technical_failure",
+  "retirement": {
+    "scope": "owned local process group; launchers must keep engines in this group",
+    "sigterm_sent": false,
+    "sigkill_sent": false
+  },
+  "wait_error": null,
+  "audit_error": "ValueError: runner failed or whole-run watchdog expired"
+}

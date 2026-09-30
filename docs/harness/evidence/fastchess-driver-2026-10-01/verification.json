@@ -1,0 +1,232 @@
+{
+  "kind": "pinned_fastchess_driver_verification",
+  "scope": "Authored mate and failure protocol fixtures; no independence, statistical boundary crossing, engine-strength or rating result",
+  "cases": {
+    "nodes": {
+      "summary": {
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 1.2205363420000594,
+        "decision": "diagnostic_complete",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": false,
+          "sigkill_sent": false
+        },
+        "wait_error": null,
+        "completed_pairs": 2,
+        "games": 4,
+        "pentanomial": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "candidate_score": 0.5,
+        "logistic_relative_elo_point_estimate": 0.0,
+        "paired_bootstrap_score_interval_95_diagnostic": null,
+        "independent_opening_pairs_asserted": false,
+        "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+        "bootstrap_assumption": "diagnostic workload; opening-pair independence not asserted",
+        "scoreboard": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "penta_WW": 0,
+          "penta_LL": 0,
+          "penta_DD": 0,
+          "penta_WL": 2,
+          "penta_WD": 0,
+          "penta_LD": 0
+        }
+      },
+      "execution_script_sha256": "1a168252c36948b51e176b46d0e81ab500e7658f61c62bab13bf7215c8f25092",
+      "verified_payload_files": 18,
+      "requested_budget": {
+        "nodes": 64,
+        "depth": null,
+        "tc": null
+      }
+    },
+    "clock": {
+      "summary": {
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 1.2208783720000156,
+        "decision": "diagnostic_complete",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": false,
+          "sigkill_sent": false
+        },
+        "wait_error": null,
+        "completed_pairs": 2,
+        "games": 4,
+        "pentanomial": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "candidate_score": 0.5,
+        "logistic_relative_elo_point_estimate": 0.0,
+        "paired_bootstrap_score_interval_95_diagnostic": null,
+        "independent_opening_pairs_asserted": false,
+        "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+        "bootstrap_assumption": "diagnostic workload; opening-pair independence not asserted",
+        "scoreboard": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "penta_WW": 0,
+          "penta_LL": 0,
+          "penta_DD": 0,
+          "penta_WL": 2,
+          "penta_WD": 0,
+          "penta_LD": 0
+        }
+      },
+      "execution_script_sha256": "1a168252c36948b51e176b46d0e81ab500e7658f61c62bab13bf7215c8f25092",
+      "verified_payload_files": 18,
+      "requested_budget": {
+        "nodes": null,
+        "depth": null,
+        "tc": "1+0.01"
+      }
+    },
+    "cap": {
+      "summary": {
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 1.2182746910000333,
+        "decision": "inconclusive_game_cap",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": false,
+          "sigkill_sent": false
+        },
+        "wait_error": null,
+        "completed_pairs": 2,
+        "games": 4,
+        "pentanomial": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "candidate_score": 0.5,
+        "logistic_relative_elo_point_estimate": 0.0,
+        "paired_bootstrap_score_interval_95_diagnostic": null,
+        "independent_opening_pairs_asserted": false,
+        "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+        "bootstrap_assumption": "diagnostic workload; opening-pair independence not asserted",
+        "scoreboard": {
+          "wins": 2,
+          "draws": 0,
+          "losses": 2,
+          "penta_WW": 0,
+          "penta_LL": 0,
+          "penta_DD": 0,
+          "penta_WL": 2,
+          "penta_WD": 0,
+          "penta_LD": 0
+        }
+      },
+      "execution_script_sha256": "33755f64d1060e05d6f9e8dc60fab3de79afad770a2e217af893f8e8c8465f98",
+      "verified_payload_files": 19,
+      "requested_budget": {
+        "nodes": null,
+        "depth": 2,
+        "tc": null
+      }
+    },
+    "illegal": {
+      "summary": {
+        "returncode": 1,
+        "timed_out": false,
+        "wall_seconds": 1.223176502999877,
+        "decision": "technical_failure",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": false,
+          "sigkill_sent": false
+        },
+        "wait_error": null,
+        "audit_error": "ValueError: runner failed or whole-run watchdog expired"
+      },
+      "execution_script_sha256": "33755f64d1060e05d6f9e8dc60fab3de79afad770a2e217af893f8e8c8465f98",
+      "verified_payload_files": 17,
+      "requested_budget": {
+        "nodes": null,
+        "depth": 2,
+        "tc": null
+      }
+    },
+    "watchdog": {
+      "summary": {
+        "returncode": -15,
+        "timed_out": true,
+        "wall_seconds": 0.5041557699998975,
+        "decision": "technical_failure",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": true,
+          "sigkill_sent": true
+        },
+        "wait_error": null,
+        "audit_error": "ValueError: runner failed or whole-run watchdog expired"
+      },
+      "execution_script_sha256": "33755f64d1060e05d6f9e8dc60fab3de79afad770a2e217af893f8e8c8465f98",
+      "verified_payload_files": 16,
+      "requested_budget": {
+        "nodes": null,
+        "depth": 2,
+        "tc": null
+      }
+    },
+    "sigint": {
+      "summary": {
+        "returncode": -15,
+        "timed_out": false,
+        "wall_seconds": 0.3066733260000092,
+        "decision": "technical_failure",
+        "retirement": {
+          "scope": "owned local process group; launchers must keep engines in this group",
+          "sigterm_sent": true,
+          "sigkill_sent": true
+        },
+        "wait_error": "KeyboardInterrupt: ",
+        "audit_error": "ValueError: runner failed or whole-run watchdog expired"
+      },
+      "execution_script_sha256": "1a168252c36948b51e176b46d0e81ab500e7658f61c62bab13bf7215c8f25092",
+      "verified_payload_files": 16,
+      "requested_budget": {
+        "nodes": null,
+        "depth": 2,
+        "tc": null
+      }
+    }
+  },
+  "final_guard_reaudit": {
+    "nodes": {
+      "games": 4,
+      "configuration_replay_scoreboard": "pass"
+    },
+    "clock": {
+      "games": 4,
+      "configuration_replay_scoreboard": "pass"
+    },
+    "cap": {
+      "games": 4,
+      "configuration_replay_scoreboard": "pass"
+    }
+  },
+  "current_source_sha256": {
+    "scripts/fastchess_match.py": "33755f64d1060e05d6f9e8dc60fab3de79afad770a2e217af893f8e8c8465f98",
+    "harness/fastchess.py": "549f1e3cdd7e332164ff7941217bbf7b8db9126d163e1a521c97e26f51c0622a",
+    "tests/harness/test_fastchess.py": "2e1b99ed466b6891b99ddb5cbbaffc518ee3a3a2109cb97accc266b20e7960c3"
+  }
+}

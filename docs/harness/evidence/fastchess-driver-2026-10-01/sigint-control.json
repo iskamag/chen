@@ -1,0 +1,21 @@
+{
+  "kind": "owned_interrupt_retirement_control",
+  "driver_returncode": 1,
+  "observed_fixture_pid": 7048,
+  "fixture_no_longer_live": true,
+  "summary": {
+    "results": "/home/iskam/src/vibe/chen/results/fastchess-final-interrupt-qa-2026-10-01",
+    "returncode": -15,
+    "timed_out": false,
+    "wall_seconds": 0.3066733260000092,
+    "decision": "technical_failure",
+    "retirement": {
+      "scope": "owned local process group; launchers must keep engines in this group",
+      "sigterm_sent": true,
+      "sigkill_sent": true
+    },
+    "wait_error": "KeyboardInterrupt: ",
+    "audit_error": "ValueError: runner failed or whole-run watchdog expired"
+  },
+  "stderr": ""
+}

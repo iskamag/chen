@@ -1,0 +1,19 @@
+Started game 1 of 4 (candidate vs base)
+Finished game 1 (candidate vs base): 1-0 {White mates}
+Started game 2 of 4 (base vs candidate)
+Finished game 2 (base vs candidate): 1-0 {White mates}
+Started game 3 of 4 (candidate vs base)
+Finished game 3 (candidate vs base): 0-1 {Black mates}
+Started game 4 of 4 (base vs candidate)
+Finished game 4 (base vs candidate): 0-1 {Black mates}
+--------------------------------------------------
+Results of candidate vs base (2 plies, NULL, 1MB, openings.epd):
+Elo: -0.00 +/- 0.00, nElo: -nan +/- -nan
+LOS: -nan %, DrawRatio: 100.00 %, PairsRatio: -nan
+Games: 4, Wins: 2, Losses: 2, Draws: 0, Points: 2.0 (50.00 %)
+Ptnml(0-2): [0, 0, 2, 0, 0], WL/DD Ratio: inf
+LLR: -0.00 (-0.0%) (-2.94, 2.94) [0.00, 5.00]
+--------------------------------------------------
+Finished match
+Total Time: 00:00:01 (hours:minutes:seconds)
+

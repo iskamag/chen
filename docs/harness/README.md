@@ -73,9 +73,10 @@ python3 scripts/fetch_match_tools.py --out results/match-tools
 For patch acceptance, use a version-pinned external runner with predeclared
 SPRT hypotheses, clocks, openings, pair model, concurrency and stopping rules.
 [The pinned Fastchess manual](https://github.com/Disservin/fastchess/blob/v1.8.2-alpha/man.md)
-describes its paired-opening and SPRT options. Keep this local harness as a
-protocol/legality oracle and result collector; a full statistical acceptance
-runner remains an explicit next gate.
+describes its paired-opening and SPRT options. The [pinned runner integration](FASTCHESS.md)
+freezes the experiment, delegates SPRT to that release, independently replays its
+paired PGN and checks the native scoreboard. Game-cap completion stays inconclusive.
+The local harness remains a protocol/legality oracle and result collector.
 
 ## Levels
 

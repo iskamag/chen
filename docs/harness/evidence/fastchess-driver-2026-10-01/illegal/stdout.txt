@@ -1,0 +1,6 @@
+Started game 1 of 4 (candidate vs base)
+Warning; Illegal move h1h8 played by candidate
+Tournament was interrupted. To resume the tournament, run: /home/iskam/src/vibe/chen/results/match-tools/fastchess-linux-x86-64/fastchess -config file=/home/iskam/src/vibe/chen/results/fastchess-finalguard-illegal-qa-2026-10-01/runner-state.json
+Finished match
+Total Time: 00:00:01 (hours:minutes:seconds)
+

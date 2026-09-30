@@ -1,0 +1,30 @@
+{
+  "base": {
+    "command": [
+      "/home/iskam/src/vibe/chen/target/release/chen"
+    ],
+    "options": {
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 1
+    },
+    "artifacts": {
+      "rust_binary": "/home/iskam/src/vibe/chen/target/release/chen"
+    }
+  },
+  "candidate": {
+    "command": [
+      "/home/iskam/src/vibe/chen/target/release/chen"
+    ],
+    "options": {
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 1
+    },
+    "artifacts": {
+      "rust_binary": "/home/iskam/src/vibe/chen/target/release/chen"
+    }
+  }
+}

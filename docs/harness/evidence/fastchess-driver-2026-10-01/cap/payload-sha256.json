@@ -1,0 +1,21 @@
+{
+  "base-launcher.py": "86ee1dce7041419933146d0fd595d9591bdadeb59758e8dd3a0c285c419032bb",
+  "candidate-launcher.py": "86ee1dce7041419933146d0fd595d9591bdadeb59758e8dd3a0c285c419032bb",
+  "games.pgn": "c68b595970935f23eed7a85e1edd8baf9fb691c2443be295586e377d8f3769d5",
+  "input-config.json": "3b37f1daa0e88cb8a3f3476b09e76f043b57b239a19e20cb651aec606c791b5d",
+  "input-openings.txt": "fa57687129616e5c19c879cc89cc72835c58d72457da562671aabc13f457d3c4",
+  "input-sprt.json": "8e514c3a671d7f09f5dcecd406bee151bb00b05e06bf049f8ff4c121701afc8c",
+  "metadata.json": "a02891ca6b98847fa707cf9f7b1553512dbb665b08f91379dec88ee8e76b25e9",
+  "openings.epd": "f41884e2a14cd0b9706a0d8caa365509f53b196e7f9f7cb2e62aab51612e1f3b",
+  "replayed-games.json": "2214c62edabad304304866249b5060dffb5c1ce337b1b76d9732b4a7f7707d54",
+  "runner-state.json": "220706cb463db576c1b3fca56b30c6afb1af36379f862c4ed417a2d744947636",
+  "runner.log": "71daabcce9e62a41663159f8d77f05293e87d513f1cef6289693463e94d0de34",
+  "source/harness/fastchess.py": "549f1e3cdd7e332164ff7941217bbf7b8db9126d163e1a521c97e26f51c0622a",
+  "source/harness/stats.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990",
+  "source/scripts/fastchess_match.py": "33755f64d1060e05d6f9e8dc60fab3de79afad770a2e217af893f8e8c8465f98",
+  "source/scripts/fetch_match_tools.py": "8101861fd8bad138f41c62e36bcb0fa227a38c5f408927fa7539edc302a1b00c",
+  "source/scripts/match.py": "d426e8b63ca24f7ea93c164fa7df6a5ec6f1a37f556fc11259b1b0e209294700",
+  "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout.txt": "ec85f842b33a0b30a40c359f0211bce019af404f0ad1c87292dd8a5c29c24f0e",
+  "summary.json": "8212da5a6ce352cbcfddc5a66e93efc4b19492ba9529ca111eb14d98a14b2541"
+}

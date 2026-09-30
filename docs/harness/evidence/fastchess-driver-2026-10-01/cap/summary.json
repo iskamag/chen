@@ -1,0 +1,38 @@
+{
+  "returncode": 0,
+  "timed_out": false,
+  "wall_seconds": 1.2182746910000333,
+  "decision": "inconclusive_game_cap",
+  "retirement": {
+    "scope": "owned local process group; launchers must keep engines in this group",
+    "sigterm_sent": false,
+    "sigkill_sent": false
+  },
+  "wait_error": null,
+  "completed_pairs": 2,
+  "games": 4,
+  "pentanomial": [
+    0,
+    0,
+    2,
+    0,
+    0
+  ],
+  "candidate_score": 0.5,
+  "logistic_relative_elo_point_estimate": 0.0,
+  "paired_bootstrap_score_interval_95_diagnostic": null,
+  "independent_opening_pairs_asserted": false,
+  "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+  "bootstrap_assumption": "diagnostic workload; opening-pair independence not asserted",
+  "scoreboard": {
+    "wins": 2,
+    "draws": 0,
+    "losses": 2,
+    "penta_WW": 0,
+    "penta_LL": 0,
+    "penta_DD": 0,
+    "penta_WL": 2,
+    "penta_WD": 0,
+    "penta_LD": 0
+  }
+}

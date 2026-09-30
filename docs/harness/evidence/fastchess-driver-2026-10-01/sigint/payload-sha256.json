@@ -1,0 +1,18 @@
+{
+  "base-launcher.py": "7e483cf0dcfbd8040067f2f5baabbe2d6e2d02dbc948c1f59ffd3b1e43602d67",
+  "candidate-launcher.py": "7e483cf0dcfbd8040067f2f5baabbe2d6e2d02dbc948c1f59ffd3b1e43602d67",
+  "games.pgn": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "input-config.json": "3820d5df4a1a944677ea349ea7b9c2c8a083f72f3caf2318c3d989b0ecd366d2",
+  "input-openings.txt": "fa57687129616e5c19c879cc89cc72835c58d72457da562671aabc13f457d3c4",
+  "metadata.json": "eabcdec5031e5a445ce4ea7712b52c166ed7c3d861f6279d78ba8378c19c6686",
+  "openings.epd": "f41884e2a14cd0b9706a0d8caa365509f53b196e7f9f7cb2e62aab51612e1f3b",
+  "runner.log": "ea4c4f310940f69f2d50365274424697e09695a876978931f05f428819abd15d",
+  "source/harness/fastchess.py": "562690f459b563716b56727fa3e2c58bd5a26dd18a65ddafadc15c5e35f0f002",
+  "source/harness/stats.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990",
+  "source/scripts/fastchess_match.py": "1a168252c36948b51e176b46d0e81ab500e7658f61c62bab13bf7215c8f25092",
+  "source/scripts/fetch_match_tools.py": "8101861fd8bad138f41c62e36bcb0fa227a38c5f408927fa7539edc302a1b00c",
+  "source/scripts/match.py": "d426e8b63ca24f7ea93c164fa7df6a5ec6f1a37f556fc11259b1b0e209294700",
+  "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout.txt": "b6986a70f19e53a3ae32c0cf4a857e9f842d54e19377dd61cd477f72807a9064",
+  "summary.json": "1f528737a569f05f5e12ea99744e352b9e0f5f72f0b0d58d6b854b638b305dda"
+}

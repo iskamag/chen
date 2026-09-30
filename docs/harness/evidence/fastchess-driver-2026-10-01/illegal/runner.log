@@ -1,0 +1,31 @@
+[Engine] [02:35:46.221587] <     139713087634224>  candidate <--- uci
+[Engine] [02:35:46.258294] <     139713087634224>  candidate ---> id name Fault fixture
+[Engine] [02:35:46.258321] <     139713087634224>  candidate ---> uciok
+[Engine] [02:35:46.258544] <     139713087634224>  base <--- uci
+[Engine] [02:35:46.289766] <     139713087634224>  base ---> id name Fault fixture
+[Engine] [02:35:46.289801] <     139713087634224>  base ---> uciok
+[Engine] [02:35:46.289817] <     139713087634224>  candidate <--- ucinewgame
+[Engine] [02:35:46.289832] <     139713087634224>  candidate <--- isready
+[Engine] [02:35:46.289871] <     139713087634224>  candidate ---> readyok
+[Engine] [02:35:46.289879] <     139713087634224>  base <--- ucinewgame
+[Engine] [02:35:46.289888] <     139713087634224>  base <--- isready
+[Engine] [02:35:46.289905] <     139713087634224>  base ---> readyok
+[Engine] [02:35:46.289913] <     139713087634224>  candidate <--- isready
+[Engine] [02:35:46.289934] <     139713087634224>  candidate ---> readyok
+[Engine] [02:35:46.289946] <     139713087634224>  candidate <--- isready
+[Engine] [02:35:46.289964] <     139713087634224>  candidate ---> readyok
+[Engine] [02:35:46.289972] <     139713087634224>  candidate <--- position fen 7k/5Q2/6K1/8/8/8/8/8 w - - 0 1
+[Engine] [02:35:46.289981] <     139713087634224>  candidate <--- isready
+[Engine] [02:35:46.289999] <     139713087634224>  candidate ---> readyok
+[Engine] [02:35:46.290006] <     139713087634224>  candidate <--- go depth 2
+[Engine] [02:35:46.290025] <     139713087634224>  candidate ---> bestmove h1h8
+[Engine] [02:35:46.290033] <     139713087634224>  candidate <--- isready
+[Engine] [02:35:46.290048] <     139713087634224>  candidate ---> readyok
+[WARN  ] [02:35:46.290070] <                    > fastchess --- Warning; Illegal move h1h8 played by candidate
+
+[Engine] [02:35:47.221462] <             8769744>  candidate <--- stop
+[Engine] [02:35:47.221489] <             8769744>  candidate <--- quit
+[Engine] [02:35:47.322171] <             8769744>  <stderr> candidate ---> Process exited normally with status 0
+[Engine] [02:35:47.322276] <             8769744>  base <--- stop
+[Engine] [02:35:47.322297] <             8769744>  base <--- quit
+[Engine] [02:35:47.422415] <             8769744>  <stderr> base ---> Process exited normally with status 0

@@ -1,0 +1,121 @@
+{
+  "kind": "pinned_fastchess_paired_experiment",
+  "argv": [
+    "/home/iskam/src/vibe/chen/results/match-tools/fastchess-linux-x86-64/fastchess",
+    "-concurrency",
+    "1",
+    "-rounds",
+    "2",
+    "-games",
+    "2",
+    "-repeat",
+    "-srand",
+    "20261001",
+    "-report",
+    "penta=true",
+    "-strict",
+    "-openings",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/openings.epd",
+    "format=epd",
+    "order=sequential",
+    "-pgnout",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/games.pgn",
+    "append=false",
+    "min=false",
+    "nodes=true",
+    "-config",
+    "outname=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/runner-state.json",
+    "-log",
+    "file=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/runner.log",
+    "append=false",
+    "engine=true",
+    "compress=false",
+    "-engine",
+    "cmd=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/candidate-launcher.py",
+    "name=candidate",
+    "proto=uci",
+    "option.Backend=alphabeta",
+    "option.Eval=tapered",
+    "option.Level=20",
+    "option.Hash=1",
+    "-engine",
+    "cmd=/home/iskam/src/vibe/chen/results/fastchess-final-clock-qa-2026-10-01/base-launcher.py",
+    "name=base",
+    "proto=uci",
+    "option.Backend=alphabeta",
+    "option.Eval=tapered",
+    "option.Level=20",
+    "option.Hash=1",
+    "-each",
+    "tc=1+0.01"
+  ],
+  "parameters": {
+    "config": "results/fastchess-qa-inputs/config.json",
+    "tools": "results/match-tools",
+    "openings": "results/fastchess-qa-inputs/openings.txt",
+    "max_games": 4,
+    "nodes": null,
+    "depth": null,
+    "tc": "1+0.01",
+    "sprt": null,
+    "wall_seconds": 30.0,
+    "seed": 20261001,
+    "out": "results/fastchess-final-clock-qa-2026-10-01"
+  },
+  "engines": {
+    "candidate": {
+      "command": [
+        "/home/iskam/src/vibe/chen/target/release/chen"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen",
+      "env": {},
+      "launcher_sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "adapter_sha256": "86ee1dce7041419933146d0fd595d9591bdadeb59758e8dd3a0c285c419032bb",
+      "declared_artifacts": {
+        "rust_binary": {
+          "path": "/home/iskam/src/vibe/chen/target/release/chen",
+          "sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b"
+        }
+      }
+    },
+    "base": {
+      "command": [
+        "/home/iskam/src/vibe/chen/target/release/chen"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen",
+      "env": {},
+      "launcher_sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+      "adapter_sha256": "86ee1dce7041419933146d0fd595d9591bdadeb59758e8dd3a0c285c419032bb",
+      "declared_artifacts": {
+        "rust_binary": {
+          "path": "/home/iskam/src/vibe/chen/target/release/chen",
+          "sha256": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b"
+        }
+      }
+    }
+  },
+  "runner": {
+    "pin": {
+      "version": "v1.8.2-alpha",
+      "url": "https://github.com/Disservin/fastchess/releases/download/v1.8.2-alpha/fastchess-linux-x86-64.tar",
+      "sha256": "1003f920bebe841acdab5e6d7871e93171a4586857b3ec91c21ef5777f26ff96",
+      "archive": "fastchess.tar",
+      "binary": "fastchess-linux-x86-64/fastchess",
+      "license": "MIT; bundled dependency licenses retained in archive"
+    },
+    "binary_sha256": "3d0a8f3c8b837a96366ac838f3ddf6fe87b813abb4ad2852284c0ce409132566",
+    "reported_version": "fastchess alpha 1.8.2 compiled for ubuntu-22.04 20260726-f618e34 (CI)"
+  },
+  "input_sha256": {
+    "config": "3b37f1daa0e88cb8a3f3476b09e76f043b57b239a19e20cb651aec606c791b5d",
+    "openings": "fa57687129616e5c19c879cc89cc72835c58d72457da562671aabc13f457d3c4"
+  },
+  "sprt_declaration": null,
+  "chess_version": "1.11.2",
+  "platform": "Linux-7.2.7-zen1-1-zen-x86_64-with-glibc2.44",
+  "script_sha256": "1a168252c36948b51e176b46d0e81ab500e7658f61c62bab13bf7215c8f25092",
+  "audit_sha256": "562690f459b563716b56727fa3e2c58bd5a26dd18a65ddafadc15c5e35f0f002",
+  "selected_inherited_environment": {},
+  "rating_scope": "Relative offline experiment; no Lichess rating certification",
+  "sampling_scope": "Workload diagnostic; no statistical acceptance"
+}

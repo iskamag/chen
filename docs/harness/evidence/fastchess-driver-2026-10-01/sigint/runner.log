@@ -1,0 +1,20 @@
+[Engine] [02:34:06.459196] <     139834227047216>  candidate <--- uci
+[Engine] [02:34:06.497200] <     139834227047216>  candidate ---> id name Fault fixture
+[Engine] [02:34:06.497250] <     139834227047216>  candidate ---> uciok
+[Engine] [02:34:06.497778] <     139834227047216>  base <--- uci
+[Engine] [02:34:06.545172] <     139834227047216>  base ---> id name Fault fixture
+[Engine] [02:34:06.545248] <     139834227047216>  base ---> uciok
+[Engine] [02:34:06.545271] <     139834227047216>  candidate <--- ucinewgame
+[Engine] [02:34:06.545292] <     139834227047216>  candidate <--- isready
+[Engine] [02:34:06.545383] <     139834227047216>  candidate ---> readyok
+[Engine] [02:34:06.545393] <     139834227047216>  base <--- ucinewgame
+[Engine] [02:34:06.545402] <     139834227047216>  base <--- isready
+[Engine] [02:34:06.545432] <     139834227047216>  base ---> readyok
+[Engine] [02:34:06.545441] <     139834227047216>  candidate <--- isready
+[Engine] [02:34:06.545466] <     139834227047216>  candidate ---> readyok
+[Engine] [02:34:06.545484] <     139834227047216>  candidate <--- isready
+[Engine] [02:34:06.545512] <     139834227047216>  candidate ---> readyok
+[Engine] [02:34:06.545520] <     139834227047216>  candidate <--- position fen 7k/5Q2/6K1/8/8/8/8/8 w - - 0 1
+[Engine] [02:34:06.545542] <     139834227047216>  candidate <--- isready
+[Engine] [02:34:06.545568] <     139834227047216>  candidate ---> readyok
+[Engine] [02:34:06.545576] <     139834227047216>  candidate <--- go depth 2

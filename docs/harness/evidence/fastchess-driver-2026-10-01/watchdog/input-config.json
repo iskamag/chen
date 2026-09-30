@@ -1,0 +1,26 @@
+{
+  "candidate": {
+    "command": [
+      "/home/iskam/src/vibe/chen/results/qa-venv/bin/python",
+      "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/fault_engine.py",
+      "stall",
+      "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/stall-pid.txt"
+    ],
+    "options": {},
+    "artifacts": {
+      "fixture": "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/fault_engine.py"
+    }
+  },
+  "base": {
+    "command": [
+      "/home/iskam/src/vibe/chen/results/qa-venv/bin/python",
+      "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/fault_engine.py",
+      "stall",
+      "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/stall-pid.txt"
+    ],
+    "options": {},
+    "artifacts": {
+      "fixture": "/home/iskam/src/vibe/chen/results/fastchess-qa-inputs/fault_engine.py"
+    }
+  }
+}
