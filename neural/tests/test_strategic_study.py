@@ -17,7 +17,7 @@ from neural.tests.test_teacher import fixture_records
 from neural.tests.test_bridge import HotResident, PayloadResident
 from neural.strategic_transport import StrategicPredictor
 from neural.strategic_study import (StrategicReplay, CONTROLS, fresh_split, join_complete_root,
-                                   tapered_cp, strategic_loss, validation_selection, produce_strategic)
+                                   tapered_cp, strategic_loss, validation_selection, produce_strategic, _tensor_fingerprint)
 
 
 def root_fixture():
@@ -162,6 +162,18 @@ class StrategicStudyCPU(unittest.TestCase):
             if mode == "action_blind":
                 torch.testing.assert_close(prediction["latent"][::2], prediction["latent"][1::2], rtol=0, atol=0)
                 torch.testing.assert_close(prediction["value_cp"][::2], prediction["value_cp"][1::2], rtol=0, atol=0)
+
+    def test_cold_fingerprint_supports_scalar_model_parameters_and_all_encoders(self):
+        scalar = torch.tensor(1.25)
+        self.assertEqual(_tensor_fingerprint({"x": scalar}), _tensor_fingerprint({"x": scalar.reshape(1)}))
+        self.assertNotEqual(_tensor_fingerprint({"x": scalar}), _tensor_fingerprint({"x": scalar + 1}))
+        self.assertEqual(len(_tensor_fingerprint({"empty": torch.empty(0)})), 64)
+        noncontiguous = torch.arange(12, dtype=torch.float32).reshape(3, 4).T
+        self.assertFalse(noncontiguous.is_contiguous())
+        self.assertEqual(_tensor_fingerprint({"x": noncontiguous}), _tensor_fingerprint({"x": noncontiguous.contiguous()}))
+        for architecture in ("square", "relation", "plan"):
+            state = comparable_model(architecture, width=16, depth=1, seed=71).state_dict()
+            self.assertEqual(len(_tensor_fingerprint(state)), 64)
 
     def test_validation_selection_cannot_see_test_and_requires_both_baselines(self):
         def record(architecture, control, mae, regret):

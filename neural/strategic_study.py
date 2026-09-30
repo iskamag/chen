@@ -424,7 +424,7 @@ def _tensor_fingerprint(values):
     digest = hashlib.sha256()
     for key, tensor in sorted(values.items()):
         digest.update(key.encode())
-        digest.update(bytes(tensor.detach().cpu().contiguous().view(torch.uint8).flatten().tolist()))
+        digest.update(bytes(tensor.detach().cpu().contiguous().reshape(-1).view(torch.uint8).tolist()))
     return digest.hexdigest()
 
 

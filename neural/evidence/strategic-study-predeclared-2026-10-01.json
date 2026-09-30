@@ -51,8 +51,8 @@
     "test_protocol": "test labels produced only after validation selection JSON written and sealed; all final models evaluated once; no later optimization"
   },
   "source_sha256": {
-    "neural/strategic_study.py": "460ea267946a302e8499a5ef39bc1188da29652b60d12c5d6747450fb0a554db",
-    "neural/tests/test_strategic_study.py": "70602b1f6f9b90adc9c82d201c7cdc0d209705fa95caff32cfb45020efc65e6c",
+    "neural/strategic_study.py": "1c7f47d1c9d401a362715c5f8be4472f99b72e8bd4ae1bb98c6a73e55704e3c5",
+    "neural/tests/test_strategic_study.py": "226a679f7d1e2e789b8840f1cc0e47244f6611b3a1bde3fd33c226d4dc517d38",
     "neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
     "neural/tests/test_strategic_transport.py": "10a0d75f1d6d2d14f189b6673185632060b6c35965b554eea17ce0f076f47ef3",
     "neural/teacher.py": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
@@ -108,8 +108,29 @@
   },
   "verification": {
     "gpu_log": "neural/evidence/strategic-study-gfx1030-tests-2026-10-01.log",
-    "gpu_all17_executed": true,
     "cpu_log": "neural/evidence/strategic-study-cpu-2026-10-01.log",
-    "scope": "new study and transport only; old seams unmodified"
+    "scope": "new study and transport only; old seams unmodified",
+    "gpu_all18_executed": true,
+    "gpu_seconds": 5.742
+  },
+  "revision": 2,
+  "restart_after_bookkeeping_defect": {
+    "original_predeclaration_sha256": "3d981a4e71f5738df8b208cb566eefd14c92912a0ee5de9444abc51afc9c0a85",
+    "original_source_sha256": "460ea267946a302e8499a5ef39bc1188da29652b60d12c5d6747450fb0a554db",
+    "partial_report": "neural/evidence/strategic-study-attempt1-2026-10-01.json",
+    "previous_validation_exposure": "five square-control runs seed20261003; no test scores produced; all retained separately",
+    "repair": "flatten before byte dtype view accepts scalar parameters; only cold checksum expression changed",
+    "hash_format": "unchanged sorted key UTF8 plus raw contiguous row-major bytes; external strict replay/checkpoint schemas retain dtype and shape",
+    "numerical_training_config_split_selection_unchanged": true,
+    "restart": "clean30-run rerun, compare initial5 sample/model/metrics to prior attempt; no adaptive model/weight/data changes",
+    "equivalence_gate": {
+      "split_source_sha256": "exact",
+      "sample_stream_sha256": "exact",
+      "parameter_tensor_atol": 1e-06,
+      "parameter_tensor_rtol": 1e-05,
+      "metric_atol": 0.0001,
+      "metric_rtol": 1e-06,
+      "scope": "first5 repeated square controls; archive hashes not required equal because provenance differs"
+    }
   }
 }
