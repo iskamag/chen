@@ -1,0 +1,55 @@
+{
+  "trial": 6,
+  "owned_ready_or_timedout_pids": [
+    1533,
+    1543,
+    1553,
+    1565,
+    1571
+  ],
+  "recorded_retirement_pids": [
+    1533,
+    1543,
+    1553,
+    1565,
+    1571
+  ],
+  "consumer_parent_pids": [
+    1503
+  ],
+  "complete_record": true,
+  "comparisons": 18,
+  "games": [
+    {
+      "opening": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6"
+      ],
+      "plies": 20
+    },
+    {
+      "opening": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6"
+      ],
+      "plies": 20
+    }
+  ],
+  "timeouts": [],
+  "actual_inspection": {
+    "observed_owned_processes": {
+      "1503": null,
+      "1533": null,
+      "1543": null,
+      "1553": null,
+      "1565": null,
+      "1571": null
+    },
+    "live_engine_executables": []
+  },
+  "scope": "CPU/proc-only inspection after completed transport; no GPU call"
+}

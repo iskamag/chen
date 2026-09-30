@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "declared_utc": "2026-09-30T22:10:52.379946+00:00",
+  "probe_sha256": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701",
+  "reference_script_sha256": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+  "helper_source_sha256": {
+    "terminal": "c396842ffb3b765b755c2ecee4f8e9c05f5b7ecce7476747edc3cf413d9dd908",
+    "oracle": "ee67d51570924501b8b99e4de538ee9fc94898ed3d007220f160de980d885aa8",
+    "check_pv": "5b9e3f3c1d6e25ab59ea56e4150c97a82d5a83c710d0e28897716da9c1794aef",
+    "UCI": "e115ab8b7f24f9341541e9e60f43179923f1cac949a96c002311ed620c469b05",
+    "environment": "47a9bb1d325514ed2870fbe23b5d61d1d6e916d4754b3bc59e7732169e59fd76"
+  },
+  "game_protocol_sha256": "6926480f7adb0395709b52ae2ec809169e7b7657699d34de00589603f198bf3b",
+  "artifact_sha256": {
+    "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+    "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+    "/tmp/chen-graph-plugin/libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+    "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271"
+  },
+  "model_sha256": {
+    "square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d"
+  },
+  "feature_source_sha256": {
+    "/tmp/chen-native-plugin/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+  },
+  "suite_sha256": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+  "schedule": [
+    {
+      "trial": 1,
+      "pair": 1,
+      "parent": "cpu"
+    },
+    {
+      "trial": 2,
+      "pair": 1,
+      "parent": "hip"
+    },
+    {
+      "trial": 3,
+      "pair": 2,
+      "parent": "hip"
+    },
+    {
+      "trial": 4,
+      "pair": 2,
+      "parent": "cpu"
+    },
+    {
+      "trial": 5,
+      "pair": 3,
+      "parent": "cpu"
+    },
+    {
+      "trial": 6,
+      "pair": 3,
+      "parent": "hip"
+    }
+  ],
+  "dispatch": "1",
+  "watchdog_seconds": 30,
+  "execution": "eager",
+  "game_plies_each": 20,
+  "oracle_binding": "One producer exits before any consumer; one emitted cache SHA is fixed for all six consumers.",
+  "durability": "fsynced local journal plus fsynced host repository results stdout/stderr mirror at every phase",
+  "host_transport": {
+    "wall_seconds": 600,
+    "post_exit_pipe_drain_seconds": 1,
+    "local_TERM_wait_seconds": 3,
+    "local_KILL_wait_seconds": 3,
+    "transport_failure": "remote retirement unknown; end study without automatic replay"
+  },
+  "stop": "Exactly six declared consumers; external interruption ends partial study without automatic replay.",
+  "causal_limitations": [
+    "HIP arm repeats original GPU oracle work at the same prelude points; CPU arm reads cached answers.",
+    "Parent context, GPU warming/history, prior device state, and elapsed prelude time are not separable by this control.",
+    "Finite exploratory trials do not estimate failure rate, strength, or a production workaround."
+  ]
+}

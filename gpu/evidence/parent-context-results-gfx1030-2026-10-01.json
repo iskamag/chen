@@ -1,0 +1,1121 @@
+{
+  "kind": "predeclared_CPU_parent_vs_live_HIP_parent_eager_control",
+  "status": "all_six_completed_without_reproducing_prior_timeout",
+  "date": "2026-10-01",
+  "preparation_commit": "34b35486dc53ff6f6956bca3566e188844575572",
+  "source_sha256": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701",
+  "declaration_sha256": "5b5d4d9958d78b5e65c40c9f01b132c484e5b239c15f69fbb83767a2c8f092c4",
+  "oracle_cache_sha256": "1c913c2b2214390fbe7be222685e423ce22eb619c0d2e0e53eaf4159e4dbe6c9",
+  "container_identity": {
+    "Id": "277c563c6a572e531c986ef4d1dd6141bc8a50af3eae832c56d2ef04c1889060",
+    "Image": "sha256:2c994c96a13e075b29282fc38547051cc2d4695a9f02dfc1571682c0b517e191",
+    "Name": "/cpp-rocm",
+    "State": {
+      "Running": true,
+      "Pid": 6614,
+      "StartedAt": "2026-09-30T21:29:08.837964808Z",
+      "FinishedAt": "2026-09-30T21:17:28.601890849Z",
+      "ExitCode": 0,
+      "OOMKilled": false
+    }
+  },
+  "producer": {
+    "pid_identity": {
+      "pid": 894,
+      "start_ticks": "325884"
+    },
+    "exit_code": 0,
+    "consumer_checks_producer_retired": true,
+    "mirrored_wall_seconds": 15.046941435000008,
+    "remote_wall_seconds": 14.507168738000018,
+    "torch_version": "2.10.0+rocm7.0",
+    "torch_hip_version": "7.0.51831",
+    "source_asserts_gfx1030_and_GPU_int32_oracle_outputs": true,
+    "separate_process_exited_before_consumers": true
+  },
+  "artifact_sha256": {
+    "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+    "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+    "/tmp/chen-graph-plugin/libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+    "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+    "/tmp/chen-neural-inference/trained/square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "/tmp/chen-neural-inference/trained/square-inference.pt.json": "5d2b96a5e556221aa68cd84c5645f730b305db886a3420b81f74f822b2de40e7",
+    "/tmp/chen-neural-inference/trained/relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "/tmp/chen-neural-inference/trained/relation-inference.pt.json": "aab4d086862b2cd1b4d9c6700203806d4c637e5fc69769e1c97a848e7cd7ce6f",
+    "/tmp/chen-neural-inference/trained/plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+    "/tmp/chen-neural-inference/trained/plan-inference.pt.json": "41ea1b3ecae542fe8aa7b4d1cc9b43a753ba3f25a933aeb9e7cb4127889f5957",
+    "/tmp/chen-native-plugin/benches/positions.txt": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+    "/tmp/chen-native-plugin/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "/tmp/chen-parent-context/parent_context_probe.py": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701"
+  },
+  "model_sha256": {
+    "square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d"
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "pair": 1,
+      "parent": "cpu",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:13:47.372177+00:00",
+      "finished_utc": "2026-09-30T22:14:43.757972+00:00",
+      "mirrored_wall_seconds": 56.563802161999774,
+      "consumer_wall_seconds": 56.414946959999725,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": {
+        "HIP_Torch_DSO_maps": [],
+        "torch_neural_modules": []
+      },
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": null,
+      "parent_torch_hip_version": null,
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "ca71ba13c0715830e4ac5c2ca59d074e59bc332ebb7d05e49ebbe5081a5d4e26",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "trial": 2,
+      "pair": 1,
+      "parent": "hip",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:16:06.456274+00:00",
+      "finished_utc": "2026-09-30T22:16:57.169377+00:00",
+      "mirrored_wall_seconds": 52.258166108000296,
+      "consumer_wall_seconds": 51.80733748400007,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": null,
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": "2.10.0+rocm7.0",
+      "parent_torch_hip_version": "7.0.51831",
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "1821834cc79804880f9d8639fab97511c70eae36419306fdff6b6d75c5218588",
+      "stderr_sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    },
+    {
+      "trial": 3,
+      "pair": 2,
+      "parent": "hip",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:17:25.536311+00:00",
+      "finished_utc": "2026-09-30T22:18:16.312267+00:00",
+      "mirrored_wall_seconds": 52.31564975600031,
+      "consumer_wall_seconds": 51.87045962399998,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": null,
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": "2.10.0+rocm7.0",
+      "parent_torch_hip_version": "7.0.51831",
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "b1eff07b761ca26719089f0811534f7b70874a4709b9a19092cb13496e738d75",
+      "stderr_sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    },
+    {
+      "trial": 4,
+      "pair": 2,
+      "parent": "cpu",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:18:30.067938+00:00",
+      "finished_utc": "2026-09-30T22:19:09.037398+00:00",
+      "mirrored_wall_seconds": 39.124687456000174,
+      "consumer_wall_seconds": 38.99250032300006,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": {
+        "HIP_Torch_DSO_maps": [],
+        "torch_neural_modules": []
+      },
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": null,
+      "parent_torch_hip_version": null,
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "d8422039e0e285e1f29e35175ba3e63e5f6c9f4b164dc5675ab216399982afd8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "trial": 5,
+      "pair": 3,
+      "parent": "cpu",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:19:28.647806+00:00",
+      "finished_utc": "2026-09-30T22:20:07.362234+00:00",
+      "mirrored_wall_seconds": 38.87041931499971,
+      "consumer_wall_seconds": 38.737552362000315,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": {
+        "HIP_Torch_DSO_maps": [],
+        "torch_neural_modules": []
+      },
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": null,
+      "parent_torch_hip_version": null,
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "0d80d2ba03bba960181084686016c0da167f39876e0c0f1558786f82505a5c56",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "trial": 6,
+      "pair": 3,
+      "parent": "hip",
+      "status": "pass",
+      "exit_code": 0,
+      "started_utc": "2026-09-30T22:20:41.405340+00:00",
+      "finished_utc": "2026-09-30T22:21:34.307220+00:00",
+      "mirrored_wall_seconds": 54.459297598000376,
+      "consumer_wall_seconds": 54.00175870000021,
+      "exact_model_position_comparisons": 18,
+      "iterative_evaluated_leaves": 11982,
+      "legal_game_plies_after_openings": 40,
+      "game_outcomes": [
+        "None",
+        "None"
+      ],
+      "ready_child_env_observations": 5,
+      "requested_dispatch": "1",
+      "observed_child_dispatch_values": [
+        "1"
+      ],
+      "CPU_parent_guard": null,
+      "parent_environment": {
+        "AMD_DIRECT_DISPATCH": "1",
+        "CUDA_VISIBLE_DEVICES": null,
+        "HIP_VISIBLE_DEVICES": null,
+        "LD_PRELOAD": "",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTORCH_CUDA_ALLOC_CONF": null,
+        "PYTORCH_HIP_ALLOC_CONF": null,
+        "ROCR_VISIBLE_DEVICES": null
+      },
+      "parent_torch_version": "2.10.0+rocm7.0",
+      "parent_torch_hip_version": "7.0.51831",
+      "benchmark_completed_depths": [
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 149,
+          "bestmove": "h2h3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 87,
+          "bestmove": "h1g1",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "g2g3",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 54,
+          "bestmove": "d3h7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 80,
+          "bestmove": "a7a8r",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "square-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 119,
+          "bestmove": "b1a3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 88,
+          "bestmove": "h1f1",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 152,
+          "bestmove": "g2g3",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 71,
+          "bestmove": "d3h7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 155,
+          "bestmove": "a7a8q",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "relation-inference.pt"
+        },
+        {
+          "position": "start",
+          "depth": 2,
+          "score_cp": 123,
+          "bestmove": "a2a3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "kiwipete",
+          "depth": 2,
+          "score_cp": 113,
+          "bestmove": "h1f1",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "rook-ending",
+          "depth": 2,
+          "score_cp": 130,
+          "bestmove": "g2g3",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "middlegame",
+          "depth": 2,
+          "score_cp": 76,
+          "bestmove": "d3h7",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "promotion",
+          "depth": 2,
+          "score_cp": 131,
+          "bestmove": "a7a8r",
+          "model": "plan-inference.pt"
+        },
+        {
+          "position": "mate",
+          "depth": 1,
+          "score_cp": 29999,
+          "bestmove": "f7g7",
+          "model": "plan-inference.pt"
+        }
+      ],
+      "host_remote_journals_byte_identical": true,
+      "owned_retirement_checked": true,
+      "live_owned_processes_after_trial": 0,
+      "stdout_sha256": "a5df21867bde1b081bc391b0f598b287bde8ef8f5516814ca51ba2f1350dae84",
+      "stderr_sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    }
+  ],
+  "totals": {
+    "declared_consumers": 6,
+    "executed_consumers": 6,
+    "CPU_parent_consumers": 3,
+    "HIP_parent_consumers": 3,
+    "exact_model_position_comparisons": 108,
+    "iterative_evaluated_leaves_compared": 71892,
+    "legal_game_plies_after_openings": 240,
+    "ready_env_observations": 30,
+    "UCI_timeouts": 0,
+    "transport_failures": 0
+  },
+  "stop": "Producer plus exactly six declared consumers; no source edits, replay, reset or adaptive diagnostic runs.",
+  "interpretation": "Neither arm reproduced the prior eager game timeout in this finite study. This does not identify or exclude its cause, establish reliability, or validate a workaround.",
+  "limitations": [
+    "HIP parents repeat the original GPU oracle work; CPU parents read frozen answers. Warming, device history, and elapsed prelude time differ as well as context presence.",
+    "The container was restarted after an earlier external interruption before this study; physical GPU and process history differ from the failed dispatch study.",
+    "Dispatch1 was requested before parent imports and observed in all ready child environments; the internal runtime flag was not queried.",
+    "Scores, nodes, optimal tie sets and legal PVs cover the six authored benchmark positions at actual completed depth (mate proof can stop at depth1), not exhaustive chess correctness.",
+    "Game moves, options, node limits and stop/recovery are protocol evidence; no playing-strength or failure-rate estimate follows.",
+    "Wall times include cold engine/model startup and HIP-parent oracle work; they are not inference-throughput measurements.",
+    "The independent Python oracle uploads features/downloads scores; this control does not quantify copy traffic. Native backend/model/mode metadata and frozen source/artifacts are checked; no new transfer/throughput claim follows.",
+    "Archived native/Rust files are retained build-input snapshots; no independent reproducible binary rebuild was performed in this control."
+  ],
+  "raw_archive": "gpu/evidence/parent-context-study-gfx1030-2026-10-01",
+  "raw_scope": "Full stdout/stderr/mirror and remote journals, frozen oracle, posttrial proc inspections, model sidecars and source snapshots. Unrelated full Docker config omitted; identity/state retained.",
+  "independent_root_audit": {
+    "report": "gpu/evidence/parent-context-root-admission-gfx1030-2026-10-01.json",
+    "source": "gpu/evidence/parent-context-root-audit-2026-10-01.py",
+    "source_sha256": "a1929aae5f1bac59db5fa4becf5976bcecde7559cf3051abb1096cbbdd04c804",
+    "scope": "Cold cached-score comparison, independent PV/game legality replay, environment and retirement admission; no GPU score regeneration or copy tracing.",
+    "hash_scope": "Admission report linked without a digest to avoid a cycle: its payload table hashes this archive manifest, which binds the result JSON."
+  }
+}

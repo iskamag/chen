@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "source_sha256": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701",
+  "reference_script_sha256": "d8c580b796e694ce5f80eb91c7d93d0b4706bc15797a73eaabd61c216d7ada9c",
+  "helper_source_sha256": {
+    "terminal": "c396842ffb3b765b755c2ecee4f8e9c05f5b7ecce7476747edc3cf413d9dd908",
+    "oracle": "ee67d51570924501b8b99e4de538ee9fc94898ed3d007220f160de980d885aa8",
+    "check_pv": "5b9e3f3c1d6e25ab59ea56e4150c97a82d5a83c710d0e28897716da9c1794aef",
+    "UCI": "e115ab8b7f24f9341541e9e60f43179923f1cac949a96c002311ed620c469b05",
+    "environment": "47a9bb1d325514ed2870fbe23b5d61d1d6e916d4754b3bc59e7732169e59fd76"
+  },
+  "artifact_sha256": {
+    "/tmp/chen-graph-plugin/chen": "62eb2c7f665a6389d84df14c2543cc855ab1a6467fdb21855c9547a3ade2982b",
+    "/tmp/chen-graph-plugin/libchen_neural.so": "cc673437ffc412cbee9755a51c1cd28b7e907d0ae08f99d4f0fec6213a786505",
+    "/tmp/chen-graph-plugin/libchen_neural.so.runtime": "3feb2f4c6f834b5ea0064769c2c068a7386809c3780abae79411a850f3c8700d",
+    "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "/tmp/chen-gpu/build/libchen_gpu.so": "2ff8dfc0a6d6a2ef418fae2f0b858d81ea12087fd0af8f30cc629a963462d271",
+    "/tmp/chen-neural-inference/trained/square-inference.pt": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+    "/tmp/chen-neural-inference/trained/square-inference.pt.json": "5d2b96a5e556221aa68cd84c5645f730b305db886a3420b81f74f822b2de40e7",
+    "/tmp/chen-neural-inference/trained/relation-inference.pt": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+    "/tmp/chen-neural-inference/trained/relation-inference.pt.json": "aab4d086862b2cd1b4d9c6700203806d4c637e5fc69769e1c97a848e7cd7ce6f",
+    "/tmp/chen-neural-inference/trained/plan-inference.pt": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+    "/tmp/chen-neural-inference/trained/plan-inference.pt.json": "41ea1b3ecae542fe8aa7b4d1cc9b43a753ba3f25a933aeb9e7cb4127889f5957",
+    "/tmp/chen-native-plugin/benches/positions.txt": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+    "/tmp/chen-native-plugin/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "/tmp/chen-parent-context/parent_context_probe.py": "d24df5d932e7d57da75495dc4512a73024ea835ffc973d7c4f28079662c78701"
+  },
+  "producer": {
+    "pid": 894,
+    "start_ticks": "325884"
+  },
+  "torch_version": "2.10.0+rocm7.0",
+  "torch_hip_version": "7.0.51831",
+  "fixtures": [
+    {
+      "name": "start",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+    },
+    {
+      "name": "kiwipete",
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1"
+    },
+    {
+      "name": "rook-ending",
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1"
+    },
+    {
+      "name": "middlegame",
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8"
+    },
+    {
+      "name": "promotion",
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1"
+    },
+    {
+      "name": "mate",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1"
+    }
+  ],
+  "models": {
+    "square-inference.pt": {
+      "archive_sha256": "55aa95cf458b81e71fa04ca9cd9dc5c0a1f36365c554dcd86e6253c6f9a8eac3",
+      "max_batch": 256,
+      "rows": {
+        "start": {
+          "1": {
+            "score_cp": -148,
+            "optimal_moves": [
+              "e2e4"
+            ],
+            "visited_positions": 21,
+            "evaluated_leaves": 20,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 149,
+            "optimal_moves": [
+              "h2h3"
+            ],
+            "visited_positions": 421,
+            "evaluated_leaves": 400,
+            "terminal_positions": 0
+          }
+        },
+        "kiwipete": {
+          "1": {
+            "score_cp": -48,
+            "optimal_moves": [
+              "h1f1"
+            ],
+            "visited_positions": 49,
+            "evaluated_leaves": 48,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 87,
+            "optimal_moves": [
+              "h1g1"
+            ],
+            "visited_positions": 2088,
+            "evaluated_leaves": 2039,
+            "terminal_positions": 0
+          }
+        },
+        "rook-ending": {
+          "1": {
+            "score_cp": -69,
+            "optimal_moves": [
+              "g2g3"
+            ],
+            "visited_positions": 15,
+            "evaluated_leaves": 14,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 71,
+            "optimal_moves": [
+              "b4f4",
+              "g2g3"
+            ],
+            "visited_positions": 206,
+            "evaluated_leaves": 191,
+            "terminal_positions": 0
+          }
+        },
+        "middlegame": {
+          "1": {
+            "score_cp": -54,
+            "optimal_moves": [
+              "e3e4",
+              "c3c4",
+              "h2h3",
+              "g2g3",
+              "b2b3",
+              "a2a3"
+            ],
+            "visited_positions": 38,
+            "evaluated_leaves": 37,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 54,
+            "optimal_moves": [
+              "d3h7"
+            ],
+            "visited_positions": 1194,
+            "evaluated_leaves": 1156,
+            "terminal_positions": 0
+          }
+        },
+        "promotion": {
+          "1": {
+            "score_cp": -73,
+            "optimal_moves": [
+              "a7a8r"
+            ],
+            "visited_positions": 10,
+            "evaluated_leaves": 9,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 80,
+            "optimal_moves": [
+              "a7a8r"
+            ],
+            "visited_positions": 79,
+            "evaluated_leaves": 68,
+            "terminal_positions": 1
+          }
+        },
+        "mate": {
+          "1": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 27,
+            "evaluated_leaves": 12,
+            "terminal_positions": 14
+          },
+          "2": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 39,
+            "evaluated_leaves": 11,
+            "terminal_positions": 15
+          }
+        }
+      }
+    },
+    "relation-inference.pt": {
+      "archive_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8",
+      "max_batch": 256,
+      "rows": {
+        "start": {
+          "1": {
+            "score_cp": -118,
+            "optimal_moves": [
+              "h2h4",
+              "g2g4",
+              "f2f4",
+              "d2d4",
+              "b2b4",
+              "a2a4"
+            ],
+            "visited_positions": 21,
+            "evaluated_leaves": 20,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 119,
+            "optimal_moves": [
+              "b1a3"
+            ],
+            "visited_positions": 421,
+            "evaluated_leaves": 400,
+            "terminal_positions": 0
+          }
+        },
+        "kiwipete": {
+          "1": {
+            "score_cp": -64,
+            "optimal_moves": [
+              "e1g1"
+            ],
+            "visited_positions": 49,
+            "evaluated_leaves": 48,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 88,
+            "optimal_moves": [
+              "h1f1"
+            ],
+            "visited_positions": 2088,
+            "evaluated_leaves": 2039,
+            "terminal_positions": 0
+          }
+        },
+        "rook-ending": {
+          "1": {
+            "score_cp": -144,
+            "optimal_moves": [
+              "g2g4",
+              "e2e4"
+            ],
+            "visited_positions": 15,
+            "evaluated_leaves": 14,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 152,
+            "optimal_moves": [
+              "g2g3"
+            ],
+            "visited_positions": 206,
+            "evaluated_leaves": 191,
+            "terminal_positions": 0
+          }
+        },
+        "middlegame": {
+          "1": {
+            "score_cp": -56,
+            "optimal_moves": [
+              "a2a4"
+            ],
+            "visited_positions": 38,
+            "evaluated_leaves": 37,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 71,
+            "optimal_moves": [
+              "d3h7"
+            ],
+            "visited_positions": 1194,
+            "evaluated_leaves": 1156,
+            "terminal_positions": 0
+          }
+        },
+        "promotion": {
+          "1": {
+            "score_cp": -148,
+            "optimal_moves": [
+              "a7a8n"
+            ],
+            "visited_positions": 10,
+            "evaluated_leaves": 9,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 155,
+            "optimal_moves": [
+              "a7a8q"
+            ],
+            "visited_positions": 79,
+            "evaluated_leaves": 68,
+            "terminal_positions": 1
+          }
+        },
+        "mate": {
+          "1": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 27,
+            "evaluated_leaves": 12,
+            "terminal_positions": 14
+          },
+          "2": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 39,
+            "evaluated_leaves": 11,
+            "terminal_positions": 15
+          }
+        }
+      }
+    },
+    "plan-inference.pt": {
+      "archive_sha256": "3e137749f2c6888c62015b634310573e575302e5194396f57c64dcbb038b864d",
+      "max_batch": 256,
+      "rows": {
+        "start": {
+          "1": {
+            "score_cp": -122,
+            "optimal_moves": [
+              "h2h4",
+              "g2g4",
+              "b2b4"
+            ],
+            "visited_positions": 21,
+            "evaluated_leaves": 20,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 123,
+            "optimal_moves": [
+              "b1a3",
+              "h2h3",
+              "a2a3",
+              "b2b4"
+            ],
+            "visited_positions": 421,
+            "evaluated_leaves": 400,
+            "terminal_positions": 0
+          }
+        },
+        "kiwipete": {
+          "1": {
+            "score_cp": -65,
+            "optimal_moves": [
+              "e1g1"
+            ],
+            "visited_positions": 49,
+            "evaluated_leaves": 48,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 113,
+            "optimal_moves": [
+              "h1f1"
+            ],
+            "visited_positions": 2088,
+            "evaluated_leaves": 2039,
+            "terminal_positions": 0
+          }
+        },
+        "rook-ending": {
+          "1": {
+            "score_cp": -118,
+            "optimal_moves": [
+              "g2g4",
+              "e2e4"
+            ],
+            "visited_positions": 15,
+            "evaluated_leaves": 14,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 130,
+            "optimal_moves": [
+              "g2g3"
+            ],
+            "visited_positions": 206,
+            "evaluated_leaves": 191,
+            "terminal_positions": 0
+          }
+        },
+        "middlegame": {
+          "1": {
+            "score_cp": -62,
+            "optimal_moves": [
+              "g2g4",
+              "a2a4"
+            ],
+            "visited_positions": 38,
+            "evaluated_leaves": 37,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 76,
+            "optimal_moves": [
+              "d3h7"
+            ],
+            "visited_positions": 1194,
+            "evaluated_leaves": 1156,
+            "terminal_positions": 0
+          }
+        },
+        "promotion": {
+          "1": {
+            "score_cp": -113,
+            "optimal_moves": [
+              "e1f2",
+              "e1e2",
+              "e1d2",
+              "e1f1",
+              "e1d1",
+              "a7a8b"
+            ],
+            "visited_positions": 10,
+            "evaluated_leaves": 9,
+            "terminal_positions": 0
+          },
+          "2": {
+            "score_cp": 131,
+            "optimal_moves": [
+              "a7a8r"
+            ],
+            "visited_positions": 79,
+            "evaluated_leaves": 68,
+            "terminal_positions": 1
+          }
+        },
+        "mate": {
+          "1": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 27,
+            "evaluated_leaves": 12,
+            "terminal_positions": 14
+          },
+          "2": {
+            "score_cp": 29999,
+            "optimal_moves": [
+              "f7f8",
+              "f7e8",
+              "f7h7",
+              "f7g7"
+            ],
+            "visited_positions": 39,
+            "evaluated_leaves": 11,
+            "terminal_positions": 15
+          }
+        }
+      }
+    }
+  }
+}

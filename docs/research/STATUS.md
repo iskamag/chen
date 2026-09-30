@@ -102,6 +102,15 @@ ready-time environment records were lost from host temporary storage; they are
 not counted as replayable numerical verification. No dispatch workaround is
 adopted. The same container was restarted for infrastructure recovery after
 archiving the interrupted state; the partial study was not resumed.
+The subsequent [parent-context control](../GPU_PARENT_CONTEXT.md) completes
+exactly six declared fresh consumers in CPU/HIP, HIP/CPU, CPU/HIP order.
+All pass 18 same-model oracle comparisons and two 20-ply games: 108 comparisons,
+71,892 iterative evaluated leaves and 240 postopening legal plies in total.
+Independent cold replay admits all PVs/games, 30 observed dispatch-1/eager child
+environments and recorded retirement; host and copied remote journals match
+byte-for-byte. Neither the Torch-free nor live-idle-HIP parent reproduces the
+stall. These finite controls establish no cause, failure rate or production fix;
+warming/history and oracle work remain confounded. Production policy is unchanged.
 
 Neural commit `090f2a4` retains a
 [predeclared 27-run value study](../../../chen-neural/docs/VALUE_STUDY.md): three

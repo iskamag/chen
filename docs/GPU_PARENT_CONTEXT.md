@@ -1,6 +1,19 @@
 # Parent-context reliability control
 
-This experiment is prepared in source and has not run on the GPU. It asks whether the unchanged eager engine behaves differently when its controller has no Torch/HIP context versus a live context that becomes idle during the UCI games. The earlier interrupted dispatch comparison is documented separately in [GPU_DISPATCH_STUDY.md](GPU_DISPATCH_STUDY.md).
+All six declared consumers completed without reproducing the earlier eager timeout: three used a CPU-only parent and three used a live HIP parent. Each passed 18 exact model/position comparisons, both UCI option orders, node/level/stop checks, and two 20-ply legal games. The [result report](../gpu/evidence/parent-context-results-gfx1030-2026-10-01.json) and [raw archive](../gpu/evidence/parent-context-study-gfx1030-2026-10-01/manifest.json) preserve the producer cache, journals, fingerprints, and process-retirement observations.
+
+| Trial | Parent | Result | Comparisons | Game plies | Mirrored wall seconds |
+| --- | --- | --- | --- | --- | --- |
+| 1 | CPU | Passed | 18 | 40 | 56.564 |
+| 2 | HIP | Passed | 18 | 40 | 52.258 |
+| 3 | HIP | Passed | 18 | 40 | 52.316 |
+| 4 | CPU | Passed | 18 | 40 | 39.125 |
+| 5 | CPU | Passed | 18 | 40 | 38.870 |
+| 6 | HIP | Passed | 18 | 40 | 54.459 |
+
+Neither arm reproduced the stall in this finite study. This does not identify or exclude its cause, establish reliability, or validate a workaround. Wall times include model/engine startup and HIP-parent oracle work, so they are not inference-throughput measurements. The container had been restarted after the earlier external interruption; device and process history differed from the failed dispatch study. That earlier partial evidence remains in [GPU_DISPATCH_STUDY.md](GPU_DISPATCH_STUDY.md).
+
+The [independent root audit](../gpu/evidence/parent-context-root-admission-gfx1030-2026-10-01.json) compared all 108 benchmark records with the frozen cache, replayed PVs and 240 game plies, and admitted 30 ready child environment observations and the retirement records. It did not regenerate GPU oracle scores or measure transfer traffic. The Python oracle uploads features and downloads scores; native backend/model/mode metadata and pinned artifacts are checked, without a new copy-traffic claim.
 
 A single GPU producer computes frozen oracle answers for the three unchanged trained archives and six benchmark positions at depths one and two. It records CP scores, optimal tie sets, visited/evaluated counts, exact archive and feature-source hashes, and its PID/start identity. The producer must exit before any consumer starts. Its cache is used only to compare engine results: the engine still runs its original GPU model and resident rules.
 
@@ -36,4 +49,6 @@ docker exec -e AMD_DIRECT_DISPATCH=1 -e CHEN_NEURAL_EXECUTION=eager \
 
 For example, the first consumer command uses `consume --parent cpu --trial 1 --declaration /tmp/chen-parent-context/declaration.json --oracle /tmp/chen-parent-context/oracle.json --oracle-sha CACHE_SHA --journal /tmp/chen-parent-context/trial-1.jsonl`. Pass that entire Docker command after `--exec` to the host probe's `mirror` command, specifying new `--journal`, `--mirror-stdout`, and `--mirror-stderr` paths under repository `results/`. Use the declared parent order for trials two through six. Do not reuse output paths or resume a trial after an infrastructure interruption.
 
-The producer/consumer paths remain unverified on hardware. CPU checks have verified the import guard, exact helper fingerprints, durable stdout/stderr mirror including a partial final line, bounded transport timeout, inherited-pipe retirement, nonzero-exit reporting, two timeout snapshots, owned-child retirement, and an empty owner registry after a deliberate protocol timeout. The timeout fixture uses a short test-only deadline; the declared engine watchdog remains 30 seconds. The [prepared declaration](../gpu/evidence/parent-context-config-gfx1030-2026-10-01.json) and [CPU verification archive](../gpu/evidence/parent-context-cpu-preparation-gfx1030-2026-10-01/verification.json) are separate from any future hardware results.
+The producer and exactly six consumers executed from preparation commit `34b3548`, with no source changes, replay, reset, or adaptive control runs. The producer exited before any consumer; all seven remote journals are byte-identical to the host stdout mirrors. Every consumer's owned children and parent were absent after completion, with no live engine executable at each retirement inspection. The shared cache SHA is `1c913c2b2214390fbe7be222685e423ce22eb619c0d2e0e53eaf4159e4dbe6c9`; each trial compared 11,982 iterative evaluated leaves. All 30 ready child environments showed dispatch 1, eager mode, and empty `LD_PRELOAD`. The internal runtime dispatch flag was not queried.
+
+CPU preparation checks verified the import guard, exact helper fingerprints, durable stdout/stderr mirror including a partial final line, bounded transport timeout, inherited-pipe retirement, nonzero-exit reporting, two timeout snapshots, owned-child retirement, and an empty owner registry after a deliberate protocol timeout. That fixture used a short test-only deadline; the engine watchdog stayed at 30 seconds. The [declaration](../gpu/evidence/parent-context-config-gfx1030-2026-10-01.json) and [CPU verification archive](../gpu/evidence/parent-context-cpu-preparation-gfx1030-2026-10-01/verification.json) preserve the preparation separately.

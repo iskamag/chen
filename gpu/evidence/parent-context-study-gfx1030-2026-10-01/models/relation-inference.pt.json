@@ -1,0 +1,82 @@
+{
+  "manifest": {
+    "deployment_version": 1,
+    "feature_schema": 1,
+    "format": "torchscript_static_reference",
+    "torch_version": "2.10.0+rocm7.0",
+    "model_config": {
+      "name": "relation",
+      "width": 32,
+      "depth": 1,
+      "plan_tokens": 8
+    },
+    "state_sha256": "d3174d63aad01edd2fc9072313743d45cfc94b6fa8df0fe19b17628686888820",
+    "checkpoint_sha256": "1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83",
+    "target_kind": "finite_depth_minimax_cp_utility",
+    "input_dtype": "float32",
+    "input_shape": [
+      "B",
+      18,
+      8,
+      8
+    ],
+    "output_dtype": "int32",
+    "output_shape": [
+      "B"
+    ],
+    "max_batch": 256,
+    "perspective": "side_to_move",
+    "head_readout": "softmax_logits_2_minus_0",
+    "scale_cp": 800.0,
+    "epsilon": 1e-06,
+    "rounding": "nearest_even",
+    "score_limit": 29000,
+    "terminal_responsibility": "simulator",
+    "strength_evidence": false,
+    "provenance": {
+      "kind": "search_teacher_cp_utility_checkpoint",
+      "checkpoint_metadata_sha256": "c3ac422dc675c607348483a3f6eb3dca5a33c8437ec556cb078286e02db1760e",
+      "utility_contract": {
+        "kind": "bounded_search_cp_regression",
+        "scale_cp": 800.0,
+        "epsilon": 1e-06,
+        "mate_band": 29000,
+        "mate_value_loss_excluded": true
+      },
+      "training_config": {
+        "steps": 256,
+        "batch_size": 64,
+        "seed": 20260930,
+        "optimizer": "AdamW",
+        "learning_rate": 0.0003,
+        "loss": "chosen-action CE + ordinary-score bounded-utility SmoothL1",
+        "split_source_sha256": "217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605"
+      },
+      "teacher_manifest": {
+        "teacher_kind": "finite_depth_classical_minimax_search_targets",
+        "tree_depth": 3,
+        "parent_horizon": 2,
+        "evaluator": 1,
+        "scale_cp": 800.0,
+        "records": 3872,
+        "deduplication": "one resident first-ply parent, not repeated sibling edges"
+      },
+      "teacher_manifest_sha256": "1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f"
+    },
+    "export_validation": {
+      "device": "cpu",
+      "batches": [
+        1,
+        3,
+        17
+      ],
+      "integer_scores_equal": true,
+      "tracer_warnings": [
+        "Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!",
+        "Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!"
+      ]
+    }
+  },
+  "manifest_json": "{\"checkpoint_sha256\":\"1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83\",\"deployment_version\":1,\"epsilon\":1e-06,\"export_validation\":{\"batches\":[1,3,17],\"device\":\"cpu\",\"integer_scores_equal\":true,\"tracer_warnings\":[\"Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!\",\"Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!\"]},\"feature_schema\":1,\"format\":\"torchscript_static_reference\",\"head_readout\":\"softmax_logits_2_minus_0\",\"input_dtype\":\"float32\",\"input_shape\":[\"B\",18,8,8],\"max_batch\":256,\"model_config\":{\"depth\":1,\"name\":\"relation\",\"plan_tokens\":8,\"width\":32},\"output_dtype\":\"int32\",\"output_shape\":[\"B\"],\"perspective\":\"side_to_move\",\"provenance\":{\"checkpoint_metadata_sha256\":\"c3ac422dc675c607348483a3f6eb3dca5a33c8437ec556cb078286e02db1760e\",\"kind\":\"search_teacher_cp_utility_checkpoint\",\"teacher_manifest\":{\"deduplication\":\"one resident first-ply parent, not repeated sibling edges\",\"evaluator\":1,\"parent_horizon\":2,\"records\":3872,\"scale_cp\":800.0,\"teacher_kind\":\"finite_depth_classical_minimax_search_targets\",\"tree_depth\":3},\"teacher_manifest_sha256\":\"1217c00fe8b3a0c17e63b3b2b2e618e4f4a5e34ff03e79a61badc4891bc36d2f\",\"training_config\":{\"batch_size\":64,\"learning_rate\":0.0003,\"loss\":\"chosen-action CE + ordinary-score bounded-utility SmoothL1\",\"optimizer\":\"AdamW\",\"seed\":20260930,\"split_source_sha256\":\"217aba5db6a510128e9a569b57d1bb2e90efb061cb8d10c0694b1671f20fe605\",\"steps\":256},\"utility_contract\":{\"epsilon\":1e-06,\"kind\":\"bounded_search_cp_regression\",\"mate_band\":29000,\"mate_value_loss_excluded\":true,\"scale_cp\":800.0}},\"rounding\":\"nearest_even\",\"scale_cp\":800.0,\"score_limit\":29000,\"state_sha256\":\"d3174d63aad01edd2fc9072313743d45cfc94b6fa8df0fe19b17628686888820\",\"strength_evidence\":false,\"target_kind\":\"finite_depth_minimax_cp_utility\",\"terminal_responsibility\":\"simulator\",\"torch_version\":\"2.10.0+rocm7.0\"}",
+  "archive_sha256": "a90c1c3138c9ae0fec96ca93ec8e0150ac814121cf2ee1027071e377621fd0d8"
+}

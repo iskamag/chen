@@ -45,8 +45,11 @@ The [repeated control attempt](GPU_DISPATCH_STUDY.md) subsequently ended partial
 after an external container stop. Timeout stacks survive for both requested
 settings, but complete replacement logs were lost; no completed six-run or
 replayable numerical-parity result is claimed. The production policy remains
-unchanged. The next causal control separates a CPU-only protocol parent from
-an idle Torch/HIP parent, with durable milestone logs.
+unchanged. The subsequent [parent-context control](GPU_PARENT_CONTEXT.md)
+completes all six declared CPU-only/live-idle-HIP consumers with durable logs:
+108 numerical comparisons and 240 legal game plies pass. Neither arm reproduces
+the timeout, leaving its cause and long-play reliability unresolved. Device
+history and oracle work remain confounded; no production workaround is adopted.
 
 ## Diagnostic scope
 
