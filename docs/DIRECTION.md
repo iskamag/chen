@@ -41,6 +41,43 @@ uniform horizon. `hip-frontier` transfers CPU-generated leaves; `hip-resident`
 and `hip-selective` execute rules and tree operations on the device. Preserve
 these names and scopes in every benchmark. A CPU fallback must be explicit.
 
+## Full GPU execution, symbolic residuals and INT8
+
+Full GPU execution remains the deployment target: exact rules, symbolic feature
+production, latent updates, neural scoring, frontier decisions and backup retain
+their state on the device. CPU implementations remain references for comparison.
+Measure host scheduling and publication costs explicitly while moving suitable
+control work into the GPU. A CPU result does not replace this target.
+
+The symbolic engine must expose a versioned, typed residual-input boundary to the
+neural engine. Derive channels from the current exact state and legal actions:
+occupancy, attacks, pins, check constraints, material/phase, clocks/history and
+move events. Keep parent/child identity, player orientation, validity masks,
+stream dependencies and allocation ownership explicit. Learned projections may
+inject these channels into neural residual streams. Teacher scores and future
+search/PV information cannot enter a branch prediction as observed state.
+
+Quantized inference is a separate model/backend variant. Start with optimized
+INT8 packing, accumulation and fused scale/residual operations supported by the
+actual gfx1030 ISA; inspect the compiled code and compare against FP32/FP16 on
+real resident batches. Fit activation ranges using TRAIN only. Freeze scales and
+weights before numerical, action-ranking and playing-strength comparisons.
+Report calibration/packing overhead, dispatch/transfer time and end-to-end
+latency; integer arithmetic alone does not demonstrate an optimized backend.
+
+Timing is the primary optimization criterion. Memory limits protect ownership and
+bounded execution, but they are configurable engineering bounds, not the target
+metric. Permit larger justified artifacts or resident allocations when measured
+latency improves; avoid duplicated checkpoint tensors and needless transfers.
+
+The theory track uses Lean to prove finite-model invariants and execution-policy
+equivalence: stable argmax under monotone reservations, dependency-ordered backup,
+packed field separation and exact symbolic transition facts. Keep assumptions and
+refinement boundaries explicit. A machine-checked model theorem needs a stated
+connection to the executed kernel; it is not a claim of globally optimal chess.
+Investigate latency/query lower bounds under declared oracle and hardware models
+before calling a strategy optimal. Lean 4.27.0 is available locally.
+
 ## Parallel research tracks
 
 **GPU search and profiling.** Profile the actual one-second UCI path and its
@@ -54,10 +91,11 @@ search policy. The existing selective fusion experiment addresses repeated
 fences; its adoption depends on parity and measured end-to-end benefit.
 The [gfx1030 SWAR study](RDNA_BITBOARDS.md) reads AMD RDNA2 instruction
 definitions and the neighboring bitmatrices kernels, verifies emitted runtime
-ISA, and independently checks every primitive output. Prefer branchless sliding
-fills as the next rules candidate; preserve independent board lanes and ordinary
-popcount intrinsics. Primitive wins require full rules parity and integrated
-register, kernel and end-to-end measurements before adoption.
+ISA, and independently checks every primitive output. Keep branchless sliding
+fills as a measured candidate; the integrated selective-search result improves
+less than 0.2%, so the default remains unchanged. Preserve independent board lanes
+and ordinary popcount intrinsics. Optimize the newly dominant selection path
+and repeat integrated measurements before adopting the candidate.
 
 **2FFS paper implementation.** Implement a separate CPU reference for
 [Two-Fidelity Best-Action Identification for Stochastic Minimax Tree,

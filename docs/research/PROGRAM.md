@@ -48,6 +48,20 @@ and training; initial upload is recorded. Generated rule-derived toy data tests
 mechanics, not strength. Real labels, dataset licensing, holdout game/position
 separation, and cross-domain validation remain production gates.
 
+## Execution and theory priorities
+
+Full GPU execution, including resident symbolic-to-neural residual inputs,
+remains the target. Optimized INT8 inference is an explicit research/deployment
+variant with TRAIN-only calibration and measured numerical, policy and latency
+comparisons. Timing takes priority over minimizing memory; resource ceilings may
+be adjusted when a concrete allocation and latency comparison justify them.
+
+A dedicated theory track uses the installed Lean toolchain for search-policy and
+symbolic-state invariants, plus assumption-explicit bounds on query/latency costs.
+Keep proven finite-model equivalence separate from kernel refinement evidence
+and claims about optimal chess decisions. [Architecture direction](../DIRECTION.md)
+defines the residual, quantization and proof ownership boundaries.
+
 ## Gates
 
 1. Core state/move/hash oracles; GPU batch parity and error/lifetime tests.
