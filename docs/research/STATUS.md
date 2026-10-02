@@ -307,13 +307,28 @@ with a batched fast-oracle seam; no GPU execution or chess guarantee is claimed.
 time; selection 17.37–18.89%; child rules/evaluation 2.42–2.81%. CPU move application
 and ray attacks dominate. This motivates a sparse-ancestor backup experiment
 and RDNA2/SWAR kernel work informed by official ISA guidance and `../bitmatrices`.
+Commit `7243a74` adopts classical sparse ancestor backup after 72 equal-work rows,
+1,336 native per-step snapshots and maximum depth/batch guard checks pass.
+The large-arena six-position median drops from 1593.306 to 818.045 ms (48.66%).
+Classical completion now processes unique admitted ancestors by descending ply;
+external neural evaluation retains the reverse-index reference. Selection now
+consumes roughly 71–75% of kernel duration. A packed reservation/cache candidate
+is the next bounded experiment.
+
+Commit `eff0e6b` caches completed 2FFS scale certificates until evidence refresh.
+All ten positive-action traces remain byte identical, with 600 independent
+fixtures and 12 tests passing. Fresh synthetic baseline/candidate medians improve
+6.013→2.667 ms and 766.957→287.009 ms; these are CPU research measurements.
 
 Neural commit `041e68d` adds paired semantic study mechanics and the separate
 transformer proposal, with 10 passing fixture tests. Neural commit `e50660d` adds the independently reviewed outer runner for 8 anchors
 and 32 transition models, with 10 passing orchestration tests. Review fixes bind
-phase/suite corpus identities and reject over-budget completed work. Runtime
-staging and learning seals remain required; no new model-quality metrics are
-available. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
+phase/suite corpus identities and reject over-budget completed work. The first root-sealed actual gfx1030 study completed 3,072 anchor and 6,144
+transition updates, then failed closed before validation because its combined
+checkpoint was 137,594,521 bytes, above the 128 MiB gate. Neural commit `0f5140e`
+archives all 40 finite individual states, exact runtime and terminal logs.
+No heldout quality metrics or model promotion occurred. The bounded-file freeze
+manifest correction is being reviewed as a separate declared attempt. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
 joins actual Rust Material/Tapered scores to all 15,501 exact corpus hashes and
 classifies the sole terminal state as a draw using the history-aware oracle.
 It contains no heldout quality metrics.
