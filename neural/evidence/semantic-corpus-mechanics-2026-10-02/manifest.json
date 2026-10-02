@@ -1,0 +1,8 @@
+{
+  "fixture-tests.stderr.log": "05173325671a438824d54d7a34ecb00ed79419a9cdc8c768e3ff88aa047ffb99",
+  "fixture-tests.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "proposed-learning.json": "20c6865648ec9abc3b80f18df2175843ecd6f7e1c7954c920327852ded5a5715",
+  "source-freeze.json": "d9964a488ec100822f3e31816a322f4e01c49b607e8e876e8c846bae154ec3ac",
+  "transformer-followup-proposal.json": "48fda815bc4fcff2bc3efc25dbd908e6108d86da58931b34e2b3573920a87cd1",
+  "transformer-primary-review.json": "177f4321ed0b680901251ed65cd36642c5179d182eeab122e22a7774858bd8a8"
+}

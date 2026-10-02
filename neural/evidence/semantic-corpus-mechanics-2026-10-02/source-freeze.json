@@ -1,0 +1,25 @@
+{
+  "fixture_test_count": 10,
+  "fixture_test_log_sha256": "05173325671a438824d54d7a34ecb00ed79419a9cdc8c768e3ff88aa047ffb99",
+  "kind": "semantic_corpus_study_mechanics_source_freeze",
+  "no_actual_corpus_training": true,
+  "no_heldout_quality_metrics": true,
+  "primary_review_sha256": "177f4321ed0b680901251ed65cd36642c5179d182eeab122e22a7774858bd8a8",
+  "proposed_learning_sha256": "20c6865648ec9abc3b80f18df2175843ecd6f7e1c7954c920327852ded5a5715",
+  "remaining_outer_runner": [
+    "frozen source/data staging and root-sealed learning declaration",
+    "all8anchor plus32transition checkpoints and frozen anchor fingerprints",
+    "validation checkpoint gates and scalar/root/drift aggregation",
+    "exact Rust/HIP material/Tapered baseline score provenance",
+    "draw-only terminal classifier admission witness covering all terminal stateIDs",
+    "complete16arm paired-seed joint selection and NONE artifact",
+    "selected source/checkpoint freeze then single selected TEST pass only",
+    "matched engine deployment and paired playing-strength evaluation"
+  ],
+  "sources_sha256": {
+    "neural/semantic_corpus_study.py": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+    "neural/tests/test_semantic_corpus_study.py": "931f44c3c904264df7c6fc4cca1b4382f2a31feb5ca2bbc6177f76270bf8fc8a"
+  },
+  "status": "CPU_fixtures_pass_GPU_phase_unexecuted_learning_unsealed",
+  "transformer_followup_sha256": "48fda815bc4fcff2bc3efc25dbd908e6108d86da58931b34e2b3573920a87cd1"
+}

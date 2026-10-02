@@ -1,0 +1,23 @@
+{
+  "architecture_hypothesis": "typed_piece_relations_or_latent_query_routing_reduce_empty_square_attention_cost_without_losing_root_choice_quality",
+  "arms": [
+    "dense_square_multihead_preLN_transformer",
+    "typed_attack_support_bias_multihead_transformer",
+    "occupied_piece_object_transformer_with_presence_mask",
+    "eight_latent_query_bottleneck_with_square_cross_attention"
+  ],
+  "compute": "record_per_phase_wall_GPU_event_times_peak_memory_stored_active_parameters_and_batchK",
+  "data": "same_pinned_complete_root_corpus_no_new_heldout_peeks",
+  "equal_compute_claim": false,
+  "initialization": "match_shared_parameters_where_tensor_shapes_and_meanings_match",
+  "mechanical_gate": "causal_inputs_complete_root_support_exact_blind_ties_simulator_terminal_parity",
+  "paired_seeds": [
+    20261021,
+    20261022
+  ],
+  "primary_ablation": "same_attention_block_change_token_ownership_and_exact_rule_bias",
+  "quality_gate": "separately_sealed_joint_scalar_interval_error_and_complete_root_regret_against_all_visible_baselines",
+  "shared_protocol": "same_eight_role_decoder_value_intervals_anchor_freeze_and_transition_controls",
+  "status": "unsealed_followup_not_implemented",
+  "test": "selected_configuration_source_checkpoint_frozen_then_one_test_pass_or_NONE"
+}
