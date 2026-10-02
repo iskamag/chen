@@ -335,8 +335,15 @@ archives all 40 finite individual states, exact runtime and terminal logs.
 No heldout quality metrics or model promotion occurred. Neural commit `7d0a199`
 replaces the aggregate checkpoint with a hash-bound manifest of all 40 individual
 states. Thirteen orchestration fixtures and actual checkpoint admission pass.
-A separately root-sealed fresh corrected attempt is running; the original
-attempt remains closed and is not resumed. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
+A separately root-sealed fresh corrected attempt completed all 40 phases and
+reached validation in 142.158 seconds. Neural commit `68b7176` archives its exact
+closure, individual states, full validation metrics and independent mechanical
+replay. Root checks all 45 payloads and 109 tar members and independently replays
+the strict paired-seed selection arithmetic. The unchanged joint gate selects
+NONE; TEST remains closed and no model is promoted. Some models improve scalar
+error and regret, but optimal-action agreement does not consistently meet the
+joint gate across both seeds. The original attempt remains closed and is not
+resumed. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
 joins actual Rust Material/Tapered scores to all 15,501 exact corpus hashes and
 classifies the sole terminal state as a draw using the history-aware oracle.
 It contains no heldout quality metrics.
