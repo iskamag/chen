@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-10-02T17:28:35.657507+00:00",
+  "proof_source_sha256": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a",
+  "lean_launcher": "/usr/bin/lean",
+  "lean_launcher_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "toolchain_prefix": "/usr",
+  "toolchain_lean_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "std_olean_sha256": "69e00403c2c21cc4103e51709877351fe334b3534f7242215102873bcf9734c9",
+  "theorems": [
+    "reservations_shrink_eligibility",
+    "canonical_best_under_subset",
+    "cached_winner_stable",
+    "canonical_winner_unique",
+    "spike_is_canonical_best",
+    "unread_spikes_agree",
+    "two_unread_obstruction",
+    "finite_two_unread_obstruction",
+    "unaffected_children",
+    "backup_order_unique",
+    "key_score_priority",
+    "key_canonical_tie",
+    "valid_key_above_invalid",
+    "wave_max_associative",
+    "wave_max_commutative",
+    "wave_max_identity",
+    "packed_increment_preserves_fields",
+    "int8_product_abs_bound",
+    "absolute_to_signed_bound",
+    "integer_sum_bound",
+    "int8_dot_int32_safe",
+    "integer_grouping_exact"
+  ],
+  "theorem_count": 22,
+  "commands": [
+    {
+      "phase": "version",
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02"
+    },
+    {
+      "phase": "lake-version",
+      "argv": [
+        "lake",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02"
+    },
+    {
+      "phase": "toolchain-prefix",
+      "argv": [
+        "lean",
+        "--print-prefix"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02"
+    },
+    {
+      "phase": "compile",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "-o",
+        "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02/CacheAndBackup.olean",
+        "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02/CacheAndBackup.lean"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02"
+    },
+    {
+      "phase": "axioms-audit",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02/axioms-audit.lean"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 30,
+      "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/mechanical-policy-lean-2026-10-02"
+    }
+  ],
+  "warnings_as_errors": true,
+  "theorem_axioms": {
+    "reservations_shrink_eligibility": [],
+    "canonical_best_under_subset": [],
+    "cached_winner_stable": [],
+    "canonical_winner_unique": [
+      "propext"
+    ],
+    "spike_is_canonical_best": [
+      "propext"
+    ],
+    "unread_spikes_agree": [
+      "propext"
+    ],
+    "two_unread_obstruction": [
+      "propext"
+    ],
+    "finite_two_unread_obstruction": [
+      "propext"
+    ],
+    "unaffected_children": [],
+    "backup_order_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "key_score_priority": [
+      "propext",
+      "Quot.sound"
+    ],
+    "key_canonical_tie": [
+      "propext",
+      "Quot.sound"
+    ],
+    "valid_key_above_invalid": [
+      "propext",
+      "Quot.sound"
+    ],
+    "wave_max_associative": [
+      "propext"
+    ],
+    "wave_max_commutative": [
+      "propext"
+    ],
+    "wave_max_identity": [
+      "propext"
+    ],
+    "packed_increment_preserves_fields": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "int8_product_abs_bound": [
+      "propext"
+    ],
+    "absolute_to_signed_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integer_sum_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "int8_dot_int32_safe": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integer_grouping_exact": [
+      "propext"
+    ]
+  },
+  "trusted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "sorryAx_absent_from_actual_print_axioms": true,
+  "scope": "Abstract Lean/Std mechanical certificates; no HIP refinement, global chess optimum, oracle calibration, stochastic PAC or GPU latency optimum"
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp_utc": "2026-10-02T17:28:03.094957+00:00",
+  "read_only_neighbor_sources": {
+    "../bitmatrices/hip/live_set_scalar.h": "aa4bae82c46411c28aa31ac4623e04fcda7811fd83003355773c7058d4465f9b",
+    "../bitmatrices/hip/live_set_hip_reg_branchless.cu": "6b063267b9d6422bf9b9aaa0c0dc05f955d4317d1e36cc9eca69f3951855caa2"
+  },
+  "packed_cache_baseline_library_sha256": "a47b8c4e5704703280834b4de864d1daf059b63ce79eb1f1fb22462994d3edaf",
+  "packed_cache_source_sha256": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+  "primary_sources": {
+    "2FFS_v2": "https://arxiv.org/html/2606.01708v2",
+    "BAI_lower_bound": "https://proceedings.mlr.press/v49/garivier16a.pdf",
+    "HIP_cooperative_groups_latest_7_15": "https://rocmdocs.amd.com/projects/HIP/en/latest/how-to/hip_runtime_api/cooperative_groups.html",
+    "HIP_conditional_graph_request_open": "https://github.com/ROCm/hip/issues/3905"
+  },
+  "hardware_execution_in_this_proof_milestone": false,
+  "proof_scope": "Abstract model only, no HIP refinement or GPU/global chess optimality",
+  "repository_document_sha256": "6f1ce62e5353db729a995868c9580e00655c8a91d2e322c7dcba38e7ee26024d",
+  "verifier_sha256": "e85ef3b964cb5b82242de6f68416bb7055fe406e70af565882d11dc24d13bc50",
+  "rdna_peer_device_metadata_path": "gpu/evidence/int8-affine-gfx1030-2026-10-02/device.json",
+  "rdna_peer_device_metadata_sha256": "dc442ee305946a42d35bb5c11edf7fc15651b6ba40a0fdb9d9320fdd58c9999a"
+}

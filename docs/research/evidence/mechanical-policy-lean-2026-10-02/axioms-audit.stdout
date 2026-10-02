@@ -1,0 +1,22 @@
+'Chen.reservations_shrink_eligibility' does not depend on any axioms
+'Chen.canonical_best_under_subset' does not depend on any axioms
+'Chen.cached_winner_stable' does not depend on any axioms
+'Chen.canonical_winner_unique' depends on axioms: [propext]
+'Chen.spike_is_canonical_best' depends on axioms: [propext]
+'Chen.unread_spikes_agree' depends on axioms: [propext]
+'Chen.two_unread_obstruction' depends on axioms: [propext]
+'Chen.finite_two_unread_obstruction' depends on axioms: [propext]
+'Chen.unaffected_children' does not depend on any axioms
+'Chen.backup_order_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Chen.key_score_priority' depends on axioms: [propext, Quot.sound]
+'Chen.key_canonical_tie' depends on axioms: [propext, Quot.sound]
+'Chen.valid_key_above_invalid' depends on axioms: [propext, Quot.sound]
+'Chen.wave_max_associative' depends on axioms: [propext]
+'Chen.wave_max_commutative' depends on axioms: [propext]
+'Chen.wave_max_identity' depends on axioms: [propext]
+'Chen.packed_increment_preserves_fields' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Chen.int8_product_abs_bound' depends on axioms: [propext]
+'Chen.absolute_to_signed_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Chen.integer_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Chen.int8_dot_int32_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Chen.integer_grouping_exact' depends on axioms: [propext]

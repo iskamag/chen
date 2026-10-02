@@ -1,0 +1,16 @@
+{
+  "kind": "root_finite_model_proof_review_v1",
+  "status": "PASS",
+  "proof_source_sha256": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a",
+  "frozen_manifest_sha256": "dd8fe511c3c2343d4be3dd623a9b8ae8a5717adc3797f6bedbd84b5718412ef3",
+  "exact_inventory_and_byte_hashes": 28,
+  "theorems_independently_compiled_and_axioms_audited": 22,
+  "axioms_output_byte_identical": true,
+  "trusted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "source_review": "Finite membership obstruction, monotone cache, bounded rank backup uniqueness and integer partial-sum bounds; stated premises inspected",
+  "limitations": "Abstract certificates; no HIP refinement, full quantization/FP32 fidelity, chess strength or GPU latency optimum proof"
+}

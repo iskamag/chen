@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "source_sha256": "9f1c6d1d749c93c3e606e32b5ed697e8593449b37e0c5aba74ffadeff8d7b31c",
+  "reason": "Lean reserved binder names open/local; corrected before successful proof compilation"
+}

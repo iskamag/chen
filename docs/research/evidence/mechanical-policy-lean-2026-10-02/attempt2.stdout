@@ -1,0 +1,1 @@
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt2.lean:71:27: error(lean.unknownIdentifier): Unknown constant `Nat.strong_induction_on`

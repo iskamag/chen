@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "cause": "Lean input outside current module root; fixed verifier subprocess cwd to output directory",
+  "output": "/tmp/chen-policy-proof-replay-2026-10-02",
+  "source_sha256": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a"
+}

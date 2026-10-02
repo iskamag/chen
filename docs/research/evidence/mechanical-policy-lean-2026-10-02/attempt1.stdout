@@ -1,0 +1,28 @@
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:9:14: error: unexpected token 'open'; expected '_' or identifier
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:9:19: error: unknown namespace `reservations`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:9:32: error: unexpected token ':'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:10:28: error: unknown namespace `child`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:16:41: error: unexpected token 'open'; expected '_' or identifier
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:16:46: error: unknown namespace `old`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:16:54: error: unexpected token ':'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:18:27: error: unknown namespace `new`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:18:37: error: unexpected token '→'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:18:53: error: unknown namespace `old`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:18:63: error: unexpected token ':='; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:28:30: error: unexpected token 'open'; expected '_' or identifier
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:28:35: error: unknown namespace `old`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:28:43: error: unexpected token ':'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:30:41: error: unknown namespace `old`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:30:44: error: unexpected token ')'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:31:31: error: unknown namespace `new`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:31:41: error: unexpected token ')'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:32:33: error: unknown namespace `new`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:32:36: error: unexpected token ')'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:34:42: error: unknown namespace `old`
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:34:58: error: unexpected token ')'; expected command
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:63:5: error: unexpected token 'local'; expected '_' or identifier
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:63:10: error: unexpected token ':'; expected 'binder_predicate', 'builtin_dsimproc', 'builtin_simproc', 'dsimproc', 'elab', 'elab_rules', 'grind_pattern', 'infix', 'infixl', 'infixr', 'instance', 'macro', 'macro_rules', 'notation', 'postfix', 'prefix', 'simproc', 'syntax' or 'unif_hint'
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:76:19: error: unexpected identifier; expected 'binder_predicate', 'builtin_dsimproc', 'builtin_simproc', 'dsimproc', 'elab', 'elab_rules', 'grind_pattern', 'infix', 'infixl', 'infixr', 'instance', 'macro', 'macro_rules', 'notation', 'postfix', 'prefix', 'simproc', 'syntax' or 'unif_hint'
+docs/research/evidence/mechanical-policy-lean-2026-10-02/attempt1.lean:106:5: warning: unused variable `range`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

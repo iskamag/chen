@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "source_sha256": "17f8cd456d09bab2706de12c0818d8932e48bbf5242e1098118a4de97ddf9a6c",
+  "reason": "Old strong-induction theorem name absent from installed Std; use actual Nat.strongRecOn"
+}

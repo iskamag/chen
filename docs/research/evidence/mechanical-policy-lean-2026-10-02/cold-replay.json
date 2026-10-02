@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "argv": [
+    "python3",
+    "proofs/verify_policy_proofs.py",
+    "--source",
+    "docs/research/evidence/mechanical-policy-lean-2026-10-02/CacheAndBackup.lean",
+    "--output",
+    "/tmp/chen-policy-proof-replay-2026-10-02-fixed"
+  ],
+  "source_sha256": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a",
+  "axioms_stdout_byte_identical": true,
+  "theorem_count": 22,
+  "compile_and_audit_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
