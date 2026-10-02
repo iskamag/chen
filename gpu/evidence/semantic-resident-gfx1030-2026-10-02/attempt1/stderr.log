@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/tmp/chen-semantic-resident-gfx1030-20261002/scripts/check_semantic_resident.py", line 204, in <module>
+    main()
+  File "/tmp/chen-semantic-resident-gfx1030-20261002/scripts/check_semantic_resident.py", line 100, in main
+    torch.cuda.reset_peak_memory_stats(args.device)
+  File "/usr/local/lib/python3.12/dist-packages/torch/cuda/memory.py", line 432, in reset_peak_memory_stats
+    return torch._C._cuda_resetPeakMemoryStats(device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Invalid device argument 

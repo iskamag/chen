@@ -1,0 +1,51 @@
+test_black_raw_ep_full_unsigned_clock_and_special_moves (experiments.semantic_corpus.tests.test_packing.PackingTests.test_black_raw_ep_full_unsigned_clock_and_special_moves) ... ok
+test_caps_atomic_no_replace_and_train_test_boundary (experiments.semantic_corpus.tests.test_packing.PackingTests.test_caps_atomic_no_replace_and_train_test_boundary) ... ok
+test_corruption_recomputed_hashes_cannot_hide_semantic_failures (experiments.semantic_corpus.tests.test_packing.PackingTests.test_corruption_recomputed_hashes_cannot_hide_semantic_failures) ... ok
+test_exact_K_schedule_is_structural_and_complete (experiments.semantic_corpus.tests.test_packing.PackingTests.test_exact_K_schedule_is_structural_and_complete) ... ok
+test_exact_history_identity_and_no_torch_import (experiments.semantic_corpus.tests.test_packing.PackingTests.test_exact_history_identity_and_no_torch_import) ... ok
+test_float32_bytes_match_frozen_CPU_score_converter (experiments.semantic_corpus.tests.test_packing.PackingTests.test_float32_bytes_match_frozen_CPU_score_converter) ... /home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+ok
+test_native_Rust_snapshot_oracle_all_fixture_states (experiments.semantic_corpus.tests.test_packing.PackingTests.test_native_Rust_snapshot_oracle_all_fixture_states) ... ok
+test_query_sign_material_frame_and_outward_rounding (experiments.semantic_corpus.tests.test_packing.PackingTests.test_query_sign_material_frame_and_outward_rounding) ... ok
+test_roundtrip_alignment_complete_action_rank_and_ownership (experiments.semantic_corpus.tests.test_packing.PackingTests.test_roundtrip_alignment_complete_action_rank_and_ownership) ... ok
+test_terminal_children_fifty_repetition_and_insufficient_masks (experiments.semantic_corpus.tests.test_packing.PackingTests.test_terminal_children_fifty_repetition_and_insufficient_masks) ... ok
+test_byte_exact_frozen_schema_decode (experiments.semantic_corpus.test_resident.ResidentTests.test_byte_exact_frozen_schema_decode) ... ok
+test_caps_and_bad_pins_reject (experiments.semantic_corpus.test_resident.ResidentTests.test_caps_and_bad_pins_reject) ... ok
+test_checkpoint_cap_rejects_before_open (experiments.semantic_corpus.test_resident.ResidentTests.test_checkpoint_cap_rejects_before_open) ... ok
+test_complete_sorted_int64_support_and_terminal_masks (experiments.semantic_corpus.test_resident.ResidentTests.test_complete_sorted_int64_support_and_terminal_masks) ... ok
+test_exact_history_and_cpu_origin_sidecars (experiments.semantic_corpus.test_resident.ResidentTests.test_exact_history_and_cpu_origin_sidecars) ... ok
+test_exact_k_rejects_ragged_empty_duplicates_and_foreign_plan (experiments.semantic_corpus.test_resident.ResidentTests.test_exact_k_rejects_ragged_empty_duplicates_and_foreign_plan) ... ok
+test_frozen_import_never_writes_bytecode_and_restores_flag (experiments.semantic_corpus.test_resident.ResidentTests.test_frozen_import_never_writes_bytecode_and_restores_flag) ... ok
+test_gate_special_files_and_symlinks_reject_before_open (experiments.semantic_corpus.test_resident.ResidentTests.test_gate_special_files_and_symlinks_reject_before_open) ... ok
+test_gathers_cannot_mutate_corpus_or_schedule (experiments.semantic_corpus.test_resident.ResidentTests.test_gathers_cannot_mutate_corpus_or_schedule) ... ok
+test_gpu_gate_denied_before_any_cuda_call (experiments.semantic_corpus.test_resident.ResidentTests.test_gpu_gate_denied_before_any_cuda_call) ... ok
+test_growing_checkpoint_stream_is_bounded (experiments.semantic_corpus.test_resident.ResidentTests.test_growing_checkpoint_stream_is_bounded) ... ok
+test_held_out_gate_precedes_reader_access (experiments.semantic_corpus.test_resident.ResidentTests.test_held_out_gate_precedes_reader_access) ... ok
+test_integrated_load_and_owned_aligned_storage (experiments.semantic_corpus.test_resident.ResidentTests.test_integrated_load_and_owned_aligned_storage) ... ok
+test_malformed_layout_rejected_before_torch_allocation (experiments.semantic_corpus.test_resident.ResidentTests.test_malformed_layout_rejected_before_torch_allocation) ... ok
+test_module_import_is_torch_free (experiments.semantic_corpus.test_resident.ResidentTests.test_module_import_is_torch_free) ... ok
+test_observation_batch_frame_and_ownership (experiments.semantic_corpus.test_resident.ResidentTests.test_observation_batch_frame_and_ownership) ... ok
+test_permutation_determinism_and_complete_tails (experiments.semantic_corpus.test_resident.ResidentTests.test_permutation_determinism_and_complete_tails) ... ok
+test_prepared_batches_need_no_new_index_tensor_construction (experiments.semantic_corpus.test_resident.ResidentTests.test_prepared_batches_need_no_new_index_tensor_construction) ... ok
+test_reader_structural_schedule_repeats_without_ingress (experiments.semantic_corpus.test_resident.ResidentTests.test_reader_structural_schedule_repeats_without_ingress) ... ok
+test_rehashed_terminal_corruption_fails_semantic_reader_before_torch (experiments.semantic_corpus.test_resident.ResidentTests.test_rehashed_terminal_corruption_fails_semantic_reader_before_torch) ... ok
+test_schedule_extension_offsets_hashes_and_shared_owner (experiments.semantic_corpus.test_resident.ResidentTests.test_schedule_extension_offsets_hashes_and_shared_owner) ... ok
+test_semantically_corrupted_history_rejected_before_allocations (experiments.semantic_corpus.test_resident.ResidentTests.test_semantically_corrupted_history_rejected_before_allocations) ... ok
+test_train_cannot_admit_heldout (experiments.semantic_corpus.test_resident.ResidentTests.test_train_cannot_admit_heldout) ... ok
+test_validation_and_test_require_exact_distinct_seals (experiments.semantic_corpus.test_resident.ResidentTests.test_validation_and_test_require_exact_distinct_seals) ... ok
+test_absolute_high_bit_raw_ep_and_canonical_black_orientation (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_absolute_high_bit_raw_ep_and_canonical_black_orientation) ... ok
+test_actual_auditor_rejects_fixture_kind_before_archive_reads (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_actual_auditor_rejects_fixture_kind_before_archive_reads) ... ok
+test_float32_outward_sign_and_source_material (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_float32_outward_sign_and_source_material) ... ok
+test_independent_reader_and_all_semantic_bytes (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_independent_reader_and_all_semantic_bytes) ... ok
+test_native_cpu_oracle_all_fixture_states_and_full_roots (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_native_cpu_oracle_all_fixture_states_and_full_roots) ... ok
+test_numeric_alias_and_decisive_region_rejected (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_numeric_alias_and_decisive_region_rejected) ... ok
+test_overflow_json_float_in_unused_packet_diagnostics (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_overflow_json_float_in_unused_packet_diagnostics) ... ok
+test_rehashed_state_frame_mask_history_action_corruption (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_rehashed_state_frame_mask_history_action_corruption) ... ok
+test_same_exact_state_separate_retained_history (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_same_exact_state_separate_retained_history) ... ok
+test_strict_wire_padding_types_and_duplicate_keys (scripts.tests.test_audit_semantic_corpus.WitnessTests.test_strict_wire_padding_types_and_duplicate_keys) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 2.880s
+
+OK

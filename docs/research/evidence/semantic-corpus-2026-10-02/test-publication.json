@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "edges": 2118,
+    "families": 55,
+    "history": 90619,
+    "observations": 440,
+    "queries": 495,
+    "root_offsets": 56,
+    "roots": 55,
+    "state_offsets": 2559,
+    "states": 2558
+  },
+  "manifest_sha256": "b5ed6f585936d8ff16e8658bee6d19e581fa2e84d9025ebfaf158aa0095662a7",
+  "path": "/home/iskam/src/vibe/chen/results/semantic-corpus/packet-v2/test",
+  "payload_bytes": 1192704,
+  "seal_path": "/home/iskam/src/vibe/chen/results/semantic-corpus/seals/test.json",
+  "seal_sha256": "d8e53d6d90e14f546f33e3de6406873be5e69d51c5d44bb59473b36087375dcc"
+}

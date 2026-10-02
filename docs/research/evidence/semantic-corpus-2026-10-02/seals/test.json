@@ -1,0 +1,24 @@
+{
+  "kind": "cpu_semantic_serialization_seal",
+  "limits": {
+    "edges": 262144,
+    "families": 4096,
+    "history": 4194304,
+    "metadata_bytes": 67108864,
+    "observations": 32768,
+    "payload_bytes": 67108864,
+    "record_bytes": 8388608,
+    "roots": 4096,
+    "states": 65536
+  },
+  "pins": {
+    "input_admission_sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+    "teacher_archive_manifest_sha256": "6404b1fdd3af6470be529ba5305647ee9478e6f5f6081e1a98f6dbb3bc5d0cc9",
+    "teacher_audit_sha256": "920866ed2a95a14f4495caceda37ed1cbef9639f511e6f13e9ee31b0737d2d5d",
+    "teacher_declaration_sha256": "a6f09aa8f34eaffa097b6602dc301cd00cd0e86f810ed3a357c4ce7daee08bda"
+  },
+  "source_sha256": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+  "split": "test",
+  "status": "sealed_no_training",
+  "version": 1
+}

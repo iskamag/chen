@@ -1,0 +1,67 @@
+{
+  "GPU_runtime_calls": 0,
+  "aggregate_counts": {
+    "edges": 12701,
+    "families": 350,
+    "history": 550040,
+    "observations": 2800,
+    "queries": 3150,
+    "root_offsets": 353,
+    "roots": 350,
+    "state_offsets": 15504,
+    "states": 15501
+  },
+  "kind": "independent_CPU_semantic_corpus_all_splits_mechanical_summary",
+  "model_training": false,
+  "payload_bytes": 7232128,
+  "quality_error_ranking_metrics_computed": false,
+  "splits": {
+    "test": {
+      "elapsed_seconds": 7.709465596009977,
+      "manifest_sha256": "b5ed6f585936d8ff16e8658bee6d19e581fa2e84d9025ebfaf158aa0095662a7",
+      "native_oracle": {
+        "binary_sha256": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049",
+        "build_manifest_sha256": "d45d72822c6c0e37ec4d13102a7eb3a34c656ea58e01849127389d48a4198d15",
+        "compiled_source_files_verified": 18,
+        "full_root_expansions_verified": 55,
+        "legal_child_snapshots_verified": 2118,
+        "state_snapshots_verified": 2558
+      },
+      "payload_bytes": 1192704,
+      "query_records_verified": 495,
+      "report_sha256": "ebcbaa92d676df9e9998ff0132149c806e60e2c259383fe87e7b415205a6a14c"
+    },
+    "train": {
+      "elapsed_seconds": 29.847747622989118,
+      "manifest_sha256": "b068256c757c93810f330b07bd4703bc35ec072b816a105fe76a33cc4d4376a4",
+      "native_oracle": {
+        "binary_sha256": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049",
+        "build_manifest_sha256": "d45d72822c6c0e37ec4d13102a7eb3a34c656ea58e01849127389d48a4198d15",
+        "compiled_source_files_verified": 18,
+        "full_root_expansions_verified": 233,
+        "legal_child_snapshots_verified": 8477,
+        "state_snapshots_verified": 10341
+      },
+      "payload_bytes": 4822336,
+      "query_records_verified": 2097,
+      "report_sha256": "9d2ed478bb9ed0efefba542023b9cbaa83ff942c339d4c421b1b5d7f7345377e"
+    },
+    "validation": {
+      "elapsed_seconds": 7.882694498024648,
+      "manifest_sha256": "55cc6ceea5bd1ebb1c9c4c07dcde8604c15a0f33f199a31a21c8b4fac70ed010",
+      "native_oracle": {
+        "binary_sha256": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049",
+        "build_manifest_sha256": "d45d72822c6c0e37ec4d13102a7eb3a34c656ea58e01849127389d48a4198d15",
+        "compiled_source_files_verified": 18,
+        "full_root_expansions_verified": 62,
+        "legal_child_snapshots_verified": 2106,
+        "state_snapshots_verified": 2602
+      },
+      "payload_bytes": 1217088,
+      "query_records_verified": 558,
+      "report_sha256": "07b89179e8162d368e5fbe98d5ff2878ac50e74badac57b50360bde4a9bdaa92"
+    }
+  },
+  "status": "pass",
+  "summed_audit_elapsed_seconds": 45.43990771702374
+}

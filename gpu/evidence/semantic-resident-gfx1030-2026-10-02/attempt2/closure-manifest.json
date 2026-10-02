@@ -1,0 +1,22 @@
+{
+  "chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "chess/engine.py": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+  "chess/gaviota.py": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+  "chess/pgn.py": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+  "chess/polyglot.py": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+  "chess/svg.py": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+  "chess/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+  "chess/variant.py": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+  "docs/research/evidence/semantic-packet-v2-preparation-2026-10-01/neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+  "docs/research/evidence/semantic-packet-v2-preparation-2026-10-01/neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+  "docs/research/evidence/semantic-packet-v2-preparation-2026-10-01/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+  "experiments/semantic_corpus/__init__.py": "bce8890d3c407020a1479a4df012d5b33fa670284c017a08376842323f768f8e",
+  "experiments/semantic_corpus/packing.py": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+  "experiments/semantic_corpus/resident.py": "107fd446941d494570bde1f72faf325373ad6c719f2b6ab9c73550d8bba56a59",
+  "results/semantic-corpus/packet-v2/train/manifest.json": "b068256c757c93810f330b07bd4703bc35ec072b816a105fe76a33cc4d4376a4",
+  "results/semantic-corpus/packet-v2/train/payload.bin": "6fe173c0fcffc48a489b85ea14287679c31f3fe89747db19d200c9cf5092c004",
+  "results/semantic-corpus/packet-v2/train/provenance.json": "abdaf13dce6f62d282deb02de945a571c43a54d03e4810f50b80e5a45ffb7de5",
+  "results/semantic-corpus/packet-v2/train/schedule.json": "f62cb74927619ca545c865d346aab5d80d4fe83f9939ff779c36ab9272c7c7be",
+  "results/semantic-corpus/train-rocm-admission.json": "cb3e12a6598b1ff9f3938e92e0e9697aca2f1f06860891af3bb8c3553bedf215",
+  "scripts/check_semantic_resident.py": "be40d960031ffa4965dcff964c78b09d0362a09dffdd186566045e5261bb5498"
+}

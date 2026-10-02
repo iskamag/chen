@@ -1,0 +1,64 @@
+{
+  "kind": "synthetic_CPU_semantic_packer_source_freeze",
+  "source_sha256": {
+    "experiments/semantic_corpus/__init__.py": "bce8890d3c407020a1479a4df012d5b33fa670284c017a08376842323f768f8e",
+    "experiments/semantic_corpus/packing.py": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "experiments/semantic_corpus/tests/test_packing.py": "77bf2bb3bd11350d971bbf1f4fe2bd6093370da4ccfd405c9a7ed2ead423829a"
+  },
+  "tests": 10,
+  "test_seconds": 1.499,
+  "test_log_sha256": "2e9411e8817881905bdd0eb9a2155fafe9e170a7d2dd2ed5ab58b8da8a8474eb",
+  "fixture_scope": "synthetic_only_full_action_joins_rehashed_corruption_masks_frames_no_Torch_import_atomic_caps_CPU_Rust_snapshot_and_frozen_CPU_Torch_interval_oracles",
+  "real_corpus_packing": false,
+  "teacher_queries": 0,
+  "GPU_runtime_calls": 0,
+  "model_training": false,
+  "quality_metrics": false,
+  "limits": {
+    "payload_bytes": 67108864,
+    "metadata_bytes": 67108864,
+    "states": 65536,
+    "roots": 4096,
+    "observations": 32768,
+    "edges": 262144,
+    "history": 4194304,
+    "families": 4096,
+    "record_bytes": 8388608
+  },
+  "expected_audited_rows": {
+    "train": {
+      "families": 233,
+      "observations": 1864,
+      "roots": 233,
+      "edges": 8477
+    },
+    "validation": {
+      "families": 62,
+      "observations": 496,
+      "roots": 62,
+      "edges": 2106
+    },
+    "test": {
+      "families": 55,
+      "observations": 440,
+      "roots": 55,
+      "edges": 2118
+    }
+  },
+  "expected_state_upper_bounds": {
+    "train": 10341,
+    "validation": 2602,
+    "test": 2558
+  },
+  "actual_entry": "pack_audited_split(archive,preparation_archive,destination,split=...,seal_path=...,expected_seal_sha256=...)",
+  "seal": {
+    "kind": "cpu_semantic_serialization_seal",
+    "version": 1,
+    "status": "sealed_no_training",
+    "split": "one_of_train_validation_test",
+    "source_sha256": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "pins": "teacher_archive_manifest_sha256,teacher_audit_sha256,teacher_declaration_sha256,input_admission_sha256",
+    "limits": "exact_Limits_asdict_fields_positive_bounded_by_root"
+  },
+  "reader": "read_pack(path,max_bytes=...,max_metadata_bytes=...,expected_manifest_sha256=...,expected_source_sha256=...,purpose=audit_or_train,expected_split=...)"
+}

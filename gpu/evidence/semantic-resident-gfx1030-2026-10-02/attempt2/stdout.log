@@ -1,0 +1,3 @@
+CPU TRAIN admission complete
+gfx1030 packed TRAIN upload complete
+{"status": "passed", "counts": {"edges": 8477, "families": 233, "history": 366733, "observations": 1864, "queries": 2097, "root_offsets": 234, "roots": 233, "state_offsets": 10342, "states": 10341}, "complete_edges_compared": 8477, "wall_seconds": 28.420148590987083}

@@ -1,0 +1,44 @@
+{
+  "kind": "CPU_corpus_oracle_source_build_binding",
+  "GPU_runtime_calls": 0,
+  "source_and_binary_sha256": {
+    "examples/corpus_oracle.rs": "a86fb22af4f0f9631c72ba407e1eed2028962f082d090e81b928b762f092a170",
+    "src/core.rs": "a454e83a8421780e87d4882319970fb9c6f8b2cf4fc3e03db3674827954153ec",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/resident.rs": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+    "src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "src/lib.rs": "3e3cb2d6284855cfea3448d5ade4b98418ac039ea1f83de695e95391d2ff2f6f",
+    "Cargo.toml": "ebe79a1590695ed5d572e4413e59a965e2a967c92a1bc45d9286b54d85a8fdc1",
+    "Cargo.lock": "60caf9457598997c7c66cde70eb4893b051ac6d9abc51ea47fc6f5e6180bc547",
+    "target/release/examples/corpus_oracle": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049"
+  },
+  "commands": [
+    "cargo test --offline --example corpus_oracle",
+    "cargo build --release --offline --example corpus_oracle",
+    "cargo clippy --offline --example corpus_oracle -- -D warnings"
+  ],
+  "compiled_crate_source_sha256": {
+    "src/backend.rs": "f6f9e25edc8f5cae1c70f3d5c79d926605cfd166c308bf73065b6d0ca9ed278f",
+    "src/core.rs": "a454e83a8421780e87d4882319970fb9c6f8b2cf4fc3e03db3674827954153ec",
+    "src/device.rs": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+    "src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "src/frontier.rs": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+    "src/hip.rs": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+    "src/lib.rs": "3e3cb2d6284855cfea3448d5ade4b98418ac039ea1f83de695e95391d2ff2f6f",
+    "src/main.rs": "d410557b3c2fee761df06aae91aff19232c8f8792c95fff7ab72fc45247b66ae",
+    "src/neural.rs": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+    "src/resident.rs": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/search.rs": "74a49dfd2742ca1fa770f92c248f1ba6bbc31147c6f3c9c4147039db8f14e5f2",
+    "src/selective.rs": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+    "src/strength.rs": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+    "src/tt.rs": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+    "examples/corpus_oracle.rs": "a86fb22af4f0f9631c72ba407e1eed2028962f082d090e81b928b762f092a170",
+    "Cargo.toml": "ebe79a1590695ed5d572e4413e59a965e2a967c92a1bc45d9286b54d85a8fdc1",
+    "Cargo.lock": "60caf9457598997c7c66cde70eb4893b051ac6d9abc51ea47fc6f5e6180bc547"
+  },
+  "source_closure_note": "Entire crate source inventory pinned; default/no HIP release example build.",
+  "rustc_verbose": "rustc 1.98.1 (48a229cea 2026-09-01) (Artix Linux rust 1:1.98.1-1)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.1\nLLVM version: 22.1.8",
+  "cargo_version": "cargo 1.98.1 (797e8a9bc 2026-08-05) (Artix Linux rust 1:1.98.1-1)",
+  "binary_sha256": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049"
+}

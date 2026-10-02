@@ -1,0 +1,289 @@
+{
+  "alignment": 64,
+  "byte_order": "little",
+  "counts": {
+    "edges": 2106,
+    "families": 62,
+    "history": 92688,
+    "observations": 496,
+    "queries": 558,
+    "root_offsets": 63,
+    "roots": 62,
+    "state_offsets": 2603,
+    "states": 2602
+  },
+  "frame_kind": "sf19_reference_material58_approx_cp",
+  "interval_algorithm": "sf19_reference_batch_nextafter_f32_total_width_v1",
+  "kind": "immutable_cpu_semantic_corpus",
+  "origins": [
+    {
+      "index": 0,
+      "kind": "CPU_reconstructed_exact_history",
+      "native_context_uuid": null,
+      "native_epoch": -1,
+      "native_node": -1,
+      "resolver": "source_family_query_history_identity_no_native_arena_claim"
+    }
+  ],
+  "payload_bytes": 1217088,
+  "payload_sha256": "22db4a14bccf0ced5b7d25db25685f7efa1a1e3974465c8f05716c85b5ee4fba",
+  "pins": {
+    "input_admission_sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+    "teacher_archive_manifest_sha256": "6404b1fdd3af6470be529ba5305647ee9478e6f5f6081e1a98f6dbb3bc5d0cc9",
+    "teacher_audit_sha256": "920866ed2a95a14f4495caceda37ed1cbef9639f511e6f13e9ee31b0737d2d5d",
+    "teacher_declaration_sha256": "a6f09aa8f34eaffa097b6602dc301cd00cd0e86f810ed3a357c4ce7daee08bda"
+  },
+  "provenance_bytes": 14023291,
+  "provenance_sha256": "526543305943b9523696985c60a7b43499531e650503fa1505e1b58904d1b043",
+  "schedule_bytes": 8662,
+  "schedule_sha256": "de95e3a0bf4fad8077ca5bee3b5c66a962ed3ec80bca24ff209558d4b7e66f04",
+  "schema_version": 1,
+  "source_kind": "audited_packet_v2",
+  "source_sha256": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+  "split": "validation",
+  "tables": {
+    "edges.action": {
+      "dtype": "int16",
+      "nbytes": 4212,
+      "offset": 1181184,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.child_state": {
+      "dtype": "int32",
+      "nbytes": 8424,
+      "offset": 1172736,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.halfwidth": {
+      "dtype": "float32",
+      "nbytes": 8424,
+      "offset": 1202304,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.midpoint": {
+      "dtype": "float32",
+      "nbytes": 8424,
+      "offset": 1193856,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.ordinary": {
+      "dtype": "uint8",
+      "nbytes": 2106,
+      "offset": 1214976,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.rank": {
+      "dtype": "int16",
+      "nbytes": 4212,
+      "offset": 1210752,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.reported_cp": {
+      "dtype": "int32",
+      "nbytes": 8424,
+      "offset": 1185408,
+      "shape": [
+        2106
+      ]
+    },
+    "edges.root": {
+      "dtype": "int32",
+      "nbytes": 8424,
+      "offset": 1164288,
+      "shape": [
+        2106
+      ]
+    },
+    "history.keys": {
+      "dtype": "int64",
+      "nbytes": 741504,
+      "offset": 408832,
+      "shape": [
+        92688
+      ]
+    },
+    "history.offsets": {
+      "dtype": "int64",
+      "nbytes": 20824,
+      "offset": 387968,
+      "shape": [
+        2603
+      ]
+    },
+    "observations.halfwidth": {
+      "dtype": "float32",
+      "nbytes": 1984,
+      "offset": 1160256,
+      "shape": [
+        496
+      ]
+    },
+    "observations.midpoint": {
+      "dtype": "float32",
+      "nbytes": 1984,
+      "offset": 1158272,
+      "shape": [
+        496
+      ]
+    },
+    "observations.ordinary": {
+      "dtype": "uint8",
+      "nbytes": 496,
+      "offset": 1162240,
+      "shape": [
+        496
+      ]
+    },
+    "observations.query": {
+      "dtype": "int32",
+      "nbytes": 1984,
+      "offset": 1152320,
+      "shape": [
+        496
+      ]
+    },
+    "observations.query_material": {
+      "dtype": "int32",
+      "nbytes": 1984,
+      "offset": 1156288,
+      "shape": [
+        496
+      ]
+    },
+    "observations.reported_cp": {
+      "dtype": "int32",
+      "nbytes": 1984,
+      "offset": 1154304,
+      "shape": [
+        496
+      ]
+    },
+    "observations.state": {
+      "dtype": "int32",
+      "nbytes": 1984,
+      "offset": 1150336,
+      "shape": [
+        496
+      ]
+    },
+    "roots.edge_offsets": {
+      "dtype": "int64",
+      "nbytes": 504,
+      "offset": 1163776,
+      "shape": [
+        63
+      ]
+    },
+    "roots.family": {
+      "dtype": "int32",
+      "nbytes": 248,
+      "offset": 1163264,
+      "shape": [
+        62
+      ]
+    },
+    "roots.legal_count": {
+      "dtype": "int32",
+      "nbytes": 248,
+      "offset": 1163520,
+      "shape": [
+        62
+      ]
+    },
+    "roots.query": {
+      "dtype": "int32",
+      "nbytes": 248,
+      "offset": 1163008,
+      "shape": [
+        62
+      ]
+    },
+    "roots.state": {
+      "dtype": "int32",
+      "nbytes": 248,
+      "offset": 1162752,
+      "shape": [
+        62
+      ]
+    },
+    "states.boards": {
+      "dtype": "int64",
+      "nbytes": 249792,
+      "offset": 0,
+      "shape": [
+        2602,
+        12
+      ]
+    },
+    "states.family": {
+      "dtype": "int32",
+      "nbytes": 10408,
+      "offset": 325376,
+      "shape": [
+        2602
+      ]
+    },
+    "states.fields": {
+      "dtype": "int32",
+      "nbytes": 52040,
+      "offset": 249792,
+      "shape": [
+        2602,
+        5
+      ]
+    },
+    "states.hash": {
+      "dtype": "int64",
+      "nbytes": 20816,
+      "offset": 301888,
+      "shape": [
+        2602
+      ]
+    },
+    "states.origin_context": {
+      "dtype": "int32",
+      "nbytes": 10408,
+      "offset": 335808,
+      "shape": [
+        2602
+      ]
+    },
+    "states.origin_epoch": {
+      "dtype": "int64",
+      "nbytes": 20816,
+      "offset": 346240,
+      "shape": [
+        2602
+      ]
+    },
+    "states.origin_node": {
+      "dtype": "int64",
+      "nbytes": 20816,
+      "offset": 367104,
+      "shape": [
+        2602
+      ]
+    },
+    "states.terminal": {
+      "dtype": "uint8",
+      "nbytes": 2602,
+      "offset": 322752,
+      "shape": [
+        2602
+      ]
+    }
+  },
+  "terminal_policy": "chen_current_terminal_v1_mate_stalemate_then_halfmove100_insufficient_threefold_window"
+}

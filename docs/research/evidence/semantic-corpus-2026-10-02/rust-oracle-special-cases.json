@@ -1,0 +1,13 @@
+{
+  "kind": "Rust_CPU_corpus_oracle_special_case_check",
+  "status": "pass",
+  "root_cases": 18,
+  "total_root_and_child_snapshots": 220,
+  "source_sha256": "a86fb22af4f0f9631c72ba407e1eed2028962f082d090e81b928b762f092a170",
+  "binary_sha256": "b03da23c392e6465f03b9558776f72947fc3a3bfdbbb96f8168d64c01cc76049",
+  "checker_sha256": "d89df6765e419b52c2937f03a461553836364a2fde59bf07b8f2ea74fa56ad1e",
+  "hash_oracle_sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "scope": "both_movers_castling_promotions_raw_and_pinned_EP_terminal_states_clock_saturation_unsigned_fullmove_history_window_canonical_actions",
+  "GPU_runtime_calls": 0,
+  "teacher_quality_metrics": false
+}

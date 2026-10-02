@@ -1,4 +1,4 @@
-# Research checkpoint — 2026-10-01
+# Research checkpoint — 2026-10-02
 
 The original scope remains active: gfx1030 GPU execution, modular comparable
 search, independent neural architecture/latent research, resident training data,
@@ -213,6 +213,86 @@ sibling ties. Ten new CPU tests pass. Stockfish 19 labels are converted to a
 pinned approximate reference-material frame with reporting intervals; parent
 MultiPV and standalone position queries retain distinct provenance and search
 contexts. No new model training or heldout performance result is claimed yet.
+
+The first semantic input set admits 256/64/64 game families from one pinned
+Lichess game shard. An [independent CPU replay](evidence/semantic-admission-replay-2026-10-01/README.md)
+reparses all 384 selected game chunks, 3,072 observation histories and 14,056
+legal root children. It confirms balanced observation movers and zero canonical
+input overlap across splits or with 751,183 previously used inputs. Two altered
+history/clock controls are rejected after their outer fingerprints are updated.
+The producer is staged in `results/neural-staging`. All 23 CPU tests pass,
+including parent/worker cancellation, inherited signal masks, orphan reaping and
+failed-engine quarantine; an independent reviewer reran the same suite. The
+[frozen producer archive](evidence/semantic-producer-2026-10-01/semantic-study-label-sealed-2026-10-01.json)
+records the separately sealed one-attempt label declaration. Real CPU Stockfish
+production completed all 3,456 queries in 119.96 seconds, with both workers
+exiting zero. The frozen whole-family gate retained only 6/0/1 train/validation/test
+families. Its empty validation split prevents training/model-selection admission.
+Structural review finds that latest standalone packets bearing bound flags
+dominate rejection, rather than shallow reported search depth. The [closed
+result](evidence/semantic-teacher-2026-10-01/README.md) and full
+mechanical audit verify every record/hash, command, packet, action, score-frame
+conversion and accepted-family list. All raw records and transcripts are
+archived; no heldout score-quality metrics have been inspected.
+This is a negative dataset-admission result, with no relaxed
+gate, replacements or retry. All 17,128 planned canonical inputs are marked for
+exclusion from future fresh studies. No new model training result is claimed.
+
+A separately declared [ordinary-packet study](ORDINARY_SCORE_PACKETS.md) uses
+seed 20261008 and fresh 256/64/64 families. Independent admission replay
+confirms zero overlap against all 768,311 earlier inputs and across splits.
+The [frozen preparation](evidence/semantic-packet-v2-preparation-2026-10-01/README.md)
+includes 16 source modules, 31 passing CPU tests, independent review and the
+separate root seal. Its one bounded CPU Stockfish attempt completed all 3,456
+queries in 134.96 seconds, with both workers exiting zero. Highest eligible
+ordinary complete packets retain their emission identity and reported depth;
+final choices are separate. Mate/tablebase/decisive evidence and protocol
+defects still reject queries, and rejected families are never replaced.
+The whole-family gate admits 233/62/55 train/validation/test families:
+1,864/496/440 standalone rows and 8,477/2,106/2,118 complete-root action rows.
+The [closed teacher archive](evidence/semantic-teacher-packet-v2-2026-10-01/README.md)
+preserves every raw record, the full query plan, independent audit and a ledger
+of all 17,084 planned inputs, including rejected families, for future exclusion.
+Independent mechanical audit passed every transcript, frozen source, query,
+history, canonical action, emission selection and Decimal score-frame check.
+This provides labels for a later corpus/learning declaration, with no model
+training, heldout score-quality analysis, playing-strength result or rating.
+The [resident corpus implementation](SEMANTIC_RESIDENT_CORPUS.md) now preserves
+immutable exact state/history, complete root groups, teacher query frames and
+terminal masks in three separately sealed split packs. Its independent CPU
+audit checks all 15,501 state snapshots and all 350 complete legal expansions
+(12,701 children) against the actual Rust rules oracle; every table byte,
+history, PV and score interval matches independent reconstruction. There are
+2,800 standalone observations and 550,040 previous-history hashes in 7,232,128
+payload bytes. Forty-four CPU tests pass. The [closed evidence](evidence/semantic-corpus-2026-10-02/manifest.json)
+includes payloads, sources, seals, compiled oracle closure and reports.
+
+Actual TRAIN gfx1030 [resident mechanics](../../gpu/evidence/semantic-resident-gfx1030-2026-10-02/attempt2/runtime-report.json)
+pass all 233 roots, 8,477 legal child edges and 1,864 observations. Features,
+intervals and histories match CPU, gathered batches own their storage and
+prepared batches allocate no new host index tensors. The loader makes one
+instrumented packed upload call for 8,006,592 bytes including resident schedule
+and history-gather indices; physical DMA counts are unmeasured. This is CPU-origin
+corpus ingestion, separate from native GPU generation. No model training,
+heldout quality metrics or learning-selection admission is claimed.
+
+The classical selective fusion now passes [actual gfx1030 parity and timing](../../gpu/evidence/selective-fusion-gfx1030-2026-10-02/report.json).
+Both libraries pass per-step portable-oracle checks; all 36 benchmark rows agree
+on scores, PVs, admissions and counters. Across six alternating cold-process
+runs, the median sum of six search times falls from 164.763101 to 144.956140 ms,
+a 12.02% reduction for that workload. Equal-time playing strength and sustained
+throughput remain unmeasured. The exact preserved baseline artifact and fresh
+fused artifact are archived; two fresh baseline builds differ in hash despite
+identical source bytes, with cause unestablished.
+
+Docker/Git access was restored on October 2. Commit `3976f26` archives the audited
+teacher studies and spent-input ledgers. [Architecture direction](../DIRECTION.md)
+now defines ownership, 2FFS reproduction, transformer comparisons, heavy
+profiling and strength gates. A pinned classical one-second-per-move diagnostic
+against Stockfish19 configured `UCI_Elo=1320` is running over eight color-swapped
+opening pairs with actual move timing/node telemetry. That opponent setting is
+not a measured Lichess anchor; a rating above 750 at this workload remains
+unproven. The paper implementation and profiling are active research tasks.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.

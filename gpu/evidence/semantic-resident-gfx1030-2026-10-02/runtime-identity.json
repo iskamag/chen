@@ -1,0 +1,11 @@
+{
+  "chess": "1.11.2",
+  "chess_source_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "closure_before_and_after_run_hash_checks": "20declaredfiles passed; binary/code/data pins unchanged",
+  "container_id": "277c563c6a572e531c986ef4d1dd6141bc8a50af3eae832c56d2ef04c1889060",
+  "hip": "7.0.51831",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "python_executable": "/usr/local/bin/python",
+  "python_executable_sha256": "1643dacd9feaedc58f3cc581e4d22577dfe25c09b10282936186ccf0f2e61118",
+  "torch": "2.10.0+rocm7.0"
+}

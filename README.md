@@ -7,6 +7,11 @@ architecture experiments. The portable engine has no runtime dependencies.
 An optional HIP backend runs on gfx1030 through the existing ROCm container;
 neural architecture research lives in the separate `../chen-neural` worktree.
 
+[Architecture and direction](docs/DIRECTION.md) defines module ownership and
+the profiling, 2FFS and transformer research tracks. [Current evidence](docs/research/STATUS.md)
+records what has actually passed. A rating above 750 at one second per move is
+not yet established; 2500 Lichess remains the target.
+
 ```sh
 cargo build --release
 cargo test --release
