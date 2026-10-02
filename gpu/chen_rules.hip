@@ -429,8 +429,8 @@ struct ChenRulesContext {
     uint64_t external_max_batch=0;
     // Independently owned arena extensions register private allocation bounds.
     // Rules contexts own none of these allocations; the extension retires them.
-    const void *extra_private[3]={};
-    uint64_t extra_private_bytes[3]={};
+    const void *extra_private[4]={};
+    uint64_t extra_private_bytes[4]={};
 };
 namespace {
 int32_t fail(char *error,uint64_t capacity,const char *message,int32_t code=-1) {
@@ -833,7 +833,8 @@ int32_t export_intervals_valid(ChenRulesContext *ctx,const uint64_t *addresses,
         {reinterpret_cast<uint64_t>(ctx->result),sizeof(*ctx->result)},
         {reinterpret_cast<uint64_t>(ctx->extra_private[0]),ctx->extra_private_bytes[0]},
         {reinterpret_cast<uint64_t>(ctx->extra_private[1]),ctx->extra_private_bytes[1]},
-        {reinterpret_cast<uint64_t>(ctx->extra_private[2]),ctx->extra_private_bytes[2]}};
+        {reinterpret_cast<uint64_t>(ctx->extra_private[2]),ctx->extra_private_bytes[2]},
+        {reinterpret_cast<uint64_t>(ctx->extra_private[3]),ctx->extra_private_bytes[3]}};
     for(const auto range:ranges) if(range.bytes)
         for(const auto internal:arena) if(overlaps(range,internal))
             return fail(error,cap,"replay sink aliases private arena memory");

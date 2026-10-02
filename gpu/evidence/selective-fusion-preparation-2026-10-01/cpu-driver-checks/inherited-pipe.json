@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-c",
+    "import subprocess,sys; subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(20)\"]); print(\"CPU inherited-pipe fixture\",flush=True)"
+  ],
+  "pid": 7,
+  "requested_library": "CPU-fixture-not-loaded",
+  "timeout_seconds": 0.2,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": true,
+  "wall_seconds": 0.20592052900065028,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

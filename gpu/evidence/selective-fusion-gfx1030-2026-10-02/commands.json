@@ -1,0 +1,135 @@
+{
+  "container": "cpp-rocm",
+  "isolated_directory": "/tmp/chen-fusion-hardware-2026-10-02",
+  "argv": {
+    "compiler": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "hipcc",
+      "--version"
+    ],
+    "container": [
+      "docker",
+      "inspect",
+      "cpp-rocm",
+      "--format",
+      "{{.Id}} {{.Image}}"
+    ],
+    "environment": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "env"
+    ],
+    "kernel": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "uname",
+      "-a"
+    ],
+    "fused_linker_dependencies": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "ldd",
+      "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so"
+    ],
+    "engine_linker_dependencies": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "ldd",
+      "/tmp/chen-fusion-hardware-2026-10-02/chen"
+    ],
+    "host_rust_compiler": [
+      "rustc",
+      "-vV"
+    ],
+    "device_probe": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "python3",
+      "/tmp/chen-fusion-hardware-2026-10-02/probe.py",
+      "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so",
+      "--max-batch",
+      "1",
+      "--repetitions",
+      "1"
+    ],
+    "native_study": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "python3",
+      "/tmp/chen-fusion-hardware-2026-10-02/selective_fusion_probe.py",
+      "--engine",
+      "/tmp/chen-fusion-hardware-2026-10-02/chen",
+      "--tests",
+      "/tmp/chen-fusion-hardware-2026-10-02/device-selective-tests",
+      "--baseline",
+      "/tmp/chen-fusion-hardware-2026-10-02/baseline-verified.so",
+      "--fused",
+      "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so",
+      "--suite",
+      "/tmp/chen-fusion-hardware-2026-10-02/positions.txt",
+      "--output",
+      "/tmp/chen-fusion-hardware-2026-10-02/study",
+      "--timeout",
+      "30"
+    ],
+    "build_baseline_relocated": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "bash",
+      "/tmp/chen-fusion-hardware-2026-10-02/baseline/build.sh",
+      "/tmp/chen-fusion-hardware-2026-10-02/baseline/libchen_gpu.so"
+    ],
+    "build_baseline_original_source_path": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "bash",
+      "/tmp/chen-selective-build/build.sh",
+      "/tmp/chen-fusion-hardware-2026-10-02/baseline-pinned-path.so"
+    ],
+    "build_fused": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "bash",
+      "/tmp/chen-fusion-hardware-2026-10-02/fused/build.sh",
+      "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so"
+    ]
+  },
+  "ownership": "Only native direct-process children are timed and bounded by the declared driver. Docker transport exited normally. No timeout, restart or replay occurred.",
+  "source_transfers": {
+    "baseline": "gpu/evidence/selective-fusion-gfx1030-2026-10-02/sources/baseline",
+    "fused": "gpu/evidence/selective-fusion-gfx1030-2026-10-02/sources/fused"
+  },
+  "binary_transfers": {
+    "chen": {
+      "host_path": "target/release/chen",
+      "sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392"
+    },
+    "device-selective-tests": {
+      "host_path": "target/release/deps/device_selective-7476fdb5960a2017",
+      "sha256": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15"
+    },
+    "positions.txt": {
+      "host_path": "benches/positions.txt",
+      "sha256": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74"
+    },
+    "selective_fusion_probe.py": {
+      "host_path": "gpu/selective_fusion_probe.py",
+      "sha256": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f"
+    },
+    "probe.py": {
+      "host_path": "gpu/probe.py",
+      "sha256": "9a531ffbda9d18af1a9fd5392ecc8a0306c300746e109047f69a1f7854563996"
+    }
+  }
+}

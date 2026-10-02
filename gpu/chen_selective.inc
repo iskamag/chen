@@ -7,10 +7,12 @@ struct SelectWork {
     SelectHead head;
     uint64_t selected[CHEN_SELECTIVE_MAX_BATCH],offsets[CHEN_SELECTIVE_MAX_BATCH];
 };
+struct SelectCompletion { ChenSelectiveStats stats;uint32_t error,reserved; };
+static_assert(sizeof(SelectCompletion)==104,"private selective completion packet");
 __global__ void selective_root_meta(const Node *nodes,SelectMeta *meta,uint32_t classified) {
     meta[0]=SelectMeta{classified && !(nodes[0].flags&TERMINAL)?1ull:0ull,0,0};
 }
-__global__ void selective_choose(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
+__device__ void selective_choose_device(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
     uint32_t *reserved,SelectWork *work,uint64_t used,uint64_t capacity,uint64_t remaining,
     uint32_t batch,uint32_t candidate_limit,uint32_t max_ply,uint32_t *error) {
     SelectHead head{0,0,0,CHEN_SELECTIVE_PROGRESS};
@@ -60,6 +62,12 @@ __global__ void selective_choose(const Node *nodes,const uint32_t *counts,const 
     }
     work->head=head;
 }
+__global__ void selective_choose(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
+    uint32_t *reserved,SelectWork *work,uint64_t used,uint64_t capacity,uint64_t remaining,
+    uint32_t batch,uint32_t candidate_limit,uint32_t max_ply,uint32_t *error) {
+    selective_choose_device(nodes,counts,meta,reserved,work,used,capacity,remaining,
+        batch,candidate_limit,max_ply,error);
+}
 __global__ void selective_expand(ChenRulePosition *positions,Node *nodes,const ChenRuleMove *moves,
     const uint32_t *counts,const SelectWork *work,uint64_t start) {
     const uint32_t row=blockIdx.x*blockDim.x+threadIdx.x;
@@ -84,7 +92,7 @@ __global__ void selective_new_meta(const Node *nodes,SelectMeta *meta,uint64_t s
     }
     meta[index]=SelectMeta{!(node.flags&TERMINAL) && node.ply<max_ply?1ull:0ull,node.ply,node.ply};
 }
-__global__ void selective_backup(Node *nodes,SelectMeta *meta,const uint32_t *reserved,
+__device__ void selective_backup_device(Node *nodes,SelectMeta *meta,const uint32_t *reserved,
     uint64_t old_used,uint64_t used,uint32_t *error) {
     // Children always have larger indices. One ordered device pass is the
     // reference implementation; no parent/child parallel-write race is possible.
@@ -106,7 +114,11 @@ __global__ void selective_backup(Node *nodes,SelectMeta *meta,const uint32_t *re
         node.score=best;node.best=winner;node.flags|=SCORED;meta[index]=aggregate;
     }
 }
-__global__ void selective_snapshot(const Node *nodes,const SelectMeta *meta,
+__global__ void selective_backup(Node *nodes,SelectMeta *meta,const uint32_t *reserved,
+    uint64_t old_used,uint64_t used,uint32_t *error) {
+    selective_backup_device(nodes,meta,reserved,old_used,used,error);
+}
+__device__ void selective_snapshot_device(const Node *nodes,const SelectMeta *meta,
     const unsigned long long *classified,const unsigned long long *evaluated,
     ChenSelectiveStats *out,uint64_t used,uint64_t steps,uint64_t expanded,
     uint32_t selected,uint32_t added,uint32_t stop,uint32_t max_ply,uint32_t *error) {
@@ -126,10 +138,108 @@ __global__ void selective_snapshot(const Node *nodes,const SelectMeta *meta,
     *out=ChenSelectiveStats{1,sizeof(ChenSelectiveStats),used,uint64_t(*classified),uint64_t(*evaluated),
         steps,expanded,meta[0].open,selected,added,0,meta[0].minimum,meta[0].maximum,pv,flags,stop,0};
 }
+__global__ void selective_snapshot(const Node *nodes,const SelectMeta *meta,
+    const unsigned long long *classified,const unsigned long long *evaluated,
+    ChenSelectiveStats *out,uint64_t used,uint64_t steps,uint64_t expanded,
+    uint32_t selected,uint32_t added,uint32_t stop,uint32_t max_ply,uint32_t *error) {
+    selective_snapshot_device(nodes,meta,classified,evaluated,out,used,steps,expanded,
+        selected,added,stop,max_ply,error);
+}
+
+__global__ void selective_choose_classical(const Node *nodes,const uint32_t *counts,SelectMeta *meta,
+    const unsigned long long *classified,uint32_t *reserved,SelectWork *work,
+    uint64_t used,uint64_t capacity,uint64_t limit,uint32_t bootstrap,
+    uint32_t batch,uint32_t candidate_limit,uint32_t max_ply,uint32_t *error) {
+    work->head=SelectHead{0,0,0,CHEN_SELECTIVE_PROGRESS};
+    if(*error) return;
+    if(bootstrap) {
+        if(!limit) { work->head.stop=CHEN_SELECTIVE_NODE_BUDGET;return; }
+        if(!(nodes[0].flags&CLASSIFIED)) { device_error(error,4);return; }
+        meta[0]=SelectMeta{!(nodes[0].flags&TERMINAL)?1ull:0ull,0,0};
+    }
+    if(*classified>limit) { device_error(error,4);return; }
+    selective_choose_device(nodes,counts,meta,reserved,work,used,capacity,limit-*classified,
+        batch,candidate_limit,max_ply,error);
+}
+
+__global__ void selective_children_classical(ChenRulePosition *positions,Node *nodes,
+    ChenRuleMove *moves,uint32_t *counts,SelectMeta *meta,const SelectWork *work,
+    uint64_t start,uint64_t capacity,uint64_t limit,uint32_t batch,uint32_t candidate_limit,
+    uint32_t max_ply,uint32_t evaluator,const uint64_t *history,uint64_t history_count,
+    unsigned long long *classified,unsigned long long *evaluated,uint32_t *error) {
+    if(*error) return;
+    const SelectHead head=work->head;
+    if(head.selected>batch || head.examined>candidate_limit || head.added<head.selected ||
+        head.added>capacity-start || (head.added && (start>limit || head.added>limit-start)) ||
+        head.stop>CHEN_SELECTIVE_FALLBACK || (!head.selected && head.added)) {
+        device_error(error,4);return;
+    }
+    const uint64_t row=uint64_t(blockIdx.x)*blockDim.x+threadIdx.x;
+    if(row>=head.added) return;
+    // Prefix offsets are strictly increasing because every selected legal set
+    // is nonempty. Find the last selected offset <= this child's block offset.
+    uint32_t lo=0,hi=head.selected;
+    while(lo+1<hi) {
+        const uint32_t mid=lo+(hi-lo)/2;
+        if(work->offsets[mid]<=row) lo=mid;else hi=mid;
+    }
+    const uint64_t parent=work->selected[lo],offset=work->offsets[lo];
+    if(parent>=start || offset>row || row-offset>=counts[parent]) { device_error(error,4);return; }
+    const uint32_t child=uint32_t(row-offset),parent_ply=nodes[parent].ply;
+    if(parent_ply>=max_ply) { device_error(error,4);return; }
+    const uint64_t index=start+row;
+    const ChenRuleMove move=moves[parent*CHEN_RULES_MAX_MOVES+child];
+    const ChenRulePosition p=apply<true>(positions[parent],move);
+    positions[index]=p;
+    nodes[index]=Node{parent,0,NONE,0,parent_ply+1,0,0,move,0};
+    // Read ONLY immutable parent ply/position fields above. Child0 publishes
+    // expansion fields concurrently with siblings; no whole-parent Node read.
+    if(!child) {
+        nodes[parent].first_child=start+offset;nodes[parent].child_count=counts[parent];
+        nodes[parent].flags|=EXPANDED;
+    }
+    Node &node=nodes[index];
+    // Exact classify_kernel terminal logic, duplicated locally to fuse apply,
+    // legal generation, classification, integer evaluation and leaf metadata.
+    counts[index]=legal_moves(p,moves+index*CHEN_RULES_MAX_MOVES,error);
+    node.flags=(in_check(p,p.side)?CHECK:0)|(insufficient(p)?INSUFFICIENT:0)|CLASSIFIED;
+    atomicAdd(classified,1ull);
+    if(!counts[index]) {
+        node.score=(node.flags&CHECK)?-MATE+int(node.ply):0;node.flags|=TERMINAL|SCORED;
+    } else if(p.halfmove>=100 || (node.flags&INSUFFICIENT) ||
+        repeated(positions,nodes,index,history,history_count)) {
+        node.score=0;node.flags|=TERMINAL|SCORED;
+    }
+    if(!(node.flags&SCORED)) {
+        node.score=evaluate(p,evaluator);node.flags|=SCORED;atomicAdd(evaluated,1ull);
+    }
+    meta[index]=SelectMeta{!(node.flags&TERMINAL) && node.ply<max_ply?1ull:0ull,node.ply,node.ply};
+}
+
+__global__ void selective_complete_classical(Node *nodes,SelectMeta *meta,const uint32_t *reserved,
+    const SelectWork *work,const unsigned long long *classified,const unsigned long long *evaluated,
+    SelectCompletion *out,uint64_t old_used,uint64_t steps,uint64_t expanded,
+    uint32_t max_ply,uint32_t *error) {
+    *out=SelectCompletion{};
+    if(!*error) {
+        const SelectHead head=work->head;
+        const uint64_t used=old_used+head.added;
+        if(*classified!=used && !(*classified==0 && used==1)) device_error(error,4);
+        if(head.selected && !*error) selective_backup_device(nodes,meta,reserved,old_used,used,error);
+        if(!*error) {
+            const uint32_t stop=!(meta[0].open) && (nodes[0].flags&SCORED)?CHEN_SELECTIVE_CLOSED:head.stop;
+            selective_snapshot_device(nodes,meta,classified,evaluated,&out->stats,used,
+                steps+(head.selected?1:0),expanded+head.selected,
+                head.selected,head.added,stop,max_ply,error);
+        }
+    }
+    out->error=*error;
+}
 }
 struct ChenSelectiveContext {
     ChenRulesContext *arena=nullptr;SelectMeta *meta=nullptr;SelectWork *work=nullptr;
-    ChenSelectiveStats *snapshot=nullptr;ChenSelectiveConfig config{};
+    ChenSelectiveStats *snapshot=nullptr;SelectCompletion *host_completion=nullptr;
+    void *mapped_completion=nullptr;ChenSelectiveConfig config{};
     bool valid=false,root_classified=false;int evaluator=-1;
     ChenExternalEvaluator external{};
     uint64_t classified=0,steps=0,expanded=0;
@@ -143,6 +253,83 @@ int32_t selective_error(ChenSelectiveContext *ctx,char *error,uint64_t cap,const
 int32_t selective_status(ChenSelectiveContext *ctx,int32_t status) {
     if(status) ctx->valid=false;
     return status;
+}
+int32_t selective_classical(ChenSelectiveContext *ctx,uint64_t limit,uint32_t evaluator,
+    ChenSelectiveStats *stats,char *error,uint64_t cap) {
+    ChenRulesContext *arena=ctx->arena;
+    const uint64_t old_used=arena->used;
+    int32_t status=lock_mode(arena,1,error,cap);
+    if(status) return selective_status(ctx,status);
+    if(arena->evaluator>=0 && arena->evaluator!=int(evaluator))
+        return selective_error(ctx,error,cap,"resident evaluator cannot change before reset");
+    arena->evaluator=int(evaluator);
+    status=prepare(arena,error,cap);
+    if(status) { (void)hipStreamSynchronize(arena->stream);return selective_status(ctx,status); }
+    hipError_t code=hipMemsetAsync(arena->flags,0,old_used*sizeof(*arena->flags),arena->stream);
+    if(code!=hipSuccess) return selective_status(ctx,transfer_failure(arena,code,error,cap));
+    if(!ctx->root_classified && limit) {
+        hipLaunchKernelGGL(classify_kernel,dim3(1),dim3(64),0,arena->stream,
+            arena->positions,arena->nodes,arena->moves,arena->counts,0ull,1ull,1u,
+            arena->history,arena->history_count,arena->classified,&arena->summary->error);
+        code=hipGetLastError();
+        if(code!=hipSuccess) return selective_status(ctx,transfer_failure(arena,code,error,cap));
+    }
+    hipLaunchKernelGGL(selective_choose_classical,dim3(1),dim3(1),0,arena->stream,
+        arena->nodes,arena->counts,ctx->meta,arena->classified,arena->flags,ctx->work,
+        old_used,arena->capacity,limit,uint32_t(!ctx->root_classified),
+        ctx->config.batch_leaves,ctx->config.candidate_limit,ctx->config.max_ply,&arena->summary->error);
+    code=hipGetLastError();
+    if(code!=hipSuccess) return selective_status(ctx,transfer_failure(arena,code,error,cap));
+    uint64_t bound=uint64_t(ctx->config.batch_leaves)*CHEN_RULES_MAX_MOVES;
+    if(bound>arena->capacity-old_used) bound=arena->capacity-old_used;
+    if(bound>limit-ctx->classified) bound=limit-ctx->classified;
+    // Admission count stays on the device; bounded excess threads return early.
+    hipLaunchKernelGGL(selective_children_classical,grid(bound?bound:1),dim3(64),0,arena->stream,
+        arena->positions,arena->nodes,arena->moves,arena->counts,ctx->meta,ctx->work,
+        old_used,arena->capacity,limit,ctx->config.batch_leaves,ctx->config.candidate_limit,
+        ctx->config.max_ply,evaluator,arena->history,arena->history_count,
+        arena->classified,arena->evaluated,&arena->summary->error);
+    code=hipGetLastError();
+    if(code!=hipSuccess) return selective_status(ctx,transfer_failure(arena,code,error,cap));
+    hipLaunchKernelGGL(selective_complete_classical,dim3(1),dim3(1),0,arena->stream,
+        arena->nodes,ctx->meta,arena->flags,ctx->work,arena->classified,arena->evaluated,
+        reinterpret_cast<SelectCompletion *>(ctx->snapshot),old_used,ctx->steps,ctx->expanded,
+        ctx->config.max_ply,&arena->summary->error);
+    code=hipGetLastError();
+    if(code!=hipSuccess) return selective_status(ctx,transfer_failure(arena,code,error,cap));
+    code=hipEventRecord(arena->end,arena->stream);
+    if(code==hipSuccess) code=hipMemcpyAsync(ctx->host_completion,ctx->snapshot,
+        sizeof(SelectCompletion),hipMemcpyDeviceToHost,arena->stream);
+    const hipError_t sync=hipStreamSynchronize(arena->stream);
+    if(code==hipSuccess) code=sync;
+    float elapsed=0;
+    if(code==hipSuccess) code=hipEventElapsedTime(&elapsed,arena->begin,arena->end);
+    if(code!=hipSuccess) return selective_status(ctx,hip_fail(error,cap,code));
+    // Completion is the only successful-path fence and scalar read in advance.
+    const SelectCompletion &packet=*ctx->host_completion;
+    if(packet.error) {
+        const char *message=packet.error==1?"invalid rules position or mismatched hash":
+            packet.error==2?"rules arena/move capacity exceeded":
+            "invalid resident tree stage or incomplete child scores";
+        ctx->valid=false;
+        return fail(error,cap,message,packet.error==2?CHEN_RULES_CAPACITY:-1);
+    }
+    const ChenSelectiveStats &s=packet.stats;
+    if(packet.reserved || s.abi_version!=1 || s.struct_size!=sizeof(s) || s.reserved ||
+        s.last_selected>ctx->config.batch_leaves || s.last_added<s.last_selected ||
+        s.arena_positions!=old_used+s.last_added || s.arena_positions>arena->capacity ||
+        s.classified_positions>limit || s.classified_positions<s.last_added ||
+        s.classified_positions<ctx->classified || s.evaluated_positions>s.classified_positions ||
+        (s.classified_positions!=s.arena_positions && !(s.classified_positions==0 && s.arena_positions==1)) ||
+        s.completed_steps!=ctx->steps+(s.last_selected?1:0) ||
+        s.expanded_leaves!=ctx->expanded+s.last_selected || s.stop_reason>CHEN_SELECTIVE_FALLBACK)
+        return selective_error(ctx,error,cap,"invalid device classical completion packet");
+    arena->kernel_total_ms+=elapsed;arena->used=s.arena_positions;
+    ctx->root_classified=s.classified_positions!=0;ctx->classified=s.classified_positions;
+    ctx->steps=s.completed_steps;ctx->expanded=s.expanded_leaves;
+    ctx->selected=s.last_selected;ctx->added=s.last_added;ctx->stop=s.stop_reason;
+    *stats=s;stats->kernel_ms=arena->kernel_total_ms;
+    return 0;
 }
 int32_t selective_stats(ChenSelectiveContext *ctx,ChenSelectiveStats *out,char *error,uint64_t cap) {
     int32_t status=prepare(ctx->arena,error,cap);
@@ -172,7 +359,8 @@ extern "C" void chen_selective_destroy(ChenSelectiveContext *ctx) {
         if(ctx->meta) selective_retire(hipFree(ctx->meta));
         if(ctx->work) selective_retire(hipFree(ctx->work));
         if(ctx->snapshot) selective_retire(hipFree(ctx->snapshot));
-        for(uint32_t i=0;i<3;++i) { ctx->arena->extra_private[i]=nullptr;ctx->arena->extra_private_bytes[i]=0; }
+        if(ctx->host_completion) selective_retire(hipHostFree(ctx->host_completion));
+        for(uint32_t i=0;i<4;++i) { ctx->arena->extra_private[i]=nullptr;ctx->arena->extra_private_bytes[i]=0; }
         chen_rules_destroy(ctx->arena);
     }
     delete ctx;
@@ -187,11 +375,14 @@ extern "C" ChenSelectiveContext *chen_selective_create(int32_t device,uint64_t c
     hipError_t code=hipSetDevice(device);
     if(code==hipSuccess) code=hipMalloc(&ctx->meta,capacity*sizeof(*ctx->meta));
     if(code==hipSuccess) code=hipMalloc(&ctx->work,sizeof(*ctx->work));
-    if(code==hipSuccess) code=hipMalloc(&ctx->snapshot,sizeof(*ctx->snapshot));
+    if(code==hipSuccess) code=hipMalloc(&ctx->snapshot,sizeof(SelectCompletion));
+    if(code==hipSuccess) code=hipHostMalloc(&ctx->host_completion,sizeof(SelectCompletion),hipHostMallocMapped);
+    if(code==hipSuccess) code=hipHostGetDevicePointer(&ctx->mapped_completion,ctx->host_completion,0);
     if(code!=hipSuccess) { hip_fail(error,cap,code);chen_selective_destroy(ctx);return nullptr; }
     ctx->arena->extra_private[0]=ctx->meta;ctx->arena->extra_private_bytes[0]=capacity*sizeof(*ctx->meta);
     ctx->arena->extra_private[1]=ctx->work;ctx->arena->extra_private_bytes[1]=sizeof(*ctx->work);
-    ctx->arena->extra_private[2]=ctx->snapshot;ctx->arena->extra_private_bytes[2]=sizeof(*ctx->snapshot);
+    ctx->arena->extra_private[2]=ctx->snapshot;ctx->arena->extra_private_bytes[2]=sizeof(SelectCompletion);
+    ctx->arena->extra_private[3]=ctx->mapped_completion;ctx->arena->extra_private_bytes[3]=sizeof(SelectCompletion);
     return ctx;
 }
 extern "C" int32_t chen_selective_reset(ChenSelectiveContext *ctx,const ChenRulePosition *root,
@@ -237,6 +428,7 @@ extern "C" int32_t chen_selective_advance(ChenSelectiveContext *ctx,uint64_t lim
         ctx->external=*external;
     }
     ctx->evaluator=int(evaluator);ctx->selected=ctx->added=0;
+    if(evaluator<2) return selective_classical(ctx,limit,evaluator,stats,error,cap);
     if(!ctx->root_classified) {
         if(!limit) { ctx->stop=CHEN_SELECTIVE_NODE_BUDGET;return selective_stats(ctx,stats,error,cap); }
         ChenRulesStats baseline{};

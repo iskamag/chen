@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-09-30T23:50:00.529398+00:00",
+  "baseline_commit": "5a82052",
+  "baseline_library_sha256": "0cf4171f1e056e281f2cca318b6b67a7616b9a7dca688001542eed8b4da2963a",
+  "scope": "Pending classical-only selective fusion: current host source/patch and CPU driver preparation. No fused GPU runtime execution, parity or performance result.",
+  "isolated_compilation": {
+    "command": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "bash",
+      "/tmp/chen-selective-fused-build/build.sh",
+      "/tmp/chen-selective-fused-build/libchen_gpu.so"
+    ],
+    "original_tool_session": 7270,
+    "completion_chunk_id": "6dad18",
+    "observed_exit_code": 0,
+    "observed_compiler_stdout_bytes": 0,
+    "observed_compiler_stderr_bytes": 0,
+    "status_observed_before_permissions_change": true,
+    "library_sha256": null,
+    "library_path_unavailable_now": "cpp-rocm:/tmp/chen-selective-fused-build/libchen_gpu.so",
+    "artifact_source_binding": "Container binary and staged-source hashes were not retrieved before Docker access became denied; preserved host sources are the reviewed current snapshot, not a newly verified binary fingerprint."
+  },
+  "restrictions": "Current workspace-write/no approval policy denies Docker socket; no new Docker commands or Git writes performed after restriction notification.",
+  "cpu_source_reviews": {
+    "root": "No concrete blocker in immutable-parent reads/bootstrap/prefix admission/counter publication",
+    "architecture": "No concrete blocker in sticky error ordering/mapped pinned retirement/alias range; source-only review"
+  },
+  "cpu_driver_checks": {
+    "scope": "CPU-only parser/gate/owned-child timeout fixtures, saved baseline hardware rows used as immutable parser input; no native engine or GPU invocation",
+    "checks_passed": 6,
+    "inherited_pipe_fixture_wall_seconds": 0.2094633500000782,
+    "inherited_pipe_retirement_record": {
+      "argv": [
+        "/usr/bin/python3",
+        "-c",
+        "import subprocess,sys; subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(20)\"]); print(\"CPU inherited-pipe fixture\",flush=True)"
+      ],
+      "pid": 7,
+      "requested_library": "CPU-fixture-not-loaded",
+      "timeout_seconds": 0.2,
+      "phase": "finished",
+      "exit_code": 0,
+      "timed_out": true,
+      "wall_seconds": 0.20592052900065028,
+      "cleanup_error": null,
+      "owned_leader_retired": true,
+      "process_group_absent": true
+    }
+  },
+  "future_validation": "gpu/selective_fusion_probe.py requires pinned baseline library and explicit distinct fused library plus one identical native Rust engine/test binary. Runs both stepwise oracle test processes then exactly3 alternating timing pairs, rejects score/PV/counter differences before admitting timing. Not executed on hardware.",
+  "source_sha256": {
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "gpu/chen_selective.h": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+    "gpu/chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/chen_rules.hip": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153",
+    "gpu/chen_selective.inc": "d9979987fb8cb6904c4e817da816cc3df34e81af0730a6ecf45454ebfc41c4c7",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/selective_fusion_probe.py": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f",
+    "docs/GPU_SELECTIVE_SEARCH.md": "f6382a8b55b8ded4127ce5d7bf65f0e295ecf20ac4b14e1f2acc63fc18dbff4e"
+  }
+}

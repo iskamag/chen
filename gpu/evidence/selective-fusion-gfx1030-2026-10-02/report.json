@@ -1,0 +1,37 @@
+{
+  "kind": "classical_selective_fusion_gfx1030_hardware_validation",
+  "timestamp_utc": "2026-10-02T15:33:47.006230+00:00",
+  "base_commit": "5a820527a8e4ef9c12fe3af2dde53b71395ea1ed",
+  "status": "passed",
+  "actual_gpu_test_executions_passed": 4,
+  "stepwise_configurations_per_arm": 48,
+  "atomic_capacity_node_cap_pairs_per_arm": 45,
+  "benchmark_processes": 6,
+  "benchmark_rows": 36,
+  "identical_work_all_raw_rows": true,
+  "all_owned_children_and_process_groups_retired": true,
+  "median_six_search_sum_ms": {
+    "baseline": 164.763101,
+    "fused": 144.95614
+  },
+  "baseline_over_fused_ratio": 1.136641062600039,
+  "relative_search_time_reduction_percent": 12.021478644056353,
+  "source_builds": {
+    "fresh_baseline_relocated_sha256": "dda9efd51b70282aea5876e6c8e25d11b706ea4c98e2eeb994bb37e7d84195a2",
+    "fresh_baseline_original_source_path_sha256": "33ecfea340c2a40d46d81ce11d90929a859d60fdc7fd5550dad65a9dd631f479",
+    "benchmark_verified_baseline_sha256": "0cf4171f1e056e281f2cca318b6b67a7616b9a7dca688001542eed8b4da2963a",
+    "fresh_fused_sha256": "04447c455f33fc7eca1e119664584dc70fa3a91cba05b3ba3cb35908e60451d2",
+    "note": "Fresh baseline builds have identical frozen source bytes and clean compile success, but differ from original pinned binary. Cause not established; declared benchmark uses preserved original exact-hash verified artifact. No reproducible-build claim."
+  },
+  "device": {
+    "architecture": "gfx1030",
+    "async_engines": 8,
+    "compute_units": 30,
+    "name": "AMD Radeon RX 6800",
+    "record": "device",
+    "runtime_version": 70253211,
+    "total_memory": 17163091968,
+    "wave_size": 32
+  },
+  "scope": "Classical-only per-step oracle parity and bounded alternating cold-process search latency for the declared six positions and exact parameters. Not neural inference, warm throughput, playing strength, rating, statistical significance or long-run fault recovery."
+}

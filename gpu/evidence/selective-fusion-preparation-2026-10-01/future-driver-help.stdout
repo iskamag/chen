@@ -1,0 +1,19 @@
+usage: selective_fusion_probe.py [-h] --engine ENGINE --tests TESTS
+                                 --baseline BASELINE --fused FUSED
+                                 --suite SUITE --output OUTPUT
+                                 [--prepare-only] [--timeout TIMEOUT]
+
+Future direct-process classical HIP comparison; this file itself is CPU-only.
+Run inside an authorized GPU environment with explicit native artifact paths.
+It launches no Docker/SSH wrapper and stops on any failure, without replay.
+
+options:
+  -h, --help           show this help message and exit
+  --engine ENGINE
+  --tests TESTS
+  --baseline BASELINE
+  --fused FUSED
+  --suite SUITE
+  --output OUTPUT
+  --prepare-only       declare/fingerprint without launching
+  --timeout TIMEOUT

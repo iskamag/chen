@@ -1,0 +1,13 @@
+{
+  "scope": "Dynamic load maps only, no GPU API function called",
+  "loaded_rocm_files": [
+    {
+      "path": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+      "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac"
+    },
+    {
+      "path": "/opt/rocm-7.2.4/lib/libhsa-runtime64.so.1.18.70204",
+      "sha256": "b8cdfe93d343649a35c1daf73a0a3a6840f09379ebeee9be65670461ffea43f4"
+    }
+  ]
+}

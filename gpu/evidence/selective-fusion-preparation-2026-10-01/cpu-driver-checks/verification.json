@@ -1,0 +1,22 @@
+{
+  "scope": "CPU-only parser/gate/owned-child timeout fixtures, saved baseline hardware rows used as immutable parser input; no native engine or GPU invocation",
+  "checks_passed": 6,
+  "inherited_pipe_fixture_wall_seconds": 0.2094633500000782,
+  "inherited_pipe_retirement_record": {
+    "argv": [
+      "/usr/bin/python3",
+      "-c",
+      "import subprocess,sys; subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(20)\"]); print(\"CPU inherited-pipe fixture\",flush=True)"
+    ],
+    "pid": 7,
+    "requested_library": "CPU-fixture-not-loaded",
+    "timeout_seconds": 0.2,
+    "phase": "finished",
+    "exit_code": 0,
+    "timed_out": true,
+    "wall_seconds": 0.20592052900065028,
+    "cleanup_error": null,
+    "owned_leader_retired": true,
+    "process_group_absent": true
+  }
+}

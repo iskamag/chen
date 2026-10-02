@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "/tmp/chen-fusion-hardware-2026-10-02/chen",
+    "bench",
+    "--backend",
+    "hip-selective",
+    "--eval",
+    "tapered",
+    "--depth",
+    "4",
+    "--nodes",
+    "2000",
+    "--selective-batch",
+    "8",
+    "--max-positions",
+    "250000",
+    "--suite",
+    "/tmp/chen-fusion-hardware-2026-10-02/positions.txt"
+  ],
+  "pid": 2570,
+  "requested_library": "/tmp/chen-fusion-hardware-2026-10-02/baseline-verified.so",
+  "timeout_seconds": 30.0,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 0.525228699989384,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

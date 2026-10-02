@@ -1,0 +1,1 @@
+["docker", "exec", "cpp-rocm", "python3", "/tmp/chen-fusion-hardware-2026-10-02/probe.py", "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so", "--max-batch", "1", "--repetitions", "1"]

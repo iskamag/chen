@@ -1,0 +1,4 @@
+{"architecture": "gfx1030", "async_engines": 8, "compute_units": 30, "name": "AMD Radeon RX 6800", "record": "device", "runtime_version": 70253211, "total_memory": 17163091968, "wave_size": 32}
+{"record": "oracle", "positions_per_evaluator": 1, "evaluators": 2, "seed": 206442544, "boundary_checks": 5}
+{"batch": 1, "d2h_ms": 0.009680000133812428, "evaluator": "material", "h2d_ms": 0.009720000438392162, "kernel_ms": 0.010400000028312206, "positions_per_second": 20100.502512562813, "record": "benchmark", "repetitions": 1, "wall_ms": 0.04975}
+{"batch": 1, "d2h_ms": 0.009720000438392162, "evaluator": "tapered", "h2d_ms": 0.009239999577403069, "kernel_ms": 0.01083999965339899, "positions_per_second": 20942.40837696335, "record": "benchmark", "repetitions": 1, "wall_ms": 0.04775}

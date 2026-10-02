@@ -1,0 +1,50 @@
+{
+  "kind": "classical_selective_baseline_fused_direct_process_comparison",
+  "source_sha256": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f",
+  "artifacts": {
+    "engine": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/chen",
+      "sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392"
+    },
+    "tests": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/device-selective-tests",
+      "sha256": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15"
+    },
+    "baseline": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/baseline-verified.so",
+      "sha256": "0cf4171f1e056e281f2cca318b6b67a7616b9a7dca688001542eed8b4da2963a"
+    },
+    "fused": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/fused/libchen_gpu.so",
+      "sha256": "04447c455f33fc7eca1e119664584dc70fa3a91cba05b3ba3cb35908e60451d2"
+    },
+    "suite": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/positions.txt",
+      "sha256": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74"
+    }
+  },
+  "search": {
+    "depth": 4,
+    "nodes": 2000,
+    "max_positions": 250000,
+    "batch_leaves": 8,
+    "candidate_limit": 1024,
+    "eval": "tapered"
+  },
+  "tests": [
+    "actual_selective_stepwise_arena_parity_and_complete_horizons",
+    "actual_selective_atomic_limits_history_invalidation_and_thread_transfer"
+  ],
+  "benchmark_order": [
+    "baseline",
+    "fused",
+    "fused",
+    "baseline",
+    "baseline",
+    "fused"
+  ],
+  "rows_per_run": 6,
+  "timeout_seconds": 30.0,
+  "scope": "Per-step Rust oracle tests and identical-work cold-process search timing; not warm throughput, strength, or external neural validation",
+  "transport": "Direct local child process groups; no remote wrapper; timeout or uncertain retirement ends study without replay"
+}

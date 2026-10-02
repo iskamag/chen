@@ -1,0 +1,7 @@
+# name | FEN; ordered suite; fresh TT and searcher for every position
+start | rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+kiwipete | r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1
+rook-ending | 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1
+middlegame | r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8
+promotion | 4k3/P7/8/8/8/8/7p/4K3 w - - 0 1
+mate | 7k/5Q2/6K1/8/8/8/8/8 w - - 0 1

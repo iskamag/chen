@@ -1,0 +1,1 @@
+["docker", "exec", "cpp-rocm", "bash", "/tmp/chen-selective-build/build.sh", "/tmp/chen-fusion-hardware-2026-10-02/baseline-pinned-path.so"]

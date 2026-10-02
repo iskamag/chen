@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "mode": "baseline",
+      "run": 1,
+      "same_work_parity": true,
+      "search_sum_ms": 167.199459,
+      "kernel_span_sum_ms": 140.4017463074997,
+      "wall_seconds": 0.525228699989384
+    },
+    {
+      "mode": "fused",
+      "run": 2,
+      "same_work_parity": true,
+      "search_sum_ms": 146.371881,
+      "kernel_span_sum_ms": 133.02961583901197,
+      "wall_seconds": 0.5099989429872949
+    },
+    {
+      "mode": "fused",
+      "run": 3,
+      "same_work_parity": true,
+      "search_sum_ms": 144.559729,
+      "kernel_span_sum_ms": 131.48983805347234,
+      "wall_seconds": 0.507491021999158
+    },
+    {
+      "mode": "baseline",
+      "run": 4,
+      "same_work_parity": true,
+      "search_sum_ms": 159.848457,
+      "kernel_span_sum_ms": 133.86838202178478,
+      "wall_seconds": 0.48656665199087
+    },
+    {
+      "mode": "baseline",
+      "run": 5,
+      "same_work_parity": true,
+      "search_sum_ms": 164.763101,
+      "kernel_span_sum_ms": 136.94411128293723,
+      "wall_seconds": 0.520126317976974
+    },
+    {
+      "mode": "fused",
+      "run": 6,
+      "same_work_parity": true,
+      "search_sum_ms": 144.95614,
+      "kernel_span_sum_ms": 132.16796921100467,
+      "wall_seconds": 0.49020040399045683
+    }
+  ],
+  "median_search_sum_ms": {
+    "baseline": 164.763101,
+    "fused": 144.95614
+  },
+  "baseline_over_fused_ratio": 1.136641062600039,
+  "scope": "Per-step Rust oracle tests and identical-work cold-process search timing; not warm throughput, strength, or external neural validation"
+}

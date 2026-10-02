@@ -1,0 +1,7 @@
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=ignucino
+DEBIAN_FRONTEND=noninteractive
+PYTHONUNBUFFERED=1
+PYTORCH_ROCM_ARCH=gfx1030
+PUFFERLIB_ENV=runeseller
+HOME=/root

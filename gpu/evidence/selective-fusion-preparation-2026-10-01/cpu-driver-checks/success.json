@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-c",
+    "print(\"CPU fixture only\")"
+  ],
+  "pid": 6,
+  "requested_library": "CPU-fixture-not-loaded",
+  "timeout_seconds": 1,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 0.011595206000492908,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}
