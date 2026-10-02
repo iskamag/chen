@@ -366,8 +366,11 @@ channels injected into neural residual streams. Separate mixed INT8 and symbolic
 role-injection candidates now have arithmetic/causality fixtures; actual GPU
 numerics, end-to-end timing and simulator integration remain pending. Timing
 is primary; memory bounds are engineering controls rather than the optimization
-objective. A Lean theory track has initial finite-model cache and backup proofs;
-HIP correspondence and global strategy optimality are not established.
+objective. Commit `b1505ef` adds [22 Lean certificates and a latency strategy
+comparison](FINITE_MODEL_STRATEGIES.md), including finite selection obstruction,
+cache stability, backup equivalence and INT8 signed32 bounds. Root independently
+compiles all 22 and reproduces their actual axioms audit; HIP correspondence,
+full neural fidelity and global strategy optimality are not established.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.
