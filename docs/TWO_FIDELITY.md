@@ -145,7 +145,7 @@ trace byte, sample/cost count, and answer field across all ten paired runs.
 | D=5, b=8 | 1,330.677 ms | 742.852 ms | 1.79x | 185,522,346 -> 4,407,370 |
 
 These are CPU 2 pinned, sequential block measurements, not isolated crossover
-benchmarks. The larger optimized case still spends a median 97.5% of measured
+benchmarks. The first exposed-tree variant spends a median 97.5% of measured
 wall time in scale evaluation. Cheap exhaustive lookup minimax is much faster
 in wall time despite querying all 37,448 non-root values. Query savings alone
 therefore do not justify a GPU controller. Next optimize affected-ancestor refresh
@@ -153,6 +153,33 @@ and compact scale storage, comparing against the frozen baseline's exact traces.
 Kernelizing tiny lookups would not address the measured bottleneck. See
 [evidence comparison](research/evidence/two-fidelity-cpu-2026-10-02/comparison.json)
 and its underlying per-run CSV and traces.
+
+## Reusing completed scale certificates
+
+The next bounded CPU optimization caches which scales have been evaluated since
+an evidence refresh. A bottom-up pass reads completed child certificates before
+computing each parent; same-scale prior latches are monotone. With unchanged
+local/effective intervals and exposed topology, repeating that pass cannot change
+its result. Oracle-cost counters do not enter the certificate predicate. Every
+refresh clears the valid-scale set, including expansion and slow-sample updates;
+ordinary certificate scratch can still be reused for zero-tolerance queries.
+
+All ten positive-action trace files remain byte identical to the exposed-tree
+baseline. Sample, expansion, cost, answer and refresh counters also match. The
+600 independent irregular/noisy fixtures and all 12 controller tests pass.
+
+| Synthetic case | Exposed-tree baseline | Cached-scale variant | Ratio | Median scale passes |
+| --- | ---: | ---: | ---: | ---: |
+| D=5, b=4 | 6.013 ms | 2.667 ms | 2.25x | 518 -> 174 |
+| D=5, b=8 | 766.957 ms | 287.009 ms | 2.67x | 4,159 -> 1,491 |
+
+These are five seeded runs per case on CPU 2, in sequential baseline/candidate
+blocks. They are a new measurement series, not ratios formed from the earlier
+series. Frozen standalone source modules, timed binaries, profiles, action
+traces, build bindings and checks are in
+[the scale-cache evidence](research/evidence/two-fidelity-scale-cache-2026-10-02/comparison.json).
+Remaining work includes compact scale storage and affected-ancestor refresh.
+This remains a synthetic CPU controller measurement.
 
 ## Source provenance
 

@@ -4,7 +4,7 @@
 //! a deterministic fast error envelope and mean-correct independent slow oracle
 //! are required for the paper's conditional guarantee. A rollout is not generally
 //! an unbiased sample of minimax value. See `docs/TWO_FIDELITY.md`.
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::time::{Duration, Instant};
 
 pub type NodeId = usize;
@@ -212,6 +212,10 @@ pub struct TwoFidelity<T, F, S> {
     certificate_done: Vec<[bool; 2]>,
     max_depth: usize,
     scales: BTreeMap<(NodeId, usize), ScaleState>,
+    // Certificates depend on evidence and the same-scale monotone latches,
+    // not oracle-cost counters. One bottom-up pass reaches their fixed point.
+    // Retain completed scales until the next evidence refresh.
+    valid_scales: BTreeSet<usize>,
     rho0: f64,
     node_delta: f64,
     cost: f64,
@@ -299,6 +303,7 @@ impl<T: FiniteTree, F: FastOracle, S: SlowOracle> TwoFidelity<T, F, S> {
             certificate_done: vec![[false; 2]; n],
             max_depth,
             scales: BTreeMap::new(),
+            valid_scales: BTreeSet::new(),
             rho0: 0.0,
             node_delta,
             cost: 0.0,
@@ -400,6 +405,7 @@ impl<T: FiniteTree, F: FastOracle, S: SlowOracle> TwoFidelity<T, F, S> {
     }
     fn refresh(&mut self) {
         let start = Instant::now();
+        self.valid_scales.clear();
         self.profile.refresh_topology_scans += self.bottom_up.len() as u64;
         for &v in &self.bottom_up {
             if !self.state[v].exposed {
@@ -514,6 +520,9 @@ impl<T: FiniteTree, F: FastOracle, S: SlowOracle> TwoFidelity<T, F, S> {
         }
     }
     fn evaluate_scale(&mut self, k: usize) {
+        if self.valid_scales.contains(&k) {
+            return;
+        }
         let start = Instant::now();
         self.profile.scale_evaluations += 1;
         self.profile.scale_storage_scans += 2 * (self.bottom_up.len() - 1) as u64;
@@ -529,6 +538,7 @@ impl<T: FiniteTree, F: FastOracle, S: SlowOracle> TwoFidelity<T, F, S> {
             }
         }
         self.profile.scale_time += start.elapsed();
+        self.valid_scales.insert(k);
     }
     fn scale_comp(&mut self, v: NodeId, side: Side, k: usize) -> bool {
         self.evaluate_scale(k);

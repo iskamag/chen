@@ -1,0 +1,14 @@
+{
+  "candidate_source_sha256": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+  "findings": [
+    "One bottom-up pass reaches same-scale certificate fixed point: children precede parents; same-scale prior latches monotone.",
+    "Certificate predicates use fixed intervals and same-scale flags, not oracle costs or cross-scale completion.",
+    "Initial exposure and every expansion/sample route through refresh, which clears valid scales.",
+    "Zero-tolerance and other-scale scans overwrite scratch, but cache-hit consumers read persistent scales flags; fresh passes replace all relevant child scratch before parents."
+  ],
+  "kind": "two_fidelity_scale_cache_independent_source_review_v1",
+  "new_tests_or_source_edits_by_reviewer": false,
+  "review_scope": "bounded independent source review; existing actual root checks cover ten trace pairs,600fixtures and12unit tests",
+  "reviewer": "/root/coherence",
+  "status": "pass_no_required_source_change"
+}

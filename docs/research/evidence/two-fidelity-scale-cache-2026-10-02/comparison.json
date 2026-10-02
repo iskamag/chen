@@ -1,0 +1,26 @@
+{
+  "cases": {
+    "d5-b4": {
+      "action_traces_byte_identical": true,
+      "baseline_ms": 6.013433,
+      "baseline_scale_passes": 518.0,
+      "candidate_ms": 2.667431,
+      "candidate_scale_passes": 174.0,
+      "paired_runs": 5,
+      "ratio": 2.2543912101193992,
+      "sample_cost_answer_and_refresh_counters_identical": true
+    },
+    "d5-b8": {
+      "action_traces_byte_identical": true,
+      "baseline_ms": 766.957125,
+      "baseline_scale_passes": 4159.0,
+      "candidate_ms": 287.009387,
+      "candidate_scale_passes": 1491.0,
+      "paired_runs": 5,
+      "ratio": 2.6722370756465885,
+      "sample_cost_answer_and_refresh_counters_identical": true
+    }
+  },
+  "kind": "two_fidelity_scale_certificate_cache_comparison_v1",
+  "scope": "CPU synthetic trees; sequential block timing with exact positive-action trace parity, not chess or GPU speed"
+}

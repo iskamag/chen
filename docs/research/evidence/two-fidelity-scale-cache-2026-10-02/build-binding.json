@@ -1,0 +1,82 @@
+{
+  "binaries_sha256": {
+    "baseline-profile": "41f25790cf9017dac7c15045b3e38a69f4e075f2c9326323c0cf89bdf0d7b585",
+    "candidate-profile": "04c447e6700470c9ca5aad77da14ac235046cc729f227d88866c77a54c0827fd",
+    "independent-fixtures": "9d3cb329083871b45fbc76f5d36ba384de717db604c2c046e5696abec5be7525"
+  },
+  "checks": [
+    [
+      "independent-fixtures",
+      [
+        "taskset",
+        "-c",
+        "2",
+        "results/two-fidelity-scale-cache-2026-10-02/independent-fixtures"
+      ]
+    ],
+    [
+      "tests",
+      [
+        "cargo",
+        "test",
+        "--offline",
+        "--lib",
+        "two_fidelity"
+      ]
+    ],
+    [
+      "clippy",
+      [
+        "cargo",
+        "clippy",
+        "--offline",
+        "--lib",
+        "--example",
+        "two_fidelity_profile",
+        "--",
+        "-D",
+        "warnings"
+      ]
+    ],
+    [
+      "format",
+      [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ]
+    ]
+  ],
+  "compiler": "rustc 1.98.1 (48a229cea 2026-09-01) (Artix Linux rust 1:1.98.1-1)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.1\nLLVM version: 22.1.8\n",
+  "fixture_compile_command": [
+    "rustc",
+    "--edition=2024",
+    "-O",
+    "docs/research/evidence/two-fidelity-review-2026-10-02/independent-fixtures.rs",
+    "-o",
+    "results/two-fidelity-scale-cache-2026-10-02/independent-fixtures"
+  ],
+  "fixture_source_import": "Absolute current src/two_fidelity.rs, byte equal archived candidate-two_fidelity.rs.",
+  "kind": "two_fidelity_scale_cache_build_binding_v1",
+  "profile_build_command_template": [
+    "rustc",
+    "--edition=2024",
+    "-O",
+    "results/two-fidelity-scale-cache-2026-10-02/{arm}-profile.rs",
+    "-o",
+    "results/two-fidelity-scale-cache-2026-10-02/{arm}-profile"
+  ],
+  "profile_wrapper_change": "Only replace chen module import with explicit frozen local source, and change leading inner documentation comment to regular comment. Both arm wrappers otherwise identical. Initial wrapper failed due inner comment position; corrected before any measurements.",
+  "scope": "No chess/GPU/oracle-assumption proof; unchanged traces and deterministic answer/cost/refresh work; certificate passes avoided.",
+  "source_sha256": {
+    "baseline-profile.rs": "7828abfa089a8770084e85224822ac62b49c91d9c7b6f9f2a5aba911438cbcbd",
+    "baseline-two_fidelity.rs": "28b85bb84b1da81a296ce725ed79fee294d76a23d81291de964db0dd3b87e01e",
+    "candidate-profile.rs": "74d470220d21809a47229c7d77a0697fb9af3944495718b6b4f68a451adbe07d",
+    "candidate-two_fidelity.rs": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+    "independent-fixtures.rs": "c3a58261173633d6a524e45845ecae2b5b98a2cfb632043b1695b232bfd86a57",
+    "two_fidelity_profile.rs": "a0571a58c065d74190aa38b43350be3e6d1996b2cfa4369fc4b6e1c5522e089c"
+  },
+  "timing": "CPU2 pinned sequential baseline block then candidate block; D5b4,D5b8 five seeds each. Not crossover-isolated."
+}
