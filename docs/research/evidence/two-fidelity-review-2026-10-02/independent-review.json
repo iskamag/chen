@@ -1,0 +1,92 @@
+{
+  "kind": "independent_two_fidelity_cpu_reference_review",
+  "date": "2026-10-02",
+  "reviewer": "coherence",
+  "paper": "https://arxiv.org/html/2606.01708v2",
+  "reviewed_sections": [
+    "2.1\u20132.2 oracle/tree/interval contracts",
+    "Appendix B.3 Algorithms 2\u20135",
+    "Appendix B.3 zero-tolerance and capped-scale definitions"
+  ],
+  "verdict": "pass_with_declared_scope_no_required_source_fix",
+  "source_sha256": {
+    "src/two_fidelity.rs": "28b85bb84b1da81a296ce725ed79fee294d76a23d81291de964db0dd3b87e01e",
+    "src/lib.rs": "0bfbd99106b93ae9551dd3d19255b197417faf83804ef578920b008fab9c9a04",
+    "examples/two_fidelity_profile.rs": "a0571a58c065d74190aa38b43350be3e6d1996b2cfa4369fc4b6e1c5522e089c",
+    "docs/TWO_FIDELITY.md": "df6824881005bff2aca4a2ee5262af5f78ca9e58d81f2c416895c4d6b1c5a693",
+    "docs/research/evidence/two-fidelity-cpu-2026-10-02/manifest.json": "97d71b6afc6a34c9098259c1853cd7d542bf375857dd5007ebbc413ee5027004",
+    "results/two-fidelity/independent-fixtures.rs": "c3a58261173633d6a524e45845ecae2b5b98a2cfb632043b1695b232bfd86a57",
+    "results/two-fidelity/independent-fixtures.jsonl": "152a125f88a1d380ab388a26f2c44a74abe829dcbe76aacb71f221f442610dd0",
+    "results/two-fidelity/independent-unit-tests.log": "edf5f25781ec7f97bd8affe0acb7ca603bbbebbc210cc24b83e84e2b187aa5cd"
+  },
+  "mechanical_archive_audit": {
+    "payload_hashes_checked": 20,
+    "source_closure_hashes_checked": 19,
+    "current_release_binary_binding_checked": true,
+    "paired_profiles": 10,
+    "positive_action_trace_bytes_identical": true,
+    "non_timing_answer_cost_work_fields_identical": true,
+    "median_timings_recomputed": true
+  },
+  "validation": {
+    "existing_tests": {
+      "passed": 12,
+      "failed": 0,
+      "command": "cargo test --offline --lib two_fidelity"
+    },
+    "independent_fixtures": {
+      "command": "rustc --edition=2024 -O results/two-fidelity/independent-fixtures.rs -o results/two-fidelity/independent-fixtures; results/two-fidelity/independent-fixtures",
+      "results": [
+        {
+          "wide_cases": 24,
+          "slow_samples": 288,
+          "passed": true
+        },
+        {
+          "cases": 576,
+          "checked_exposed_intervals": 4320,
+          "expansions": 1121,
+          "slow_samples": 1,
+          "passed": true
+        }
+      ],
+      "scope": [
+        "irregular balanced topology, reversed non-root IDs and child order",
+        "independent recursive exact minimax backup",
+        "exact/epsilon/known-slow-bias controls",
+        "noninteger slow cost and total query accounting",
+        "all exposed intervals contain true values on these fixtures",
+        "single-use and positive-action trace accounting",
+        "wide depth3 trees force slow sampling with bounded symmetric noise"
+      ]
+    }
+  },
+  "semantic_checks": {
+    "fast_envelope_and_leaf_exactness": "caller premise, validated envelope structure only",
+    "slow_mean_independence_subgaussian_bias": "caller premise, not established by a justified flag",
+    "confidence_radius": "conservative two-sided sample-count union; monotone for n>=1 and delta_v<1",
+    "running_slow_intersections": "retained across expansion; same-node local and descendant routes remain available",
+    "certificates": "width/local-width/selector-witness/comparison-discharge match B.3; prior completion flags latch monotonically",
+    "selection": "leader-lower versus full contender; opposite endpoint first for scale-capped blocker",
+    "race_budget": "(remaining depth+1)^2 Gamma; descendant positive cost charged to active ancestors; inherited-cap block distinct from own-budget fallback",
+    "failure": "empty intersection exits before certificate work; fixed first-root action marked ConfidenceFailure",
+    "resource_exits": "cost/round/precision return no recommendation",
+    "topology_optimization": "full topology validated and arrays allocated once; subsequent certificate/refresh/storage scans restricted to exposed nodes"
+  },
+  "limitations": [
+    "Finite fixture passes do not measure stochastic PAC coverage or prove real-arithmetic correctness under ordinary f64 rounding.",
+    "Full topology must be supplied in advance; this is a synthetic finite-tree reference, not an online chess expansion API.",
+    "No chess oracle adapter, UCI backend or GPU controller is implemented.",
+    "Profile speed ratios are sequential blocks, not crossover timing acceptance.",
+    "No source change required by this review; work counters and positive-action semantics remain frozen."
+  ],
+  "next_direction": [
+    "Optimize compact per-scale storage and affected-ancestor refresh against exact frozen traces; scale evaluation dominates the profiled CPU controller.",
+    "Before chess integration, specify a bounded horizon/tree topology provider, terminal and root-perspective conversion, legal support, hard-time interruption and explicitly uncertified heuristic oracle contract.",
+    "Require equal-time baseline play and complete artifacts before choosing a chess adaptation.",
+    "GPU batch fast queries only for atomic complete-child expansion, or batch independent trees; asynchronous stale blocker/sample policies require a separately named algorithm.",
+    "Establish practical node-by-scale memory admission and report constructor/full-topology cost as well as controller run cost before large-tree GPU experiments."
+  ],
+  "gpu_runtime_calls": 0,
+  "elo_claim": null
+}

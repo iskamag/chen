@@ -1,0 +1,20 @@
+   Compiling chen v0.1.0 (/home/iskam/src/vibe/chen)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.01s
+     Running unittests src/lib.rs (target/debug/deps/chen-c9627a2958f94a16)
+
+running 12 tests
+test two_fidelity::tests::confidence_radius_is_monotone_and_sample_inverse_minimal ... ok
+test two_fidelity::tests::empty_intersection_returns_fixed_default_and_marks_failure ... ok
+test two_fidelity::tests::exact_minimax_grid_and_interval_validity ... ok
+test two_fidelity::tests::inherited_cap_blocks_without_local_fallback ... ok
+test two_fidelity::tests::known_slow_bias_inflation_preserves_true_value ... ok
+test two_fidelity::tests::malformed_topology_envelopes_and_nan_oracles_reject ... ok
+test two_fidelity::tests::oracle_batch_cardinality_and_errors_reject ... ok
+test two_fidelity::tests::own_budget_falls_back_after_expansion ... ok
+test two_fidelity::tests::resource_exits_do_not_claim_recommendations ... ok
+test two_fidelity::tests::running_intersection_and_expanded_samples_are_retained ... ok
+test two_fidelity::tests::ties_and_epsilon_can_stop_without_unique_best ... ok
+test two_fidelity::tests::zero_fast_envelope_is_immediate ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.31s
+

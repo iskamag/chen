@@ -1,0 +1,25 @@
+{
+  "kind": "two_fidelity_cpu_evidence",
+  "payload_sha256": {
+    "baseline/binary.sha256": "70bde5a6af46603588b57ac55dfa1200af49be1ec42c45e59f8c97e96fa51acb",
+    "baseline/profile-d5-b4.csv": "7184f1fedf1ff06715fc2af0bed0b8c94a7149887ec4264ebd8dc6cec275bf96",
+    "baseline/profile-d5-b8.csv": "7348fd053367e3635c93005ab0c85e2ba216fa1bf5ae40b14b60529228821849",
+    "baseline/tests.log": "4e22ca547c205d1a9093f1bef3a304d1b8d68d0d7e4ac754f8089d5a85a79307",
+    "baseline/trace-d5-b4.csv": "f523d4240cb949fdd7dd5ed57513be3ccf178cc0ced6cbfdf270bc53c675d306",
+    "baseline/trace-d5-b8.csv": "b44a3052a865c324eeb6ea02eef2646433a5f9ae54d6f08835e66b46b41b9369",
+    "baseline/two_fidelity.rs": "a31c3506a3e49f4988f8f70030be4f81e0003ae42c7a8f3d731afaf95b37848e",
+    "baseline/two_fidelity_profile.rs": "a0571a58c065d74190aa38b43350be3e6d1996b2cfa4369fc4b6e1c5522e089c",
+    "build-binding.json": "c44cba74a07513fca51f3c6325dbf7cce59dad17d211d671784a9c684bd2340b",
+    "comparison.json": "d27e2d8163e9ddd51dd393fc6556a6953c82c2b69409a475f1c836af35ac2273",
+    "exposed-tree/binary.sha256": "62282bd6ac6dcab5d8b9cd0e8e72cb4d8873a88795f9f8777df76418847e1d6b",
+    "exposed-tree/build.log": "5b65e358df8d94a377ede5a1315aab650f6daead7a981770eb120798b9955793",
+    "exposed-tree/clippy.log": "7634bc67d961845c840c89786f02b1cad2ffd9cd09cd57bf256883baf61fee53",
+    "exposed-tree/profile-d5-b4.csv": "a753041296fd6dd0633d87124d3e6eda00d656f46036861fd9b97d67ff51b2ed",
+    "exposed-tree/profile-d5-b8.csv": "0a69f2c4689144d8161ab28abb4c7841a245ea40017e47ec8cf8a1787a7d3236",
+    "exposed-tree/tests.log": "7c0dcf88f8d149832affb85d12427d059d8612b7b41319135782bd3875274eac",
+    "exposed-tree/trace-d5-b4.csv": "f523d4240cb949fdd7dd5ed57513be3ccf178cc0ced6cbfdf270bc53c675d306",
+    "exposed-tree/trace-d5-b8.csv": "b44a3052a865c324eeb6ea02eef2646433a5f9ae54d6f08835e66b46b41b9369",
+    "exposed-tree/two_fidelity.rs": "28b85bb84b1da81a296ce725ed79fee294d76a23d81291de964db0dd3b87e01e",
+    "exposed-tree/two_fidelity_profile.rs": "a0571a58c065d74190aa38b43350be3e6d1996b2cfa4369fc4b6e1c5522e089c"
+  }
+}

@@ -15,6 +15,7 @@ pub mod search;
 pub mod selective;
 pub mod strength;
 pub mod tt;
+pub mod two_fidelity;
 
 pub use core::{Color, Move, Piece, Position, Undo, perft};
 pub use eval::{Evaluator, Material, Tapered};

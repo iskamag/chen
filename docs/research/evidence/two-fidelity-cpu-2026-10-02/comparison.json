@@ -1,0 +1,32 @@
+{
+  "kind": "two_fidelity_exposed_tree_profile_comparison",
+  "scope": "synthetic CPU only; same requested samples and expansions; no chess Elo or formal coverage claim",
+  "cases": {
+    "d5-b4": {
+      "runs": 5,
+      "positive_action_trace_identical": true,
+      "sample_cost_answer_fields_identical": true,
+      "baseline_wall_median_ms": 9.791845,
+      "exposed_wall_median_ms": 6.814693,
+      "median_speedup_ratio": 1.4368725047481963,
+      "baseline_certificate_topology_scans_median": 870870.0,
+      "exposed_certificate_topology_scans_median": 53050.0,
+      "baseline_refresh_topology_scans_median": 143325.0,
+      "exposed_refresh_topology_scans_median": 8695.0,
+      "exposed_scale_time_fraction_median": 0.9473525526294923
+    },
+    "d5-b8": {
+      "runs": 5,
+      "positive_action_trace_identical": true,
+      "sample_cost_answer_fields_identical": true,
+      "baseline_wall_median_ms": 1330.677424,
+      "exposed_wall_median_ms": 742.852094,
+      "median_speedup_ratio": 1.791308707006216,
+      "baseline_certificate_topology_scans_median": 185522346.0,
+      "exposed_certificate_topology_scans_median": 4407370.0,
+      "baseline_refresh_topology_scans_median": 28948077.0,
+      "exposed_refresh_topology_scans_median": 683037.0,
+      "exposed_scale_time_fraction_median": 0.9752259422633663
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "two_fidelity_cpu_source_build_profile_binding",
+  "paper_version": "2606.01708v2",
+  "paper_pdf_sha256": "10469e6d7480b24408c32a2618c22f612dcd908abf2c4588fa17916ec75ce8ef",
+  "author_revision": "f364fdb2b899e1b704ebb78cf47aab54f6458136",
+  "author_source_sha256": "3b6a28b774bce2a4ee75c3104dd40f284b2f069ba6dc142998dfba25b05fcc46",
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01) (Artix Linux rust 1:1.98.1-1)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: x86_64-unknown-linux-gnu\nrelease: 1.98.1\nLLVM version: 22.1.8\n",
+  "cpu_affinity": [
+    2
+  ],
+  "gpu_runtime_calls": 0,
+  "oracle_model": "synthetic exact minimax plus SplitMix64-seeded symmetric bounded noise, sigma 0.01",
+  "profile_cases": [
+    [
+      5,
+      4,
+      5
+    ],
+    [
+      5,
+      8,
+      5
+    ]
+  ],
+  "commands": [
+    "taskset -c 2 cargo test --offline --lib two_fidelity",
+    "taskset -c 2 cargo clippy --offline --lib --example two_fidelity_profile -- -D warnings",
+    "taskset -c 2 cargo build --offline --release --example two_fidelity_profile",
+    "taskset -c 2 <baseline-or-exposed-tree-binary> 5 4 5 trace",
+    "taskset -c 2 <baseline-or-exposed-tree-binary> 5 8 5 trace"
+  ],
+  "source_closure_sha256": {
+    "Cargo.lock": "60caf9457598997c7c66cde70eb4893b051ac6d9abc51ea47fc6f5e6180bc547",
+    "Cargo.toml": "ebe79a1590695ed5d572e4413e59a965e2a967c92a1bc45d9286b54d85a8fdc1",
+    "examples/two_fidelity_profile.rs": "a0571a58c065d74190aa38b43350be3e6d1996b2cfa4369fc4b6e1c5522e089c",
+    "src/backend.rs": "f6f9e25edc8f5cae1c70f3d5c79d926605cfd166c308bf73065b6d0ca9ed278f",
+    "src/core.rs": "a454e83a8421780e87d4882319970fb9c6f8b2cf4fc3e03db3674827954153ec",
+    "src/device.rs": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+    "src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "src/frontier.rs": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+    "src/hip.rs": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+    "src/lib.rs": "0bfbd99106b93ae9551dd3d19255b197417faf83804ef578920b008fab9c9a04",
+    "src/main.rs": "d410557b3c2fee761df06aae91aff19232c8f8792c95fff7ab72fc45247b66ae",
+    "src/neural.rs": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+    "src/resident.rs": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/search.rs": "74a49dfd2742ca1fa770f92c248f1ba6bbc31147c6f3c9c4147039db8f14e5f2",
+    "src/selective.rs": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+    "src/strength.rs": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+    "src/tt.rs": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+    "src/two_fidelity.rs": "28b85bb84b1da81a296ce725ed79fee294d76a23d81291de964db0dd3b87e01e"
+  },
+  "current_binary_sha256": "dae2499946461b2238bcf9a463bbcab2dce654066b567d8530749c7d6debff6e",
+  "qualification": "12 tests and 10 paired synthetic profiles; no chess oracle, GPU controller, empirical PAC coverage or Elo claim"
+}
