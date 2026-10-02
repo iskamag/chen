@@ -1,0 +1,8 @@
+{
+  "timed_executable_sha256": "cd2d66db414026b1a0801756f11a7c65f9290d6bea205d20c7a72cd26cdc177b",
+  "byte_exact_rebuilt_executable_sha256": "cd2d66db414026b1a0801756f11a7c65f9290d6bea205d20c7a72cd26cdc177b",
+  "runtime_elf_sha256": "a77c7f8322cb71a56e0130fca38c103afea4db7884f969fde7f2220253d3a887",
+  "fresh_extraction_elf_sha256": "a77c7f8322cb71a56e0130fca38c103afea4db7884f969fde7f2220253d3a887",
+  "note": "Initial dump without output path rewrote executable ELF layout; rebuilt executable is byte exact to pinned timed executable and its separately extracted device ELF is byte exact to disassembled ELF. Use explicit output path for llvm-objcopy.",
+  "preserving_command": "llvm-objcopy --dump-section .hip_fatbin=original.fatbin original.bin extraction-copy.bin"
+}

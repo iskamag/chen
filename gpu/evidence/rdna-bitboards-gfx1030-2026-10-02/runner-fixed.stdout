@@ -1,0 +1,5 @@
+case-0: 16384 inputs x 1 rounds, all 8 variants independently verified
+case-1: 16384 inputs x 7 rounds, all 8 variants independently verified
+case-2: 64 inputs x 64 rounds, all 8 variants independently verified
+case-3: 1024 inputs x 64 rounds, all 8 variants independently verified
+case-4: 16384 inputs x 64 rounds, all 8 variants independently verified

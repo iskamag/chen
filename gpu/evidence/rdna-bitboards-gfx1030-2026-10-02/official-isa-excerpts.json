@@ -1,0 +1,111 @@
+{
+  "source": "https://gpuopen.com/download/machine-readable-isa/latest/",
+  "bundle_sha256": "82404f1126761b7877595b622afa7e1f311f2f41e89a3abe9aaf8ad045c082e2",
+  "rdna2_xml_sha256": "d671ecbc36543674ab59e9b2feffd56718fd2137e7ad913c314f2e2508b9f4f7",
+  "architecture_pdf_source": "https://gpuopen.com/wp-content/uploads/2020/11/RDNA_Architecture_public-1.pdf",
+  "architecture_pdf_sha256": "3d2b726355b8cf826f59fa482d5bc2fcb2baf8dbf70cf18738e77682fbf273a0",
+  "instructions": {
+    "S_BCNT1_I32_B64": {
+      "description": "Count the number of \"1\" bits in a scalar input, store the result into a scalar register and set SCC iff the result is nonzero.",
+      "operand_sizes": [
+        "32",
+        "64",
+        "1",
+        "32",
+        "64",
+        "1"
+      ]
+    },
+    "V_READFIRSTLANE_B32": {
+      "description": "Read the scalar value in the lowest active lane of the input vector register and store it into a scalar register.",
+      "operand_sizes": [
+        "32",
+        "32",
+        "32",
+        "32"
+      ]
+    },
+    "V_LSHLREV_B64": {
+      "description": "Given a shift count in the first vector input, calculate the logical shift left of the second vector input and store the result into a vector register.",
+      "operand_sizes": [
+        "64",
+        "32",
+        "64",
+        "64",
+        "32",
+        "64",
+        "64",
+        "32",
+        "64"
+      ]
+    },
+    "V_LSHRREV_B64": {
+      "description": "Given a shift count in the first vector input, calculate the logical shift right of the second vector input and store the result into a vector register.",
+      "operand_sizes": [
+        "64",
+        "32",
+        "64",
+        "64",
+        "32",
+        "64",
+        "64",
+        "32",
+        "64"
+      ]
+    },
+    "V_BCNT_U32_B32": {
+      "description": "Count the number of \"1\" bits in the vector input and store the result into a vector register.",
+      "operand_sizes": [
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32"
+      ]
+    },
+    "V_AND_OR_B32": {
+      "description": "Calculate bitwise AND on the first two vector inputs, then compute the bitwise OR of the intermediate result and the third vector input, then store the final result into a vector register.",
+      "operand_sizes": [
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32",
+        "32"
+      ]
+    }
+  }
+}

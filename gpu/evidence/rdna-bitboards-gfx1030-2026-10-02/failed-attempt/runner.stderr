@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/iskam/src/vibe/chen/scripts/rdna_bitboards.py", line 120, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/home/iskam/src/vibe/chen/scripts/rdna_bitboards.py", line 108, in main
+    raise ValueError(f'{name} mismatch row {bad}: {got[bad]:x} != {reference[family][bad]:x}')
+ValueError: rook_wave32 mismatch row 153: 20d020200 != 2020d020200
