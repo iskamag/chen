@@ -1,0 +1,1 @@
+{"test": {"states": 2558, "terminal_draws": 1}, "train": {"states": 10341, "terminal_draws": 0}, "validation": {"states": 2602, "terminal_draws": 0}}

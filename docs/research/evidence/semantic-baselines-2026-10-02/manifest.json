@@ -1,0 +1,17 @@
+{
+  "kind": "semantic_native_static_baseline_evidence_v1",
+  "payload_sha256": {
+    "baseline-witness.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-witness.stdout.log": "eeffa3dbb7c8d2df55f753c58126efca03a11658f8eb996ae19c57418508e5d4",
+    "build-binding.json": "01438dae4066925691c0af1ab4a021a75615162f44b9bc79d0d5b8cb1320e9d7",
+    "corpus-baselines": "d02a52531416b52f6583cb7e905a8548a51bdbc9ec1300b549f74442422fc62f",
+    "corpus-baselines-tests": "51dfabf29c32c16180e1722f22ac2ad099608954e2572c41fbab837f2ec4e2c0",
+    "exact-baseline-witness.json": "f7e96742dcc0a555bcb44e774bdc737134e394685fde028cdbebc39aada5c7d9",
+    "rustc-version.txt": "61d85334aa58da96b169523979e0b59f4186eff1d2923b70a2017d03df7bedfa",
+    "sources/examples/corpus_baselines.rs": "81f416994107f284c24048a724dd44a68bedaf1accef51ffda9a3dc9c1ed9b04",
+    "sources/scripts/prepare_semantic_baselines.py": "3c7e95c27090047ca55579579313a55baa702bc8487745d4f03ea99f2e138a94",
+    "sources/src/core.rs": "a454e83a8421780e87d4882319970fb9c6f8b2cf4fc3e03db3674827954153ec",
+    "sources/src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "static-unit-test.log": "dd2ebc9c22260e5673cb971e69a4daae57b39658946210998f3cfb13508a4860"
+  }
+}

@@ -309,9 +309,21 @@ and ray attacks dominate. This motivates a sparse-ancestor backup experiment
 and RDNA2/SWAR kernel work informed by official ISA guidance and `../bitmatrices`.
 
 Neural commit `041e68d` adds paired semantic study mechanics and the separate
-transformer proposal, with 10 passing fixture tests. The outer runner for 8 anchors
-and 32 transition models has 8 passing orchestration fixtures and is under independent review.
-Real GPU learning remains unsealed; no new model-quality metrics are available.
+transformer proposal, with 10 passing fixture tests. Neural commit `e50660d` adds the independently reviewed outer runner for 8 anchors
+and 32 transition models, with 10 passing orchestration tests. Review fixes bind
+phase/suite corpus identities and reject over-budget completed work. Runtime
+staging and learning seals remain required; no new model-quality metrics are
+available. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
+joins actual Rust Material/Tapered scores to all 15,501 exact corpus hashes and
+classifies the sole terminal state as a draw using the history-aware oracle.
+It contains no heldout quality metrics.
+
+The [RDNA/SWAR study](../RDNA_BITBOARDS.md), committed as `af6fda2`, independently
+checks 401,920 outputs. Kogge–Stone rook fills improve isolated primitive medians
+by 2.35–4.98×; cooperative wave32-per-board loses despite lower VGPR usage.
+Runtime ISA shows identical two-instruction vector counts for the 64-bit popcount
+intrinsic and explicit DWORD halves. Full move-generation adoption is a separate
+parity and integrated profiling experiment.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.

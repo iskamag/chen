@@ -52,6 +52,12 @@ candidate binaries, alternating repeated runs, identical positions and both
 equal-work and equal-time comparisons. Kernel throughput alone cannot select a
 search policy. The existing selective fusion experiment addresses repeated
 fences; its adoption depends on parity and measured end-to-end benefit.
+The [gfx1030 SWAR study](RDNA_BITBOARDS.md) reads AMD RDNA2 instruction
+definitions and the neighboring bitmatrices kernels, verifies emitted runtime
+ISA, and independently checks every primitive output. Prefer branchless sliding
+fills as the next rules candidate; preserve independent board lanes and ordinary
+popcount intrinsics. Primitive wins require full rules parity and integrated
+register, kernel and end-to-end measurements before adoption.
 
 **2FFS paper implementation.** Implement a separate CPU reference for
 [Two-Fidelity Best-Action Identification for Stochastic Minimax Tree,
