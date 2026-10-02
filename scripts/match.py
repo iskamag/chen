@@ -44,15 +44,27 @@ def play(engines, names, opening, candidate_color, limit, max_plies):
     node = game
     failure = None
     completed = False
+    move_trace = []
     for ply in range(max_plies):
         outcome = board.outcome(claim_draw=True)
         if outcome is not None:
             completed = True
             break
         try:
-            result = engines[0 if board.turn == chess.WHITE else 1].play(board, limit, game=game)
+            engine_index = 0 if board.turn == chess.WHITE else 1
+            initial_fen = board.fen(en_passant='fen')
+            started = time.perf_counter_ns()
+            result = engines[engine_index].play(board, limit, game=game,
+                                                info=chess.engine.INFO_BASIC)
+            elapsed_ns = time.perf_counter_ns() - started
             if result.move not in board.legal_moves:
                 raise ValueError(f'illegal or missing move: {result.move}')
+            move_trace.append({'ply': ply, 'engine': names[engine_index],
+                               'fen': initial_fen, 'move': result.move.uci(),
+                               'wall_ns': elapsed_ns,
+                               'reported': {key: result.info[key] for key in
+                                            ('depth', 'seldepth', 'nodes', 'nps', 'time', 'hashfull', 'tbhits')
+                                            if key in result.info}})
             board.push(result.move)
             node = node.add_variation(result.move)
         except Exception as error:
@@ -71,7 +83,7 @@ def play(engines, names, opening, candidate_color, limit, max_plies):
         reason = 'technical_failure' if failure else 'ply_cap_inconclusive'
     game.headers['Result'] = result
     game.headers['Termination'] = reason
-    return game, {'opening': opening[0], 'candidate_color': 'white' if candidate_color else 'black', 'result': result, 'candidate_score': score, 'plies': board.ply() - chess.Board(opening[1]).ply(), 'termination': reason, 'failure': failure, 'final_fen': board.fen(en_passant='fen')}
+    return game, {'opening': opening[0], 'candidate_color': 'white' if candidate_color else 'black', 'result': result, 'candidate_score': score, 'plies': board.ply() - chess.Board(opening[1]).ply(), 'termination': reason, 'failure': failure, 'final_fen': board.fen(en_passant='fen'), 'move_trace': move_trace}
 
 
 def main():
