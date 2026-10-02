@@ -1,0 +1,23 @@
+{
+  "kind": "fixed_1second_UCI_reference_diagnostic",
+  "requested_seconds_per_move": 1.0,
+  "opening_pairs": 8,
+  "max_plies": 512,
+  "concurrency": 1,
+  "host_cpu_affinity": [
+    0
+  ],
+  "watchdog_seconds": 7200,
+  "comparison": "Chen classical alpha-beta/Tapered vs Stockfish19 limitedstrength configured1320",
+  "rating_scope": "Relative score against this configured opponent only; UCI_Elo is a strength setting, not a measured Lichess anchor. No 750 or2500 rating certification.",
+  "paired_opening_independence_asserted": false,
+  "move_wall_timing_and_reported_nodes_collected": true,
+  "source_and_binary_sha256": {
+    "results/one-second-reference-2026-10-02/chen": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+    "results/one-second-reference-2026-10-02/match-source.py": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c",
+    "results/one-second-reference-2026-10-02/stats-source.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990",
+    "results/one-second-reference-2026-10-02/openings.txt": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+    "results/one-second-reference-2026-10-02/config.json": "9fd2d4d53393ff383237e3c7eb627c7533f468a2121d160e4528552459bd068c",
+    "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "/tmp/chen-perf-2026-10-02/usr/bin/perf": {
+    "sha256": "409a83247e7d11d4b9e695b8109553ec2b29733212c5466882c77be9a9b5ef5d",
+    "bytes": 12815920
+  },
+  "/tmp/chen-perf-2026-10-02/libpfm-4.14.1-1-x86_64.pkg.tar.zst": {
+    "sha256": "1ef5a63a4371d5f1b23b892c26350565e4652f0dec7ffac1735af7e9ce8e3429",
+    "bytes": 407635
+  },
+  "/tmp/chen-perf-2026-10-02/perf-7.2.8-2-x86_64.pkg.tar.zst": {
+    "sha256": "dca7809a7acc55a439980257391314c25cd00559202d06b8a5e132900530bd9b",
+    "bytes": 3385270
+  },
+  "/tmp/chen-perf-2026-10-02/usr/lib/libpfm.so.4.14.1": {
+    "sha256": "9ae573bd6fd909d09193492ef0138288f9e89932eae82fa14d5282db35a0d79a",
+    "bytes": 2471208
+  },
+  "/tmp/chen-perf-2026-10-02/usr/lib/libpfm.so.4": {
+    "sha256": "9ae573bd6fd909d09193492ef0138288f9e89932eae82fa14d5282db35a0d79a",
+    "bytes": 2471208
+  },
+  "/tmp/chen-perf-2026-10-02/usr/lib/libpfm.so": {
+    "sha256": "9ae573bd6fd909d09193492ef0138288f9e89932eae82fa14d5282db35a0d79a",
+    "bytes": 2471208
+  }
+}

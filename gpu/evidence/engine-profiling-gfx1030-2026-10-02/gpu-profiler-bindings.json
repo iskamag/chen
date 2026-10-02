@@ -1,0 +1,22 @@
+{
+  "/opt/rocm/bin/rocprofv3": {
+    "sha256": "195ff5e6faf48a3abbc6f4db9f69dd598fe71fa9ff695ba2556d65af636fdc48",
+    "resolved": "/opt/rocm-7.2.4/bin/rocprofv3"
+  },
+  "/opt/rocm/lib/librocprofiler-sdk.so.1.1.0": {
+    "sha256": "40cf6fefffa5e9e8da249dbc1ce6feab0bb2613438caf37b0224d7fce09241e1",
+    "resolved": "/opt/rocm-7.2.4/lib/librocprofiler-sdk.so.1.1.0"
+  },
+  "/opt/rocm/lib/libamdhip64.so.7.2.70204": {
+    "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac",
+    "resolved": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204"
+  },
+  "/opt/rocm/lib/libhsa-runtime64.so.1.18.70204": {
+    "sha256": "b8cdfe93d343649a35c1daf73a0a3a6840f09379ebeee9be65670461ffea43f4",
+    "resolved": "/opt/rocm-7.2.4/lib/libhsa-runtime64.so.1.18.70204"
+  },
+  "/tmp/chen-gpu/profiler-deps/usr/lib/x86_64-linux-gnu/libdw-0.190.so": {
+    "sha256": "989dc9873f358a5af7d18d6100cf5fd66531d7990dc47d69068b3c6c96588867",
+    "resolved": "/tmp/chen-gpu/profiler-deps/usr/lib/x86_64-linux-gnu/libdw-0.190.so"
+  }
+}

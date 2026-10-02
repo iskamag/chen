@@ -5,9 +5,10 @@ engine, gfx1030 runtime and evaluation harness; `../chen-neural` on
 `research/neural` owns model, latent-transition and training experiments. The
 target is a GPU engine with useful learned representations, adjustable play and
 eventual 2500 Lichess performance. A working UCI engine exists; a rating above
-750 at one second per move is **not yet established**. The next strength
-checkpoint must measure that workload, rather than extrapolate node throughput
-or previous fixed-node games.
+750 at one second per move now has a useful provisional reference: [13 wins,
+3 draws against Stockfish configured 1320](harness/one-second-reference-2026-10-02.md),
+giving an uncalibrated configured-opponent proxy of 1714. This remains separate
+from an actual Lichess rating; larger reference-pool checks are still needed.
 
 This file defines architectural direction. [STATUS](research/STATUS.md) owns the
 latest verified results and open gates; [PROGRAM](research/PROGRAM.md) owns the

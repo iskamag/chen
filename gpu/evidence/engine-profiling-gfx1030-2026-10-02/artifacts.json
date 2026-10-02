@@ -1,0 +1,10 @@
+{
+  "kind": "externally_pinned_profile_artifacts",
+  "fusion_archive": "../selective-fusion-gfx1030-2026-10-02",
+  "fusion_archive_manifest_sha256": "7519a9fd51e10df016b9a31c76651152c9d0761f7a9d96ccbb417f3cf4093980",
+  "engine_sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+  "fused_library_sha256": "04447c455f33fc7eca1e119664584dc70fa3a91cba05b3ba3cb35908e60451d2",
+  "profile_driver_sha256": "458bf69309c1810cfef71ba95b236a3dd176a0eede53946dab67fb52e1498b83",
+  "analyzer_sha256": "66f49b0432fda634b8c13e6b9ae7677ec183eb02457ffb456af8a9f187d96829",
+  "source_policy": "Pinned engine/library bytes and their previously preserved full source closure; copied here for review. Current future experiments do not change this evidence."
+}

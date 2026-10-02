@@ -288,11 +288,30 @@ identical source bytes, with cause unestablished.
 Docker/Git access was restored on October 2. Commit `3976f26` archives the audited
 teacher studies and spent-input ledgers. [Architecture direction](../DIRECTION.md)
 now defines ownership, 2FFS reproduction, transformer comparisons, heavy
-profiling and strength gates. A pinned classical one-second-per-move diagnostic
-against Stockfish19 configured `UCI_Elo=1320` is running over eight color-swapped
-opening pairs with actual move timing/node telemetry. That opponent setting is
-not a measured Lichess anchor; a rating above 750 at this workload remains
-unproven. The paper implementation and profiling are active research tasks.
+profiling and strength gates. The [closed one-second classical diagnostic](../harness/one-second-reference-2026-10-02.md)
+finishes 16 games with 13 wins, 3 draws, no losses against Stockfish19 configured
+`UCI_Elo=1320`. Independent replay checks 1,085 legal plies and per-move timing;
+Chen's maximum observed wall time is 1004.750 ms. Its configured-opponent proxy
+is 1714, with no confidence interval or Lichess calibration. This supplies a
+provisional strength estimate above the user's 750 expectation rather than
+certifying an absolute rating. Commits `aae0977` and `6fb7130` deliver the fusion
+and resident corpus; `7e5398d` adds per-move harness telemetry. The 2FFS CPU
+implementation passes 12 tests and 600 independent fixtures against the paper's
+declared oracle contracts. Its exposed-node bookkeeping optimization preserves
+exact traces across 10 paired runs and improves the larger synthetic median from
+1330.677 to 742.852 ms. [2FFS](../TWO_FIDELITY.md) remains a CPU research controller
+with a batched fast-oracle seam; no GPU execution or chess guarantee is claimed.
+
+[Heavy profiling](../PROFILING.md) covers 21 bounded UCI workloads, 935 legal PVs and
+1,792 search-worker samples. GPU serial backup consumes 77.59–79.29% of dispatch
+time; selection 17.37–18.89%; child rules/evaluation 2.42–2.81%. CPU move application
+and ray attacks dominate. This motivates a sparse-ancestor backup experiment
+and RDNA2/SWAR kernel work informed by official ISA guidance and `../bitmatrices`.
+
+Neural commit `041e68d` adds paired semantic study mechanics and the separate
+transformer proposal, with 10 passing fixture tests. The outer runner for 8 anchors
+and 32 transition models has 8 passing orchestration fixtures and is under independent review.
+Real GPU learning remains unsealed; no new model-quality metrics are available.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.

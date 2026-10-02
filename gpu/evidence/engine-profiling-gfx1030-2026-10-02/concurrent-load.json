@@ -1,0 +1,34 @@
+{
+  "process_observation_utc": "2026-10-02T15:57:35.130108+00:00",
+  "ps_timezone": "Asia/Yekaterinburg UTC+05:00",
+  "ps_output": "  PID                  STARTED     ELAPSED PSR CMD\n15111 Fri Oct  2 20:40:35 2026       16:58   0 /home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal\n15123 Fri Oct  2 20:40:35 2026       16:58   0 /home/iskam/src/vibe/chen/results/one-second-reference-2026-10-02/chen\n",
+  "root_match_start_utc": "2026-10-02T15:40:35+00:00",
+  "profile_stdout_filesystem_times": [
+    {
+      "phase": "cpu-unprofiled",
+      "first_stdout_last_modified_utc": "2026-10-02T15:44:54.198974+00:00",
+      "last_stdout_last_modified_utc": "2026-10-02T15:44:56.234974+00:00"
+    },
+    {
+      "phase": "cpu-perf",
+      "first_stdout_last_modified_utc": "2026-10-02T15:45:29.227972+00:00",
+      "last_stdout_last_modified_utc": "2026-10-02T15:45:37.727971+00:00"
+    },
+    {
+      "phase": "cpu-counters",
+      "first_stdout_last_modified_utc": "2026-10-02T15:48:10.345959+00:00",
+      "last_stdout_last_modified_utc": "2026-10-02T15:48:12.443959+00:00"
+    },
+    {
+      "phase": "gpu-unprofiled",
+      "first_stdout_last_modified_utc": "2026-10-02T15:47:37+00:00",
+      "last_stdout_last_modified_utc": "2026-10-02T15:47:40+00:00"
+    },
+    {
+      "phase": "gpu-trace",
+      "first_stdout_last_modified_utc": "2026-10-02T15:46:19+00:00",
+      "last_stdout_last_modified_utc": "2026-10-02T15:46:22+00:00"
+    }
+  ],
+  "meaning": "File modification times contextualize run windows, not profiler timestamp clock conversion. Match engines were still live at observation. CPU0 and CPU5 are different physical cores; shared cache/power remain uncontrolled."
+}

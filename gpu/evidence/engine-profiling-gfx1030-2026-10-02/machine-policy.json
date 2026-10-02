@@ -1,0 +1,13 @@
+{
+  "perf_event_paranoid": "2",
+  "cpu5_governor": "powersave",
+  "cpu5_frequency_khz_snapshot": "3873666",
+  "clocksource": "tsc",
+  "profiling_cpu_affinity": [
+    5
+  ],
+  "root_match_affinity": [
+    0
+  ],
+  "uncontrolled": "Shared last-level cache, package power and GPU clocks; no governor/clock setting changed."
+}

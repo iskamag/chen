@@ -1,0 +1,12 @@
+[
+  {
+    "control": "result",
+    "status": "rejected",
+    "reason": "result/score differs"
+  },
+  {
+    "control": "move_trace",
+    "status": "rejected",
+    "reason": "move trace identity differs"
+  }
+]
