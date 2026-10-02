@@ -1,0 +1,242 @@
+[
+  {
+    "original": "results/neural-staging/neural/semantic_data.py",
+    "copy": "neural/semantic_data.py",
+    "sha256": "425840388b157e7b7de197d15b6d223a44115c54ded1b8a7c89d3d32a3bee578"
+  },
+  {
+    "original": "results/neural-staging/neural/strategic_study.py",
+    "copy": "neural/strategic_study.py",
+    "sha256": "1c7f47d1c9d401a362715c5f8be4472f99b72e8bd4ae1bb98c6a73e55704e3c5"
+  },
+  {
+    "original": "results/neural-staging/neural/strategic_transport.py",
+    "copy": "neural/strategic_transport.py",
+    "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f"
+  },
+  {
+    "original": "results/neural-staging/neural/dynamics.py",
+    "copy": "neural/dynamics.py",
+    "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc"
+  },
+  {
+    "original": "results/neural-staging/neural/models.py",
+    "copy": "neural/models.py",
+    "sha256": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b"
+  },
+  {
+    "original": "results/neural-staging/neural/compact.py",
+    "copy": "neural/compact.py",
+    "sha256": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3"
+  },
+  {
+    "original": "results/neural-staging/neural/value_study.py",
+    "copy": "neural/value_study.py",
+    "sha256": "9ce8b91d260e6e0c60b126ded6ad251fd758b6c109788063c2f209c1b29728a7"
+  },
+  {
+    "original": "results/neural-staging/neural/diamonds.py",
+    "copy": "neural/diamonds.py",
+    "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854"
+  },
+  {
+    "original": "results/neural-staging/neural/score_frames.py",
+    "copy": "neural/score_frames.py",
+    "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57"
+  },
+  {
+    "original": "results/neural-staging/neural/inference.py",
+    "copy": "neural/inference.py",
+    "sha256": "1d9800e055460ca7d26367c70a341770b8977db129ec3322d2b3f7ba5948fff2"
+  },
+  {
+    "original": "results/neural-staging/neural/teacher.py",
+    "copy": "neural/teacher.py",
+    "sha256": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918"
+  },
+  {
+    "original": "results/neural-staging/neural/features.py",
+    "copy": "neural/features.py",
+    "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+  },
+  {
+    "original": "results/neural-staging/neural/semantic_strategy.py",
+    "copy": "neural/semantic_strategy.py",
+    "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84"
+  },
+  {
+    "original": "results/neural-staging/neural/train.py",
+    "copy": "neural/train.py",
+    "sha256": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+  },
+  {
+    "original": "results/neural-staging/neural/value_heads.py",
+    "copy": "neural/value_heads.py",
+    "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+  },
+  {
+    "original": "results/neural-staging/neural/data.py",
+    "copy": "neural/data.py",
+    "sha256": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16"
+  },
+  {
+    "original": "results/neural-staging/neural/semantic_study.py",
+    "copy": "neural/semantic_study.py",
+    "sha256": "dba06737f3a905b4ef8964d91340d03a4378d83344e1846f47f4c17da2547147"
+  },
+  {
+    "original": "results/neural-staging/neural/bridge.py",
+    "copy": "neural/bridge.py",
+    "sha256": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_compact.py",
+    "copy": "neural/tests/test_compact.py",
+    "sha256": "473bfd8320bade52a74537402e73d57caecf9668e0a2106f9e4b98ad5d4df685"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_strategic_study.py",
+    "copy": "neural/tests/test_strategic_study.py",
+    "sha256": "226a679f7d1e2e789b8840f1cc0e47244f6611b3a1bde3fd33c226d4dc517d38"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_inference.py",
+    "copy": "neural/tests/test_inference.py",
+    "sha256": "a71fa95fa1fd5b649af6aa00128e3ac3d08e5135dd9be3515cf11f5551a5dff4"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_semantic_strategy.py",
+    "copy": "neural/tests/test_semantic_strategy.py",
+    "sha256": "c3e089abb26847692f11c68c4c554f6736a83fc7ccda4d83dc30d3a1002ec638"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_models.py",
+    "copy": "neural/tests/test_models.py",
+    "sha256": "2539b0fb30b49837b1380c324d42b37a9fb010304f1df045476a47ddfa38e07f"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_data.py",
+    "copy": "neural/tests/test_data.py",
+    "sha256": "e82e69fc92284532281cdd9a9fd011fd8e14491b08065b632dda8a8a57d1667c"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_teacher.py",
+    "copy": "neural/tests/test_teacher.py",
+    "sha256": "1b6f386d93f95d14f1ae3c68adb8a0a9d1867bb16e035145c1f3244f2f3f00f8"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_score_frames.py",
+    "copy": "neural/tests/test_score_frames.py",
+    "sha256": "97a79fbd9fdd840300322380a7e34b4e2862973fa3df46b69875f21957a45bac"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_bridge.py",
+    "copy": "neural/tests/test_bridge.py",
+    "sha256": "7864421305b34c60fb02f1ad4c4c54fc76a40127d85129f5238147b6de44b924"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_strategic_transport.py",
+    "copy": "neural/tests/test_strategic_transport.py",
+    "sha256": "10a0d75f1d6d2d14f189b6673185632060b6c35965b554eea17ce0f076f47ef3"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_value_study.py",
+    "copy": "neural/tests/test_value_study.py",
+    "sha256": "3ae1f1d3f7b1dd5ede5ff05bab938a4227d1bd73407428353a29009140cd7886"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_semantic_data.py",
+    "copy": "neural/tests/test_semantic_data.py",
+    "sha256": "8ad7872698a74b7333bb90f65b2524670cb6896c7e7dd3a57bd158ac3c13ab0f"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_diamonds.py",
+    "copy": "neural/tests/test_diamonds.py",
+    "sha256": "42a66bafd1aa60396a570875f2f6b56f73e64f3817e68a5c6402dfa438f5ef0a"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_semantic_study.py",
+    "copy": "neural/tests/test_semantic_study.py",
+    "sha256": "d47990a8f690fe773a3d29dd93bd76915e415ccb063cd96911022c109a6f6c89"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_dynamics.py",
+    "copy": "neural/tests/test_dynamics.py",
+    "sha256": "fae069a7ec44891cac8066e1193abac2e4fdaa77a101966b18c6a362675b3976"
+  },
+  {
+    "original": "results/neural-staging/neural/tests/test_value_heads.py",
+    "copy": "neural/tests/test_value_heads.py",
+    "sha256": "d2d29518b193850ea5d47c52c9c916de0641e0f3b7b3d62456ef8bb5d36f15e1"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+    "copy": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+    "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/value-study-gfx1030-2026-10-01.json",
+    "copy": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+    "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/value-study-pilot-2026-10-01.json",
+    "copy": "neural/evidence/value-study-pilot-2026-10-01.json",
+    "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+    "copy": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+    "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "copy": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+    "copy": "neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+    "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208"
+  },
+  {
+    "original": "results/neural-staging/neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+    "copy": "neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+    "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14"
+  },
+  {
+    "original": "results/neural-staging/docs/SEMANTIC_STUDY.md",
+    "copy": "docs/SEMANTIC_STUDY.md",
+    "sha256": "4d971fe0dfaa2c8175e8275b6644807d37cfa29a131a2f674dd9ab755778b7d8"
+  },
+  {
+    "original": "results/neural-staging/docs/SEMANTIC_TEACHER_RESULT.md",
+    "copy": "docs/SEMANTIC_TEACHER_RESULT.md",
+    "sha256": "322d4ec7ebe2a782efd8192aad414bee86eb38cdfede3778bab68ac384552ddc"
+  },
+  {
+    "original": "results/neural-staging/docs/SEMANTIC_DATA.md",
+    "copy": "docs/SEMANTIC_DATA.md",
+    "sha256": "423a7b2f1c2ea89a244b2518e6312443aefed2f5d1b63295390b4b5f7c9533d3"
+  },
+  {
+    "original": "results/neural-staging/docs/SEMANTIC_STRATEGY.md",
+    "copy": "docs/SEMANTIC_STRATEGY.md",
+    "sha256": "78474cf0bd7e7ce847218a6b337002cd7f6efaaa1a7aee305102d8617042ba44"
+  },
+  {
+    "original": "results/neural-staging/results/semantic-source/lichess-database-primary.html",
+    "copy": "results/semantic-source/lichess-database-primary.html",
+    "sha256": "af8744cfbea38c1b571458796dbbeac9196845e3067fc172599fc86bb3021f08"
+  },
+  {
+    "original": "results/neural-staging/results/semantic-source/lichess-standard-sha256sums.txt",
+    "copy": "results/semantic-source/lichess-standard-sha256sums.txt",
+    "sha256": "5ea62693bd6ed60d495a82135ea665a643670a546596ca0e515255c8fef013d6"
+  },
+  {
+    "original": "docs/research/evidence/semantic-teacher-2026-10-01/spent-inputs.json",
+    "copy": "neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+    "sha256": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a"
+  }
+]

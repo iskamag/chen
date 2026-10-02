@@ -1,0 +1,22 @@
+{
+  "kind": "semantic_admission_replay_negative_controls",
+  "source_sha256": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+  "auditor_sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "driver_sha256": "b8521dab04282c1d40c91f61072212f54a2070b4dde5dc106f0227e250c330f9",
+  "checks": [
+    {
+      "case": "history_bit_flip",
+      "rejected": true,
+      "replay_check": "assert row['moves'] == moves[:ply] and row['previous_hashes'] == history",
+      "line": 124
+    },
+    {
+      "case": "halfmove_clock_change",
+      "rejected": true,
+      "replay_check": "assert row['fen'] == board.fen(en_passant='fen')",
+      "line": 123
+    }
+  ],
+  "teacher_searches": 0,
+  "model_training": false
+}

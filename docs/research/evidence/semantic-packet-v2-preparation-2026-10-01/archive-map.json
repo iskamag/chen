@@ -1,0 +1,235 @@
+{
+  "kind": "immutable_packet_v2_preparation_copy_map",
+  "source_root": "/home/iskam/src/vibe/chen/results/neural-packet-v2",
+  "archive_root": "/home/iskam/src/vibe/chen/docs/research/evidence/semantic-packet-v2-preparation-2026-10-01",
+  "files": [
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/copy-map.json",
+      "archived": "copy-map.json",
+      "sha256": "3476c18e4748904957e9840b469bfc38bf6a035ddcfec341f44a5ce5c8e4fcc2",
+      "bytes": 10209
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/cpu-tests.log",
+      "archived": "cpu-tests.log",
+      "sha256": "80b324534c2ece799fdea54f0d2ccb8678d343dd30ac8f4c8125b213ea0db7f2",
+      "bytes": 6775
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/docs/ORDINARY_PACKET_V2.md",
+      "archived": "docs/ORDINARY_PACKET_V2.md",
+      "sha256": "be6284ff067269fe8c79b8022f3b4032bbbdf760f399384041e2c1166a320907",
+      "bytes": 5054
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/independent-admission.log",
+      "archived": "independent-admission.log",
+      "sha256": "551f0a1baee98a308fe1222b8ec5775e1dad0bba6883f6978c98e4a01c90cc1f",
+      "bytes": 2855
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/bridge.py",
+      "archived": "neural/bridge.py",
+      "sha256": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+      "bytes": 26867
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/compact.py",
+      "archived": "neural/compact.py",
+      "sha256": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+      "bytes": 25337
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/data.py",
+      "archived": "neural/data.py",
+      "sha256": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+      "bytes": 11611
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/diamonds.py",
+      "archived": "neural/diamonds.py",
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+      "bytes": 18005
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/dynamics.py",
+      "archived": "neural/dynamics.py",
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+      "bytes": 23362
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-admission-2026-10-01.json.gz",
+      "archived": "neural/evidence/packet-v2-admission-2026-10-01.json.gz",
+      "sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+      "bytes": 786911
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-admission-summary-2026-10-01.json",
+      "archived": "neural/evidence/packet-v2-admission-summary-2026-10-01.json",
+      "sha256": "23079db0170ffe8a9279942ec08435db0db52c25766f7ff30d7694aa97caabab",
+      "bytes": 5501
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-freeze-2026-10-01.json",
+      "archived": "neural/evidence/packet-v2-freeze-2026-10-01.json",
+      "sha256": "eccaa8c794ba34b4aa2b9ec5a84bdc5f3f0914711643d49d7f18c5bcf4d032ba",
+      "bytes": 4521
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-independent-admission-2026-10-01.json",
+      "archived": "neural/evidence/packet-v2-independent-admission-2026-10-01.json",
+      "sha256": "551f0a1baee98a308fe1222b8ec5775e1dad0bba6883f6978c98e4a01c90cc1f",
+      "bytes": 2855
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-label-draft-2026-10-01.json",
+      "archived": "neural/evidence/packet-v2-label-draft-2026-10-01.json",
+      "sha256": "ab141b6072c79b22274b92203ed5758b378fa86ad29234a011c153cc8b22c6ac",
+      "bytes": 8878
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-label-sealed-2026-10-01.json",
+      "archived": "neural/evidence/packet-v2-label-sealed-2026-10-01.json",
+      "sha256": "a6f09aa8f34eaffa097b6602dc301cd00cd0e86f810ed3a357c4ce7daee08bda",
+      "bytes": 8877
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/features.py",
+      "archived": "neural/features.py",
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+      "bytes": 4380
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/models.py",
+      "archived": "neural/models.py",
+      "sha256": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+      "bytes": 11476
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/ordinary_packets.py",
+      "archived": "neural/ordinary_packets.py",
+      "sha256": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f",
+      "bytes": 9993
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/score_frames.py",
+      "archived": "neural/score_frames.py",
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+      "bytes": 6675
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_data.py",
+      "archived": "neural/semantic_data.py",
+      "sha256": "b5bdc1b2df754673504c656c53cd37389a7989ed7c67644fa39d8bac606c7df5",
+      "bytes": 25605
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_strategy.py",
+      "archived": "neural/semantic_strategy.py",
+      "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+      "bytes": 24381
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py",
+      "archived": "neural/semantic_study.py",
+      "sha256": "8d5dbfe6ec4c2c27f33e3f17d99f30e5cb9c6c33bd020ca3db40e4a18cdec275",
+      "bytes": 24065
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/strategic_transport.py",
+      "archived": "neural/strategic_transport.py",
+      "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+      "bytes": 16838
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/teacher.py",
+      "archived": "neural/teacher.py",
+      "sha256": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
+      "bytes": 36360
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/tests/test_ordinary_packets.py",
+      "archived": "neural/tests/test_ordinary_packets.py",
+      "sha256": "5f5bae5ac7d048e8731bcdacd5ebc0512cb6a227e5e77087ac9d071423383a10",
+      "bytes": 6188
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/tests/test_score_frames.py",
+      "archived": "neural/tests/test_score_frames.py",
+      "sha256": "97a79fbd9fdd840300322380a7e34b4e2862973fa3df46b69875f21957a45bac",
+      "bytes": 6588
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/tests/test_semantic_data.py",
+      "archived": "neural/tests/test_semantic_data.py",
+      "sha256": "bc032759ea4cdb28e70daf3a6d8c61a34e2f72b738637a5e193b11b0956202ed",
+      "bytes": 12242
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/tests/test_semantic_strategy.py",
+      "archived": "neural/tests/test_semantic_strategy.py",
+      "sha256": "c3e089abb26847692f11c68c4c554f6736a83fc7ccda4d83dc30d3a1002ec638",
+      "bytes": 12442
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/tests/test_semantic_study.py",
+      "archived": "neural/tests/test_semantic_study.py",
+      "sha256": "7a2e991ebd50c8f08528423639be0d17bbec89bf9da0d1ea1a8343340ca54706",
+      "bytes": 14604
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/train.py",
+      "archived": "neural/train.py",
+      "sha256": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f",
+      "bytes": 14562
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/value_heads.py",
+      "archived": "neural/value_heads.py",
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+      "bytes": 10832
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/preparation.log",
+      "archived": "preparation.log",
+      "sha256": "d83b82f2f9595bd1852f5c42ab5a1a3953f30ca37a8d256122701981f8026dcb",
+      "bytes": 5829
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/prepare-admission.py",
+      "archived": "prepare-admission.py",
+      "sha256": "bd612638ba4d52d594fbacd585d1a70e4d028f96f0182fa6bbf4375253c7c3bb",
+      "bytes": 2503
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/scripts/audit_semantic_admission.py",
+      "archived": "scripts/audit_semantic_admission.py",
+      "sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+      "bytes": 10379
+    },
+    {
+      "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/runtime-manifest.json",
+      "archived": "runtime-manifest.json",
+      "sha256": "dd914dbb21898593ab13576769e66ae253451636cc408a1d5af60b076cce19e8",
+      "bytes": 778
+    },
+    {
+      "original": "/tmp/chen-packet-v2-independent-tests.log",
+      "archived": "independent-review/tests.log",
+      "sha256": "bd8f31a794bb2eb980dfc8da2a413158ea95e862b5f770f25920f4d9e808d351",
+      "bytes": 11836
+    },
+    {
+      "original": "/tmp/chen-packet-v2-independent-admission.log",
+      "archived": "independent-review/admission.log",
+      "sha256": "551f0a1baee98a308fe1222b8ec5775e1dad0bba6883f6978c98e4a01c90cc1f",
+      "bytes": 2855
+    },
+    {
+      "original": "/tmp/chen-packet-v2-independent-admission.json",
+      "archived": "independent-review/admission.json",
+      "sha256": "551f0a1baee98a308fe1222b8ec5775e1dad0bba6883f6978c98e4a01c90cc1f",
+      "bytes": 2855
+    }
+  ]
+}

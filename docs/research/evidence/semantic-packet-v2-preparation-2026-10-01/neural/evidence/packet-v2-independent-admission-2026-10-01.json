@@ -1,0 +1,93 @@
+{
+  "kind": "independent_semantic_admission_replay",
+  "strength_evidence": false,
+  "admission_sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+  "pgn_sha256": "8963b6a1620a0e9c77e5515a0744ec133e86869487188af047bb0a74400dee37",
+  "auditor_sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "families": {
+    "train": {
+      "families": 256,
+      "observations": 2048,
+      "canonical_inputs": 11428,
+      "movers": {
+        "black": 1024,
+        "white": 1024
+      },
+      "roots": {
+        "black": 127,
+        "white": 129
+      },
+      "legal_children": 9380
+    },
+    "validation": {
+      "families": 64,
+      "observations": 512,
+      "canonical_inputs": 2686,
+      "movers": {
+        "white": 256,
+        "black": 256
+      },
+      "roots": {
+        "white": 29,
+        "black": 35
+      },
+      "legal_children": 2174
+    },
+    "test": {
+      "families": 64,
+      "observations": 512,
+      "canonical_inputs": 2970,
+      "movers": {
+        "black": 256,
+        "white": 256
+      },
+      "roots": {
+        "black": 33,
+        "white": 31
+      },
+      "legal_children": 2458
+    }
+  },
+  "previous_hashes_and_raw_ep_fens_replayed": true,
+  "source_chunks_reparsed": true,
+  "spent_position_count": 768311,
+  "spent_reports": [
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.json",
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+      "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+    },
+    {
+      "path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+      "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+    },
+    {
+      "path": "neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+      "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208"
+    },
+    {
+      "path": "neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+      "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14"
+    },
+    {
+      "path": "neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+      "sha256": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a"
+    }
+  ],
+  "cross_split_overlap": 0,
+  "spent_input_overlap": 0,
+  "teacher_searches": 0,
+  "model_training": false,
+  "heldout_score_metrics_read": false
+}

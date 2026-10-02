@@ -1,0 +1,32 @@
+{
+  "kind": "independent_all_planned_input_reconstruction",
+  "input_count": 17084,
+  "query_count": 3456,
+  "counts": {
+    "train": {
+      "families": 256,
+      "observations": 2048,
+      "legal_children": 9380,
+      "canonical_inputs": 11428
+    },
+    "validation": {
+      "families": 64,
+      "observations": 512,
+      "legal_children": 2174,
+      "canonical_inputs": 2686
+    },
+    "test": {
+      "families": 64,
+      "observations": 512,
+      "legal_children": 2458,
+      "canonical_inputs": 2970
+    }
+  },
+  "all_rejected_families_included": true,
+  "source_score_values_used": false,
+  "heldout_quality_metrics_read": false,
+  "original_prefixes_raw_EP_and_repetition_hashes_verified": true,
+  "independent_schema_source_sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "original_admission_sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+  "query_plan_sha256": "c411bbd214ab0c0307c5ccb2f4f81223bcef0fcfb08826b5f8dbd73dc89c71a5"
+}

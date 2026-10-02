@@ -1,0 +1,193 @@
+{
+  "kind": "chen_licensed_semantic_teacher_packet_v2_declaration",
+  "version": 2,
+  "status": "sealed_for_bounded_labels",
+  "strength_evidence": false,
+  "admission_sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+  "admitted_source_sha256": "a282669d292f9a51db3f13dc6c088198253a607a8684a6d0b3243be05386f319",
+  "query_plan_sha256": "c411bbd214ab0c0307c5ccb2f4f81223bcef0fcfb08826b5f8dbd73dc89c71a5",
+  "spent_reports": [
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.json",
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+      "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+    },
+    {
+      "path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+      "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+    },
+    {
+      "path": "neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+      "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208"
+    },
+    {
+      "path": "neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+      "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14"
+    },
+    {
+      "path": "neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+      "sha256": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a"
+    }
+  ],
+  "families": {
+    "train": 256,
+    "validation": 64,
+    "test": 64
+  },
+  "workload": {
+    "queries": 3456,
+    "standalone_queries": 3072,
+    "all_action_queries": 384,
+    "planned_action_rows": 14012,
+    "requested_nodes": 196608000,
+    "requested_nodes_are_not_exact_actual_work": true
+  },
+  "source_sha256": {
+    "neural/ordinary_packets.py": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f",
+    "neural/semantic_data.py": "b5bdc1b2df754673504c656c53cd37389a7989ed7c67644fa39d8bac606c7df5",
+    "neural/semantic_study.py": "8d5dbfe6ec4c2c27f33e3f17d99f30e5cb9c6c33bd020ca3db40e4a18cdec275",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/bridge.py": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e",
+    "neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "neural/teacher.py": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918",
+    "neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16",
+    "neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+  },
+  "stockfish": {
+    "binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "expected_name_prefix": "Stockfish 19",
+    "tag": "sf_19",
+    "options": {
+      "Threads": 1,
+      "Hash": 64,
+      "NumaPolicy": "none",
+      "Ponder": false,
+      "UCI_LimitStrength": false,
+      "Skill_Level": 20,
+      "UCI_ShowWDL": false,
+      "UCI_Chess960": false,
+      "SyzygyPath": "",
+      "SyzygyProbeLimit": 0
+    },
+    "clear_hash_each_query": "ucinewgame_then_isready",
+    "release_url": "https://github.com/official-stockfish/Stockfish/releases/tag/sf_19",
+    "source_license": "GPL-3.0-or-later; root match-tools preserves source/COPYING",
+    "history": "position_startpos_moves_full_game_prefix",
+    "labels": "selective_finite_node_UCI_PV_estimates"
+  },
+  "limits": {
+    "standalone_nodes": 32000,
+    "all_action_nodes": 256000,
+    "workers": 2,
+    "wall_seconds": 1200,
+    "cleanup_seconds": 10,
+    "request_seconds": 20,
+    "min_reported_depth": 6
+  },
+  "score_frame": {
+    "frame_version": 1,
+    "kind": "sf19_reference_material58_approx_cp",
+    "stockfish_tag": "sf_19",
+    "uci_source_url": "https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_19/src/uci.cpp",
+    "uci_source_sha256": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+    "score_source_url": "https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_19/src/score.cpp",
+    "score_source_sha256": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01",
+    "material_weights": [
+      1,
+      3,
+      3,
+      5,
+      9,
+      0
+    ],
+    "material_clamp": [
+      17,
+      78
+    ],
+    "material_divisor": 58.0,
+    "normalization_coefficients": [
+      -142.72052667,
+      372.35176398,
+      -340.71073572,
+      415.23490212
+    ],
+    "reference_material": 58,
+    "reference_a": 304.15540371,
+    "source_rounding": "std_round_nearest_half_away_from_zero",
+    "recovery": "closed_half_uci_unit_interval_not_exact_hidden_value",
+    "numeric_guard_relative": 1e-09,
+    "batch_midpoint_dtype": "float32",
+    "batch_halfwidth": "float32_outward_including_midpoint_cast_error",
+    "perspective": "caller_declared_query_root_mover_or_negation",
+    "required_source_kind": "ordinary_unbounded_cp_no_tablebase"
+  },
+  "retirement": {
+    "work_seconds": 1190,
+    "reserved_cleanup_seconds": 10,
+    "graceful_seconds": 3,
+    "ceiling_semantics": "cooperative_work_retirement_checks_not_preemptive_CPU_IO_guarantee",
+    "scope": "Linux_exclusive_synchronous_producer_owned_POSIX_groups",
+    "hard_escalation": "SIGKILL_owned_groups_then_subreaper_waitpid_negative_pgid",
+    "parent_signals": "scoped_SIGTERM_SIGINT_unwind_reentrant_ignored_during_retirement",
+    "subreaper": "restore_original_process_setting_after_all_owned_children_reaped"
+  },
+  "protocol": {
+    "packet_policy": {
+      "version": 2,
+      "emission_boundary": "each_rank_one_starts_new_emission_finalize_at_next_rank_one_or_end",
+      "selection": "highest_eligible_common_reported_depth_latest_completion_ordinal_tiebreak",
+      "eligible": "ordered_1_to_K_same_depth_same_nodes_complete_unique_legal_support_ordinary_unbounded_cp_min_depth6",
+      "ineligible": "clean_incomplete_mixed_depth_bound_only_below_depth_floor",
+      "query_rejection": "malformed_scored_grammar_rank_duplicate_gap_excess_support_PV_rank_score_or_any_mate_tbhits_reserved_decisive_cp",
+      "final_bestmove": "record_separately_may_differ_from_selected_packet_PV1",
+      "search_source_url": "https://github.com/official-stockfish/Stockfish/blob/sf_19/src/search.cpp",
+      "search_source_sha256": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+      "source_context": "output_pv_2273_2342_final_inexact_250_264_completed_iteration_495_498"
+    },
+    "common_packet": "highest_eligible_common_reported_depth_latest_completion_ordinal_tiebreak",
+    "rejected": "any_decisive_evidence_or_protocol_defect; no_eligible_ordinary_packet",
+    "root_coverage": "whole_all_legal_root_or_reject_no_replacement",
+    "family_coverage": "all_eight_standalone_queries_and_complete_root_or_reject",
+    "label_query_kinds": "standalone_root_vs_parent_MultiPV_distinct_even_after_common_frame_conversion",
+    "context_caveat": "converted_units_comparable; search_context_budget_and_reported_depth_differ",
+    "outcome_labels": false,
+    "ordinary_min_abs_cp": null,
+    "cpu_labels_ingress": "explicit_CPU_UCI_records_not_GPU_teacher_payload"
+  },
+  "model_admission": {
+    "module": "neural.semantic_strategy",
+    "encoders": [
+      "square",
+      "relation",
+      "plan",
+      "threat"
+    ],
+    "feature_schema": 1,
+    "width": 32,
+    "depth": 1,
+    "representation": "train_only_semantic_decoder_and_value_pretraining_then_frozen_shared_readout",
+    "anchor_calibration": "common_positive_material_scale_fit_train_standalone_only",
+    "original_material_baseline": "pawn100_no_fit_retained",
+    "successor_ingress": "native_GPU_bridge_exact_records_after_separate_GPU_admission",
+    "blind_cache": "one_root_anchor_and_residual_per_sibling_group",
+    "training_authorized": false
+  }
+}

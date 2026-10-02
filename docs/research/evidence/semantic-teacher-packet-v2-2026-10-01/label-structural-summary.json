@@ -1,0 +1,64 @@
+{
+  "kind": "packet_v2_structural_summary",
+  "score_quality_metrics_read": false,
+  "model_training": false,
+  "GPU_runtime_invoked": false,
+  "status": "complete",
+  "wall_seconds": 134.9595861939997,
+  "completed_queries": 3456,
+  "whole_family_counts": {
+    "train": 233,
+    "validation": 62,
+    "test": 55
+  },
+  "admitted_rows": {
+    "train:standalone": 1864,
+    "train:root": 8477,
+    "validation:standalone": 496,
+    "validation:root": 2106,
+    "test:standalone": 440,
+    "test:root": 2118
+  },
+  "query_dispositions": {
+    "train:standalone:accepted": 2035,
+    "train:root:accepted": 245,
+    "train:standalone:decisive_mate_tablebase_or_extreme_evidence": 13,
+    "train:root:decisive_mate_tablebase_or_extreme_evidence": 10,
+    "train:root:nonmonotonic_common_rank_scores": 1,
+    "validation:standalone:accepted": 511,
+    "validation:root:accepted": 63,
+    "validation:root:decisive_mate_tablebase_or_extreme_evidence": 1,
+    "validation:standalone:decisive_mate_tablebase_or_extreme_evidence": 1,
+    "test:standalone:accepted": 508,
+    "test:root:accepted": 58,
+    "test:standalone:decisive_mate_tablebase_or_extreme_evidence": 4,
+    "test:root:decisive_mate_tablebase_or_extreme_evidence": 6
+  },
+  "last_packet_classes": {
+    "standalone:bounded": 1508,
+    "standalone:eligible": 1546,
+    "root:eligible": 8,
+    "root:mixed_depth": 367,
+    "standalone:decisive": 18,
+    "root:decisive": 1,
+    "root:bounded": 8
+  },
+  "selected_reported_depth_range": {
+    "root": [
+      7,
+      19
+    ],
+    "standalone": [
+      8,
+      38
+    ]
+  },
+  "selected_PV1_final_move_differs": {
+    "standalone:False": 2970,
+    "root:False": 273,
+    "standalone:True": 84,
+    "root:True": 93
+  },
+  "sum_query_max_reported_nodes": 196605599,
+  "reported_nodes_sum_is_not_exact_work": true
+}

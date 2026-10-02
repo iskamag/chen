@@ -1,0 +1,83 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+.............../home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 204, in _teacher_worker
+    raise RuntimeError('teacher engine failed during final close')
+RuntimeError: teacher engine failed during final close
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 204, in _teacher_worker
+    raise RuntimeError('teacher engine failed during final close')
+RuntimeError: teacher engine failed during final close
+../home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+./home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+../home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Process SpawnProcess-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 197, in _teacher_worker
+    lines = session.analyze(pos, nodes=job['nodes'], all_legal=job['all_legal'], declaration_sha256=declaration_sha)
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_data.py", line 441, in analyze
+    lines = self.receive(lambda line: line.startswith("bestmove "))
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_data.py", line 407, in receive
+    events = self.selector.select(min(remaining, .1))
+  File "/usr/lib/python3.14/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 175, in terminate
+    raise TeacherCancelled('teacher worker retirement requested')
+neural.semantic_study.TeacherCancelled: teacher worker retirement requested
+Process SpawnProcess-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 197, in _teacher_worker
+    lines = session.analyze(pos, nodes=job['nodes'], all_legal=job['all_legal'], declaration_sha256=declaration_sha)
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_data.py", line 441, in analyze
+    lines = self.receive(lambda line: line.startswith("bestmove "))
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_data.py", line 407, in receive
+    events = self.selector.select(min(remaining, .1))
+  File "/usr/lib/python3.14/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/semantic_study.py", line 175, in terminate
+    raise TeacherCancelled('teacher worker retirement requested')
+neural.semantic_study.TeacherCancelled: teacher worker retirement requested
+...........
+----------------------------------------------------------------------
+Ran 31 tests in 18.955s
+
+OK

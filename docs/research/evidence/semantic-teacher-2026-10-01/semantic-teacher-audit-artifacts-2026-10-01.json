@@ -1,0 +1,14 @@
+{
+  "kind": "closed_teacher_audit_artifact_fingerprints",
+  "frozen_modules_modified": false,
+  "real_teacher_runs": 1,
+  "training_admitted": false,
+  "source_sha256": {
+    "results/audit-semantic-teacher.py": "bc0e5c3a08e9eb00af0f9dedf1783d94b9b15732a03847f66b5e6c9cb12dd9ac",
+    "results/auditor-negative-controls.py": "8f5ce858ec7fd6458214a77570f2842e71e588cc1fb0322977e29ffb486bbefd",
+    "neural/evidence/semantic-teacher-mechanical-audit-2026-10-01.json": "f635ad10649f980bda2d05dccce564e7ac5b294e1b5c2c78bbe75223874f580e",
+    "neural/evidence/semantic-teacher-mechanical-audit-2026-10-01.log": "3427302aff3680162443fa85059d0d81c05a4cba11e627bd8e3cd557d5048397",
+    "neural/evidence/semantic-teacher-auditor-negative-2026-10-01.log": "920140aa60440ca6032d9b40c6c88279f75c49fab450381c6481f30228b29501",
+    "docs/SEMANTIC_TEACHER_RESULT.md": "322d4ec7ebe2a782efd8192aad414bee86eb38cdfede3778bab68ac384552ddc"
+  }
+}

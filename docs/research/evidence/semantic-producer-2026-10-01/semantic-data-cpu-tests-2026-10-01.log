@@ -1,0 +1,106 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+test_family_history_source_and_split (neural.tests.test_semantic_data.AdmissionTests.test_family_history_source_and_split) ... ok
+test_header_caps_and_illegal_or_short_family (neural.tests.test_semantic_data.AdmissionTests.test_header_caps_and_illegal_or_short_family) ... ok
+test_black_canonical_action_capture_material_and_raw_ep (neural.tests.test_semantic_data.LabelTests.test_black_canonical_action_capture_material_and_raw_ep) ... ok
+test_complete_packets_not_mixed_updates_and_frames (neural.tests.test_semantic_data.LabelTests.test_complete_packets_not_mixed_updates_and_frames) ... ok
+test_incomplete_duplicate_mate_bound_extreme_and_bad_pv (neural.tests.test_semantic_data.LabelTests.test_incomplete_duplicate_mate_bound_extreme_and_bad_pv) ... ok
+test_no_implicit_search_exact_commands_and_clean_exit (neural.tests.test_semantic_data.SessionTests.test_no_implicit_search_exact_commands_and_clean_exit) ... ok
+test_timeout_eof_kills_and_prevents_reuse (neural.tests.test_semantic_data.SessionTests.test_timeout_eof_kills_and_prevents_reuse) ... ok
+test_all_records_plus_failed_close_never_admits_labels (neural.tests.test_semantic_study.ProtocolTests.test_all_records_plus_failed_close_never_admits_labels) ... /home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 201, in _teacher_worker
+    raise RuntimeError('teacher engine failed during final close')
+RuntimeError: teacher engine failed during final close
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 201, in _teacher_worker
+    raise RuntimeError('teacher engine failed during final close')
+RuntimeError: teacher engine failed during final close
+ok
+test_cold_validation_pins_sources_games_binary_and_budget (neural.tests.test_semantic_study.ProtocolTests.test_cold_validation_pins_sources_games_binary_and_budget) ... ok
+test_crashed_worker_orphan_reaped_and_subreaper_restored (neural.tests.test_semantic_study.ProtocolTests.test_crashed_worker_orphan_reaped_and_subreaper_restored) ... /home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+ok
+test_gzip_admission_and_whole_family_complete_or_reject (neural.tests.test_semantic_study.ProtocolTests.test_gzip_admission_and_whole_family_complete_or_reject) ... /home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+ok
+test_parent_sigterm_and_repeat_signals_retire_workers_and_engines (neural.tests.test_semantic_study.ProtocolTests.test_parent_sigterm_and_repeat_signals_retire_workers_and_engines) ... ok
+test_whole_job_deadline_closes_partial_attempt (neural.tests.test_semantic_study.ProtocolTests.test_whole_job_deadline_closes_partial_attempt) ... /home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+Process SpawnProcess-7:
+Process SpawnProcess-8:
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 195, in _teacher_worker
+    lines = session.analyze(pos, nodes=job['nodes'], all_legal=job['all_legal'], declaration_sha256=declaration_sha)
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 195, in _teacher_worker
+    lines = session.analyze(pos, nodes=job['nodes'], all_legal=job['all_legal'], declaration_sha256=declaration_sha)
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_data.py", line 507, in analyze
+    lines = self.receive(lambda line: line.startswith("bestmove "))
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_data.py", line 507, in analyze
+    lines = self.receive(lambda line: line.startswith("bestmove "))
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_data.py", line 473, in receive
+    events = self.selector.select(min(remaining, .1))
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_data.py", line 473, in receive
+    events = self.selector.select(min(remaining, .1))
+  File "/usr/lib/python3.14/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/usr/lib/python3.14/selectors.py", line 452, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 173, in terminate
+    raise TeacherCancelled('teacher worker retirement requested')
+  File "/home/iskam/src/vibe/chen/results/neural-staging/neural/semantic_study.py", line 173, in terminate
+    raise TeacherCancelled('teacher worker retirement requested')
+neural.semantic_study.TeacherCancelled: teacher worker retirement requested
+neural.semantic_study.TeacherCancelled: teacher worker retirement requested
+ok
+test_interval_loss_gradients_and_invalid_frame_admission (neural.tests.test_score_frames.FrameTests.test_interval_loss_gradients_and_invalid_frame_admission) ... ok
+test_ordinary_reporting_inverse_intervals_and_reference_clamps (neural.tests.test_score_frames.FrameTests.test_ordinary_reporting_inverse_intervals_and_reference_clamps) ... ok
+test_parent_child_normalization_differs_on_capture_and_promotion (neural.tests.test_score_frames.FrameTests.test_parent_child_normalization_differs_on_capture_and_promotion) ... ok
+test_resident_batch_agrees_and_outward_intervals_cover_float_cast (neural.tests.test_score_frames.FrameTests.test_resident_batch_agrees_and_outward_intervals_cover_float_cast) ... ok
+test_action_sensitivity_fixed_readout_gradient_and_hybrid_rollout (neural.tests.test_semantic_strategy.SemanticTests.test_action_sensitivity_fixed_readout_gradient_and_hybrid_rollout) ... ok
+test_all_backends_shapes_semantics_gradients_and_no_host_reads (neural.tests.test_semantic_strategy.SemanticTests.test_all_backends_shapes_semantics_gradients_and_no_host_reads) ... ok
+test_controls_identical_state_and_blind_exact_cached_sibling_ties (neural.tests.test_semantic_strategy.SemanticTests.test_controls_identical_state_and_blind_exact_cached_sibling_ties) ... ok
+test_diagram_oracle_color_blockers_pins_and_pawn_destinations (neural.tests.test_semantic_strategy.SemanticTests.test_diagram_oracle_color_blockers_pins_and_pawn_destinations) ... ok
+test_restricted_checkpoints_and_config_buffer_mutations (neural.tests.test_semantic_strategy.SemanticTests.test_restricted_checkpoints_and_config_buffer_mutations) ... ok
+test_successor_prior_oracle_special_moves_and_no_successor_encoder (neural.tests.test_semantic_strategy.SemanticTests.test_successor_prior_oracle_special_moves_and_no_successor_encoder) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 18.872s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "README.md": "ddd7537e3e48841bca63df464beb7fa2a0ce4268c8f96ba98567e7a3a4155c6b",
+  "admission.json.gz": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+  "auditor.py": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "independent-admission-negative.json": "4bc431127f6b08e1022e3ac394f94cd53907f084e66ef49fe12945107280dbba",
+  "independent-admission-negative.py": "b8521dab04282c1d40c91f61072212f54a2070b4dde5dc106f0227e250c330f9",
+  "independent-admission-replay.json": "505268e3486fac16c1f0bb5df3f24db307f7160daa76977937eb571dcccb1518",
+  "independent-admission-replay.log": "505268e3486fac16c1f0bb5df3f24db307f7160daa76977937eb571dcccb1518"
+}

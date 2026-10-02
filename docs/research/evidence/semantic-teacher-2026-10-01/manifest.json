@@ -1,0 +1,20 @@
+{
+  "README.md": "ec0aba552e161d5b5ed532a78363ca4d954c17bdac159ce576715078cd27ad09",
+  "SEMANTIC_TEACHER_RESULT.md": "322d4ec7ebe2a782efd8192aad414bee86eb38cdfede3778bab68ac384552ddc",
+  "audit-semantic-teacher.py": "bc0e5c3a08e9eb00af0f9dedf1783d94b9b15732a03847f66b5e6c9cb12dd9ac",
+  "auditor-negative-controls.py": "8f5ce858ec7fd6458214a77570f2842e71e588cc1fb0322977e29ffb486bbefd",
+  "declaration.json": "05ead77fd024c67ad789e723540ae258604dd15275c7cd7cf64569c0140b7b34",
+  "independent-rejection-flags.json": "aca69bb6bd24079e4b7f8d3c953b19519bc2bd502117a06d974ba237e94c6204",
+  "independent-structural-yield.json": "bfe090dbdc463c3f601fe08fbe52477fe4466eaf5833c0c3ef8c51022f76b45e",
+  "raw-records.tar.gz": "c6ffd0ce702d208795d8c5e7525b93d68c138d3041ed091e78dea14540dc6d36",
+  "report.json": "20e0b6a065c62d1128c59b6947268256bfedd117e2719ad1362dfbb6df81bdb3",
+  "semantic-teacher-audit-artifacts-2026-10-01.json": "9adf566a3f89eb50d610af487cdb99c76295f2a9d79b3440cf839c3a1a82cd20",
+  "semantic-teacher-auditor-negative-2026-10-01.log": "920140aa60440ca6032d9b40c6c88279f75c49fab450381c6481f30228b29501",
+  "semantic-teacher-mechanical-audit-2026-10-01.json": "f635ad10649f980bda2d05dccce564e7ac5b294e1b5c2c78bbe75223874f580e",
+  "semantic-teacher-mechanical-audit-2026-10-01.log": "3427302aff3680162443fa85059d0d81c05a4cba11e627bd8e3cd557d5048397",
+  "spent-inputs.json": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a",
+  "teacher-producer.stderr": "0e3ba1c87881ba11f598fe971e4b16abb892ffb4cd369067792ab76f0af55c79",
+  "teacher-producer.stdout": "06a05d7dcdba11a8829df6ddc58e4f6b846784517f9c04151d35bc883c1c7b81",
+  "worker-0-setup.json": "bbaa3edb39221e987391355c70c8fc1499045f8ab05bc99454ff7d565621c825",
+  "worker-1-setup.json": "a5a9c4e6abdbd98144610b2ba13f0dc2521c3818fec0f95ead54e3afde645ce0"
+}

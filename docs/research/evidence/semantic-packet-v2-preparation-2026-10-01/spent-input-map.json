@@ -1,0 +1,50 @@
+[
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+    "archived": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+    "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19",
+    "bytes": 1234260
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/value-study-gfx1030-2026-10-01.json",
+    "archived": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+    "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35",
+    "bytes": 3615347
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/value-study-pilot-2026-10-01.json",
+    "archived": "neural/evidence/value-study-pilot-2026-10-01.json",
+    "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c",
+    "bytes": 306141
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+    "archived": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+    "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78",
+    "bytes": 47177
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "archived": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+    "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38",
+    "bytes": 21025
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+    "archived": "neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+    "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208",
+    "bytes": 8962539
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+    "archived": "neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+    "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14",
+    "bytes": 42306
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+    "archived": "neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+    "sha256": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a",
+    "bytes": 1200030
+  }
+]

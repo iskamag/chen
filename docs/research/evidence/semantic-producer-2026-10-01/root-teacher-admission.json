@@ -1,0 +1,14 @@
+{
+  "kind": "root_CPU_teacher_admission",
+  "sealed_declaration_sha256": "05ead77fd024c67ad789e723540ae258604dd15275c7cd7cf64569c0140b7b34",
+  "source_freeze_sha256": "7d79c3a8cc9d9851e5035af6d93e8587d061d1560d7bdcc63fe8250a9c123eef",
+  "input_replay_sha256": "505268e3486fac16c1f0bb5df3f24db307f7160daa76977937eb571dcccb1518",
+  "negative_controls_sha256": "4bc431127f6b08e1022e3ac394f94cd53907f084e66ef49fe12945107280dbba",
+  "runtime_sha256": "dd914dbb21898593ab13576769e66ae253451636cc408a1d5af60b076cce19e8",
+  "independent_tests": "23 PASS; /tmp/chen-semantic-independent-review.log",
+  "scope": "one fixed query-set CPU teacher attempt; no retries/replacements; all failed outputs quarantined; no GPU or model training",
+  "requested_queries": 3456,
+  "requested_nodes": 196608000,
+  "workers": 2,
+  "wall_seconds": 1200
+}

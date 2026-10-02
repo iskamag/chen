@@ -1,0 +1,9 @@
+test_all_mandatory_fields_and_final_choice_negatives (__main__.AuditTests.test_all_mandatory_fields_and_final_choice_negatives) ... ok
+test_decisive_and_protocol_corruption_reject_whole_query (__main__.AuditTests.test_decisive_and_protocol_corruption_reject_whole_query) ... ok
+test_depth_ordinal_bound_mixed_prefix_and_ties (__main__.AuditTests.test_depth_ordinal_bound_mixed_prefix_and_ties) ... ok
+test_exit_and_wall_admission_do_not_accept_numeric_aliases (__main__.AuditTests.test_exit_and_wall_admission_do_not_accept_numeric_aliases) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.032s
+
+OK

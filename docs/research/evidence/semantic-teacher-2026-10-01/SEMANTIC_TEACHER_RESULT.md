@@ -1,0 +1,19 @@
+# Closed strong-teacher attempt: training admission failed
+
+The one declared CPU attempt completed successfully in 119.960 seconds: 3,456 immutable queries, both workers exit0, no adopted children, and no retries. The mechanical audit passes every record hash, query/history/raw-EP identity, exact commands/options, complete packet policy, canonical action support, source-material/sign conversion, interval, and accepted-family list. This proves record/protocol consistency; it does not prove search accuracy or playing strength.
+
+The sealed declaration SHA256 is `05ead77fd024c67ad789e723540ae258604dd15275c7cd7cf64569c0140b7b34`. It fixes 3,072 standalone32k and 384 all-action256k queries and the latest-complete-packet rejection policy. Original requested work was 196,608,000 nodes. Sum of per-query maximum reported node counters was 196,659,815, which is telemetry rather than an exact total-work measurement. Query depth and node telemetry are retained in the [mechanical report](../neural/evidence/semantic-teacher-mechanical-audit-2026-10-01.json), without scalar quality or ranking metrics.
+
+| Split | Accepted standalone queries | Rejected standalone queries | Accepted root queries | Rejected root queries | Complete accepted families |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Train | 1,013 | 1,035 | 234 | 22 | 6 |
+| Validation | 235 | 277 | 58 | 6 | 0 |
+| Test | 230 | 282 | 60 | 4 | 1 |
+
+Every rejection was `mate_or_bound_common_packet`. Of 1,594 rejected standalone queries, 1,583 had a bound flag and 11 had a mate score. Of 32 rejected root queries, nine had a bound flag and 23 had a mate score. A bound packet is not an admitted ordinary point target. Under the frozen rule, the newest complete packet is considered even when it carries a bound; the producer does not substitute an older packet. Standalone width1 makes each emitted score a complete packet, and the latest bounded packet at a finite-node cutoff is therefore consequential. These observations diagnose structural yield, not whether a teacher move/value is good.
+
+The dominant family failure is a rejected standalone observation: 228 train, 58 validation and 59 test games had only standalone failures. Another 21/6/4 had both standalone and root failures; one train family had only a root failure. Requiring eight accepted standalone observations and one complete root leaves six train and one test families. These contain only 48/0/8 standalone positions and 201/0/49 all-legal child rows across train/validation/test.
+
+**No validation families remain, so training is inadmissible.** No material scale is fitted, semantic anchor trained, transition learned, GPU corpus built, or test model-performance metric opened. Per-query acceptance does not override whole-family rejection. Failed families are not replaced; raw records remain immutable; no gate is relaxed or teacher query repeated. The structural loss comes from label-packet admission and its eight-observation conjunction. No rejection arose from the depth-floor rule, and no learned architecture was run. A different protocol would require a separately declared fresh study; it is not a rescue of this sealed attempt.
+
+The auditor uses the frozen producer only to reproduce its declared packet decision; it also independently replays histories/repetition hashes, derives canonical actions and root material, and checks the common-frame midpoint/rounding interval with Decimal arithmetic. Metadata negatives reject boolean exit-code aliases, nonfinite/negative wall time, and boolean wall time. It does not emit CP distributions, model error, selected-action regret, or ratings. All original 15 sealed modules remain unchanged. Historical sibling/Git writes, Docker, GPU, additional label generation and training were not used for this post-run audit.

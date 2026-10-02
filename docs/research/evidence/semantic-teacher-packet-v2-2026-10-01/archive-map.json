@@ -1,0 +1,82 @@
+[
+  {
+    "original": "/home/iskam/src/vibe/chen/results/semantic-teacher-packet-v2-2026-10-01/report.json",
+    "archived": "report.json",
+    "sha256": "d087556845e65c305f3554eb3895dde42c106c8f4c6c8d686531036aa1b26d32"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/semantic-teacher-packet-v2-2026-10-01/declaration.json",
+    "archived": "declaration.json",
+    "sha256": "a6f09aa8f34eaffa097b6602dc301cd00cd0e86f810ed3a357c4ce7daee08bda"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/semantic-teacher-packet-v2-2026-10-01/worker-0-setup.json",
+    "archived": "worker-0-setup.json",
+    "sha256": "bbaa3edb39221e987391355c70c8fc1499045f8ab05bc99454ff7d565621c825"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/semantic-teacher-packet-v2-2026-10-01/worker-1-setup.json",
+    "archived": "worker-1-setup.json",
+    "sha256": "a5a9c4e6abdbd98144610b2ba13f0dc2521c3818fec0f95ead54e3afde645ce0"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-admission-2026-10-01.json.gz",
+    "archived": "input-admission.json.gz",
+    "sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/runtime-manifest.json",
+    "archived": "runtime-manifest.json",
+    "sha256": "dd914dbb21898593ab13576769e66ae253451636cc408a1d5af60b076cce19e8"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/label-structural-summary.json",
+    "archived": "label-structural-summary.json",
+    "sha256": "c2c9ff392bb4dde18e344ee8f365c3ea7f3729134c2f104723c31d3ad70800a3"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/label-run.stdout.log",
+    "archived": "label-run.stdout.log",
+    "sha256": "9a2e96e853e049ff43d2536f86a3f97f0758efd43948caa1f7a9426453979109"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/label-run.stderr.log",
+    "archived": "label-run.stderr.log",
+    "sha256": "0e3ba1c87881ba11f598fe971e4b16abb892ffb4cd369067792ab76f0af55c79"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/archive-teacher-evidence.py",
+    "archived": "archive-teacher-evidence.py",
+    "sha256": "1ba83581c73f3490173acfce86b80b9d148eedcae04751351cbc4fc4b5aaf09d"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/scripts/audit_semantic_admission.py",
+    "archived": "independent-input-schema.py",
+    "sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/audit-semantic-teacher-v2.py",
+    "archived": "independent-audit/audit-semantic-teacher-v2.py",
+    "sha256": "7030806fe460dc72a5fa617311a450b20de67f59761cb8734c10abdaa3050e3a"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/test-audit-semantic-teacher-v2.py",
+    "archived": "independent-audit/test-audit-semantic-teacher-v2.py",
+    "sha256": "56faffe8ebf2911456a3d31eb728076f88419898ca3e825293b236f871b4b18e"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/independent-mechanical-audit.log",
+    "archived": "independent-audit/independent-mechanical-audit.log",
+    "sha256": "346cdc2373ab9832252a5d5e983b8fceecfe0f24494c7c7c1e658161ae70bda0"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/independent-mechanical-auditor-tests.log",
+    "archived": "independent-audit/independent-mechanical-auditor-tests.log",
+    "sha256": "dda27fd7d15633c06d1d8a109b28359ef33ab530d7551249e68e94a3228f55ca"
+  },
+  {
+    "original": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/packet-v2-independent-mechanical-audit-2026-10-01.json",
+    "archived": "independent-audit/packet-v2-independent-mechanical-audit-2026-10-01.json",
+    "sha256": "920866ed2a95a14f4495caceda37ed1cbef9639f511e6f13e9ee31b0737d2d5d"
+  }
+]

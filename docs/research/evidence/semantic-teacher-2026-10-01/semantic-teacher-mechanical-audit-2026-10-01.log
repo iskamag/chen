@@ -1,0 +1,366 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+{
+  "kind": "closed_teacher_attempt_mechanical_audit",
+  "status": "pass",
+  "strength_evidence": false,
+  "scalar_score_error_or_strength_metrics_inspected": false,
+  "declaration_sha256": "05ead77fd024c67ad789e723540ae258604dd15275c7cd7cf64569c0140b7b34",
+  "admission_sha256": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+  "report_sha256": "20e0b6a065c62d1128c59b6947268256bfedd117e2719ad1362dfbb6df81bdb3",
+  "auditor_sha256": "bc0e5c3a08e9eb00af0f9dedf1783d94b9b15732a03847f66b5e6c9cb12dd9ac",
+  "independent_history_oracle_sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+  "attempt_status": "complete",
+  "immutable_query_count": 3456,
+  "record_count": 3456,
+  "reported_record_count": 3456,
+  "every_record_hash_query_command_packet_frame_and_history_checked": true,
+  "worker_exitcodes": [
+    0,
+    0
+  ],
+  "adopted_children_reaped": [],
+  "producer_wall_seconds": 119.96029115199963,
+  "requested_workload": {
+    "queries": 3456,
+    "standalone_queries": 3072,
+    "all_action_queries": 384,
+    "planned_action_rows": 14056,
+    "requested_nodes": 196608000,
+    "requested_nodes_are_not_exact_actual_work": true
+  },
+  "query_outcomes": {
+    "train:standalone": {
+      "accepted": 1013,
+      "mate_or_bound_common_packet": 1035
+    },
+    "train:all_action": {
+      "accepted": 234,
+      "mate_or_bound_common_packet": 22
+    },
+    "validation:standalone": {
+      "accepted": 235,
+      "mate_or_bound_common_packet": 277
+    },
+    "validation:all_action": {
+      "accepted": 58,
+      "mate_or_bound_common_packet": 6
+    },
+    "test:standalone": {
+      "mate_or_bound_common_packet": 282,
+      "accepted": 230
+    },
+    "test:all_action": {
+      "accepted": 60,
+      "mate_or_bound_common_packet": 4
+    }
+  },
+  "packet_and_node_and_elapsed_telemetry": {
+    "train:standalone": {
+      "queries": 2048,
+      "reported_nodes": {
+        "count": 2048,
+        "minimum": 5886,
+        "maximum": 32082,
+        "sum": 65528300
+      },
+      "maximum_reported_depth": {
+        "count": 2048,
+        "minimum": 10,
+        "maximum": 245,
+        "sum": 28762
+      },
+      "complete_packet_depth": {
+        "15": 526,
+        "13": 446,
+        "12": 277,
+        "14": 559,
+        "16": 110,
+        "17": 14,
+        "11": 74,
+        "10": 23,
+        "18": 8,
+        "24": 2,
+        "25": 1,
+        "22": 3,
+        "245": 2,
+        "31": 1,
+        "35": 1,
+        "43": 1
+      },
+      "elapsed_seconds": {
+        "count": 2048,
+        "minimum": 0.012334466000538669,
+        "maximum": 0.09086166300039622,
+        "sum": 88.10326541395261
+      },
+      "score_kind_flags": {
+        "cp:unbounded": 1013,
+        "cp:upperbound": 579,
+        "cp:lowerbound": 449,
+        "mate:unbounded": 7
+      },
+      "requested_nodes": 65536000,
+      "rejected_packet_flags": {
+        "bound_only": 1028,
+        "mate_only": 7
+      },
+      "node_budget_overshoot_count": 1990
+    },
+    "train:all_action": {
+      "queries": 256,
+      "reported_nodes": {
+        "count": 256,
+        "minimum": 256001,
+        "maximum": 256391,
+        "sum": 65574290
+      },
+      "maximum_reported_depth": {
+        "count": 256,
+        "minimum": 8,
+        "maximum": 17,
+        "sum": 2703
+      },
+      "complete_packet_depth": {
+        "9": 99,
+        "10": 70,
+        "8": 41,
+        "12": 5,
+        "11": 31,
+        "7": 1,
+        "14": 2,
+        "17": 2,
+        "15": 1,
+        "13": 3,
+        "16": 1
+      },
+      "elapsed_seconds": {
+        "count": 256,
+        "minimum": 0.20700624900018738,
+        "maximum": 0.32469621500058565,
+        "sum": 67.47481062400584
+      },
+      "score_kind_flags": {
+        "cp:unbounded": 9187,
+        "mate:unbounded": 105,
+        "cp:lowerbound": 3,
+        "cp:upperbound": 2
+      },
+      "requested_nodes": 65536000,
+      "rejected_packet_flags": {
+        "mate_only": 17,
+        "bound_only": 5
+      },
+      "node_budget_overshoot_count": 256
+    },
+    "validation:standalone": {
+      "queries": 512,
+      "reported_nodes": {
+        "count": 512,
+        "minimum": 32000,
+        "maximum": 32059,
+        "sum": 16394061
+      },
+      "maximum_reported_depth": {
+        "count": 512,
+        "minimum": 9,
+        "maximum": 26,
+        "sum": 7026
+      },
+      "complete_packet_depth": {
+        "14": 138,
+        "13": 118,
+        "15": 125,
+        "16": 22,
+        "10": 3,
+        "12": 74,
+        "11": 25,
+        "9": 1,
+        "17": 2,
+        "25": 1,
+        "26": 1,
+        "22": 1,
+        "24": 1
+      },
+      "elapsed_seconds": {
+        "count": 512,
+        "minimum": 0.02431201199942734,
+        "maximum": 0.05358155600151804,
+        "sum": 22.02913331095806
+      },
+      "score_kind_flags": {
+        "cp:unbounded": 235,
+        "cp:lowerbound": 129,
+        "cp:upperbound": 145,
+        "mate:unbounded": 3
+      },
+      "requested_nodes": 16384000,
+      "rejected_packet_flags": {
+        "bound_only": 274,
+        "mate_only": 3
+      },
+      "node_budget_overshoot_count": 500
+    },
+    "validation:all_action": {
+      "queries": 64,
+      "reported_nodes": {
+        "count": 64,
+        "minimum": 256001,
+        "maximum": 256370,
+        "sum": 16394489
+      },
+      "maximum_reported_depth": {
+        "count": 64,
+        "minimum": 9,
+        "maximum": 13,
+        "sum": 651
+      },
+      "complete_packet_depth": {
+        "10": 9,
+        "9": 42,
+        "8": 8,
+        "12": 1,
+        "11": 4
+      },
+      "elapsed_seconds": {
+        "count": 64,
+        "minimum": 0.22003332499843964,
+        "maximum": 0.324859894999463,
+        "sum": 17.022318051984257
+      },
+      "score_kind_flags": {
+        "cp:unbounded": 2427,
+        "mate:unbounded": 29,
+        "cp:lowerbound": 1
+      },
+      "requested_nodes": 16384000,
+      "rejected_packet_flags": {
+        "mate_only": 5,
+        "bound_only": 1
+      },
+      "node_budget_overshoot_count": 64
+    },
+    "test:standalone": {
+      "queries": 512,
+      "reported_nodes": {
+        "count": 512,
+        "minimum": 12281,
+        "maximum": 32086,
+        "sum": 16374778
+      },
+      "maximum_reported_depth": {
+        "count": 512,
+        "minimum": 10,
+        "maximum": 245,
+        "sum": 7232
+      },
+      "complete_packet_depth": {
+        "14": 146,
+        "13": 117,
+        "11": 28,
+        "15": 117,
+        "12": 65,
+        "16": 27,
+        "10": 7,
+        "21": 1,
+        "22": 1,
+        "245": 1,
+        "17": 2
+      },
+      "elapsed_seconds": {
+        "count": 512,
+        "minimum": 0.01411288599956606,
+        "maximum": 0.06081515900041268,
+        "sum": 21.576017857989427
+      },
+      "score_kind_flags": {
+        "cp:lowerbound": 120,
+        "cp:unbounded": 230,
+        "cp:upperbound": 161,
+        "mate:unbounded": 1
+      },
+      "requested_nodes": 16384000,
+      "rejected_packet_flags": {
+        "bound_only": 281,
+        "mate_only": 1
+      },
+      "node_budget_overshoot_count": 507
+    },
+    "test:all_action": {
+      "queries": 64,
+      "reported_nodes": {
+        "count": 64,
+        "minimum": 256002,
+        "maximum": 256319,
+        "sum": 16393897
+      },
+      "maximum_reported_depth": {
+        "count": 64,
+        "minimum": 9,
+        "maximum": 15,
+        "sum": 675
+      },
+      "complete_packet_depth": {
+        "10": 20,
+        "9": 23,
+        "11": 8,
+        "8": 10,
+        "12": 2,
+        "15": 1
+      },
+      "elapsed_seconds": {
+        "count": 64,
+        "minimum": 0.20518133799851057,
+        "maximum": 0.3384386910001922,
+        "sum": 16.722953542008327
+      },
+      "score_kind_flags": {
+        "cp:unbounded": 2296,
+        "cp:lowerbound": 1,
+        "cp:upperbound": 3,
+        "mate:unbounded": 2
+      },
+      "requested_nodes": 16384000,
+      "rejected_packet_flags": {
+        "bound_only": 3,
+        "mate_only": 1
+      },
+      "node_budget_overshoot_count": 64
+    }
+  },
+  "accepted_family_counts": {
+    "train": 6,
+    "validation": 0,
+    "test": 1
+  },
+  "rejected_family_counts": {
+    "train": 250,
+    "validation": 64,
+    "test": 63
+  },
+  "complete_root_query_legal_rows": {
+    "train": 8636,
+    "validation": 2258,
+    "test": 2184
+  },
+  "family_failure_categories": {
+    "train": {
+      "standalone_failed_only": 228,
+      "both_or_missing": 21,
+      "complete": 6,
+      "root_failed_only": 1
+    },
+    "validation": {
+      "standalone_failed_only": 58,
+      "both_or_missing": 6
+    },
+    "test": {
+      "standalone_failed_only": 59,
+      "both_or_missing": 4,
+      "complete": 1
+    }
+  },
+  "training_admission": "inadmissible_missing_validation",
+  "actual_max_reported_nodes_are_telemetry_not_exact_total_work": true,
+  "audit_wall_seconds": 17.328919183000835
+}

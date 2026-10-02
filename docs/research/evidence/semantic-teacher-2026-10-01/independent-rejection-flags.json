@@ -1,0 +1,26 @@
+{
+  "test/all_action": {
+    "bound": 3,
+    "mate": 1
+  },
+  "test/standalone": {
+    "bound": 281,
+    "mate": 1
+  },
+  "train/all_action": {
+    "bound": 5,
+    "mate": 17
+  },
+  "train/standalone": {
+    "bound": 1028,
+    "mate": 7
+  },
+  "validation/all_action": {
+    "bound": 1,
+    "mate": 5
+  },
+  "validation/standalone": {
+    "bound": 274,
+    "mate": 3
+  }
+}

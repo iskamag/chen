@@ -1,0 +1,142 @@
+{
+  "accepted_common_depth_counts": {
+    "test/all_action": {
+      "8": 10,
+      "9": 22,
+      "10": 19,
+      "11": 7,
+      "12": 2
+    },
+    "test/standalone": {
+      "10": 1,
+      "12": 13,
+      "13": 28,
+      "14": 67,
+      "15": 93,
+      "16": 24,
+      "17": 2,
+      "21": 1,
+      "22": 1
+    },
+    "train/all_action": {
+      "7": 1,
+      "8": 40,
+      "9": 98,
+      "10": 65,
+      "11": 22,
+      "12": 4,
+      "13": 1,
+      "14": 2,
+      "16": 1
+    },
+    "train/standalone": {
+      "10": 1,
+      "11": 6,
+      "12": 44,
+      "13": 116,
+      "14": 279,
+      "15": 445,
+      "16": 99,
+      "17": 12,
+      "18": 7,
+      "22": 2,
+      "24": 1,
+      "25": 1
+    },
+    "validation/all_action": {
+      "8": 8,
+      "9": 39,
+      "10": 8,
+      "11": 2,
+      "12": 1
+    },
+    "validation/standalone": {
+      "10": 1,
+      "11": 2,
+      "12": 6,
+      "13": 27,
+      "14": 71,
+      "15": 107,
+      "16": 18,
+      "17": 2,
+      "24": 1
+    }
+  },
+  "completed_queries": 3456,
+  "no_scalar_quality_metrics": true,
+  "rejection_counts": {
+    "test/all_action": {
+      "accepted": 60,
+      "mate_or_bound_common_packet": 4
+    },
+    "test/standalone": {
+      "accepted": 230,
+      "mate_or_bound_common_packet": 282
+    },
+    "train/all_action": {
+      "accepted": 234,
+      "mate_or_bound_common_packet": 22
+    },
+    "train/standalone": {
+      "accepted": 1013,
+      "mate_or_bound_common_packet": 1035
+    },
+    "validation/all_action": {
+      "accepted": 58,
+      "mate_or_bound_common_packet": 6
+    },
+    "validation/standalone": {
+      "accepted": 235,
+      "mate_or_bound_common_packet": 277
+    }
+  },
+  "reported_node_telemetry": {
+    "test/all_action": {
+      "maximum": 256319,
+      "minimum": 256002,
+      "queries": 64,
+      "sum_per_query_maxima": 16393897
+    },
+    "test/standalone": {
+      "maximum": 32086,
+      "minimum": 12281,
+      "queries": 512,
+      "sum_per_query_maxima": 16374778
+    },
+    "train/all_action": {
+      "maximum": 256391,
+      "minimum": 256001,
+      "queries": 256,
+      "sum_per_query_maxima": 65574290
+    },
+    "train/standalone": {
+      "maximum": 32082,
+      "minimum": 5886,
+      "queries": 2048,
+      "sum_per_query_maxima": 65528300
+    },
+    "validation/all_action": {
+      "maximum": 256370,
+      "minimum": 256001,
+      "queries": 64,
+      "sum_per_query_maxima": 16394489
+    },
+    "validation/standalone": {
+      "maximum": 32059,
+      "minimum": 32000,
+      "queries": 512,
+      "sum_per_query_maxima": 16394061
+    }
+  },
+  "status": "complete",
+  "wall_seconds": 119.96029115199963,
+  "whole_family_accepted_counts": {
+    "test": 1,
+    "train": 6,
+    "validation": 0
+  },
+  "worker_exitcodes": [
+    0,
+    0
+  ]
+}

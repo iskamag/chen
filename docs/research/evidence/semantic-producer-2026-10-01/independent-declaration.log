@@ -1,0 +1,6 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+PASS source-bound draft; no engine spawned
+dd8e33ec2afccaa99a37db7e841d1cce34949eece877ad96a366ac76b4c398a3
+draft_no_search_authorized False 3456
+dba06737f3a905b4ef8964d91340d03a4378d83344e1846f47f4c17da2547147

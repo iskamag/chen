@@ -1,0 +1,24 @@
+{
+  "kind": "permission_boundary_staged_semantic_source_freeze",
+  "status": "CPU_only_unsealed_draft_no_real_labels_or_GPU",
+  "repo_root": "/home/iskam/src/vibe/chen/results/neural-staging",
+  "verification": "23 targeted CPU tests all pass; fabricated-UCI only",
+  "source_sha256": {
+    "neural/semantic_data.py": "425840388b157e7b7de197d15b6d223a44115c54ded1b8a7c89d3d32a3bee578",
+    "neural/semantic_study.py": "dba06737f3a905b4ef8964d91340d03a4378d83344e1846f47f4c17da2547147",
+    "neural/tests/test_semantic_data.py": "8ad7872698a74b7333bb90f65b2524670cb6896c7e7dd3a57bd158ac3c13ab0f",
+    "neural/tests/test_semantic_study.py": "d47990a8f690fe773a3d29dd93bd76915e415ccb063cd96911022c109a6f6c89",
+    "docs/SEMANTIC_DATA.md": "423a7b2f1c2ea89a244b2518e6312443aefed2f5d1b63295390b4b5f7c9533d3",
+    "docs/SEMANTIC_STUDY.md": "4d971fe0dfaa2c8175e8275b6644807d37cfa29a131a2f674dd9ab755778b7d8",
+    "neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "neural/tests/test_semantic_strategy.py": "c3e089abb26847692f11c68c4c554f6736a83fc7ccda4d83dc30d3a1002ec638",
+    "neural/tests/test_score_frames.py": "97a79fbd9fdd840300322380a7e34b4e2862973fa3df46b69875f21957a45bac",
+    "docs/SEMANTIC_STRATEGY.md": "78474cf0bd7e7ce847218a6b337002cd7f6efaaa1a7aee305102d8617042ba44",
+    "neural/evidence/semantic-study-label-draft-2026-10-01.json": "dd8e33ec2afccaa99a37db7e841d1cce34949eece877ad96a366ac76b4c398a3",
+    "neural/evidence/semantic-data-admission-2026-10-01.json.gz": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+    "neural/evidence/semantic-data-admission-2026-10-01.json": "ebcb46a2c250c476673e3ff41798a7501ef2241b180243b8d9a0e3934a8522d8",
+    "neural/evidence/semantic-data-cpu-tests-2026-10-01.log": "0f27ee5c1c06d59d1ad99c02db42ec8f8e40d1a9f212a8f795e46389d435f2e4",
+    "staging-map.json": "e0a30110872a7c31075555c94dc169fbbed2dc710fd41090550c84ea5af523c9"
+  }
+}

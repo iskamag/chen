@@ -1,0 +1,25 @@
+# Independent ordinary-packet study preparation
+
+This is a new, unscored study with seed **20261008**, not a retry or rescue of the closed seed20261007 attempt. The closed attempt's 17,128 planned inputs, including rejected families, join the seven older spent reports: **768,311 canonical input identities are excluded**. All historical source, declarations, queries and outputs remain unchanged. `copy-map.json` maps original files to this new source snapshot; `prepare-admission.py` records the original admission, compressed admission and sealed declaration hashes.
+
+The official CC0 January2013 Lichess shard and pinned SF19 universal executable remain the same. Game-family filter, four White/four Black observations per game, hash-parity root32/33, 256/64/64 families, 32,000-node standalone and256,000-node all-legal query budgets are unchanged. No replacement after any label decision is allowed. Shared players and unobserved opening ancestry may remain; January2013 ratings do not establish contemporary strength. Outcomes, comments and PGN evaluations are not labels.
+
+## Packet grammar and deterministic selection
+
+`neural/ordinary_packets.py` is an independent strict parser. Pinned SF19 scored lines require depth, seldepth, multipv, score, nodes, tbhits and nonempty PV exactly once. `info string` is ignored only as that prefix. Duplicate semantic keys, conflicting/repeated bound flags or malformed scored lines reject the query.
+
+Each rank1 begins a fresh emission; finalize only on the next rank1 or end of response. Ordinal counts every emission, including ineligible ones. Rank duplicates, gaps, excess ranks and a rank without rank1 reject the query. Every parsed PV must be legal from the exact queried history. A complete emission must have unique complete legal root support (or one legal action for standalone), one common node stamp and one reported depth. Same-depth CP rank scores must be nonincreasing; equal scores and repeated whole emissions are allowed. Clean incomplete, mixed-depth, bounded or below-depth6 emissions are ineligible and never spliced with earlier rows.
+
+Any mate score, nonzero tablebase hits or absolute CP in SF19's reserved decisive region19754 or above rejects the **whole query**, even from an incomplete/bounded emission. Any malformed support/PV/rank score likewise rejects the query rather than falling back around the defect. Among eligible ordinary unbounded packets, select the **highest common depth**, then **latest completion ordinal** on ties. This is an explicit policy, not simply the last emitted packet.
+
+Store selected ordinal/line offsets, all structural emission ordinals, last emission classification and final bestmove separately. Final bestmove may differ from the selected rank1 PV. Rejected records retain structural packet provenance too. The separate `emission_trace` is structural-only: `ordinary_complete_structure` does not certify legal support/PVs or rank-score ordering and never drives admission; only strict selection can admit a packet. The whole transcript remains authoritative; no final-choice, exact minimax or uniform child horizon equivalence is asserted.
+
+Pinned SF19 source `search.cpp` shows rank1..K ordered output with common nodes and possible prior-depth scores during aborted final updates. It explicitly emits changed/inexact final PVs before bestmove. Aspiration-failure intermediate output has a >10M-node threshold, above these budgets: the prior structural failure should not be attributed to that mechanism. Source URL/SHA and relevant line ranges are embedded in the packet policy and cold declaration.
+
+## Targets, lifetime and admission
+
+Target semantics remain separate standalone queried-root scores and parent-root MultiPV action scores. Common reference-material58 approximate CP converts using actual **search root** phase material, then negates parent action values into child-mover perspective. Preserve reported CP, root material and quantization intervals. Common units do not equate search budgets or contexts. Raw EP is retained in neural schema1; SF internally normalizes ineffective EP, so exact history/legal equivalence does not imply byte-identical feature packets.
+
+Every family still requires all eight standalone queries and a complete all-legal root. Partial or faulty attempts quarantine all outputs. Existing two-worker cancellation handlers, signal-mask reset, bounded graceful retirement/escalation, targeted subreaper and normal engine exit checks are preserved. The1,200-second bound includes a10-second cleanup reserve and remains cooperative, not preemptive CPU-I/O timing. Model fitting, GPU ingress and training are unauthorized; declaration status remains `draft_no_search_authorized` until root seals exact bytes.
+
+CPU fixtures test parser fallbacks, fatal corruption/decisive evidence, source-mandatory fields, frames and lifecycle; they use fabricated engines only. The fresh admission is score-free. Its counts and independent replay report are structural evidence, not teacher yield or playing strength.
