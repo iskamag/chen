@@ -1,0 +1,27 @@
+{
+  "findings": [
+    "Whole study is represented by immutable exact-schema versioned manifest with canonical filenames and pinned bytes, not duplicate CPU tensors.",
+    "All40 files undergo bounded descriptor-based regular-file reads, SHA check before deserialization, exact encoder/control/seed/scale/phase identity and architecture tensor shape/type/finite-state fingerprint validation before validationgate.",
+    "Streamed admission discards each model record; reload-on-use repeats byte pin validation.",
+    "Validation uses manifest identity; selectedpair remains independently persisted/hashed before test.",
+    "Source/declaration, trainingconfig, modelseeds, target/loss/selection andresidentper-filelimits remain explicit; altered checkpointpolicy requires freshsuite identity.",
+    "No modification or resume of rejected attempt1."
+  ],
+  "kind": "root_checkpoint_manifest_repair_source_review_v1",
+  "limitations": [
+    "Mechanized shape/identity checks do not certify architecturequality orint8speed.",
+    "Reader bounds serialized bytes; hostile serialization allocation defense is not claimed."
+  ],
+  "required_before_run": [
+    "fresh runtime closure/provenance path rebinding review",
+    "separate rootphase/suite seal",
+    "exclusiveGPU and ownedwatchdog"
+  ],
+  "review_scope": "Root independent source and protocol review, plus13actualCPUfixtures and archived40-file mechanical admission; no newGPUtraining orqualitymetrics.",
+  "source_sha256": {
+    "docs/SEMANTIC_CORPUS_STUDY.md": "5f5cdc9009319cacf4d17d5eab3925830f258d1ab451ddb33ebe253510e9bbbc",
+    "neural/run_semantic_corpus_study.py": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c",
+    "neural/tests/test_run_semantic_corpus_study.py": "dfdf683a30157d8abee668b908087b2bbf08536420b1f20f48c2208e8641b03e"
+  },
+  "status": "pass_ready_for_separately_declared_runtime"
+}

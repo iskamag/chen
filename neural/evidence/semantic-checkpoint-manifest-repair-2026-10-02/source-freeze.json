@@ -1,0 +1,25 @@
+{
+  "CPU_tests": 13,
+  "CPU_tests_sha256": "4e05688fc647fd86ffb4aebdf1b64f43e9fd181c8420fe170eef294fbe803b1f",
+  "actual40_mechanical_check_sha256": "582f34438ee2a779b6a1d7d462cbf91f5510009f56831d6fb18ab8d11c8123d8",
+  "attempt1_resumed": false,
+  "checkpoint_contract": "small immutable exact-schema JSON pins all40 independent files; typed finite state/phase/fingerprint admission before validationgate; per-file128MiB; stream reload-on-use",
+  "failed_attempt_manifest_sha256": "19c1986e41b22def46f99666ab54ec07f1ea26565135d1290cc8a39247035006",
+  "file_limits_changed": false,
+  "hyperparameters_data_selection_changed": false,
+  "kind": "semantic_checkpoint_manifest_repair_source_freeze_v1",
+  "new_review_and_declarations_required": true,
+  "phase_kernel_sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+  "quality_metrics_computed": false,
+  "remaining": [
+    "ROOT independent finaldiff/protocol review",
+    "new runtime staging/proposals and seals before any separate study",
+    "separate INT8 causal symbolic-stream GPU inference experiment"
+  ],
+  "sources_sha256": {
+    "docs/SEMANTIC_CORPUS_STUDY.md": "5f5cdc9009319cacf4d17d5eab3925830f258d1ab451ddb33ebe253510e9bbbc",
+    "neural/run_semantic_corpus_study.py": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c",
+    "neural/tests/test_run_semantic_corpus_study.py": "dfdf683a30157d8abee668b908087b2bbf08536420b1f20f48c2208e8641b03e"
+  },
+  "status": "CPU_review_ready_no_new_training_or_heldout_admission"
+}

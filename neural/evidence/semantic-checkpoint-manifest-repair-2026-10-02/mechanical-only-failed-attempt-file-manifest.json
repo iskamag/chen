@@ -1,0 +1,892 @@
+{
+  "anchors": {
+    "plan/20261021": {
+      "bytes": 3757935,
+      "file": "anchor-plan-20261021.pt",
+      "sha256": "ab941b24b95099239ef265ca010755c0f0f7702edd5d02e816e15e1e57c19c4a"
+    },
+    "plan/20261022": {
+      "bytes": 3757935,
+      "file": "anchor-plan-20261022.pt",
+      "sha256": "6c7f4e46606156fc78dfaf40b142fa066d7ffa3e2b7e314867fff22518d73c05"
+    },
+    "relation/20261021": {
+      "bytes": 3737350,
+      "file": "anchor-relation-20261021.pt",
+      "sha256": "8ae37ae4f1a77f9759a0761a70e4795a5b57725ef29cf39c5cd6db316104720a"
+    },
+    "relation/20261022": {
+      "bytes": 3737350,
+      "file": "anchor-relation-20261022.pt",
+      "sha256": "efb835a789ed62d6af7b8dfd76da18209c7d1d673d922b15a7bb737c13633a50"
+    },
+    "square/20261021": {
+      "bytes": 3717726,
+      "file": "anchor-square-20261021.pt",
+      "sha256": "202d9e36ef595d29857c3fc1bf67fb39edd7f89f228fcfe77fd6f42aff2c015c"
+    },
+    "square/20261022": {
+      "bytes": 3717726,
+      "file": "anchor-square-20261022.pt",
+      "sha256": "d06568074e2b80bcb8a2969c616f6c05311a512353628a1c7f1560075d81d1dc"
+    },
+    "threat/20261021": {
+      "bytes": 2354180,
+      "file": "anchor-threat-20261021.pt",
+      "sha256": "59182101b39c3a8b8bca16853a645880abd776189b3eb0fd81e7742485d0b3e1"
+    },
+    "threat/20261022": {
+      "bytes": 2354180,
+      "file": "anchor-threat-20261022.pt",
+      "sha256": "f0d3a54f93eecbd1c16623e769d195c89da24ee9cc9b453fa8d17250a49a0fe8"
+    }
+  },
+  "declaration_sha256": "5567f57a43f8738b3f5170de58ad8301cc0867ec7b760e5362ef61c4a0e4cd42",
+  "kind": "semantic_all_frozen_checkpoint_manifest_v1",
+  "phase_reports": [
+    {
+      "checkpoint_state_sha256": "677f60aca976e04d481049dc238acdcad50f05c93ea835915a5fb5b7536fb170",
+      "control": null,
+      "elapsed_seconds": 4.250680687022395,
+      "key": "plan/20261021",
+      "mean_train_loss": 0.13484345376491547,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 267150,
+        "total": 280082
+      },
+      "peak_allocated_bytes": 104092672,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "5cfc12b07ad344ccee1f89edf802699903078e10268343b42e23eeedbde615a5",
+      "control": null,
+      "elapsed_seconds": 3.794651069008978,
+      "key": "plan/20261022",
+      "mean_train_loss": 0.13562794029712677,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 267150,
+        "total": 280082
+      },
+      "peak_allocated_bytes": 104092672,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "9aa98c41a2d65ee23115813a877603cd3782cb9faef0174963ef80c9740c40a8",
+      "control": null,
+      "elapsed_seconds": 3.5534648550092243,
+      "key": "relation/20261021",
+      "mean_train_loss": 0.13508301973342896,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 262670,
+        "total": 275602
+      },
+      "peak_allocated_bytes": 106506240,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "d3fcc63b667bac63d594e026a6d0f95635006e26af858cd515630db69a860b5b",
+      "control": null,
+      "elapsed_seconds": 3.252027830982115,
+      "key": "relation/20261022",
+      "mean_train_loss": 0.13544932007789612,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 262670,
+        "total": 275602
+      },
+      "peak_allocated_bytes": 106506240,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "a593419caaff11ff568d2654113f319a18afe4a71058aea3a50edea06a474c6a",
+      "control": null,
+      "elapsed_seconds": 4.799308818997815,
+      "key": "square/20261021",
+      "mean_train_loss": 0.13341739773750305,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 258375,
+        "total": 271307
+      },
+      "peak_allocated_bytes": 107540480,
+      "peak_reserved_bytes": 111149056,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "e2d2a3c247e341ce3d13746d6373cb77b776c7d981fcf37ffaa4a78ac8303724",
+      "control": null,
+      "elapsed_seconds": 2.7106977030052803,
+      "key": "square/20261022",
+      "mean_train_loss": 0.13277938961982727,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 258375,
+        "total": 271307
+      },
+      "peak_allocated_bytes": 107540480,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "27b0f2b06d4d48925dd811f6a763d071a8861fcb2ac13028f8cf0b34caa0de29",
+      "control": null,
+      "elapsed_seconds": 3.511853305011755,
+      "key": "threat/20261021",
+      "mean_train_loss": 0.1310095489025116,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 268871,
+        "total": 268871
+      },
+      "peak_allocated_bytes": 100251648,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "888f8e99eeec99590307b7ce74658ab2cceadb3abdfdf58c7b63580460c04eb4",
+      "control": null,
+      "elapsed_seconds": 3.1760115649958607,
+      "key": "threat/20261022",
+      "mean_train_loss": 0.1298612803220749,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 268871,
+        "total": 268871
+      },
+      "peak_allocated_bytes": 100251648,
+      "peak_reserved_bytes": 723517440,
+      "phase": "anchor",
+      "status": "complete",
+      "updates": 384
+    },
+    {
+      "checkpoint_state_sha256": "0d72ff4f8ed970642fea74e230731fcaf923a2936c42d569a0964f0adb336fa2",
+      "control": "action_blind",
+      "elapsed_seconds": 2.0143939400149975,
+      "key": "plan/action_blind/20261021",
+      "mean_train_loss": 0.1592978686094284,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 177421312,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "311055951ca950d78bd0a0dbba432698db34ce6b8618041774c5223d2d6a0ff0",
+      "control": "action_blind",
+      "elapsed_seconds": 1.825935540982755,
+      "key": "plan/action_blind/20261022",
+      "mean_train_loss": 0.17473679780960083,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 177421312,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "65c5963981db5dde6312ad70c19a46eaa65190761a74e3190a7dd18f04df138c",
+      "control": "conditioned",
+      "elapsed_seconds": 2.3975284429907333,
+      "key": "plan/conditioned/20261021",
+      "mean_train_loss": 0.15863235294818878,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186435584,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "a855621f3c1417872cfae6c85db8015b4c98f9cb3ca824dd84dc208967504d54",
+      "control": "conditioned",
+      "elapsed_seconds": 2.2496069720073137,
+      "key": "plan/conditioned/20261022",
+      "mean_train_loss": 0.17320916056632996,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186435584,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "77f8d85d96143992754a2a596ec71b7778c89e4d1def5603a7fbe06db8e85c7f",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.512759688019287,
+      "key": "plan/shuffled_conditioned/20261021",
+      "mean_train_loss": 0.15868604183197021,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186317824,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "dd855dac6b2454bf03aa150b84882e030a9227833d5368da18401e9bc92f1142",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.315949095005635,
+      "key": "plan/shuffled_conditioned/20261022",
+      "mean_train_loss": 0.17327016592025757,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186317824,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "e568120ceb61974b97b1901e6fc83b443776accd27daadccfa6de4f027789ae9",
+      "control": "transport",
+      "elapsed_seconds": 2.564252412004862,
+      "key": "plan/transport/20261021",
+      "mean_train_loss": 0.1586325764656067,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186494464,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "ab425ca674348d8cca5f21a548e855c93a506ada33f7bb75163a795276a990ea",
+      "control": "transport",
+      "elapsed_seconds": 2.141625351010589,
+      "key": "plan/transport/20261022",
+      "mean_train_loss": 0.17320482432842255,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 293810
+      },
+      "peak_allocated_bytes": 186494464,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "845a9e29d95c5dedc5fc22313ac77825937ad6db315abae939cd56a374c127ae",
+      "control": "action_blind",
+      "elapsed_seconds": 1.8475118610076606,
+      "key": "relation/action_blind/20261021",
+      "mean_train_loss": 0.16329604387283325,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 181132288,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "5f912683203f9de9f8715d9ba68fd9121bbafc721688f58cb2ee3f9eda31323c",
+      "control": "action_blind",
+      "elapsed_seconds": 1.6677122150140349,
+      "key": "relation/action_blind/20261022",
+      "mean_train_loss": 0.16286611557006836,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 181132288,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "872d24f0eae1afee1c74e7612d308057734f7c817c0a0fa7208943becc3e53fa",
+      "control": "conditioned",
+      "elapsed_seconds": 2.1991752489993814,
+      "key": "relation/conditioned/20261021",
+      "mean_train_loss": 0.1626305878162384,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190146560,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "ff9e256866faccfa3b5bebfd2507f9b639399d9a4d2cbf9e2a1bfe516c374ae7",
+      "control": "conditioned",
+      "elapsed_seconds": 1.9965962819987908,
+      "key": "relation/conditioned/20261022",
+      "mean_train_loss": 0.1616257280111313,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190146560,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "fe56216575ea39aa298000ee6cb8964a0c36436a67674d1cb48f76b5dc6860ab",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.599161299993284,
+      "key": "relation/shuffled_conditioned/20261021",
+      "mean_train_loss": 0.162673681974411,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190028800,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "51f767979b809477cec3cb1d2494c31d666b92f9aed33175ce18f2d9b401e3e5",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.2123592650168575,
+      "key": "relation/shuffled_conditioned/20261022",
+      "mean_train_loss": 0.16171711683273315,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190028800,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "e5852aaa173537bdbfb305d04a6723d8f43080127610a55cf5dd2654a69a57c8",
+      "control": "transport",
+      "elapsed_seconds": 2.177173927979311,
+      "key": "relation/transport/20261021",
+      "mean_train_loss": 0.16263064742088318,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190205440,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "b5f1defa6e7ede532cc5c1beb14c11fb9c7ae8cdb99c0f8b6503f5ebf18b4399",
+      "control": "transport",
+      "elapsed_seconds": 1.980881044990383,
+      "key": "relation/transport/20261022",
+      "mean_train_loss": 0.16162365674972534,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 289330
+      },
+      "peak_allocated_bytes": 190205440,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "fc2a79bc1b4d2b695f17ecaa783cc829d47f9fda72160abf0730fe7877b5a7b5",
+      "control": "action_blind",
+      "elapsed_seconds": 1.575868031999562,
+      "key": "square/action_blind/20261021",
+      "mean_train_loss": 0.1599401831626892,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 176273408,
+      "peak_reserved_bytes": 721420288,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "2074216760dfec5c7d97b3b9eb62188a6eb592cc97f7ac204a5ff6579ae9c2f0",
+      "control": "action_blind",
+      "elapsed_seconds": 1.4462996190122794,
+      "key": "square/action_blind/20261022",
+      "mean_train_loss": 0.1624891757965088,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 176273408,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "1726521837bcd11834039a46f39b3c2e7182317e28ab377ca7107c1c00fc3c52",
+      "control": "conditioned",
+      "elapsed_seconds": 1.9999394429905806,
+      "key": "square/conditioned/20261021",
+      "mean_train_loss": 0.15906450152397156,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184918016,
+      "peak_reserved_bytes": 721420288,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "5abf607b33650cb07bdfc12dfd752bbece6ba307b22bab3a3d34f4458280387a",
+      "control": "conditioned",
+      "elapsed_seconds": 1.8620766479871236,
+      "key": "square/conditioned/20261022",
+      "mean_train_loss": 0.1609264314174652,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184918016,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "a0d13992992536bda5a6999a99d6ad98327b41a6ddaf39adeeb3a568aeb2d9de",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.2871920710022096,
+      "key": "square/shuffled_conditioned/20261021",
+      "mean_train_loss": 0.1591949760913849,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184800256,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "e98e81b6050ee5d05769fa4233ee7514ce85cd14271da3b313f9c4607640e44f",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.051708287996007,
+      "key": "square/shuffled_conditioned/20261022",
+      "mean_train_loss": 0.16101130843162537,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184800256,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "61e1bbee53dca7fe18c962ee2fe985755c58221ce2a7a6398a392760157b3546",
+      "control": "transport",
+      "elapsed_seconds": 2.220164558995748,
+      "key": "square/transport/20261021",
+      "mean_train_loss": 0.15906445682048798,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184976896,
+      "peak_reserved_bytes": 721420288,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "6698b799ab7de4720288155142056cf5351acb170243db026d2af6917413361c",
+      "control": "transport",
+      "elapsed_seconds": 1.8166494860197417,
+      "key": "square/transport/20261022",
+      "mean_train_loss": 0.1609252542257309,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 285035
+      },
+      "peak_allocated_bytes": 184976896,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "dbfba66c5a13bf0efc85c5f7c08e29429b994dfa780f6304e8430468f8c87794",
+      "control": "action_blind",
+      "elapsed_seconds": 1.7232936520013027,
+      "key": "threat/action_blind/20261021",
+      "mean_train_loss": 0.16244125366210938,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 167631872,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "57d18205a75777c9c0a75b9c8144a780ee26a80cbf8db21e6eefce1c08f0dec5",
+      "control": "action_blind",
+      "elapsed_seconds": 1.7285763239779044,
+      "key": "threat/action_blind/20261022",
+      "mean_train_loss": 0.16445109248161316,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 8352,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 167631872,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "90908f134e924fcb0e9a347fcb6d103e07aa8fa868b195889195c32a8b33b5a1",
+      "control": "conditioned",
+      "elapsed_seconds": 2.0833568639936857,
+      "key": "threat/conditioned/20261021",
+      "mean_train_loss": 0.16090762615203857,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176646144,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "60b2c915cb3b24e368d87a93cdbfd8b335dfa0f918819124e0211845da6dbbca",
+      "control": "conditioned",
+      "elapsed_seconds": 2.102572013012832,
+      "key": "threat/conditioned/20261022",
+      "mean_train_loss": 0.1625385582447052,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176646144,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "1c938bb25e86f8da72e2c7932326c4eb6f8d5f21c1fbfe82ca15e8c60b333c94",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.2979775950079784,
+      "key": "threat/shuffled_conditioned/20261021",
+      "mean_train_loss": 0.1610470414161682,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176528384,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "5f981852636027b2663fa4d6ec3f2eee79acb9a0f7f6f92c8f423a21e95a4430",
+      "control": "shuffled_conditioned",
+      "elapsed_seconds": 2.2604426780017093,
+      "key": "threat/shuffled_conditioned/20261022",
+      "mean_train_loss": 0.1626269817352295,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176528384,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "c8fe23284fdaafca762d5613bb47009a63eda463e6a7167cf0e72d333d6aa7e5",
+      "control": "transport",
+      "elapsed_seconds": 2.111368587007746,
+      "key": "threat/transport/20261021",
+      "mean_train_loss": 0.16090868413448334,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176705024,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    },
+    {
+      "checkpoint_state_sha256": "531ce0b563f94c979fc4022238fed21d0ab4a391402c5ad0e1fd24c94195ea45",
+      "control": "transport",
+      "elapsed_seconds": 2.2168524079897907,
+      "key": "threat/transport/20261022",
+      "mean_train_loss": 0.16253416240215302,
+      "memory_scope": "device_allocator_including_preexisting_resident_data_and_other_models",
+      "parameter_counts": {
+        "active": 13728,
+        "total": 282599
+      },
+      "peak_allocated_bytes": 176705024,
+      "peak_reserved_bytes": 723517440,
+      "phase": "transition",
+      "status": "complete",
+      "updates": 192
+    }
+  ],
+  "scale": 1.0167108492920107,
+  "transitions": {
+    "plan/action_blind/20261021": {
+      "bytes": 3818127,
+      "file": "transition-plan-action_blind-20261021.pt",
+      "sha256": "bd81616d462dacb57335120b174f16a283d4732b23fe699e4f0bb04d0e993375"
+    },
+    "plan/action_blind/20261022": {
+      "bytes": 3818127,
+      "file": "transition-plan-action_blind-20261022.pt",
+      "sha256": "8f17c71d13f4524764453a29db68970a6a055c2dee4712ff9aabbb2aff167adb"
+    },
+    "plan/conditioned/20261021": {
+      "bytes": 3818127,
+      "file": "transition-plan-conditioned-20261021.pt",
+      "sha256": "80ac173a24cc57e74048eb36fd0b2409bef241e6c417185b07177e81413fdad7"
+    },
+    "plan/conditioned/20261022": {
+      "bytes": 3818127,
+      "file": "transition-plan-conditioned-20261022.pt",
+      "sha256": "675e697d28dade441c6e735f655f74fddbb5d31a6333a5d7a45b7fb983c9bcf9"
+    },
+    "plan/shuffled_conditioned/20261021": {
+      "bytes": 3818191,
+      "file": "transition-plan-shuffled_conditioned-20261021.pt",
+      "sha256": "cf9af91cdfdceac18a2bb902648d0cb27d423b8ddfaadccd71291c8226697461"
+    },
+    "plan/shuffled_conditioned/20261022": {
+      "bytes": 3818191,
+      "file": "transition-plan-shuffled_conditioned-20261022.pt",
+      "sha256": "2aa90c8ca5a1aeefde140e344932c0868a2cbce2fd0a48167ef7e2f110217a6a"
+    },
+    "plan/transport/20261021": {
+      "bytes": 3818127,
+      "file": "transition-plan-transport-20261021.pt",
+      "sha256": "95ff70c2bf2cf47c946c7860681bfd1a8dba2adb77e9bca60239ae4a21281670"
+    },
+    "plan/transport/20261022": {
+      "bytes": 3818127,
+      "file": "transition-plan-transport-20261022.pt",
+      "sha256": "d967c8ce5049842ca4f5df58c03c059a30a7523a7e271245dc92c2e7029d7f1b"
+    },
+    "relation/action_blind/20261021": {
+      "bytes": 3797537,
+      "file": "transition-relation-action_blind-20261021.pt",
+      "sha256": "4c540eeaf404425ec2fff19dbf5bce69889884e3c359ab7183fee8ba5d537a5f"
+    },
+    "relation/action_blind/20261022": {
+      "bytes": 3797537,
+      "file": "transition-relation-action_blind-20261022.pt",
+      "sha256": "155f4aa7a47b98daeb0191cdac6679993ee4e0ba6a9d429af9248f7e0916192a"
+    },
+    "relation/conditioned/20261021": {
+      "bytes": 3797537,
+      "file": "transition-relation-conditioned-20261021.pt",
+      "sha256": "207ec31cdca07fdbf4e56d0a691b80cc648bf1bb9fe2e09df14ffc7b2a82639e"
+    },
+    "relation/conditioned/20261022": {
+      "bytes": 3797537,
+      "file": "transition-relation-conditioned-20261022.pt",
+      "sha256": "6d5704cb3e9d376d36de7bd49678da080c96107438dacbeef7ae4f0b45039b54"
+    },
+    "relation/shuffled_conditioned/20261021": {
+      "bytes": 3797537,
+      "file": "transition-relation-shuffled_conditioned-20261021.pt",
+      "sha256": "20bf4bcb8c0426858aa7789e3dc35c120d0731f7af1ca592a81a5cb8528f39e2"
+    },
+    "relation/shuffled_conditioned/20261022": {
+      "bytes": 3797537,
+      "file": "transition-relation-shuffled_conditioned-20261022.pt",
+      "sha256": "6e54f91fba2966fca0588e40d1cd9f58be01c855a4e5bbce77f9de2afb4ae404"
+    },
+    "relation/transport/20261021": {
+      "bytes": 3797537,
+      "file": "transition-relation-transport-20261021.pt",
+      "sha256": "3b52cc410289369368af05f8f0afbfe3cbfad2e9f792d08c679787d990eab51d"
+    },
+    "relation/transport/20261022": {
+      "bytes": 3797537,
+      "file": "transition-relation-transport-20261022.pt",
+      "sha256": "55e7f45f1d65a79b8b29f798cb4918de9ff7bd1ea62244ebfc3e88353bac39b8"
+    },
+    "square/action_blind/20261021": {
+      "bytes": 3777841,
+      "file": "transition-square-action_blind-20261021.pt",
+      "sha256": "f71873ffd20c3553b1e3677a6cb65e54b19d42f3f991bfeffee96616fffd9739"
+    },
+    "square/action_blind/20261022": {
+      "bytes": 3777841,
+      "file": "transition-square-action_blind-20261022.pt",
+      "sha256": "652fabd2aee003e59f5fe2523a0aa163646a97a102e86a2295901d22540e4328"
+    },
+    "square/conditioned/20261021": {
+      "bytes": 3777841,
+      "file": "transition-square-conditioned-20261021.pt",
+      "sha256": "c406aba4a3d47972e089ac06e4a8f3dafc44246535aaf30626d6fc8b02de2455"
+    },
+    "square/conditioned/20261022": {
+      "bytes": 3777841,
+      "file": "transition-square-conditioned-20261022.pt",
+      "sha256": "b61ad80597cf8f5ea641cced58c070f9b27ddb26bd2a1044305fc09ea965341f"
+    },
+    "square/shuffled_conditioned/20261021": {
+      "bytes": 3777841,
+      "file": "transition-square-shuffled_conditioned-20261021.pt",
+      "sha256": "deaa4ad6a78489b657420336dd65be7e9b2d6474eb21dfe7ca70d3dae17b2834"
+    },
+    "square/shuffled_conditioned/20261022": {
+      "bytes": 3777841,
+      "file": "transition-square-shuffled_conditioned-20261022.pt",
+      "sha256": "955444aae37d8ab3a82d37855d4f50274e947b6d350b7972cad2f82e49bc3bf6"
+    },
+    "square/transport/20261021": {
+      "bytes": 3777841,
+      "file": "transition-square-transport-20261021.pt",
+      "sha256": "f7d879fe63cd44c0b3eb0c99950abfbee48f5c6f33e7a585c8f21fb682a165b8"
+    },
+    "square/transport/20261022": {
+      "bytes": 3777841,
+      "file": "transition-square-transport-20261022.pt",
+      "sha256": "6d05d5524e7901ac07eb4fee9476d2d0051f3e2e96f293f3586c23d4d3a2189f"
+    },
+    "threat/action_blind/20261021": {
+      "bytes": 2414036,
+      "file": "transition-threat-action_blind-20261021.pt",
+      "sha256": "f3f59a50baa255a2038b99f88b218d1ec5d728b19fd11210259c9cd99f13dc6a"
+    },
+    "threat/action_blind/20261022": {
+      "bytes": 2414036,
+      "file": "transition-threat-action_blind-20261022.pt",
+      "sha256": "ea83ff020598f1e0d228d53eb8c2c7ab8a8be27a3c848ca06b4922baab430ee6"
+    },
+    "threat/conditioned/20261021": {
+      "bytes": 2414036,
+      "file": "transition-threat-conditioned-20261021.pt",
+      "sha256": "f5f4b624fb4b65fe096af736b08e48d09be61bf08015d0e79d9df83a345d7dce"
+    },
+    "threat/conditioned/20261022": {
+      "bytes": 2414036,
+      "file": "transition-threat-conditioned-20261022.pt",
+      "sha256": "d9946dc2404676ff488fb12322d2b68cf8104654d7cbab30cf83b413204575d4"
+    },
+    "threat/shuffled_conditioned/20261021": {
+      "bytes": 2414036,
+      "file": "transition-threat-shuffled_conditioned-20261021.pt",
+      "sha256": "d9d882bf2cd92da06aff387c851f71c3b400e4c2c8484677fc3a06cfa59f13af"
+    },
+    "threat/shuffled_conditioned/20261022": {
+      "bytes": 2414036,
+      "file": "transition-threat-shuffled_conditioned-20261022.pt",
+      "sha256": "bc3689a1f2d7a8845d745989633f5607291e308cbceb5d655f4904acbb2e3ab6"
+    },
+    "threat/transport/20261021": {
+      "bytes": 2414036,
+      "file": "transition-threat-transport-20261021.pt",
+      "sha256": "dddcee17914ee66205fefa6444f43e47f4ce0d5ff5e4feccd1c319abf96679a0"
+    },
+    "threat/transport/20261022": {
+      "bytes": 2414036,
+      "file": "transition-threat-transport-20261022.pt",
+      "sha256": "1b11e348ec63a13a30d9a9fc033cf4d679047b1df68e093f06de8a6ae52eb55d"
+    }
+  },
+  "version": 1
+}

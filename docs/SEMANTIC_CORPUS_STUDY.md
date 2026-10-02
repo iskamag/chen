@@ -69,9 +69,17 @@ ceiling includes ingress, calibration, all phases, validation and any selected
 TEST evaluation. Scalar predictions must remain finite during evaluation.
 
 Each complete phase writes an owned CPU state dictionary to an exclusive
-checkpoint path. All eight anchor and 32 transition states are persisted in
-one frozen bundle before a validation gate can admit validation labels. The
-runner reloads that bundle after hashing it. Validation sweeps every
+checkpoint path. A small `all-frozen-checkpoints.json` manifest pins the exact
+canonical filenames, hashes and sizes of all eight anchor and 32 transition
+files before a validation gate can admit validation labels. Its exact schema
+requires every complete phase. Each file retains the 128 MiB cap; their combined
+logical size may exceed it without creating another tensor bundle. Validation
+uses the manifest's hash as the frozen checkpoint identity and reloads each
+transition only after a bounded regular-file read verifies its individual hash.
+Before granting validation access, the runner streams all 40 files through
+restricted CPU loading, verifies their phase identity, exact architecture tensor
+keys/shapes/dtypes, finite values and recorded state fingerprints, then discards
+them. Symlinks, nonregular files and noncanonical joins are rejected. Validation sweeps every
 standalone observation and every complete legal root for all paired arms.
 The standalone error is distance outside the reporting interval, masked by
 ordinary support. Root regret and agreement have equal root weights across
@@ -96,6 +104,12 @@ A durable consumption marker is written first. TEST then receives exactly
 one evaluation pass for that selected two-seed configuration and visible
 baselines. TEST never changes selection, parameters, thresholds or budgets.
 An interrupted test pass cannot be retried through this attempt directory.
+
+The [closed first GPU attempt](../neural/evidence/semantic-corpus-study-attempt1-2026-10-02/README.md)
+completed all 40 phases, then failed because the former combined tensor bundle
+was 137,594,521 bytes against the unchanged 128 MiB cap. No validation or TEST
+gate opened. The manifest packaging repair requires new review and declarations;
+it neither resumes that failed attempt nor admits its checkpoints for evaluation.
 
 The result has no Elo estimate. Deployment into the modular engine and paired
 playing-strength evaluation remain separate work. The relation and plan

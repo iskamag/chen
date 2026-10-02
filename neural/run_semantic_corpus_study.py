@@ -7,9 +7,11 @@ is no CPU training, resume, retry, partial promotion, or heldout optimization.
 from __future__ import annotations
 import argparse
 import hashlib
+import io
 import json
 import math
 import os
+import stat
 from pathlib import Path
 import time
 
@@ -19,6 +21,8 @@ from .semantic_strategy import SemanticAnchor, SemanticTransition, ENCODERS
 from .value_heads import material_cp
 
 KIND = 'semantic_corpus_suite_v1'
+CHECKPOINT_LIMIT = 128 << 20
+FREEZE_KIND = 'semantic_all_frozen_checkpoint_manifest_v1'
 
 
 def sha(path):
@@ -59,13 +63,119 @@ def checkpoint(path, record):
     """Persist only owned CPU tensors; no optimizer state is promoted."""
     with Path(path).open('xb') as stream:
         torch.save(record, stream); stream.flush(); os.fsync(stream.fileno())
-    if Path(path).stat().st_size > 128 << 20:
+    if Path(path).stat().st_size > CHECKPOINT_LIMIT:
         raise ValueError('checkpoint exceeds resident stage-gate bound')
     return sha(path)
 
 
 def cpu_state(model):
     return {key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
+
+
+def checkpoint_entry(path, pin):
+    return dict(file=Path(path).name, sha256=pin, bytes=Path(path).stat().st_size)
+
+
+def checkpoint_bytes(directory, entry):
+    """Read one bounded regular file, verifying its freeze pin before loading."""
+    if (type(entry) is not dict or set(entry) != {'file', 'sha256', 'bytes'} or
+            type(entry['file']) is not str or Path(entry['file']).name != entry['file'] or
+            entry['file'] in ('.', '..') or '\\' in entry['file'] or
+            type(entry['bytes']) is not int or not 0 < entry['bytes'] <= CHECKPOINT_LIMIT or
+            type(entry['sha256']) is not str or len(entry['sha256']) != 64 or
+            any(c not in '0123456789abcdef' for c in entry['sha256'])):
+        raise ValueError('exact bounded canonical checkpoint entry required')
+    path = Path(directory) / entry['file']
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    with os.fdopen(fd, 'rb') as stream:
+        info = os.fstat(stream.fileno())
+        if not stat.S_ISREG(info.st_mode) or info.st_size != entry['bytes']:
+            raise ValueError('bounded regular checkpoint with exact frozen size required')
+        raw = stream.read(entry['bytes'] + 1)
+    if len(raw) != entry['bytes'] or hashlib.sha256(raw).hexdigest() != entry['sha256']:
+        raise ValueError('individual frozen checkpoint bytes changed')
+    return raw
+
+
+def read_checkpoint_manifest(directory, path, pin, declaration_pin, config):
+    """The small freeze identity binds every exclusive file; no tensor bundle."""
+    record = read_json(path, pin, 1 << 20)
+    if (set(record) != {'kind', 'version', 'declaration_sha256', 'scale', 'anchors', 'transitions', 'phase_reports'} or
+            record['kind'] != FREEZE_KIND or type(record['version']) is not int or record['version'] != 1 or
+            record['declaration_sha256'] != declaration_pin or type(record['scale']) not in (int, float) or
+            not math.isfinite(record['scale']) or not config.material_lower <= record['scale'] <= config.material_upper):
+        raise ValueError('exact checkpoint freeze manifest schema required')
+    expected_anchors = {f'{encoder}/{seed}':f'anchor-{encoder}-{seed}.pt'
+                        for seed in config.seeds for encoder in ENCODERS}
+    expected_transitions = {f'{encoder}/{control}/{seed}':f'transition-{encoder}-{control}-{seed}.pt'
+                           for seed in config.seeds for encoder in ENCODERS for control in study.CONTROLS}
+    for table, expected in ((record['anchors'], expected_anchors), (record['transitions'], expected_transitions)):
+        if type(table) is not dict or set(table) != set(expected):
+            raise ValueError('all eight anchors and 32 transition files required')
+        for key, filename in expected.items():
+            if type(table[key]) is not dict or table[key].get('file') != filename:
+                raise ValueError('checkpoint key must bind its exact canonical filename')
+            checkpoint_bytes(directory, table[key])
+    phases = record['phase_reports']
+    if (type(phases) is not list or len(phases) != 40 or
+            any(type(row) is not dict or type(row.get('key')) is not str for row in phases) or
+            {row['key'] for row in phases} != set(expected_anchors) | set(expected_transitions)):
+        raise ValueError('complete unique phase reports required')
+    for row in phases:
+        anchor = row['key'] in expected_anchors
+        if (row.get('status') != 'complete' or row.get('phase') != ('anchor' if anchor else 'transition') or
+                type(row.get('updates')) is not int or
+                row['updates'] != (config.anchor_updates if anchor else config.transition_updates)):
+            raise ValueError('only complete declared phases may be frozen')
+    # Admit every frozen state before granting heldout access. Stream and
+    # discard records so no duplicate all-model tensor bundle is retained.
+    for key in record['anchors']:
+        load_frozen_record(directory, key, record, config, phase='anchor')
+    for key in record['transitions']:
+        load_frozen_record(directory, key, record, config, phase='transition')
+    return record
+
+
+def load_frozen_record(directory, key, frozen, config, *, phase):
+    anchor_phase = phase == 'anchor'
+    raw = checkpoint_bytes(directory, frozen['anchors' if anchor_phase else 'transitions'][key])
+    record = torch.load(io.BytesIO(raw), map_location='cpu', weights_only=True)
+    if anchor_phase:
+        encoder, seed = key.split('/'); control = None
+    else:
+        encoder, control, seed = key.split('/')
+    expected_report = next({k:v for k,v in row.items() if k != 'key'}
+                           for row in frozen['phase_reports'] if row['key'] == key)
+    keys = {'encoder', 'seed', 'scale', 'state', 'report'} | (set() if anchor_phase else {'control'})
+    if (type(record) is not dict or set(record) != keys or
+            record['encoder'] != encoder or (not anchor_phase and record['control'] != control) or type(record['seed']) is not int or
+            record['seed'] != int(seed) or type(record['scale']) not in (int, float) or
+            record['scale'] != frozen['scale'] or not isinstance(record['state'], dict) or not record['state'] or
+            json.dumps(record['report'], sort_keys=True, allow_nan=False) != json.dumps(expected_report, sort_keys=True, allow_nan=False)):
+        raise ValueError('individual checkpoint differs from frozen phase identity')
+    if anchor_phase:
+        model = SemanticAnchor(encoder, config.width, config.depth, record['scale'])
+    else:
+        anchor = SemanticAnchor(encoder, config.width, config.depth, record['scale'])
+        mode = 'conditioned' if control == 'shuffled_conditioned' else control
+        model = SemanticTransition(anchor, mode)
+    expected_state = model.state_dict()
+    if set(record['state']) != set(expected_state):
+        raise ValueError('exact architecture checkpoint tensor keys required')
+    for name, value in record['state'].items():
+        expected = expected_state[name]
+        if (not isinstance(value, torch.Tensor) or value.device.type != 'cpu' or value.layout != torch.strided or
+                value.shape != expected.shape or value.dtype != expected.dtype or
+                (value.is_floating_point() and not bool(torch.isfinite(value).all()))):
+            raise ValueError('finite typed CPU tensors matching frozen architecture required')
+    model.load_state_dict(record['state'])
+    if study.fingerprint(model) != record['report'].get('checkpoint_state_sha256'):
+        raise ValueError('frozen state fingerprint differs from completed phase report')
+    return record
+
+
+def load_transition_file(directory, key, frozen, config):
+    return load_frozen_record(directory, key, frozen, config, phase='transition')
 
 
 def suite_proposal(main_root, packs_root, kernel_declaration_path, baseline_path, baseline_pin, attempt_output):
@@ -94,7 +204,7 @@ def suite_proposal(main_root, packs_root, kernel_declaration_path, baseline_path
                 dependencies=dependencies, main_root=str(main_root), device='cuda:0', attempt_output=str(Path(attempt_output).resolve()),
                 kernel_declaration=dict(path=str(kernel_path), sha256=sha(kernel_path)),
                 baseline_witness=dict(path=str(baseline_path), sha256=baseline_pin), splits=splits,
-                checkpoint_policy='all_8_anchors_and_32_transitions_frozen_before_validation;only_selected_pair_before_test',
+                checkpoint_policy='small_manifest_pins_all_8_anchor_and_32_transition_files_before_validation;only_selected_pair_before_test',
                 failure_policy='no_resume_no_retry_no_partial_promotion',
                 test_policy='NONE_keeps_test_sealed;otherwise_one_selected_pair_pass',
                 wall_scope=f"kernel_{kernel['config']['total_wall_seconds']}_seconds_includes_ingress_calibration_all_phases_validation_and_test",
@@ -347,8 +457,10 @@ def run(declaration_path, declaration_pin, output):
             anchor.requires_grad_(False).eval()
             anchor_record = dict(encoder=encoder, seed=seed, scale=scale, state=cpu_state(anchor), report=report)
             key = f'{encoder}/{seed}'
-            anchors_frozen[key] = anchor_record
-            checkpoint(output / f'anchor-{encoder}-{seed}.pt', anchor_record)
+            anchor_path = output / f'anchor-{encoder}-{seed}.pt'
+            anchor_pin = checkpoint(anchor_path, anchor_record)
+            anchors_frozen[key] = checkpoint_entry(anchor_path, anchor_pin)
+            del anchor_record
             phases.append(dict(key=key, **report))
             # Exactly the same seeded full transition state is shared by controls.
             controls = study.transition_controls(anchor, seed)
@@ -359,20 +471,22 @@ def run(declaration_path, declaration_pin, output):
                 arm = f'{encoder}/{control}'
                 record = dict(encoder=encoder, control=control, seed=seed, scale=scale,
                               state=cpu_state(model), report=report)
-                states[f'{arm}/{seed}'] = record
-                checkpoint(output / f'transition-{encoder}-{control}-{seed}.pt', record)
-                phases.append(dict(key=f'{arm}/{seed}', **report)); del model
+                state_path = output / f'transition-{encoder}-{control}-{seed}.pt'
+                state_pin = checkpoint(state_path, record)
+                states[f'{arm}/{seed}'] = checkpoint_entry(state_path, state_pin)
+                phases.append(dict(key=f'{arm}/{seed}', **report)); del model, record
             del anchor
     if len(states) != 32 or len(phases) != 40:
         raise RuntimeError('incomplete study cannot enter validation')
-    bundle_path = output / 'all-frozen-checkpoints.pt'
-    bundle_pin = checkpoint(bundle_path, dict(kind='semantic_all_frozen_checkpoints_v1', declaration_sha256=declaration_pin,
-                                           scale=scale, anchors=anchors_frozen, transitions=states, phase_reports=phases))
+    bundle_path = output / 'all-frozen-checkpoints.json'
+    bundle_pin = publish_json(bundle_path, dict(kind=FREEZE_KIND, version=1, declaration_sha256=declaration_pin,
+                                             scale=scale, anchors=anchors_frozen, transitions=states, phase_reports=phases))
+    frozen = read_checkpoint_manifest(output, bundle_path, bundle_pin, declaration_pin, config)
     publish_json(output / 'training-complete.json', dict(status='complete', anchors=8, transitions=32,
                    bundle_sha256=bundle_pin, phase_reports=phases))
     if sha(bundle_path) != bundle_pin:
         raise ValueError('frozen bundle changed before validation')
-    states = torch.load(bundle_path, map_location='cpu', weights_only=True)['transitions']
+    states = frozen['transitions']
     del train, anchors_frozen
     check_deadline(deadline, 'checkpoint freeze before validation admission')
     gate = frozen_gate(resident, output, 'validation', bundle_path, bundle_pin, declaration['splits']['validation'])
@@ -380,14 +494,15 @@ def run(declaration_path, declaration_pin, output):
     admit_terminal_support(validation, witness['splits']['validation'])
     baseline_rows = baseline_metrics(validation, witness['splits']['validation'], scale, deadline)
     candidates, diagnostics = {}, {}
-    for key, record in states.items():
+    for key in states:
+        record = load_transition_file(output, key, frozen, config)
         model = restore_transition(record, config, validation.device)
         result = evaluate(validation, observer=lambda batch, plan: model.anchor(batch.features)['value_cp'],
                   root_predictor=lambda batch: study.branch(model, record['control'], batch.features, batch.legal_actions),
                   deadline=deadline, model=model)
         arm = f"{record['encoder']}/{record['control']}"
         candidates.setdefault(arm, {})[record['seed']] = result['metrics']
-        diagnostics[key] = result; del model
+        diagnostics[key] = result; del model, record
     baselines = {name: row['metrics'] for name, row in baseline_rows.items()}
     check_deadline(deadline, 'validation completion before selection')
     selected = study.select_complete_study_or_none(candidates, baselines, paired_seeds=config.seeds)
@@ -401,7 +516,7 @@ def run(declaration_path, declaration_pin, output):
         publish_json(output / 'complete.json', dict(status='complete', selection='NONE', test_opened=False,
                      elapsed_seconds=time.monotonic() - started, rating_claim=None))
         return selection
-    selected_states = {str(seed): states[f'{selected}/{seed}'] for seed in config.seeds}
+    selected_states = {str(seed): load_transition_file(output, f'{selected}/{seed}', frozen, config) for seed in config.seeds}
     selected_path = output / 'selected-paired-checkpoints.pt'
     selected_pin = checkpoint(selected_path, dict(kind='semantic_selected_paired_checkpoints_v1',
                          selected=selected, transitions=selected_states, declaration_sha256=declaration_pin))

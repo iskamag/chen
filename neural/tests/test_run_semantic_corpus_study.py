@@ -113,7 +113,7 @@ class RunnerTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError, 'corpus identities differ'):
                         runner.suite_proposal(root, packs, kernel_path, baseline, baseline_pin, root/'attempt')
 
-    def _orchestrate(self, directory, selected, fail_phase=None):
+    def _orchestrate(self, directory, selected, fail_phase=None, corrupt_checkpoint=None):
         output = Path(directory) / 'attempt'
         sources = ('experiments/semantic_corpus/__init__.py', 'experiments/semantic_corpus/packing.py',
                    'experiments/semantic_corpus/resident.py')
@@ -128,6 +128,16 @@ class RunnerTests(unittest.TestCase):
         resident = SimpleNamespace(EvaluationGate=lambda *args: args)
         corpus = SimpleNamespace(device=torch.device('cpu'))
         calls = []
+        original_read_json = runner.read_json
+        original_checkpoint = runner.checkpoint
+        def save_checkpoint(path, record):
+            if corrupt_checkpoint and Path(path).name == f'transition-square-transport-{config.seeds[0]}.pt':
+                record = copy.deepcopy(record)
+                if corrupt_checkpoint == 'identity': record['seed'] = True
+                else:
+                    name = next(name for name,value in record['state'].items() if value.is_floating_point())
+                    record['state'][name] = record['state'][name] + 1
+            return original_checkpoint(path, record)
         def phase(model, corpus, **kwargs):
             calls.append(('phase', kwargs['phase'], kwargs.get('control')))
             if fail_phase is not None and len(calls) == fail_phase:
@@ -138,7 +148,7 @@ class RunnerTests(unittest.TestCase):
             calls.append(('load', split))
             if split == 'validation':
                 self.assertTrue((output/'training-complete.json').exists())
-                bundle = torch.load(output/'all-frozen-checkpoints.pt', weights_only=True)
+                bundle = runner.read_json(output/'all-frozen-checkpoints.json')
                 self.assertEqual(len(bundle['anchors']), 8)
                 self.assertEqual(len(bundle['transitions']), 32)
             if split == 'test':
@@ -149,11 +159,12 @@ class RunnerTests(unittest.TestCase):
         baseline_row = dict(scalar_error_cp=10., interval_regret_cp=10., optimal_agreement=0.)
         candidate_row = dict(scalar_error_cp=1. if selected else 11., interval_regret_cp=1., optimal_agreement=1.)
         with patch.object(runner,'verify_suite',return_value=declaration), \
-             patch.object(runner,'read_json',return_value=witness), \
+             patch.object(runner,'read_json',side_effect=lambda path,*a,**kw: witness if path == 'fixture' else original_read_json(path,*a,**kw)), \
              patch.object(runner,'validate_witness',return_value=witness), \
              patch.object(study,'admit_resident_dependency',return_value=resident), \
              patch.object(runner,'load_split',side_effect=load), \
              patch.object(runner,'admit_terminal_support'), \
+             patch.object(runner,'checkpoint',side_effect=save_checkpoint), \
              patch.object(study,'require_gpu_learning_authority',return_value=config), \
              patch.object(study,'fit_train_material',return_value=1.), \
              patch.object(study,'train_phase',side_effect=phase), \
@@ -163,6 +174,12 @@ class RunnerTests(unittest.TestCase):
                 with self.assertRaises(TimeoutError): runner.run('fixture','d'*64,output)
                 self.assertFalse((output/'training-complete.json').exists())
                 self.assertFalse((output/'validation-checkpoint-gate.json').exists())
+                return calls, None
+            if corrupt_checkpoint:
+                with self.assertRaises(ValueError): runner.run('fixture','d'*64,output)
+                self.assertFalse((output/'validation-checkpoint-gate.json').exists())
+                self.assertNotIn(('load','validation'), calls)
+                self.assertNotIn(('load','test'), calls)
                 return calls, None
             selection = runner.run('fixture','d'*64,output)
             expected_eval = 34 if selected else 32
@@ -193,6 +210,11 @@ class RunnerTests(unittest.TestCase):
             self.assertNotIn(('load','validation'),calls)
             self.assertNotIn(('load','test'),calls)
 
+    def test_malformed_frozen_record_or_state_fails_before_validation_admission(self):
+        for corruption in ('identity', 'fingerprint'):
+            with tempfile.TemporaryDirectory() as directory:
+                self._orchestrate(directory, False, corrupt_checkpoint=corruption)
+
     def test_native_witness_rejects_mates_missing_support_and_boolean_ids(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory)/'source'; source.write_text('synthetic native source')
@@ -213,6 +235,64 @@ class RunnerTests(unittest.TestCase):
                 if change=='missing': bad['splits']['train']['raw_tapered_state_cp']=[1]
                 if change=='hash': bad['splits']['train']['native_hashes']=[-1,2]
                 with self.assertRaises(ValueError): runner.validate_witness(bad,{'train':info})
+
+    def _freeze_fixture(self, root):
+        config = study.Configuration(anchor_updates=1, transition_updates=1)
+        anchors, transitions, phases = {}, {}, []
+        for seed in config.seeds:
+            for encoder in runner.ENCODERS:
+                key = f'{encoder}/{seed}'
+                anchors[key] = dict(file=f'anchor-{encoder}-{seed}.pt', sha256='a'*64, bytes=100 << 20)
+                phases.append(dict(key=key, status='complete', phase='anchor', updates=1))
+                for control in study.CONTROLS:
+                    key = f'{encoder}/{control}/{seed}'
+                    transitions[key] = dict(file=f'transition-{encoder}-{control}-{seed}.pt', sha256='a'*64, bytes=100 << 20)
+                    phases.append(dict(key=key, status='complete', phase='transition', updates=1))
+        record = dict(kind=runner.FREEZE_KIND, version=1, declaration_sha256='b'*64,
+                      scale=1., anchors=anchors, transitions=transitions, phase_reports=phases)
+        path = root/'freeze.json'; pin = runner.publish_json(path, record)
+        return config, record, path, pin
+
+    def test_freeze_manifest_bounds_each_file_without_a_combined_tensor_cap(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); config, record, path, pin = self._freeze_fixture(root)
+            self.assertGreater(sum(row['bytes'] for table in ('anchors','transitions') for row in record[table].values()), runner.CHECKPOINT_LIMIT)
+            # No giant fixture allocation: the known producer files are each
+            # bounded; this metadata test verifies all 40 joins are admitted.
+            with patch.object(runner, 'checkpoint_bytes', return_value=b'') as reader, \
+                 patch.object(runner, 'load_frozen_record') as loader:
+                frozen = runner.read_checkpoint_manifest(root, path, pin, 'b'*64, config)
+                self.assertEqual(reader.call_count,40)
+                self.assertEqual(loader.call_count,40)
+                self.assertEqual(len(frozen['transitions']),32)
+            for mutation in ('missing','path','version_bool','incomplete_phase'):
+                bad = copy.deepcopy(record)
+                if mutation == 'missing': bad['anchors'].pop(next(iter(bad['anchors'])))
+                elif mutation == 'path': bad['transitions'][next(iter(bad['transitions']))]['file']='../escape.pt'
+                elif mutation == 'version_bool': bad['version']=True
+                else: bad['phase_reports'][0]['status']='partial'
+                changed = root/(mutation+'.json'); changed_pin=runner.publish_json(changed,bad)
+                with patch.object(runner,'checkpoint_bytes',return_value=b''):
+                    with self.assertRaises(ValueError):runner.read_checkpoint_manifest(root,changed,changed_pin,'b'*64,config)
+
+    def test_individual_file_hash_and_type_are_checked_before_tensor_loading(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder); path=root/'transition-square-transport-20261021.pt'
+            path.write_bytes(b'mechanical invalid tensor archive')
+            entry=runner.checkpoint_entry(path,runner.sha(path))
+            self.assertEqual(runner.checkpoint_bytes(root,entry),path.read_bytes())
+            with patch.object(runner.torch,'load') as loader:
+                path.write_bytes(b'changed bytes')
+                frozen={'transitions':{'square/transport/20261021':entry}}
+                with self.assertRaises(ValueError):runner.load_transition_file(root,'square/transport/20261021',frozen,study.Configuration())
+                loader.assert_not_called()
+            for value in (True, runner.CHECKPOINT_LIMIT+1):
+                bad=entry.copy();bad['bytes']=value
+                with self.assertRaises(ValueError):runner.checkpoint_bytes(root,bad)
+            path.unlink(); target=root/'target';target.write_bytes(b'abc');path.symlink_to(target)
+            with self.assertRaises(OSError):runner.checkpoint_bytes(root,entry)
+            path.unlink();import os;os.mkfifo(path)
+            with self.assertRaises(ValueError):runner.checkpoint_bytes(root,entry)
 
 
 if __name__ == '__main__':
