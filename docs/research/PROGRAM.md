@@ -62,6 +62,15 @@ Keep proven finite-model equivalence separate from kernel refinement evidence
 and claims about optimal chess decisions. [Architecture direction](../DIRECTION.md)
 defines the residual, quantization and proof ownership boundaries.
 
+Current execution ownership: the coherence agent owns native symbolic production,
+INT8 whole-model fidelity/timing and architecture contracts; the RDNA agent owns
+device epoch scheduling and hardware/resource evidence; the fusion agent owns
+selection experiments and Lean/theoretical strategy analysis. The integration
+lead reviews source and evidence, maintains the transformer comparison arm,
+and commits verified milestones. GPU experiments take exclusive sequential
+hardware reservations while source review, CPU fixtures and proofs proceed in
+parallel. Frozen comparison arms remain available independently of defaults.
+
 ## Gates
 
 1. Core state/move/hash oracles; GPU batch parity and error/lifetime tests.

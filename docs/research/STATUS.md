@@ -378,6 +378,34 @@ cache stability, backup equivalence and INT8 signed32 bounds. Root independently
 compiles all 22 and reproduces their actual axioms audit; HIP correspondence,
 full neural fidelity and global strategy optimality are not established.
 
+Commit `4df4129` retains an isolated best-open GPU selection seed and its
+[independently reconstructed evidence](evidence/best-open-seed-root-review-2026-10-02.json).
+All 1,336 native steps preserve parity. Twelve balanced timing pairs measure
+4.47% lower aggregate search time at 50,000 nodes, with a small mate-case
+regression and uncontrolled shared cache/power effects. Private metadata grows
+by 8 bytes per node. This is a frozen comparison arm; production still uses the
+committed packed cache.
+
+Neural commit `d8f886b` adds a separate
+[multihead semantic transformer control](../../../chen-neural/docs/SEMANTIC_TRANSFORMER_CONTROL.md)
+with eight role tokens, exact empty-key exclusion, preserved EP context, and
+zero-initial current-state symbolic residual projections. Seven CPU mechanics
+tests pass after independent review caught and fixed an extreme-logit masking
+bug and incompatible-batch reshape. Auxiliary symbolic-to-role attention pools
+all symbolic rows; spatial reasoning enters through the square residual path.
+Training, native GPU integration, quantization fidelity and strength for this
+new architecture remain open. Frozen study modules and deployment loaders
+remain unchanged.
+
+The [device-owned epoch experiment](../DEVICE_EPOCH_EXPERIMENT.md) compares
+gated graphs, a single resident workgroup and an occupancy-admitted cooperative
+grid. Its full-GPU classical phase controller is under hardware validation;
+final independent archive admission and equal-work score/PV timing checks are
+pending. The current Torch callback still requires an explicit host boundary;
+native symbolic and INT8 graph phases are the next integration work. The
+whole-model TRAIN-only INT8 diagnostic is separately bounded and measures
+same-checkpoint numerical error and latency without retraining or promotion.
+
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.
 2. Compare full-width frontier, faithful regularized batched search and a
