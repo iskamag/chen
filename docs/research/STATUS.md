@@ -363,8 +363,14 @@ Perft and equal-time effects vary by position, with regressions retained.
 
 Full GPU execution remains the target, including simulator-owned symbolic
 channels injected into neural residual streams. Separate mixed INT8 and symbolic
-role-injection candidates now have arithmetic/causality fixtures; actual GPU
-numerics, end-to-end timing and simulator integration remain pending. Timing
+role-injection candidates now have arithmetic/causality fixtures. Commit
+`6846c50` adds the [actual gfx1030 INT8 affine backend](../RDNA_INT8_AFFINE.md):
+16 matrix shapes and 674,337 outputs per checked path pass independent integer
+oracles, including zero/tiny rows, ties, residuals and unpadded input tails.
+Fused dynamic quantization improves small affine calls but loses to wider routes
+at larger batches. The actual loaded Torch HIP provider is recorded separately
+from the native compiler. Whole-model fidelity/latency and simulator integration
+remain pending; no neural deployment or strength result follows. Timing
 is primary; memory bounds are engineering controls rather than the optimization
 objective. Commit `b1505ef` adds [22 Lean certificates and a latency strategy
 comparison](FINITE_MODEL_STRATEGIES.md), including finite selection obstruction,
