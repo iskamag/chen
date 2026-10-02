@@ -1,0 +1,265 @@
+{
+  "status": "passed_completed_clean_work_and_separate_repaired_profile",
+  "audit_source_sha256": "7c35b2988da7e29429fd66392ca1898354a1923fb0038c9293f82e5c2b3bfb27",
+  "cpu_exhaustive": {
+    "status": "passed",
+    "checks": 2439488,
+    "relevant_ray_occupancy_enumeration": true,
+    "both_origin_bits": true,
+    "queen_random_checks": 100000
+  },
+  "clean_rows_checked": 72,
+  "profile_rows_checked": 12,
+  "rules_per_arm": {
+    "roots": 1024,
+    "transitions": 19574,
+    "perft_and_boundaries": true
+  },
+  "workloads": [
+    {
+      "config": {
+        "name": "original-six",
+        "depth": 4,
+        "nodes": 2000,
+        "batch": 8,
+        "capacity": 250000
+      },
+      "median_search_sum_ms": {
+        "baseline": 134.066154,
+        "candidate": 133.826972
+      },
+      "baseline_over_candidate": 1.0017872480892716,
+      "median_aggregate_kernel_ms": {
+        "baseline": 120.85209527891129,
+        "candidate": 120.64660739712417
+      }
+    },
+    {
+      "config": {
+        "name": "large-arena-six",
+        "depth": 64,
+        "nodes": 50000,
+        "batch": 32,
+        "capacity": 250000
+      },
+      "median_search_sum_ms": {
+        "baseline": 809.710496,
+        "candidate": 808.455906
+      },
+      "baseline_over_candidate": 1.0015518347886248,
+      "median_aggregate_kernel_ms": {
+        "baseline": 755.24185688328,
+        "candidate": 755.2091416530311
+      }
+    }
+  ],
+  "profiles": {
+    "baseline": [
+      {
+        "Name": "(anonymous namespace)::selective_choose_classical((anonymous namespace)::Node const*, unsigned int const*, (anonymous namespace)::SelectMeta*, unsigned long long const*, unsigned int*, (anonymous namespace)::SelectWork*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 559436413,
+        "AverageNs": "1575877.219718",
+        "Percentage": 74.51,
+        "MinNs": "2240",
+        "MaxNs": "70176650",
+        "StdDev": "5950335.602450"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_complete_classical((anonymous namespace)::Node*, (anonymous namespace)::SelectMeta*, unsigned int*, (anonymous namespace)::SelectWork*, unsigned long long const*, unsigned long long const*, (anonymous namespace)::SelectCompletion*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 115870351,
+        "AverageNs": "326395.354930",
+        "Percentage": 15.43,
+        "MinNs": "3760",
+        "MaxNs": "990409",
+        "StdDev": "157917.656457"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_children_classical(ChenRulePosition*, (anonymous namespace)::Node*, ChenRuleMove*, unsigned int*, (anonymous namespace)::SelectMeta*, (anonymous namespace)::SelectWork const*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long const*, unsigned long, unsigned long long*, unsigned long long*, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 56807431,
+        "AverageNs": "160020.932394",
+        "Percentage": 7.57,
+        "MinNs": "2840",
+        "MaxNs": "634805",
+        "StdDev": "70865.388410"
+      },
+      {
+        "Name": "__amd_rocclr_copyBuffer",
+        "Calls": 2870,
+        "TotalDurationNs": 9150489,
+        "AverageNs": "3188.323693",
+        "Percentage": 1.22,
+        "MinNs": "1960",
+        "MaxNs": "365683",
+        "StdDev": "13835.644740"
+      },
+      {
+        "Name": "__amd_rocclr_fillBufferAligned",
+        "Calls": 1717,
+        "TotalDurationNs": 5205914,
+        "AverageNs": "3031.982528",
+        "Percentage": 0.6934,
+        "MinNs": "2120",
+        "MaxNs": "233682",
+        "StdDev": "6739.622892"
+      },
+      {
+        "Name": "(anonymous namespace)::finish_kernel((anonymous namespace)::Node const*, ChenRulesResult*, ChenRuleMove*, unsigned long, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 1988173,
+        "AverageNs": "5600.487324",
+        "Percentage": 0.2648,
+        "MinNs": "1920",
+        "MaxNs": "288802",
+        "StdDev": "15607.131226"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_snapshot((anonymous namespace)::Node const*, (anonymous namespace)::SelectMeta const*, unsigned long long const*, unsigned long long const*, ChenSelectiveStats*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int*)",
+        "Calls": 361,
+        "TotalDurationNs": 1506614,
+        "AverageNs": "4173.445983",
+        "Percentage": 0.2007,
+        "MinNs": "2240",
+        "MaxNs": "73720",
+        "StdDev": "5960.500358"
+      },
+      {
+        "Name": "(anonymous namespace)::classify_kernel(ChenRulePosition const*, (anonymous namespace)::Node*, ChenRuleMove*, unsigned int*, unsigned long, unsigned long, unsigned int, unsigned long const*, unsigned long, unsigned long long*, unsigned int*)",
+        "Calls": 6,
+        "TotalDurationNs": 793167,
+        "AverageNs": "132194.500000",
+        "Percentage": 0.1056,
+        "MinNs": "61240",
+        "MaxNs": "202002",
+        "StdDev": "53448.500203"
+      },
+      {
+        "Name": "(anonymous namespace)::reset_root(ChenRulePosition const*, (anonymous namespace)::Node*, unsigned int*)",
+        "Calls": 6,
+        "TotalDurationNs": 53000,
+        "AverageNs": "8833.333333",
+        "Percentage": 0.007059,
+        "MinNs": "6240",
+        "MaxNs": "17400",
+        "StdDev": "4278.273795"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_root_meta((anonymous namespace)::Node const*, (anonymous namespace)::SelectMeta*, unsigned int)",
+        "Calls": 6,
+        "TotalDurationNs": 13640,
+        "AverageNs": "2273.333333",
+        "Percentage": 0.001817,
+        "MinNs": "2080",
+        "MaxNs": "2960",
+        "StdDev": "338.860837"
+      }
+    ],
+    "candidate": [
+      {
+        "Name": "(anonymous namespace)::selective_choose_classical((anonymous namespace)::Node const*, unsigned int const*, (anonymous namespace)::SelectMeta*, unsigned long long const*, unsigned int*, (anonymous namespace)::SelectWork*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 558335334,
+        "AverageNs": "1572775.588732",
+        "Percentage": 75.67,
+        "MinNs": "2440",
+        "MaxNs": "70446533",
+        "StdDev": "5895000.464123"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_complete_classical((anonymous namespace)::Node*, (anonymous namespace)::SelectMeta*, unsigned int*, (anonymous namespace)::SelectWork*, unsigned long long const*, unsigned long long const*, (anonymous namespace)::SelectCompletion*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 114270237,
+        "AverageNs": "321887.991549",
+        "Percentage": 15.49,
+        "MinNs": "3720",
+        "MaxNs": "1037529",
+        "StdDev": "158319.719883"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_children_classical(ChenRulePosition*, (anonymous namespace)::Node*, ChenRuleMove*, unsigned int*, (anonymous namespace)::SelectMeta*, (anonymous namespace)::SelectWork const*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long const*, unsigned long, unsigned long long*, unsigned long long*, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 47552034,
+        "AverageNs": "133949.391549",
+        "Percentage": 6.44,
+        "MinNs": "2440",
+        "MaxNs": "767126",
+        "StdDev": "72685.581309"
+      },
+      {
+        "Name": "__amd_rocclr_copyBuffer",
+        "Calls": 2870,
+        "TotalDurationNs": 9076358,
+        "AverageNs": "3162.494077",
+        "Percentage": 1.23,
+        "MinNs": "1960",
+        "MaxNs": "445724",
+        "StdDev": "15784.758620"
+      },
+      {
+        "Name": "__amd_rocclr_fillBufferAligned",
+        "Calls": 1717,
+        "TotalDurationNs": 5053000,
+        "AverageNs": "2942.923704",
+        "Percentage": 0.6848,
+        "MinNs": "2080",
+        "MaxNs": "168282",
+        "StdDev": "6483.176432"
+      },
+      {
+        "Name": "(anonymous namespace)::finish_kernel((anonymous namespace)::Node const*, ChenRulesResult*, ChenRuleMove*, unsigned long, unsigned int*)",
+        "Calls": 355,
+        "TotalDurationNs": 1590853,
+        "AverageNs": "4481.276056",
+        "Percentage": 0.2156,
+        "MinNs": "1960",
+        "MaxNs": "8200",
+        "StdDev": "1141.615857"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_snapshot((anonymous namespace)::Node const*, (anonymous namespace)::SelectMeta const*, unsigned long long const*, unsigned long long const*, ChenSelectiveStats*, unsigned long, unsigned long, unsigned long, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int*)",
+        "Calls": 361,
+        "TotalDurationNs": 1352454,
+        "AverageNs": "3746.409972",
+        "Percentage": 0.1833,
+        "MinNs": "2200",
+        "MaxNs": "32640",
+        "StdDev": "2073.406042"
+      },
+      {
+        "Name": "(anonymous namespace)::classify_kernel(ChenRulePosition const*, (anonymous namespace)::Node*, ChenRuleMove*, unsigned int*, unsigned long, unsigned long, unsigned int, unsigned long const*, unsigned long, unsigned long long*, unsigned int*)",
+        "Calls": 6,
+        "TotalDurationNs": 613004,
+        "AverageNs": "102167.333333",
+        "Percentage": 0.0831,
+        "MinNs": "46760",
+        "MaxNs": "195162",
+        "StdDev": "52701.971127"
+      },
+      {
+        "Name": "(anonymous namespace)::reset_root(ChenRulePosition const*, (anonymous namespace)::Node*, unsigned int*)",
+        "Calls": 6,
+        "TotalDurationNs": 44720,
+        "AverageNs": "7453.333333",
+        "Percentage": 0.00606,
+        "MinNs": "6200",
+        "MaxNs": "8800",
+        "StdDev": "1065.132230"
+      },
+      {
+        "Name": "(anonymous namespace)::selective_root_meta((anonymous namespace)::Node const*, (anonymous namespace)::SelectMeta*, unsigned int)",
+        "Calls": 6,
+        "TotalDurationNs": 13240,
+        "AverageNs": "2206.666667",
+        "Percentage": 0.001794,
+        "MinNs": "2120",
+        "MaxNs": "2320",
+        "StdDev": "77.631609"
+      }
+    ]
+  },
+  "adoption": "Keep as controlled candidate; clean integrated latency difference below 0.2 percent, no demonstrated whole-engine gain.",
+  "initial_profile_failure": "Original phase preserved; exit127 missing libdw. Only two instrumented traces repeated with recorded profiler dependency path; no clean benchmark repeated.",
+  "scope": "Correctness and fixed-work kernel study, no strength or rating inference"
+}

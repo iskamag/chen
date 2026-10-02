@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/tmp/chen-sliding-swar-2026-10-02/sliding_swar_probe.py", line 152, in <module>
+    main()
+  File "/tmp/chen-sliding-swar-2026-10-02/sliding_swar_probe.py", line 137, in main
+    text, rec = run(argv, env, args.output / ("profile-" + arm), 30)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-sliding-swar-2026-10-02/selective_fusion_probe.py", line 81, in run
+    raise RuntimeError(f"native run failed/retirement not established: {stem}; study ends")
+RuntimeError: native run failed/retirement not established: /tmp/chen-sliding-swar-2026-10-02/study/profile-baseline; study ends

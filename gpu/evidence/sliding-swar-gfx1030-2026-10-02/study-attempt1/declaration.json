@@ -1,0 +1,64 @@
+{
+  "kind": "classical_sliding_swar_baseline_candidate_exact_work_comparison",
+  "variant": "kogge_stone_rook_bishop_in_sliding_only_v1",
+  "source_sha256": "765ea9b47582122e1463db7a9c8fe66bc9aab9b93aa8c8a58a51101205d9249a",
+  "helper_sha256": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f",
+  "rules_oracle_sha256": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+  "artifacts": {
+    "engine": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/chen",
+      "sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392"
+    },
+    "tests": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/device-selective-tests",
+      "sha256": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15"
+    },
+    "baseline": {
+      "path": "/tmp/chen-sparse-ply-2026-10-02/libchen_gpu_sparse_ply.so",
+      "sha256": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb"
+    },
+    "candidate": {
+      "path": "/tmp/chen-sliding-swar-2026-10-02/libchen_gpu_swar.so",
+      "sha256": "979d6ad1dbd7a439db7eb6a0dffbd4c6c82d447a28a4f02c83e1163dd2700424"
+    },
+    "suite": {
+      "path": "/tmp/chen-fusion-hardware-2026-10-02/positions.txt",
+      "sha256": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74"
+    }
+  },
+  "tests": [
+    "actual_selective_stepwise_arena_parity_and_complete_horizons",
+    "actual_selective_atomic_limits_history_invalidation_and_thread_transfer"
+  ],
+  "workloads": [
+    {
+      "name": "original-six",
+      "depth": 4,
+      "nodes": 2000,
+      "batch": 8,
+      "capacity": 250000
+    },
+    {
+      "name": "large-arena-six",
+      "depth": 64,
+      "nodes": 50000,
+      "batch": 32,
+      "capacity": 250000
+    }
+  ],
+  "order": [
+    "baseline",
+    "candidate",
+    "candidate",
+    "baseline",
+    "baseline",
+    "candidate"
+  ],
+  "rows_per_run": 6,
+  "cpu_affinity": [
+    5
+  ],
+  "timeout_per_child_seconds": 30,
+  "profile": true,
+  "scope": "Full legal/transition/hash/perft oracle, per-step portable tests and alternating cold-process identical-work latency; separate instrumented traces, no neural or strength claim"
+}

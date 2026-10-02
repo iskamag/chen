@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "5",
+    "/tmp/chen-fusion-hardware-2026-10-02/device-selective-tests",
+    "--ignored",
+    "--test-threads=1",
+    "--nocapture"
+  ],
+  "pid": 4081,
+  "requested_library": "/tmp/chen-sparse-ply-2026-10-02/libchen_gpu_sparse_ply.so",
+  "timeout_seconds": 30,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 0.42856548400595784,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

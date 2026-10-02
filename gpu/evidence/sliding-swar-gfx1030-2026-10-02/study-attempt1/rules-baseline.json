@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "/tmp/chen-sliding-swar-2026-10-02/rules_probe.py",
+    "/tmp/chen-sparse-ply-2026-10-02/libchen_gpu_sparse_ply.so",
+    "--positions",
+    "1024",
+    "--capacity",
+    "250000",
+    "--max-depth",
+    "4"
+  ],
+  "pid": 4077,
+  "requested_library": "/tmp/chen-sparse-ply-2026-10-02/libchen_gpu_sparse_ply.so",
+  "timeout_seconds": 30,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 8.069239517993992,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

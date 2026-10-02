@@ -1,0 +1,2044 @@
+Displaying notes found in: .note
+  Owner                Data size 	Description
+  AMDGPU               0x00009451	NT_AMDGPU_METADATA (AMDGPU Metadata)
+    AMDGPU Metadata:
+        ---
+amdhsa.kernels:
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         52
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         64
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         66
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         112
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 304
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_113generic_legalEPK16ChenRulePositionP12ChenRuleMovePjS5_mS5_
+    .private_segment_fixed_size: 408
+    .sgpr_count:     89
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_113generic_legalEPK16ChenRulePositionP12ChenRuleMovePjS5_mS5_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     121
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         52
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         64
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         66
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         112
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 304
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_112generic_makeEPK16ChenRulePositionPK12ChenRuleMovePS3_PS0_mPj
+    .private_segment_fixed_size: 408
+    .sgpr_count:     91
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_112generic_makeEPK16ChenRulePositionPK12ChenRuleMovePS3_PS0_mPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     127
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 24
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_110reset_rootEPK16ChenRulePositionPNS_4NodeEPj
+    .private_segment_fixed_size: 136
+    .sgpr_count:     56
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_110reset_rootEPK16ChenRulePositionPNS_4NodeEPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     83
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         56
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         64
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         72
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         80
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         88
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         92
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         96
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         100
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         102
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         106
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         108
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         110
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         128
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         136
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         144
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         152
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 344
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_115classify_kernelEPK16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjmmjPKmmPyS7_
+    .private_segment_fixed_size: 264
+    .sgpr_count:     52
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_115classify_kernelEPK16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjmmjPKmmPyS7_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     127
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         48
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 56
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_113prefix_kernelEPNS_4NodeEPKjmmmmPNS_7SummaryE
+    .private_segment_fixed_size: 0
+    .sgpr_count:     24
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_113prefix_kernelEPNS_4NodeEPKjmmmmPNS_7SummaryE.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     5
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         8
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         36
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         44
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         46
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         48
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         50
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         72
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         96
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 288
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_119expansion_preflightEPKNS_4NodeEmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_119expansion_preflightEPKNS_4NodeEmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     4
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         44
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         56
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         58
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 296
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_113expand_kernelEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovemm
+    .private_segment_fixed_size: 264
+    .sgpr_count:     27
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_113expand_kernelEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovemm.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     124
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         48
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         60
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         64
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         72
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         74
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         76
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         78
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         112
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         120
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 312
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_121evaluate_kernel_rulesEPK16ChenRulePositionPNS_4NodeEmmjPyPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_121evaluate_kernel_rulesEPK16ChenRulePositionPNS_4NodeEmmjPyPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     23
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         8
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         36
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         44
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         46
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         48
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         50
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         72
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         96
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 288
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_113reduce_kernelEPNS_4NodeEmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_113reduce_kernelEPNS_4NodeEmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     13
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         8
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         44
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         56
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         58
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 296
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_119reduction_preflightEPKNS_4NodeEmmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     23
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_119reduction_preflightEPKNS_4NodeEmmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     6
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 40
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_113finish_kernelEPKNS_4NodeEP15ChenRulesResultP12ChenRuleMovemPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_113finish_kernelEPKNS_4NodeEP15ChenRulesResultP12ChenRuleMovemPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     5
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         72
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         80
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         88
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         96
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         100
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         104
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         108
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         110
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         112
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         114
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         116
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         118
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         136
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         144
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         152
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         160
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 352
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_116replay_preflightEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjPjmmmjPKmmSB_
+    .private_segment_fixed_size: 280
+    .sgpr_count:     57
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_116replay_preflightEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjPjmmmjPKmmSB_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     128
+    .vgpr_spill_count: 4
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           136
+        .value_kind:     by_value
+      - .offset:         192
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         196
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         200
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         204
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         206
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         208
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         210
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         212
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         214
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         232
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         240
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         248
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         256
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 448
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_120replay_export_kernelEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjmmm14ChenReplaySink
+    .private_segment_fixed_size: 0
+    .sgpr_count:     30
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_120replay_export_kernelEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjmmm14ChenReplaySink.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     76
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         48
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         60
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         64
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         72
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         74
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         76
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         78
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         112
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         120
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 312
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_117teacher_preflightEPKNS_4NodeEPK12ChenRuleMovePKjmmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     21
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_117teacher_preflightEPKNS_4NodeEPK12ChenRuleMovePKjmmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     18
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           48
+        .value_kind:     by_value
+      - .offset:         80
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         84
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         88
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         92
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         94
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         96
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         98
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         100
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         102
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         120
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         128
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         136
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         144
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 336
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_121teacher_export_kernelEPK16ChenRulePositionPKNS_4NodeEmm15ChenTeacherSink
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_121teacher_export_kernelEPK16ChenRulePositionPKNS_4NodeEmm15ChenTeacherSink.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     16
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         8
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         32
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         36
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         44
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         46
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         48
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         50
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         72
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         96
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 288
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_124external_phase_preflightEPKNS_4NodeEmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_124external_phase_preflightEPKNS_4NodeEmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     4
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         44
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         56
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         58
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 296
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_126external_scores_initializeEPKNS_4NodeEPjmmPNS_7SummaryE
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_126external_scores_initializeEPKNS_4NodeEPjmmPNS_7SummaryE.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     6
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         44
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         56
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         58
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 296
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_124external_score_preflightEPKNS_4NodeEPKjmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_124external_score_preflightEPKNS_4NodeEPKjmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     5
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         44
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         52
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         54
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         56
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         58
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         80
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         104
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 296
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_121external_score_commitEPNS_4NodeEPKjmmPy
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_121external_score_commitEPNS_4NodeEPKjmmPy.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     6
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           4
+        .value_kind:     by_value
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 20
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_119selective_root_metaEPKNS_4NodeEPNS_10SelectMetaEj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     7
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_119selective_root_metaEPKNS_4NodeEPNS_10SelectMetaEj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     4
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         68
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         72
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         80
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 88
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_116selective_chooseEPKNS_4NodeEPKjPKNS_10SelectMetaEPjPNS_10SelectWorkEmmmjjjS8_
+    .private_segment_fixed_size: 0
+    .sgpr_count:     47
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_116selective_chooseEPKNS_4NodeEPKjPKNS_10SelectMetaEPjPNS_10SelectWorkEmmmjjjS8_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     14
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         52
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         64
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         66
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         112
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 304
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_116selective_expandEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovePKjPKNS_10SelectWorkEm
+    .private_segment_fixed_size: 264
+    .sgpr_count:     28
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_116selective_expandEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovePKjPKNS_10SelectWorkEm.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     125
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         16
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         48
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         52
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         56
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         60
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         62
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         64
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         66
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         68
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         70
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         88
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         96
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         104
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         112
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 304
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_118selective_new_metaEPKNS_4NodeEPNS_10SelectMetaEmmjPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     18
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_118selective_new_metaEPKNS_4NodeEPNS_10SelectMetaEmmjPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     7
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         24
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         32
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 48
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_116selective_backupEPNS_4NodeEPNS_10SelectMetaEPKjmmPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     27
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_116selective_backupEPNS_4NodeEPNS_10SelectMetaEPKjmmPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     10
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         40
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         68
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         72
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         76
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         80
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 88
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_118selective_snapshotEPKNS_4NodeEPKNS_10SelectMetaEPKyS7_P18ChenSelectiveStatsmmmjjjjPj
+    .private_segment_fixed_size: 0
+    .sgpr_count:     34
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_118selective_snapshotEPKNS_4NodeEPKNS_10SelectMetaEPKyS7_P18ChenSelectiveStatsmmmjjjjPj.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     24
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         72
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         76
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         80
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         84
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         88
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 96
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_126selective_choose_classicalEPKNS_4NodeEPKjPNS_10SelectMetaEPKyPjPNS_10SelectWorkEmmmjjjjS9_
+    .private_segment_fixed_size: 0
+    .sgpr_count:     47
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_126selective_choose_classicalEPKNS_4NodeEPKjPNS_10SelectMetaEPKyPjPNS_10SelectWorkEmmmjjjjS9_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     16
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         48
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         72
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         76
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         80
+        .size:           4
+        .value_kind:     by_value
+      - .offset:         84
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         88
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         96
+        .size:           8
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         104
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         112
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         120
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         128
+        .size:           4
+        .value_kind:     hidden_block_count_x
+      - .offset:         132
+        .size:           4
+        .value_kind:     hidden_block_count_y
+      - .offset:         136
+        .size:           4
+        .value_kind:     hidden_block_count_z
+      - .offset:         140
+        .size:           2
+        .value_kind:     hidden_group_size_x
+      - .offset:         142
+        .size:           2
+        .value_kind:     hidden_group_size_y
+      - .offset:         144
+        .size:           2
+        .value_kind:     hidden_group_size_z
+      - .offset:         146
+        .size:           2
+        .value_kind:     hidden_remainder_x
+      - .offset:         148
+        .size:           2
+        .value_kind:     hidden_remainder_y
+      - .offset:         150
+        .size:           2
+        .value_kind:     hidden_remainder_z
+      - .offset:         168
+        .size:           8
+        .value_kind:     hidden_global_offset_x
+      - .offset:         176
+        .size:           8
+        .value_kind:     hidden_global_offset_y
+      - .offset:         184
+        .size:           8
+        .value_kind:     hidden_global_offset_z
+      - .offset:         192
+        .size:           2
+        .value_kind:     hidden_grid_dims
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 384
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_128selective_children_classicalEP16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjPNS_10SelectMetaEPKNS_10SelectWorkEmmmjjjjPKmmPySE_S6_
+    .private_segment_fixed_size: 408
+    .sgpr_count:     66
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_128selective_children_classicalEP16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjPNS_10SelectMetaEPKNS_10SelectWorkEmmmjjjjPKmmPySE_S6_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     120
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+  - .args:
+      - .address_space:  global
+        .offset:         0
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         8
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         16
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         24
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         32
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         40
+        .size:           8
+        .value_kind:     global_buffer
+      - .address_space:  global
+        .offset:         48
+        .size:           8
+        .value_kind:     global_buffer
+      - .offset:         56
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         64
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         72
+        .size:           8
+        .value_kind:     by_value
+      - .offset:         80
+        .size:           4
+        .value_kind:     by_value
+      - .address_space:  global
+        .offset:         88
+        .size:           8
+        .value_kind:     global_buffer
+    .group_segment_fixed_size: 0
+    .kernarg_segment_align: 8
+    .kernarg_segment_size: 96
+    .language:       OpenCL C
+    .language_version:
+      - 2
+      - 0
+    .max_flat_workgroup_size: 1024
+    .name:           _ZN12_GLOBAL__N_128selective_complete_classicalEPNS_4NodeEPNS_10SelectMetaEPjPNS_10SelectWorkEPKyS8_PNS_16SelectCompletionEmmmjS4_
+    .private_segment_fixed_size: 0
+    .sgpr_count:     42
+    .sgpr_spill_count: 0
+    .symbol:         _ZN12_GLOBAL__N_128selective_complete_classicalEPNS_4NodeEPNS_10SelectMetaEPjPNS_10SelectWorkEPKyS8_PNS_16SelectCompletionEmmmjS4_.kd
+    .uniform_work_group_size: 1
+    .uses_dynamic_stack: false
+    .vgpr_count:     23
+    .vgpr_spill_count: 0
+    .wavefront_size: 32
+    .workgroup_processor_mode: 1
+amdhsa.target:   amdgcn-amd-amdhsa--gfx1030
+amdhsa.version:
+  - 1
+  - 2
+...
+

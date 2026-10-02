@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "5",
+    "/tmp/chen-fusion-hardware-2026-10-02/chen",
+    "bench",
+    "--backend",
+    "hip-selective",
+    "--eval",
+    "tapered",
+    "--depth",
+    "64",
+    "--nodes",
+    "50000",
+    "--selective-batch",
+    "32",
+    "--max-positions",
+    "250000",
+    "--suite",
+    "/tmp/chen-fusion-hardware-2026-10-02/positions.txt"
+  ],
+  "pid": 4167,
+  "requested_library": "/tmp/chen-sparse-ply-2026-10-02/libchen_gpu_sparse_ply.so",
+  "timeout_seconds": 30,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 1.1375769330188632,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

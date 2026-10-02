@@ -1,0 +1,376 @@
+{
+  "candidate_library_sha256": "979d6ad1dbd7a439db7eb6a0dffbd4c6c82d447a28a4f02c83e1163dd2700424",
+  "baseline_library_sha256": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb",
+  "candidate_build_command": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "bash",
+    "/tmp/chen-sliding-swar-2026-10-02/build.sh",
+    "/tmp/chen-sliding-swar-2026-10-02/libchen_gpu_swar.so"
+  ],
+  "cpu_exhaustive_command": [
+    "c++",
+    "-O3",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I",
+    "gpu",
+    "gpu/sliding_swar_oracle.cpp",
+    "-o",
+    "/tmp/chen-sliding-swar-oracle"
+  ],
+  "cpu_oracle_source_sha256": "ba5efc7d9eff067b7bb90cf99ed3c4ddfd414ec19e292440441bb2b932f3dff6",
+  "candidate_include_sha256": "5a1c9b4be0db5957e92da6ae6a977acdbffadc26d7a94807191e0803af0caaf4",
+  "runtime_rules_elf_sha256": {
+    "baseline": "8c0803ab98787f19a2c540cde0a60e2723d992fe74e0595e745863981fee4f3c",
+    "candidate": "3d9e7a612ca809599280daf9cce0ce6b262b97c278b0cd0290972486791e6e3e"
+  },
+  "runtime_resources": {
+    "baseline": {
+      "_ZN12_GLOBAL__N_113generic_legalEPK16ChenRulePositionP12ChenRuleMovePjS5_mS5_": {
+        "sgpr_count": 88,
+        "vgpr_count": 95,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_112generic_makeEPK16ChenRulePositionPK12ChenRuleMovePS3_PS0_mPj": {
+        "sgpr_count": 90,
+        "vgpr_count": 99,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_110reset_rootEPK16ChenRulePositionPNS_4NodeEPj": {
+        "sgpr_count": 56,
+        "vgpr_count": 82,
+        "private_segment_fixed_size": 136,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_115classify_kernelEPK16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjmmjPKmmPyS7_": {
+        "sgpr_count": 51,
+        "vgpr_count": 100,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113prefix_kernelEPNS_4NodeEPKjmmmmPNS_7SummaryE": {
+        "sgpr_count": 24,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119expansion_preflightEPKNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113expand_kernelEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovemm": {
+        "sgpr_count": 27,
+        "vgpr_count": 89,
+        "private_segment_fixed_size": 264,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121evaluate_kernel_rulesEPK16ChenRulePositionPNS_4NodeEmmjPyPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 23,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113reduce_kernelEPNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 13,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119reduction_preflightEPKNS_4NodeEmmmPj": {
+        "sgpr_count": 23,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113finish_kernelEPKNS_4NodeEP15ChenRulesResultP12ChenRuleMovemPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116replay_preflightEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjPjmmmjPKmmSB_": {
+        "sgpr_count": 56,
+        "vgpr_count": 101,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_120replay_export_kernelEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjmmm14ChenReplaySink": {
+        "sgpr_count": 30,
+        "vgpr_count": 76,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_117teacher_preflightEPKNS_4NodeEPK12ChenRuleMovePKjmmmPj": {
+        "sgpr_count": 21,
+        "vgpr_count": 18,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121teacher_export_kernelEPK16ChenRulePositionPKNS_4NodeEmm15ChenTeacherSink": {
+        "sgpr_count": 18,
+        "vgpr_count": 16,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_124external_phase_preflightEPKNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_126external_scores_initializeEPKNS_4NodeEPjmmPNS_7SummaryE": {
+        "sgpr_count": 18,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_124external_score_preflightEPKNS_4NodeEPKjmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121external_score_commitEPNS_4NodeEPKjmmPy": {
+        "sgpr_count": 18,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119selective_root_metaEPKNS_4NodeEPNS_10SelectMetaEj": {
+        "sgpr_count": 7,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_chooseEPKNS_4NodeEPKjPKNS_10SelectMetaEPjPNS_10SelectWorkEmmmjjjS8_": {
+        "sgpr_count": 47,
+        "vgpr_count": 14,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_expandEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovePKjPKNS_10SelectWorkEm": {
+        "sgpr_count": 28,
+        "vgpr_count": 90,
+        "private_segment_fixed_size": 264,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_118selective_new_metaEPKNS_4NodeEPNS_10SelectMetaEmmjPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 7,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_backupEPNS_4NodeEPNS_10SelectMetaEPKjmmPj": {
+        "sgpr_count": 27,
+        "vgpr_count": 10,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_118selective_snapshotEPKNS_4NodeEPKNS_10SelectMetaEPKyS7_P18ChenSelectiveStatsmmmjjjjPj": {
+        "sgpr_count": 34,
+        "vgpr_count": 24,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_126selective_choose_classicalEPKNS_4NodeEPKjPNS_10SelectMetaEPKyPjPNS_10SelectWorkEmmmjjjjS9_": {
+        "sgpr_count": 47,
+        "vgpr_count": 16,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_128selective_children_classicalEP16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjPNS_10SelectMetaEPKNS_10SelectWorkEmmmjjjjPKmmPySE_S6_": {
+        "sgpr_count": 70,
+        "vgpr_count": 120,
+        "private_segment_fixed_size": 552,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_128selective_complete_classicalEPNS_4NodeEPNS_10SelectMetaEPjPNS_10SelectWorkEPKyS8_PNS_16SelectCompletionEmmmjS4_": {
+        "sgpr_count": 42,
+        "vgpr_count": 23,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      }
+    },
+    "candidate": {
+      "_ZN12_GLOBAL__N_113generic_legalEPK16ChenRulePositionP12ChenRuleMovePjS5_mS5_": {
+        "sgpr_count": 89,
+        "vgpr_count": 121,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_112generic_makeEPK16ChenRulePositionPK12ChenRuleMovePS3_PS0_mPj": {
+        "sgpr_count": 91,
+        "vgpr_count": 127,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_110reset_rootEPK16ChenRulePositionPNS_4NodeEPj": {
+        "sgpr_count": 56,
+        "vgpr_count": 83,
+        "private_segment_fixed_size": 136,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_115classify_kernelEPK16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjmmjPKmmPyS7_": {
+        "sgpr_count": 52,
+        "vgpr_count": 127,
+        "private_segment_fixed_size": 264,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113prefix_kernelEPNS_4NodeEPKjmmmmPNS_7SummaryE": {
+        "sgpr_count": 24,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119expansion_preflightEPKNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113expand_kernelEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovemm": {
+        "sgpr_count": 27,
+        "vgpr_count": 124,
+        "private_segment_fixed_size": 264,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121evaluate_kernel_rulesEPK16ChenRulePositionPNS_4NodeEmmjPyPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 23,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113reduce_kernelEPNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 13,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119reduction_preflightEPKNS_4NodeEmmmPj": {
+        "sgpr_count": 23,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_113finish_kernelEPKNS_4NodeEP15ChenRulesResultP12ChenRuleMovemPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116replay_preflightEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjPjmmmjPKmmSB_": {
+        "sgpr_count": 57,
+        "vgpr_count": 128,
+        "private_segment_fixed_size": 280,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_120replay_export_kernelEPK16ChenRulePositionPKNS_4NodeEPK12ChenRuleMovePKjmmm14ChenReplaySink": {
+        "sgpr_count": 30,
+        "vgpr_count": 76,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_117teacher_preflightEPKNS_4NodeEPK12ChenRuleMovePKjmmmPj": {
+        "sgpr_count": 21,
+        "vgpr_count": 18,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121teacher_export_kernelEPK16ChenRulePositionPKNS_4NodeEmm15ChenTeacherSink": {
+        "sgpr_count": 18,
+        "vgpr_count": 16,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_124external_phase_preflightEPKNS_4NodeEmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_126external_scores_initializeEPKNS_4NodeEPjmmPNS_7SummaryE": {
+        "sgpr_count": 18,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_124external_score_preflightEPKNS_4NodeEPKjmmPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 5,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_121external_score_commitEPNS_4NodeEPKjmmPy": {
+        "sgpr_count": 18,
+        "vgpr_count": 6,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_119selective_root_metaEPKNS_4NodeEPNS_10SelectMetaEj": {
+        "sgpr_count": 7,
+        "vgpr_count": 4,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_chooseEPKNS_4NodeEPKjPKNS_10SelectMetaEPjPNS_10SelectWorkEmmmjjjS8_": {
+        "sgpr_count": 47,
+        "vgpr_count": 14,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_expandEP16ChenRulePositionPNS_4NodeEPK12ChenRuleMovePKjPKNS_10SelectWorkEm": {
+        "sgpr_count": 28,
+        "vgpr_count": 125,
+        "private_segment_fixed_size": 264,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_118selective_new_metaEPKNS_4NodeEPNS_10SelectMetaEmmjPj": {
+        "sgpr_count": 18,
+        "vgpr_count": 7,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_116selective_backupEPNS_4NodeEPNS_10SelectMetaEPKjmmPj": {
+        "sgpr_count": 27,
+        "vgpr_count": 10,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_118selective_snapshotEPKNS_4NodeEPKNS_10SelectMetaEPKyS7_P18ChenSelectiveStatsmmmjjjjPj": {
+        "sgpr_count": 34,
+        "vgpr_count": 24,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_126selective_choose_classicalEPKNS_4NodeEPKjPNS_10SelectMetaEPKyPjPNS_10SelectWorkEmmmjjjjS9_": {
+        "sgpr_count": 47,
+        "vgpr_count": 16,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_128selective_children_classicalEP16ChenRulePositionPNS_4NodeEP12ChenRuleMovePjPNS_10SelectMetaEPKNS_10SelectWorkEmmmjjjjPKmmPySE_S6_": {
+        "sgpr_count": 66,
+        "vgpr_count": 120,
+        "private_segment_fixed_size": 408,
+        "wavefront_size": 32
+      },
+      "_ZN12_GLOBAL__N_128selective_complete_classicalEPNS_4NodeEPNS_10SelectMetaEPjPNS_10SelectWorkEPKyS8_PNS_16SelectCompletionEmmmjS4_": {
+        "sgpr_count": 42,
+        "vgpr_count": 23,
+        "private_segment_fixed_size": 0,
+        "wavefront_size": 32
+      }
+    }
+  },
+  "compiler_version_sha256": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+  "profiler_version_sha256": "0f014987e7d2d0ffd95880b6eca37b6a96f9ac67b1eed12e94d3559abb45ebcf",
+  "source_declaration_sha256": "3ab4c4774db1b7f3dc74dfc102e123097f7ad7d5db5c499d7e938dd440794304"
+}

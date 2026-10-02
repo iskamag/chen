@@ -4,8 +4,12 @@ The first isolated study favors branchless Kogge–Stone rook attacks over the
 current style of walking rays. Keep ordinary 64-bit popcount intrinsics. Use
 three-stage SWAR transpose when an 8×8 board transpose is actually required.
 One wave per board is a poor default for this attack workload, even though it
-successfully scalarizes the board occupancy. These are primitive measurements;
-production rules and whole-engine latency still need their own comparison.
+successfully scalarizes the board occupancy. These primitive measurements need
+the integrated comparison below to determine whether they justify adoption.
+
+The controlled production comparison below is now complete: rook/bishop/queen
+fill is correct, but the six-position search study shows **no meaningful whole
+engine gain**. Retain the current default while optimizing frontier selection.
 
 ## Hardware sources and the neighboring project
 
@@ -97,12 +101,71 @@ popcount adds instructions and loses here. RDNA2 supplies a scalar 64-bit count
 instruction for truly wave-uniform masks; this is a different mapping from
 independent boards. [AMD RDNA2 machine-readable ISA](https://gpuopen.com/machine-readable-isa/).
 
+## Controlled integration: correctness passes, selection dominates
+
+The reusable candidate is [chen_sliding_swar.inc](../gpu/chen_sliding_swar.inc).
+It implements all eight directions with three propagation stages, masks file
+wraps, includes the first blocker, and excludes the origin. The experiment
+replaced only `sliding` in a frozen copy of the already verified sparse-backup
+source; `chen_selective.inc` is byte-identical between both arms. Production
+`chen_rules.hip` was not changed.
+
+The actual candidate include passed **2,439,488 host checks**: every relevant
+rook/bishop ray occupancy at every origin, with both origin occupancy bits,
+plus 100,000 random queen boards and disabled-direction cases. Both actual
+gfx1030 libraries then passed the existing rules oracle with **1,024 roots and
+19,574 exact transitions each**, full available perft fixtures including start
+depth four (197,281), history/adjudication/boundary checks, and both ignored
+selective tests comparing every native search step against portable Rust.
+
+The [controlled comparison driver](../gpu/sliding_swar_probe.py) ran 72 search
+rows in alternating arm order. Every score, PV, admission counter, stop reason,
+and other non-timing field matched. A separate stdlib audit verified the saved
+records without importing the producer. Clean timing medians sum six fixed-work
+searches, with three repetitions per arm:
+
+| Workload | Sparse baseline (ms) | SWAR candidate (ms) | Ratio |
+| --- | ---: | ---: | ---: |
+| Depth cap 4, 2,000 nodes, batch 8 | 134.066 | 133.827 | 1.0018× |
+| Depth cap 64, 50,000 nodes, batch 32 | 809.710 | 808.456 | 1.0016× |
+
+Those differences are below 0.2%; three samples do not establish an engine
+speedup. The separate instrumented 50,000-node traces explain the limitation:
+
+| Kernel, 355 calls per arm | Baseline total (ms) | Candidate total (ms) |
+| --- | ---: | ---: |
+| `selective_choose_classical` | 559.436 | 558.335 |
+| `selective_complete_classical` | 115.870 | 114.270 |
+| `selective_children_classical` | 56.807 | 47.552 |
+
+Child processing improves locally in this trace, while frontier selection takes
+74.51–75.67% of GPU time. Parallel selection is the next measured target.
+Instrumented durations are diagnostic and are not the clean timing comparison.
+The fused child kernel stays at 120 VGPRs, with SGPRs 70→66 and private scratch
+552→408 bytes. The standalone classify kernel grows from 100 to 127 VGPRs,
+with scratch 408→264 bytes. Metadata is taken from the actual second code object
+in each shared library: `.hip_fatbin` contains two concatenated compiler bundles.
+Inspecting only its first object would inspect the frontier evaluator rather
+than the rules/search kernels.
+
+The initial profiler launch failed cleanly because `libdw.so.1` was missing.
+That entire attempt remains immutable. A separate profiling-only phase used
+the already established profiler dependency path and successfully checked all
+12 instrumented rows against the completed clean reference; clean benchmarks
+were not repeated. Both phases retired their owned process groups.
+
+Evidence: [cold audit report](../gpu/evidence/sliding-swar-gfx1030-2026-10-02/audit-report.json),
+[frozen source declaration](../gpu/evidence/sliding-swar-gfx1030-2026-10-02/source-declaration.json),
+[baseline kernel statistics](../gpu/evidence/sliding-swar-gfx1030-2026-10-02/profiles-repaired/trace-baseline/fixed-work_kernel_stats.csv),
+[candidate kernel statistics](../gpu/evidence/sliding-swar-gfx1030-2026-10-02/profiles-repaired/trace-candidate/fixed-work_kernel_stats.csv).
+This is an experimental candidate, not a new production default or strength
+claim. Root owns adoption and commits.
+
 ## Adoption directions
 
-1. Introduce a shared, testable sliding-attack primitive with separate walk and
-   fill implementations. Extend branchless fill to diagonal directions, then
-   check all move sets, pins, en passant, castling, and perft against the native
-   oracle before changing the production default. The observed rook kernel
+1. Keep the shared fill implementation as a controlled candidate. Its diagonal
+   integration and full rules checks now pass; repeat its whole-engine comparison
+   after parallelizing selection before changing the production default. The observed rook kernel
    ratios are 4.76×, 4.98×, and 2.35×; they are not engine speedups.
 2. Track register growth inside the complete move-generation kernel. The fill
    candidate uses 39 VGPRs here versus 16 for walking. Inline integration may

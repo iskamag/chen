@@ -1,0 +1,14 @@
+{
+  "kind": "separate_repaired_profiler_fixed_work_phase",
+  "source_sha256": "3e2d102eaa5fdc1abd0c7aede2573ebea3a8d8713859f8900c78d33b13ce0dc1",
+  "engine_sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+  "libraries": {
+    "baseline": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb",
+    "candidate": "979d6ad1dbd7a439db7eb6a0dffbd4c6c82d447a28a4f02c83e1163dd2700424"
+  },
+  "reference_stdout_sha256": "729dc7133b44b3fffa6ff99383481826ad30118261663eced764878360c12896",
+  "libdw_sha256": "989dc9873f358a5af7d18d6100cf5fd66531d7990dc47d69068b3c6c96588867",
+  "profiler_launcher_sha256": "195ff5e6faf48a3abbc6f4db9f69dd598fe71fa9ff695ba2556d65af636fdc48",
+  "LD_LIBRARY_PATH": "/tmp/chen-gpu/profiler-deps/usr/lib/x86_64-linux-gnu:/opt/rocm/lib",
+  "scope": "Two instrumented fixed-work traces; compare counters and PV against already completed clean run, not clean latency inference"
+}

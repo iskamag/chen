@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "/tmp/chen-sliding-swar-2026-10-02/rules_probe.py",
+    "/tmp/chen-sliding-swar-2026-10-02/libchen_gpu_swar.so",
+    "--positions",
+    "1024",
+    "--capacity",
+    "250000",
+    "--max-depth",
+    "4"
+  ],
+  "pid": 4088,
+  "requested_library": "/tmp/chen-sliding-swar-2026-10-02/libchen_gpu_swar.so",
+  "timeout_seconds": 30,
+  "phase": "finished",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 7.901303927006666,
+  "cleanup_error": null,
+  "owned_leader_retired": true,
+  "process_group_absent": true
+}

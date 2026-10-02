@@ -1,0 +1,123 @@
+{
+  "status": "failed_or_partial",
+  "error": "native run failed/retirement not established: /tmp/chen-sliding-swar-2026-10-02/study/profile-baseline; study ends",
+  "completed_workloads": [
+    {
+      "workload": {
+        "name": "original-six",
+        "depth": 4,
+        "nodes": 2000,
+        "batch": 8,
+        "capacity": 250000
+      },
+      "runs": [
+        {
+          "arm": "baseline",
+          "run": 1,
+          "search_sum_ms": 133.654816,
+          "wall_seconds": 0.45896290900418535,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 2,
+          "search_sum_ms": 132.776503,
+          "wall_seconds": 0.4612968000001274,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 3,
+          "search_sum_ms": 133.826972,
+          "wall_seconds": 0.4586664189992007,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "baseline",
+          "run": 4,
+          "search_sum_ms": 134.066154,
+          "wall_seconds": 0.45855811799992807,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "baseline",
+          "run": 5,
+          "search_sum_ms": 134.245914,
+          "wall_seconds": 0.4592484390013851,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 6,
+          "search_sum_ms": 134.408903,
+          "wall_seconds": 0.45928758900845423,
+          "exact_work_parity": true
+        }
+      ],
+      "median_search_sum_ms": {
+        "baseline": 134.066154,
+        "candidate": 133.826972
+      },
+      "baseline_over_candidate_ratio": 1.0017872480892716
+    },
+    {
+      "workload": {
+        "name": "large-arena-six",
+        "depth": 64,
+        "nodes": 50000,
+        "batch": 32,
+        "capacity": 250000
+      },
+      "runs": [
+        {
+          "arm": "baseline",
+          "run": 1,
+          "search_sum_ms": 809.251544,
+          "wall_seconds": 1.1388159730122425,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 2,
+          "search_sum_ms": 803.369364,
+          "wall_seconds": 1.1330382399901282,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 3,
+          "search_sum_ms": 811.730887,
+          "wall_seconds": 1.1587318030069582,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "baseline",
+          "run": 4,
+          "search_sum_ms": 809.710496,
+          "wall_seconds": 1.1417072440090124,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "baseline",
+          "run": 5,
+          "search_sum_ms": 810.212347,
+          "wall_seconds": 1.1375769330188632,
+          "exact_work_parity": true
+        },
+        {
+          "arm": "candidate",
+          "run": 6,
+          "search_sum_ms": 808.455906,
+          "wall_seconds": 1.143072305014357,
+          "exact_work_parity": true
+        }
+      ],
+      "median_search_sum_ms": {
+        "baseline": 809.710496,
+        "candidate": 808.455906
+      },
+      "baseline_over_candidate_ratio": 1.0015518347886248
+    }
+  ],
+  "timing_conclusion_admitted": false
+}

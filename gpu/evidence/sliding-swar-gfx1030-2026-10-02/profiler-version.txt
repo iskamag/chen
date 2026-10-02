@@ -1,0 +1,9 @@
+             version: 1.1.0
+        git_revision: 97f5574fe2fdc7bef44fb01545347912ee9f1779
+        library_arch: x86_64-linux-gnu
+         system_name: Linux
+    system_processor: x86_64
+      system_version: 6.8.0-85-generic
+         compiler_id: GNU
+    compiler_version: 13.3.0
+        rocm_version: 7.2.4

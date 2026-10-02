@@ -1,0 +1,10 @@
+W20261002 16:31:41.513759 140587099906688 simple_timer.cpp:55] [rocprofv3] tool initialization ::     0.001083 sec
+W20261002 16:31:41.513846 140587099906688 simple_timer.cpp:55] [rocprofv3] '/tmp/chen-fusion-hardware-2026-10-02/chen bench --backend hip-selective --eval tapered --depth 64 --nodes 50000 --selective-batch 32 --max-positions 250000 --suite /tmp/chen-fusion-hardware-2026-10-02/positions.txt' ::     0.000000 sec
+W20261002 16:31:41.528001 140587099906688 tool.cpp:2422] HSA version 8.20.4 initialized (instance=0)
+W20261002 16:31:42.677620 140587099906688 simple_timer.cpp:55] [rocprofv3] '/tmp/chen-fusion-hardware-2026-10-02/chen bench --backend hip-selective --eval tapered --depth 64 --nodes 50000 --selective-batch 32 --max-positions 250000 --suite /tmp/chen-fusion-hardware-2026-10-02/positions.txt' ::     1.163774 sec
+E20261002 16:31:42.686180 140587099906688 output_stream.cpp:111] Opened result file: /tmp/chen-sliding-swar-2026-10-02/profiles-repaired/trace-candidate/fixed-work_kernel_stats.csv
+E20261002 16:31:42.686443 140587099906688 output_stream.cpp:111] Opened result file: /tmp/chen-sliding-swar-2026-10-02/profiles-repaired/trace-candidate/fixed-work_kernel_trace.csv
+E20261002 16:31:42.710029 140587099906688 output_stream.cpp:111] Opened result file: /tmp/chen-sliding-swar-2026-10-02/profiles-repaired/trace-candidate/fixed-work_agent_info.csv
+E20261002 16:31:42.710249 140587099906688 output_stream.cpp:111] Opened result file: /tmp/chen-sliding-swar-2026-10-02/profiles-repaired/trace-candidate/fixed-work_domain_stats.csv
+W20261002 16:31:42.711392 140587099906688 simple_timer.cpp:55] [rocprofv3] output generation ::     0.033351 sec
+W20261002 16:31:42.711536 140587099906688 simple_timer.cpp:55] [rocprofv3] tool finalization ::     0.033524 sec
