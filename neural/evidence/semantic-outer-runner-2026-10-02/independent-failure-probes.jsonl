@@ -1,0 +1,2 @@
+{"probe": "mismatched_kernel_validation_corpus", "accepted": true, "kernel_validation": "0000000000000000000000000000000000000000000000000000000000000000", "suite_validation": "55cc6ceea5bd1ebb1c9c4c07dcde8604c15a0f33f199a31a21c8b4fac70ed010"}
+{"probe": "final_batch_exceeds_wall", "returned_metrics": {"scalar_error_cp": 0.0, "interval_regret_cp": 0.0, "optimal_agreement": 1.0}, "deadline": 10.0, "completed_at": 11.0}

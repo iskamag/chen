@@ -1,0 +1,24 @@
+{
+  "actual_baseline_witness_sha256": "f7e96742dcc0a555bcb44e774bdc737134e394685fde028cdbebc39aada5c7d9",
+  "actual_baseline_witness_structural_admission": true,
+  "cpu_test_log_sha256": "2ebd16d32a27a062f3e939bd371b46d9137cb1659dc96c22ca2d4c697b9c8a2a",
+  "cpu_tests": 10,
+  "frozen_kernel_sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+  "host_unsealed_proposal_sha256": "6c6859d0f913f7f55a43c707ca85b028fcf34415dbe7a7f3adf825dd87888fd2",
+  "independent_review_sha256": "5a721db6c94f86316fcd855298f03b938996ff615ee026b69813e83b668188cf",
+  "kind": "semantic_outer_runner_source_freeze_v1",
+  "no_actual_corpus_training": true,
+  "no_heldout_quality_metrics": true,
+  "remaining": [
+    "runtime absolute-path source and baseline witness staging",
+    "root-reviewed kernel and suite GPU learning seals",
+    "actual bounded gfx1030 training/evaluation",
+    "matched deployment and paired playing strength evaluation"
+  ],
+  "sources_sha256": {
+    "docs/SEMANTIC_CORPUS_STUDY.md": "7614e6b12217ef5bca2b93fb65d13b50e20e1c221bcfcd4c24e459bc625c4dbe",
+    "neural/run_semantic_corpus_study.py": "d7f110745237a8f1453bb1e0ea8ad274ece7fbc1d44de2513809b7e7810a66ad",
+    "neural/tests/test_run_semantic_corpus_study.py": "20ad7e5ab416ce40426deb0d9808d56216a26414c3a43c7af9822aa4988b1829"
+  },
+  "status": "independently_reviewed_CPU_regressions_pass_actual_training_unexecuted"
+}

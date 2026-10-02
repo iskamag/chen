@@ -1,0 +1,3 @@
+{"probe": "actual_kernel_train_mismatch", "rejected": true}
+{"probe": "actual_kernel_validation_mismatch", "rejected": true}
+{"proposal_path": "results/semantic-corpus-study/outer-runner/host-reviewed-unsealed-proposal.json", "proposal_sha256": "6c6859d0f913f7f55a43c707ca85b028fcf34415dbe7a7f3adf825dd87888fd2", "baseline_structural_admission": true, "heldout_quality_metrics": false, "training": false}
