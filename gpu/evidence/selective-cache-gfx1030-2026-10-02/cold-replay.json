@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "raw_members": 246,
+  "raw_member_hashes_checked": true,
+  "independently_descriptor_extracted_elf_hashes_checked": true,
+  "summary_byte_identical": true,
+  "summary_sha256": "e50b1ccfa64e6ba156e95d8ae7754c33ffe5ff6c966b020ee7756f42d2ef3f65",
+  "scope": "CPU-only evidence reconstruction; not repeated hardware execution"
+}

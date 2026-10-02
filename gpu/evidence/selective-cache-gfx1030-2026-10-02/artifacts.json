@@ -1,0 +1,14 @@
+{
+  "baseline_commit": "7243a74",
+  "baseline_sha256": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb",
+  "candidate_sha256": "a47b8c4e5704703280834b4de864d1daf059b63ce79eb1f1fb22462994d3edaf",
+  "fixture_sha256": "97cc9e1371efaf5d3ae81424d339872562d907631654248deb55698f828cbeea",
+  "external_frozen_artifacts": {
+    "gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/chen": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+    "gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/device-selective-tests": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15",
+    "gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/manifest.json": "a8121a335a6f65bbb1c68bf92a22a44b0e587f9f5a3ae96a284505baf35f74bd"
+  },
+  "rust_source_closure": "../selective-fusion-gfx1030-2026-10-02/sources/host",
+  "concurrency": "CPU5 affinity; root CPU0 match ended. Exclusive GPU reservation ended before coherence study. Shared system cache/power uncontrolled.",
+  "scope": "Classical cache only; same private scratch allocation and alias range. External selector instantiation retains plain reservation counts; no neural runtime validation."
+}

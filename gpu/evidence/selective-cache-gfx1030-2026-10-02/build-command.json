@@ -1,0 +1,8 @@
+[
+  "docker",
+  "exec",
+  "cpp-rocm",
+  "bash",
+  "/tmp/chen-selective-cache-2026-10-02/source/build.sh",
+  "/tmp/chen-selective-cache-2026-10-02/libchen_gpu_selection_cache.so"
+]

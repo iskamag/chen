@@ -11,7 +11,15 @@ struct SelectSparseBackup {
     uint32_t counts[CHEN_SELECTIVE_MAX_PLY];
 };
 constexpr uint32_t SELECT_SPARSE_MARK=1u<<31;
+constexpr uint32_t SELECT_RESERVATION_MASK=(1u<<16)-1;
+constexpr uint32_t SELECT_CACHE_SHIFT=16,SELECT_CACHE_OFFSET_MASK=255u<<SELECT_CACHE_SHIFT;
+constexpr uint32_t SELECT_CACHE_VALID=1u<<30;
 static_assert(CHEN_SELECTIVE_MAX_CANDIDATES<SELECT_SPARSE_MARK,"reservation/touched bits disjoint");
+static_assert(CHEN_SELECTIVE_MAX_CANDIDATES<=SELECT_RESERVATION_MASK,"packed reservation count bound");
+static_assert(CHEN_RULES_MAX_MOVES<=256,"packed canonical child offset bound");
+static_assert(!(SELECT_RESERVATION_MASK&(SELECT_CACHE_OFFSET_MASK|SELECT_CACHE_VALID|SELECT_SPARSE_MARK)) &&
+    !(SELECT_CACHE_OFFSET_MASK&(SELECT_CACHE_VALID|SELECT_SPARSE_MARK)) &&
+    !(SELECT_CACHE_VALID&SELECT_SPARSE_MARK),"packed selection fields disjoint");
 static_assert(sizeof(SelectSparseBackup)==CHEN_SELECTIVE_MAX_PLY*(CHEN_SELECTIVE_MAX_BATCH*8+4),
     "bounded sparse-ply scratch size");
 struct SelectWork {
@@ -24,7 +32,44 @@ static_assert(sizeof(SelectCompletion)==104,"private selective completion packet
 __global__ void selective_root_meta(const Node *nodes,SelectMeta *meta,uint32_t classified) {
     meta[0]=SelectMeta{classified && !(nodes[0].flags&TERMINAL)?1ull:0ull,0,0};
 }
-__device__ void selective_choose_device(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
+template<bool Cached> __device__ uint32_t selective_reservations(uint32_t packed) {
+    if constexpr(Cached) return packed&SELECT_RESERVATION_MASK;
+    else return packed;
+}
+template<bool Cached> __device__ void selective_reserve(uint32_t &packed) {
+    if constexpr(Cached) packed=(packed&~SELECT_RESERVATION_MASK)+((packed&SELECT_RESERVATION_MASK)+1);
+    else ++packed;
+}
+template<bool Cached> __device__ uint64_t selective_open_child(const Node *nodes,const SelectMeta *meta,
+    uint32_t *reserved,uint64_t index,uint64_t used,uint32_t *error) {
+    const Node node=nodes[index];
+    if constexpr(Cached) {
+        // Scores, canonical child order and open metadata are immutable during
+        // one choose. Reservations only increase, so an eligible cached winner
+        // stays the canonical winner until its subtree is fully reserved.
+        if(reserved[index]&SELECT_CACHE_VALID) {
+            const uint32_t offset=(reserved[index]&SELECT_CACHE_OFFSET_MASK)>>SELECT_CACHE_SHIFT;
+            const uint64_t child=node.first_child+offset;
+            if(offset>=node.child_count || child>=used) { device_error(error,4);return NONE; }
+            if(meta[child].open>selective_reservations<Cached>(reserved[child])) return child;
+        }
+        if(node.child_count>CHEN_RULES_MAX_MOVES) { device_error(error,4);return NONE; }
+    }
+    int best=-MATE-1;uint64_t next=NONE;
+    for(uint32_t j=0;j<node.child_count;++j) {
+        const uint64_t child=node.first_child+j;
+        if(child>=used) { device_error(error,4);return NONE; }
+        if(meta[child].open>selective_reservations<Cached>(reserved[child]) && -nodes[child].score>best) {
+            best=-nodes[child].score;next=child;
+        }
+    }
+    if constexpr(Cached) {
+        if(next!=NONE) reserved[index]=(reserved[index]&~(SELECT_CACHE_VALID|SELECT_CACHE_OFFSET_MASK))|
+            SELECT_CACHE_VALID|(uint32_t(next-node.first_child)<<SELECT_CACHE_SHIFT);
+    }
+    return next;
+}
+template<bool Cached> __device__ void selective_choose_device(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
     uint32_t *reserved,SelectWork *work,uint64_t used,uint64_t capacity,uint64_t remaining,
     uint32_t batch,uint32_t candidate_limit,uint32_t max_ply,uint32_t *error) {
     SelectHead head{0,0,0,CHEN_SELECTIVE_PROGRESS};
@@ -32,30 +77,25 @@ __device__ void selective_choose_device(const Node *nodes,const uint32_t *counts
     if(!meta[0].open) { head.stop=CHEN_SELECTIVE_CLOSED;work->head=head;return; }
     if(!remaining) { head.stop=CHEN_SELECTIVE_NODE_BUDGET;work->head=head;return; }
     if(used==capacity) { head.stop=CHEN_SELECTIVE_ARENA_CAPACITY;work->head=head;return; }
-    while(head.examined<candidate_limit && head.selected<batch && meta[0].open>reserved[0]) {
+    while(head.examined<candidate_limit && head.selected<batch &&
+        meta[0].open>selective_reservations<Cached>(reserved[0])) {
         uint64_t index=0;
         while(nodes[index].flags&EXPANDED) {
-            const Node node=nodes[index];
-            int best=-MATE-1;uint64_t next=NONE;
-            for(uint32_t j=0;j<node.child_count;++j) {
-                const uint64_t child=node.first_child+j;
-                if(child>=used) { device_error(error,4);return; }
-                if(meta[child].open>reserved[child] && -nodes[child].score>best) {
-                    best=-nodes[child].score;next=child;
-                }
-            }
+            const uint64_t next=selective_open_child<Cached>(nodes,meta,reserved,index,used,error);
             if(next==NONE) { device_error(error,4);return; }
             index=next;
         }
         const Node leaf=nodes[index];
         if(!(leaf.flags&CLASSIFIED) || (leaf.flags&TERMINAL) || leaf.ply>=max_ply ||
-            (index && !(leaf.flags&SCORED)) || !counts[index] || reserved[index]) {
+            (index && !(leaf.flags&SCORED)) || !counts[index] || selective_reservations<Cached>(reserved[index])) {
             device_error(error,4);return;
         }
         ++head.examined;
         for(uint64_t parent=index;parent!=NONE;parent=nodes[parent].parent) {
-            if(parent>=used || reserved[parent]>=candidate_limit) { device_error(error,4);return; }
-            ++reserved[parent];
+            if(parent>=used || selective_reservations<Cached>(reserved[parent])>=candidate_limit) {
+                device_error(error,4);return;
+            }
+            selective_reserve<Cached>(reserved[parent]);
         }
         const uint64_t cost=counts[index];
         const bool node_fits=cost<=remaining-head.added;
@@ -67,7 +107,8 @@ __device__ void selective_choose_device(const Node *nodes,const uint32_t *counts
         }
     }
     if(!head.selected) {
-        if(head.examined==candidate_limit && meta[0].open>reserved[0]) head.stop=CHEN_SELECTIVE_CANDIDATE_SCAN;
+        if(head.examined==candidate_limit && meta[0].open>selective_reservations<Cached>(reserved[0]))
+            head.stop=CHEN_SELECTIVE_CANDIDATE_SCAN;
         else if(budget_rejected) head.stop=CHEN_SELECTIVE_NODE_BUDGET;
         else if(capacity_rejected) head.stop=CHEN_SELECTIVE_ARENA_CAPACITY;
         else { device_error(error,4);return; }
@@ -77,7 +118,7 @@ __device__ void selective_choose_device(const Node *nodes,const uint32_t *counts
 __global__ void selective_choose(const Node *nodes,const uint32_t *counts,const SelectMeta *meta,
     uint32_t *reserved,SelectWork *work,uint64_t used,uint64_t capacity,uint64_t remaining,
     uint32_t batch,uint32_t candidate_limit,uint32_t max_ply,uint32_t *error) {
-    selective_choose_device(nodes,counts,meta,reserved,work,used,capacity,remaining,
+    selective_choose_device<false>(nodes,counts,meta,reserved,work,used,capacity,remaining,
         batch,candidate_limit,max_ply,error);
 }
 __global__ void selective_expand(ChenRulePosition *positions,Node *nodes,const ChenRuleMove *moves,
@@ -145,7 +186,7 @@ __device__ void selective_backup_sparse_device(Node *nodes,SelectMeta *meta,uint
             if(index>=old_used || depth>=max_ply) { device_error(error,4);return; }
             if(reserved[index]&SELECT_SPARSE_MARK) break;
             const Node node=nodes[index];
-            if(!(node.flags&EXPANDED) || !reserved[index] || node.ply>=max_ply ||
+            if(!(node.flags&EXPANDED) || !selective_reservations<true>(reserved[index]) || node.ply>=max_ply ||
                 (index==0 && (node.parent!=NONE || node.ply)) ||
                 (index && (node.parent>=index || nodes[node.parent].ply+1!=node.ply))) {
                 device_error(error,4);return;
@@ -223,7 +264,7 @@ __global__ void selective_choose_classical(const Node *nodes,const uint32_t *cou
         meta[0]=SelectMeta{!(nodes[0].flags&TERMINAL)?1ull:0ull,0,0};
     }
     if(*classified>limit) { device_error(error,4);return; }
-    selective_choose_device(nodes,counts,meta,reserved,work,used,capacity,limit-*classified,
+    selective_choose_device<true>(nodes,counts,meta,reserved,work,used,capacity,limit-*classified,
         batch,candidate_limit,max_ply,error);
 }
 

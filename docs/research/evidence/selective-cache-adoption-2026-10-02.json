@@ -1,0 +1,28 @@
+{
+  "kind": "root_packed_cache_adoption_review_v1",
+  "decision": "adopt_classical_packed_cache",
+  "evidence_manifest_sha256": "5a2427828efab0038abdee37ba637c366a8c7875f38cfe8878ae845c7bea49a6",
+  "source_sha256": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+  "independent_checks": {
+    "exact_inventory_payloads": 47,
+    "raw_tar_members_hashed": 246,
+    "summary_replay": "byte_identical",
+    "fixed_work_rows": 72,
+    "native_advance_snapshots": 1336,
+    "independently_legal_reported_pvs": 5484,
+    "live_candidate_and_probe_sources": "byte_identical_to_frozen_evidence",
+    "git_diff_check": "passed"
+  },
+  "source_review": [
+    "Eligibility only shrinks under monotonic reservations while choose scores/order/open metadata remain immutable",
+    "Low16 reservation access and increments preserve cache and sparse fields within compile-time candidate bounds",
+    "Next advance clears cached fields before new metadata becomes visible",
+    "External selector uses uncached plain-reservation template"
+  ],
+  "limits": [
+    "Bounded hardware and source review; no machine-code refinement proof",
+    "Three alternating pairs per workload, no significance or strength claim",
+    "Tiny mate workloads show observed slowdowns",
+    "Neural path and long-run recovery outside this study"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-10-02T17:09:41.760138+00:00",
+  "records": [
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "sha256sum",
+        "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+        "/opt/rocm-7.2.4/lib/libhsa-runtime64.so.1.18.70204"
+      ],
+      "exit_code": 0,
+      "stdout": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac  /opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204\nb8cdfe93d343649a35c1daf73a0a3a6840f09379ebeee9be65670461ffea43f4  /opt/rocm-7.2.4/lib/libhsa-runtime64.so.1.18.70204\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "/opt/rocm/bin/hipcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "HIP version: 7.2.53211-97f5574fe2\nAMD clang version 22.0.0git (https://github.com/RadeonOpenCompute/llvm-project roc-7.2.4 26084 f58b06dce1f9c15707c5f808fd002e18c2accf7e)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /opt/rocm-7.2.4/lib/llvm/bin\nConfiguration file: /opt/rocm-7.2.4/lib/llvm/bin/clang++.cfg\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "uname",
+        "-a"
+      ],
+      "exit_code": 0,
+      "stdout": "Linux ignucino 7.2.7-zen1-1-zen #1 ZEN SMP PREEMPT_DYNAMIC Wed, 23 Sep 2026 18:36:18 +0000 x86_64 x86_64 x86_64 GNU/Linux\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Static runtime files/version; actual device/runtime trace identity retained in raw ROCm CSV. No additional GPU call."
+}
