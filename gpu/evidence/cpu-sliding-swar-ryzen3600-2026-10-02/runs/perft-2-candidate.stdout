@@ -1,0 +1,6 @@
+{"phase":"perft","position":"start","depth":5,"nodes":4865609,"elapsed_ns":240861765}
+{"phase":"perft","position":"kiwipete","depth":4,"nodes":4085603,"elapsed_ns":217877944}
+{"phase":"perft","position":"rook-ending","depth":4,"nodes":43238,"elapsed_ns":3014351}
+{"phase":"perft","position":"middlegame","depth":4,"nodes":1360204,"elapsed_ns":71190894}
+{"phase":"perft","position":"promotion","depth":4,"nodes":7192,"elapsed_ns":484001}
+{"phase":"perft","position":"mate","depth":4,"nodes":473,"elapsed_ns":113710}

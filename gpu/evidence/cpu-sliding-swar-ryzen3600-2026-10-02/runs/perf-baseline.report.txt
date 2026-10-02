@@ -1,0 +1,1019 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu-clock:u'
+# Event count (approx.): 5001002874
+#
+# Overhead  Command          Shared Object        Symbol                                                                                                          IPC   [IPC Coverage]
+# ........  ...............  ...................  ..............................................................................................................  ....................
+#
+    29.72%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::make_move                                                                           -      -            
+            |
+            ---<chen::core::Position>::make_move
+               |          
+               |--27.24%--<chen::core::Position>::legal_moves
+               |          |          
+               |          |--22.54%--<chen::search::Searcher>::quiesce
+               |          |          |          
+               |          |          |--12.09%--<chen::search::Searcher>::quiesce
+               |          |          |          |          
+               |          |          |          |--7.24%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          
+               |          |          |          |          |--6.02%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          
+               |          |          |          |          |          |--4.61%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |--4.05%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |          |          
+               |          |          |          |          |          |          |           --3.57%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |          
+               |          |          |          |          |          |          |                     |--2.93%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |          |          
+               |          |          |          |          |          |          |                     |           --2.57%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |          
+               |          |          |          |          |          |          |                     |                     |--2.05%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |          |          
+               |          |          |          |          |          |          |                     |                     |           --1.64%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |                     |          
+               |          |          |          |          |          |          |                     |                     |                      --1.18%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |                                |          
+               |          |          |          |          |          |          |                     |                     |                                 --0.84%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |                                           |          
+               |          |          |          |          |          |          |                     |                     |                                            --0.62%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          |          |                     |                     |          
+               |          |          |          |          |          |          |                     |                      --0.52%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                     |                                <chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                     |                                <chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                     |          
+               |          |          |          |          |          |          |                      --0.64%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                                |          
+               |          |          |          |          |          |          |                                 --0.60%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                                           |          
+               |          |          |          |          |          |          |                                            --0.58%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                                                      <chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |                                                      |          
+               |          |          |          |          |          |          |                                                       --0.56%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |          |          
+               |          |          |          |          |          |           --0.56%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |                     |          
+               |          |          |          |          |          |                      --0.54%--<chen::search::Searcher>::negamax
+               |          |          |          |          |          |                                <chen::search::Searcher>::negamax
+               |          |          |          |          |          |          
+               |          |          |          |          |           --1.40%--<chen::search::Searcher>::negamax
+               |          |          |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.28%--<chen::search::Searcher>::negamax
+               |          |          |          |          |                                |          
+               |          |          |          |          |                                 --1.06%--<chen::search::Searcher>::negamax
+               |          |          |          |          |                                           |          
+               |          |          |          |          |                                            --0.72%--cpu_sliding_profile::main
+               |          |          |          |          |                                                      std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |          |          |          |                                                      std::rt::lang_start::<()>::{closure#0}
+               |          |          |          |          |                                                      std::rt::lang_start_internal
+               |          |          |          |          |                                                      main
+               |          |          |          |          |                                                      0x7f1f74a2797e
+               |          |          |          |          |                                                      0x7ffff3d182dd
+               |          |          |          |          |                                                      0x6c732d7570632d6e
+               |          |          |          |          |          
+               |          |          |          |           --1.22%--<chen::search::Searcher>::negamax
+               |          |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          |                     |          
+               |          |          |          |                      --1.20%--<chen::search::Searcher>::negamax
+               |          |          |          |                                |          
+               |          |          |          |                                 --1.18%--<chen::search::Searcher>::negamax
+               |          |          |          |                                           |          
+               |          |          |          |                                            --0.98%--<chen::search::Searcher>::negamax
+               |          |          |          |                                                      |          
+               |          |          |          |                                                       --0.70%--<chen::search::Searcher>::negamax
+               |          |          |          |          
+               |          |          |           --4.85%--<chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     |          
+               |          |          |                      --4.81%--<chen::search::Searcher>::negamax
+               |          |          |                                |          
+               |          |          |                                 --4.51%--<chen::search::Searcher>::negamax
+               |          |          |                                           |          
+               |          |          |                                            --4.21%--<chen::search::Searcher>::negamax
+               |          |          |                                                      |          
+               |          |          |                                                      |--2.71%--<chen::search::Searcher>::negamax
+               |          |          |                                                      |          |          
+               |          |          |                                                      |           --2.35%--<chen::search::Searcher>::negamax
+               |          |          |                                                      |                     |          
+               |          |          |                                                      |                     |--1.68%--<chen::search::Searcher>::negamax
+               |          |          |                                                      |                     |          |          
+               |          |          |                                                      |                     |           --1.22%--<chen::search::Searcher>::negamax
+               |          |          |                                                      |                     |                     cpu_sliding_profile::main
+               |          |          |                                                      |                     |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |          |                                                      |                     |                     std::rt::lang_start::<()>::{closure#0}
+               |          |          |                                                      |                     |                     std::rt::lang_start_internal
+               |          |          |                                                      |                     |                     main
+               |          |          |                                                      |                     |                     0x7f1f74a2797e
+               |          |          |                                                      |                     |                     0x7ffff3d182dd
+               |          |          |                                                      |                     |                     0x6c732d7570632d6e
+               |          |          |                                                      |                     |          
+               |          |          |                                                      |                      --0.66%--cpu_sliding_profile::main
+               |          |          |                                                      |                                std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |          |                                                      |                                std::rt::lang_start::<()>::{closure#0}
+               |          |          |                                                      |                                std::rt::lang_start_internal
+               |          |          |                                                      |                                main
+               |          |          |                                                      |                                0x7f1f74a2797e
+               |          |          |                                                      |                                0x7ffff3d182dd
+               |          |          |                                                      |                                0x6c732d7570632d6e
+               |          |          |                                                      |          
+               |          |          |                                                       --1.50%--cpu_sliding_profile::main
+               |          |          |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |          |                                                                 std::rt::lang_start::<()>::{closure#0}
+               |          |          |                                                                 std::rt::lang_start_internal
+               |          |          |                                                                 main
+               |          |          |                                                                 0x7f1f74a2797e
+               |          |          |                                                                 0x7ffff3d182dd
+               |          |          |                                                                 0x6c732d7570632d6e
+               |          |          |          
+               |          |           --10.45%--<chen::search::Searcher>::negamax
+               |          |                     <chen::search::Searcher>::negamax
+               |          |                     <chen::search::Searcher>::negamax
+               |          |                     |          
+               |          |                      --10.37%--<chen::search::Searcher>::negamax
+               |          |                                |          
+               |          |                                 --10.31%--<chen::search::Searcher>::negamax
+               |          |                                           |          
+               |          |                                           |--9.35%--<chen::search::Searcher>::negamax
+               |          |                                           |          |          
+               |          |                                           |          |--8.30%--<chen::search::Searcher>::negamax
+               |          |                                           |          |          |          
+               |          |                                           |          |          |--5.62%--<chen::search::Searcher>::negamax
+               |          |                                           |          |          |          |          
+               |          |                                           |          |          |          |--3.77%--<chen::search::Searcher>::negamax
+               |          |                                           |          |          |          |          |          
+               |          |                                           |          |          |          |          |--2.43%--cpu_sliding_profile::main
+               |          |                                           |          |          |          |          |          std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                           |          |          |          |          |          std::rt::lang_start::<()>::{closure#0}
+               |          |                                           |          |          |          |          |          std::rt::lang_start_internal
+               |          |                                           |          |          |          |          |          main
+               |          |                                           |          |          |          |          |          0x7f1f74a2797e
+               |          |                                           |          |          |          |          |          0x7ffff3d182dd
+               |          |                                           |          |          |          |          |          0x6c732d7570632d6e
+               |          |                                           |          |          |          |          |          
+               |          |                                           |          |          |          |           --1.34%--<chen::search::Searcher>::negamax
+               |          |                                           |          |          |          |                     |          
+               |          |                                           |          |          |          |                      --1.28%--cpu_sliding_profile::main
+               |          |                                           |          |          |          |                                std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                           |          |          |          |                                std::rt::lang_start::<()>::{closure#0}
+               |          |                                           |          |          |          |                                std::rt::lang_start_internal
+               |          |                                           |          |          |          |                                main
+               |          |                                           |          |          |          |                                0x7f1f74a2797e
+               |          |                                           |          |          |          |                                0x7ffff3d182dd
+               |          |                                           |          |          |          |                                0x6c732d7570632d6e
+               |          |                                           |          |          |          |          
+               |          |                                           |          |          |           --1.85%--cpu_sliding_profile::main
+               |          |                                           |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                           |          |          |                     std::rt::lang_start::<()>::{closure#0}
+               |          |                                           |          |          |                     std::rt::lang_start_internal
+               |          |                                           |          |          |                     main
+               |          |                                           |          |          |                     0x7f1f74a2797e
+               |          |                                           |          |          |                     0x7ffff3d182dd
+               |          |                                           |          |          |                     0x6c732d7570632d6e
+               |          |                                           |          |          |          
+               |          |                                           |          |           --2.69%--cpu_sliding_profile::main
+               |          |                                           |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                           |          |                     std::rt::lang_start::<()>::{closure#0}
+               |          |                                           |          |                     std::rt::lang_start_internal
+               |          |                                           |          |                     main
+               |          |                                           |          |                     0x7f1f74a2797e
+               |          |                                           |          |                     0x7ffff3d182dd
+               |          |                                           |          |                     0x6c732d7570632d6e
+               |          |                                           |          |          
+               |          |                                           |           --1.04%--cpu_sliding_profile::main
+               |          |                                           |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                           |                     std::rt::lang_start::<()>::{closure#0}
+               |          |                                           |                     std::rt::lang_start_internal
+               |          |                                           |                     main
+               |          |                                           |                     0x7f1f74a2797e
+               |          |                                           |                     0x7ffff3d182dd
+               |          |                                           |                     0x6c732d7570632d6e
+               |          |                                           |          
+               |          |                                            --0.96%--cpu_sliding_profile::main
+               |          |                                                      std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                      std::rt::lang_start::<()>::{closure#0}
+               |          |                                                      std::rt::lang_start_internal
+               |          |                                                      main
+               |          |                                                      0x7f1f74a2797e
+               |          |                                                      0x7ffff3d182dd
+               |          |                                                      0x6c732d7570632d6e
+               |          |          
+               |           --4.69%--<chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     |          
+               |                      --4.67%--<chen::search::Searcher>::negamax
+               |                                |          
+               |                                 --4.45%--<chen::search::Searcher>::negamax
+               |                                           |          
+               |                                            --4.31%--<chen::search::Searcher>::negamax
+               |                                                      |          
+               |                                                      |--3.35%--<chen::search::Searcher>::negamax
+               |                                                      |          |          
+               |                                                      |          |--2.75%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |          
+               |                                                      |          |          |--1.66%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |          |          
+               |                                                      |          |          |           --1.30%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |                     cpu_sliding_profile::main
+               |                                                      |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |          |          |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |          |          |                     std::rt::lang_start_internal
+               |                                                      |          |          |                     main
+               |                                                      |          |          |                     0x7f1f74a2797e
+               |                                                      |          |          |                     0x7ffff3d182dd
+               |                                                      |          |          |                     0x6c732d7570632d6e
+               |                                                      |          |          |          
+               |                                                      |          |           --1.08%--cpu_sliding_profile::main
+               |                                                      |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |          |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |          |                     std::rt::lang_start_internal
+               |                                                      |          |                     main
+               |                                                      |          |                     0x7f1f74a2797e
+               |                                                      |          |                     0x7ffff3d182dd
+               |                                                      |          |                     0x6c732d7570632d6e
+               |                                                      |          |          
+               |                                                      |           --0.60%--cpu_sliding_profile::main
+               |                                                      |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |                     std::rt::lang_start_internal
+               |                                                      |                     main
+               |                                                      |                     0x7f1f74a2797e
+               |                                                      |                     0x7ffff3d182dd
+               |                                                      |                     0x6c732d7570632d6e
+               |                                                      |          
+               |                                                       --0.96%--cpu_sliding_profile::main
+               |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                                 std::rt::lang_start::<()>::{closure#0}
+               |                                                                 std::rt::lang_start_internal
+               |                                                                 main
+               |                                                                 0x7f1f74a2797e
+               |                                                                 0x7ffff3d182dd
+               |                                                                 0x6c732d7570632d6e
+               |          
+               |--1.66%--<chen::search::Searcher>::quiesce
+               |          |          
+               |          |--0.92%--<chen::search::Searcher>::quiesce
+               |          |          |          
+               |          |           --0.62%--<chen::search::Searcher>::quiesce
+               |          |                     |          
+               |          |                      --0.52%--<chen::search::Searcher>::quiesce
+               |          |          
+               |           --0.74%--<chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     |          
+               |                      --0.64%--<chen::search::Searcher>::negamax
+               |                                |          
+               |                                 --0.52%--<chen::search::Searcher>::negamax
+               |          
+                --0.82%--<chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          |          
+                           --0.70%--<chen::search::Searcher>::negamax
+                                     |          
+                                      --0.60%--<chen::search::Searcher>::negamax
+
+    25.09%  cpu_sliding_pro  cpu_sliding_profile  [.] chen::core::sliding_attacks                                                                                 -      -            
+            |
+            ---chen::core::sliding_attacks
+               |          
+                --24.73%--<chen::core::Position>::attackers_to
+                          |          
+                          |--23.51%--<chen::core::Position>::legal_moves
+                          |          |          
+                          |          |--19.31%--<chen::search::Searcher>::quiesce
+                          |          |          |          
+                          |          |          |--10.05%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          
+                          |          |          |          |--5.94%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          
+                          |          |          |          |          |--5.11%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |          
+                          |          |          |          |          |          |--4.25%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |          |          
+                          |          |          |          |          |          |           --3.81%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                     |          
+                          |          |          |          |          |          |                      --3.43%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                |          
+                          |          |          |          |          |          |                                 --2.97%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                           |          
+                          |          |          |          |          |          |                                            --2.49%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                      |          
+                          |          |          |          |          |          |                                                       --2.07%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                                 |          
+                          |          |          |          |          |          |                                                                  --1.72%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                                            |          
+                          |          |          |          |          |          |                                                                             --1.38%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                                                       |          
+                          |          |          |          |          |          |                                                                                        --1.10%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                                                                  |          
+                          |          |          |          |          |          |                                                                                                   --0.80%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |                                                                                                             |          
+                          |          |          |          |          |          |                                                                                                              --0.50%--<chen::search::Searcher>::quiesce
+                          |          |          |          |          |          |          
+                          |          |          |          |          |           --0.86%--<chen::search::Searcher>::negamax
+                          |          |          |          |          |                     |          
+                          |          |          |          |          |                      --0.84%--<chen::search::Searcher>::negamax
+                          |          |          |          |          |                                |          
+                          |          |          |          |          |                                 --0.80%--<chen::search::Searcher>::negamax
+                          |          |          |          |          |                                           <chen::search::Searcher>::negamax
+                          |          |          |          |          |                                           |          
+                          |          |          |          |          |                                            --0.72%--<chen::search::Searcher>::negamax
+                          |          |          |          |          |                                                      |          
+                          |          |          |          |          |                                                       --0.58%--<chen::search::Searcher>::negamax
+                          |          |          |          |          |          
+                          |          |          |          |           --0.82%--<chen::search::Searcher>::negamax
+                          |          |          |          |                     <chen::search::Searcher>::negamax
+                          |          |          |          |                     <chen::search::Searcher>::negamax
+                          |          |          |          |                     <chen::search::Searcher>::negamax
+                          |          |          |          |                     |          
+                          |          |          |          |                      --0.78%--<chen::search::Searcher>::negamax
+                          |          |          |          |                                |          
+                          |          |          |          |                                 --0.68%--<chen::search::Searcher>::negamax
+                          |          |          |          |                                           |          
+                          |          |          |          |                                            --0.62%--<chen::search::Searcher>::negamax
+                          |          |          |          |          
+                          |          |          |           --4.11%--<chen::search::Searcher>::negamax
+                          |          |          |                     <chen::search::Searcher>::negamax
+                          |          |          |                     <chen::search::Searcher>::negamax
+                          |          |          |                     |          
+                          |          |          |                      --4.09%--<chen::search::Searcher>::negamax
+                          |          |          |                                |          
+                          |          |          |                                 --3.87%--<chen::search::Searcher>::negamax
+                          |          |          |                                           |          
+                          |          |          |                                            --3.65%--<chen::search::Searcher>::negamax
+                          |          |          |                                                      |          
+                          |          |          |                                                      |--2.89%--<chen::search::Searcher>::negamax
+                          |          |          |                                                      |          |          
+                          |          |          |                                                      |           --2.73%--<chen::search::Searcher>::negamax
+                          |          |          |                                                      |                     |          
+                          |          |          |                                                      |                     |--2.01%--<chen::search::Searcher>::negamax
+                          |          |          |                                                      |                     |          |          
+                          |          |          |                                                      |                     |          |--1.46%--<chen::search::Searcher>::negamax
+                          |          |          |                                                      |                     |          |          |          
+                          |          |          |                                                      |                     |          |           --1.44%--cpu_sliding_profile::main
+                          |          |          |                                                      |                     |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |          |                                                      |                     |          |                     std::rt::lang_start::<()>::{closure#0}
+                          |          |          |                                                      |                     |          |                     std::rt::lang_start_internal
+                          |          |          |                                                      |                     |          |                     main
+                          |          |          |                                                      |                     |          |                     0x7f1f74a2797e
+                          |          |          |                                                      |                     |          |                     0x7ffff3d182dd
+                          |          |          |                                                      |                     |          |                     0x6c732d7570632d6e
+                          |          |          |                                                      |                     |          |          
+                          |          |          |                                                      |                     |           --0.54%--cpu_sliding_profile::main
+                          |          |          |                                                      |                     |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |          |                                                      |                     |                     std::rt::lang_start::<()>::{closure#0}
+                          |          |          |                                                      |                     |                     std::rt::lang_start_internal
+                          |          |          |                                                      |                     |                     main
+                          |          |          |                                                      |                     |                     0x7f1f74a2797e
+                          |          |          |                                                      |                     |                     0x7ffff3d182dd
+                          |          |          |                                                      |                     |                     0x6c732d7570632d6e
+                          |          |          |                                                      |                     |          
+                          |          |          |                                                      |                      --0.72%--cpu_sliding_profile::main
+                          |          |          |                                                      |                                std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |          |                                                      |                                std::rt::lang_start::<()>::{closure#0}
+                          |          |          |                                                      |                                std::rt::lang_start_internal
+                          |          |          |                                                      |                                main
+                          |          |          |                                                      |                                0x7f1f74a2797e
+                          |          |          |                                                      |                                0x7ffff3d182dd
+                          |          |          |                                                      |                                0x6c732d7570632d6e
+                          |          |          |                                                      |          
+                          |          |          |                                                       --0.76%--cpu_sliding_profile::main
+                          |          |          |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |          |                                                                 std::rt::lang_start::<()>::{closure#0}
+                          |          |          |                                                                 std::rt::lang_start_internal
+                          |          |          |                                                                 main
+                          |          |          |                                                                 0x7f1f74a2797e
+                          |          |          |                                                                 0x7ffff3d182dd
+                          |          |          |                                                                 0x6c732d7570632d6e
+                          |          |          |          
+                          |          |           --9.27%--<chen::search::Searcher>::negamax
+                          |          |                     <chen::search::Searcher>::negamax
+                          |          |                     |          
+                          |          |                      --9.25%--<chen::search::Searcher>::negamax
+                          |          |                                <chen::search::Searcher>::negamax
+                          |          |                                |          
+                          |          |                                 --9.19%--<chen::search::Searcher>::negamax
+                          |          |                                           |          
+                          |          |                                            --8.74%--<chen::search::Searcher>::negamax
+                          |          |                                                      |          
+                          |          |                                                      |--8.06%--<chen::search::Searcher>::negamax
+                          |          |                                                      |          |          
+                          |          |                                                      |          |--6.18%--<chen::search::Searcher>::negamax
+                          |          |                                                      |          |          |          
+                          |          |                                                      |          |          |--4.79%--<chen::search::Searcher>::negamax
+                          |          |                                                      |          |          |          |          
+                          |          |                                                      |          |          |          |--2.97%--cpu_sliding_profile::main
+                          |          |                                                      |          |          |          |          std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |                                                      |          |          |          |          std::rt::lang_start::<()>::{closure#0}
+                          |          |                                                      |          |          |          |          std::rt::lang_start_internal
+                          |          |                                                      |          |          |          |          main
+                          |          |                                                      |          |          |          |          0x7f1f74a2797e
+                          |          |                                                      |          |          |          |          0x7ffff3d182dd
+                          |          |                                                      |          |          |          |          0x6c732d7570632d6e
+                          |          |                                                      |          |          |          |          
+                          |          |                                                      |          |          |           --1.83%--<chen::search::Searcher>::negamax
+                          |          |                                                      |          |          |                     |          
+                          |          |                                                      |          |          |                      --1.81%--cpu_sliding_profile::main
+                          |          |                                                      |          |          |                                std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |                                                      |          |          |                                std::rt::lang_start::<()>::{closure#0}
+                          |          |                                                      |          |          |                                std::rt::lang_start_internal
+                          |          |                                                      |          |          |                                main
+                          |          |                                                      |          |          |                                0x7f1f74a2797e
+                          |          |                                                      |          |          |                                0x7ffff3d182dd
+                          |          |                                                      |          |          |                                0x6c732d7570632d6e
+                          |          |                                                      |          |          |          
+                          |          |                                                      |          |           --1.38%--cpu_sliding_profile::main
+                          |          |                                                      |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |                                                      |          |                     std::rt::lang_start::<()>::{closure#0}
+                          |          |                                                      |          |                     std::rt::lang_start_internal
+                          |          |                                                      |          |                     main
+                          |          |                                                      |          |                     0x7f1f74a2797e
+                          |          |                                                      |          |                     0x7ffff3d182dd
+                          |          |                                                      |          |                     0x6c732d7570632d6e
+                          |          |                                                      |          |          
+                          |          |                                                      |           --1.89%--cpu_sliding_profile::main
+                          |          |                                                      |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |                                                      |                     std::rt::lang_start::<()>::{closure#0}
+                          |          |                                                      |                     std::rt::lang_start_internal
+                          |          |                                                      |                     main
+                          |          |                                                      |                     0x7f1f74a2797e
+                          |          |                                                      |                     0x7ffff3d182dd
+                          |          |                                                      |                     0x6c732d7570632d6e
+                          |          |                                                      |          
+                          |          |                                                       --0.68%--cpu_sliding_profile::main
+                          |          |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |          |                                                                 std::rt::lang_start::<()>::{closure#0}
+                          |          |                                                                 std::rt::lang_start_internal
+                          |          |                                                                 main
+                          |          |                                                                 0x7f1f74a2797e
+                          |          |                                                                 0x7ffff3d182dd
+                          |          |                                                                 0x6c732d7570632d6e
+                          |          |          
+                          |           --4.19%--<chen::search::Searcher>::negamax
+                          |                     <chen::search::Searcher>::negamax
+                          |                     <chen::search::Searcher>::negamax
+                          |                     <chen::search::Searcher>::negamax
+                          |                     |          
+                          |                      --4.11%--<chen::search::Searcher>::negamax
+                          |                                |          
+                          |                                 --4.03%--<chen::search::Searcher>::negamax
+                          |                                           |          
+                          |                                           |--3.51%--<chen::search::Searcher>::negamax
+                          |                                           |          |          
+                          |                                           |           --3.21%--<chen::search::Searcher>::negamax
+                          |                                           |                     |          
+                          |                                           |                     |--2.11%--<chen::search::Searcher>::negamax
+                          |                                           |                     |          |          
+                          |                                           |                     |           --1.68%--<chen::search::Searcher>::negamax
+                          |                                           |                     |                     cpu_sliding_profile::main
+                          |                                           |                     |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |                                           |                     |                     std::rt::lang_start::<()>::{closure#0}
+                          |                                           |                     |                     std::rt::lang_start_internal
+                          |                                           |                     |                     main
+                          |                                           |                     |                     0x7f1f74a2797e
+                          |                                           |                     |                     0x7ffff3d182dd
+                          |                                           |                     |                     0x6c732d7570632d6e
+                          |                                           |                     |          
+                          |                                           |                      --1.10%--cpu_sliding_profile::main
+                          |                                           |                                std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |                                           |                                std::rt::lang_start::<()>::{closure#0}
+                          |                                           |                                std::rt::lang_start_internal
+                          |                                           |                                main
+                          |                                           |                                0x7f1f74a2797e
+                          |                                           |                                0x7ffff3d182dd
+                          |                                           |                                0x6c732d7570632d6e
+                          |                                           |          
+                          |                                            --0.52%--cpu_sliding_profile::main
+                          |                                                      std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |                                                      std::rt::lang_start::<()>::{closure#0}
+                          |                                                      std::rt::lang_start_internal
+                          |                                                      main
+                          |                                                      0x7f1f74a2797e
+                          |                                                      0x7ffff3d182dd
+                          |                                                      0x6c732d7570632d6e
+                          |          
+                           --0.94%--<chen::search::Searcher>::quiesce
+                                     |          
+                                      --0.50%--<chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+
+    12.74%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::legal_moves                                                                         -      -            
+            |
+            ---<chen::core::Position>::legal_moves
+               |          
+               |--11.01%--<chen::search::Searcher>::quiesce
+               |          |          
+               |          |--5.80%--<chen::search::Searcher>::quiesce
+               |          |          |          
+               |          |          |--3.35%--<chen::search::Searcher>::quiesce
+               |          |          |          |          
+               |          |          |          |--2.85%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          
+               |          |          |          |           --2.39%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |          
+               |          |          |          |                      --2.01%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                |          
+               |          |          |          |                                 --1.85%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                           |          
+               |          |          |          |                                            --1.56%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                                      |          
+               |          |          |          |                                                       --1.28%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                                                 |          
+               |          |          |          |                                                                  --1.10%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                                                            |          
+               |          |          |          |                                                                             --0.96%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                                                                       |          
+               |          |          |          |                                                                                        --0.70%--<chen::search::Searcher>::quiesce
+               |          |          |          |                                                                                                  |          
+               |          |          |          |                                                                                                   --0.54%--<chen::search::Searcher>::quiesce
+               |          |          |          |          
+               |          |          |           --0.50%--<chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |          
+               |          |           --2.45%--<chen::search::Searcher>::negamax
+               |          |                     <chen::search::Searcher>::negamax
+               |          |                     |          
+               |          |                      --2.41%--<chen::search::Searcher>::negamax
+               |          |                                |          
+               |          |                                 --2.37%--<chen::search::Searcher>::negamax
+               |          |                                           |          
+               |          |                                            --2.17%--<chen::search::Searcher>::negamax
+               |          |                                                      |          
+               |          |                                                       --1.95%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          
+               |          |                                                                 |--1.14%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          |          
+               |          |                                                                 |           --0.86%--<chen::search::Searcher>::negamax
+               |          |                                                                 |                     |          
+               |          |                                                                 |                      --0.66%--<chen::search::Searcher>::negamax
+               |          |                                                                 |                                |          
+               |          |                                                                 |                                 --0.50%--<chen::search::Searcher>::negamax
+               |          |                                                                 |                                           cpu_sliding_profile::main
+               |          |                                                                 |                                           std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                 |                                           std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                 |                                           std::rt::lang_start_internal
+               |          |                                                                 |                                           main
+               |          |                                                                 |                                           0x7f1f74a2797e
+               |          |                                                                 |                                           0x7ffff3d182dd
+               |          |                                                                 |                                           0x6c732d7570632d6e
+               |          |                                                                 |          
+               |          |                                                                  --0.80%--cpu_sliding_profile::main
+               |          |                                                                            std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                            std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                            std::rt::lang_start_internal
+               |          |                                                                            main
+               |          |                                                                            0x7f1f74a2797e
+               |          |                                                                            0x7ffff3d182dd
+               |          |                                                                            0x6c732d7570632d6e
+               |          |          
+               |           --5.21%--<chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     |          
+               |                      --5.19%--<chen::search::Searcher>::negamax
+               |                                |          
+               |                                 --5.11%--<chen::search::Searcher>::negamax
+               |                                           |          
+               |                                            --4.63%--<chen::search::Searcher>::negamax
+               |                                                      |          
+               |                                                      |--4.13%--<chen::search::Searcher>::negamax
+               |                                                      |          |          
+               |                                                      |          |--2.77%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |          
+               |                                                      |          |          |--1.81%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |          |          
+               |                                                      |          |          |          |--1.00%--cpu_sliding_profile::main
+               |                                                      |          |          |          |          std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |          |          |          |          std::rt::lang_start::<()>::{closure#0}
+               |                                                      |          |          |          |          std::rt::lang_start_internal
+               |                                                      |          |          |          |          main
+               |                                                      |          |          |          |          0x7f1f74a2797e
+               |                                                      |          |          |          |          0x7ffff3d182dd
+               |                                                      |          |          |          |          0x6c732d7570632d6e
+               |                                                      |          |          |          |          
+               |                                                      |          |          |           --0.80%--<chen::search::Searcher>::negamax
+               |                                                      |          |          |                     cpu_sliding_profile::main
+               |                                                      |          |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |          |          |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |          |          |                     std::rt::lang_start_internal
+               |                                                      |          |          |                     main
+               |                                                      |          |          |                     0x7f1f74a2797e
+               |                                                      |          |          |                     0x7ffff3d182dd
+               |                                                      |          |          |                     0x6c732d7570632d6e
+               |                                                      |          |          |          
+               |                                                      |          |           --0.96%--cpu_sliding_profile::main
+               |                                                      |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |          |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |          |                     std::rt::lang_start_internal
+               |                                                      |          |                     main
+               |                                                      |          |                     0x7f1f74a2797e
+               |                                                      |          |                     0x7ffff3d182dd
+               |                                                      |          |                     0x6c732d7570632d6e
+               |                                                      |          |          
+               |                                                      |           --1.36%--cpu_sliding_profile::main
+               |                                                      |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                      |                     std::rt::lang_start::<()>::{closure#0}
+               |                                                      |                     std::rt::lang_start_internal
+               |                                                      |                     main
+               |                                                      |                     0x7f1f74a2797e
+               |                                                      |                     0x7ffff3d182dd
+               |                                                      |                     0x6c732d7570632d6e
+               |                                                      |          
+               |                                                       --0.50%--cpu_sliding_profile::main
+               |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |                                                                 std::rt::lang_start::<()>::{closure#0}
+               |                                                                 std::rt::lang_start_internal
+               |                                                                 main
+               |                                                                 0x7f1f74a2797e
+               |                                                                 0x7ffff3d182dd
+               |                                                                 0x6c732d7570632d6e
+               |          
+                --1.72%--<chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          |          
+                           --1.68%--<chen::search::Searcher>::negamax
+                                     |          
+                                      --1.48%--<chen::search::Searcher>::negamax
+                                                |          
+                                                 --1.12%--<chen::search::Searcher>::negamax
+                                                           |          
+                                                            --0.84%--<chen::search::Searcher>::negamax
+                                                                      |          
+                                                                       --0.52%--<chen::search::Searcher>::negamax
+
+    11.13%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::attackers_to                                                                        -      -            
+            |
+            ---<chen::core::Position>::attackers_to
+               |          
+               |--9.49%--<chen::core::Position>::legal_moves
+               |          |          
+               |          |--8.18%--<chen::search::Searcher>::quiesce
+               |          |          |          
+               |          |          |--4.35%--<chen::search::Searcher>::quiesce
+               |          |          |          |          
+               |          |          |          |--2.63%--<chen::search::Searcher>::quiesce
+               |          |          |          |          |          
+               |          |          |          |           --2.19%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.62%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |          |          
+               |          |          |          |                     |           --1.22%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                     |          
+               |          |          |          |                     |                      --1.14%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                                |          
+               |          |          |          |                     |                                 --1.00%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                                           |          
+               |          |          |          |                     |                                            --0.84%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                                                      |          
+               |          |          |          |                     |                                                       --0.72%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                                                                 |          
+               |          |          |          |                     |                                                                  --0.58%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |                                                                            |          
+               |          |          |          |                     |                                                                             --0.52%--<chen::search::Searcher>::quiesce
+               |          |          |          |                     |          
+               |          |          |          |                      --0.56%--<chen::search::Searcher>::negamax
+               |          |          |          |                                |          
+               |          |          |          |                                 --0.54%--<chen::search::Searcher>::negamax
+               |          |          |          |                                           <chen::search::Searcher>::negamax
+               |          |          |          |                                           <chen::search::Searcher>::negamax
+               |          |          |          |                                           |          
+               |          |          |          |                                            --0.50%--<chen::search::Searcher>::negamax
+               |          |          |          |          
+               |          |          |           --1.72%--<chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     <chen::search::Searcher>::negamax
+               |          |          |                     |          
+               |          |          |                      --1.64%--<chen::search::Searcher>::negamax
+               |          |          |                                |          
+               |          |          |                                 --1.42%--<chen::search::Searcher>::negamax
+               |          |          |                                           |          
+               |          |          |                                           |--0.82%--<chen::search::Searcher>::negamax
+               |          |          |                                           |          |          
+               |          |          |                                           |           --0.64%--<chen::search::Searcher>::negamax
+               |          |          |                                           |          
+               |          |          |                                            --0.60%--cpu_sliding_profile::main
+               |          |          |                                                      std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |          |                                                      std::rt::lang_start::<()>::{closure#0}
+               |          |          |                                                      std::rt::lang_start_internal
+               |          |          |                                                      main
+               |          |          |                                                      0x7f1f74a2797e
+               |          |          |                                                      0x7ffff3d182dd
+               |          |          |                                                      0x6c732d7570632d6e
+               |          |          |          
+               |          |           --3.83%--<chen::search::Searcher>::negamax
+               |          |                     <chen::search::Searcher>::negamax
+               |          |                     <chen::search::Searcher>::negamax
+               |          |                     |          
+               |          |                      --3.79%--<chen::search::Searcher>::negamax
+               |          |                                |          
+               |          |                                 --3.73%--<chen::search::Searcher>::negamax
+               |          |                                           |          
+               |          |                                            --3.53%--<chen::search::Searcher>::negamax
+               |          |                                                      |          
+               |          |                                                       --3.11%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          
+               |          |                                                                 |--2.07%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          |          
+               |          |                                                                 |          |--1.46%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          |          |          
+               |          |                                                                 |          |          |--0.86%--cpu_sliding_profile::main
+               |          |                                                                 |          |          |          std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                 |          |          |          std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                 |          |          |          std::rt::lang_start_internal
+               |          |                                                                 |          |          |          main
+               |          |                                                                 |          |          |          0x7f1f74a2797e
+               |          |                                                                 |          |          |          0x7ffff3d182dd
+               |          |                                                                 |          |          |          0x6c732d7570632d6e
+               |          |                                                                 |          |          |          
+               |          |                                                                 |          |           --0.60%--<chen::search::Searcher>::negamax
+               |          |                                                                 |          |                     cpu_sliding_profile::main
+               |          |                                                                 |          |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                 |          |                     std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                 |          |                     std::rt::lang_start_internal
+               |          |                                                                 |          |                     main
+               |          |                                                                 |          |                     0x7f1f74a2797e
+               |          |                                                                 |          |                     0x7ffff3d182dd
+               |          |                                                                 |          |                     0x6c732d7570632d6e
+               |          |                                                                 |          |          
+               |          |                                                                 |           --0.60%--cpu_sliding_profile::main
+               |          |                                                                 |                     std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                 |                     std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                 |                     std::rt::lang_start_internal
+               |          |                                                                 |                     main
+               |          |                                                                 |                     0x7f1f74a2797e
+               |          |                                                                 |                     0x7ffff3d182dd
+               |          |                                                                 |                     0x6c732d7570632d6e
+               |          |                                                                 |          
+               |          |                                                                  --1.04%--cpu_sliding_profile::main
+               |          |                                                                            std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+               |          |                                                                            std::rt::lang_start::<()>::{closure#0}
+               |          |                                                                            std::rt::lang_start_internal
+               |          |                                                                            main
+               |          |                                                                            0x7f1f74a2797e
+               |          |                                                                            0x7ffff3d182dd
+               |          |                                                                            0x6c732d7570632d6e
+               |          |          
+               |           --1.30%--<chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     <chen::search::Searcher>::negamax
+               |                     |          
+               |                      --1.28%--<chen::search::Searcher>::negamax
+               |                                <chen::search::Searcher>::negamax
+               |                                |          
+               |                                 --1.24%--<chen::search::Searcher>::negamax
+               |                                           |          
+               |                                            --0.92%--<chen::search::Searcher>::negamax
+               |                                                      |          
+               |                                                       --0.66%--<chen::search::Searcher>::negamax
+               |          
+                --1.22%--<chen::search::Searcher>::quiesce
+                          |          
+                          |--0.66%--<chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          |          
+                          |           --0.58%--<chen::search::Searcher>::negamax
+                          |          
+                           --0.56%--<chen::search::Searcher>::quiesce
+
+     6.60%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::effective_ep_file                                                                   -      -            
+            |
+            ---<chen::core::Position>::effective_ep_file
+               |          
+                --6.32%--<chen::core::Position>::make_move
+                          |          
+                           --6.04%--<chen::core::Position>::legal_moves
+                                     |          
+                                     |--4.89%--<chen::search::Searcher>::quiesce
+                                     |          |          
+                                     |          |--2.71%--<chen::search::Searcher>::quiesce
+                                     |          |          |          
+                                     |          |          |--1.48%--<chen::search::Searcher>::quiesce
+                                     |          |          |          |          
+                                     |          |          |           --1.24%--<chen::search::Searcher>::quiesce
+                                     |          |          |                     |          
+                                     |          |          |                      --0.80%--<chen::search::Searcher>::quiesce
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.72%--<chen::search::Searcher>::quiesce
+                                     |          |          |                                           |          
+                                     |          |          |                                            --0.60%--<chen::search::Searcher>::quiesce
+                                     |          |          |          
+                                     |          |           --1.22%--<chen::search::Searcher>::negamax
+                                     |          |                     <chen::search::Searcher>::negamax
+                                     |          |                     <chen::search::Searcher>::negamax
+                                     |          |                     <chen::search::Searcher>::negamax
+                                     |          |                     |          
+                                     |          |                      --1.14%--<chen::search::Searcher>::negamax
+                                     |          |                                |          
+                                     |          |                                 --1.10%--<chen::search::Searcher>::negamax
+                                     |          |                                           |          
+                                     |          |                                            --0.62%--<chen::search::Searcher>::negamax
+                                     |          |                                                      |          
+                                     |          |                                                       --0.52%--<chen::search::Searcher>::negamax
+                                     |          |          
+                                     |           --2.19%--<chen::search::Searcher>::negamax
+                                     |                     <chen::search::Searcher>::negamax
+                                     |                     <chen::search::Searcher>::negamax
+                                     |                     |          
+                                     |                      --2.15%--<chen::search::Searcher>::negamax
+                                     |                                <chen::search::Searcher>::negamax
+                                     |                                |          
+                                     |                                 --1.87%--<chen::search::Searcher>::negamax
+                                     |                                           |          
+                                     |                                            --1.66%--<chen::search::Searcher>::negamax
+                                     |                                                      |          
+                                     |                                                      |--1.00%--<chen::search::Searcher>::negamax
+                                     |                                                      |          |          
+                                     |                                                      |           --0.64%--<chen::search::Searcher>::negamax
+                                     |                                                      |          
+                                     |                                                       --0.66%--cpu_sliding_profile::main
+                                     |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                                     |                                                                 std::rt::lang_start::<()>::{closure#0}
+                                     |                                                                 std::rt::lang_start_internal
+                                     |                                                                 main
+                                     |                                                                 0x7f1f74a2797e
+                                     |                                                                 0x7ffff3d182dd
+                                     |                                                                 0x6c732d7570632d6e
+                                     |          
+                                      --1.14%--<chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                |          
+                                                 --1.08%--<chen::search::Searcher>::negamax
+                                                           |          
+                                                            --1.04%--<chen::search::Searcher>::negamax
+                                                                      |          
+                                                                       --0.84%--<chen::search::Searcher>::negamax
+                                                                                 |          
+                                                                                  --0.62%--<chen::search::Searcher>::negamax
+
+     4.07%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::eval::Tapered as chen::eval::Evaluator>::evaluate                                                    -      -            
+            |
+            ---<chen::eval::Tapered as chen::eval::Evaluator>::evaluate
+               |          
+                --4.05%--<chen::search::Searcher>::quiesce
+                          |          
+                          |--2.21%--<chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          <chen::search::Searcher>::negamax
+                          |          |          
+                          |           --2.19%--<chen::search::Searcher>::negamax
+                          |                     |          
+                          |                      --2.17%--<chen::search::Searcher>::negamax
+                          |                                |          
+                          |                                 --1.99%--<chen::search::Searcher>::negamax
+                          |                                           |          
+                          |                                            --1.81%--<chen::search::Searcher>::negamax
+                          |                                                      |          
+                          |                                                      |--1.04%--<chen::search::Searcher>::negamax
+                          |                                                      |          |          
+                          |                                                      |           --0.62%--<chen::search::Searcher>::negamax
+                          |                                                      |          
+                          |                                                       --0.76%--cpu_sliding_profile::main
+                          |                                                                 std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                          |                                                                 std::rt::lang_start::<()>::{closure#0}
+                          |                                                                 std::rt::lang_start_internal
+                          |                                                                 main
+                          |                                                                 0x7f1f74a2797e
+                          |                                                                 0x7ffff3d182dd
+                          |                                                                 0x6c732d7570632d6e
+                          |          
+                           --1.85%--<chen::search::Searcher>::quiesce
+                                     |          
+                                     |--1.16%--<chen::search::Searcher>::quiesce
+                                     |          |          
+                                     |           --0.88%--<chen::search::Searcher>::quiesce
+                                     |                     |          
+                                     |                      --0.62%--<chen::search::Searcher>::quiesce
+                                     |          
+                                      --0.68%--<chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                <chen::search::Searcher>::negamax
+                                                |          
+                                                 --0.66%--<chen::search::Searcher>::negamax
+                                                           |          
+                                                            --0.64%--<chen::search::Searcher>::negamax
+                                                                      |          
+                                                                       --0.58%--<chen::search::Searcher>::negamax
+
+     2.49%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::capture                                                                           -      -            
+            |
+            ---<chen::search::Searcher>::capture
+               |          
+               |--1.22%--<alloc::vec::Vec<chen::core::Move>>::retain::<<chen::search::Searcher>::quiesce::{closure#0}>
+               |          <chen::search::Searcher>::quiesce
+               |          |          
+               |           --0.84%--<chen::search::Searcher>::quiesce
+               |                     |          
+               |                      --0.60%--<chen::search::Searcher>::quiesce
+               |          
+               |--0.52%--<chen::search::Searcher>::quiesce
+               |          
+                --0.52%--<chen::search::Searcher>::ordered::{closure#0}
+                          <chen::search::Searcher>::ordered
+
+     1.60%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered::{closure#0}                                                              -      -            
+            |
+            ---<chen::search::Searcher>::ordered::{closure#0}
+               |          
+                --1.52%--<chen::search::Searcher>::ordered
+                          |          
+                           --1.12%--<chen::search::Searcher>::negamax
+                                     <chen::search::Searcher>::negamax
+                                     <chen::search::Searcher>::negamax
+                                     |          
+                                      --1.08%--<chen::search::Searcher>::negamax
+                                                |          
+                                                 --1.06%--<chen::search::Searcher>::negamax
+                                                           |          
+                                                            --1.02%--<chen::search::Searcher>::negamax
+                                                                      |          
+                                                                       --0.84%--<chen::search::Searcher>::negamax
+                                                                                 |          
+                                                                                  --0.64%--<chen::search::Searcher>::negamax
+
+     1.30%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered                                                                           -      -            
+            |
+            ---<chen::search::Searcher>::ordered
+               |          
+                --0.92%--<chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          |          
+                           --0.90%--<chen::search::Searcher>::negamax
+                                     |          
+                                      --0.86%--<chen::search::Searcher>::negamax
+                                                |          
+                                                 --0.82%--<chen::search::Searcher>::negamax
+                                                           |          
+                                                            --0.60%--<chen::search::Searcher>::negamax
+
+     1.04%  cpu_sliding_pro  cpu_sliding_profile  [.] core::slice::sort::unstable::quicksort::quicksort::<(i32, u32), <(i32, u32) as core::cmp::PartialOrd>::lt>  -      -            
+            |
+            ---core::slice::sort::unstable::quicksort::quicksort::<(i32, u32), <(i32, u32) as core::cmp::PartialOrd>::lt>
+               |          
+                --0.88%--<chen::search::Searcher>::ordered
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          <chen::search::Searcher>::negamax
+                          |          
+                           --0.84%--<chen::search::Searcher>::negamax
+                                     |          
+                                      --0.58%--<chen::search::Searcher>::negamax
+
+     0.94%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::tt::TranspositionTable>::get                                                                         -      -            
+            |
+            ---<chen::tt::TranspositionTable>::get
+               <chen::search::Searcher>::negamax
+               <chen::search::Searcher>::negamax
+               <chen::search::Searcher>::negamax
+               <chen::search::Searcher>::negamax
+               |          
+                --0.92%--<chen::search::Searcher>::negamax
+                          |          
+                           --0.76%--<chen::search::Searcher>::negamax
+                                     |          
+                                      --0.64%--<chen::search::Searcher>::negamax
+
+     0.84%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::quiesce                                                                           -      -            
+            |
+            ---<chen::search::Searcher>::quiesce
+
+     0.58%  cpu_sliding_pro  cpu_sliding_profile  [.] <alloc::vec::Vec<chen::core::Move>>::retain::<<chen::search::Searcher>::quiesce::{closure#0}>               -      -            
+            |
+            ---<alloc::vec::Vec<chen::core::Move>>::retain::<<chen::search::Searcher>::quiesce::{closure#0}>
+               <chen::search::Searcher>::quiesce
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,12 @@
+{
+  "runs/perf-baseline.data.gz": {
+    "raw_sha256": "1911388ce810bf2e9859c677b166df9a9bd2d56590b302f01a8ad4be4f834e47",
+    "raw_bytes": 1085376,
+    "gzip_sha256": "9dcfa99f6d21334c82e5969895cf1fcc91e40c87c6da0b49fe989898b7acb8c6"
+  },
+  "runs/perf-candidate.data.gz": {
+    "raw_sha256": "093b248e8b3a65983b0937637d79dcabeee39bf2f1af3963efee914a08fa88d5",
+    "raw_bytes": 1076384,
+    "gzip_sha256": "64ac822b35dcead4b48714c2e901af95de75dd86cb4bbfd5e9952f369bb262a5"
+  }
+}

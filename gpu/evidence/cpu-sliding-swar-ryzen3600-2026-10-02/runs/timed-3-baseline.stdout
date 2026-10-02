@@ -1,0 +1,6 @@
+{"phase":"timed","position":"start","depth":7,"nodes":597504,"qnodes":508172,"score_cp":29,"bestmove":"g1f3","pv":"g1f3 b8c6 e2e3 g8f6 f1d3 a7a5 e1g1","stopped":true,"elapsed_ns":1000116757}
+{"phase":"timed","position":"kiwipete","depth":4,"nodes":358400,"qnodes":352202,"score_cp":-18,"bestmove":"e2a6","pv":"e2a6 e6d5 g2h3 e7e5","stopped":true,"elapsed_ns":1000398307}
+{"phase":"timed","position":"rook-ending","depth":9,"nodes":624128,"qnodes":485133,"score_cp":61,"bestmove":"b4f4","pv":"b4f4 h4g3 f4c4 c7c5 b5b6 h5h8 e2e4 h8e8 b6b7 g3g2","stopped":true,"elapsed_ns":1000079747}
+{"phase":"timed","position":"middlegame","depth":6,"nodes":477184,"qnodes":421191,"score_cp":8,"bestmove":"d4c5","pv":"d4c5 a7a5 b2b4 a5b4 c3b4 c6b4","stopped":true,"elapsed_ns":1000104797}
+{"phase":"timed","position":"promotion","depth":10,"nodes":523776,"qnodes":364230,"score_cp":907,"bestmove":"a7a8q","pv":"a7a8q e8e7 a8h1 e7e6 h1h2 e6d5 h2f4 d5e6 f4d4 e6f5","stopped":true,"elapsed_ns":1000305997}
+{"phase":"timed","position":"mate","depth":1,"nodes":29,"qnodes":28,"score_cp":29999,"bestmove":"f7g7","pv":"f7g7","stopped":false,"elapsed_ns":24540}

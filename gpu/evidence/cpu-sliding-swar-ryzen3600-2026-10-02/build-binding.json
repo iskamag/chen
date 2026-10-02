@@ -1,0 +1,55 @@
+{
+  "kind": "CPU_source_compiler_binary_workload_binding",
+  "binaries": {
+    "baseline-profile": {
+      "gzip_path": "baseline-profile.bin.gz",
+      "raw_sha256": "52fcb9e8e5ee8461e50a631e6323123252b737c58435caf30333be68b13af553",
+      "raw_bytes": 535792,
+      "gzip_sha256": "3e26eeb09345fd77f764619661e84a8439025c72121de5136005ed8e4d1b6798"
+    },
+    "baseline-engine": {
+      "gzip_path": "baseline-engine.bin.gz",
+      "raw_sha256": "d03e47399cc9ad1a1c2367deab4a99e840e44f135f78ac331fc2faf319896b71",
+      "raw_bytes": 706272,
+      "gzip_sha256": "66e1feee51bdfd1bbd4581fde0b0d1058aee55cb3ef90cff46b5b16d51ebce76"
+    },
+    "candidate-profile": {
+      "gzip_path": "candidate-profile.bin.gz",
+      "raw_sha256": "ebfe19c15c80723753681c83547f835751edd0dbd26a20b1bc47ebc0931641c9",
+      "raw_bytes": 532800,
+      "gzip_sha256": "274e69bba0eafb4ce1bc5dd24acf5f64656df3ba197b82ff5358ad909f86cdf1"
+    },
+    "candidate-engine": {
+      "gzip_path": "candidate-engine.bin.gz",
+      "raw_sha256": "2ae49a15d2e73159665d8fdd92bc5f511814cb324408f0b975fce67e283446be",
+      "raw_bytes": 705496,
+      "gzip_sha256": "d8c4f4aba5c5b1b4348530d3d5c6bf71f06438f6be02ece386fad34ca72e245c"
+    }
+  },
+  "source_declaration_sha256": "e942019af84d340a3cd1c07d9b216caf84144ba402ec3cd44836b62b5fb42825",
+  "release_build_commands": [
+    [
+      "cargo",
+      "build",
+      "--offline",
+      "--release",
+      "--bin",
+      "chen",
+      "--example",
+      "cpu_sliding_profile"
+    ]
+  ],
+  "RUSTFLAGS": "-C debuginfo=1 -C force-frame-pointers=yes",
+  "cpu_model": "AMD Ryzen 5 3600",
+  "cpu_affinity": [
+    2
+  ],
+  "workload_example_after_measurement_change": "Numeric seed literal grouping only, same value. Original measured sources remain frozen; current example clippy checked separately.",
+  "unchanged_seed_value": 886663975522406402,
+  "test_passed_counts": {
+    "baseline": 56,
+    "candidate": 56
+  },
+  "current_candidate_helper_sha256": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+  "source_unchanged_assertion": true
+}

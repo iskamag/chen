@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/chen-cpu-sliding-2026-10-02/candidate/target/release/examples/cpu_sliding_profile",
+    "verify"
+  ],
+  "pid": 20457,
+  "timeout_seconds": 30,
+  "exit_code": 0,
+  "group_absent": true,
+  "wall_seconds": 0.14080975702381693
+}

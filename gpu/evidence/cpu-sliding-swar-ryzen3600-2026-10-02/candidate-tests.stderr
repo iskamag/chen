@@ -1,0 +1,16 @@
+   Compiling chen v0.1.0 (/tmp/chen-cpu-sliding-2026-10-02/candidate)
+    Finished `release` profile [optimized] target(s) in 32.80s
+     Running unittests src/lib.rs (target/release/deps/chen-437fce991b73a3ae)
+     Running unittests src/main.rs (target/release/deps/chen-3bd10413f9848f80)
+     Running tests/core.rs (target/release/deps/core-12985c772fba61a4)
+     Running tests/device.rs (target/release/deps/device-c786844e465dc82a)
+     Running tests/device_selective.rs (target/release/deps/device_selective-8180e16b9359b978)
+     Running tests/frontier.rs (target/release/deps/frontier-36ae3749232c6600)
+     Running tests/hip.rs (target/release/deps/hip-cf7e61f3288ab703)
+     Running tests/neural_selective.rs (target/release/deps/neural_selective-f4899e4a8de29c6d)
+     Running tests/resident.rs (target/release/deps/resident-a612ab75a9228e11)
+     Running tests/rules.rs (target/release/deps/rules-786f44377c00a9c2)
+     Running tests/search.rs (target/release/deps/search-27edfa4789fc779d)
+     Running tests/selective.rs (target/release/deps/selective-02d395c1f9f3a4fb)
+     Running tests/uci.rs (target/release/deps/uci-8c6c9d124b9432ae)
+   Doc-tests chen

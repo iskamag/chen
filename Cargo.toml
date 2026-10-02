@@ -8,6 +8,8 @@ default-run = "chen"
 
 [features]
 default = []
+# Frozen ray-walk control for rule/search experiments; default uses SWAR.
+ray-attacks = []
 hip = ["dep:serde_json", "dep:sha2"]
 
 [lib]

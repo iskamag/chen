@@ -1,0 +1,12 @@
+    Checking chen v0.1.0 (/tmp/chen-cpu-sliding-2026-10-02/candidate)
+error: digits of hex, binary or octal literal not in groups of equal size
+  --> examples/cpu_sliding_profile.rs:69:22
+   |
+69 |     let mut random = 0xc4e1_0302_0261_002u64;
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^ help: consider: `0x0c4e_1030_2026_1002_u64`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.98.0/index.html#unusual_byte_groupings
+   = note: `-D clippy::unusual-byte-groupings` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::unusual_byte_groupings)]`
+
+error: could not compile `chen` (example "cpu_sliding_profile") due to 1 previous error

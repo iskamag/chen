@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "audit_source_sha256": "9e43e3c14df053ad23b7b9935ce7bddf3b30d0c3b9739e2ee9afb5b71abd7d4e",
+  "exact_work_rows": 96,
+  "exhaustive_checks_per_arm": 4878976,
+  "independent_move_roots_per_arm": 256,
+  "independent_child_legal_count_maps_per_arm": 6975,
+  "fixed_work": [
+    {
+      "mode": "perft",
+      "median_sum_ms": {
+        "baseline": 542.0303385,
+        "candidate": 535.2192855000001
+      },
+      "baseline_over_candidate": 1.0127257241742271,
+      "positions": {
+        "start": {
+          "median_ms": {
+            "baseline": 243.624276,
+            "candidate": 243.024771
+          },
+          "baseline_over_candidate": 1.0024668472992821
+        },
+        "kiwipete": {
+          "median_ms": {
+            "baseline": 225.0948625,
+            "candidate": 217.996519
+          },
+          "baseline_over_candidate": 1.0325617286576947
+        },
+        "rook-ending": {
+          "median_ms": {
+            "baseline": 4.082132,
+            "candidate": 3.0294615
+          },
+          "baseline_over_candidate": 1.347477761311705
+        },
+        "middlegame": {
+          "median_ms": {
+            "baseline": 67.7535575,
+            "candidate": 71.045054
+          },
+          "baseline_over_candidate": 0.9536702935013605
+        },
+        "promotion": {
+          "median_ms": {
+            "baseline": 0.7187250000000001,
+            "candidate": 0.4899755
+          },
+          "baseline_over_candidate": 1.4668590572385762
+        },
+        "mate": {
+          "median_ms": {
+            "baseline": 0.161595,
+            "candidate": 0.120635
+          },
+          "baseline_over_candidate": 1.3395366187259086
+        }
+      }
+    },
+    {
+      "mode": "nodes",
+      "median_sum_ms": {
+        "baseline": 2018.104418,
+        "candidate": 1729.6881405
+      },
+      "baseline_over_candidate": 1.1667446696007453,
+      "positions": {
+        "start": {
+          "median_ms": {
+            "baseline": 342.582978,
+            "candidate": 334.687605
+          },
+          "baseline_over_candidate": 1.0235902760725184
+        },
+        "kiwipete": {
+          "median_ms": {
+            "baseline": 567.2458255,
+            "candidate": 477.12998300000004
+          },
+          "baseline_over_candidate": 1.188870634231343
+        },
+        "rook-ending": {
+          "median_ms": {
+            "baseline": 325.63032999999996,
+            "candidate": 248.6880635
+          },
+          "baseline_over_candidate": 1.3093926801999485
+        },
+        "middlegame": {
+          "median_ms": {
+            "baseline": 412.74843699999997,
+            "candidate": 409.76667
+          },
+          "baseline_over_candidate": 1.0072767436160681
+        },
+        "promotion": {
+          "median_ms": {
+            "baseline": 368.7063105,
+            "candidate": 254.8655015
+          },
+          "baseline_over_candidate": 1.4466701390733339
+        },
+        "mate": {
+          "median_ms": {
+            "baseline": 0.023335,
+            "candidate": 0.01722
+          },
+          "baseline_over_candidate": 1.355110336817654
+        }
+      }
+    }
+  ],
+  "profiles_self_sample_rows": {
+    "baseline": [
+      "29.72%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::make_move                                                                           -      -",
+      "25.09%  cpu_sliding_pro  cpu_sliding_profile  [.] chen::core::sliding_attacks                                                                                 -      -",
+      "12.74%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::legal_moves                                                                         -      -",
+      "11.13%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::attackers_to                                                                        -      -",
+      "6.60%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::effective_ep_file                                                                   -      -",
+      "4.07%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::eval::Tapered as chen::eval::Evaluator>::evaluate                                                    -      -",
+      "2.49%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::capture                                                                           -      -",
+      "1.60%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered::{closure#0}                                                              -      -",
+      "1.30%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered                                                                           -      -",
+      "1.04%  cpu_sliding_pro  cpu_sliding_profile  [.] core::slice::sort::unstable::quicksort::quicksort::<(i32, u32), <(i32, u32) as core::cmp::PartialOrd>::lt>  -      -",
+      "0.94%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::tt::TranspositionTable>::get                                                                         -      -",
+      "0.84%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::quiesce                                                                           -      -",
+      "0.58%  cpu_sliding_pro  cpu_sliding_profile  [.] <alloc::vec::Vec<chen::core::Move>>::retain::<<chen::search::Searcher>::quiesce::{closure#0}>               -      -"
+    ],
+    "candidate": [
+      "31.52%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::make_move                                                                           -      -",
+      "20.31%  cpu_sliding_pro  cpu_sliding_profile  [.] chen::core::sliding_attacks                                                                                 -      -",
+      "12.85%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::legal_moves                                                                         -      -",
+      "10.16%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::attackers_to                                                                        -      -",
+      "7.82%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::core::Position>::effective_ep_file                                                                   -      -",
+      "4.37%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::eval::Tapered as chen::eval::Evaluator>::evaluate                                                    -      -",
+      "3.71%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::capture                                                                           -      -",
+      "1.96%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered::{closure#0}                                                              -      -",
+      "1.48%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::ordered                                                                           -      -",
+      "1.16%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::tt::TranspositionTable>::get                                                                         -      -",
+      "0.98%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::quiesce                                                                           -      -",
+      "0.96%  cpu_sliding_pro  cpu_sliding_profile  [.] core::slice::sort::unstable::quicksort::quicksort::<(i32, u32), <(i32, u32) as core::cmp::PartialOrd>::lt>  -      -",
+      "0.74%  cpu_sliding_pro  cpu_sliding_profile  [.] <alloc::vec::Vec<chen::core::Move>>::retain::<<chen::search::Searcher>::quiesce::{closure#0}>               -      -",
+      "0.62%  cpu_sliding_pro  cpu_sliding_profile  [.] <chen::search::Searcher>::negamax                                                                           -      -"
+    ]
+  },
+  "scope": "Six FENs, affinity2, identical release flags, no rating inference; timed searches may differ in completed iteration, scores and PV. Shared cache/power are uncontrolled."
+}

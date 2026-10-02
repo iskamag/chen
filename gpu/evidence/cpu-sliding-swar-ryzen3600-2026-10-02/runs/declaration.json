@@ -1,0 +1,41 @@
+{
+  "kind": "cpu_swar_sliding_controlled_candidate",
+  "source_sha256": "afd5d4799ed6b5bed498cc61bf5332119a7ea34e761e0251eeeb0e30870505f8",
+  "artifacts": {
+    "baseline": {
+      "path": "/tmp/chen-cpu-sliding-2026-10-02/baseline/target/release/examples/cpu_sliding_profile",
+      "sha256": "52fcb9e8e5ee8461e50a631e6323123252b737c58435caf30333be68b13af553"
+    },
+    "candidate": {
+      "path": "/tmp/chen-cpu-sliding-2026-10-02/candidate/target/release/examples/cpu_sliding_profile",
+      "sha256": "ebfe19c15c80723753681c83547f835751edd0dbd26a20b1bc47ebc0931641c9"
+    },
+    "suite": {
+      "path": "/home/iskam/src/vibe/chen/benches/positions.txt",
+      "sha256": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74"
+    },
+    "perf": {
+      "path": "/tmp/chen-perf-2026-10-02/usr/bin/perf",
+      "sha256": "409a83247e7d11d4b9e695b8109553ec2b29733212c5466882c77be9a9b5ef5d"
+    }
+  },
+  "cpu_affinity": [
+    2
+  ],
+  "order": [
+    "baseline",
+    "candidate",
+    "candidate",
+    "baseline",
+    "baseline",
+    "candidate",
+    "candidate",
+    "baseline"
+  ],
+  "positions": 6,
+  "fixed_nodes": 200000,
+  "seconds_per_timed_search": 1,
+  "perf_event": "cpu-clock",
+  "perf_frequency": 997,
+  "scope": "Same compiler flags in both candidate-copy builds; fixed-work timings, separate one-second search throughput and instrumented sampling; no strength inference"
+}

@@ -1,4 +1,5 @@
 //! Chen: a chess rules kernel, pluggable evaluation, and reproducible search.
+pub mod attacks;
 pub mod backend;
 pub mod core;
 #[cfg(all(feature = "hip", target_os = "linux"))]

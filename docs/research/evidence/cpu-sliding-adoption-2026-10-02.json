@@ -1,0 +1,77 @@
+{
+  "adoption_changes": "Add compile-time ray control; default private sliding wrapper is exact measured candidate body; export attacks module; standalone static-baseline example includes actual attacks module.",
+  "candidate_evidence_manifest_sha256": "45a4952a6c694bc7edac8943375641cefbb0292dfad202e6b1513214af443248",
+  "default": "swar",
+  "historical_native_baselines": "Existing corpus witness and binaries keep their archived old source closure; corrected neural runtime stages those exact historical bytes.",
+  "initial_clippy_note": "Private standalone include caused existing public to_fen signature lint; narrowly allow wrong_self_convention on that included module, preserving source API.",
+  "kind": "cpu_sliding_root_adoption_v1",
+  "measurement_scope": "Frozen instrumented builds; six-position fixed-node aggregate1.167x, perft1.013x, middlegameperft4.9percentregression. No newratingresult.",
+  "reference_feature": "ray-attacks",
+  "root_checks": [
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--release"
+      ],
+      "exitcode": 0,
+      "portable_tests": 56
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--offline",
+        "--release",
+        "--features",
+        "ray-attacks"
+      ],
+      "exitcode": 0,
+      "portable_tests": 56
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--offline",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--offline",
+        "--features",
+        "ray-attacks",
+        "--lib",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exitcode": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exitcode": 0
+    }
+  ],
+  "root_source_sha256": {
+    "Cargo.toml": "db3b4e293a569898d32fbf27a8260cd5b87d0ef5bc04ac284138fc77155ba526",
+    "examples/corpus_baselines.rs": "89574f811aa3877737a1c0a823bdf30d1c88ea81e974a20836a3dc6ef22561fa",
+    "src/attacks.rs": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+    "src/core.rs": "d9be42853b1aac94dae5904f639647420a44cd30ade6eecf62612a97e50ec833",
+    "src/lib.rs": "a8aa3a6778d6b2e35f28e67ee7ed670b36f9d43850d8cfcc11988a037dbc3046"
+  }
+}

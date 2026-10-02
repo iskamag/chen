@@ -5,6 +5,10 @@
 //! Input: one FEN per line. Output: ordered JSON rows. Terminal adjudication is
 //! deliberately separate: use the pinned corpus rules oracle and full history.
 #[allow(dead_code)]
+#[path = "../src/attacks.rs"]
+mod attacks;
+// This private include retains the public kernel API's established signatures.
+#[allow(dead_code, clippy::wrong_self_convention)]
 #[path = "../src/core.rs"]
 mod core;
 #[allow(dead_code)]

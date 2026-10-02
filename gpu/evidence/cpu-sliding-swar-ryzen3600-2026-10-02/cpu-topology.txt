@@ -1,0 +1,13 @@
+CPU CORE SOCKET ONLINE
+  0    0      0    yes
+  1    1      0    yes
+  2    2      0    yes
+  3    3      0    yes
+  4    4      0    yes
+  5    5      0    yes
+  6    0      0    yes
+  7    1      0    yes
+  8    2      0    yes
+  9    3      0    yes
+ 10    4      0    yes
+ 11    5      0    yes

@@ -1,0 +1,2 @@
+[ perf record: Woken up 16 times to write data ]
+[ perf record: Captured and wrote 1.020 MB gpu/evidence/cpu-sliding-swar-ryzen3600-2026-10-02/runs/perf-baseline.data (4986 samples) ]

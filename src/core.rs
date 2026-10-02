@@ -755,6 +755,16 @@ pub const PAWN_ATTACKS: [[u64; 64]; 2] = [
     leaper_table(&[(-1, -1), (1, -1)]),
 ];
 
+#[cfg(not(feature = "ray-attacks"))]
+fn sliding_attacks(square: u8, occupied: u64, steps: &[(i8, i8)]) -> u64 {
+    // Private callers are exactly BISHOP_STEPS and ROOK_STEPS.
+    if steps[0].0 != 0 && steps[0].1 != 0 {
+        crate::attacks::bishop(square, occupied)
+    } else {
+        crate::attacks::rook(square, occupied)
+    }
+}
+#[cfg(feature = "ray-attacks")]
 fn sliding_attacks(square: u8, occupied: u64, steps: &[(i8, i8)]) -> u64 {
     let mut attacks = 0;
     for &(dx, dy) in steps {

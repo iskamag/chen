@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/chen-perf-2026-10-02/usr/bin/perf",
+    "record",
+    "-e",
+    "cpu-clock",
+    "-F",
+    "997",
+    "--call-graph",
+    "fp",
+    "-o",
+    "gpu/evidence/cpu-sliding-swar-ryzen3600-2026-10-02/runs/perf-baseline.data",
+    "--",
+    "/tmp/chen-cpu-sliding-2026-10-02/baseline/target/release/examples/cpu_sliding_profile",
+    "timed",
+    "/home/iskam/src/vibe/chen/benches/positions.txt"
+  ],
+  "pid": 20605,
+  "timeout_seconds": 30,
+  "exit_code": 0,
+  "group_absent": true,
+  "wall_seconds": 5.086860786017496
+}
