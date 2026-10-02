@@ -1,0 +1,49 @@
+{
+  "baseline_commit": "4e5782a",
+  "baseline_sha256": "a47b8c4e5704703280834b4de864d1daf059b63ce79eb1f1fb22462994d3edaf",
+  "candidate_sha256": "f71eabeeaae9db538c60b1f348d7cc571b174be519fc66e1f1d108200b51040f",
+  "source_closures_sha256": {
+    "baseline": {
+      "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+      "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "chen_rules.hip": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153",
+      "chen_selective.h": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+      "chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+      "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    "candidate": {
+      "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+      "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "chen_rules.hip": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153",
+      "chen_selective.h": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+      "chen_selective.inc": "078479216f174d5f8baaced5d70cb812dc577a88ab7210182024f0e706c0d03b",
+      "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    }
+  },
+  "changed_source_members": [
+    "chen_selective.inc"
+  ],
+  "external_frozen_artifacts": {
+    "gpu/evidence/selective-cache-gfx1030-2026-10-02/candidate-libchen_gpu.so": "a47b8c4e5704703280834b4de864d1daf059b63ce79eb1f1fb22462994d3edaf",
+    "gpu/evidence/selective-cache-gfx1030-2026-10-02/manifest.json": "5a2427828efab0038abdee37ba637c366a8c7875f38cfe8878ae845c7bea49a6",
+    "gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/chen": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+    "gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/device-selective-tests": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15"
+  },
+  "metadata_bytes_per_node": {
+    "baseline": 16,
+    "candidate": 24
+  },
+  "private_byte_controls": "capacity* sizeof(*ctx->meta) in owned allocation and registered alias interval; retirement/free remains same ctx->meta owner. Existing rules capacity bound is tighter than metadata size multiplication. No additional allocations or host/device launches.",
+  "concurrency": "CPU5, exclusive GPU reservation after RDNA INT8 and before coherence whole-model. Shared cache/power uncontrolled.",
+  "scope": "Separate classical seed candidate; production cache intact. External selector does not consume seeds; external latency not measured."
+}

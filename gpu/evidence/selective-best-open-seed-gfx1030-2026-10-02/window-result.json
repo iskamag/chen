@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "name": "seed-trace",
+      "exit_code": 0,
+      "wall_seconds": 1.5216324759821873
+    },
+    {
+      "name": "seed-bounds",
+      "exit_code": 0,
+      "wall_seconds": 0.21475049198488705
+    },
+    {
+      "name": "deep",
+      "exit_code": 0,
+      "wall_seconds": 2.2808709680102766
+    },
+    {
+      "name": "exact-work",
+      "exit_code": 0,
+      "wall_seconds": 8.079692232015077
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "capture": "Commands and empty successful diagnostics observed directly through execution-tool responses; no invented subprocess timestamps",
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "bash",
+        "/tmp/chen-best-open-seed-2026-10-02/source/build.sh",
+        "/tmp/chen-best-open-seed-2026-10-02/libchen_gpu_best_open_seed.so"
+      ],
+      "exit_code": 0,
+      "observed_stdout": "",
+      "observed_stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "/opt/rocm/bin/hipcc",
+        "-O3",
+        "-std=c++17",
+        "--offload-arch=gfx1030",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/tmp/chen-best-open-seed-2026-10-02/source",
+        "-x",
+        "hip",
+        "/tmp/chen-best-open-seed-2026-10-02/source/selective_seed_trace.hip",
+        "-o",
+        "/tmp/chen-best-open-seed-2026-10-02/seed-trace"
+      ],
+      "exit_code": 0,
+      "observed_stdout": "",
+      "observed_stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "/opt/rocm/bin/hipcc",
+        "-O3",
+        "-std=c++17",
+        "--offload-arch=gfx1030",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/tmp/chen-best-open-seed-2026-10-02/source",
+        "-x",
+        "hip",
+        "/tmp/chen-best-open-seed-2026-10-02/source/selective_seed_bounds.hip",
+        "-o",
+        "/tmp/chen-best-open-seed-2026-10-02/seed-bounds"
+      ],
+      "exit_code": 0,
+      "observed_stdout": "",
+      "observed_stderr": ""
+    }
+  ]
+}

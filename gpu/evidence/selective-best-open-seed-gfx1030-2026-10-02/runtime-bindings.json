@@ -1,0 +1,12 @@
+{
+  "compiler": "AMD clang 22.0.0git roc-7.2.4 26084 f58b06dce1f9c15707c5f808fd002e18c2accf7e",
+  "HIP": "7.2.53211-97f5574fe2",
+  "libamdhip64_sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac",
+  "libhsa_runtime64_sha256": "b8cdfe93d343649a35c1daf73a0a3a6840f09379ebeee9be65670461ffea43f4",
+  "device": "gfx1030; actual trace agent CSVs retained in raw records",
+  "timed_libraries_unchanged_after_extraction": true,
+  "baseline_sha256": "a47b8c4e5704703280834b4de864d1daf059b63ce79eb1f1fb22462994d3edaf",
+  "candidate_sha256": "f71eabeeaae9db538c60b1f348d7cc571b174be519fc66e1f1d108200b51040f",
+  "ISA_extraction": "Read-only Python ELF64/fatbin extraction independently matches recorded ROCm extraction of both bundles and both arms; no GPU calls",
+  "independent_rules_version": "1.11.2"
+}

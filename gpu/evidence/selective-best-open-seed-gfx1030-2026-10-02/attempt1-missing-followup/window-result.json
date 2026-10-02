@@ -1,0 +1,20 @@
+{
+  "status": "failed_or_partial",
+  "records": [
+    {
+      "name": "seed-trace",
+      "exit_code": 0,
+      "wall_seconds": 1.4992305950145237
+    },
+    {
+      "name": "seed-bounds",
+      "exit_code": 0,
+      "wall_seconds": 0.19178340100916103
+    },
+    {
+      "name": "deep",
+      "exit_code": 2,
+      "wall_seconds": 0.0689803030109033
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{"depth":1,"batch":1,"old_nodes":1,"compared_nodes":2,"status":"passed","guard_words":8}
+{"depth":1,"batch":1,"old_nodes":1,"compared_nodes":2,"status":"passed","guard_words":8}
+{"depth":2,"batch":1,"old_nodes":2,"compared_nodes":3,"status":"passed","guard_words":8}
+{"depth":2,"batch":1,"old_nodes":2,"compared_nodes":3,"status":"passed","guard_words":8}
+{"depth":2,"batch":32,"old_nodes":33,"compared_nodes":65,"status":"passed","guard_words":8}
+{"depth":2,"batch":32,"old_nodes":33,"compared_nodes":65,"status":"passed","guard_words":8}
+{"depth":2,"batch":256,"old_nodes":257,"compared_nodes":513,"status":"passed","guard_words":8}
+{"depth":2,"batch":256,"old_nodes":257,"compared_nodes":513,"status":"passed","guard_words":8}
+{"depth":64,"batch":1,"old_nodes":64,"compared_nodes":65,"status":"passed","guard_words":8}
+{"depth":64,"batch":1,"old_nodes":64,"compared_nodes":65,"status":"passed","guard_words":8}
+{"depth":64,"batch":32,"old_nodes":2017,"compared_nodes":2049,"status":"passed","guard_words":8}
+{"depth":64,"batch":32,"old_nodes":2017,"compared_nodes":2049,"status":"passed","guard_words":8}
+{"depth":64,"batch":256,"old_nodes":16129,"compared_nodes":16385,"status":"passed","guard_words":8}
+{"depth":64,"batch":256,"old_nodes":16129,"compared_nodes":16385,"status":"passed","guard_words":8}

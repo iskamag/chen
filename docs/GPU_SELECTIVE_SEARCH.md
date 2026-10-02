@@ -109,3 +109,46 @@ The mate position again shows a small observed slowdown: 3.507662→3.560402 ms 
 Twelve separate one-second observations and six isolated traces produce **5,484 independently legal reported PVs**. Opening and Kiwipete trace arms have identical complete published trajectories to capacity (267 and 193 advances respectively): their selection dispatch sums fall approximately 507→118 ms and 404→81 ms. Clean one-second cache observations reach the opening/Kiwipete cap in approximately 344–352/298–302 ms. Rook cache reaches the same capacity in approximately 536–551 ms, while the sparse baseline completes approximately 230,000 nodes near its deadline. These capacity-limited observations establish no playing-strength improvement.
 
 Selection now takes 32.23–46.53% of cache dispatch duration, with completion taking 33.68–43.59%; both remain serial critical-path targets. Every worker still has `3 × advances + 3` stream fences and no search allocations/frees. Exact timed-library ISA extraction reports choose metadata changing from VGPR16/SGPR47 to VGPR11/SGPR57, wave32 and scratch0/LDS0; completion stays VGPR23/SGPR42. Static resources are not an occupancy measurement. The independent archive replay checks all raw-member hashes, legal PVs, trace trajectory equality and code-object hashes without GPU execution. External neural execution and long-run fault recovery remain outside this study.
+
+## Isolated best-open seed experiment
+
+`gpu/experiments/selective_best_open_seed.inc` is a separate candidate based on the frozen packed-cache closure; production still uses the committed cache. [Actual seed evidence](../gpu/evidence/selective-best-open-seed-gfx1030-2026-10-02/summary.json) compares cache library `a47b8c4e…` with seed library `f71eabee…`. [The manifest](../gpu/evidence/selective-best-open-seed-gfx1030-2026-10-02/manifest.json) binds both source closures, private metadata sizes, executed drivers, binaries and raw results. The [finite-model proofs](research/FINITE_MODEL_STRATEGIES.md) justify reusing an eligible canonical winner under fixed scores and increasing reservations; they do not establish HIP refinement or optimal latency.
+
+The candidate appends a private `uint64_t best_open` to `SelectMeta`, increasing it from 16 to 24 bytes, or 2 MB extra at 250,000 nodes. Classical sparse backup computes the best eligible child alongside its existing value/open reduction, preserving canonical ties and `Node.best`. A newly invalid packed choose cache tries this seed before scanning; exhausted winners retain the existing scan. Leaves/root initialization use `NONE`, and each affected ancestor refreshes its seed after initialized descendants. Allocation and alias registration both use `capacity * sizeof(*meta)` and destruction retires/frees the same owned allocation. External selection still instantiates the uncached implementation and does not consume seeds; its private metadata allocation also grows, so external latency is not covered by the classical result.
+
+Both original portable-oracle tests pass per arm. Another 33 native cases agree across 1,336 steps, including reset reuse, depth 64, batches 1/32/256, capacity/node limits and repeated-root history. Forty-eight device selector traces agree on admitted-parent ordering, offsets, all masked reservation counts and unchanged node/metadata bytes. Fourteen synthetic backup cases compare value/open/min/max fields and independently check each canonical best-open seed, including mixed open/closed children, maximum depth 64/batch256 and eight guard words. The initial orchestration referred to a missing followup script and stopped before native work; its source/declaration/stdout/stderr are preserved, then the corrected run passed.
+
+Each workload uses three samples per arm in alternating fresh processes on CPU5 with exclusive GPU ownership. This is a modest observed effect, with no significance or strength claim:
+
+| Identical-work workload, six positions | Packed cache median aggregate | Seed median aggregate | Reduction |
+| --- | ---: | ---: | ---: |
+| Maximum ply 4, nodes 2,000, batch 8 | 99.703657 ms | 97.466158 ms | 2.24% |
+| Maximum ply 64, nodes 50,000, batch 32 | 401.543681 ms | 384.256264 ms | 4.31% |
+
+Per-position medians temper the aggregate: original opening improves only 0.21%, while promotion is 0.24% slower. The larger workload improves 3.41–5.84% on the five nonmate positions; mate is effectively unchanged at 3.326551→3.326602 ms. These small differences and three repeats do not support default adoption on their own. The previous cache study's small mate regressions remain recorded above.
+
+Twelve plain one-second observations and six separately instrumented runs complete with 5,628 independently legal reported PVs. All three profile pairs have identical complete score/PV/counter trajectories: opening 267, kiwipete 193 and rook 478 advances, reaching 249,999/250,000 nodes before the deadline. The cap limits conclusions about uncapped one-second throughput. Plain seed times are 322–323 ms opening, 265–270 ms kiwi and 501–508 ms rook; instrumentation is analyzed separately.
+
+| Equal completed profile work | Choose sum: cache→seed | Completion sum: cache→seed |
+| --- | ---: | ---: |
+| Opening, 267 advances | 120.491→105.679 ms | 115.069→105.297 ms |
+| Kiwipete, 193 advances | 79.720→68.328 ms | 106.265→96.422 ms |
+| Rook ending, 478 advances | 204.387→182.522 ms | 151.087→140.351 ms |
+
+Completion also becomes shorter in these particular traces despite doing an extra reduction; these observations do not prove metadata traffic is free or isolate its cause. Candidate choose/completion still account for 30.53–44.55%/34.25–43.08% of dispatch duration. Every worker retains `3 × advances + 3` fences and zero search allocation/free calls. Host waits overlap device work.
+
+Exact timed-library ISA extraction leaves choose at VGPR11/SGPR57 and increases completion from VGPR23 to 26, with SGPR42; both remain wave32, scratch0/LDS0. These are static resource declarations, not occupancy measurements. The candidate remains an isolated, source-reviewed comparison arm; the separate timing confirmation below strengthens the measured result without changing the production default. Full-GPU bounded epoch control and parallel reduction are separate experiments.
+
+A separately declared [12-pair timing confirmation](../gpu/evidence/selective-best-open-seed-gfx1030-2026-10-02/paired-summary.json) reuses the same frozen libraries at 50,000 nodes/batch 32. Six pairs run cache→seed and six seed→cache; two warmup processes are recorded and excluded. All 144 measured rows plus 12 warmup rows have exact non-timing parity, and all 26 native workers retire. No correctness tests are rerun. Every aggregate pair favors the seed, with ratios 1.038–1.069; the geometric mean paired speed ratio is 1.04675, corresponding to 4.47% lower search time.
+
+| Large-suite position | Paired geometric mean reduction | Exploratory bootstrap interval |
+| --- | ---: | ---: |
+| Opening | 4.89% | 4.45–5.31% |
+| Kiwipete | 5.32% | 4.46–6.12% |
+| Rook ending | 3.97% | 3.34–4.66% |
+| Middlegame | 5.77% | 4.80–6.91% |
+| Promotion | 3.32% | 2.72–3.95% |
+| Mate | −1.93% | −7.35–2.72% |
+| Aggregate | 4.47% | 4.09–4.91% |
+
+These are percentile intervals from 10,000 deterministic bootstrap resamples of whole paired runs, stratified to retain the six/six order balance. They describe this small machine-local process sample under the resampling assumption. Time dependence, shared power/cache, selection of the follow-up after inspecting the first study, and repeatability elsewhere remain uncontrolled; no hypothesis test or population-coverage claim is made. The tiny mate case remains noisy and does not improve consistently. The larger-suite confirmation supports a modest local gain, while default adoption, the original small suite and uncapped one-second strength remain separate decisions.

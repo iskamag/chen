@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "name": "uci",
+      "exit_code": 0,
+      "wall_seconds": 9.69172744100797
+    },
+    {
+      "name": "trace",
+      "exit_code": 0,
+      "wall_seconds": 6.085053342016181
+    }
+  ]
+}

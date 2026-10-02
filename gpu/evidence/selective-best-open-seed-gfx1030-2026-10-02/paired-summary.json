@@ -1,0 +1,945 @@
+{
+  "status": "passed",
+  "kind": "seed_balanced_pair_confirmation_reconstructed",
+  "analyzer_sha256": "5fcb58b512b8866ccb7b683bdd480ae687fa5919cb83dba806e3d6a49b3b2bf4",
+  "declaration_sha256": "c36a960518c44498a2672301c5df753cdb91a9ac71eb57f93a06fca5842058f7",
+  "exact_work_rows": 144,
+  "warmup_rows_checked": 12,
+  "native_processes_retired": 26,
+  "measured_pairs": [
+    {
+      "pair": 1,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 80.312718,
+            "candidate": 76.352846
+          },
+          "baseline_over_candidate_ratio": 1.0518627950030834
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 61.53993,
+            "candidate": 58.047137
+          },
+          "baseline_over_candidate_ratio": 1.0601716670367394
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.840355,
+            "candidate": 89.985873
+          },
+          "baseline_over_candidate_ratio": 1.053947156794267
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.217492,
+            "candidate": 66.287391
+          },
+          "baseline_over_candidate_ratio": 1.0291171664909846
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 93.043944,
+            "candidate": 90.236933
+          },
+          "baseline_over_candidate_ratio": 1.0311071188556464
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.406622,
+            "candidate": 3.292742
+          },
+          "baseline_over_candidate_ratio": 1.0345851572944373
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 401.361061,
+        "candidate": 384.202922
+      },
+      "baseline_over_candidate_ratio": 1.0446590538944418
+    },
+    {
+      "pair": 2,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.889929,
+            "candidate": 77.835917
+          },
+          "baseline_over_candidate_ratio": 1.0520840783567822
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 61.758919,
+            "candidate": 60.225659
+          },
+          "baseline_over_candidate_ratio": 1.025458584023132
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 96.318806,
+            "candidate": 93.518435
+          },
+          "baseline_over_candidate_ratio": 1.0299445879307112
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 69.382753,
+            "candidate": 65.352101
+          },
+          "baseline_over_candidate_ratio": 1.0616759360192565
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 93.812305,
+            "candidate": 91.073764
+          },
+          "baseline_over_candidate_ratio": 1.030069483018183
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.682051,
+            "candidate": 3.943692
+          },
+          "baseline_over_candidate_ratio": 0.9336558230206619
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 406.844763,
+        "candidate": 391.949568
+      },
+      "baseline_over_candidate_ratio": 1.0380028356097077
+    },
+    {
+      "pair": 3,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 82.369869,
+            "candidate": 77.234947
+          },
+          "baseline_over_candidate_ratio": 1.0664844374140632
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.96994,
+            "candidate": 59.652268
+          },
+          "baseline_over_candidate_ratio": 1.0556168627150941
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 98.392387,
+            "candidate": 92.116464
+          },
+          "baseline_over_candidate_ratio": 1.068130307303155
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 71.830984,
+            "candidate": 63.9615
+          },
+          "baseline_over_candidate_ratio": 1.123034700562057
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.140285,
+            "candidate": 89.989813
+          },
+          "baseline_over_candidate_ratio": 1.0461215760054976
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.472732,
+            "candidate": 3.405872
+          },
+          "baseline_over_candidate_ratio": 1.0196308023319727
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 413.176197,
+        "candidate": 386.360864
+      },
+      "baseline_over_candidate_ratio": 1.0694048893109422
+    },
+    {
+      "pair": 4,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.725719,
+            "candidate": 78.429607
+          },
+          "baseline_over_candidate_ratio": 1.0420263740451994
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.80049,
+            "candidate": 60.646749
+          },
+          "baseline_over_candidate_ratio": 1.0355128846230488
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.714816,
+            "candidate": 92.447764
+          },
+          "baseline_over_candidate_ratio": 1.0353394377391323
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.515202,
+            "candidate": 64.714411
+          },
+          "baseline_over_candidate_ratio": 1.0587317560535319
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 93.388695,
+            "candidate": 90.414394
+          },
+          "baseline_over_candidate_ratio": 1.0328963217958416
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.357092,
+            "candidate": 4.080492
+          },
+          "baseline_over_candidate_ratio": 0.8227174566204273
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 405.502014,
+        "candidate": 390.733417
+      },
+      "baseline_over_candidate_ratio": 1.037797117823685
+    },
+    {
+      "pair": 5,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.383829,
+            "candidate": 77.843627
+          },
+          "baseline_over_candidate_ratio": 1.0454783793668814
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.716719,
+            "candidate": 58.339098
+          },
+          "baseline_over_candidate_ratio": 1.0750375160068466
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 96.011155,
+            "candidate": 92.865284
+          },
+          "baseline_over_candidate_ratio": 1.0338756407615142
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 67.944693,
+            "candidate": 63.74524
+          },
+          "baseline_over_candidate_ratio": 1.0658786914913176
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 93.073864,
+            "candidate": 91.389324
+          },
+          "baseline_over_candidate_ratio": 1.0184325687757576
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.527722,
+            "candidate": 3.470921
+          },
+          "baseline_over_candidate_ratio": 1.0163648207493055
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 404.657982,
+        "candidate": 387.653494
+      },
+      "baseline_over_candidate_ratio": 1.0438651740876608
+    },
+    {
+      "pair": 6,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.374099,
+            "candidate": 77.212937
+          },
+          "baseline_over_candidate_ratio": 1.0538920310724613
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 61.622449,
+            "candidate": 58.240798
+          },
+          "baseline_over_candidate_ratio": 1.058063266921583
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.660776,
+            "candidate": 93.663044
+          },
+          "baseline_over_candidate_ratio": 1.0213289245649544
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.360783,
+            "candidate": 65.320581
+          },
+          "baseline_over_candidate_ratio": 1.04654278871157
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 93.110265,
+            "candidate": 91.203333
+          },
+          "baseline_over_candidate_ratio": 1.020908577979272
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.762031,
+            "candidate": 3.551432
+          },
+          "baseline_over_candidate_ratio": 1.05929974162535
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 403.890403,
+        "candidate": 389.192125
+      },
+      "baseline_over_candidate_ratio": 1.0377661238649163
+    },
+    {
+      "pair": 7,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.065079,
+            "candidate": 78.883548
+          },
+          "baseline_over_candidate_ratio": 1.027655082147167
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 61.854819,
+            "candidate": 59.484758
+          },
+          "baseline_over_candidate_ratio": 1.039843164529643
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.179076,
+            "candidate": 90.604153
+          },
+          "baseline_over_candidate_ratio": 1.0504935242869056
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 69.172323,
+            "candidate": 64.350731
+          },
+          "baseline_over_candidate_ratio": 1.0749267634582116
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.694426,
+            "candidate": 89.909843
+          },
+          "baseline_over_candidate_ratio": 1.0532153415060463
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.788082,
+            "candidate": 3.346102
+          },
+          "baseline_over_candidate_ratio": 1.1320880236167337
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 405.753805,
+        "candidate": 386.579135
+      },
+      "baseline_over_candidate_ratio": 1.0496008921950741
+    },
+    {
+      "pair": 8,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.843039,
+            "candidate": 78.093567
+          },
+          "baseline_over_candidate_ratio": 1.0480125590882539
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.483829,
+            "candidate": 57.716268
+          },
+          "baseline_over_candidate_ratio": 1.0826034178093429
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.459135,
+            "candidate": 90.209063
+          },
+          "baseline_over_candidate_ratio": 1.047113581037861
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 67.373362,
+            "candidate": 63.999381
+          },
+          "baseline_over_candidate_ratio": 1.0527189630162204
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 91.665034,
+            "candidate": 90.228953
+          },
+          "baseline_over_candidate_ratio": 1.0159159665744986
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.431792,
+            "candidate": 3.526372
+          },
+          "baseline_over_candidate_ratio": 0.9731792335011735
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 401.256191,
+        "candidate": 383.773604
+      },
+      "baseline_over_candidate_ratio": 1.045554427969465
+    },
+    {
+      "pair": 9,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 81.656898,
+            "candidate": 76.172976
+          },
+          "baseline_over_candidate_ratio": 1.0719930123250008
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 63.33935,
+            "candidate": 59.733839
+          },
+          "baseline_over_candidate_ratio": 1.0603596062191818
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.796176,
+            "candidate": 93.016684
+          },
+          "baseline_over_candidate_ratio": 1.029881650048931
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.809613,
+            "candidate": 65.286911
+          },
+          "baseline_over_candidate_ratio": 1.0539572472650758
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.162365,
+            "candidate": 90.645273
+          },
+          "baseline_over_candidate_ratio": 1.0388006112574673
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.088362,
+            "candidate": 3.413612
+          },
+          "baseline_over_candidate_ratio": 0.9047196928063295
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 406.852764,
+        "candidate": 388.269295
+      },
+      "baseline_over_candidate_ratio": 1.0478623193729495
+    },
+    {
+      "pair": 10,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 82.099979,
+            "candidate": 78.326498
+          },
+          "baseline_over_candidate_ratio": 1.0481763017159276
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.645489,
+            "candidate": 58.893148
+          },
+          "baseline_over_candidate_ratio": 1.0637143900000048
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.638486,
+            "candidate": 92.299694
+          },
+          "baseline_over_candidate_ratio": 1.036173381029844
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.312313,
+            "candidate": 65.790501
+          },
+          "baseline_over_candidate_ratio": 1.0383309438546455
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 96.698686,
+            "candidate": 91.705153
+          },
+          "baseline_over_candidate_ratio": 1.05445204371449
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.635381,
+            "candidate": 3.594861
+          },
+          "baseline_over_candidate_ratio": 1.011271645829978
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 409.030334,
+        "candidate": 390.609855
+      },
+      "baseline_over_candidate_ratio": 1.0471582546221216
+    },
+    {
+      "pair": 11,
+      "order": [
+        "baseline",
+        "candidate"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 82.737279,
+            "candidate": 78.514948
+          },
+          "baseline_over_candidate_ratio": 1.0537774157348994
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 62.156629,
+            "candidate": 59.581348
+          },
+          "baseline_over_candidate_ratio": 1.0432229395011339
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 97.447796,
+            "candidate": 92.115043
+          },
+          "baseline_over_candidate_ratio": 1.0578923140707863
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 69.193413,
+            "candidate": 64.765601
+          },
+          "baseline_over_candidate_ratio": 1.0683667244900577
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.389725,
+            "candidate": 91.322744
+          },
+          "baseline_over_candidate_ratio": 1.0335839777219133
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.760562,
+            "candidate": 3.522981
+          },
+          "baseline_over_candidate_ratio": 1.0674374911474118
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 409.685404,
+        "candidate": 389.822665
+      },
+      "baseline_over_candidate_ratio": 1.0509532687125824
+    },
+    {
+      "pair": 12,
+      "order": [
+        "candidate",
+        "baseline"
+      ],
+      "positions": [
+        {
+          "position": 0,
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 82.192239,
+            "candidate": 77.796587
+          },
+          "baseline_over_candidate_ratio": 1.056501861707635
+        },
+        {
+          "position": 1,
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "search_ms": {
+            "baseline": 64.18432,
+            "candidate": 59.604058
+          },
+          "baseline_over_candidate_ratio": 1.0768448014059713
+        },
+        {
+          "position": 2,
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 95.772405,
+            "candidate": 92.697244
+          },
+          "baseline_over_candidate_ratio": 1.033174244101583
+        },
+        {
+          "position": 3,
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "search_ms": {
+            "baseline": 68.596392,
+            "candidate": 64.458171
+          },
+          "baseline_over_candidate_ratio": 1.0642000996274004
+        },
+        {
+          "position": 4,
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "search_ms": {
+            "baseline": 94.197095,
+            "candidate": 90.746533
+          },
+          "baseline_over_candidate_ratio": 1.0380241744331986
+        },
+        {
+          "position": 5,
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "search_ms": {
+            "baseline": 3.618012,
+            "candidate": 4.269892
+          },
+          "baseline_over_candidate_ratio": 0.8473310331970926
+        }
+      ],
+      "search_sum_ms": {
+        "baseline": 408.560463,
+        "candidate": 389.572485
+      },
+      "baseline_over_candidate_ratio": 1.0487405520952027
+    }
+  ],
+  "total": {
+    "pairs": 12,
+    "geometric_mean_paired_baseline_over_candidate_ratio": 1.0467489655017708,
+    "median_paired_ratio": 1.0463563412957932,
+    "observed_reduction_percent": 4.466110504285159,
+    "exploratory_stratified_bootstrap_ratio_interval95": [
+      1.0426795106107167,
+      1.051608017102267
+    ],
+    "exploratory_reduction_percent_interval95": [
+      4.0932530251523325,
+      4.907533630684391
+    ]
+  },
+  "per_position": [
+    {
+      "position": 0,
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 1.05143986276546,
+      "median_paired_ratio": 1.051973436679933,
+      "observed_reduction_percent": 4.892325713252365,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        1.0465867318490354,
+        1.0560385724539818
+      ],
+      "exploratory_reduction_percent_interval95": [
+        4.451301591290891,
+        5.30648916769787
+      ]
+    },
+    {
+      "position": 1,
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 1.0562371154620034,
+      "median_paired_ratio": 1.0591174669791612,
+      "observed_reduction_percent": 5.3242888967601765,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        1.046701493773391,
+        1.0651496946409678
+      ],
+      "exploratory_reduction_percent_interval95": [
+        4.461777694138047,
+        6.116482497131814
+      ]
+    },
+    {
+      "position": 2,
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 1.0413569788532229,
+      "median_paired_ratio": 1.0357564093844882,
+      "observed_reduction_percent": 3.9714506833925967,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        1.0345805660680045,
+        1.0489028277215808
+      ],
+      "exploratory_reduction_percent_interval95": [
+        3.342472031871846,
+        4.662283905536535
+      ]
+    },
+    {
+      "position": 3,
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 1.0612259721868595,
+      "median_paired_ratio": 1.0602038460363943,
+      "observed_reduction_percent": 5.769362397029509,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        1.0504281521253886,
+        1.0742858296552733
+      ],
+      "exploratory_reduction_percent_interval95": [
+        4.800723592884926,
+        6.914903613604473
+      ]
+    },
+    {
+      "position": 4,
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 1.034390753595624,
+      "median_paired_ratio": 1.0332401497588775,
+      "observed_reduction_percent": 3.3247352101784644,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        1.027958022586922,
+        1.0410999958572422
+      ],
+      "exploratory_reduction_percent_interval95": [
+        2.719763061585323,
+        3.9477471924683316
+      ]
+    },
+    {
+      "position": 5,
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "pairs": 12,
+      "geometric_mean_paired_baseline_over_candidate_ratio": 0.9811011978940258,
+      "median_paired_ratio": 1.0138182332896417,
+      "observed_reduction_percent": -1.9262846836331615,
+      "exploratory_stratified_bootstrap_ratio_interval95": [
+        0.9315528433596763,
+        1.0279362234372327
+      ],
+      "exploratory_reduction_percent_interval95": [
+        -7.347640783690457,
+        2.71770006740486
+      ]
+    }
+  ],
+  "bootstrap": {
+    "seed": 20261002,
+    "resamples": 10000,
+    "method": "Percentile bootstrap of mean log paired ratios, resampling whole pairs within fixed AB/BA strata"
+  },
+  "limits": "Exploratory intervals describe this small machine-local process sample under a resampling assumption; time dependence, power/cache variation, repeatability on other days/devices and selection effects are uncontrolled. No hypothesis-test, population-confidence, global speedup, strength or rating claim."
+}

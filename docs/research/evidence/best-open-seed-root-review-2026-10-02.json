@@ -1,0 +1,17 @@
+{
+  "kind": "chen_best_open_seed_independent_root_review_v1",
+  "limits": "Machine-local paired timing; tiny mate regression preserved; no strength or global-optimality inference",
+  "manifest_sha256": "9e8ebc547c32d038fbdb6a5250fb5cc49d4c3ed71d6b424869c5485f31d757a6",
+  "new_gpu_runs": false,
+  "payload_bytes": 6448559,
+  "payloads_verified": 79,
+  "production_adopted": false,
+  "raw_members_verified": 284,
+  "source_closures_verified": 2,
+  "source_review": "canonical eligible backup seed, monotonic choose reservations, unchanged public ABI and Node.best; private metadata grows16to24B",
+  "status": "passed",
+  "summaries_byte_exact": [
+    "summary.json",
+    "paired-summary.json"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "cause": "Resolving the QA venv interpreter symlink selected system Python without python-chess. Fixed by preserving the venv executable path. No GPU calls."
+}
