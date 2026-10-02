@@ -1,0 +1,69 @@
+{
+  "command": [
+    "docker",
+    "exec",
+    "-e",
+    "CUDA_VISIBLE_DEVICES=",
+    "-e",
+    "HIP_VISIBLE_DEVICES=",
+    "-e",
+    "ROCR_VISIBLE_DEVICES=",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "OMP_NUM_THREADS=1",
+    "-e",
+    "OPENBLAS_NUM_THREADS=1",
+    "-e",
+    "MKL_NUM_THREADS=1",
+    "-e",
+    "PYTHONPATH=/tmp/chen-transformer-cpu-20261002-myd6g3oe",
+    "cpp-rocm",
+    "taskset",
+    "-c",
+    "3",
+    "python",
+    "-m",
+    "unittest",
+    "-v",
+    "neural.tests.test_transformer_semantics"
+  ],
+  "cpu_affinity": [
+    3
+  ],
+  "date": "2026-10-02",
+  "exit_code": 0,
+  "gpu_inference": false,
+  "gpu_visibility": "hidden",
+  "independent_review": {
+    "agent": "fusion_hardware",
+    "limits": [
+      "symbolic_role_attention_is_bag_of_rows",
+      "fresh_zero_injection_required_for_initial_parity",
+      "no_training_or_GPU_inference_claim"
+    ],
+    "source_review": "accepted_after_exact_mask_and_batch_metadata_repairs"
+  },
+  "kind": "chen_transformer_control_cpu_mechanics_v1",
+  "playing_strength": false,
+  "quality": false,
+  "review_fix": "exact masked-key exclusion for arbitrary finite logits; tensor-gated empty attention; incompatible batch and bias metadata rejected",
+  "runtime_tree": "/tmp/chen-transformer-cpu-20261002-myd6g3oe",
+  "source_sha256": {
+    "neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "neural/tests/test_transformer_semantics.py": "5f8370ab54ffc97a6acfe81d2d8175ba0eedab928d5b8fc5a6e48d440046b159",
+    "neural/transformer_semantics.py": "ca04b7b599c1ab7c8a0b6e41b5bcc53fd1429c933e2fb0262713d7066bd00103",
+    "neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+  },
+  "stderr_sha256": "9cb2427a24aea577fe77db8c1d5bc2c70cea428a09d6125a2ed44f64e928e5ab",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tests": 7,
+  "torch": "2.10.0+rocm7.0",
+  "training": false
+}

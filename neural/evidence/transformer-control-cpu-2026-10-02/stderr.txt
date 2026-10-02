@@ -1,0 +1,13 @@
+test_independent_heads_match_loop_oracle_and_exclude_masked_keys (neural.tests.test_transformer_semantics.TransformerFixtures.test_independent_heads_match_loop_oracle_and_exclude_masked_keys) ... ok
+test_invalid_configuration_and_input_metadata (neural.tests.test_transformer_semantics.TransformerFixtures.test_invalid_configuration_and_input_metadata) ... ok
+test_piece_keys_preserve_empty_square_ep_context (neural.tests.test_transformer_semantics.TransformerFixtures.test_piece_keys_preserve_empty_square_ep_context) ... ok
+test_semantics_gradients_no_host_reads_and_material_prior (neural.tests.test_transformer_semantics.TransformerFixtures.test_semantics_gradients_no_host_reads_and_material_prior) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ok
+test_shared_state_rejects_incompatible_controls_before_copy (neural.tests.test_transformer_semantics.TransformerFixtures.test_shared_state_rejects_incompatible_controls_before_copy) ... ok
+test_symbolic_shared_zero_control_then_actual_residual_injection (neural.tests.test_transformer_semantics.TransformerFixtures.test_symbolic_shared_zero_control_then_actual_residual_injection) ... ok
+test_value_only_is_exact_and_never_calls_semantic_decoders (neural.tests.test_transformer_semantics.TransformerFixtures.test_value_only_is_exact_and_never_calls_semantic_decoders) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.277s
+
+OK
