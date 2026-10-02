@@ -1,0 +1,1 @@
+Terminal PASS for explicit floor1e8 policy; this is NOT neural symmetric_rows zero-scale1/FP32tiny policy. Retained diagnostic only. Final matching policy is archive top-level affine.json.

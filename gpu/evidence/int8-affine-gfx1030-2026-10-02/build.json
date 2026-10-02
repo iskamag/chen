@@ -1,0 +1,38 @@
+{
+  "target": "gfx1030",
+  "hip": "7.2.53211-97f5574fe2",
+  "clang": "22.0.0git roc-7.2.4 26084 f58b06dce1f9c15707c5f808fd002e18c2accf7e",
+  "clang_sha256": "beaae27cf876812ec1d32f8731317ba837175536a847590f5e51c409c2831b48",
+  "hipcc_sha256": "7e6614203ff9838f64581a4c9522dd4794834d7e91bad8074bb8c88d85618d09",
+  "compile": [
+    "hipcc",
+    "-O3",
+    "-std=c++17",
+    "--offload-arch=gfx1030",
+    "-fPIC",
+    "-shared",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "SOURCE",
+    "-o",
+    "LIBRARY"
+  ],
+  "execution": "taskset -c 2 python3 int8_linear_probe.py --library libchen_int8_linear.so --float-library libchen_float_linear.so --output affine.json --samples 5 --repeats 24",
+  "timing_scope": "exclusive GPU, host affinity2; final admitted run after coherence archive completion, no owned CPU profiling load from coherence; machine-wide power/shared-cache uncontrolled. Separate earlier shared-CPU v3 timing and rocprof pass retained.",
+  "training": "none",
+  "whole_forward": "separate coherence-owned diagnostic, not established by this archive",
+  "system_linker_hip_provider": "/opt/rocm-7.2.4/lib/libamdhip64.so.7",
+  "executed_torch_hip_provider": {
+    "hip_runtime_get_version": 70051831,
+    "symbol_owner_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "symbol_owner_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "mapped_hip_libraries": [
+      {
+        "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+        "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+      }
+    ]
+  },
+  "device_metadata_source_scope": "frozen/device_metadata.hip included floor1e8-variant/chen_int8_linear.hip renamed chen-int8-linear.hip, system HIP7.2.4 standalone, before v3 was built"
+}

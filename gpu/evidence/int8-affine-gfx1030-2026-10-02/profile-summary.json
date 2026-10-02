@@ -1,0 +1,146 @@
+[
+  {
+    "kernel": "(anonymous namespace)::pack_weights(int const*, int*, int, int, int)",
+    "grid_threads": 256,
+    "count": 3,
+    "median_us": 2.76,
+    "minimum_us": 2.2,
+    "maximum_us": 4.36
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<false>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 2048,
+    "count": 10,
+    "median_us": 2.0805,
+    "minimum_us": 1.84,
+    "maximum_us": 6.0
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<true>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 2048,
+    "count": 30,
+    "median_us": 2.24,
+    "minimum_us": 1.92,
+    "maximum_us": 4.68
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<false>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 2048,
+    "count": 10,
+    "median_us": 4.28,
+    "minimum_us": 4.04,
+    "maximum_us": 6.84
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<true>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 2048,
+    "count": 10,
+    "median_us": 3.08,
+    "minimum_us": 2.8,
+    "maximum_us": 4.76
+  },
+  {
+    "kernel": "void (anonymous namespace)::dynamic_linear<false>(float const*, int const*, float const*, float const*, float const*, float*, int, int, int, int)",
+    "grid_threads": 2048,
+    "count": 40,
+    "median_us": 3.92,
+    "minimum_us": 3.64,
+    "maximum_us": 8.44
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<false>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 65536,
+    "count": 10,
+    "median_us": 2.7805,
+    "minimum_us": 2.6,
+    "maximum_us": 3.8
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<true>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 65536,
+    "count": 30,
+    "median_us": 2.98,
+    "minimum_us": 2.84,
+    "maximum_us": 311.603
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<false>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 65536,
+    "count": 10,
+    "median_us": 8.0,
+    "minimum_us": 7.88,
+    "maximum_us": 11.2
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<true>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 65536,
+    "count": 10,
+    "median_us": 5.1,
+    "minimum_us": 5.04,
+    "maximum_us": 7.28
+  },
+  {
+    "kernel": "void (anonymous namespace)::dynamic_linear<false>(float const*, int const*, float const*, float const*, float const*, float*, int, int, int, int)",
+    "grid_threads": 65536,
+    "count": 40,
+    "median_us": 9.3,
+    "minimum_us": 8.68,
+    "maximum_us": 10.68
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<false>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 524288,
+    "count": 10,
+    "median_us": 9.1,
+    "minimum_us": 9.04,
+    "maximum_us": 10.96
+  },
+  {
+    "kernel": "void (anonymous namespace)::linear<true>(int const*, int const*, float const*, float const*, float const*, float const*, float*, int, int, int)",
+    "grid_threads": 524288,
+    "count": 30,
+    "median_us": 10.7005,
+    "minimum_us": 10.08,
+    "maximum_us": 15.36
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<false>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 524288,
+    "count": 10,
+    "median_us": 32.561,
+    "minimum_us": 32.32,
+    "maximum_us": 37.041
+  },
+  {
+    "kernel": "void (anonymous namespace)::affine<true>(void const*, void const*, float const*, float*, int, int, int)",
+    "grid_threads": 524288,
+    "count": 10,
+    "median_us": 18.08,
+    "minimum_us": 17.96,
+    "maximum_us": 22.32
+  },
+  {
+    "kernel": "void (anonymous namespace)::dynamic_linear<false>(float const*, int const*, float const*, float const*, float const*, float*, int, int, int, int)",
+    "grid_threads": 524288,
+    "count": 40,
+    "median_us": 48.6405,
+    "minimum_us": 46.88,
+    "maximum_us": 445.084
+  },
+  {
+    "kernel": "(anonymous namespace)::pack_weights(int const*, int*, int, int, int)",
+    "grid_threads": 512,
+    "count": 1,
+    "median_us": 2.0,
+    "minimum_us": 2.0,
+    "maximum_us": 2.0
+  },
+  {
+    "kernel": "void (anonymous namespace)::dynamic_linear<false>(float const*, int const*, float const*, float const*, float const*, float*, int, int, int, int)",
+    "grid_threads": 384,
+    "count": 1,
+    "median_us": 4.36,
+    "minimum_us": 4.36,
+    "maximum_us": 4.36
+  }
+]

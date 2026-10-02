@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "torch": "2.10.0+rocm7.0",
+  "hip": "7.0.51831",
+  "device": "AMD Radeon RX 6800",
+  "library_sha256": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+  "float_library_sha256": "428541f4da764777ed10ea5b07550d7d356e0f1c402578999717ea15cd17278d",
+  "probe_sha256": "679356a0affea1ee47be092f2c30a09fb83cc0cbe7c64d0d339a28ac0e662672",
+  "invalid_abi": [
+    {
+      "m": 0,
+      "n": 1,
+      "k": 4,
+      "rc": 0
+    },
+    {
+      "m": 0,
+      "n": 0,
+      "k": 4,
+      "rc": 1
+    },
+    {
+      "m": 1,
+      "n": 32,
+      "k": 3,
+      "rc": 1
+    },
+    {
+      "m": 1048577,
+      "n": 1,
+      "k": 4,
+      "rc": 1
+    },
+    {
+      "m": 1,
+      "n": 4097,
+      "k": 4,
+      "rc": 1
+    }
+  ],
+  "precision": "integer exact dot; FP32 scales/output; FP16 FDOT2 with FP32 accumulation",
+  "quantization_policy": "zero_scale1_nonzero_max_times_fp32_reciprocal127_clamp_fp32tiny_round_even_symmetric127",
+  "timings_scope": "resident tensors; one-time weight/input packing excluded; dynamic variant includes GPU row absmax, quantization and padding; Python/ctypes launch gaps included",
+  "rows": [
+    {
+      "m": 64,
+      "n": 32,
+      "source_k": 20,
+      "kpad": 20,
+      "npad": 32,
+      "outputs": 2048,
+      "errors": {
+        "int8_rowmajor": 0.0,
+        "int8_packed": 0.0,
+        "int8_residual": 0.0,
+        "fp32_control": 0.0,
+        "fp16_control": 0.0,
+        "dynamic_quantization_vs_fp32": 0.013662338256835938,
+        "int8_dynamic_fused": 0.0,
+        "int8_dynamic_fused_residual": 0.0,
+        "int8_dynamic_rows": 0.0,
+        "int8_dynamic_rows_residual": 0.0
+      },
+      "reference_sha256": "982e4f0eadd2f50fb33a78660f299be66174515219df4f704a73b1d7c13a839d",
+      "samples": [
+        {
+          "sample": 0,
+          "method": "int8_dynamic",
+          "event_us": 220.35175561904907,
+          "synchronized_wall_us": 225.92025
+        },
+        {
+          "sample": 0,
+          "method": "fp32_control",
+          "event_us": 10.750249959528446,
+          "synchronized_wall_us": 16.025
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp32",
+          "event_us": 41.80024936795235,
+          "synchronized_wall_us": 44.595
+        },
+        {
+          "sample": 0,
+          "method": "int8_rowmajor",
+          "event_us": 13.020250014960766,
+          "synchronized_wall_us": 15.8275
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed",
+          "event_us": 9.410000406205654,
+          "synchronized_wall_us": 12.12
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused",
+          "event_us": 10.90024970471859,
+          "synchronized_wall_us": 13.63
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows_residual",
+          "event_us": 10.30999980866909,
+          "synchronized_wall_us": 13.07
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp16",
+          "event_us": 57.68049880862236,
+          "synchronized_wall_us": 60.45
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused_residual",
+          "event_us": 11.15025021135807,
+          "synchronized_wall_us": 13.8575
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed_residual",
+          "event_us": 10.339999571442604,
+          "synchronized_wall_us": 13.09
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows",
+          "event_us": 9.970249608159065,
+          "synchronized_wall_us": 12.6025
+        },
+        {
+          "sample": 0,
+          "method": "fp16_control",
+          "event_us": 9.519999846816063,
+          "synchronized_wall_us": 12.27
+        }
+      ]
+    },
+    {
+      "m": 2048,
+      "n": 32,
+      "source_k": 32,
+      "kpad": 32,
+      "npad": 32,
+      "outputs": 65536,
+      "errors": {
+        "int8_rowmajor": 0.0,
+        "int8_packed": 0.0,
+        "int8_residual": 0.0,
+        "fp32_control": 0.0,
+        "fp16_control": 0.0,
+        "dynamic_quantization_vs_fp32": 0.02546703815460205,
+        "int8_dynamic_fused": 0.0,
+        "int8_dynamic_fused_residual": 0.0,
+        "int8_dynamic_rows": 0.0,
+        "int8_dynamic_rows_residual": 0.0
+      },
+      "reference_sha256": "c68dfdb010adfe3c28b722b81865c0505166e2ff78f6e5a4fb363da165dc8631",
+      "samples": [
+        {
+          "sample": 0,
+          "method": "int8_dynamic",
+          "event_us": 163.11125457286835,
+          "synchronized_wall_us": 167.72
+        },
+        {
+          "sample": 0,
+          "method": "fp32_control",
+          "event_us": 14.770000241696835,
+          "synchronized_wall_us": 17.5175
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp32",
+          "event_us": 34.19024869799614,
+          "synchronized_wall_us": 36.975
+        },
+        {
+          "sample": 0,
+          "method": "int8_rowmajor",
+          "event_us": 13.46024964004755,
+          "synchronized_wall_us": 16.09
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed",
+          "event_us": 9.080000221729279,
+          "synchronized_wall_us": 11.72
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused",
+          "event_us": 15.300249680876732,
+          "synchronized_wall_us": 17.9525
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows_residual",
+          "event_us": 15.890249982476234,
+          "synchronized_wall_us": 18.6325
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp16",
+          "event_us": 52.2802509367466,
+          "synchronized_wall_us": 55.0
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused_residual",
+          "event_us": 16.14999957382679,
+          "synchronized_wall_us": 18.945
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed_residual",
+          "event_us": 12.560250237584114,
+          "synchronized_wall_us": 15.27
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows",
+          "event_us": 15.230000019073486,
+          "synchronized_wall_us": 17.8975
+        },
+        {
+          "sample": 0,
+          "method": "fp16_control",
+          "event_us": 11.710249818861485,
+          "synchronized_wall_us": 14.3675
+        }
+      ]
+    },
+    {
+      "m": 16384,
+      "n": 32,
+      "source_k": 32,
+      "kpad": 32,
+      "npad": 32,
+      "outputs": 524288,
+      "errors": {
+        "int8_rowmajor": 0.0,
+        "int8_packed": 0.0,
+        "int8_residual": 0.0,
+        "fp32_control": 0.0,
+        "fp16_control": 0.0,
+        "dynamic_quantization_vs_fp32": 0.030292272567749023,
+        "int8_dynamic_fused": 0.0,
+        "int8_dynamic_fused_residual": 0.0,
+        "int8_dynamic_rows": 0.0,
+        "int8_dynamic_rows_residual": 0.0
+      },
+      "reference_sha256": "2a136e5cae83a32f692c8579198ea4566ccf50f2402524346bf62907ddcdb256",
+      "samples": [
+        {
+          "sample": 0,
+          "method": "int8_dynamic",
+          "event_us": 165.8712476491928,
+          "synchronized_wall_us": 170.665
+        },
+        {
+          "sample": 0,
+          "method": "fp32_control",
+          "event_us": 42.31049865484238,
+          "synchronized_wall_us": 45.075
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp32",
+          "event_us": 44.65024918317795,
+          "synchronized_wall_us": 47.42775
+        },
+        {
+          "sample": 0,
+          "method": "int8_rowmajor",
+          "event_us": 16.360249370336533,
+          "synchronized_wall_us": 19.0475
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed",
+          "event_us": 16.480250284075737,
+          "synchronized_wall_us": 19.155
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused",
+          "event_us": 57.61050060391426,
+          "synchronized_wall_us": 60.415
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows_residual",
+          "event_us": 59.03024971485138,
+          "synchronized_wall_us": 61.7275
+        },
+        {
+          "sample": 0,
+          "method": "torch_fp16",
+          "event_us": 58.98049846291542,
+          "synchronized_wall_us": 61.74
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_fused_residual",
+          "event_us": 59.70050022006035,
+          "synchronized_wall_us": 62.3875
+        },
+        {
+          "sample": 0,
+          "method": "int8_packed_residual",
+          "event_us": 19.710250198841095,
+          "synchronized_wall_us": 22.355
+        },
+        {
+          "sample": 0,
+          "method": "int8_dynamic_rows",
+          "event_us": 57.35050141811371,
+          "synchronized_wall_us": 60.12
+        },
+        {
+          "sample": 0,
+          "method": "fp16_control",
+          "event_us": 30.740249902009964,
+          "synchronized_wall_us": 33.4125
+        }
+      ]
+    }
+  ],
+  "stream": "owned nondefault stream, no global/default-stream operations",
+  "dynamic_edge_cases": {
+    "rows": 5,
+    "channels": 33,
+    "ties_to_even": true,
+    "zero_row": true,
+    "tiny_scale": true,
+    "subnormal_input": true,
+    "maximum_error": 0.0
+  },
+  "torch_int_mm": {
+    "supported": false,
+    "error": "RuntimeError('CUDA error: HIPBLAS_STATUS_INVALID_VALUE when calling `hipblasLtMatmulAlgoGetHeuristic( ltHandle, computeDesc.descriptor(), Adesc.descriptor(), Bdesc.descriptor(), Cdesc.descriptor(), Cdesc.descriptor(), preference.descriptor(), 1, &heuristicResult, &returnedResult)`')"
+  },
+  "terminal": "PASS"
+}

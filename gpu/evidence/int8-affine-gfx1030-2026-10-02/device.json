@@ -1,0 +1,32 @@
+{
+  "name": "AMD Radeon RX 6800",
+  "gcnArchName": "gfx1030",
+  "warpSize": 32,
+  "multiProcessorCount": 30,
+  "maxThreadsPerMultiProcessor": 2048,
+  "maxBlocksPerMultiProcessor": 64,
+  "regsPerMultiprocessor": 131072,
+  "cooperativeLaunch": 1,
+  "cooperativeMultiDeviceLaunch": 1,
+  "occupancy_scope": "queried v2 floor1e8 library; API resource estimates, no cooperative launch tested",
+  "occupancy": [
+    {
+      "block": 64,
+      "packed_blocks_per_reported_multiprocessor": 32,
+      "dynamic_blocks_per_reported_multiprocessor": 32,
+      "scalar_blocks_per_reported_multiprocessor": 32
+    },
+    {
+      "block": 128,
+      "packed_blocks_per_reported_multiprocessor": 16,
+      "dynamic_blocks_per_reported_multiprocessor": 16,
+      "scalar_blocks_per_reported_multiprocessor": 16
+    },
+    {
+      "block": 256,
+      "packed_blocks_per_reported_multiprocessor": 8,
+      "dynamic_blocks_per_reported_multiprocessor": 8,
+      "scalar_blocks_per_reported_multiprocessor": 8
+    }
+  ]
+}

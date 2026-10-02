@@ -1,0 +1,1 @@
+Initial floor1e8 dynamic scale used strict max/127 rather than max*FP32(1/127). Terminal exit1: M16384,N32,K32 fused dynamic mismatch64/524288 outputs; maximum absolute difference0.011945605278015137 at row2664,column12. Static paths had passed. Failure and partial timing are retained; no acceptance claim.

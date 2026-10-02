@@ -1,0 +1,30 @@
+{
+  "failed-strict-scale/isa.txt.gz": {
+    "uncompressed_sha256": "9dea705a3cb5295febc5d1c1156346375e1ab0d96e4a9df827d8fc18e45a9c7b",
+    "uncompressed_bytes": 191926
+  },
+  "failed-strict-scale/libchen_int8_linear.so.gz": {
+    "uncompressed_sha256": "4172af8a7d73c9e58cadbf40a8591447b070cd2addbdbb5a258bf2185d24c95f",
+    "uncompressed_bytes": 52168
+  },
+  "float-isa.txt.gz": {
+    "uncompressed_sha256": "7bac0f180500b6f8112030beda74f9489fad18a5cd6bce092187b5591001fc68",
+    "uncompressed_bytes": 52771
+  },
+  "floor1e8-variant/libchen_int8_linear.so.gz": {
+    "uncompressed_sha256": "8d548a4769b5b45afec41cdcbb8b316a186fac28bbdb1c1a4140243909d1a7bb",
+    "uncompressed_bytes": 52104
+  },
+  "int8-isa.txt.gz": {
+    "uncompressed_sha256": "a203f45f59171d6484afc3b83d38bbb3da838f6ef3be127251892e5ab934d60e",
+    "uncompressed_bytes": 206157
+  },
+  "libchen_float_linear.so.gz": {
+    "uncompressed_sha256": "428541f4da764777ed10ea5b07550d7d356e0f1c402578999717ea15cd17278d",
+    "uncompressed_bytes": 25232
+  },
+  "libchen_int8_linear.so.gz": {
+    "uncompressed_sha256": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+    "uncompressed_bytes": 53344
+  }
+}

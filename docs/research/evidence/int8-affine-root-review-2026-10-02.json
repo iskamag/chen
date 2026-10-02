@@ -1,0 +1,33 @@
+{
+  "kind": "root_int8_affine_review_v1",
+  "status": "PASS",
+  "archive_manifest_sha256": "5a8b6fea9fa2e96604428f75af1e0e83d801a38a1ce44c2922a6682c36f130c3",
+  "native_source_sha256": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+  "independent_checks": {
+    "payload_inventory_and_hashes": 35,
+    "all_compressed_payload_sizes_and_hashes": "PASS",
+    "live_and_frozen_sources": "byte_identical",
+    "stdlib_archive_audit": "PASS",
+    "timing_samples_aggregated": 960
+  },
+  "source_review": [
+    "Signed byte products and partial sums fit signed32 for Kpad<=4096 under symmetric127 policy",
+    "Wave-uniform row exit preserves participation in row reductions",
+    "Zero1/tiny scale and scalar reciprocal order match declared policy",
+    "SourceK rows API handles final K tail without an input-padding tensor",
+    "Explicit stream and owned tensor admission remain Python wrapper responsibilities"
+  ],
+  "executed_evidence": {
+    "matrix_shapes": 16,
+    "outputs_per_checked_path": 674337,
+    "native_library_sha256": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+    "loaded_hip_provider_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "hip_runtime_version": 70051831
+  },
+  "limits": [
+    "Independent archive replay and source review; root did not rerun GPU calls",
+    "Affine parity is not whole neural quantization fidelity or playing strength",
+    "Small affine batches benefit; large fused dynamic batches can lose to wider paths",
+    "Shape/pointer/finite/storage/lifetime admission is required at caller boundary; operator is not deployment loader"
+  ]
+}
