@@ -1,0 +1,17 @@
+{
+  "declaration_sha256": "9f0c7669f80684ec06ef16a1ced50356cc6d3e243816b84fc386ca32ddf13c31",
+  "no_retry": true,
+  "runtime": {
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "cudnn_enabled": true,
+    "deterministic_algorithms": false,
+    "hip": "7.0.51831",
+    "interop_threads": 6,
+    "threads": 1,
+    "torch": "2.10.0+rocm7.0"
+  },
+  "status": "started"
+}

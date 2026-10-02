@@ -1,0 +1,15 @@
+{
+  "GPU_calls": 0,
+  "closed_attempt1_unmodified": true,
+  "historical_native_source_closure_preserved": true,
+  "kernel_protocol_identical_except_dependency_paths": true,
+  "kind": "root_manifest_study_runtime_review_v1",
+  "metadata_correction": "two stale donorpaths corrected before seal; replacement content unchanged",
+  "new_runner_sha256": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c",
+  "required_before_run": "regenerate and independently root seal exact suite referencing this kernel seal; owned externalwatchdog and exclusive GPU",
+  "status": "pass_before_fresh_training",
+  "study_hyperparameters_data_selection_unchanged": true,
+  "transport_sha256": "0752e71e50b6bf90b569bb432d089ee2f5a13753f609dcaad9c605a38eff71df",
+  "verified_payloads": 44,
+  "witness_only_provenance_path_rebinding": true
+}

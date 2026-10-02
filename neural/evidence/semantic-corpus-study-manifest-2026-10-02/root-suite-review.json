@@ -1,0 +1,20 @@
+{
+  "checkpoint_fix": "streamed40filemechanical admission beforevalidation; smallfrozenmanifest; capunchanged",
+  "external_watchdog_sha256": "9a7536756a856cec98985729dd8f3262e6e28baa2341241ee43bbfc4470245ad",
+  "failed_original_attempt_preserved": true,
+  "kernel_sealed_sha256": "69e5ea790340d30a6d60c3510968327c3d627f774bb48d0f0c6af7d6428c53e8",
+  "kind": "root_corrected_semantic_suite_review_v1",
+  "launch_condition": "exclusiveGPU alreadyreleasedbyfusion",
+  "no_retry_resume_within_this_attempt": true,
+  "runtime_metadata_verification": {
+    "fresh_attempt": true,
+    "gpu_calls": 0,
+    "proposal_exact": true,
+    "witness_admission": true
+  },
+  "runtime_witness_sha256": "12e66b450a1bd41fb15ab38ab83d54bffc187b5589f84d3ff2f64230c8c439e8",
+  "status": "sealed_for_one_fresh_bounded_gpu_study",
+  "study_hyperparameters_data_selection_unchanged": true,
+  "suite_proposed_sha256": "1e8c7440aeecbb08fee12adf8481559d5c606734a22ffdaec3a4d34517122bea",
+  "suite_sealed_sha256": "9f0c7669f80684ec06ef16a1ced50356cc6d3e243816b84fc386ca32ddf13c31"
+}

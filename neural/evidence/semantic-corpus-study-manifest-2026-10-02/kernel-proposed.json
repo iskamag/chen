@@ -1,0 +1,134 @@
+{
+  "calibration": {
+    "bisections": 64,
+    "bounds": [
+      0.05,
+      5.0
+    ],
+    "objective": "mean_squared_distance_outside_reporting_interval",
+    "query_kind": "standalone_only",
+    "shared_across_all_models": true,
+    "split": "train",
+    "tie_policy": "prefer_one_if_one_is_optimal_else_leftmost_minimizer"
+  },
+  "config": {
+    "anchor_updates": 384,
+    "clip_grad_norm": 1.0,
+    "depth": 1,
+    "learning_rate": 0.0003,
+    "material_bisections": 64,
+    "material_lower": 0.05,
+    "material_upper": 5.0,
+    "phase_wall_seconds": 900,
+    "seeds": [
+      20261021,
+      20261022
+    ],
+    "total_wall_seconds": 7200,
+    "transition_updates": 192,
+    "weight_decay": 0.0,
+    "width": 32
+  },
+  "controls": [
+    "transport",
+    "conditioned",
+    "action_blind",
+    "shuffled_conditioned"
+  ],
+  "cpu_training_substitution": false,
+  "dependencies": {
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/__init__.py": "bce8890d3c407020a1479a4df012d5b33fa670284c017a08376842323f768f8e",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/packing.py": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/resident.py": "107fd446941d494570bde1f72faf325373ad6c719f2b6ab9c73550d8bba56a59",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/semantic_corpus_study.py": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree/neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+  },
+  "encoders": [
+    "square",
+    "relation",
+    "plan",
+    "threat"
+  ],
+  "equal_compute_claim": false,
+  "initialization": {
+    "anchor": "freeze_and_hash_before_all_transition_updates",
+    "common": "copy_matching_decoder_and_role_pool_parameters_from_square_seed_template",
+    "transitions": "identical_full_transition_state_for_each_frozen_anchor"
+  },
+  "kind": "semantic_corpus_learning_v1",
+  "loss_coefficients": {
+    "board": 0.05,
+    "clock": 0.02,
+    "ep": 0.02,
+    "latent": 0.1,
+    "maps": 0.05,
+    "rights": 0.02,
+    "value": 1.0
+  },
+  "metrics": {
+    "drift": "mean_squared_frozen_child_role_latent",
+    "mate": "first_study_draw_only_admission_rejects_mates_before_training_requires_separate_lexicographic_policy",
+    "parentPV_context": "absolute_parent_query_CP_supervision_not_standalone_child_CP",
+    "refresh_disagreement": "record_parentPV_interval_vs_frozen_anchor_exact_child_value_gap_not_new_Stockfish_query",
+    "root": "mean_interval_regret_cp_and_raw_parentCP_optimal_agreement",
+    "scalar": "mean_distance_outside_interval_cp_standalone",
+    "terminal": "pinned_simulator_draw_witness_overrides_prediction_and_decision_target_to_zero_never_drop_actions",
+    "tie": "first_canonical_action"
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "learning_rate": 0.0003,
+    "name": "AdamW",
+    "weight_decay": 0.0
+  },
+  "ordering": {
+    "anchor": "standalone_observations_only_semantics_plus_value",
+    "schedule": "resident_validated_seed20261008_exactK_roots4_observations32_keep_tails",
+    "tail_weight": "batch_mean_times_actual_rows_over_declared_batch_size",
+    "transition": "complete_legal_roots_only_equal_root_weight",
+    "update_path": "cyclic_repetition_of_complete_one_epoch_plans_from_plan0"
+  },
+  "rollout": {
+    "latent_target": "detached_frozen_anchor_on_exact_child",
+    "longer_rollout": "requires_new_contiguous_sequence_admission",
+    "plies": 1,
+    "simulator": "exact_parent_actions_and_child_piece_targets"
+  },
+  "selection": {
+    "baselines": [
+      "raw_material100",
+      "scaled_material",
+      "raw_tapered"
+    ],
+    "decision": "seedmean_regret_then_seedmean_error_then_encoder_control_names",
+    "failed_gate": "NONE",
+    "paired_seed_gate": "each_seed_scalar_error_strictly_below_all_baselines_and_root_interval_regret_strictly_below_all_baselines_and_agreement_at_least_all_baselines",
+    "splits": [
+      "train",
+      "validation"
+    ],
+    "test": "sealed_out"
+  },
+  "shuffle": {
+    "fixed": "true_root_anchor_and_true_action_material_prior",
+    "inputs": "action_event_and_action_derived_child_pieces_maps",
+    "mode": "cyclic_left_rotation_one_within_each_complete_root",
+    "singleton": "unchanged"
+  },
+  "status": "unsealed",
+  "study_source_sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+  "target_gpu": "gfx1030",
+  "train_manifest_sha256": "b068256c757c93810f330b07bd4703bc35ec072b816a105fe76a33cc4d4376a4",
+  "validation_manifest_sha256": "55cc6ceea5bd1ebb1c9c4c07dcde8604c15a0f33f199a31a21c8b4fac70ed010"
+}

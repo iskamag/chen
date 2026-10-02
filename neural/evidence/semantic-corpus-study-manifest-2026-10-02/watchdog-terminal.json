@@ -1,0 +1,13 @@
+{
+  "child_pid": 5105,
+  "child_retired": true,
+  "elapsed_seconds": 144.17373222700553,
+  "exitcode": 0,
+  "interrupted_signal": null,
+  "kind": "semantic_external_watchdog_terminal_v1",
+  "no_retry": true,
+  "status": "terminal",
+  "stderr_sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4",
+  "stdout_sha256": "97d7bf0b9bc8ca9fe0b221e38aa632722997b80e90d702ee9878d855ae296c77",
+  "timed_out": false
+}
