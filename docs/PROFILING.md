@@ -1,6 +1,6 @@
 # Measured CPU and gfx1030 search profiles
 
-The next optimization targets are **GPU ancestor backup and selection**, and
+The frozen fusion profile identified **GPU ancestor backup and selection**, and
 **CPU move application and legal generation**. The actual one-second profiles
 are archived in [the summary](../gpu/evidence/engine-profiling-gfx1030-2026-10-02/summary.json)
 and [hashed evidence manifest](../gpu/evidence/engine-profiling-gfx1030-2026-10-02/manifest.json).
@@ -92,7 +92,7 @@ The GPU's reported minimum frontier depth remains 2, while its maximum reaches
 GPU response intervals were 1001–1009 ms; the deadline is checked between
 completed advance/publication cycles and can overshoot by one such cycle.
 
-[Backup](../gpu/chen_selective.inc:96) is currently one device thread scanning
+[The profiled backup](../gpu/evidence/selective-fusion-gfx1030-2026-10-02/sources/fused/chen_selective.inc:96) used one device thread scanning
 every retained old node backwards, then reducing the marked parents' children.
 Completion duration closely follows arena size: Pearson correlations are
 0.993–0.997. Mean completion time in the first versus last quartile rises from
@@ -103,12 +103,12 @@ full-arena serial scan is directly visible in the pinned source.
 Fusion provides one fence per advance; every published advance additionally
 calls `finish`, whose snapshot and PV extraction add two fences. The observed
 counts are `3 * advances + 3` including reset. Repeated publication is visible
-overhead, but the current critical path is mostly the long serial kernels:
+overhead, but the profiled critical path was mostly the long serial kernels:
 their execution overlaps the approximately 95–97% of worker time spent inside
 stream synchronization. Removing waits without reducing that device work would
 not remove the dominant cost.
 
-## Ranked experiments
+## Ranked experiments from the frozen fusion profile
 
 1. **Sparse GPU ancestor backup.** Record/deduplicate ancestors touched by the
    selected batch and process only those in descending allocation index, or
@@ -167,3 +167,14 @@ The retained `.perf.data` files allow further inspection with the pinned
 executable and matching symbols. The portable exported leaf records are the
 summary's actual sampling input. Trace instrumentation, a small suite and
 uncontrolled shared resources limit generalization; no rating claim follows.
+
+## Sparse-backup follow-up
+
+The subsequent [classical sparse ancestor experiment](GPU_SELECTIVE_SEARCH.md#classical-sparse-ancestor-backup)
+has [separate actual parity, fixed-work and trace evidence](../gpu/evidence/selective-sparse-ply-gfx1030-2026-10-02/summary.json).
+It preserves the preceding profile as historical evidence. Equal-work six-position
+median time fell 5.55% at 2,000 nodes/batch 8 and 48.66% at 50,000 nodes/batch 32.
+Separate one-second traces moved completion from approximately 78% of dispatch
+duration to 15–19%; repeated serial child selection now accounts for 71–75%.
+Those traced arms complete different amounts of work, so their dispatch shares
+locate the new bottleneck rather than measure matched-work kernel speedups.

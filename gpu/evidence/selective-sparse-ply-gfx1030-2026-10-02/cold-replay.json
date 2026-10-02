@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "raw_members": 281,
+  "raw_member_hashes_checked": true,
+  "independent_descriptor_extracted_elf_hashes_checked": true,
+  "summary_byte_identical": true,
+  "summary_sha256": "b244de5d09bc284ea76c56080e9479c7ce35de152a9e8fee1627fef0cb922741",
+  "scope": "CPU-only cold reconstruction; not a new hardware execution"
+}

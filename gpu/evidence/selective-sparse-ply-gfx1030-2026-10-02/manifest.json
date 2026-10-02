@@ -1,0 +1,255 @@
+{
+  "kind": "classical_sparse_ply_frozen_hardware_evidence",
+  "payloads": [
+    {
+      "path": "README.md",
+      "size": 4731,
+      "sha256": "a54c937fe37fd7c5f81a52e875d7e0ecbe06b5483db1f914130d3854be9f0fbd"
+    },
+    {
+      "path": "artifacts.json",
+      "size": 2453,
+      "sha256": "207eef7b43e7b3f8e3adf1ef461e61236513f789bdf57e82521d948c27034343"
+    },
+    {
+      "path": "baseline-fused-libchen_gpu.so",
+      "size": 505048,
+      "sha256": "04447c455f33fc7eca1e119664584dc70fa3a91cba05b3ba3cb35908e60451d2"
+    },
+    {
+      "path": "build-command.json",
+      "size": 151,
+      "sha256": "113cdfb6d8924a352e16419fba5f981c9b9297d3df067a15219b03da7c5a2db8"
+    },
+    {
+      "path": "build-result.json",
+      "size": 1027,
+      "sha256": "f198cde8acf3681a1779aa19245cbbdd67d2bbed0c2179c08eca2545adf576bd"
+    },
+    {
+      "path": "candidate-libchen_gpu.so",
+      "size": 505920,
+      "sha256": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb"
+    },
+    {
+      "path": "chen",
+      "size": 868496,
+      "sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392"
+    },
+    {
+      "path": "classical-sparse.patch",
+      "size": 6416,
+      "sha256": "7f155989b8c34261aae3659a0c85e4bee27c49910ef443347f0f19e6b827bf0a"
+    },
+    {
+      "path": "cold-replay.json",
+      "size": 342,
+      "sha256": "b748672d9921c8f6967fb2102adc048154c40dbf46dbef5322157191e4ed0861"
+    },
+    {
+      "path": "device-selective-tests",
+      "size": 1155784,
+      "sha256": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15"
+    },
+    {
+      "path": "raw-member-index.json",
+      "size": 45889,
+      "sha256": "f763717aaf95685a076a811af967fb5c05098ff396d562802fb56a8581d15d69"
+    },
+    {
+      "path": "raw-records.tar.gz",
+      "size": 3429969,
+      "sha256": "0e0f40610628cafe9b6808f568f33c2e3bce9a15a8e990e677f6fef76c7d86a8"
+    },
+    {
+      "path": "sources/baseline/build.sh",
+      "size": 362,
+      "sha256": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf"
+    },
+    {
+      "path": "sources/baseline/chen_external.h",
+      "size": 2415,
+      "sha256": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3"
+    },
+    {
+      "path": "sources/baseline/chen_gpu.h",
+      "size": 2001,
+      "sha256": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8"
+    },
+    {
+      "path": "sources/baseline/chen_gpu.hip",
+      "size": 9513,
+      "sha256": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5"
+    },
+    {
+      "path": "sources/baseline/chen_neural.h",
+      "size": 3805,
+      "sha256": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a"
+    },
+    {
+      "path": "sources/baseline/chen_replay.h",
+      "size": 3873,
+      "sha256": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6"
+    },
+    {
+      "path": "sources/baseline/chen_rules.h",
+      "size": 5198,
+      "sha256": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391"
+    },
+    {
+      "path": "sources/baseline/chen_rules.hip",
+      "size": 63399,
+      "sha256": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153"
+    },
+    {
+      "path": "sources/baseline/chen_selective.h",
+      "size": 5582,
+      "sha256": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf"
+    },
+    {
+      "path": "sources/baseline/chen_selective.inc",
+      "size": 30695,
+      "sha256": "d9979987fb8cb6904c4e817da816cc3df34e81af0730a6ecf45454ebfc41c4c7"
+    },
+    {
+      "path": "sources/baseline/chen_teacher.h",
+      "size": 2514,
+      "sha256": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    {
+      "path": "sources/candidate/build.sh",
+      "size": 362,
+      "sha256": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf"
+    },
+    {
+      "path": "sources/candidate/chen_external.h",
+      "size": 2415,
+      "sha256": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3"
+    },
+    {
+      "path": "sources/candidate/chen_gpu.h",
+      "size": 2001,
+      "sha256": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8"
+    },
+    {
+      "path": "sources/candidate/chen_gpu.hip",
+      "size": 9513,
+      "sha256": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5"
+    },
+    {
+      "path": "sources/candidate/chen_neural.h",
+      "size": 3805,
+      "sha256": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a"
+    },
+    {
+      "path": "sources/candidate/chen_replay.h",
+      "size": 3873,
+      "sha256": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6"
+    },
+    {
+      "path": "sources/candidate/chen_rules.h",
+      "size": 5198,
+      "sha256": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391"
+    },
+    {
+      "path": "sources/candidate/chen_rules.hip",
+      "size": 63399,
+      "sha256": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153"
+    },
+    {
+      "path": "sources/candidate/chen_selective.h",
+      "size": 5582,
+      "sha256": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf"
+    },
+    {
+      "path": "sources/candidate/chen_selective.inc",
+      "size": 34498,
+      "sha256": "cd9b765c906a4c47a36173b1502a769520017d30f3b253f8e5e6d92dbc1b3d8a"
+    },
+    {
+      "path": "sources/candidate/chen_teacher.h",
+      "size": 2514,
+      "sha256": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    {
+      "path": "sources/host/bounds-attempt1-source.hip",
+      "size": 6048,
+      "sha256": "ea42df230a3d6adce084302ad22d5b4063ff974f354548d6acd672dedbeefd80"
+    },
+    {
+      "path": "sources/host/extract_concatenated_fatbin.py",
+      "size": 1938,
+      "sha256": "71d2b6050e4c372107e47e7a05e3f08604c5200fcf3fde82bfdb425da42aec14"
+    },
+    {
+      "path": "sources/host/followup-attempt1-source.py",
+      "size": 9520,
+      "sha256": "b8c6941fe2b800d29e1cd72a47a539f4226147d600fef1428faf64a8d2a7dd7f"
+    },
+    {
+      "path": "sources/host/gpu/analyze_selective_sparse.py",
+      "size": 6947,
+      "sha256": "8688b6a098e156764ea7377358e83929aa91e6d839a7eece420c9866a8e67cfb"
+    },
+    {
+      "path": "sources/host/gpu/rules_probe.py",
+      "size": 13315,
+      "sha256": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4"
+    },
+    {
+      "path": "sources/host/gpu/selective_fusion_probe.py",
+      "size": 10107,
+      "sha256": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f"
+    },
+    {
+      "path": "sources/host/gpu/selective_sparse_bounds.hip",
+      "size": 6048,
+      "sha256": "34e3c598f9a156a4a0d57ed02754241f4cc4fa22308590d1e5e569fd84eb8505"
+    },
+    {
+      "path": "sources/host/gpu/selective_sparse_followup.py",
+      "size": 9727,
+      "sha256": "7d6f5722ec20bc00a298800e1cb73b20226694146f57d23b41285e9a262e26d4"
+    },
+    {
+      "path": "sources/host/gpu/selective_sparse_probe.py",
+      "size": 7195,
+      "sha256": "8a944a60353c645e358d0cbf3604b29fcb35bd8e31458f0937e6eb6dd4367e67"
+    },
+    {
+      "path": "sources/host/scripts/analyze_engine_profile.py",
+      "size": 12969,
+      "sha256": "66f49b0432fda634b8c13e6b9ae7677ec183eb02457ffb456af8a9f187d96829"
+    },
+    {
+      "path": "sources/host/scripts/profile_engine.py",
+      "size": 9866,
+      "sha256": "458bf69309c1810cfef71ba95b236a3dd176a0eede53946dab67fb52e1498b83"
+    },
+    {
+      "path": "sources/research/README.md",
+      "size": 802,
+      "sha256": "28adf49546090c5feca0472f2a06402ec026311d1e3e9176a68f698a9a4b12ad"
+    },
+    {
+      "path": "sources/research/live_set_hip_reg_branchless.cu",
+      "size": 14067,
+      "sha256": "6b063267b9d6422bf9b9aaa0c0dc05f955d4317d1e36cc9eca69f3951855caa2"
+    },
+    {
+      "path": "sources/research/live_set_scalar.h",
+      "size": 3864,
+      "sha256": "aa4bae82c46411c28aa31ac4623e04fcda7811fd83003355773c7058d4465f9b"
+    },
+    {
+      "path": "sparse-bounds",
+      "size": 497176,
+      "sha256": "ea5c9ab20efa2d4c1e07fb26e9267dce9886b9751d4795e31f0780e6a3536848"
+    },
+    {
+      "path": "summary.json",
+      "size": 372191,
+      "sha256": "b244de5d09bc284ea76c56080e9479c7ce35de152a9e8fee1627fef0cb922741"
+    }
+  ]
+}

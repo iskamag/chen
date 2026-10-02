@@ -67,7 +67,9 @@ int32_t chen_selective_reset(ChenSelectiveContext *, const ChenRulePosition *roo
  * Admit only COMPLETE sibling sets within node limit and arena capacity, in
  * selection order. New children form one contiguous block, evaluated using
  * existing exact rules/terminal or external evaluation. All ancestor scores and
- * closure metadata are backed up in device reverse-index order.
+ * closure metadata are backed up in dependency order: classical evaluation
+ * uses unique admitted ancestors by descending ply; external evaluation keeps
+ * the ordered reverse-index reference pass. Canonical child ties are unchanged.
  * Terminal and max-ply leaves stay in minimax, but are never eligible again.
  * A nonterminal root is published only after its entire legal set is scored.
  * No board/frontier/score-array host download is needed by these operations.

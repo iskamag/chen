@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "candidate-libchen_gpu.so": {
+      "sha256": "c33fc8f97e3fd546af72a3e3f22a45ffb57082a6071aa7b07066ada6d50c14cb",
+      "size": 505920
+    },
+    "baseline-fused-libchen_gpu.so": {
+      "sha256": "04447c455f33fc7eca1e119664584dc70fa3a91cba05b3ba3cb35908e60451d2",
+      "size": 505048
+    },
+    "chen": {
+      "sha256": "a31be5d14e6d62a6861b2aa838fd6fa8ac97de22373c625d5ba2903153018392",
+      "size": 868496
+    },
+    "device-selective-tests": {
+      "sha256": "32930f0682f136d4ad464805efbdbc82f8172031e532446095ed387c894def15",
+      "size": 1155784
+    },
+    "sparse-bounds": {
+      "sha256": "ea5c9ab20efa2d4c1e07fb26e9267dce9886b9751d4795e31f0780e6a3536848",
+      "size": 497176
+    }
+  },
+  "baseline_gpu_commit": "aae0977",
+  "baseline_provenance_archive": "../selective-fusion-gfx1030-2026-10-02",
+  "candidate_build_source_sha256": {
+    "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "chen_rules.hip": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153",
+    "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "chen_selective.h": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+    "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "chen_selective.inc": "cd9b765c906a4c47a36173b1502a769520017d30f3b253f8e5e6d92dbc1b3d8a",
+    "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391"
+  },
+  "host_source_closure": "../selective-fusion-gfx1030-2026-10-02/sources/host",
+  "public_header_note": "The frozen compiled header is retained verbatim. Active chen_selective.h has a later comment-only description of dependency ordering; ABI and declarations are identical.",
+  "concurrency": "CPU5 pinned hardware workloads. Root CPU0 match ended before one-second follow-ups; no other GPU workload was authorized concurrently. Shared system power/cache uncontrolled.",
+  "runtime": "Actual worker traces and fresh runtime/library fingerprints are in raw records; no neural runtime calls."
+}

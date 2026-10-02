@@ -1,0 +1,107 @@
+diff --git a/gpu/chen_selective.inc b/gpu/chen_selective.inc
+index 2f72f1a..cfe669c 100644
+--- a/gpu/chen_selective.inc
++++ b/gpu/chen_selective.inc
+@@ -3,9 +3,21 @@
+ namespace {
+ struct SelectMeta { uint64_t open; uint32_t minimum,maximum; };
+ struct SelectHead { uint32_t selected,examined,added,stop; };
++// Experimental classical-only sparse-ply backup. Each admitted parent has one
++// ancestor at each ply, so a bucket needs at most MAX_BATCH distinct indices.
++// Storage is part of the existing owned/alias-registered work allocation.
++struct SelectSparseBackup {
++    uint64_t nodes[CHEN_SELECTIVE_MAX_PLY][CHEN_SELECTIVE_MAX_BATCH];
++    uint32_t counts[CHEN_SELECTIVE_MAX_PLY];
++};
++constexpr uint32_t SELECT_SPARSE_MARK=1u<<31;
++static_assert(CHEN_SELECTIVE_MAX_CANDIDATES<SELECT_SPARSE_MARK,"reservation/touched bits disjoint");
++static_assert(sizeof(SelectSparseBackup)==CHEN_SELECTIVE_MAX_PLY*(CHEN_SELECTIVE_MAX_BATCH*8+4),
++    "bounded sparse-ply scratch size");
+ struct SelectWork {
+     SelectHead head;
+     uint64_t selected[CHEN_SELECTIVE_MAX_BATCH],offsets[CHEN_SELECTIVE_MAX_BATCH];
++    SelectSparseBackup sparse;
+ };
+ struct SelectCompletion { ChenSelectiveStats stats;uint32_t error,reserved; };
+ static_assert(sizeof(SelectCompletion)==104,"private selective completion packet");
+@@ -118,6 +130,59 @@ __global__ void selective_backup(Node *nodes,SelectMeta *meta,const uint32_t *re
+     uint64_t old_used,uint64_t used,uint32_t *error) {
+     selective_backup_device(nodes,meta,reserved,old_used,used,error);
+ }
++__device__ void selective_backup_sparse_device(Node *nodes,SelectMeta *meta,uint32_t *reserved,
++    SelectWork *work,uint64_t old_used,uint64_t used,uint32_t max_ply,uint32_t *error) {
++    // Called only after classical selection and complete child initialization.
++    // Rejected candidates cannot change values/metadata, so visit ancestors of
++    // admitted expansions only. The high bit is never read by selection: its
++    // reservation scratch is cleared before the next advance, as before.
++    if(!max_ply || max_ply>CHEN_SELECTIVE_MAX_PLY ||
++        work->head.selected>CHEN_SELECTIVE_MAX_BATCH) { device_error(error,4);return; }
++    for(uint32_t ply=0;ply<max_ply;++ply) work->sparse.counts[ply]=0;
++    for(uint32_t row=0;row<work->head.selected;++row) {
++        uint64_t index=work->selected[row];
++        for(uint32_t depth=0;index!=NONE;++depth) {
++            if(index>=old_used || depth>=max_ply) { device_error(error,4);return; }
++            if(reserved[index]&SELECT_SPARSE_MARK) break;
++            const Node node=nodes[index];
++            if(!(node.flags&EXPANDED) || !reserved[index] || node.ply>=max_ply ||
++                (index==0 && (node.parent!=NONE || node.ply)) ||
++                (index && (node.parent>=index || nodes[node.parent].ply+1!=node.ply))) {
++                device_error(error,4);return;
++            }
++            uint32_t &count=work->sparse.counts[node.ply];
++            if(count>=work->head.selected || count>=CHEN_SELECTIVE_MAX_BATCH) {
++                device_error(error,4);return;
++            }
++            work->sparse.nodes[node.ply][count++]=index;
++            reserved[index]|=SELECT_SPARSE_MARK;
++            index=node.parent;
++        }
++    }
++    // Every dependency's child ply is greater than its parent's. Nodes at one
++    // ply are independent; bucket insertion order cannot affect integer scores
++    // or first-legal-child ties. One thread keeps this reference variant race
++    // free without sorting the arena or launching MAX_PLY separate kernels.
++    for(uint32_t cursor=max_ply;cursor;) {
++        const uint32_t ply=--cursor;
++        for(uint32_t row=0;row<work->sparse.counts[ply];++row) {
++            const uint64_t index=work->sparse.nodes[ply][row];
++            Node &node=nodes[index];int best=-MATE-1;uint64_t winner=NONE;
++            SelectMeta aggregate{0,UINT32_MAX,0};
++            for(uint32_t j=0;j<node.child_count;++j) {
++                const uint64_t child=node.first_child+j;
++                if(child>=used || !(nodes[child].flags&SCORED)) { device_error(error,4);return; }
++                const int score=-nodes[child].score;
++                if(score>best) { best=score;winner=child; }
++                aggregate.open+=meta[child].open;
++                if(meta[child].minimum<aggregate.minimum) aggregate.minimum=meta[child].minimum;
++                if(meta[child].maximum>aggregate.maximum) aggregate.maximum=meta[child].maximum;
++            }
++            if(winner==NONE) { device_error(error,4);return; }
++            node.score=best;node.best=winner;node.flags|=SCORED;meta[index]=aggregate;
++        }
++    }
++}
+ __device__ void selective_snapshot_device(const Node *nodes,const SelectMeta *meta,
+     const unsigned long long *classified,const unsigned long long *evaluated,
+     ChenSelectiveStats *out,uint64_t used,uint64_t steps,uint64_t expanded,
+@@ -216,8 +281,8 @@ __global__ void selective_children_classical(ChenRulePosition *positions,Node *n
+     meta[index]=SelectMeta{!(node.flags&TERMINAL) && node.ply<max_ply?1ull:0ull,node.ply,node.ply};
+ }
+ 
+-__global__ void selective_complete_classical(Node *nodes,SelectMeta *meta,const uint32_t *reserved,
+-    const SelectWork *work,const unsigned long long *classified,const unsigned long long *evaluated,
++__global__ void selective_complete_classical(Node *nodes,SelectMeta *meta,uint32_t *reserved,
++    SelectWork *work,const unsigned long long *classified,const unsigned long long *evaluated,
+     SelectCompletion *out,uint64_t old_used,uint64_t steps,uint64_t expanded,
+     uint32_t max_ply,uint32_t *error) {
+     *out=SelectCompletion{};
+@@ -225,7 +290,8 @@ __global__ void selective_complete_classical(Node *nodes,SelectMeta *meta,const
+         const SelectHead head=work->head;
+         const uint64_t used=old_used+head.added;
+         if(*classified!=used && !(*classified==0 && used==1)) device_error(error,4);
+-        if(head.selected && !*error) selective_backup_device(nodes,meta,reserved,old_used,used,error);
++        if(head.selected && !*error)
++            selective_backup_sparse_device(nodes,meta,reserved,work,old_used,used,max_ply,error);
+         if(!*error) {
+             const uint32_t stop=!(meta[0].open) && (nodes[0].flags&SCORED)?CHEN_SELECTIVE_CLOSED:head.stop;
+             selective_snapshot_device(nodes,meta,classified,evaluated,&out->stats,used,
