@@ -60,8 +60,10 @@ search/PV information cannot enter a branch prediction as observed state.
 Quantized inference is a separate model/backend variant. Start with optimized
 INT8 packing, accumulation and fused scale/residual operations supported by the
 actual gfx1030 ISA; inspect the compiled code and compare against FP32/FP16 on
-real resident batches. Fit activation ranges using TRAIN only. Freeze scales and
-weights before numerical, action-ranking and playing-strength comparisons.
+real resident batches. Fit any static activation ranges using TRAIN only; dynamic
+per-row scaling is inference arithmetic whose overhead must also be measured.
+Freeze the quantization policy, fitted scales and weights before numerical,
+action-ranking and playing-strength comparisons.
 Report calibration/packing overhead, dispatch/transfer time and end-to-end
 latency; integer arithmetic alone does not demonstrate an optimized backend.
 

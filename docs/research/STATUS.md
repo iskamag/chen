@@ -312,8 +312,13 @@ Commit `7243a74` adopts classical sparse ancestor backup after 72 equal-work row
 The large-arena six-position median drops from 1593.306 to 818.045 ms (48.66%).
 Classical completion now processes unique admitted ancestors by descending ply;
 external neural evaluation retains the reverse-index reference. Selection now
-consumes roughly 71–75% of kernel duration. A packed reservation/cache candidate
-is the next bounded experiment.
+consumes roughly 71–75% of kernel duration. Commit `4e5782a` then adopts the
+classical packed best-open-child cache: 72 fixed-work rows retain identical
+scores, PVs and counters, and the large-arena median drops from 817.527 to
+405.193 ms (50.44%). An independent root replay verifies all 47 payloads and
+246 raw members and reconstructs the summary byte for byte. Tiny mate positions
+show observed 1.50–2.82% slowdowns. This is a latency result, not a strength claim;
+the external neural selector retains its uncached reference.
 
 Commit `eff0e6b` caches completed 2FFS scale certificates until evidence refresh.
 All ten positive-action traces remain byte identical, with 600 independent
@@ -327,8 +332,11 @@ phase/suite corpus identities and reject over-budget completed work. The first r
 transition updates, then failed closed before validation because its combined
 checkpoint was 137,594,521 bytes, above the 128 MiB gate. Neural commit `0f5140e`
 archives all 40 finite individual states, exact runtime and terminal logs.
-No heldout quality metrics or model promotion occurred. The bounded-file freeze
-manifest correction is being reviewed as a separate declared attempt. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
+No heldout quality metrics or model promotion occurred. Neural commit `7d0a199`
+replaces the aggregate checkpoint with a hash-bound manifest of all 40 individual
+states. Thirteen orchestration fixtures and actual checkpoint admission pass.
+A separately root-sealed fresh corrected attempt is running; the original
+attempt remains closed and is not resumed. The [native baseline witness](evidence/semantic-baselines-2026-10-02/build-binding.json)
 joins actual Rust Material/Tapered scores to all 15,501 exact corpus hashes and
 classifies the sole terminal state as a draw using the history-aware oracle.
 It contains no heldout quality metrics.
@@ -337,8 +345,22 @@ The [RDNA/SWAR study](../RDNA_BITBOARDS.md), committed as `af6fda2`, independent
 checks 401,920 outputs. Kogge–Stone rook fills improve isolated primitive medians
 by 2.35–4.98×; cooperative wave32-per-board loses despite lower VGPR usage.
 Runtime ISA shows identical two-instruction vector counts for the 64-bit popcount
-intrinsic and explicit DWORD halves. Full move-generation adoption is a separate
-parity and integrated profiling experiment.
+intrinsic and explicit DWORD halves. The integrated GPU sliding-fill candidate
+passes 2,439,488 independent host checks and exact fixed-work comparisons, but
+changes whole-search latency by less than 0.2%; the default GPU walk remains.
+The separate [CPU SWAR study](../CPU_SLIDING_ATTACKS.md) improves the six-position
+200,000-node search median from 2018.104 to 1729.688 ms (14.3%). Commit `08f79e0`
+adopts that measured CPU candidate and retains the ray reference as the
+`ray-attacks` build feature; both release configurations pass all 56 tests.
+Perft and equal-time effects vary by position, with regressions retained.
+
+Full GPU execution remains the target, including simulator-owned symbolic
+channels injected into neural residual streams. Separate mixed INT8 and symbolic
+role-injection candidates now have arithmetic/causality fixtures; actual GPU
+numerics, end-to-end timing and simulator integration remain pending. Timing
+is primary; memory bounds are engineering controls rather than the optimization
+objective. A Lean theory track has initial finite-model cache and backup proofs;
+HIP correspondence and global strategy optimality are not established.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.
