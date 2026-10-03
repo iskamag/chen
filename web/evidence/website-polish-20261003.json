@@ -1,0 +1,43 @@
+{
+  "url": "http://127.0.0.1:8789/",
+  "checked_at": "2026-10-03T16:51:57.093Z",
+  "time_options": [
+    "100",
+    "500",
+    "1000",
+    "5000"
+  ],
+  "old_3000_ms_migrated_to": "1000",
+  "notation": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bc4",
+    "Nf6",
+    "O-O"
+  ],
+  "uci_history": [
+    "e2e4",
+    "e7e5",
+    "g1f3",
+    "b8c6",
+    "f1c4",
+    "g8f6",
+    "e1g1"
+  ],
+  "board_preserved": true,
+  "human_capture_chen_quiet": {
+    "mood": "idle",
+    "line": "Your turn. I promise my tails are behaving."
+  },
+  "chen_capture": {
+    "mood": "pounce",
+    "line": "Pounce! A little treasure for the tails."
+  },
+  "mobile": {
+    "scroll": 390,
+    "client": 390
+  },
+  "page_errors": []
+}

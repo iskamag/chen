@@ -58,7 +58,8 @@ It polls `/api/jobs/<id>` until `queued → running → done`; it can cancel wit
 so visitors never share a game. API writes require JSON; request sizes, concurrent
 connections, queue length, retained results, histories, time/depth/nodes are bounded.
 
-Compute currently runs on one search worker with up to eight waiting jobs, a
+Compute runs on six independent single-threaded search workers by default
+(`CHEN_WEB_WORKERS=1..6`) with up to eight waiting jobs in a shared queue, a
 50–5000 ms time budget, depth 1–64 and optional 1–20M node cap. Queue-full requests
 return 429. This is a small experimental service rather than a production hosting
 platform; expose it only at the intended checkpoint audience/load. Search timing

@@ -11,7 +11,8 @@ import urllib.request
 from pathlib import Path
 
 
-class ApiSmoke(unittest.TestCase):
+class Server(unittest.TestCase):
+    workers = 1
     @classmethod
     def setUpClass(cls):
         import os
@@ -21,7 +22,7 @@ class ApiSmoke(unittest.TestCase):
         cls.url = f"http://127.0.0.1:{port}"
         cls.process = subprocess.Popen(
             [str(Path(sys.argv[1]).resolve())],
-            env={**os.environ, "CHEN_WEB_PORT": str(port)},
+            env={**os.environ, "CHEN_WEB_PORT": str(port), "CHEN_WEB_WORKERS": str(cls.workers)},
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
@@ -70,6 +71,9 @@ class ApiSmoke(unittest.TestCase):
             time.sleep(0.02)
         self.fail("Job did not finish")
 
+
+
+class ApiSmoke(Server):
     def test_01_real_engine_and_legal_moves(self):
         white = self.done(self.submit(side="white"))["state"]
         self.assertEqual(len(white["legal"]), 20)
@@ -78,6 +82,8 @@ class ApiSmoke(unittest.TestCase):
         state = self.done(result["id"])["state"]
         self.assertEqual(state["moves"][0], "e2e4")
         self.assertEqual(len(state["moves"]), 2)
+        self.assertEqual(state["san_moves"][0], "e4")
+        self.assertEqual(len(state["san_moves"]), 2)
         self.assertEqual(state["side"], "white")
         self.assertGreater(state["telemetry"]["nodes"], 0)
         with self.assertRaises(urllib.error.HTTPError) as error:
@@ -157,6 +163,50 @@ class ApiSmoke(unittest.TestCase):
             self.submit(backend="drowsy", theta=1.1)
         self.assertEqual(error.exception.code, 400)
         error.exception.close()
+
+
+    def test_07_replay_notation_without_search_or_board_change(self):
+        moves = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "e1g1"]
+        state = self.call("/api/state", {"moves": moves, "side": "white", "level": 20})
+        self.assertEqual(state["moves"], moves)
+        self.assertEqual(state["san_moves"], ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "O-O"])
+        self.assertIsNone(state["telemetry"])
+
+
+class PoolSmoke(Server):
+    workers = 6
+
+    def running(self, jobs):
+        deadline = time.monotonic() + 1.5
+        while time.monotonic() < deadline:
+            if all(self.call("/api/jobs/" + job)["phase"] == "running" for job in jobs):
+                return
+            time.sleep(0.01)
+        self.fail("Six searches did not overlap; receiver may serialize search")
+
+    def test_parallel_searches_queue_timing_and_cancellation(self):
+        first = [self.submit(time_ms=2000) for _ in range(6)]
+        self.running(first)
+        queued = self.submit(time_ms=1000)
+        self.assertEqual(self.call("/api/jobs/" + queued)["phase"], "queued")
+        for job in first:
+            result = self.done(job)
+            self.assertEqual(result["phase"], "done")
+            self.assertEqual(len(result["state"]["moves"]), 1)
+        result = self.done(queued)
+        self.assertGreaterEqual(result["queue_ms"], 1200)
+        self.assertGreaterEqual(result["state"]["telemetry"]["ms"], 900)
+        active = [self.submit(time_ms=5000) for _ in range(6)]
+        self.running(active)
+        waiting = [self.submit(time_ms=5000) for _ in range(8)]
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.submit(time_ms=5000)
+        self.assertEqual(error.exception.code, 429)
+        error.exception.close()
+        for job in waiting + active:
+            self.call("/api/cancel", {"id": job})
+        for job in waiting + active:
+            self.assertEqual(self.done(job)["phase"], "cancelled")
 
 
 if __name__ == "__main__":

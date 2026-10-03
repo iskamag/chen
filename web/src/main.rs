@@ -1,3 +1,5 @@
+mod notation;
+
 use chen::backend::SearchBackend;
 use chen::drowsy::{DrowsyConfig, DrowsySearch};
 use chen::strength::{BudgetStrength, StrengthPolicy};
@@ -53,6 +55,7 @@ struct Game {
     position: Position,
     history: Vec<u64>,
     moves: Vec<String>,
+    san_moves: Vec<String>,
     human: Color,
     level: u8,
     milliseconds: u64,
@@ -70,6 +73,7 @@ impl Game {
             position: Position::startpos(),
             history: Vec::new(),
             moves: Vec::new(),
+            san_moves: Vec::new(),
             human: Color::White,
             level: 20,
             milliseconds: 1000,
@@ -123,6 +127,7 @@ impl Game {
     fn push(&mut self, mv: chen::Move) {
         self.history.push(self.position.hash());
         self.moves.push(mv.to_string());
+        self.san_moves.push(notation::san(&self.position, mv));
         self.position.make_move(mv);
     }
     fn reply(&mut self) -> Result<(), String> {
@@ -166,7 +171,7 @@ impl Game {
             "side": if self.position.side_to_move() == Color::White { "white" } else { "black" },
             "human": if self.human == Color::White { "white" } else { "black" },
             "check": self.position.is_in_check(self.position.side_to_move()),
-            "outcome": self.outcome(), "moves": self.moves, "telemetry": self.telemetry,
+            "outcome": self.outcome(), "moves": self.moves, "san_moves": self.san_moves, "telemetry": self.telemetry,
             "revision": env!("CHEN_REVISION"), "level": self.level, "milliseconds": self.milliseconds, "depth_limit": self.depth_limit, "node_limit": self.node_limit,
             "backend": self.backend, "delta_cp": self.delta_cp, "theta": self.theta })
     }
@@ -230,11 +235,11 @@ impl Game {
         if path == "/api/new" {
             return Ok(game);
         }
-        if path != "/api/move" {
+        if path != "/api/move" && path != "/api/state" {
             return Err("Unknown endpoint".into());
         }
         let moves = data["moves"].as_array().ok_or("Missing move history")?;
-        if moves.len() >= 512 {
+        if moves.len() > 512 || (path == "/api/move" && moves.len() == 512) {
             return Err("Game reached this checkpoint's 512-ply limit".into());
         }
         for text in moves {
@@ -245,6 +250,9 @@ impl Game {
                 return Err("Move history continues after game end".into());
             }
             game.push(mv);
+        }
+        if path == "/api/state" {
+            return Ok(game);
         }
         if game.position.side_to_move() != game.human {
             return Err("It is Chen's turn".into());
@@ -279,8 +287,12 @@ fn job_id() -> std::io::Result<String> {
     std::fs::File::open("/dev/urandom")?.read_exact(&mut random)?;
     Ok(random.iter().map(|b| format!("{b:02x}")).collect())
 }
-fn worker(receiver: mpsc::Receiver<Job>, jobs: Jobs, queued: Arc<AtomicUsize>) {
-    for mut job in receiver {
+fn worker(receiver: Arc<Mutex<mpsc::Receiver<Job>>>, jobs: Jobs, queued: Arc<AtomicUsize>) {
+    loop {
+        // Share admission only: release the receiver lock before doing any search.
+        let received = receiver.lock().unwrap().recv();
+        let Ok(mut job) = received else { break };
+
         queued.fetch_sub(1, Ordering::SeqCst);
         let queue_ms = job.created.elapsed().as_millis();
         let stop = job.game.searcher.stop_handle();
@@ -458,7 +470,7 @@ fn handle(
             br#"{"cancelled":true}"#,
         );
     }
-    if path != "/api/new" && path != "/api/move" {
+    if path != "/api/new" && path != "/api/move" && path != "/api/state" {
         return response(
             stream,
             "404 Not Found",
@@ -477,6 +489,14 @@ fn handle(
             );
         }
     };
+    if path == "/api/state" {
+        return response(
+            stream,
+            "200 OK",
+            "application/json",
+            game.state().to_string().as_bytes(),
+        );
+    }
     let id = job_id()?;
     let created = Instant::now();
     {
@@ -542,18 +562,36 @@ fn main() -> std::io::Result<()> {
         .ok()
         .and_then(|s| s.parse::<u16>().ok())
         .unwrap_or(8787);
+    let workers = match std::env::var("CHEN_WEB_WORKERS") {
+        Ok(value) => value
+            .parse::<usize>()
+            .ok()
+            .filter(|n| (1..=6).contains(n))
+            .ok_or_else(|| {
+                std::io::Error::new(
+                    std::io::ErrorKind::InvalidInput,
+                    "CHEN_WEB_WORKERS must be 1..6",
+                )
+            })?,
+        Err(std::env::VarError::NotPresent) => 6,
+        Err(error) => return Err(std::io::Error::new(std::io::ErrorKind::InvalidInput, error)),
+    };
     let listener = TcpListener::bind(("127.0.0.1", port))?;
     println!(
-        "Chen {} is playing at http://127.0.0.1:{port} — Ctrl+C to stop",
+        "Chen {} is playing at http://127.0.0.1:{port} ({workers} independent search workers) — Ctrl+C to stop",
         env!("CHEN_REVISION")
     );
     let jobs: Jobs = Arc::new(Mutex::new(HashMap::new()));
     let queued = Arc::new(AtomicUsize::new(0));
     let readers = Arc::new(AtomicUsize::new(0));
     let (sender, receiver) = mpsc::sync_channel(8);
-    let worker_jobs = jobs.clone();
-    let worker_queued = queued.clone();
-    std::thread::spawn(move || worker(receiver, worker_jobs, worker_queued));
+    let receiver = Arc::new(Mutex::new(receiver));
+    for _ in 0..workers {
+        let receiver = receiver.clone();
+        let worker_jobs = jobs.clone();
+        let worker_queued = queued.clone();
+        std::thread::spawn(move || worker(receiver, worker_jobs, worker_queued));
+    }
     for connection in listener.incoming() {
         let mut stream = connection?;
         if readers.fetch_add(1, Ordering::SeqCst) >= 32 {

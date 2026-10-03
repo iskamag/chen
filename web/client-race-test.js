@@ -32,5 +32,27 @@ function client(){const context=vm.createContext({document:{getElementById:()=>(
     poll.reject(new Error('old poll failed'));
     assert.equal(await old,null,'old poll failure must not unlock or replace the newer board');
   }
-  console.log('Client stale-response and cancellation races: 3 passed');
+  {
+    const context=client();let reaction;
+    context.mood=(name,line)=>{reaction={name,line};};
+    const position=(pieces,human='white',check=false,outcome=null)=>({pieces,human,check,outcome});
+    // The human captures, then Chen plays quietly: no celebratory pounce.
+    context.react(position(['K','P','k','p']),position(['K','P','k']));
+    assert.equal(reaction.name,'idle');
+    // Chen captures a human piece, with either human color (en passant included).
+    context.react(position(['K','P','k','p']),position(['K','k','p']));
+    assert.equal(reaction.name,'pounce');
+    context.react(position(['K','P','k','p'],'black'),position(['K','P','k'],'black'));
+    assert.equal(reaction.name,'pounce');
+    context.react(position(['K','P','k','p'],'black'),position(['K','k','p'],'black'));
+    assert.equal(reaction.name,'idle');
+    // Quiet move/promotion/castling preserve the piece counts; check and outcome win priority.
+    context.react(position(['K','P','k']),position(['K','Q','k']));
+    assert.equal(reaction.name,'idle');
+    context.react(position(['K','P','k']),position(['K','k'], 'white',true));
+    assert.equal(reaction.name,'check');
+    context.react(position(['K','P','k']),position(['K','k'], 'white',false,'Chen wins'));
+    assert.equal(reaction.name,'win');
+  }
+  console.log('Client cancellation races and capture reactions: passed');
 })().catch(error=>{console.error(error);process.exitCode=1;});

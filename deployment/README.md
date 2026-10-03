@@ -3,7 +3,8 @@
 **https://iskamag.com/games/play-with-chen/** proxies through nginx on
 `iskamag.com` to this machine's native CPU server. Both serious Chen and the
 experimental δ–θ Drowsy mood use the same bounded request queue. The selected
-search time excludes queue wait.
+search time excludes queue wait. Six independent single-threaded searches can
+run at once; eight additional requests may wait. HTTP handling is separate.
 
 The installed OpenRC **user services** are `chen-web` and `chen-tunnel`. They
 supervise the server and reconnecting reverse SSH tunnel, and are registered in

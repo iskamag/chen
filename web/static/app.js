@@ -7,7 +7,7 @@ const squareName = n => 'abcdefgh'[n % 8] + (Math.floor(n / 8) + 1);
 function setBusy(value) {
   busy = value; document.body.classList.toggle('busy', value);
   document.querySelectorAll('#setup button,#setup input,#setup select').forEach(el => el.disabled = value);
-  $('thinking').textContent = value ? 'Waiting for Chen…' : 'Ready to pounce';
+  $('thinking').textContent = value ? 'Waiting for Chen…' : 'Paws at the ready';
   $('cancel').hidden = !value;
   if(value) mood('thinking', 'A little wiggle while I think…');
 }
@@ -48,7 +48,10 @@ async function submit(path, data) {
   } catch(error) { if(ticket!==generation)return null; throw error; }
 }
 function react(before, after) {
-  const count=s=>s.pieces.filter(Boolean).length;
+  // Each response includes the human move and Chen's reply. Only a loss
+  // of the human's pieces identifies Chen's capture (including en passant).
+  const white=after.human==='white';
+  const count=s=>s.pieces.filter(p=>p && (p===p.toUpperCase())===white).length;
   if(after.outcome){mood(after.outcome.includes('Chen wins')?'win':after.outcome.includes('You win')?'loss':'idle', after.outcome.includes('Chen wins')?'Nya! That was a lovely little hunt.':after.outcome.includes('You win')?'Mrrp. Rematch?':'A peaceful little truce.');}
   else if(after.check)mood('check','Check! Did you see that paw coming?');
   else if(before && count(after)<count(before))mood('pounce','Pounce! A little treasure for the tails.');
@@ -82,7 +85,7 @@ function render() {
   $('status').textContent=state.outcome || (state.side===state.human ? 'Your move'+(state.check?' — check!':'.') : 'Chen to move.');
   $('moves').replaceChildren();
   if (!state.moves.length) $('moves').textContent='The board is all yours.';
-  for(let i=0;i<state.moves.length;i+=2){const row=document.createElement('div');row.className='move-row';for(const text of [i/2+1+'.',state.moves[i],state.moves[i+1]||'']){const span=document.createElement('span');span.textContent=text;row.append(span);}$('moves').append(row);}
+  for(let i=0;i<state.moves.length;i+=2){const row=document.createElement('div');row.className='move-row';for(const text of [i/2+1+'.',state.san_moves?.[i]||state.moves[i],state.san_moves?.[i+1]||state.moves[i+1]||'']){const span=document.createElement('span');span.textContent=text;row.append(span);}$('moves').append(row);}
   $('moves').scrollTop=$('moves').scrollHeight;
   const t=state.telemetry;
   const horizon=t?.drowsy ? `Explored ply ${t.drowsy.deepest_ply}` : `Depth ${t?.depth}`;
@@ -135,6 +138,11 @@ fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').inner
     // Preserve games saved before the distracted backend was named Drowsy.
     if(state.backend==='catnip') state.backend='drowsy';
     if(state.telemetry?.catnip){state.telemetry.drowsy=state.telemetry.catnip;delete state.telemetry.catnip;}
+    if(state.milliseconds===3000) state.milliseconds=1000;
+    if(state.san_moves?.length!==state.moves.length){
+      const replay=await request('/api/state',{moves:state.moves,side:state.human,level:state.level});
+      state.san_moves=replay.san_moves;
+    }
     save();
     $('backend').value=state.backend||'serious';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);drowsyControls();
     flipped=state.human==='black';$('side').value=state.human;$('level').value=state.level;$('level-value').textContent=state.level;$('time').value=state.milliseconds;

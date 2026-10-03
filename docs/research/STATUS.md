@@ -21,7 +21,10 @@ It creates a fresh TT per request, so the frozen UCI match rating does not descr
 its strength. It is live at [iskamag.com/games/play-with-chen](https://iskamag.com/games/play-with-chen/),
 through nginx and a supervised reverse SSH tunnel to this machine. Public browser
 QA verifies both backends, a real 1000 ms serious move, saved Drowsy controls,
-asset hashes and mobile layout. The existing homepage hash is unchanged; the
+asset hashes and mobile layout. A later website update adds six independent
+single-threaded search workers with a shared eight-job queue, SAN move notation,
+correct Chen-only capture reactions, and removal of the 3-second menu choice.
+API checks exercise overlapping searches, queued timing and cancellation. The existing homepage hash is unchanged; the
 [runbook](../../deployment/README.md) records service and rollback boundaries.
 
 The explicitly requested [δ–θ Drowsy toy](../DROWSY_CHEN.md) is now implemented as

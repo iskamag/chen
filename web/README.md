@@ -26,15 +26,24 @@ the Drowsy name; games saved under the former toy name migrate without losing
 the board or settings. **Catnip Chen** is reserved for the ambitious
 [batched-search candidate](../docs/research/CATNIP_SEARCH.md), currently design only.
 
+The move list uses standard algebraic notation, including `O-O` / `O-O-O`,
+captures, promotions and check/mate marks. Previous saved histories are
+reconstructed on reload. Chen's pounce reaction celebrates her own captures.
+The time menu offers 0.1, 0.5, 1 and 5 seconds; old 3-second settings become 1 second.
+
 Promotion offers all four pieces. Threefold repetition and the fifty-move rule
 are automatically claimed. The board is keyboard operable using Tab and Enter.
 
 Each browser tab owns its game, persisted in session storage. The API legally
 replays the submitted move history with Chen before searching. Requests enter a
-queue of at most eight waiting searches, with one native CPU search active. The
+shared queue of at most eight waiting searches. Six independent search workers
+let friends play concurrently; each game's engine search uses one thread and its
+own position, history and TT. Set `CHEN_WEB_WORKERS=1..6` to reduce concurrency.
+HTTP requests use separate short-lived threads, capped at 32 connections. The
 selected time budget starts **inside search**, after queueing and replay. Queue
 wait and actual search time are displayed separately. Cancel stops queued or active
-work; the browser keeps its previous position. Results expire after two minutes.
+work; the browser keeps its previous position. Completed results are retained up to two minutes from submission, subject to
+the 64-result cap.
 
 The server binds to loopback. Set `CHEN_WEB_PORT` to choose another port. Ctrl+C
 stops it. This Linux checkpoint uses `/dev/urandom` for opaque job identifiers.
