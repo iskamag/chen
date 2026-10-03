@@ -1,0 +1,115 @@
+{
+  "kind": "chen_restricted_exchange_convergence_v1",
+  "protocol": {
+    "kind": "chen_restricted_exchange_convergence_v1",
+    "width": 256,
+    "steps": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "typed": [
+      true,
+      false
+    ],
+    "seeds": [
+      6101,
+      6102,
+      6103
+    ],
+    "hpo_seed": 6101,
+    "learning_rates": [
+      0.001,
+      0.0003
+    ],
+    "weight_decays": [
+      0.0,
+      0.0001
+    ],
+    "batch_size": 8,
+    "max_epochs": 200,
+    "min_epochs": 20,
+    "patience": 8,
+    "absolute_improvement_cp": 0.5,
+    "relative_improvement": 0.002,
+    "lr_reductions": 2,
+    "lr_decay": 0.3,
+    "gradient_clip": 1.0,
+    "job_wall_seconds": 1800,
+    "total_wall_seconds": 21600,
+    "max_fits_per_chunk": 2,
+    "chunk_wall_seconds": 3900,
+    "training_loss": "active_closed_action_mean_smooth_L1_correction_scaled_800",
+    "development_primary": "macro_family_root_action_mean_absolute_correction_error_cp",
+    "hpo": "all_four_LR_WD_pairs_per_arm_one_paired_seed_then_best_converged_pair_three_paired_seeds_reuse_screen_seed",
+    "convergence": "minimum_epochs_then_three_plateaus_with_two_LR_decays_no_TEST",
+    "exact_child_control": "same_head_destination_seam_only_not_in_this_training_declaration",
+    "precision": "FP32_weights_activations_autograd_no_AMP_no_quantization",
+    "test_gate": "CLOSED",
+    "teacher_inputs": false,
+    "strategic_value": false
+  },
+  "directory": "/tmp/chen-exchange-learning-20261003.8wxbyhiu/data",
+  "source_sha256": {
+    "int8_inference.py": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9",
+    "value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "models.py": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f",
+    "features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "exchange_study.py": "25d786ade8832d61c56dc2e10be80ebf4606b05fc02be7322f777d1611ba8831",
+    "tactical_operator.py": "636e75320f7517620277db53310e013a56fc1f3a43704fdcdabf3ad3294b8a0e",
+    "tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "exchange_study_data.py": "5ea621c84c6157046809f2a926d6953cf945552f4086e939a88c8fa1ee009eee",
+    "exchange_targets.py": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+    "exchange_model.py": "5e31b13e41d1bf4f3527c9f29becdb340ae9b392135bc924f702f3207575a317"
+  },
+  "data_sha256": {
+    "admission.json": "cb183a2864ebfee71461fbb49247fdc2de96d8c292bb056ebe12a0544fc30909",
+    "pack-train.pt": "f3ba1f230cded8df0b9e45f338c64aee1d14e3f1cac681c42ba9a52eada31fba",
+    "pack-dev.pt": "ce957d6af5786bdd134b0f986e96099b9900f7886dac52c41855d92a022635a1",
+    "labels-train.json": "c6bb261ee408938efc2708dc2b00ce0703335f17a352fd5c25a0c82ec7c39ba4",
+    "labels-dev.json": "ae9ab04063e1718d11ff88cfac1a9f30e525f8c6055afe0154bd6905f30bd786"
+  },
+  "resource_estimate": {
+    "model": {
+      "parameters": 1067521,
+      "processor_parameters": 1055488,
+      "stored_fp32_parameter_bytes": 4270084,
+      "allocated": false,
+      "measured_latency": null
+    },
+    "train_roots": 910,
+    "dev_roots": 229,
+    "train_closed_actions": 2783,
+    "batch_size": 8,
+    "max_active_capacity_edges": 468,
+    "max_legal_actions": 68,
+    "one_step_forward_epoch_structural_MACs": 124346679296,
+    "max_edge_expanded_fp32_tensor_bytes": 3833856,
+    "edge_state_8_steps_8_saved_tensors_structural_bytes": 245366784,
+    "optimizer_parameter_gradient_adam_arrays_bytes": 17080336,
+    "planned_hpo_fits": 32,
+    "planned_additional_selected_seed_fits": 16,
+    "reused_selected_hpo_seed_fits": 8,
+    "total_wall_safety_seconds": 21600,
+    "job_wall_safety_seconds": 1800,
+    "measured_time": null,
+    "convergence_guaranteed": false,
+    "resource_stop_means_unconverged": true
+  },
+  "runtime_requirements": {
+    "torch": "2.10.0+rocm7.0",
+    "gfx": "gfx1030",
+    "hip_version": 70051831,
+    "hip_provider_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81"
+  },
+  "execution_status": "not_started",
+  "test_gate": "CLOSED",
+  "quality_claim": false,
+  "parent_declaration_sha256": "bfa00679b95048bc15b18124fa2c73bba6f5be137d591c2e475d4c62f11b568e"
+}

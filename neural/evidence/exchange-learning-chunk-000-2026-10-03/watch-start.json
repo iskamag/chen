@@ -1,0 +1,23 @@
+{
+  "kind": "exchange_fit_group_start",
+  "pid": 10593,
+  "pgid": 10593,
+  "argv": [
+    "/usr/local/bin/python",
+    "-m",
+    "neural.exchange_study",
+    "run",
+    "--declaration",
+    "/tmp/chen-exchange-learning-20261003.8wxbyhiu/control/execution-declaration.json",
+    "--sha256",
+    "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+    "--output",
+    "/tmp/chen-exchange-learning-20261003.8wxbyhiu/run",
+    "--max-fits",
+    "2"
+  ],
+  "declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+  "started_utc": "2026-10-03T11:29:38Z",
+  "inner_seconds": 3900,
+  "outer_seconds": 3960
+}

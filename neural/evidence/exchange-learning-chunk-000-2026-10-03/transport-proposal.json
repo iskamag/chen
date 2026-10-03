@@ -1,0 +1,188 @@
+{
+  "runtime": "/tmp/chen-exchange-learning-20261003.8wxbyhiu",
+  "parent_declaration_sha256": "bfa00679b95048bc15b18124fa2c73bba6f5be137d591c2e475d4c62f11b568e",
+  "execution_declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+  "source_sha256": {
+    "int8_inference.py": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9",
+    "value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "models.py": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f",
+    "features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "exchange_study.py": "25d786ade8832d61c56dc2e10be80ebf4606b05fc02be7322f777d1611ba8831",
+    "tactical_operator.py": "636e75320f7517620277db53310e013a56fc1f3a43704fdcdabf3ad3294b8a0e",
+    "tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "exchange_study_data.py": "5ea621c84c6157046809f2a926d6953cf945552f4086e939a88c8fa1ee009eee",
+    "exchange_targets.py": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+    "exchange_model.py": "5e31b13e41d1bf4f3527c9f29becdb340ae9b392135bc924f702f3207575a317"
+  },
+  "data_sha256": {
+    "admission.json": "cb183a2864ebfee71461fbb49247fdc2de96d8c292bb056ebe12a0544fc30909",
+    "pack-train.pt": "f3ba1f230cded8df0b9e45f338c64aee1d14e3f1cac681c42ba9a52eada31fba",
+    "pack-dev.pt": "ce957d6af5786bdd134b0f986e96099b9900f7886dac52c41855d92a022635a1",
+    "labels-train.json": "c6bb261ee408938efc2708dc2b00ce0703335f17a352fd5c25a0c82ec7c39ba4",
+    "labels-dev.json": "ae9ab04063e1718d11ff88cfac1a9f30e525f8c6055afe0154bd6905f30bd786"
+  },
+  "payloads": {
+    "closure/neural/diamonds.py": {
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+      "bytes": 18005
+    },
+    "closure/neural/dynamics.py": {
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+      "bytes": 23362
+    },
+    "closure/neural/exchange_model.py": {
+      "sha256": "5e31b13e41d1bf4f3527c9f29becdb340ae9b392135bc924f702f3207575a317",
+      "bytes": 6802
+    },
+    "closure/neural/exchange_study.py": {
+      "sha256": "25d786ade8832d61c56dc2e10be80ebf4606b05fc02be7322f777d1611ba8831",
+      "bytes": 25717
+    },
+    "closure/neural/exchange_study_data.py": {
+      "sha256": "5ea621c84c6157046809f2a926d6953cf945552f4086e939a88c8fa1ee009eee",
+      "bytes": 19999
+    },
+    "closure/neural/exchange_targets.py": {
+      "sha256": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+      "bytes": 14489
+    },
+    "closure/neural/features.py": {
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+      "bytes": 4380
+    },
+    "closure/neural/int8_inference.py": {
+      "sha256": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9",
+      "bytes": 17643
+    },
+    "closure/neural/models.py": {
+      "sha256": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f",
+      "bytes": 11564
+    },
+    "closure/neural/score_frames.py": {
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+      "bytes": 6675
+    },
+    "closure/neural/semantic_strategy.py": {
+      "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+      "bytes": 24381
+    },
+    "closure/neural/strategic_transport.py": {
+      "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+      "bytes": 16838
+    },
+    "closure/neural/tactical_inputs.py": {
+      "sha256": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+      "bytes": 18206
+    },
+    "closure/neural/tactical_operator.py": {
+      "sha256": "636e75320f7517620277db53310e013a56fc1f3a43704fdcdabf3ad3294b8a0e",
+      "bytes": 21816
+    },
+    "closure/neural/value_heads.py": {
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+      "bytes": 10832
+    },
+    "control/cpu-preflight.py": {
+      "sha256": "43c16e1dffa2a3d04cbf65e2dd0383270117525ce380c3cb34f503edb86e0575",
+      "bytes": 1249
+    },
+    "control/execution-declaration.json": {
+      "sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+      "bytes": 4712
+    },
+    "control/host-reviewed-declaration.json": {
+      "sha256": "bfa00679b95048bc15b18124fa2c73bba6f5be137d591c2e475d4c62f11b568e",
+      "bytes": 4647
+    },
+    "control/watch-exchange.py": {
+      "sha256": "6f47064965d56d72bf1616bff9e25cf34fe22098e1666620c25233f87315ff00",
+      "bytes": 1736
+    },
+    "data/admission.json": {
+      "sha256": "cb183a2864ebfee71461fbb49247fdc2de96d8c292bb056ebe12a0544fc30909",
+      "bytes": 36590
+    },
+    "data/labels-dev.json": {
+      "sha256": "ae9ab04063e1718d11ff88cfac1a9f30e525f8c6055afe0154bd6905f30bd786",
+      "bytes": 997
+    },
+    "data/labels-train.json": {
+      "sha256": "c6bb261ee408938efc2708dc2b00ce0703335f17a352fd5c25a0c82ec7c39ba4",
+      "bytes": 1030
+    },
+    "data/pack-dev.pt": {
+      "sha256": "ce957d6af5786bdd134b0f986e96099b9900f7886dac52c41855d92a022635a1",
+      "bytes": 4968546
+    },
+    "data/pack-train.pt": {
+      "sha256": "f3ba1f230cded8df0b9e45f338c64aee1d14e3f1cac681c42ba9a52eada31fba",
+      "bytes": 19958407
+    },
+    "deps/chess/__init__.py": {
+      "sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+      "bytes": 150843
+    },
+    "deps/chess/engine.py": {
+      "sha256": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+      "bytes": 127685
+    },
+    "deps/chess/gaviota.py": {
+      "sha256": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+      "bytes": 59324
+    },
+    "deps/chess/pgn.py": {
+      "sha256": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+      "bytes": 60466
+    },
+    "deps/chess/polyglot.py": {
+      "sha256": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+      "bytes": 27418
+    },
+    "deps/chess/py.typed": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "deps/chess/svg.py": {
+      "sha256": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+      "bytes": 32835
+    },
+    "deps/chess/syzygy.py": {
+      "sha256": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+      "bytes": 69418
+    },
+    "deps/chess/variant.py": {
+      "sha256": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+      "bytes": 46221
+    },
+    "deps/python-chess-LICENSE.txt": {
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147
+    }
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "OMP_NUM_THREADS=1",
+    "PYTHONPATH=/tmp/chen-exchange-learning-20261003.8wxbyhiu/closure:/tmp/chen-exchange-learning-20261003.8wxbyhiu/deps",
+    "taskset",
+    "-c",
+    "3",
+    "python",
+    "/tmp/chen-exchange-learning-20261003.8wxbyhiu/control/watch-exchange.py",
+    "/tmp/chen-exchange-learning-20261003.8wxbyhiu"
+  ],
+  "bounds": {
+    "inner": 3900,
+    "outer": 3960,
+    "max_fits": 2
+  },
+  "test_payload_present": false
+}

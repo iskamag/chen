@@ -44,7 +44,16 @@ The declaration pins the local relative-import source closure, TRAIN/DEV packs a
 
 Execution is chunked into at most two fits and3900s per group. A source-bound journal records active jobs, immutable retired report/checkpoint hashes, aggregate active wall time and the next fit. It resumes **between completed fits only**; interrupted active jobs reject automatic restart. Every group finishes all GPU fences and emits a terminal record before another hardware owner may enter. An external owner must also impose a process-group watchdog (inner3900s, outer3960s maximum), retain partial failures and verify process retirement. Waiting between groups is not counted as training time. HPO training timing cannot be attributed to isolated hardware when another GPU job overlaps.
 
-CPU preparation, seven mechanics fixtures plus a chunk-schedule fixture, and actual label collection are complete. **No study training, TEST evaluation or learned-quality claim has occurred.** After frozen convergence runs, a separately declared evaluation should compare restricted-task accuracy against compute/inference cost; strategic complete-root decisions and same-time chess search require their own fresh evidence.
+CPU preparation and eight focused mechanics fixtures are complete. The first declared GPU group has retired two one-step typed HPO fits (seed 6101, LR 0.001), with TEST still closed. Their complete source/control/checkpoint/learning-curve archive is `neural/evidence/exchange-learning-chunk-000-2026-10-03`.
+
+| Weight decay | Plateau epoch | Retained best epoch | Best DEV macro-family MAE | Final DEV macro-family MAE | Best nonzero-family MAE |
+|---|---:|---:|---:|---:|---:|
+| 0 | 39 | 23 | 12.705 | 15.304 | 22.354 |
+| 0.0001 | 43 | 27 | 13.506 | 15.709 | 25.107 |
+
+The immediate-material DEV baseline is 129.292 macro-family MAE and 414.138 nonzero-family MAE. These are restricted-task DEV tuning results, not chess strength or an architecture comparison. Dependency rounds 3–4 remain harder (about 70.5 action MAE across 70 DEV targets); rounds 5+ contain only four DEV targets. Both checkpoints contain 1,067,521 finite parameters and passed cold schema/hash admission. CPU mechanical replay confirmed all 82 plateau decisions and best/final epoch bindings without rerunning prediction quality.
+
+The two fits took 35.50/38.58 seconds; the owned group retired in 81.01 seconds with its process group absent. Two LR 0.0003 controls are next in the frozen queue. **No arm has completed all four HPO controls; no hyperparameter or architecture winner has been selected, and TEST has not been labeled or evaluated.** After frozen convergence runs, a separately declared evaluation should compare restricted-task accuracy against compute/inference cost; strategic complete-root decisions and same-time chess search require their own fresh evidence.
 
 ```sh
 # CPU admission/label/pack commands are separate; TEST has no label command.
