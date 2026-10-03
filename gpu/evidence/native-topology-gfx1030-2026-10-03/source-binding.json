@@ -1,0 +1,23 @@
+{
+  "container_stage": "/tmp/chen-native-topology-20261003-_ooq6w3i",
+  "git_head": "ba3e1516b8c75a2465368a97b1906a043dc9fc96",
+  "host_stage": "/tmp/chen-native-topology-20261003-_ooq6w3i",
+  "neural_reference_runtime": "/tmp/chen-symbolic-final-20261003-jbc426u2",
+  "probe_sha256": "4a9913aa35ed8433033c8a24df248bda828f4724ed38744206f9b545e55f1200",
+  "scope": "New topology plus unchanged ABI1; focused correctness, no training/strength/latency claim",
+  "source_sha256": {
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "702020d45809c243f7c63f6742d26a636bfcb1e95854b8828cfaa9f2b6c5bf73",
+    "gpu/chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+    "gpu/chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+    "gpu/chen_symbolic.h": "efbc23e40fdc4d69654cb20b4b0c850ff610bbd80f87f713b4b658b254fcf3d1",
+    "gpu/chen_symbolic.inc": "5afc9f0c25374ae1a27bc06eb23bee0d2de2b586c93853ad2e74bf8c5a350823",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+  }
+}

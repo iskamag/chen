@@ -1,0 +1,41 @@
+{
+  "abi1_header_preserved_after_additive_section_removal": true,
+  "abi1_implementation_preserved_after_additive_section_removal": true,
+  "abi1_topology_channels_checked": 10752,
+  "canonical_source_masks_checked": 48320,
+  "checker_masks_checked": 755,
+  "execution_runtime": {
+    "device": {
+      "architecture": "gfx1030",
+      "name": "AMD Radeon Graphics",
+      "override": false,
+      "rocm_build": "7.0.51831",
+      "torch_version": "2.10.0+rocm7.0"
+    },
+    "kind": "topology_admission",
+    "library_sha256": "6b9cda01670239318cc282bbe5702e11f2a26ac7de1bc396b52d87f3eda639ea",
+    "runtime": {
+      "hipRuntimeGetVersion": 70051831,
+      "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+      "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+      "symbol": "hipRuntimeGetVersion",
+      "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so"
+    },
+    "torch_hip": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "identity_entries_checked": 2265,
+  "limits": [
+    "Correctness fixtures, not exhaustive legal-state coverage",
+    "No timing, training, neural sparse-consumer integration or strength claim",
+    "Runtime faults after output dispatch may partially write payload; must discard"
+  ],
+  "native_compiler": "HIP7.2.53211-97f5574fe2 Clang22 roc7.2.4",
+  "oracle_rows": 755,
+  "pin_planes_checked": 1510,
+  "pinner_entries_checked": 48320,
+  "source_binding_current_checkout_verified": true,
+  "status": "PASS",
+  "tests": 4,
+  "unchanged_payload_rejections": 12
+}

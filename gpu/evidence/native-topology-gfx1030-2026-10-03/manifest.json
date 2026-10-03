@@ -1,0 +1,17 @@
+{
+  "payload_sha256": {
+    "README.md": "57e8020c729c2c18c6024c4493bd92f8bdb16203a9e6493c8e6ace5e1aa79be4",
+    "build.json": "6a19ba7794d778b18298d3c5d67f2e15a993fda8fde483b51ed4da45420496c6",
+    "compiler.txt": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+    "declaration.json": "995226bd1e224bb0b17cb5e5cbe0598f96ec9d8fb8f44647be15ee1dbdd98cf4",
+    "oracle-binding.json": "6af753fec279045422867e031bb47a72078ca1a5c2927c184968fcde0381807f",
+    "retirement.txt": "8c64dcc20c1ee9d6ad3e6f985cdafa7320ebc12a9d4e434c5593ef778c1c249f",
+    "source-binding.json": "f59aa89fb407b3b01c5229d121a1ef829b216fb6a831ad256140bb29e11309e0",
+    "stderr.txt": "0186bc891b2752970a5c74d54248cfaaea13c8cd736ce68139b9ef359cae5da6",
+    "stdout.txt": "714f946db421d2e18dc05c3f1c3b26a825f9cc8ca226cc0ddb06ed375c142807",
+    "summary.json": "633b1f32d2979c0e2b0dae3a02bc1a892579a420854c7281ae6d3292bffb1ebe",
+    "terminal.json": "1b53d938f49d2400336c4ad234a27d5706d2e1cedc106dcbab568795b5c650ed"
+  },
+  "schema": 1,
+  "scope": "focused native topology correctness; no performance or model claim"
+}

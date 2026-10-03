@@ -1,0 +1,5 @@
+{"kind": "topology_admission", "library_sha256": "6b9cda01670239318cc282bbe5702e11f2a26ac7de1bc396b52d87f3eda639ea", "torch_version": "2.10.0+rocm7.0", "torch_hip": "7.0.51831", "device": {"architecture": "gfx1030", "name": "AMD Radeon Graphics", "torch_version": "2.10.0+rocm7.0", "rocm_build": "7.0.51831", "override": false}, "runtime": {"path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so", "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81", "hipRuntimeGetVersion": 70051831, "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so", "symbol": "hipRuntimeGetVersion"}}
+{"kind": "topology_test", "test": "test_admission_output_capacity_and_empty_range", "oracle_rows": 1}
+{"kind": "topology_test", "test": "test_deep_history_snapshot_reuse_and_unchanged_search_work", "oracle_rows": 2}
+{"kind": "topology_test", "test": "test_reachable_roots_and_complete_children_with_special_transitions", "oracle_rows": 728}
+{"kind": "topology_test", "test": "test_special_and_mirrored_full_masks_pinners_blockers_and_abi1", "oracle_rows": 24}

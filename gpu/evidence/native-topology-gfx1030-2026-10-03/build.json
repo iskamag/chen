@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "taskset",
+    "-c",
+    "3",
+    "bash",
+    "/tmp/chen-native-topology-20261003-_ooq6w3i/gpu/build.sh",
+    "/tmp/chen-native-topology-20261003-_ooq6w3i/libchen_gpu_topology.so"
+  ],
+  "exit_code": 0,
+  "flags": [
+    "-O3",
+    "-std=c++17",
+    "--offload-arch=gfx1030",
+    "-fPIC",
+    "-shared",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "library_sha256": "6b9cda01670239318cc282bbe5702e11f2a26ac7de1bc396b52d87f3eda639ea",
+  "record": "Build command and terminal exit observed before declaration; metadata recorded during packaging",
+  "stderr": "empty",
+  "stdout": "empty"
+}

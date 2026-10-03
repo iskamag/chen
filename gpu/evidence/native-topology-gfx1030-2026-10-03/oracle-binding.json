@@ -1,0 +1,7 @@
+{
+  "binding_collection": "CPU-only post-run package identity; package unchanged, no GPU execution",
+  "oracle_source_path": "/tmp/chen-gpu/chess/__init__.py",
+  "oracle_source_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "python_chess_version": "1.11.2",
+  "python_version": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]"
+}
