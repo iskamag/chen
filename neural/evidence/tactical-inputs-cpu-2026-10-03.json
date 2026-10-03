@@ -1,0 +1,80 @@
+{
+  "schema": "chen_tactical_inputs_cpu_mechanics_v1",
+  "recorded_utc": "2026-10-03T09:55:03.603582+00:00",
+  "source_sha256": {
+    "neural/tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "neural/tests/test_tactical_inputs.py": "afbda1a0bbfa0903ecc40ad93f1469702d7eec5561fe6aa06bf6529ea6772701",
+    "neural/tactical_operator.py": "636e75320f7517620277db53310e013a56fc1f3a43704fdcdabf3ad3294b8a0e",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "torch": "2.10.0+rocm7.0",
+    "python_chess": "1.11.2",
+    "container": "cpp-rocm",
+    "closure": "/tmp/chen-tactical-inputs-20261003-dmwpk7v8",
+    "cpu_affinity": [
+      3
+    ],
+    "gpu_visibility": {
+      "HIP_VISIBLE_DEVICES": "",
+      "ROCR_VISIBLE_DEVICES": "",
+      "CUDA_VISIBLE_DEVICES": ""
+    },
+    "omp_num_threads": 1
+  },
+  "command": "docker exec -w /tmp/chen-tactical-inputs-20261003-dmwpk7v8 -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONPATH=/tmp/chen-gpu -e HIP_VISIBLE_DEVICES= -e ROCR_VISIBLE_DEVICES= -e CUDA_VISIBLE_DEVICES= -e OMP_NUM_THREADS=1 -e CHEN_SYNTHETIC_SHARD=/tmp/chen-tactical-inputs-20261003-dmwpk7v8/families.jsonl.gz cpp-rocm timeout 90s taskset -c 3 python -m unittest neural.tests.test_tactical_inputs -v",
+  "observed": {
+    "exec_session": 12826,
+    "exit_code": 0,
+    "tests": 8,
+    "skipped": 0,
+    "unittest_body_seconds": 0.175,
+    "summary": "OK"
+  },
+  "synthetic_ingress": {
+    "path": "/home/iskam/src/vibe/chen/docs/research/evidence/synthetic-mechanics-2026-10-03/families.jsonl.gz",
+    "sha256": "b876235575681f742db2683efc5e87c7c3f40618a180c03cc89057f75133d5f1",
+    "family_id": "0410c499fd8babb32f62320673f842ce748b7b6b4a4f9895e0b8a41ee8155eba",
+    "split": "train",
+    "roots": [
+      {
+        "ply": 12,
+        "legal_actions": 27
+      },
+      {
+        "ply": 30,
+        "legal_actions": 28
+      },
+      {
+        "ply": 72,
+        "legal_actions": 25
+      }
+    ],
+    "checks": [
+      "full_prefix_legal_replay",
+      "source_attacks",
+      "pins",
+      "checkers",
+      "position_hash",
+      "retained_previous_hashes",
+      "all_four_history_counters",
+      "complete_ascending_action_ids",
+      "all_changed_square_edits",
+      "capture_EP_castle_victim_effects",
+      "parent_material_priors",
+      "small_CPU_sparse_forward"
+    ]
+  },
+  "scope": {
+    "reference_ingress": true,
+    "actual_cpu_forward_backward": true,
+    "native_topology_tensor_wiring": false,
+    "gpu_execution": false,
+    "optimizer_steps": 0,
+    "teacher_calls": 0,
+    "heldout_read": false,
+    "trained_model": false,
+    "strength_claim": null
+  }
+}

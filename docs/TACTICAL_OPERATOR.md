@@ -110,8 +110,11 @@ negation and mapping, admission failures, and complete python-chess legal sets
 including black orientation, EP, castling and promotion. Forward and backward
 are checked without host scalar extraction. No optimizer steps are performed.
 
-Next work requires a source-bound native topology emitter, independent edge
-oracle, declared teacher/data protocol and bounded learning study. First train
+The [exact CPU replay adapter](TACTICAL_INPUTS.md) now supplies complete sparse
+relations, action effects and causal material priors under a versioned schema.
+Its compact topology words match the independent native ABI, but device-side
+tensor emission and joint state/history/action ownership remain an integration
+boundary. Next work requires a declared teacher/data protocol and bounded learning study. First train
 this processor and the static exact-child reference, with trace-loss and
 recurrence controls. Persistent move-event memory and learned search-aware
 refresh are extensions of this same processor after a quality signal, not
