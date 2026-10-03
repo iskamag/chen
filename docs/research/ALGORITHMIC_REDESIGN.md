@@ -257,8 +257,10 @@ controls for actual model/search batch shapes after a quality winner exists.
 
 2FFS remains a distinct stochastic-tree research variant. Its slow-oracle and
 bias assumptions do not turn deterministic learned scores into confidence
-certificates. Lean work should next target completed-bound/abort composition,
-dependency cancellation and topology repair under explicit premises. Existing
+certificates. The [completed-bound composition model](SEARCH_BOUND_CONTRACT.md)
+now certifies score negation, cutoff prerequisites, full root coverage and
+abort publication under explicit premises. Dependency cancellation and topology
+repair remain further obligations. Existing
 cache/selection certificates do not prove chess-policy optimality or GPU latency.
 
 Ownership: main worktree owns GPU reference/search contracts and integration;
