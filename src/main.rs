@@ -1,6 +1,7 @@
 use chen::{
     Position, SearchConfig, SearchLimits, Searcher,
     backend::{CpuBatchEvaluator, SearchBackend},
+    catnip::{CatnipConfig, CatnipSearch},
     core::perft,
     eval::evaluator,
     frontier::{FrontierConfig, FrontierSearch},
@@ -149,9 +150,16 @@ fn make_backend(
     config: SearchConfig,
     frontier: FrontierConfig,
     selective: SelectiveConfig,
+    catnip: CatnipConfig,
 ) -> Result<Box<dyn SearchBackend>, String> {
     match name {
         "alphabeta" => Ok(Box::new(Searcher::new(evaluator(eval)?, config))),
+        "catnip" => {
+            if eval != "tapered" {
+                return Err("Catnip owns the tapered evaluator; set Eval to tapered".into());
+            }
+            Ok(Box::new(CatnipSearch::new(catnip)?))
+        }
         "cpu-selective" => {
             if eval == "neural" {
                 return Err("neural evaluator requires hip-selective".into());
@@ -282,6 +290,7 @@ fn uci() -> Result<(), String> {
     let mut backend_name = "alphabeta".to_string();
     let mut frontier_config = FrontierConfig::default();
     let mut selective_config = SelectiveConfig::default();
+    let mut catnip_config = CatnipConfig::default();
     let mut level = 20;
     let mut engine = Some(make_backend(
         &backend_name,
@@ -289,6 +298,7 @@ fn uci() -> Result<(), String> {
         config.clone(),
         frontier_config.clone(),
         selective_config,
+        catnip_config,
     )?);
     let mut job: Option<Job> = None;
     for line in io::stdin().lock().lines() {
@@ -311,8 +321,10 @@ fn uci() -> Result<(), String> {
                 output("option name PVS type check default false");
                 output("option name AspirationWindow type spin default 0 min 0 max 32000");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool var hip-root-retry",
+                    "option name Backend type combo default alphabeta var alphabeta var catnip var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool var hip-root-retry",
                 );
+                output("option name CatnipDelta type spin default 80 min 0 max 32000");
+                output("option name CatnipTheta type string default 0.55");
                 output("option name SelectiveBatch type spin default 32 min 1 max 256");
                 output("option name SelectiveCandidates type spin default 1024 min 1 max 1024");
                 output("option name BatchSize type spin default 4096 min 1 max 65536");
@@ -348,6 +360,7 @@ fn uci() -> Result<(), String> {
                     let mut next_backend = backend_name.clone();
                     let mut next_frontier = frontier_config.clone();
                     let mut next_selective = selective_config;
+                    let mut next_catnip = catnip_config;
                     let mut next_level = level;
                     let valid = match name.as_str() {
                         "level" => value
@@ -370,6 +383,7 @@ fn uci() -> Result<(), String> {
                             if matches!(
                                 value.as_str(),
                                 "alphabeta"
+                                    | "catnip"
                                     | "cpu-frontier"
                                     | "hip-frontier"
                                     | "cpu-resident"
@@ -384,6 +398,18 @@ fn uci() -> Result<(), String> {
                             next_backend = value;
                             true
                         }
+                        "catnipdelta" => value
+                            .parse::<i32>()
+                            .ok()
+                            .filter(|v| (0..=32000).contains(v))
+                            .map(|v| next_catnip.delta_cp = v)
+                            .is_some(),
+                        "catniptheta" => value
+                            .parse::<f32>()
+                            .ok()
+                            .filter(|v| !v.is_nan() && *v >= 0.0)
+                            .map(|v| next_catnip.theta = v)
+                            .is_some(),
                         "selectivebatch" => value
                             .parse::<u32>()
                             .ok()
@@ -438,6 +464,7 @@ fn uci() -> Result<(), String> {
                             next.clone(),
                             next_frontier.clone(),
                             next_selective,
+                            next_catnip,
                         ) {
                             Ok(created) => {
                                 config = next;
@@ -445,6 +472,7 @@ fn uci() -> Result<(), String> {
                                 backend_name = next_backend;
                                 frontier_config = next_frontier;
                                 selective_config = next_selective;
+                                catnip_config = next_catnip;
                                 level = next_level;
                                 engine = Some(created);
                             }
@@ -454,6 +482,7 @@ fn uci() -> Result<(), String> {
                                 backend_name = next_backend;
                                 frontier_config = next_frontier;
                                 selective_config = next_selective;
+                                catnip_config = next_catnip;
                                 level = next_level;
                                 engine = None;
                                 output(format!("info string backend creation failed: {error}"));
@@ -489,6 +518,7 @@ fn uci() -> Result<(), String> {
                                 config.clone(),
                                 frontier_config.clone(),
                                 selective_config,
+                                catnip_config,
                             )?,
                         };
                         let stop = searcher.stop_handle();
@@ -503,6 +533,17 @@ fn uci() -> Result<(), String> {
                                     #[cfg(feature = "hip")]
                                     if let Some(stats) = searcher.bounded_stats() {
                                         output(format!("info string bounded {}", stats.to_json()));
+                                    }
+                                    if let Some(stats) = searcher.catnip_stats() {
+                                        output(format!(
+                                            "info string catnip fail-meow {} fail-zoomies {} ignored-boring {} noticed-drift {} explored-ply {} walkers {}",
+                                            stats.fail_meow,
+                                            stats.fail_zoomies,
+                                            stats.ignored_boring,
+                                            stats.noticed_drift,
+                                            stats.deepest_ply,
+                                            stats.peak_walkers
+                                        ));
                                     }
                                     if let Some(stats) = searcher.root_pool_stats() {
                                         output(format!("info string root_pool {stats}"));
@@ -634,6 +675,7 @@ fn bench(args: &[String]) -> Result<(), String> {
     let mut backend_name = "alphabeta".to_string();
     let mut frontier_config = FrontierConfig::default();
     let mut selective_config = SelectiveConfig::default();
+    let mut catnip_config = CatnipConfig::default();
     let mut depth = 4;
     let mut node_limit = None;
     let mut time_limit = None;
@@ -657,7 +699,9 @@ fn bench(args: &[String]) -> Result<(), String> {
             | "--max-positions"
             | "--selective-batch"
             | "--aspiration"
-            | "--selective-candidates" => {
+            | "--selective-candidates"
+            | "--catnip-delta"
+            | "--catnip-theta" => {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
@@ -673,6 +717,13 @@ fn bench(args: &[String]) -> Result<(), String> {
                     }
                     "--nodes" => {
                         node_limit = Some(value.parse::<u64>().map_err(|_| "invalid nodes")?)
+                    }
+                    "--catnip-delta" => {
+                        catnip_config.delta_cp =
+                            value.parse().map_err(|_| "invalid Catnip delta")?
+                    }
+                    "--catnip-theta" => {
+                        catnip_config.theta = value.parse().map_err(|_| "invalid Catnip theta")?
                     }
                     "--eval" => eval = value.clone(),
                     "--backend" => backend_name = value.clone(),
@@ -729,6 +780,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             config.clone(),
             frontier_config.clone(),
             selective_config,
+            catnip_config,
         )?;
         let result = searcher.search(
             &mut p,
