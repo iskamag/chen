@@ -1,0 +1,7 @@
+{
+  "gpu/experiments/root_retry.hip": {
+    "executed_sha256": "a91a37c26372034104869b4d7e959912dcbe86b949be22a09bc2c62fd5e3b43d",
+    "committed_sha256": "c5d167f58ca773831569e52a24f051bca77f6bf683d25da5a7476ed2e8bcebe2",
+    "change": "Comment-only ABI3 label corrected to ABI4 after root review; executed bytes preserved in sources/; no replay or semantic change."
+  }
+}

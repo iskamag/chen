@@ -1,0 +1,1 @@
+Strict compile exit1: sp referenced before its declaration while resetting retry cursor. Removed redundant local assignment; sp is initialized from reset child.stack_pointer immediately below. No GPU execution occurred. Session41996.

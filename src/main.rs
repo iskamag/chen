@@ -70,7 +70,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool|hip-root-retry] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -161,6 +161,18 @@ fn make_backend(
                 eval,
                 selective,
             )?))
+        }
+        "hip-root-retry" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(
+                    chen::hip_root_retry::HipRootRetry::from_environment(eval, config.quiescence)?,
+                ))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
         }
         "hip-root-pool" => {
             #[cfg(all(feature = "hip", target_os = "linux"))]
@@ -299,7 +311,7 @@ fn uci() -> Result<(), String> {
                 output("option name PVS type check default false");
                 output("option name AspirationWindow type spin default 0 min 0 max 32000");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool",
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool var hip-root-retry",
                 );
                 output("option name SelectiveBatch type spin default 32 min 1 max 256");
                 output("option name SelectiveCandidates type spin default 1024 min 1 max 1024");
@@ -366,6 +378,7 @@ fn uci() -> Result<(), String> {
                                     | "hip-selective"
                                     | "hip-bounded"
                                     | "hip-root-pool"
+                                    | "hip-root-retry"
                             ) =>
                         {
                             next_backend = value;
@@ -774,7 +787,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             config.quiescence
                 && matches!(
                     backend_name.as_str(),
-                    "alphabeta" | "hip-bounded" | "hip-root-pool"
+                    "alphabeta" | "hip-bounded" | "hip-root-pool" | "hip-root-retry"
                 ),
             config.move_ordering && backend_name == "alphabeta",
             config.pvs && backend_name == "alphabeta",
