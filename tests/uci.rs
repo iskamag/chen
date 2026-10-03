@@ -67,6 +67,8 @@ fn uci_search_stop_options_and_recovery() {
     engine.send("setoption name Hash value 1");
     engine.send("setoption name Eval value material");
     engine.send("setoption name Quiescence value false");
+    engine.send("setoption name PVS value true");
+    engine.send("setoption name AspirationWindow value 1");
     engine.send("position startpos moves e2e4 e7e5");
     engine.send("go depth 3");
     let best = engine.until("bestmove ");

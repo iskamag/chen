@@ -21,6 +21,10 @@ pub struct SearchConfig {
     pub tt: bool,
     pub quiescence: bool,
     pub move_ordering: bool,
+    /// Scout later moves and re-search only an improving, non-cutting probe.
+    pub pvs: bool,
+    /// Initial iterative-deepening half-window in cp; zero keeps full windows.
+    pub aspiration_window: u16,
     pub hash_mb: usize,
 }
 impl Default for SearchConfig {
@@ -29,9 +33,17 @@ impl Default for SearchConfig {
             tt: true,
             quiescence: true,
             move_ordering: true,
+            pvs: false,
+            aspiration_window: 0,
             hash_mb: 16,
         }
     }
+}
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
+pub struct SearchStats {
+    pub pvs_probes: u64,
+    pub pvs_researches: u64,
+    pub aspiration_retries: u64,
 }
 #[derive(Clone, Debug)]
 pub struct SearchLimits {
@@ -106,6 +118,7 @@ pub struct Searcher {
     history: Vec<u64>,
     killers: [[Option<Move>; 2]; MAX_PLY],
     quiet_history: [[i32; 64]; 64],
+    stats: SearchStats,
 }
 impl Searcher {
     pub fn new(evaluator: Box<dyn Evaluator>, config: SearchConfig) -> Self {
@@ -123,10 +136,14 @@ impl Searcher {
             history: Vec::new(),
             killers: [[None; 2]; MAX_PLY],
             quiet_history: [[0; 64]; 64],
+            stats: SearchStats::default(),
         }
     }
     pub fn config(&self) -> &SearchConfig {
         &self.config
+    }
+    pub fn stats(&self) -> SearchStats {
+        self.stats
     }
     /// Policy changes invalidate scores and ordering state from earlier experiments.
     pub fn set_config(&mut self, config: SearchConfig) {
@@ -167,6 +184,7 @@ impl Searcher {
         self.nodes = 0;
         self.qnodes = 0;
         self.aborted = false;
+        self.stats = SearchStats::default();
         // The caller clears the stop flag before starting a job, avoiding a startup race.
         self.history = history.to_vec();
         self.history.push(p.hash());
@@ -191,8 +209,25 @@ impl Searcher {
         };
         if !moves.is_empty() {
             for depth in 1..=self.limits.depth.clamp(1, 64) {
-                let mut pv = Vec::new();
-                let score = self.negamax(p, depth as i32, 0, -INF, INF, &mut pv);
+                let mut delta = if depth > 1 && self.config.aspiration_window > 0 {
+                    i32::from(self.config.aspiration_window).min(INF)
+                } else {
+                    2 * INF
+                };
+                // Keep the previous completed score as the centre. Both sides
+                // widen geometrically, eventually reaching the full window.
+                // Failed windows and interrupted retries never publish a depth.
+                let (score, pv) = loop {
+                    let alpha = (result.score - delta).max(-INF);
+                    let beta = (result.score + delta).min(INF);
+                    let mut pv = Vec::new();
+                    let score = self.negamax(p, depth as i32, 0, alpha, beta, &mut pv);
+                    if self.aborted || (score > alpha && score < beta) {
+                        break (score, pv);
+                    }
+                    self.stats.aspiration_retries += 1;
+                    delta = (delta * 2).min(2 * INF);
+                };
                 if self.aborted {
                     break;
                 }
@@ -354,13 +389,25 @@ impl Searcher {
         let original_alpha = alpha;
         let mut best = -INF;
         let mut best_move = None;
-        for mv in moves {
+        for (index, mv) in moves.into_iter().enumerate() {
             let quiet = !Self::capture(p, mv) && mv.promotion.is_none();
             let undo = p.make_move(mv);
             self.evaluator.after_make(p, mv);
             self.history.push(p.hash());
             let mut child = Vec::new();
-            let score = -self.negamax(p, depth - 1, ply + 1, -beta, -alpha, &mut child);
+            let score = if self.config.pvs && index > 0 && beta - alpha > 1 {
+                self.stats.pvs_probes += 1;
+                let probe = -self.negamax(p, depth - 1, ply + 1, -alpha - 1, -alpha, &mut child);
+                if !self.aborted && probe > alpha && probe < beta {
+                    self.stats.pvs_researches += 1;
+                    child.clear();
+                    -self.negamax(p, depth - 1, ply + 1, -beta, -alpha, &mut child)
+                } else {
+                    probe
+                }
+            } else {
+                -self.negamax(p, depth - 1, ply + 1, -beta, -alpha, &mut child)
+            };
             self.history.pop();
             p.unmake_move(mv, undo);
             self.evaluator.after_unmake(p, mv);
@@ -484,6 +531,137 @@ fn from_tt(score: i32, ply: usize) -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::eval::{Material, Tapered};
+
+    // Exhaustive finite-horizon oracle: no ordering, TT, PVS or alpha-beta.
+    fn exhaustive(p: &mut Position, depth: i32, ply: i32) -> i32 {
+        let moves = p.legal_moves();
+        if moves.is_empty() {
+            return if p.is_in_check(p.side_to_move()) {
+                -MATE + ply
+            } else {
+                0
+            };
+        }
+        if p.halfmove_clock() >= 100 || p.insufficient_material() {
+            return 0;
+        }
+        if depth == 0 {
+            return Material.evaluate(p);
+        }
+        moves
+            .into_iter()
+            .map(|mv| {
+                let undo = p.make_move(mv);
+                let value = -exhaustive(p, depth - 1, ply + 1);
+                p.unmake_move(mv, undo);
+                value
+            })
+            .max()
+            .unwrap()
+    }
+
+    #[test]
+    fn pvs_windows_match_exhaustive_bounds_and_original_tt_tags() {
+        for fen in [
+            "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "4k3/8/2n5/8/3N4/8/4P3/4K3 w - - 0 1",
+            "7k/P7/8/8/8/8/8/7K w - - 0 1",
+        ] {
+            let mut p = Position::from_fen(fen).unwrap();
+            let before = p;
+            let true_value = exhaustive(&mut p, 2, 0);
+            for pvs in [false, true] {
+                for ordering in [false, true] {
+                    for (alpha, beta, bound) in [
+                        (-INF, INF, Bound::Exact),
+                        (true_value - 2, true_value - 1, Bound::Lower),
+                        (true_value + 1, true_value + 2, Bound::Upper),
+                        (true_value, true_value + 1, Bound::Upper),
+                    ] {
+                        let mut s = Searcher::new(
+                            Box::new(Material),
+                            SearchConfig {
+                                pvs,
+                                move_ordering: ordering,
+                                quiescence: false,
+                                hash_mb: 1,
+                                ..SearchConfig::default()
+                            },
+                        );
+                        s.history.push(p.hash());
+                        let mut pv = Vec::new();
+                        let value = s.negamax(&mut p, 2, 0, alpha, beta, &mut pv);
+                        assert_eq!(p, before);
+                        match bound {
+                            Bound::Exact => assert_eq!(value, true_value),
+                            Bound::Lower => assert!(beta <= value && value <= true_value),
+                            Bound::Upper => assert!(true_value <= value && value <= alpha),
+                        }
+                        assert_eq!(s.table.get(s.tt_key(&p)).unwrap().bound, bound);
+                        if bound == Bound::Exact {
+                            let undo = p.make_move(pv[0]);
+                            assert_eq!(-exhaustive(&mut p, 1, 1), true_value);
+                            p.unmake_move(pv[0], undo);
+                        }
+                        for mv in pv {
+                            assert!(p.legal_moves().contains(&mv));
+                            p.make_move(mv);
+                        }
+                        p = before;
+                    }
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn aspiration_retry_abort_does_not_publish_failed_window() {
+        let config = SearchConfig {
+            pvs: true,
+            aspiration_window: 1,
+            hash_mb: 1,
+            ..SearchConfig::default()
+        };
+        let limits = SearchLimits {
+            depth: 1,
+            nodes: None,
+            time: None,
+        };
+        let mut p = Position::startpos();
+        let before = p;
+        // Determine the exact boundary after one completed failed aspiration
+        // attempt. The next retry must hit its node limit before visiting a node.
+        let mut scout = Searcher::new(Box::new(Tapered), config.clone());
+        let first = scout.search(&mut p, limits, &[], |_| {});
+        let mut pv = Vec::new();
+        let value = scout.negamax(&mut p, 2, 0, first.score - 1, first.score + 1, &mut pv);
+        assert!(value <= first.score - 1);
+        let budget = scout.nodes;
+        let mut s = Searcher::new(Box::new(Tapered), config);
+        let mut publications = Vec::new();
+        let stopped = s.search(
+            &mut p,
+            SearchLimits {
+                depth: 3,
+                nodes: Some(budget),
+                time: None,
+            },
+            &[],
+            |r| publications.push((r.depth, r.score, r.pv.clone())),
+        );
+        assert!(stopped.stopped);
+        assert_eq!(stopped.nodes, budget);
+        assert_eq!(
+            (stopped.depth, stopped.score, stopped.pv),
+            (first.depth, first.score, first.pv)
+        );
+        assert_eq!(publications.len(), 1);
+        assert_eq!(s.stats.aspiration_retries, 1);
+        assert_eq!(p, before);
+        assert_eq!(s.history, vec![p.hash()]);
+    }
+
     #[test]
     fn cached_mate_distance_rebases_at_another_ply() {
         assert_eq!(from_tt(to_tt(MATE - 7, 3), 5), MATE - 9);

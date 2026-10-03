@@ -70,7 +70,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -272,6 +272,8 @@ fn uci() -> Result<(), String> {
                 output("option name UseTT type check default true");
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
+                output("option name PVS type check default false");
+                output("option name AspirationWindow type spin default 0 min 0 max 32000");
                 output(
                     "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective",
                 );
@@ -369,11 +371,18 @@ fn uci() -> Result<(), String> {
                             .filter(|v| (1..=2_000_000).contains(v))
                             .map(|v| next_frontier.max_positions = v)
                             .is_some(),
-                        "usett" | "quiescence" | "moveordering" => {
+                        "aspirationwindow" => value
+                            .parse::<u16>()
+                            .ok()
+                            .filter(|v| *v <= 32000)
+                            .map(|v| next.aspiration_window = v)
+                            .is_some(),
+                        "usett" | "quiescence" | "moveordering" | "pvs" => {
                             if let Ok(enabled) = value.parse::<bool>() {
                                 match name.as_str() {
                                     "usett" => next.tt = enabled,
                                     "quiescence" => next.quiescence = enabled,
+                                    "pvs" => next.pvs = enabled,
                                     _ => next.move_ordering = enabled,
                                 };
                                 true
@@ -587,6 +596,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             "--no-tt" => config.tt = false,
             "--no-qsearch" => config.quiescence = false,
             "--no-ordering" => config.move_ordering = false,
+            "--pvs" => config.pvs = true,
             "--depth"
             | "--nodes"
             | "--eval"
@@ -596,10 +606,16 @@ fn bench(args: &[String]) -> Result<(), String> {
             | "--batch-size"
             | "--max-positions"
             | "--selective-batch"
+            | "--aspiration"
             | "--selective-candidates" => {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
+                    "--aspiration" => {
+                        config.aspiration_window = value
+                            .parse::<u16>()
+                            .map_err(|_| "invalid aspiration half-window")?
+                    }
                     "--nodes" => {
                         node_limit = Some(value.parse::<u64>().map_err(|_| "invalid nodes")?)
                     }
@@ -630,8 +646,13 @@ fn bench(args: &[String]) -> Result<(), String> {
         }
         i += 1;
     }
-    if !(1..=64).contains(&depth) || !(1..=1024).contains(&config.hash_mb) {
-        return Err("depth must be 1..64; hash must be 1..1024 MiB".into());
+    if !(1..=64).contains(&depth)
+        || !(1..=1024).contains(&config.hash_mb)
+        || config.aspiration_window > 32000
+    {
+        return Err(
+            "depth must be 1..64; hash must be 1..1024 MiB; aspiration must be 0..32000 cp".into(),
+        );
     }
     let contents = std::fs::read_to_string(&suite).map_err(|e| format!("{suite}: {e}"))?;
     let positions: Vec<_> = contents
@@ -681,7 +702,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -700,6 +721,12 @@ fn bench(args: &[String]) -> Result<(), String> {
             config.tt && backend_name == "alphabeta",
             config.quiescence && backend_name == "alphabeta",
             config.move_ordering && backend_name == "alphabeta",
+            config.pvs && backend_name == "alphabeta",
+            if backend_name == "alphabeta" {
+                config.aspiration_window
+            } else {
+                0
+            },
             if backend_name == "alphabeta" {
                 config.hash_mb
             } else {
