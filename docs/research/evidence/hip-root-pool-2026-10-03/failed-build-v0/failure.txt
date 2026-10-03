@@ -1,0 +1,1 @@
+Strict Clang compilation exit1: uint32 winner=NONE truncates uint64 sentinel; comparison winner==NONE always false. Fixed to UINT32_MAX. No GPU launch occurred. Build session15491.

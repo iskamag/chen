@@ -1,0 +1,3317 @@
+{
+  "admission": {
+    "d2h_ms": 0.04047999903559685,
+    "h2d_ms": 0.0,
+    "history_capacity": 65536,
+    "kernel_ms": 0.12356100231409073,
+    "scratch_bytes": 24446976,
+    "wall_clock_khz": 100000
+  },
+  "cases_sha256": "6ce4739a709805352dbbcc5ab33f7b916fbc9a170fe5f5293637f1ed505e2f22",
+  "controls": [
+    {
+      "depth": 2,
+      "name": "pause-resume-retention-and-active-begin-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "strict-global-node-cap",
+      "nodes": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "cancel-retains-completed-root",
+      "status": "PASS",
+      "wall_ms": 0.08695002179592848
+    },
+    {
+      "name": "reset-after-cancel",
+      "status": "PASS"
+    },
+    {
+      "name": "device-position-hash-reject",
+      "status": "PASS"
+    }
+  ],
+  "library_sha256": "400963b8da019b1560c751660db2e491d82302ce8134a795b603a0aa2d1a49e5",
+  "rows": [
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b2b3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b2b4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "c2c3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "c2c4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "d2d3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "d2d4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "e2e3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "e2e4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "f2f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "f2f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g2g3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g2g4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "h2h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "h2h4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b1a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b1c3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -36,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g1f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -36,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g1h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        }
+      ],
+      "name": "start-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "b1c3"
+        ],
+        "qnodes": 0,
+        "score": 36
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.1400810033082962,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 3.1467920052818954
+        },
+        {
+          "completed_children": 20,
+          "exact_children": 20,
+          "iteration_nodes": 21,
+          "kernel_ms": 0.15004199743270874,
+          "nodes": 21,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.24182998458854854
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b2b3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b2b4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "c2c3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "c2c4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "d2d3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "d2d4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e2e3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e2e4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "f2f3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "f2f4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g2g3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g2g4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "h2h3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "h2h4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b1a3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b1c3",
+          "kind": 0,
+          "nodes": 21,
+          "score": 0,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "g1f3",
+          "kind": 0,
+          "nodes": 21,
+          "score": 0,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g1h3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        }
+      ],
+      "name": "start-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 225,
+        "pv": [
+          "b1c3",
+          "b8c6"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 22,
+          "kernel_ms": 1.954893946647644,
+          "nodes": 43,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 2.0204309839755297
+        },
+        {
+          "completed_children": 20,
+          "exact_children": 2,
+          "iteration_nodes": 225,
+          "kernel_ms": 2.153095006942749,
+          "nodes": 246,
+          "paused_children": 0,
+          "upper_children": 18,
+          "wall_ms": 2.2195010096766055
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 1,
+          "score": -719,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 1,
+          "score": -318,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 1,
+          "score": -146,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 1,
+          "score": -135,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -718
+          ]
+        }
+      ],
+      "name": "promotion-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 10,
+        "pv": [
+          "a7a8q"
+        ],
+        "qnodes": 0,
+        "score": 719
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.08588100224733353,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.17173000378534198
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "iteration_nodes": 10,
+          "kernel_ms": 0.08355999737977982,
+          "nodes": 10,
+          "paused_children": 0,
+          "upper_children": 8,
+          "wall_ms": 0.1458799815736711
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 4,
+          "score": -712,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 2,
+          "score": -308,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 2,
+          "score": 567,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 2,
+          "score": 580,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 719,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 728,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 712,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 712,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 720,
+          "window": [
+            -32000,
+            -711
+          ]
+        }
+      ],
+      "name": "promotion-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "a7a8q",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 712
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.4096429944038391,
+          "nodes": 15,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.47291102237068117
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "iteration_nodes": 21,
+          "kernel_ms": 0.16712099313735962,
+          "nodes": 31,
+          "paused_children": 0,
+          "upper_children": 8,
+          "wall_ms": 0.24036000831983984
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -180,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        }
+      ],
+      "name": "ep-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 0,
+        "score": 180
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.07844100147485733,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.14357001055032015
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 4,
+          "iteration_nodes": 8,
+          "kernel_ms": 0.07168100029230118,
+          "nodes": 8,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.13495999155566096
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 5,
+          "score": -168,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -167
+          ]
+        }
+      ],
+      "name": "ep-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 18,
+        "pv": [
+          "e5d6",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 168
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.21724200248718262,
+          "nodes": 14,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.28683000709861517
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 1,
+          "iteration_nodes": 18,
+          "kernel_ms": 0.11723999679088593,
+          "nodes": 26,
+          "paused_children": 0,
+          "upper_children": 6,
+          "wall_ms": 0.18855000962503254
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a1b1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -1,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a1c1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -503,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1g1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -1,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -503,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -3,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -3,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 1,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1g1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -5,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1c1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        }
+      ],
+      "name": "castle-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 27,
+        "pv": [
+          "a1a8"
+        ],
+        "qnodes": 0,
+        "score": 503
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.16152100265026093,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.23964999127201736
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 23,
+          "iteration_nodes": 27,
+          "kernel_ms": 0.15996100008487701,
+          "nodes": 27,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.23070999304763973
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a1b1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 3,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1c1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 2,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 509,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a3",
+          "kind": 1,
+          "nodes": 2,
+          "score": 505,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a4",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a5",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a6",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a7",
+          "kind": 1,
+          "nodes": 2,
+          "score": 502,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a8",
+          "kind": 0,
+          "nodes": 4,
+          "score": -498,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "h1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 500,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1g1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 502,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 501,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h3",
+          "kind": 1,
+          "nodes": 2,
+          "score": 499,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h4",
+          "kind": 1,
+          "nodes": 2,
+          "score": 497,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h5",
+          "kind": 1,
+          "nodes": 2,
+          "score": 497,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h6",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h7",
+          "kind": 1,
+          "nodes": 2,
+          "score": 494,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h8",
+          "kind": 0,
+          "nodes": 4,
+          "score": -498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 503,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 510,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1g1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1c1",
+          "kind": 1,
+          "nodes": 2,
+          "score": -6,
+          "window": [
+            -32000,
+            -497
+          ]
+        }
+      ],
+      "name": "castle-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 57,
+        "pv": [
+          "a1a8",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 498
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.46096399426460266,
+          "nodes": 32,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.5206399946473539
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 2,
+          "iteration_nodes": 57,
+          "kernel_ms": 0.4955649971961975,
+          "nodes": 84,
+          "paused_children": 0,
+          "upper_children": 24,
+          "wall_ms": 0.5580610013566911
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        }
+      ],
+      "name": "mate1-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 27,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 0,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.060839999467134476,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.14718002057634294
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 14,
+          "iteration_nodes": 27,
+          "kernel_ms": 0.06515999883413315,
+          "nodes": 27,
+          "paused_children": 0,
+          "upper_children": 12,
+          "wall_ms": 0.13654000940732658
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": -914,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -918,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 1,
+          "nodes": 2,
+          "score": -925,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 1,
+          "nodes": 2,
+          "score": -925,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -911,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -914,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -918,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        }
+      ],
+      "name": "mate1-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 39,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 0,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.052799999713897705,
+          "nodes": 29,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.11110000195913017
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 4,
+          "iteration_nodes": 39,
+          "kernel_ms": 0.19060100615024567,
+          "nodes": 66,
+          "paused_children": 0,
+          "upper_children": 22,
+          "wall_ms": 0.25203000404872
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": 509,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 520,
+          "window": [
+            -32000,
+            510
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            510
+          ]
+        }
+      ],
+      "name": "check-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 4,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.11032100021839142,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.1841000048443675
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 2,
+          "iteration_nodes": 4,
+          "kernel_ms": 0.11044099926948547,
+          "nodes": 4,
+          "paused_children": 0,
+          "upper_children": 1,
+          "wall_ms": 0.17244997434318066
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 516,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            32000
+          ]
+        }
+      ],
+      "name": "check-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.05832099914550781,
+          "nodes": 6,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.11806000838987529
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 1,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.13940100371837616,
+          "nodes": 10,
+          "paused_children": 0,
+          "upper_children": 2,
+          "wall_ms": 0.20147001487202942
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 128,
+          "window": [
+            -32000,
+            105
+          ]
+        }
+      ],
+      "name": "quiet-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": -104
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.07704100012779236,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.1398000167682767
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.07788000255823135,
+          "nodes": 6,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.1440799969714135
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 8,
+          "score": 136,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 8,
+          "score": 136,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 3,
+          "score": 148,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 3,
+          "score": 148,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 144,
+          "window": [
+            -32000,
+            137
+          ]
+        }
+      ],
+      "name": "quiet-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 25,
+        "pv": [
+          "e8d7",
+          "a2a4"
+        ],
+        "qnodes": 0,
+        "score": -136
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 9,
+          "kernel_ms": 0.401762992143631,
+          "nodes": 15,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.4621909756679088
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "iteration_nodes": 25,
+          "kernel_ms": 0.4052030146121979,
+          "nodes": 31,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.46807999024167657
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 4,
+          "score": -712,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 2,
+          "score": -308,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 1,
+          "score": -146,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 1,
+          "score": -135,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -711
+          ]
+        }
+      ],
+      "name": "promotion-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 14,
+        "pv": [
+          "a7a8q",
+          "e8d7"
+        ],
+        "qnodes": 13,
+        "score": 712
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.469404011964798,
+          "nodes": 5,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.5537100078072399
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "iteration_nodes": 14,
+          "kernel_ms": 0.17752200365066528,
+          "nodes": 14,
+          "paused_children": 0,
+          "upper_children": 8,
+          "wall_ms": 0.24080000002868474
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -180,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        }
+      ],
+      "name": "ep-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 7,
+        "score": 180
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.08028099685907364,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.16820000018924475
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 4,
+          "iteration_nodes": 8,
+          "kernel_ms": 0.07479999959468842,
+          "nodes": 8,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.13736000983044505
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        }
+      ],
+      "name": "mate1-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 29,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 28,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.06199999898672104,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.14416000340133905
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 13,
+          "iteration_nodes": 29,
+          "kernel_ms": 0.2021609991788864,
+          "nodes": 29,
+          "paused_children": 0,
+          "upper_children": 13,
+          "wall_ms": 0.26474002515897155
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": 509,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 520,
+          "window": [
+            -32000,
+            510
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            510
+          ]
+        }
+      ],
+      "name": "check-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 4,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 3,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.11608099937438965,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.17790001584216952
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 2,
+          "iteration_nodes": 4,
+          "kernel_ms": 0.10752099752426147,
+          "nodes": 4,
+          "paused_children": 0,
+          "upper_children": 1,
+          "wall_ms": 0.16923999646678567
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 128,
+          "window": [
+            -32000,
+            105
+          ]
+        }
+      ],
+      "name": "quiet-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e8d7"
+        ],
+        "qnodes": 5,
+        "score": -104
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.07760000228881836,
+          "nodes": 2,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.13828999362885952
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.07572100311517715,
+          "nodes": 6,
+          "paused_children": 0,
+          "upper_children": 3,
+          "wall_ms": 0.1364900090266019
+        }
+      ]
+    },
+    {
+      "name": "root-threefold",
+      "score": 0,
+      "terminal": true
+    },
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        }
+      ],
+      "name": "root-not-threefold",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 43,
+        "pv": [
+          "a2a3",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 100
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "iteration_nodes": 7,
+          "kernel_ms": 0.2539620101451874,
+          "nodes": 15,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.3125100047327578
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 7,
+          "iteration_nodes": 43,
+          "kernel_ms": 0.331043004989624,
+          "nodes": 51,
+          "paused_children": 0,
+          "upper_children": 0,
+          "wall_ms": 0.3919410228263587
+        }
+      ]
+    },
+    {
+      "name": "mate",
+      "score": -30000,
+      "terminal": true
+    },
+    {
+      "name": "fifty",
+      "score": 0,
+      "terminal": true
+    }
+  ],
+  "runtime": {
+    "path": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+    "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac",
+    "version": 70253211
+  },
+  "status": "PASS"
+}

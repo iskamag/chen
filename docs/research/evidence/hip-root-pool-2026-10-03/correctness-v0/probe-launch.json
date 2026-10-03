@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "PYTHONPATH=/tmp/chen-root-pool-20261003/source/gpu:/tmp/chen-gpu",
+    "cpp-rocm",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "45s",
+    "taskset",
+    "-c",
+    "2",
+    "python3",
+    "/tmp/chen-root-pool-20261003/source/gpu/experiments/root_pool_probe.py",
+    "--cases",
+    "/tmp/chen-root-pool-20261003/cases.json",
+    "--library",
+    "/tmp/chen-root-pool-20261003/libchen_root_pool.so",
+    "--output",
+    "/tmp/chen-root-pool-20261003/probe-results.json"
+  ],
+  "host_pid_pgid": 26949,
+  "started_utc": "2026-10-03T11:06:58.568992+00:00"
+}
