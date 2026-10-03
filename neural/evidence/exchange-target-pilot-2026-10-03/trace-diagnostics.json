@@ -1,0 +1,42 @@
+{
+  "schema": "chen_exchange_trace_diagnostics_v1",
+  "complete_initial_support_checked": 3864,
+  "closed_trace_nodes_backed_up": 6323,
+  "dependency_rounds": {
+    "3": 262,
+    "2": 949,
+    "1": 1831,
+    "4": 120,
+    "6": 9,
+    "5": 4
+  },
+  "typed_terminals": {
+    "insufficient_material": 69,
+    "checkmate": 15,
+    "stalemate": 1
+  },
+  "correction_distribution_cp": {
+    "-900": 192,
+    "-800": 12,
+    "-730": 3,
+    "-680": 2,
+    "-580": 7,
+    "-570": 5,
+    "-500": 158,
+    "-400": 23,
+    "-330": 264,
+    "-320": 191,
+    "-280": 1,
+    "-230": 18,
+    "-220": 12,
+    "-180": 9,
+    "-170": 4,
+    "-160": 1,
+    "-150": 1,
+    "-110": 2,
+    "-100": 258,
+    "-10": 9,
+    "0": 2003
+  },
+  "scope": "Saved trace arithmetic/support check; independent rules/minimax oracle exists only in focused small fixtures. No teacher/model/GPU executed."
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "chen_closed_destination_exchange_v1",
+  "shard_sha256": "b876235575681f742db2683efc5e87c7c3f40618a180c03cc89057f75133d5f1",
+  "source_sha256": {
+    "exchange_targets.py": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+    "tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e"
+  },
+  "limits": {
+    "max_plies": 16,
+    "nodes_per_action": 4096,
+    "global_nodes": 250000,
+    "wall_seconds": 180
+  },
+  "split": "train",
+  "plan": "all_declared_nonterminal_roots_all_legal_captures_and_promotions_no_replacement",
+  "trace_policy": "canonical_DFS_no_pruning_all_branches_closed",
+  "input_target_separation": "all_trace_states_and_returns_supervision_only",
+  "target_frame": "initial_parent_mover_material_delta_cp",
+  "training": false,
+  "gpu": false,
+  "strategic_cp": false
+}
