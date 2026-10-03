@@ -1,0 +1,13 @@
+test_abi1_symbolic_channels_composition (gpu.test_tactical_buckets.TacticalBucketGPU.test_abi1_symbolic_channels_composition) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ok
+test_all_relations_special_moves_and_mover_frames (gpu.test_tactical_buckets.TacticalBucketGPU.test_all_relations_special_moves_and_mover_frames) ... ok
+test_api2_admission_and_partial_capacity_metadata (gpu.test_tactical_buckets.TacticalBucketGPU.test_api2_admission_and_partial_capacity_metadata) ... ok
+test_complete_native_children_history_and_snapshot_lifetime (gpu.test_tactical_buckets.TacticalBucketGPU.test_complete_native_children_history_and_snapshot_lifetime) ... ok
+test_overflow_retry_exact_boundary_and_owned_snapshot (gpu.test_tactical_buckets.TacticalBucketGPU.test_overflow_retry_exact_boundary_and_owned_snapshot) ... ok
+test_preflight_preserves_outputs (gpu.test_tactical_buckets.TacticalBucketGPU.test_preflight_preserves_outputs) ... ok
+test_resident_model_forward_backward_and_terminal_authority (gpu.test_tactical_buckets.TacticalBucketGPU.test_resident_model_forward_backward_and_terminal_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.012s
+
+OK

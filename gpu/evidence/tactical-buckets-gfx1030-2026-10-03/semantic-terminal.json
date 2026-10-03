@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "pid": 10495,
+  "pgid": 10495,
+  "process_group_absent": true,
+  "elapsed_seconds": 3.8204667219833937,
+  "start_utc": "2026-10-03T11:21:11.428749+00:00",
+  "end_utc": "2026-10-03T11:21:15.249240+00:00"
+}

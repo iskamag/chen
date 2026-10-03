@@ -1,0 +1,1072 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "width": 32,
+      "batch": 1,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "838344696f4390b22abe75be983bb54142af814e6e3662f909ac844d84dede5e",
+      "active_edges_total": 263,
+      "active_edges_max": 263,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 2.380441001150757,
+        "api2_E6144": 2.385771003901027,
+        "api2_buckets": 2.104561004671268
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 0.8290199912153184,
+        "api2_E6144": 0.8531310159014538,
+        "api2_buckets": 0.8507154998369515
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.2965824967250228,
+        "api2_E6144": 0.30316250398755074,
+        "api2_buckets": 0.29506249260157347
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 1.3436300158500671,
+        "api2_E6144": 1.3427305221557617,
+        "api2_buckets": 1.0180679559707642
+      },
+      "paired_control_over_bucket_ratios": [
+        1.118825635496928,
+        1.0991038336486003,
+        1.1317748491414616,
+        1.1664638859898395,
+        1.15782040881359,
+        1.3471470476811358
+      ],
+      "median_paired_control_over_bucket_ratio": 1.1447976289775257,
+      "observed_paired_ratio_range": [
+        1.0991038336486003,
+        1.3471470476811358
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.4145910099614412,
+          "capture_warmup_and_setup_wall_ms": 33.764406020054594,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.5735240150243044,
+            "wall_ms": 1.3713910011574626,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 0.9712410101201385,
+          "capture_warmup_and_setup_wall_ms": 33.28422599588521,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33428300730884075,
+            "wall_ms": 0.9445110044907779,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.8760709897615016
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9431299986317754,
+          "capture_warmup_and_setup_wall_ms": 29.366764007136226,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.30040300637483597,
+            "wall_ms": 0.9162700152955949,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8464099955745041
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 9.76213501417078
+    },
+    {
+      "width": 32,
+      "batch": 20,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "838344696f4390b22abe75be983bb54142af814e6e3662f909ac844d84dede5e",
+      "active_edges_total": 5261,
+      "active_edges_max": 270,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 9.104464508709498,
+        "api2_E6144": 8.68028900003992,
+        "api2_buckets": 3.5188964975532144
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 0.8836449997033924,
+        "api2_E6144": 0.8594950049882755,
+        "api2_buckets": 0.8967150060925633
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.3291824897751212,
+        "api2_E6144": 0.3047819910570979,
+        "api2_buckets": 0.3260425003245473
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 7.74804162979126,
+        "api2_E6144": 7.603540420532227,
+        "api2_buckets": 2.2889779806137085
+      },
+      "paired_control_over_bucket_ratios": [
+        2.2913164767586696,
+        2.5143155373620454,
+        2.4863993513077705,
+        2.5587836440928253,
+        2.401252834976454,
+        2.826835432109668
+      ],
+      "median_paired_control_over_bucket_ratio": 2.5003574443349077,
+      "observed_paired_ratio_range": [
+        2.2913164767586696,
+        2.826835432109668
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9929100051522255,
+          "capture_warmup_and_setup_wall_ms": 34.794547013007104,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3032019902020693,
+            "wall_ms": 0.964550010394305,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0191100009251386,
+          "capture_warmup_and_setup_wall_ms": 34.7422469931189,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33464199118316174,
+            "wall_ms": 0.9946500067599118,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.932380004087463
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9579499892424792,
+          "capture_warmup_and_setup_wall_ms": 29.940123989945278,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.32368301413953304,
+            "wall_ms": 0.9322200203314424,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8689799869898707
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 9.76213501417078
+    },
+    {
+      "width": 128,
+      "batch": 1,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "16c683530d368a8ca1065691b9c7aa9221c064eddee5e24bc6cfa8d4bc785d17",
+      "active_edges_total": 263,
+      "active_edges_max": 263,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 3.153851503157057,
+        "api2_E6144": 3.253485992900096,
+        "api2_buckets": 2.7769264997914433
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 0.8427154971286654,
+        "api2_E6144": 0.8339655032614246,
+        "api2_buckets": 0.8509504841640592
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.30082250200212,
+        "api2_E6144": 0.2960225138813257,
+        "api2_buckets": 0.2977825002744794
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 2.0843764543533325,
+        "api2_E6144": 2.086095929145813,
+        "api2_buckets": 1.3667110204696655
+      },
+      "paired_control_over_bucket_ratios": [
+        1.2846733199258469,
+        1.1316062450881905,
+        1.1345722985115219,
+        1.059809646348431,
+        1.1538403161142323,
+        1.3120475301102223
+      ],
+      "median_paired_control_over_bucket_ratio": 1.144206307312877,
+      "observed_paired_ratio_range": [
+        1.059809646348431,
+        1.3120475301102223
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9815299999900162,
+          "capture_warmup_and_setup_wall_ms": 30.524475005222484,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33432299830019474,
+            "wall_ms": 0.9511800017207861,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0222499840892851,
+          "capture_warmup_and_setup_wall_ms": 33.010765007929876,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3028020057827234,
+            "wall_ms": 0.9979100141208619,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9330500033684075
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9400509879924357,
+          "capture_warmup_and_setup_wall_ms": 29.09747400553897,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3050420042127371,
+            "wall_ms": 0.9156209998764098,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.840651016915217
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 2.8854109987150878
+    },
+    {
+      "width": 128,
+      "batch": 20,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "16c683530d368a8ca1065691b9c7aa9221c064eddee5e24bc6cfa8d4bc785d17",
+      "active_edges_total": 5261,
+      "active_edges_max": 270,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 27.800703508546576,
+        "api2_E6144": 27.504538011271507,
+        "api2_buckets": 6.0819229984190315
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 1.0452660208102316,
+        "api2_E6144": 1.0338950087316334,
+        "api2_buckets": 1.0346104972995818
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.3307825019583106,
+        "api2_E6144": 0.3342019934207201,
+        "api2_buckets": 0.3259429996833205
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 26.423189163208008,
+        "api2_E6144": 26.21328639984131,
+        "api2_buckets": 4.847338438034058
+      },
+      "paired_control_over_bucket_ratios": [
+        4.3988864046981115,
+        4.850372414223898,
+        4.6948896710862345,
+        4.624512127054885,
+        4.408117860300082,
+        4.502088821235135
+      ],
+      "median_paired_control_over_bucket_ratio": 4.563300474145009,
+      "observed_paired_ratio_range": [
+        4.3988864046981115,
+        4.850372414223898
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.1467710137367249,
+          "capture_warmup_and_setup_wall_ms": 95.6770759948995,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3333629872649908,
+            "wall_ms": 1.1102809803560376,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0539499926380813,
+          "capture_warmup_and_setup_wall_ms": 89.73013298236765,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33664199709892273,
+            "wall_ms": 1.0298800189048052,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9615200106054544
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9761900000739843,
+          "capture_warmup_and_setup_wall_ms": 29.650744021637365,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3314419984817505,
+            "wall_ms": 0.9521399915684015,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8843000105116516
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 2.8854109987150878
+    },
+    {
+      "width": 256,
+      "batch": 1,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "b3acdac4a37cacce34c85ab0c2a44509fa065dac9a98dbb12e9dcfa83b3f2818",
+      "active_edges_total": 263,
+      "active_edges_max": 263,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 4.226471995934844,
+        "api2_E6144": 4.300317013985477,
+        "api2_buckets": 3.137696490739472
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 0.8350355055881664,
+        "api2_E6144": 0.8320299966726452,
+        "api2_buckets": 0.8716160082258284
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.30238249711692333,
+        "api2_E6144": 0.30136250145733356,
+        "api2_buckets": 0.2983825020492077
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 3.202924966812134,
+        "api2_E6144": 3.229685425758362,
+        "api2_buckets": 2.001955509185791
+      },
+      "paired_control_over_bucket_ratios": [
+        1.4016490077825376,
+        1.1542057596275432,
+        1.3457400505636836,
+        1.6949731255155527,
+        1.319798431266234,
+        1.3090820274496149
+      ],
+      "median_paired_control_over_bucket_ratio": 1.332769240914959,
+      "observed_paired_ratio_range": [
+        1.1542057596275432,
+        1.6949731255155527
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.4909200253896415,
+          "capture_warmup_and_setup_wall_ms": 30.317224998725578,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.6979649979621172,
+            "wall_ms": 1.4488000015262514,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0146099957637489,
+          "capture_warmup_and_setup_wall_ms": 30.423585005337372,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3342829942703247,
+            "wall_ms": 0.9891700174193829,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9246400150004774
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9261000086553395,
+          "capture_warmup_and_setup_wall_ms": 29.427753994241357,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.322122011333704,
+            "wall_ms": 0.9043000172823668,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8422799874097109
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 5.818403005832806
+    },
+    {
+      "width": 256,
+      "batch": 20,
+      "pairs": 6,
+      "bucket": 512,
+      "checkpoint_sha256": "b3acdac4a37cacce34c85ab0c2a44509fa065dac9a98dbb12e9dcfa83b3f2818",
+      "active_edges_total": 5261,
+      "active_edges_max": 270,
+      "pipeline_wall_median_ms": {
+        "abi1_E6144": 58.76071300008334,
+        "api2_E6144": 58.871118002571166,
+        "api2_buckets": 11.847956004203297
+      },
+      "export_wall_median_ms": {
+        "abi1_E6144": 1.0247599857393652,
+        "api2_E6144": 1.034435015753843,
+        "api2_buckets": 1.0147555003641173
+      },
+      "native_event_median_ms": {
+        "abi1_E6144": 0.3322030045092106,
+        "api2_E6144": 0.3334829956293106,
+        "api2_buckets": 0.3262220108881593
+      },
+      "inference_event_median_ms": {
+        "abi1_E6144": 57.46211624145508,
+        "api2_E6144": 57.55707550048828,
+        "api2_buckets": 10.667204856872559
+      },
+      "paired_control_over_bucket_ratios": [
+        4.8924785165594455,
+        4.916415214469184,
+        5.031826904512903,
+        4.97801377885111,
+        4.970070403736403,
+        5.035526862711764
+      ],
+      "median_paired_control_over_bucket_ratio": 4.974042091293756,
+      "observed_paired_ratio_range": [
+        4.8924785165594455,
+        5.035526862711764
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9961710020434111,
+          "capture_warmup_and_setup_wall_ms": 191.3647209876217,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33108300156891346,
+            "wall_ms": 0.9580309852026403,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0848400124814361,
+          "capture_warmup_and_setup_wall_ms": 195.257343002595,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3296419959515333,
+            "wall_ms": 1.0616800282150507,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9844400046858937
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 1.1317410098854452,
+          "capture_warmup_and_setup_wall_ms": 44.12764101289213,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.35224198922514915,
+            "wall_ms": 1.0999910009559244,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 1.0316710104234517
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "model_setup_wall_ms": 5.818403005832806
+    }
+  ],
+  "shapes": 6,
+  "pipeline_observations": 108,
+  "cold_prediction_checks": "eager/captured/fresh-pipeline assertions passed during actual run",
+  "inference_only_ratios_used_as_pipeline": false,
+  "scope": "Paired observations of one untrained checkpoint per width on one opening child set. No confidence interval, universal ratio, search throughput or strength inference."
+}

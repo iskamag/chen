@@ -1,0 +1,11 @@
+test_complete_retry_same_source_under_lock (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_complete_retry_same_source_under_lock) ... ok
+test_exhausted_buckets_publish_nothing (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_exhausted_buckets_publish_nothing) ... ok
+test_noncapacity_and_unretired_never_retry (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_noncapacity_and_unretired_never_retry) ... ok
+test_old_layout_and_capacity_are_preserved (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_old_layout_and_capacity_are_preserved) ... ok
+test_policy_admission (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_policy_admission) ... ok
+test_unretired_storage_quarantined_and_arena_closed (neural.tests.test_native_tactical_bucket.BucketWrapperCPU.test_unretired_storage_quarantined_and_arena_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

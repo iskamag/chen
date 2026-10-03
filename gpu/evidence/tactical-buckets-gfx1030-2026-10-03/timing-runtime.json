@@ -1,0 +1,21 @@
+{
+  "library_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "runtime": {
+    "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "hipRuntimeGetVersion": 70051831,
+    "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "symbol": "hipRuntimeGetVersion"
+  },
+  "device": {
+    "architecture": "gfx1030",
+    "name": "AMD Radeon Graphics",
+    "torch_version": "2.10.0+rocm7.0",
+    "rocm_build": "7.0.51831",
+    "override": false
+  },
+  "arena_reset_expand_wall_ms": 5.499562015756965,
+  "policy": "complete native graphs, no shape/payload download for admission",
+  "model": "untrained FP32, random nonzero value/action residual heads",
+  "quality": false
+}

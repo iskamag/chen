@@ -1,0 +1,20 @@
+{
+  "base_commit": "4c92070",
+  "source_sha256": {
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "18db45a347cc95ec55154ac5f9244a490135b3b702041f09f34871e393a08135",
+    "gpu/chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+    "gpu/chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+    "gpu/chen_symbolic.h": "efbc23e40fdc4d69654cb20b4b0c850ff610bbd80f87f713b4b658b254fcf3d1",
+    "gpu/chen_symbolic.inc": "5afc9f0c25374ae1a27bc06eb23bee0d2de2b586c93853ad2e74bf8c5a350823",
+    "gpu/chen_tactical.h": "0a5bd4b16f44b35575a2b1634354d40aa0adab5a63e2ccf2cbe2654e64941452",
+    "gpu/chen_tactical.inc": "79126a2b38e6a04ff71ec05a91eaa02676bf5800ccadd89b94dbe898805a6b2b",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+  }
+}
