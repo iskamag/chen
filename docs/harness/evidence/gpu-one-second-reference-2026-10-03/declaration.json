@@ -1,0 +1,53 @@
+{
+  "kind": "fixed_1second_UCI_reference_diagnostic",
+  "requested_seconds_per_move": 1.0,
+  "opening_pairs": 8,
+  "max_plies": 512,
+  "concurrency": 1,
+  "host_cpu_affinity": [
+    0
+  ],
+  "watchdog_seconds": 7200,
+  "comparison": "current Chen hip-selective/Tapered vs Stockfish19 limitedstrength configured1320",
+  "rating_scope": "configured-opponent proxy only, not calibrated Lichess/FIDE/CCRL; authored paired sample has no asserted independence",
+  "source_and_binary_sha256": {
+    "/tmp/chen-gpu-one-second-reference-20261003/chen": "17ab2ac82f88dce999a3691b4c4b1b9de2682d02101d7e8f8e9e5bfef5142f82",
+    "/tmp/chen-gpu-one-second-reference-20261003/openings.txt": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+    "/tmp/chen-gpu-one-second-reference-20261003/source-binding.json": "bc6d64ebfce01be88174817e97cce3e44077bbf87caeac11b59936d6b7f98332",
+    "/tmp/chen-gpu-one-second-reference-20261003/config.json": "833640d2248f1f2a7546b338faedac916f691cd04d81772bb26d1280c76ab658",
+    "/tmp/chen-gpu-one-second-reference-20261003/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "/tmp/chen-gpu-one-second-reference-20261003/scripts/match.py": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c",
+    "/tmp/chen-gpu-one-second-reference-20261003/scripts/audit_timed_match.py": "0c696aeb089ecf9a29e6ffe3bcea63aebfddca5e13d4fdd87277324172574636",
+    "/tmp/chen-gpu-one-second-reference-20261003/harness/__init__.py": "1ca23740dfb4dfbf8bec2e555d8592b0c11f0e8bec5554c4f1c9e13c95b27d99",
+    "/tmp/chen-gpu-one-second-reference-20261003/harness/stats.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990"
+  },
+  "command": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=/tmp/chen-symbolic-final-20261003-jbc426u2",
+    "OMP_NUM_THREADS=1",
+    "timeout",
+    "--kill-after=5s",
+    "7200s",
+    "taskset",
+    "-c",
+    "0",
+    "python3",
+    "/tmp/chen-gpu-one-second-reference-20261003/scripts/match.py",
+    "--config",
+    "/tmp/chen-gpu-one-second-reference-20261003/config.json",
+    "--openings",
+    "/tmp/chen-gpu-one-second-reference-20261003/openings.txt",
+    "--rounds",
+    "1",
+    "--movetime",
+    "1",
+    "--max-plies",
+    "512",
+    "--out",
+    "/tmp/chen-gpu-one-second-reference-20261003/run"
+  ]
+}

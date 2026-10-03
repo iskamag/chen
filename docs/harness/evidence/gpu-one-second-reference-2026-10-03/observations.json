@@ -1,0 +1,96 @@
+{
+  "candidate_moves": 887,
+  "wall_ms_median": 1001.390518,
+  "over_1010ms": 1,
+  "over_1050ms": 1,
+  "under_900ms": 46,
+  "max_node_telemetry": 946645,
+  "longest_moves": [
+    {
+      "game": 0,
+      "opening": "italian",
+      "ply": 0,
+      "engine": "candidate",
+      "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "move": "d2d3",
+      "wall_ns": 1367199272,
+      "reported": {
+        "depth": 2,
+        "seldepth": 16,
+        "nodes": 860232,
+        "nps": 859602,
+        "time": 1.0,
+        "hashfull": 0
+      }
+    },
+    {
+      "game": 10,
+      "opening": "vienna",
+      "ply": 46,
+      "engine": "candidate",
+      "fen": "2k2r2/1p6/n1pp4/B1b1p3/P1P5/2NQn2q/1PP1NP2/R3R1K1 w - - 0 27",
+      "move": "d3g6",
+      "wall_ns": 1003174798,
+      "reported": {
+        "depth": 2,
+        "seldepth": 32,
+        "nodes": 667453,
+        "nps": 665987,
+        "time": 1.002,
+        "hashfull": 0
+      }
+    },
+    {
+      "game": 7,
+      "opening": "four-knights",
+      "ply": 27,
+      "engine": "candidate",
+      "fen": "1rbq1rk1/3p1pp1/3b1nN1/p1p3Bp/3nP2N/P2P3P/B1P3P1/R2Q1RK1 b - - 0 17",
+      "move": "f8e8",
+      "wall_ns": 1003140918,
+      "reported": {
+        "depth": 2,
+        "seldepth": 45,
+        "nodes": 588646,
+        "nps": 587365,
+        "time": 1.002,
+        "hashfull": 0
+      }
+    },
+    {
+      "game": 8,
+      "opening": "petrov",
+      "ply": 54,
+      "engine": "candidate",
+      "fen": "2r5/bn2kPp1/6Bp/8/6q1/2NP3N/PP1Bn1PP/2K4R w - - 11 31",
+      "move": "c1b1",
+      "wall_ns": 1003112138,
+      "reported": {
+        "depth": 2,
+        "seldepth": 29,
+        "nodes": 679265,
+        "nps": 677740,
+        "time": 1.002,
+        "hashfull": 0
+      }
+    },
+    {
+      "game": 4,
+      "opening": "scotch",
+      "ply": 80,
+      "engine": "candidate",
+      "fen": "3q1k2/1b1r2p1/4p2p/2p2r1P/P4P1R/8/2Qp4/3R2K1 w - - 3 44",
+      "move": "h4h3",
+      "wall_ns": 1003039199,
+      "reported": {
+        "depth": 2,
+        "seldepth": 43,
+        "nodes": 720539,
+        "nps": 719050,
+        "time": 1.002,
+        "hashfull": 0
+      }
+    }
+  ],
+  "telemetry_scope": "UCI nodes counts classified work and need not equal arena occupancy; minimum-frontier depth includes closed leaves."
+}

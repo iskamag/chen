@@ -1,0 +1,224 @@
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "0-1"]
+[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "italian"]
+[Termination "CHECKMATE"]
+
+4. d3 Nf6 5. Nbd2 Be7 6. O-O d5 7. exd5 Na5 8. Nxe5 Nxd5 9. Bb5+ c6 10. Ba4 b5 11. Nxc6 Nxc6 12. Bxb5 Bb7 13. a4 O-O 14. c4 Nf4 15. Qf3 Qc7 16. g4 Nd4 17. Qe3 Nfe2+ 18. Qxe2 Nxe2# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "1-0"]
+[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "italian"]
+[Termination "CHECKMATE"]
+
+4. a4 h5 5. Nc3 Nf6 6. a5 a6 7. Ng5 O-O 8. d3 b6 9. axb6 cxb6 10. Ba2 Nd4 11. O-O Bb4 12. Nd5 Bc5 13. b4 Bd6 14. Nxf6+ gxf6 15. Nf3 Nxf3+ 16. Kh1 Nd4 17. c3 Nc6 18. Qxh5 Ne7 19. Re1 a5 20. Qg4+ Kh8 21. Re3 Ng6 22. Rh3+ Kg7 23. Bh6+ Kh7 24. Bxf8+ Kg8 25. Qxg6+ Kxf8 26. Rh8+ Ke7 27. Qxf7# 1-0
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "1-0"]
+[FEN "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "ruy-lopez"]
+[Termination "CHECKMATE"]
+
+4. Bxc6 bxc6 5. Nxe5 Nf6 6. Qf3 Qe7 7. Nd3 Nxe4 8. O-O Ng5 9. Qg3 a5 10. Nc3 Ba6 11. Qxc7 Bxd3 12. cxd3 g6 13. Rb1 h5 14. b3 Ne6 15. Qb7 Rd8 16. Qb6 Qh4 17. Qxa5 Be7 18. a4 f6 19. f4 Bc5+ 20. Kh1 g5 21. f5 Bd6 22. h3 Nc5 23. Ba3 Qxh3+ 24. gxh3 Nxb3 25. Rxb3 Bxa3 26. Rxa3 O-O 27. Kg1 Kh8 28. d4 Ra8 29. Qc5 Rfb8 30. Ne4 d5 31. Nxf6 Ra5 32. Qxa5 g4 33. hxg4 Rb2 34. gxh5 Kg7 35. Ng4 Kh7 36. d3 Ra2 37. Rxa2 Kg8 38. Qc5 Kf7 39. Qxc6 Kg8 40. Ne5 Kh8 41. Qxd5 Kh7 42. f6 Kh6 43. f7 Kh7 44. Rf5 Kg7 45. f8=Q+ Kh7 46. Rf7# 1-0
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "1/2-1/2"]
+[FEN "r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "ruy-lopez"]
+[Termination "THREEFOLD_REPETITION"]
+
+4. Bc4 Nf6 5. Ng5 Qe7 6. Bxf7+ Kd8 7. Bb3 h6 8. Nf3 Nxe4 9. Nc3 Nxc3 10. dxc3 e4 11. Nd2 e3 12. Nf3 exf2+ 13. Kxf2 a5 14. Re1 Qc5+ 15. Kf1 Qb5+ 16. c4 Qf5 17. Ba4 Nb4 18. Kg1 Qc5+ 19. Be3 Qxc4 20. Ne5 Qg8 21. Qh5 Nd5 22. Bf2 Ne7 23. Nf7+ Qxf7 24. Qxf7 b6 25. a3 c5 26. Rad1 g5 27. Re6 Kc7 28. Ree1 h5 29. Rxe7 Bxe7 30. Bg3+ Kd8 31. Bc7+ Kxc7 32. Qxe7 g4 33. Bb5 Kb7 34. Bxd7 Bxd7 35. Rxd7+ Kc8 36. Qe6 Ra7 37. Rg7+ Kb8 38. Qxb6+ Kc8 39. Qe6+ Kb8 40. Qb6+ Kc8 41. Qe6+ Kb8 1/2-1/2
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "1/2-1/2"]
+[FEN "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "scotch"]
+[Termination "THREEFOLD_REPETITION"]
+
+4. Bb5 Nf6 5. Nbd2 a6 6. Bxc6 dxc6 7. e5 Nd5 8. Nxd4 Nf4 9. Ne4 Nxg2+ 10. Kf1 Qd5 11. Qd3 Nh4 12. f4 a5 13. Kg1 Nf5 14. Be3 Be7 15. c4 Qd7 16. h4 b6 17. Qd2 Nxd4 18. Bxd4 c5 19. h5 cxd4 20. Qe2 Bb7 21. b3 d3 22. Qe3 Rg8 23. e6 fxe6 24. a4 Rf8 25. c5 h6 26. b4 Qd5 27. Rh2 Rd8 28. bxa5 Bxc5 29. Nxc5 bxc5 30. Rf1 c4 31. Ra1 Rf6 32. Rc1 Rf5 33. Rb1 Kf8 34. Qf2 d2 35. Rd1 Qxa5 36. Rh4 c3 37. Qf1 Rd7 38. Qh3 c2 39. Qa3+ c5 40. Rf1 Ke8 41. Qa2 Kf7 42. Qxc2 Kf8 43. Rd1 Qd8 44. Rh3 Kf7 45. Qb3 Be4 46. Rc3 Qa5 47. Rh3 Qd8 48. Rc3 Rxf4 49. Rh3 Qg5+ 50. Qg3 Qxg3+ 51. Rxg3 e5 52. a5 Bf3 53. Rxf3 Ke6 54. Rb3 Rb4 55. Rc3 Rb5 56. a6 e4 57. Re3 Rb4 58. Ra3 Rd3 59. Rxd3 exd3 60. Rxd2 Rb3 61. a7 Ra3 62. Kf2 c4 63. Kf3 Kd5 64. a8=R Rxa8 65. Kg4 Ra7 66. Kf5 Ra5 67. Kf4 Kd4 68. Rg2 Ra7 69. Rg4 d2 70. Kg3+ Kd3 71. Rg6 Rd7 72. Kf2 Rf7+ 73. Kg2 Rd7 74. Rg3+ Kc2 75. Rg4 c3 76. Rb4 Re7 77. Rd4 Rc7 78. Kf2 Rc8 79. Rd7 Re8 80. Kf3 d1=R 81. Rc7 Rd3+ 82. Kf4 Rd1 83. Rxg7 Rb8 84. Re7 Rf1+ 85. Ke3 Rd1 86. Kf4 Kb1 87. Rc7 Kb2 88. Kf3 c2 89. Rxc2+ Ka1 90. Rc6 Ka2 91. Rxh6 Rc8 92. Rb6 Rc5 93. h6 Rf1+ 94. Ke4 Rf2 95. h7 Rh5 96. Rb7 Rfh2 97. h8=Q R2h4+ 98. Kd3 Rh3+ 99. Ke4 Rxh8 100. Ke5 R3h5+ 101. Kd4 Rh4+ 102. Kc3 Ra8 103. Kc2 Rh3 104. Re7 Rc8+ 105. Kd2 Rcc3 106. Rb7 Rhd3+ 107. Ke2 Rb3 108. Rc7 Rh3 109. Kd1 Rb8 110. Re7 Rd3+ 111. Ke2 Ra3 112. Kd1 Rb1+ 113. Kd2 Rb8 114. Rf7 Re8 115. Rg7 Rd8+ 116. Kc2 Rdd3 117. Rc7 Rab3 118. Ra7+ Ra3 119. Rc7 Rdb3 120. Kd1 Rb1+ 121. Kd2 Rbb3 122. Re7 Ra4 123. Re1 Rd4+ 124. Ke2 Re4+ 125. Kd1 Ra4 126. Re7 Rb2 127. Re3 Ra3 128. Re7 Kb1 129. Re3 Raa2 130. Re2 Ka1 131. Rxb2 Rxb2 132. Kc1 Rb5 133. Kc2 Re5 134. Kb3 Rg5 135. Kc4 Rh5 136. Kd4 Kb2 137. Kd3 Rg5 138. Kc4 Kc1 139. Kd4 Rf5 140. Kc4 Kb1 141. Kd3 Ra5 142. Ke3 Kc2 143. Kd4 Kd2 144. Ke4 Kc3 145. Kf4 Rb5 146. Ke4 Kb3 147. Ke3 Rh5 148. Kf2 Rc5 149. Ke3 Kc3 150. Ke2 Rc4 151. Kf1 Kd3 152. Kf2 Re4 153. Kg2 Re5 154. Kf2 Rb5 155. Kf3 Rf5+ 156. Kg3 Ke3 157. Kg4 Ra5 158. Kh4 Re5 159. Kg4 Rb5 160. Kh3 Kf4 161. Kg2 Rd5 162. Kf1 Rd2 163. Kg1 Rb2 164. Kf1 Rd2 165. Ke1 Rb2 166. Kf1 1/2-1/2
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "0-1"]
+[FEN "r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "scotch"]
+[Termination "CHECKMATE"]
+
+4. Bb5 Nb4 5. Nxd4 c5 6. Nf3 a6 7. Bg5 f6 8. c3 axb5 9. Bf4 Nc6 10. O-O Nge7 11. Re1 h5 12. Na3 Ra5 13. Bd6 g5 14. e5 fxe5 15. Nxe5 Nxe5 16. Rxe5 b6 17. Qd3 Rh6 18. Nxb5 Rxb5 19. h4 Rxb2 20. Rae1 gxh4 21. Rxe7+ Bxe7 22. Bxe7 Qxe7 23. Re4 Re6 24. Rg4 hxg4 25. Qf5 Re1+ 26. Kh2 Qd6+ 27. f4 gxf3+ 28. Kh3 Qg3# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "1/2-1/2"]
+[FEN "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "four-knights"]
+[Termination "THREEFOLD_REPETITION"]
+
+4. a4 Bb4 5. Na2 a5 6. Nxb4 Nxb4 7. Nxe5 d6 8. Bb5+ c6 9. Nxf7 Kxf7 10. Bc4+ d5 11. exd5 cxd5 12. Bb5 Bf5 13. c3 Qe7+ 14. Kf1 Bd3+ 15. Bxd3 Nxd3 16. f4 Ke8 17. b4 Kd8 18. Ba3 Ne4 19. g3 axb4 20. cxb4 Qf6 21. Rb1 Rf8 22. b5 Re8 23. Kg2 Qd4 24. Rf1 Qc4 25. h4 Rc8 26. g4 h5 27. gxh5 Qd4 28. a5 Qf6 29. Kh3 Ndf2+ 30. Kg2 Nd3 31. Kh3 Nef2+ 32. Kg2 1/2-1/2
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "0-1"]
+[FEN "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "four-knights"]
+[Termination "CHECKMATE"]
+
+4. Bc4 Bc5 5. O-O O-O 6. h3 h5 7. d3 a5 8. a3 Bd6 9. Be3 b6 10. Nh4 Rb8 11. Bg5 Nd4 12. f4 exf4 13. Ba2 c5 14. Nd5 b5 15. Nxf4 b4 16. Nfg6 bxa3 17. bxa3 Re8 18. Bxf7+ Kxf7 19. Rc1 Ne6 20. Qxh5 Nxg5 21. c3 Ne6 22. c4 Rb2 23. Rce1 Kg8 24. Rxf6 gxf6 25. Nf5 Bf8 26. Rf1 Bg7 27. Nxg7 Kxg7 28. Nf4 Rf8 29. Qg6+ Kh8 30. g3 Nd4 31. Qh6+ Kg8 32. Nd5 Ne2+ 33. Kh2 Nc1+ 34. Kh1 Nxd3 35. Qg6+ Kh8 36. Ne7 Qxe7 37. Qh6+ Kg8 38. Rf3 Qxe4 39. Qxf6 Rxf6 40. Kg1 Rxf3 41. a4 Qe1# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "0-1"]
+[FEN "rnbqkb1r/ppp2ppp/3p1n2/4p3/4P3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "petrov"]
+[Termination "CHECKMATE"]
+
+4. c4 Bg4 5. Qa4+ c6 6. Ng5 h6 7. Nh3 Nbd7 8. Ng1 d5 9. exd5 cxd5 10. cxd5 b5 11. Qxb5 Rb8 12. Qa4 Rb4 13. Qxa7 Nc5 14. f4 Nxd5 15. fxe5 Rb8 16. Nd2 Nb4 17. Be2 Rb7 18. Qxb7 Nxb7 19. Bxg4 Bc5 20. Bf5 Nc2+ 21. Ke2 Nxa1 22. Nh3 Ba7 23. Ne4 Nc2 24. e6 Rf8 25. exf7+ Ke7 26. Bg6 Nd4+ 27. Kd1 Qc8 28. Bd2 Qg4+ 29. Kc1 Rc8+ 30. Nc3 Ne2+ 31. Kb1 Nxc3+ 32. bxc3 Qxg6 33. Nf4 Qb6+ 34. Ka1 Kxf7 35. h4 Qf2 36. Rd1 Kg8 37. g4 Na5 38. Nd5 Re8 39. Bc1 Nb7 40. h5 Qe2 41. Rd2 Qe1 42. Rc2 Re5 43. Nb4 Bf2 44. d4 Re7 45. a4 Na5 46. Nd5 Rf7 47. Ka2 Nc6 48. Ba3 Nb8 49. Bd6 Nd7 50. g5 hxg5 51. Kb2 Qe6 52. Ne7+ Kh7 53. Bb4 Rxe7 54. Bxe7 Qb6+ 55. Ka3 Bg3 56. Bxg5 Nb8 57. Ka2 Qb7 58. Rd2 Qc6 59. Kb3 Qf3 60. Be7 Kg8 61. Bb4 Na6 62. Be7 Be1 63. Rc2 Qd5+ 64. Ka3 Qc6 65. Bg5 Qe4 66. Rc1 Qe2 67. h6 Kf7 68. h7 Qe8 69. a5 Kg6 70. Rxe1 Qxe1 71. h8=Q Qxc3+ 72. Ka2 Nb4+ 73. Kb1 Qc2+ 74. Ka1 Qa2# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "1/2-1/2"]
+[FEN "rnbqkb1r/ppp2ppp/3p1n2/4p3/4P3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "petrov"]
+[Termination "THREEFOLD_REPETITION"]
+
+4. g3 c5 5. c4 Qa5+ 6. Bd2 Qa6 7. Nc3 Nc6 8. h3 Be6 9. a3 h5 10. b4 cxb4 11. axb4 Qb6 12. Bg2 Qxb4 13. Rb1 Qa5 14. Nb5 Qd8 15. Ng5 Bd7 16. Nc3 b6 17. Qb3 a5 18. c5 d5 19. cxb6 Nd4 20. Qa2 Ra6 21. f4 Ng8 22. b7 Qb8 23. fxe5 Ne7 24. O-O f6 25. exd5 fxg5 26. Qc4 Nf3+ 27. Rxf3 Rg6 28. e6 h4 29. Ne4 Bc6 30. Nd6+ Qxd6 31. Rxf8+ Kxf8 32. b8=Q+ Qxb8 33. Rxb8+ Be8 34. d6 Ng8 35. d4 hxg3 36. Qf1+ Nf6 37. Rxe8+ Kxe8 38. Qb1 Kf8 39. d7 Nxd7 40. Qf1+ Rf6 41. Qb1 Rxe6 42. Qb3 Rd6 43. Qc4 g6 44. Qc8+ Kg7 45. Qc3 Rf8 46. Bxg5 Kg8 47. d5 Rb8 48. Qxg3 Rb1+ 49. Kf2 Rb2+ 50. Kf1 Rb1+ 51. Kf2 Rb2+ 52. Kg1 Rb1+ 1/2-1/2
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "0-1"]
+[FEN "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "vienna"]
+[Termination "CHECKMATE"]
+
+4. a4 a5 5. d3 d6 6. Nge2 Be6 7. Bb5+ c6 8. Bc4 Bxc4 9. dxc4 Ng4 10. O-O Qe7 11. h3 Nh6 12. g3 Qe6 13. Qd3 Na6 14. Re1 Ng8 15. g4 O-O-O 16. g5 Ne7 17. Bd2 h6 18. Nd1 Rdf8 19. gxh6 f5 20. exf5 Nxf5 21. hxg7 Qg6+ 22. Kf1 Rhg8 23. gxf8=Q+ Rxf8 24. Bxa5 Qh7 25. Ndc3 Ne3+ 26. Kg1 Qxh3 27. Qg6 Rh8 28. Qe6+ Qxe6 29. b4 Qh3 30. f3 Qg2# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "1-0"]
+[FEN "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/2N5/PPPP1PPP/R1BQK1NR w KQkq - 4 4"]
+[SetUp "1"]
+[Opening "vienna"]
+[Termination "CHECKMATE"]
+
+4. d3 d6 5. Nf3 Nbd7 6. Ng5 O-O 7. h3 h5 8. a4 a5 9. Ba2 h4 10. Qe2 c6 11. Bd2 d5 12. exd5 cxd5 13. Nxd5 Nxd5 14. Bxd5 Nf6 15. Ba2 Bd4 16. Bc4 Bxb2 17. Rb1 Ba3 18. Rb5 Qc7 19. f4 exf4 20. Qf2 Bd6 21. O-O Nd7 22. Bc3 Qd8 23. Qxh4 Bc5+ 24. Rxc5 Nf6 25. Bxf6 Bf5 26. Bxd8 Bg6 27. Rb1 Rfxd8 28. Bxf7+ Bxf7 29. Qh7+ Kf8 30. Rf5 Rd7 31. Qh8+ Ke7 32. Rxf7+ Kd6 33. Rb6+ Kc7 34. Rxb7+ Kxb7 35. Rxd7+ Kc6 36. Qxa8+ Kxd7 37. Qb7+ Kd8 38. Qb8+ Ke7 39. Qa7+ Kd8 40. Qb8+ Ke7 41. Qe5+ Kd7 42. Qd5+ Kc8 43. Qa8+ Kd7 44. Qa7+ Kd6 45. Qd4+ Kc6 46. Qe4+ Kb6 47. Qg6+ Ka7 48. Qxg7+ Kb8 49. Qf8+ Kb7 50. Qf7+ Kb6 51. c3 Ka6 52. Qe6+ Ka7 53. Qd7+ Ka6 54. Qc6+ Ka7 55. Qc5+ Ka8 56. Qxa5+ Kb8 57. Qb6+ Kc8 58. Qc5+ Kd7 59. Qd4+ Kc7 60. Qg7+ Kd8 61. Qd4+ Ke8 62. Qe4+ Kd7 63. Qf5+ Kc7 64. Ne6+ Kc8 65. Nc5+ Kc7 66. Qd7+ Kb6 67. Qd6+ Ka7 68. Qc7+ Ka8 69. Qb7# 1-0
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "0-1"]
+[FEN "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "sicilian-open"]
+[Termination "CHECKMATE"]
+
+4. Nxd4 Nc6 5. Nxc6 Qd7 6. Nd4 Nf6 7. b4 a6 8. c4 g6 9. f4 Nxe4 10. Bd3 e5 11. Bxe4 f5 12. Nxf5 gxf5 13. Qh5+ Kd8 14. Qh4+ Be7 15. Qh3 fxe4 16. g4 Qxg4 17. Qxg4 Bxg4 18. Nd2 Bh4+ 19. Kf1 e3 20. a4 exf4 21. a5 Rf8 22. b5 Bf6 23. Rb1 e2+ 24. Kg2 Rg8 25. Re1 Bh5+ 26. Kh1 f3 27. bxa6 Rxa6 28. Rxb7 Kc8 29. Rxh7 f2 30. Rc7+ Kd8 31. Rd7+ Ke8 32. Rxe2+ Bxe2 33. h4 f1=Q+ 34. Nxf1 Bd3 35. Bf4 Be5 36. Rxd6 Be4+ 37. Kh2 Bxf4+ 38. Ng3 Bxg3+ 39. Kg1 Bxh4+ 40. Kf1 Rf8+ 41. Ke2 Rxd6 42. Ke3 Bb1 43. a6 Bh7 44. c5 Rd5 45. Ke2 Rf2+ 46. Ke1 Rd7 47. c6 Rd6 48. a7 Rd8 49. c7 Rc2+ 50. Kf1 Rd1# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "0-1"]
+[FEN "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Opening "sicilian-open"]
+[Termination "CHECKMATE"]
+
+4. Bb5+ Nc6 5. Ba4 Qa5+ 6. Nbd2 Qxa4 7. Rf1 a5 8. b3 Qb4 9. Rh1 b5 10. a4 Nf6 11. e5 dxe5 12. Ba3 Qc3 13. Bb2 Qxb2 14. Nc4 bxc4 15. c3 Qxc3+ 16. Kf1 cxb3 17. Kg1 h5 18. Qf1 Ne4 19. h4 f5 20. Kh2 Be6 21. Rg1 d3 22. Rb1 O-O-O 23. Re1 Nc5 24. Rb1 Nxa4 25. Qd1 e4 26. Rc1 exf3 27. g3 Qe5 28. Rxc6+ Kb8 29. Qxf3 Bf7 30. Rc8+ Rxc8 31. Qa8+ Kxa8 32. Rb1 Bd5 33. Rxb3 Bxb3 34. f4 Rc2+ 35. Kh1 Qa1# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "candidate"]
+[Black "base"]
+[Result "0-1"]
+[FEN "rnbqkb1r/pp1ppppp/8/2pnP3/8/2P5/PP1P1PPP/RNBQKBNR w KQkq - 1 4"]
+[SetUp "1"]
+[Opening "sicilian-alapin"]
+[Termination "CHECKMATE"]
+
+4. Bc4 e6 5. Ne2 Nc6 6. d4 Be7 7. dxc5 b6 8. Bxd5 exd5 9. cxb6 O-O 10. Qxd5 Bb7 11. bxa7 Qc7 12. O-O d6 13. Qe4 Rfe8 14. Be3 Bf6 15. Qf4 Rxe5 16. a4 Rae8 17. a8=Q Bxa8 18. Nd2 h6 19. b4 Bg5 20. Qf3 Nd4 21. Qg4 Nxe2+ 22. Qxe2 Qc8 23. c4 Bxe3 24. fxe3 Bxg2 25. Qxg2 R8e6 26. e4 Rg5 27. Qxg5 hxg5 28. Ra2 Rh6 29. Rc2 Qh3 30. Re1 Qd3 31. Ra2 Qd4+ 32. Kg2 Rf6 33. Re2 Rf4 34. h3 Qc3 35. b5 g4 36. h4 d5 37. cxd5 Qd3 38. Re1 g3 39. h5 Rf2+ 40. Kg1 Rxd2 41. Rxd2 Qxd2 42. Ra1 Qh2+ 43. Kf1 Qf2# 0-1
+
+[Event "Chen offline paired experiment"]
+[Site "local"]
+[Date "2026.10.03"]
+[Round "?"]
+[White "base"]
+[Black "candidate"]
+[Result "1/2-1/2"]
+[FEN "rnbqkb1r/pp1ppppp/8/2pnP3/8/2P5/PP1P1PPP/RNBQKBNR w KQkq - 1 4"]
+[SetUp "1"]
+[Opening "sicilian-alapin"]
+[Termination "THREEFOLD_REPETITION"]
+
+4. Qf3 Nb6 5. Qg3 Nc6 6. Be2 Nd5 7. Na3 Qa5 8. Nf3 h5 9. Nc4 Qa4 10. Bd1 Qxc4 11. Be2 Qe4 12. d3 Qa4 13. O-O a6 14. b3 Qb5 15. c4 Qb6 16. cxd5 Nb4 17. d6 exd6 18. a3 Nc6 19. exd6 Qxb3 20. Re1 Qe6 21. Bd1 Ne5 22. Qxe5 Qxe5 23. Nxe5 Bxd6 24. Ng6+ Kd8 25. Nh4 g6 26. d4 Rf8 27. dxc5 Bxc5 28. Bb3 d6 29. Be3 Bxe3 30. Rxe3 g5 31. Nf3 g4 32. Ng5 f5 33. f4 Rb8 34. Rc1 Bd7 35. Ne6+ Bxe6 36. Rxe6 Kd7 37. Rh6 b5 38. Rxh5 Rbe8 39. Bc2 Re3 40. Bxf5+ Rxf5 41. Rxf5 Rxa3 42. Rf7+ Ke6 43. Rh7 d5 44. f5+ Kxf5 45. Rf7+ Ke5 46. Rd1 b4 47. Rg7 Kf4 48. Rf1+ Ke5 49. Re7+ Kd6 50. Re8 Kc5 51. Rg8 Kb5 52. Rd1 Re3 53. Rxd5+ Kc6 54. Rd4 b3 55. Kf2 Re6 56. Rd1 Re4 57. Rg6+ Kc5 58. Rxa6 Re8 59. Raa1 Kb6 60. Ra4 Rf8+ 61. Kg1 Rg8 62. Rb4+ Kc5 63. Re4 Rg7 64. Rb1 Kd5 65. Ree1 Rb7 66. Red1+ Ke5 67. Rb2 Rb8 68. Rdb1 Rb7 69. Rd1 Rb8 70. Kf2 Ke4 71. Rd7 Ke5 72. Kg1 Ke6 73. Rd4 Kf5 74. g3 Rb6 75. Rd1 Ke4 76. Rdb1 Kd5 77. Rxb3 Re6 78. Rb5+ Kc6 79. R5b2 Rd6 80. Rc1+ Kd5 81. Rcb1 Rh6 82. Rf1 Rh3 83. Rd2+ Kc5 84. Rf5+ Kc4 85. Rc2+ Kd3 86. Ra2 Kc3 87. Ra4 Rh7 88. Raf4 Rg7 89. h3 gxh3 90. Kh2 Rh7 91. Rf3+ Kc4 92. R5f4+ Kd5 93. Rd3+ Ke5 94. Ra3 Rh8 95. Re3+ Kd5 96. Re2 Kc5 97. Rd2 Rh7 98. Rdf2 Kc6 99. Rc4+ Kd5 100. Ra4 Kd6 101. Ra6+ Ke5 102. Ra5+ Ke4 103. Rff5 Kd4 104. Rf4+ Kc3 105. Ra3+ Kd2 106. Rff3 Ke1 107. Rf4 Rh5 108. Ra1+ Ke2 109. Ra3 Rc5 110. Kxh3 Rh5+ 111. Kg4 Rh8 112. Rff3 Rg8+ 113. Kh3 Kd2 114. Rf4 Rg5 115. Rd4+ Ke2 116. Re4+ Kd2 117. Rf4 Rg8 118. Rff3 Ke2 119. Rf4 Rg6 120. Rff3 Rg8 121. Rae3+ Kd2 122. g4 Rg5 123. Re6 Ra5 124. Kg2 Ra4 125. Rd6+ Ke2 126. Kg3 Ra5 127. Rdf6 Rb5 128. Re6+ Kd2 129. Rf4 Ra5 130. Rf2+ Kd3 131. Ref6 Ke4 132. Re6+ Kd5 133. Re8 Kd6 134. Re3 Kc7 135. Rf6 Kd7 136. Kf4 Ra4+ 137. Kf5 Ra5+ 138. Kg6 Ra1 139. Kg5 Ra2 140. Rh3 Ra5+ 141. Kf4 Ra4+ 142. Ke5 Rxg4 143. Rh1 Rg5+ 144. Ke4 Rg4+ 145. Ke3 Ke7 146. Rf3 Rg2 147. Rh7+ Ke6 148. Rc7 Kd5 149. Rf6 Ke5 150. Rh6 Rg3+ 151. Kf2 Rd3 152. Rhh7 Kf4 153. Rc2 Rf3+ 154. Ke2 Re3+ 155. Kf1 Re5 156. Rh4+ Ke3 157. Ra4 Rd5 158. Ra3+ Kd4 159. Kg2 Ke4 160. Re2+ Kd4 161. Rf3 Rb5 162. Ra2 Rg5+ 163. Rg3 Rc5 164. Ra4+ Kd5 165. Rg5+ Kd6 166. Ra6+ Rc6 167. Rga5 Rxa6 168. Rg5 Ra3 169. Rg7 Rc3 170. Rg6+ Ke5 171. Rg7 Rc6 172. Re7+ Kd4 173. Kg3 Rf6 174. Re1 Rf5 175. Ra1 Rf6 176. Kg4 Rf2 177. Kg5 Ke4 178. Ra4+ Kd5 179. Ra1 Kd4 180. Kg6 Ke4 181. Re1+ Kd4 182. Kg5 Rd2 183. Kf6 Rb2 184. Kg5 Rd2 185. Kf4 Rf2+ 186. Kg5 1/2-1/2
+

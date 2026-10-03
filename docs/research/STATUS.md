@@ -1,5 +1,12 @@
 # Research checkpoint — 2026-10-03
 
+The [GPU one-second reference](../harness/gpu-one-second-reference-2026-10-03.md)
+closed with 4 wins, 5 draws and 7 losses against Stockfish configured1320:
+proxy1254, versus the earlier CPU alpha-beta proxy1714. Independent replay
+checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
+The single 1367 ms first-move wall-time outlier remains to be instrumented.
+Bounded tactical leaf scoring is the next isolated search-quality hypothesis.
+
 The [retained-prefix selector](../GPU_RETAINED_SELECTION_PATH.md) removes repeated
 root traversal during one classical choose call without new storage. Forty-eight
 synthetic cases and 1,336 snapshots across 33 native cases preserve exact behavior.
@@ -19,9 +26,15 @@ dimensions, copies, publication and fences constant across graph/queued arms.
 All 48 timed searches preserve their full trajectories. Graph dispatch alone
 saves only about 0.2%/0.45% in these warmed workloads, with noisy individual
 pairs. Further graph-launch tuning is deprioritized; full GPU execution remains
-the target. All three subagents stopped at the usage limit; none is running.
-Root is integrating preserved work in the two original worktrees, using bounded
-changed-boundary checks and compact evidence records.
+the target. Subagents have resumed with separate ownership: RDNA wave mapping
+and counters, whole-model precision/capture, and CPU causal profiling plus finite
+proofs. Root owns strength evaluation and integration in the two original
+worktrees. Timed hardware studies receive sequential reserved windows.
+
+The [new retained-prefix proofs](RETAINED_PREFIX_COST.md) compile 20 additional
+finite certificates. They establish conditional canonical-prefix equivalence
+and saved cached-helper work; ancestor reservation writes remain unchanged.
+They do not prove HIP refinement or minimum elapsed time.
 
 The original scope remains active: gfx1030 GPU execution, modular comparable
 search, independent neural architecture/latent research, resident training data,

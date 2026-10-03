@@ -1,0 +1,33 @@
+{
+  "source_binding": "gpu/evidence/native-symbolic-gfx1030-2026-10-03/source-binding.json",
+  "source_binding_sha256": "482f6a05778af16867711df29b5b18f0c71cb2fc72f19963574d40ade0eef59a",
+  "source_commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+  "library_sha256": "de50490a16d4395f6a71693fd33d6938a3c4f6d0b8660cf22535ece0e1bc8ad3",
+  "collector_start_hash_matches_closing_hash": true,
+  "compiler_binding": {
+    "source_sha256": {
+      "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+      "chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+      "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "chen_rules.hip": "702020d45809c243f7c63f6742d26a636bfcb1e95854b8828cfaa9f2b6c5bf73",
+      "chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+      "chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+      "chen_symbolic.h": "310323c79c901664c51a09574ad08bd48f1ef02e00981b99720e114a35a899ff",
+      "chen_symbolic.inc": "f5e88941ba24e109e37ec877b24902816a3156d15682f2635806b4559861ac09",
+      "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    "library_sha256": "de50490a16d4395f6a71693fd33d6938a3c4f6d0b8660cf22535ece0e1bc8ad3",
+    "library": "/tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so",
+    "compiler_command": "bash /tmp/chen-symbolic-native-20261003-x07vn7kj/build.sh /tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so",
+    "strict_compile_exitcode": 0,
+    "compiler": "HIP 7.2.4 clang 22; -O3 -std=c++17 --offload-arch=gfx1030 -Wall -Wextra -Werror",
+    "scope": "current compiled source closure and six actual GPU tests; no training or latency claim",
+    "artifact_policy": "Git retains source; raw bounded test logs retained without another source archive or replay"
+  },
+  "additional_hardware_execution": false
+}

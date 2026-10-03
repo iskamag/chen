@@ -1,0 +1,20 @@
+{
+  "results": "/tmp/chen-gpu-one-second-reference-20261003/run",
+  "completed_pairs": 8,
+  "games": 16,
+  "pentanomial": [
+    2,
+    2,
+    1,
+    3,
+    0
+  ],
+  "candidate_score": 0.40625,
+  "logistic_relative_elo_point_estimate": -65.92409945839687,
+  "paired_bootstrap_score_interval_95_diagnostic": null,
+  "independent_opening_pairs_asserted": false,
+  "rating_scope": "relative to the tested engine under this workload; not Lichess Elo",
+  "bootstrap_assumption": "diagnostic workload; opening-pair independence not asserted",
+  "incomplete_pairs": 0,
+  "technical_failures": 0
+}

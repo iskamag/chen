@@ -1,0 +1,37 @@
+{
+  "commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01) (Artix Linux rust 1:1.98.1-1)",
+  "build": "cargo build --release --features hip",
+  "source_sha256": {
+    "src/selective.rs": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+    "src/neural.rs": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+    "src/main.rs": "d410557b3c2fee761df06aae91aff19232c8f8792c95fff7ab72fc45247b66ae",
+    "src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "src/attacks.rs": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+    "src/hip.rs": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+    "src/backend.rs": "f6f9e25edc8f5cae1c70f3d5c79d926605cfd166c308bf73065b6d0ca9ed278f",
+    "src/two_fidelity.rs": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/resident.rs": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+    "src/frontier.rs": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+    "src/lib.rs": "a8aa3a6778d6b2e35f28e67ee7ed670b36f9d43850d8cfcc11988a037dbc3046",
+    "src/strength.rs": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+    "src/search.rs": "74a49dfd2742ca1fa770f92c248f1ba6bbc31147c6f3c9c4147039db8f14e5f2",
+    "src/tt.rs": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+    "src/core.rs": "d9be42853b1aac94dae5904f639647420a44cd30ade6eecf62612a97e50ec833",
+    "src/device.rs": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+    "Cargo.toml": "db3b4e293a569898d32fbf27a8260cd5b87d0ef5bc04ac284138fc77155ba526",
+    "Cargo.lock": "60caf9457598997c7c66cde70eb4893b051ac6d9abc51ea47fc6f5e6180bc547"
+  },
+  "staged_sha256": {
+    "chen": "17ab2ac82f88dce999a3691b4c4b1b9de2682d02101d7e8f8e9e5bfef5142f82",
+    "openings.txt": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+    "config.json": "833640d2248f1f2a7546b338faedac916f691cd04d81772bb26d1280c76ab658",
+    "stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "scripts/match.py": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c",
+    "scripts/audit_timed_match.py": "0c696aeb089ecf9a29e6ffe3bcea63aebfddca5e13d4fdd87277324172574636",
+    "harness/__init__.py": "1ca23740dfb4dfbf8bec2e555d8592b0c11f0e8bec5554c4f1c9e13c95b27d99",
+    "harness/stats.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990"
+  },
+  "scope": "new actual GPU production search strength; retained selector and neural evaluator excluded"
+}

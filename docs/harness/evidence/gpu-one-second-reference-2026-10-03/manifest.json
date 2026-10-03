@@ -1,0 +1,34 @@
+{
+  "kind": "closed_gpu_timed_reference_evidence",
+  "payload_sha256": {
+    "README.md": "bb1f803302b51afc1081f6573be5db80db84f2863ab84de208e702446796093f",
+    "chen": "17ab2ac82f88dce999a3691b4c4b1b9de2682d02101d7e8f8e9e5bfef5142f82",
+    "config.json": "833640d2248f1f2a7546b338faedac916f691cd04d81772bb26d1280c76ab658",
+    "declaration.json": "cbeee08713724b096491aeb2c3f08c3924b6ededdf63cd7c151b51ae387b2c86",
+    "games.jsonl": "164fc1b3fe790c28176e396990c7e3997dba3736a625f0456dbfe2628a1b7a94",
+    "games.pgn": "0f34f3d8debd40c0c79f2a99cbcbda732ab3427540cf6ef7526bf202f2007adc",
+    "harness/__init__.py": "1ca23740dfb4dfbf8bec2e555d8592b0c11f0e8bec5554c4f1c9e13c95b27d99",
+    "harness/stats.py": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990",
+    "independent-audit.json": "d7424d53f1edeb301b2b3b8343797672ac76220e48cf8a0917f200f808447958",
+    "libchen_gpu-final.so": "de50490a16d4395f6a71693fd33d6938a3c4f6d0b8660cf22535ece0e1bc8ad3",
+    "match.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "match.stdout": "86ac5fe77038fdfc24d2ec1edc990ea236960f8f402dcc098d090ab9b422fb4f",
+    "metadata.json": "a01cbc2222dad581d9b81e239e68d59065e59c01e1afa024dc78e9fe7eb2b554",
+    "native-provenance.json": "8e69af172d10d5022275c79e27b26ddc42719c0738b753fa5fb01700ab645da5",
+    "observations.json": "5eb4ccce8caa8101dcf3c2b647a05d6b22edb0055db8470fd195596e54e7dd52",
+    "openings.txt": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+    "scripts/audit_timed_match.py": "0c696aeb089ecf9a29e6ffe3bcea63aebfddca5e13d4fdd87277324172574636",
+    "scripts/match.py": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c",
+    "source-binding.json": "bc6d64ebfce01be88174817e97cce3e44077bbf87caeac11b59936d6b7f98332",
+    "summary.json": "2f3009d5eabe5091e242df89196b8ffedcd23f74d5af9a8236326d5d008b24d8",
+    "terminal.json": "fbf56527e4892692b84a9ed9c7720f0dabf86dd4b5dd665c9bce2b8d7eba6c09",
+    "watch.py": "74d0eb877e9724d286c982698080b640d0c79fcfbd2953d5636544df8bbdcc5e"
+  },
+  "payload_count": 22,
+  "payload_total_bytes": 1899790,
+  "external_binary": {
+    "local_path": "/home/iskam/src/vibe/chen/results/gpu-one-second-reference-2026-10-03/stockfish",
+    "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+  },
+  "rating_scope": "configured-opponent proxy only; no Lichess calibration"
+}

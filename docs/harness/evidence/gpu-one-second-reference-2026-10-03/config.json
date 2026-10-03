@@ -1,0 +1,39 @@
+{
+  "base": {
+    "command": [
+      "/tmp/chen-gpu-one-second-reference-20261003/stockfish"
+    ],
+    "options": {
+      "Threads": 1,
+      "Hash": 16,
+      "NumaPolicy": "none",
+      "UCI_LimitStrength": true,
+      "UCI_Elo": 1320,
+      "SyzygyProbeLimit": 0
+    },
+    "artifacts": {
+      "engine": "/tmp/chen-gpu-one-second-reference-20261003/stockfish"
+    }
+  },
+  "candidate": {
+    "command": [
+      "/tmp/chen-gpu-one-second-reference-20261003/chen"
+    ],
+    "options": {
+      "Backend": "hip-selective",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 16,
+      "SelectiveBatch": 32,
+      "SelectiveCandidates": 1024,
+      "MaxPositions": 1000000
+    },
+    "env": {
+      "CHEN_GPU_LIBRARY": "/tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so"
+    },
+    "artifacts": {
+      "engine": "/tmp/chen-gpu-one-second-reference-20261003/chen",
+      "hip": "/tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so"
+    }
+  }
+}

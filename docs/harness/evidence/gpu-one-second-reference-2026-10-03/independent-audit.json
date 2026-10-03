@@ -1,0 +1,40 @@
+{
+  "kind": "independent_closed_timed_match_audit",
+  "status": "pass",
+  "games": 16,
+  "complete_opening_pairs": 8,
+  "legal_plies": 1774,
+  "wins": 4,
+  "draws": 5,
+  "losses": 7,
+  "candidate_score": 0.40625,
+  "relative_logistic_point_estimate": -65.92409945839687,
+  "configured_opponent_proxy_rating": 1254.0759005416032,
+  "proxy_scope": "Stockfish19 configured1320 plus relative logistic point estimate; uncalibrated to actual rating pools",
+  "lichess_rating": null,
+  "confidence_interval": null,
+  "independence_asserted": false,
+  "technical_failures": 0,
+  "move_timing_ms": {
+    "candidate": {
+      "moves": 887,
+      "maximum": 1367.199272,
+      "median": 1001.390518
+    },
+    "base": {
+      "moves": 887,
+      "maximum": 1006.63083,
+      "median": 1000.619917
+    }
+  },
+  "requested_seconds_per_move": 1.0,
+  "timing_scope": "wall time includes UCI transport and scheduling; early completion allowed",
+  "declaration_sha256": "cbeee08713724b096491aeb2c3f08c3924b6ededdf63cd7c151b51ae387b2c86",
+  "auditor_sha256": "0c696aeb089ecf9a29e6ffe3bcea63aebfddca5e13d4fdd87277324172574636",
+  "run_sha256": {
+    "games.jsonl": "164fc1b3fe790c28176e396990c7e3997dba3736a625f0456dbfe2628a1b7a94",
+    "games.pgn": "0f34f3d8debd40c0c79f2a99cbcbda732ab3427540cf6ef7526bf202f2007adc",
+    "metadata.json": "a01cbc2222dad581d9b81e239e68d59065e59c01e1afa024dc78e9fe7eb2b554",
+    "summary.json": "2f3009d5eabe5091e242df89196b8ffedcd23f74d5af9a8236326d5d008b24d8"
+  }
+}

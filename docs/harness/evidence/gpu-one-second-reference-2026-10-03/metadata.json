@@ -1,0 +1,79 @@
+{
+  "config": {
+    "base": {
+      "command": [
+        "/tmp/chen-gpu-one-second-reference-20261003/stockfish"
+      ],
+      "options": {
+        "Threads": 1,
+        "Hash": 16,
+        "NumaPolicy": "none",
+        "UCI_LimitStrength": true,
+        "UCI_Elo": 1320,
+        "SyzygyProbeLimit": 0
+      },
+      "artifacts": {
+        "engine": "/tmp/chen-gpu-one-second-reference-20261003/stockfish"
+      }
+    },
+    "candidate": {
+      "command": [
+        "/tmp/chen-gpu-one-second-reference-20261003/chen"
+      ],
+      "options": {
+        "Backend": "hip-selective",
+        "Eval": "tapered",
+        "Level": 20,
+        "Hash": 16,
+        "SelectiveBatch": 32,
+        "SelectiveCandidates": 1024,
+        "MaxPositions": 1000000
+      },
+      "env": {
+        "CHEN_GPU_LIBRARY": "/tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so"
+      },
+      "artifacts": {
+        "engine": "/tmp/chen-gpu-one-second-reference-20261003/chen",
+        "hip": "/tmp/chen-symbolic-native-20261003-x07vn7kj/libchen_gpu-final.so"
+      }
+    }
+  },
+  "budgets": {
+    "config": "/tmp/chen-gpu-one-second-reference-20261003/config.json",
+    "openings": "/tmp/chen-gpu-one-second-reference-20261003/openings.txt",
+    "rounds": 1,
+    "depth": null,
+    "nodes": null,
+    "movetime": 1.0,
+    "max_plies": 512,
+    "independent_opening_pairs": false,
+    "out": "/tmp/chen-gpu-one-second-reference-20261003/run"
+  },
+  "opening_sha256": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+  "chess_version": "1.11.2",
+  "platform": "Linux-7.2.7-zen1-1-zen-x86_64-with-glibc2.39",
+  "concurrency": 1,
+  "launcher_sha256": {
+    "base": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "candidate": "17ab2ac82f88dce999a3691b4c4b1b9de2682d02101d7e8f8e9e5bfef5142f82"
+  },
+  "declared_artifact_sha256": {
+    "base": {
+      "engine": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    },
+    "candidate": {
+      "engine": "17ab2ac82f88dce999a3691b4c4b1b9de2682d02101d7e8f8e9e5bfef5142f82",
+      "hip": "de50490a16d4395f6a71693fd33d6938a3c4f6d0b8660cf22535ece0e1bc8ad3"
+    }
+  },
+  "artifact_scope": {
+    "base": "declared-files",
+    "candidate": "declared-files"
+  },
+  "rating_target": "2500 Lichess in a declared time-control pool; this offline match does not certify it",
+  "inherited_runtime_environment": {
+    "PYTORCH_ROCM_ARCH": "gfx1030",
+    "OMP_NUM_THREADS": "1"
+  },
+  "match_script_sha256": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c"
+}
