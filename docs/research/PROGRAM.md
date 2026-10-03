@@ -62,15 +62,19 @@ Keep proven finite-model equivalence separate from kernel refinement evidence
 and claims about optimal chess decisions. [Architecture direction](../DIRECTION.md)
 defines the residual, quantization and proof ownership boundaries.
 
-Assigned execution ownership (all three agents stopped at the service usage
-limit as of 2026-10-03; root is integrating directly): the coherence agent owns native symbolic production,
-INT8 whole-model fidelity/timing and architecture contracts; the RDNA agent owns
-device epoch scheduling and hardware/resource evidence; the fusion agent owns
-selection experiments and Lean/theoretical strategy analysis. The integration
-lead reviews source and evidence, maintains the transformer comparison arm,
-and commits verified milestones. GPU experiments take exclusive sequential
-hardware reservations while source review, CPU fixtures and proofs proceed in
-parallel. Frozen comparison arms remain available independently of defaults.
+The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) now owns implementation
+priority: bounded GPU alpha-beta/quiescence and useful work allocation; one
+recurrent tactical processor; shared exact topology; fresh learning curves and
+tuning before persistent memory or adaptive refresh. Prior microkernel results
+remain controls, not the primary strength program.
+
+Current bounded ownership: coherence implements tactical processor mechanics
+in the neural worktree; fusion implements the standalone GPU bounded-search
+reference; RDNA independently reviews search completion and topology ingress.
+Root reviews sources/evidence, maintains direction and commits milestones.
+GPU experiments take exclusive sequential hardware reservations while source
+review and CPU fixtures proceed in parallel. Frozen comparison arms remain
+available independently of defaults.
 
 ## Gates
 

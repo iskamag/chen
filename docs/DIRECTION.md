@@ -11,8 +11,10 @@ giving an uncalibrated configured-opponent proxy of 1714. This remains separate
 from an actual Lichess rating; larger reference-pool checks are still needed.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
-GPU strength. Tactical leaf scoring is the next isolated quality hypothesis;
-hardware throughput and playing strength remain separate comparisons.
+GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now
+prioritizes a bounded GPU alpha-beta/quiescence reference and one recurrent
+tactical neural processor. Hardware throughput and playing strength remain
+separate comparisons; further selector/dispatch microtuning is deprioritized.
 
 This file defines architectural direction. [STATUS](research/STATUS.md) owns the
 latest verified results and open gates; [PROGRAM](research/PROGRAM.md) owns the
@@ -108,8 +110,9 @@ definitions and the neighboring bitmatrices kernels, verifies emitted runtime
 ISA, and independently checks every primitive output. Keep branchless sliding
 fills as a measured candidate; the integrated selective-search result improves
 less than 0.2%, so the default remains unchanged. Preserve independent board lanes
-and ordinary popcount intrinsics. Optimize the newly dominant selection path
-and repeat integrated measurements before adopting the candidate.
+and ordinary popcount intrinsics. The next search work changes tactical
+continuation and useful work allocation; selection-path tuning resumes only
+for a demonstrated policy or a measured integration bottleneck.
 
 **2FFS paper implementation.** Implement a separate CPU reference for
 [Two-Fidelity Best-Action Identification for Stochastic Minimax Tree,
@@ -133,6 +136,13 @@ Include fully observed transformer scoring and classical baselines. Latent
 transition models must separately demonstrate decision quality and multistep
 refresh agreement before imagined search is deployed. A successful reconstruction
 loss or a larger model alone does not establish a strength gain.
+The next new architecture is the recurrent tactical operator in the
+[redesign](research/ALGORITHMIC_REDESIGN.md#one-new-processor-with-two-substantive-extensions):
+actual piece/square/legal-action nodes and supplied exact typed edges. Establish
+exact-child and recurrent-action controls, fresh data, convergence and bounded
+hyperparameter tuning before extending it to persistent object memory or
+search-aware adaptive refresh. Existing modern transformer and symbolic
+projection prototypes remain untrained controls.
 
 **Resident corpus and learning.** The main-worktree corpus package is a shared
 data boundary, not a second model library. Keep complete legal-root groups,
@@ -145,20 +155,22 @@ separate. Do not reopen spent families to tune the next architecture.
 
 ## Order of evidence and integration
 
-1. Freeze a runnable release and run the one-second-per-move reference match
-   with pinned opponents, options, openings and artifact hashes. Independently
-   replay games and report failures and uncertainty. An offline estimate needs
-   a declared reference calibration; it is not automatically Lichess Elo.
-2. Capture heavy CPU/GPU profiles for that same engine configuration and
-   representative opening, tactical and endgame positions. Use profiles to
-   choose a bounded optimization, then verify its oracle and repeated timing.
-3. Finish resident corpus hardware admission and a predeclared learning study.
-   Keep negative models and the selected-`NONE` outcome. Promote a candidate
-   only after joint value/action gates, reliable inference and equal-time play.
-4. Reproduce 2FFS and add transformer comparisons as named research variants.
-   Keep their additional assumptions and budgets visible instead of silently
-   changing the baseline engine.
-5. Merge only reviewed contracts and measured improvements into deployment.
+1. Build the experimental device-owned alpha-beta/quiescence reference. Admit
+   completed window bounds and abort semantics against matched-rule oracles.
+   Hold Tapered fixed for tactical decisions and paired equal-time play before
+   introducing PVS/TT or a dependency work pool.
+2. Implement the recurrent tactical processor and shared exact topology ingress.
+   Compare exact-child evaluation to parent/action processing. Keep terminal,
+   history, state identity and score-frame authority in the symbolic engine.
+3. Admit fresh root families and a consistent teacher protocol. Report learning
+   and data-scaling curves; predeclare a bounded development sweep and freeze
+   choices before fresh evaluation. Existing negative results are not tuned
+   architecture verdicts.
+4. Test a frozen neural winner in a fixed search at equal time before persistent
+   memory or adaptive refresh. Keep 2FFS and modern transformers as named
+   controls with their additional assumptions and budgets visible.
+5. Merge only reviewed contracts and measured decision/strength improvements.
+   Profile newly useful paths end to end before precision or kernel tuning.
    Calibrate resource levels separately and establish the final Lichess pool
    and rating criterion before claiming the target.
 

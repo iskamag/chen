@@ -5,7 +5,12 @@ closed with 4 wins, 5 draws and 7 losses against Stockfish configured1320:
 proxy1254, versus the earlier CPU alpha-beta proxy1714. Independent replay
 checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
 The single 1367 ms first-move wall-time outlier remains to be instrumented.
-Bounded tactical leaf scoring is the next isolated search-quality hypothesis.
+The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) is the current next-work
+authority: experimental device-owned alpha-beta/quiescence, then PVS/TT and
+dependency work allocation; one recurrent tactical neural processor before
+persistent memory/adaptive refresh. CPU and GPU matches used different searches
+and are not a calibrated head-to-head rating gap. Further dispatch/selector
+microtuning is deprioritized.
 
 The [CPU Coz study](../COZ_PROFILE.md) completed 164 stationary fixed-node
 searches. Actual zero-control interventions identify piece lookup as a useful
@@ -49,10 +54,10 @@ dimensions, copies, publication and fences constant across graph/queued arms.
 All 48 timed searches preserve their full trajectories. Graph dispatch alone
 saves only about 0.2%/0.45% in these warmed workloads, with noisy individual
 pairs. Further graph-launch tuning is deprioritized; full GPU execution remains
-the target. Subagents have resumed with separate ownership: RDNA wave mapping
-and counters, whole-model precision/capture, and CPU causal profiling plus finite
-proofs. Root owns strength evaluation and integration in the two original
-worktrees. Timed hardware studies receive sequential reserved windows.
+the target. The latest bounded assignments are GPU search implementation,
+tactical processor mechanics, and independent search/topology review. Root owns
+direction, strength evaluation and integration in the two original worktrees.
+Timed hardware studies receive sequential reserved windows.
 
 The [new retained-prefix proofs](RETAINED_PREFIX_COST.md) compile 20 additional
 finite certificates. They establish conditional canonical-prefix equivalence
@@ -251,7 +256,11 @@ Independent review found and fixed an exact-node-limit frontier bug and unsafe
 acceptance of malformed deterministic checkpoint buffers. It also drove actual
 artifact capture and canonical held-out split checks.
 
-## Next work
+## Development history and open work
+
+The sections below preserve the sequence and scope of earlier experiments.
+For execution priority use [ALGORITHMIC_REDESIGN](ALGORITHMIC_REDESIGN.md), not
+historical profiling bottlenecks or earlier proposed task ordering.
 
 The [selective resident foundation](../GPU_SELECTIVE_SEARCH.md) now executes
 on CPU and gfx1030 with complete legal sibling admission, exact cumulative
@@ -475,23 +484,13 @@ rather than storage reduction, determines adoption. Captured/native execution
 and asynchronous integration of the now-verified native symbolic producer are
 the next execution steps.
 
-1. Optimize the executed GPU rules/resident arena against its frozen oracles:
-   attack generation, parallel prefix assignment, compact edges and level reuse.
-2. Compare full-width frontier, faithful regularized batched search and a
-   separately declared adaptive scheduler at equal wall-clock budgets.
-3. Optimize the executed trained batched inference and sustained resident data
-   generation, retaining its stream/lifetime/ownership contract. Measure graph
-   shape reuse and cold costs before cache admission changes; investigate the
-   repeated eager-game timeout with thread diagnostics.
-4. Improve action-sensitive dynamics with exact transition reconstruction and
-   counterfactual tactical probes; test multistep held-out drift before latent
-   search. Fully observed static inference is already an experimental option;
-   imagined latent planning requires these additional gates.
-5. Select licensed real training data and game/position holdouts, train with
-   stronger outcome/search targets, and measure equal-budget paired play.
-6. Establish offline reference pools and statistical acceptance. Calibrate
-   adjustable levels separately. The 2500 Lichess claim requires evidence in
-   the chosen Lichess pool; no account deployment or rating result exists yet.
+Immediate order: bounded tactical GPU search; recurrent tactical processor and
+exact shared topology; fresh data, learning curves and declared tuning;
+equal-time direct search/neural matches; conditional object-memory/adaptive
+computation; then profiling of demonstrated useful paths. See the redesign for
+controls and completion criteria. Calibrate adjustable levels separately. The
+2500 Lichess claim requires evidence in the chosen pool; no account deployment
+or rating result exists yet.
 
 No requirement has been dropped. Selective resident search and GPU self-play,
 strong trained evaluation, sustained inference optimization, reliable long
