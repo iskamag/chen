@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-03T10:59:13.905577+00:00",
+  "worktree": "/home/iskam/src/vibe/chen-classical",
+  "base_commit": "3866a19",
+  "method": "new uncommitted proof/verifier/doc closure; source hashes take precedence over HEAD",
+  "live_source_sha256": {
+    "proofs/SearchBounds.lean": "bdbdf9521ef012bfa47a5a1a9522bf8fd2c24b5baa19c2bc943e877e3c6d9db0",
+    "proofs/RootCertificates.lean": "def1500e853248ab65f5f9c629ff881551a068d5f10018989a686c7023ee10e6",
+    "proofs/verify_root_certificates.py": "eb0444b326bd56d02411930f2706fb2789319b8c416120f2d39e7c1af42af2fe",
+    "docs/research/PARALLEL_ROOT_CERTIFICATES.md": "dd2516018d5e656155991cbeddcb3032dc67b8a8ea1018590ec9ca3d70d4af35"
+  },
+  "scheduler_contract_status": "Coordinated proposed contract; pool source/API not frozen or proved by this evidence",
+  "scheduler_proposal": {
+    "canonical_ids": "all legal root children in native canonical order",
+    "provenance": "state/history/evaluator/main-horizon/q-policy/mate-frame/job epoch",
+    "child_challenger_window": "[-32000, 1-incumbentScore], subject to explicit endpoint admission",
+    "completed_child_lower": "negates to parent upper; endpoint >=1-incumbentScore rejects strictly",
+    "ties": "potential tied winners complete Exact; reducer selects earliest canonical Exact tie",
+    "paused_or_aborted": "no new completed bound; preserve previous immutable packet",
+    "lower_depth": "scheduling guidance only; no bound admission at new depth"
+  },
+  "hardware_used": false,
+  "search_source_modified": false,
+  "claims_excluded": [
+    "HIP refinement",
+    "worker soundness",
+    "minimal-query optimality",
+    "GPU latency optimality",
+    "global chess strength"
+  ]
+}

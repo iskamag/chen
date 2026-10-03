@@ -1,0 +1,8 @@
+'Chen.SearchBounds.negate_sound' depends on axioms: [propext]
+'Chen.SearchBounds.lower_cutoff' depends on axioms: [propext, Quot.sound]
+'Chen.SearchBounds.upper_rejection' depends on axioms: [propext, Quot.sound]
+'Chen.SearchBounds.aborted_has_no_bounds' depends on axioms: [propext]
+'Chen.SearchBounds.root_lower_from_one_child' depends on axioms: [propext, Quot.sound]
+'Chen.SearchBounds.root_upper_from_all_children' does not depend on any axioms
+'Chen.SearchBounds.completed_winner' depends on axioms: [propext, Quot.sound]
+'Chen.SearchBounds.interrupted_publication_preserves' depends on axioms: [propext]

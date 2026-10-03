@@ -1,0 +1,23 @@
+'Chen.RootCertificates.admitted_parent_sound' depends on axioms: [propext]
+'Chen.RootCertificates.wrong_provenance_not_admitted' does not depend on any axioms
+'Chen.RootCertificates.child_lower_is_parent_upper' does not depend on any axioms
+'Chen.RootCertificates.child_upper_is_parent_lower' does not depend on any axioms
+'Chen.RootCertificates.lower_endpoint_negates_to_upper' depends on axioms: [propext]
+'Chen.RootCertificates.challenger_window_exact_range' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.mate_range_admits_challenger_window' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.minimum_endpoint_needs_other_window' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.integer_challenger_cutoff_strict' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.aborted_parent_has_no_bound' depends on axioms: [propext]
+'Chen.RootCertificates.strict_upper_dominates' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.certificate_incumbent_exact' depends on axioms: [propext]
+'Chen.RootCertificates.certificate_canonical_winner' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.certificate_all_children_maximum' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.aborted_competitor_prevents_certificate' depends on axioms: [propext]
+'Chen.RootCertificates.domination_tightens' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.certificate_retained_under_tightening' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.same_family_tightening_preserves_winner' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.abort_retains_completed_packet' depends on axioms: [propext]
+'Chen.RootCertificates.spike_feasible' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.unresolved_competitor_obstruction' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.earlier_tie_obstruction' depends on axioms: [propext, Quot.sound]
+'Chen.RootCertificates.unresolved_not_universally_safe' depends on axioms: [propext, Quot.sound]
