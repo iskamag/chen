@@ -135,6 +135,9 @@ pub trait SearchBackend: Send {
         history: &[u64],
         report: &mut dyn FnMut(&SearchResult),
     ) -> Result<SearchResult, String>;
+    fn root_pool_stats(&self) -> Option<String> {
+        None
+    }
     fn bounded_stats(&self) -> Option<BoundedSearchStats> {
         None
     }

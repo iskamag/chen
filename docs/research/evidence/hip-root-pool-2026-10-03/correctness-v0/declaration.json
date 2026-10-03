@@ -1,0 +1,18 @@
+{
+  "base_commit": "c4dd06a",
+  "cases_sha256": "6ce4739a709805352dbbcc5ab33f7b916fbc9a170fe5f5293637f1ed505e2f22",
+  "correctness_scope": "exhaustive finite-policy score and earliest-canonical winner, child Exact/Lower soundness, legal PV, pause/resume, history, strict cap, cancellation/retention, unchanged rejected output",
+  "epoch_ns": 50000000,
+  "external_watchdog_seconds": 45,
+  "fixture_count": 23,
+  "gpu_exclusive": true,
+  "library_sha256": "4e01c495fce4a461880fc996eb64b9af3dbd4cb263abfa79510e23ba4eb1d664",
+  "no_performance_or_rating_claim": true,
+  "normal_cap_seconds": 25,
+  "prime_policy": "One preferred-PV quantum, then all concurrent root children",
+  "probe_sha256": "0556a9c0784313315e35afbe0a37467763bcc7705f9a9806d03022f2a7b05753",
+  "rust_binary_sha256": "2900bf9af21940b668a3678c92eddec8b2b75c57eeeb978395c20167ca9c61a2",
+  "schema": "chen-root-pool-correctness-v1",
+  "source_closure_sha256": "4ae8ad16a7b9c8dd12fc037908d29798779fec94b85bafb38e52ba10837da592",
+  "worker_mapping": "256 workgroups of64threads; thread0 per legal child executes persistent scalarDFS"
+}

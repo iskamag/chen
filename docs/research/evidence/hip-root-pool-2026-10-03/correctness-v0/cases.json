@@ -1,0 +1,648 @@
+[
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 21,
+      "optimal_moves": [
+        "b1c3",
+        "g1f3"
+      ],
+      "pv": [
+        "b1c3"
+      ],
+      "qnodes": 0,
+      "score": 36
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "start-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 421,
+      "optimal_moves": [
+        "b1c3",
+        "g1f3"
+      ],
+      "pv": [
+        "b1c3",
+        "b8c6"
+      ],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "start-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 10,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q"
+      ],
+      "qnodes": 0,
+      "score": 719
+    },
+    "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "promotion-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 79,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q",
+        "e8d7"
+      ],
+      "qnodes": 0,
+      "score": 712
+    },
+    "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "promotion-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 0,
+      "score": 180
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "ep-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 46,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6",
+        "e8d7"
+      ],
+      "qnodes": 0,
+      "score": 168
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "ep-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 27,
+      "optimal_moves": [
+        "a1a8",
+        "h1h8"
+      ],
+      "pv": [
+        "a1a8"
+      ],
+      "qnodes": 0,
+      "score": 503
+    },
+    "fen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "castle-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 595,
+      "optimal_moves": [
+        "a1a8",
+        "h1h8"
+      ],
+      "pv": [
+        "a1a8",
+        "e8d7"
+      ],
+      "qnodes": 0,
+      "score": 498
+    },
+    "fen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "castle-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 27,
+      "optimal_moves": [
+        "f7g7",
+        "f7h7",
+        "f7e8",
+        "f7f8"
+      ],
+      "pv": [
+        "f7g7"
+      ],
+      "qnodes": 0,
+      "score": 29999
+    },
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "mate1-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 39,
+      "optimal_moves": [
+        "f7g7",
+        "f7h7",
+        "f7e8",
+        "f7f8"
+      ],
+      "pv": [
+        "f7g7"
+      ],
+      "qnodes": 0,
+      "score": 29999
+    },
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "mate1-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 4,
+      "optimal_moves": [
+        "e1e2"
+      ],
+      "pv": [
+        "e1e2"
+      ],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/4r3/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "check-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 40,
+      "optimal_moves": [
+        "e1e2"
+      ],
+      "pv": [
+        "e1e2"
+      ],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/4r3/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "check-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 6,
+      "optimal_moves": [
+        "e8d7",
+        "e8e7"
+      ],
+      "pv": [
+        "e8d7"
+      ],
+      "qnodes": 0,
+      "score": -104
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 b - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "quiet-d1",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 41,
+      "optimal_moves": [
+        "e8d7",
+        "e8e7"
+      ],
+      "pv": [
+        "e8d7",
+        "a2a4"
+      ],
+      "qnodes": 0,
+      "score": -136
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 b - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "quiet-d2",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 305,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q",
+        "e8d7"
+      ],
+      "qnodes": 304,
+      "score": 712
+    },
+    "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "promotion-q",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "ep-q",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 29,
+      "optimal_moves": [
+        "f7g7",
+        "f7h7",
+        "f7e8",
+        "f7f8"
+      ],
+      "pv": [
+        "f7g7"
+      ],
+      "qnodes": 28,
+      "score": 29999
+    },
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "mate1-q",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 4,
+      "optimal_moves": [
+        "e1e2"
+      ],
+      "pv": [
+        "e1e2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/4r3/4K3 w - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "check-q",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 6,
+      "optimal_moves": [
+        "e8d7",
+        "e8e7"
+      ],
+      "pv": [
+        "e8d7"
+      ],
+      "qnodes": 5,
+      "score": -104
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 b - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "quiet-q",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 0,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 w - - 8 10",
+    "history": [
+      15104947850067416779,
+      0,
+      15104947850067416779,
+      0
+    ],
+    "max_qply": 8,
+    "name": "root-threefold",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 0,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 43,
+      "optimal_moves": [
+        "a2a3",
+        "a2a4",
+        "e1d1",
+        "e1f1",
+        "e1d2",
+        "e1e2",
+        "e1f2"
+      ],
+      "pv": [
+        "a2a3",
+        "e8d7"
+      ],
+      "qnodes": 0,
+      "score": 100
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 w - - 8 10",
+    "history": [
+      15104947850067416779,
+      0
+    ],
+    "max_qply": 8,
+    "name": "root-not-threefold",
+    "node_budget": 1000000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": -30000
+    },
+    "fen": "7k/6Q1/6K1/8/8/8/8/8 b - - 0 1",
+    "history": [],
+    "max_qply": 8,
+    "name": "mate",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/P7/4K3 w - - 100 10",
+    "history": [],
+    "max_qply": 8,
+    "name": "fifty",
+    "node_budget": 1000000,
+    "quiescence": 1,
+    "root_ply": 0
+  }
+]

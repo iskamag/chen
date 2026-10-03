@@ -70,7 +70,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -161,6 +161,18 @@ fn make_backend(
                 eval,
                 selective,
             )?))
+        }
+        "hip-root-pool" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(
+                    chen::hip_root_pool::HipRootPool::from_environment(eval, config.quiescence)?,
+                ))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
         }
         "hip-bounded" => {
             #[cfg(all(feature = "hip", target_os = "linux"))]
@@ -287,7 +299,7 @@ fn uci() -> Result<(), String> {
                 output("option name PVS type check default false");
                 output("option name AspirationWindow type spin default 0 min 0 max 32000");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded",
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool",
                 );
                 output("option name SelectiveBatch type spin default 32 min 1 max 256");
                 output("option name SelectiveCandidates type spin default 1024 min 1 max 1024");
@@ -353,6 +365,7 @@ fn uci() -> Result<(), String> {
                                     | "cpu-selective"
                                     | "hip-selective"
                                     | "hip-bounded"
+                                    | "hip-root-pool"
                             ) =>
                         {
                             next_backend = value;
@@ -477,6 +490,9 @@ fn uci() -> Result<(), String> {
                                     #[cfg(feature = "hip")]
                                     if let Some(stats) = searcher.bounded_stats() {
                                         output(format!("info string bounded {}", stats.to_json()));
+                                    }
+                                    if let Some(stats) = searcher.root_pool_stats() {
+                                        output(format!("info string root_pool {stats}"));
                                     }
                                     output(format!(
                                         "bestmove {}",
@@ -726,6 +742,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             .map_or_else(|| "null".to_owned(), |s| s.to_json());
         #[cfg(not(feature = "hip"))]
         let bounded = "null";
+        let root_pool = searcher.root_pool_stats().unwrap_or_else(|| "null".into());
         let selective = result.selective.map_or_else(|| "null".to_owned(), |s| format!(
             "{{\"abi_version\":{},\"struct_size\":{},\"batch_leaves\":{},\"candidate_limit\":{},\"arena_positions\":{},\"classified_positions\":{},\"evaluated_positions\":{},\"completed_steps\":{},\"expanded_leaves\":{},\"open_frontier_leaves\":{},\"last_selected\":{},\"last_added\":{},\"kernel_ms\":{},\"minimum_frontier_depth\":{},\"maximum_frontier_depth\":{},\"pv_depth\":{},\"root_flags\":{},\"stop_reason\":{}}}",
             s.abi_version, s.struct_size, selective_config.batch_leaves, selective_config.candidate_limit,
@@ -734,7 +751,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -750,10 +767,15 @@ fn bench(args: &[String]) -> Result<(), String> {
             execution,
             selective,
             bounded,
+            root_pool,
             time_limit.map_or_else(|| "null".to_owned(), |t| t.as_millis().to_string()),
             node_limit.map_or_else(|| "null".to_owned(), |n| n.to_string()),
             config.tt && backend_name == "alphabeta",
-            config.quiescence && matches!(backend_name.as_str(), "alphabeta" | "hip-bounded"),
+            config.quiescence
+                && matches!(
+                    backend_name.as_str(),
+                    "alphabeta" | "hip-bounded" | "hip-root-pool"
+                ),
             config.move_ordering && backend_name == "alphabeta",
             config.pvs && backend_name == "alphabeta",
             if backend_name == "alphabeta" {

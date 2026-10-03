@@ -1,0 +1,79 @@
+{
+  "base_commit": "c4dd06a",
+  "canonical_index": "deterministic native legal-generation ordinal, not sorted neural action ID",
+  "cases_sha256": "6ce4739a709805352dbbcc5ab33f7b916fbc9a170fe5f5293637f1ed505e2f22",
+  "changes_since_v0": "published qnodes made per iteration instead of cumulative; Rust root epoch exhaustion rejects rather than wrapping",
+  "decision_driver_sha256": "baead7f763e1177eb988a4c0a3322e5c6270b15cc1b81d5994b62ee081559242",
+  "external_watchdog_seconds": 45,
+  "fixture_count": 23,
+  "go": "go movetime 1000 nodes 1000000 depth 64",
+  "gpu_exclusive": true,
+  "hardware_order": [
+    "native-v1-correctness-after-qnode-accounting-fix",
+    "actual-Rust-UCI-controls",
+    "balanced18decision-comparison-only-if-controls-pass"
+  ],
+  "library_sha256": "400963b8da019b1560c751660db2e491d82302ce8134a795b603a0aa2d1a49e5",
+  "normal_cap_seconds": 30,
+  "overlap": "Root profiling and prior matches retired; GPU exclusive. CPU3 exchange producer may be live: shared package power/cache uncontrolled.",
+  "policies": {
+    "alphabeta": "tapered, TT, ordering, qsearch, PVS=true, aspiration25",
+    "hip-bounded": "unchanged scalar canonical finite alpha-beta/q32",
+    "hip-root-pool": "new concurrent root children, resumable20ms epochs, shared Exact incumbent, strict canonical-native-enumeration ties, no TT/PVS"
+  },
+  "probe_sha256": "d3443224b41699389da68747a51106f8a0e807b9b20868e55604978f44753151",
+  "roots": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [],
+      "legal_count": 20,
+      "mate_in_one_moves": [],
+      "name": "start"
+    },
+    {
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "history": [],
+      "legal_count": 48,
+      "mate_in_one_moves": [],
+      "name": "kiwipete"
+    },
+    {
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "history": [],
+      "legal_count": 14,
+      "mate_in_one_moves": [],
+      "name": "rook-ending"
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "history": [],
+      "legal_count": 37,
+      "mate_in_one_moves": [],
+      "name": "middlegame"
+    },
+    {
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "history": [],
+      "legal_count": 9,
+      "mate_in_one_moves": [],
+      "name": "promotion"
+    },
+    {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "history": [],
+      "legal_count": 26,
+      "mate_in_one_moves": [
+        "f7e8",
+        "f7f8",
+        "f7g7",
+        "f7h7"
+      ],
+      "name": "mate"
+    }
+  ],
+  "rust_binary_sha256": "64e27fc935904ca2e636eb040e725d34861e80c3b91952ed61449952cbd2b453",
+  "schema": "chen-root-pool-integration-decision-v1",
+  "scope": "Six authored empty-history diagnostic roots, not fresh closed holdout; no games/rating/throughput efficiency claim. Prior ordinary complete-root teacher labels reused unchanged by cold analysis only.",
+  "source_closure_sha256": "e3cbe9291d7f60abab0555beb8b910e89462d0cc74cdc7a68419a3d8fd37f3ee",
+  "uci_controls": 7
+}

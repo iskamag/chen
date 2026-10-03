@@ -1,0 +1,312 @@
+{
+  "retired": {
+    "backend": "hip-root-pool",
+    "exit_code": 0,
+    "pid": 10358,
+    "stderr": ""
+  },
+  "rows": [
+    {
+      "bestmove": "a2a3",
+      "name": "zero-time",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 1,
+        "stop_reason": "deadline",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go movetime 0 depth 64",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":1,\"stop_reason\":\"deadline\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 6.500123010482639
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "zero-nodes",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [],
+        "node_limit": 0,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 2,
+        "stop_reason": "nodes",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go nodes 0 depth 64",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[],\"node_limit\":0,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":2,\"stop_reason\":\"nodes\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 1.6746509936638176
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "one-node",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 1,
+            "clock_khz": 100000,
+            "completed_children": 0,
+            "depth": 1,
+            "elapsed_ticks": 2008,
+            "exact_children": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 1,
+            "kernel_ms": 0.03288000077009201,
+            "nodes": 1,
+            "paused_children": 0,
+            "qnodes": 0,
+            "scratch_bytes": 24446976,
+            "upper_children": 0,
+            "wall_ms": 0.11032
+          }
+        ],
+        "node_limit": 1,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 3,
+        "stop_reason": "nodes",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go nodes 1 depth 64",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":1,\"clock_khz\":100000,\"completed_children\":0,\"depth\":1,\"elapsed_ticks\":2008,\"exact_children\":0,\"iteration_complete\":0,\"iteration_nodes\":1,\"kernel_ms\":0.03288000077009201,\"nodes\":1,\"paused_children\":0,\"qnodes\":0,\"scratch_bytes\":24446976,\"upper_children\":0,\"wall_ms\":0.11032}],\"node_limit\":1,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":3,\"stop_reason\":\"nodes\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 1.4343109796755016
+    },
+    {
+      "bestmove": "b1c3",
+      "name": "exact-d2",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "completed_depth": 2,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 1,
+            "depth": 1,
+            "elapsed_ticks": 12180,
+            "exact_children": 1,
+            "iteration_complete": 0,
+            "iteration_nodes": 2,
+            "kernel_ms": 0.13499799370765686,
+            "nodes": 2,
+            "paused_children": 0,
+            "qnodes": 1,
+            "scratch_bytes": 24446976,
+            "upper_children": 0,
+            "wall_ms": 0.20622
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 20,
+            "depth": 1,
+            "elapsed_ticks": 11800,
+            "exact_children": 20,
+            "iteration_complete": 1,
+            "iteration_nodes": 21,
+            "kernel_ms": 0.13739800453186035,
+            "nodes": 21,
+            "paused_children": 0,
+            "qnodes": 20,
+            "scratch_bytes": 24446976,
+            "upper_children": 0,
+            "wall_ms": 0.16843000000000002
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 1,
+            "depth": 2,
+            "elapsed_ticks": 199660,
+            "exact_children": 1,
+            "iteration_complete": 0,
+            "iteration_nodes": 22,
+            "kernel_ms": 2.0094969272613525,
+            "nodes": 43,
+            "paused_children": 0,
+            "qnodes": 40,
+            "scratch_bytes": 24446976,
+            "upper_children": 0,
+            "wall_ms": 2.095681
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 20,
+            "depth": 2,
+            "elapsed_ticks": 236340,
+            "exact_children": 2,
+            "iteration_complete": 1,
+            "iteration_nodes": 231,
+            "kernel_ms": 2.3813729286193848,
+            "nodes": 252,
+            "paused_children": 0,
+            "qnodes": 230,
+            "scratch_bytes": 24446976,
+            "upper_children": 18,
+            "wall_ms": 2.422521
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 4,
+        "stop_reason": "depth",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go depth 2 nodes 1000000",
+        "< info depth 1 score cp 36 nodes 21 nps 13095 hashfull 0 time 1 pv b1c3",
+        "< info depth 2 score cp 0 nodes 252 nps 40883 hashfull 0 time 6 pv b1c3 b8c6",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"completed_depth\":2,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":1,\"depth\":1,\"elapsed_ticks\":12180,\"exact_children\":1,\"iteration_complete\":0,\"iteration_nodes\":2,\"kernel_ms\":0.13499799370765686,\"nodes\":2,\"paused_children\":0,\"qnodes\":1,\"scratch_bytes\":24446976,\"upper_children\":0,\"wall_ms\":0.20622},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":20,\"depth\":1,\"elapsed_ticks\":11800,\"exact_children\":20,\"iteration_complete\":1,\"iteration_nodes\":21,\"kernel_ms\":0.13739800453186035,\"nodes\":21,\"paused_children\":0,\"qnodes\":20,\"scratch_bytes\":24446976,\"upper_children\":0,\"wall_ms\":0.16843000000000002},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":1,\"depth\":2,\"elapsed_ticks\":199660,\"exact_children\":1,\"iteration_complete\":0,\"iteration_nodes\":22,\"kernel_ms\":2.0094969272613525,\"nodes\":43,\"paused_children\":0,\"qnodes\":40,\"scratch_bytes\":24446976,\"upper_children\":0,\"wall_ms\":2.095681},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":20,\"depth\":2,\"elapsed_ticks\":236340,\"exact_children\":2,\"iteration_complete\":1,\"iteration_nodes\":231,\"kernel_ms\":2.3813729286193848,\"nodes\":252,\"paused_children\":0,\"qnodes\":230,\"scratch_bytes\":24446976,\"upper_children\":18,\"wall_ms\":2.422521}],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":4,\"stop_reason\":\"depth\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove b1c3"
+      ],
+      "wall_ms": 7.064923993311822
+    },
+    {
+      "bestmove": "0000",
+      "name": "mate",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "root_epoch": 5,
+        "stop_reason": "terminal"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position fen 7k/6Q1/6K1/8/8/8/8/8 b - - 0 1",
+        "> go movetime 1000 depth 64",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"root_epoch\":5,\"stop_reason\":\"terminal\"}",
+        "< bestmove 0000"
+      ],
+      "wall_ms": 1.1751500132959336
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "threefold",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "root_epoch": 6,
+        "stop_reason": "terminal"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos moves g1f3 g8f6 f3g1 f6g8 g1f3 g8f6 f3g1 f6g8",
+        "> go movetime 1000 depth 64",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"root_epoch\":6,\"stop_reason\":\"terminal\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 1.2421709834598005
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "stop",
+      "stats": {
+        "abi": 3,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 7,
+            "clock_khz": 100000,
+            "completed_children": 0,
+            "depth": 1,
+            "elapsed_ticks": 1880584,
+            "exact_children": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 112,
+            "kernel_ms": 18.82406234741211,
+            "nodes": 112,
+            "paused_children": 1,
+            "qnodes": 111,
+            "scratch_bytes": 24446976,
+            "upper_children": 0,
+            "wall_ms": 18.933129
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 7,
+        "stop_reason": "cancelled",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": 0.7188100134953856,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position fen r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "> go infinite depth 16",
+        "> stop",
+        "< info string root_pool {\"abi\":3,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":7,\"clock_khz\":100000,\"completed_children\":0,\"depth\":1,\"elapsed_ticks\":1880584,\"exact_children\":0,\"iteration_complete\":0,\"iteration_nodes\":112,\"kernel_ms\":18.82406234741211,\"nodes\":112,\"paused_children\":1,\"qnodes\":111,\"scratch_bytes\":24446976,\"upper_children\":0,\"wall_ms\":18.933129}],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":7,\"stop_reason\":\"cancelled\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 20.66445001401007
+    }
+  ],
+  "scope": "actual Rust UCI ABI3 ownership/publication/stop controls; no strength claim",
+  "status": "PASS"
+}

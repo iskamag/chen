@@ -1,0 +1,360 @@
+{
+  "rows": [
+    {
+      "backend": "alphabeta",
+      "bestmove": "g1f3",
+      "chosen_mates_in_one": false,
+      "reported_depth": 7,
+      "reported_nodes": 274689,
+      "root": "start",
+      "teacher_common_depth": 10,
+      "teacher_rank": 3,
+      "teacher_reference_gap_interval": [
+        19.562370922371123,
+        21.425453971091187
+      ],
+      "teacher_reported_gap_cp": 22,
+      "wall_ms": 1000.5971170030534
+    },
+    {
+      "attempted_nodes": 10397,
+      "attempted_qnodes": 9522,
+      "backend": "hip-bounded",
+      "bestmove": "b1c3",
+      "chosen_mates_in_one": false,
+      "reported_depth": 3,
+      "reported_nodes": 2843,
+      "root": "start",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 10,
+      "teacher_rank": 8,
+      "teacher_reference_gap_interval": [
+        30.740868631766617,
+        32.60395165812968
+      ],
+      "teacher_reported_gap_cp": 34,
+      "unfinished_iteration_nodes": 7554,
+      "wall_ms": 1001.8265169928782
+    },
+    {
+      "attempted_nodes": 149064,
+      "attempted_qnodes": 138102,
+      "backend": "hip-root-pool",
+      "bestmove": "b1c3",
+      "chosen_mates_in_one": false,
+      "completed_children": 0,
+      "epoch_count": 53,
+      "exact_children": 0,
+      "paused_children": 20,
+      "reported_depth": 4,
+      "reported_nodes": 56905,
+      "root": "start",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 10,
+      "teacher_rank": 8,
+      "teacher_reference_gap_interval": [
+        30.740868631766617,
+        32.60395165812968
+      ],
+      "teacher_reported_gap_cp": 34,
+      "unfinished_iteration_nodes": 92159,
+      "upper_children": 0,
+      "wall_ms": 1001.190127019072
+    },
+    {
+      "attempted_nodes": 6172,
+      "attempted_qnodes": 6171,
+      "backend": "hip-bounded",
+      "bestmove": "a2a3",
+      "chosen_mates_in_one": false,
+      "reported_depth": 0,
+      "reported_nodes": 0,
+      "root": "kiwipete",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 9,
+      "teacher_rank": 30,
+      "teacher_reference_gap_interval": [
+        579.4187965022888,
+        581.2818811625757
+      ],
+      "teacher_reported_gap_cp": 623,
+      "unfinished_iteration_nodes": 6172,
+      "wall_ms": 1002.6512180047575
+    },
+    {
+      "attempted_nodes": 7557,
+      "attempted_qnodes": 7556,
+      "backend": "hip-root-pool",
+      "bestmove": "a2a3",
+      "chosen_mates_in_one": false,
+      "completed_children": 0,
+      "epoch_count": 3,
+      "exact_children": 0,
+      "paused_children": 47,
+      "reported_depth": 0,
+      "reported_nodes": 0,
+      "root": "kiwipete",
+      "stop_reason": "qply",
+      "teacher_common_depth": 9,
+      "teacher_rank": 30,
+      "teacher_reference_gap_interval": [
+        579.4187965022888,
+        581.2818811625757
+      ],
+      "teacher_reported_gap_cp": 623,
+      "unfinished_iteration_nodes": 7557,
+      "upper_children": 0,
+      "wall_ms": 49.77013400639407
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "d5e6",
+      "chosen_mates_in_one": false,
+      "reported_depth": 5,
+      "reported_nodes": 332464,
+      "root": "kiwipete",
+      "teacher_common_depth": 9,
+      "teacher_rank": 2,
+      "teacher_reference_gap_interval": [
+        38.19320015484166,
+        40.056283732677315
+      ],
+      "teacher_reported_gap_cp": 42,
+      "wall_ms": 1000.3734169877134
+    },
+    {
+      "attempted_nodes": 127152,
+      "attempted_qnodes": 120781,
+      "backend": "hip-root-pool",
+      "bestmove": "b4f4",
+      "chosen_mates_in_one": false,
+      "completed_children": 2,
+      "epoch_count": 55,
+      "exact_children": 2,
+      "paused_children": 12,
+      "reported_depth": 4,
+      "reported_nodes": 35735,
+      "root": "rook-ending",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "unfinished_iteration_nodes": 91417,
+      "upper_children": 0,
+      "wall_ms": 1001.6731770010665
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "b4f4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 9,
+      "reported_nodes": 442386,
+      "root": "rook-ending",
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.232046993915
+    },
+    {
+      "attempted_nodes": 12237,
+      "attempted_qnodes": 11449,
+      "backend": "hip-bounded",
+      "bestmove": "b4f4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 3,
+      "reported_nodes": 2282,
+      "root": "rook-ending",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "unfinished_iteration_nodes": 9955,
+      "wall_ms": 1001.7441880190745
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "d4c5",
+      "chosen_mates_in_one": false,
+      "reported_depth": 6,
+      "reported_nodes": 355009,
+      "root": "middlegame",
+      "teacher_common_depth": 10,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.3547370142769
+    },
+    {
+      "attempted_nodes": 7849,
+      "attempted_qnodes": 7829,
+      "backend": "hip-bounded",
+      "bestmove": "a2a4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 1,
+      "reported_nodes": 61,
+      "root": "middlegame",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 10,
+      "teacher_rank": 9,
+      "teacher_reference_gap_interval": [
+        32.60395158333253,
+        34.46703460596943
+      ],
+      "teacher_reported_gap_cp": 36,
+      "unfinished_iteration_nodes": 7788,
+      "wall_ms": 1001.8872270011343
+    },
+    {
+      "attempted_nodes": 61724,
+      "attempted_qnodes": 61308,
+      "backend": "hip-root-pool",
+      "bestmove": "a2a4",
+      "chosen_mates_in_one": false,
+      "completed_children": 6,
+      "epoch_count": 52,
+      "exact_children": 6,
+      "paused_children": 31,
+      "reported_depth": 2,
+      "reported_nodes": 12114,
+      "root": "middlegame",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 10,
+      "teacher_rank": 9,
+      "teacher_reference_gap_interval": [
+        32.60395158333253,
+        34.46703460596943
+      ],
+      "teacher_reported_gap_cp": 36,
+      "unfinished_iteration_nodes": 49610,
+      "upper_children": 0,
+      "wall_ms": 1002.0729870011564
+    },
+    {
+      "attempted_nodes": 10501,
+      "attempted_qnodes": 8662,
+      "backend": "hip-bounded",
+      "bestmove": "a7a8q",
+      "chosen_mates_in_one": false,
+      "reported_depth": 5,
+      "reported_nodes": 3570,
+      "root": "promotion",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "unfinished_iteration_nodes": 6931,
+      "wall_ms": 1003.662779025035
+    },
+    {
+      "attempted_nodes": 52438,
+      "attempted_qnodes": 48088,
+      "backend": "hip-root-pool",
+      "bestmove": "a7a8q",
+      "chosen_mates_in_one": false,
+      "completed_children": 2,
+      "epoch_count": 55,
+      "exact_children": 2,
+      "paused_children": 7,
+      "reported_depth": 5,
+      "reported_nodes": 14983,
+      "root": "promotion",
+      "stop_reason": "deadline",
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "unfinished_iteration_nodes": 37455,
+      "upper_children": 0,
+      "wall_ms": 1000.900927989278
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "a7a8q",
+      "chosen_mates_in_one": false,
+      "reported_depth": 10,
+      "reported_nodes": 510915,
+      "root": "promotion",
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.2426270220894
+    },
+    {
+      "attempted_nodes": 29,
+      "attempted_qnodes": 28,
+      "backend": "hip-root-pool",
+      "bestmove": "f7g7",
+      "chosen_mates_in_one": true,
+      "completed_children": 26,
+      "epoch_count": 2,
+      "exact_children": 13,
+      "paused_children": 0,
+      "reported_depth": 1,
+      "reported_nodes": 29,
+      "root": "mate",
+      "stop_reason": "mate",
+      "teacher_unscored_reason": "decisive_mate_tablebase_or_extreme_evidence",
+      "unfinished_iteration_nodes": 0,
+      "upper_children": 13,
+      "wall_ms": 1.8426910100970417
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "f7g7",
+      "chosen_mates_in_one": true,
+      "reported_depth": 1,
+      "reported_nodes": 33,
+      "root": "mate",
+      "teacher_unscored_reason": "decisive_mate_tablebase_or_extreme_evidence",
+      "wall_ms": 0.1174400094896555
+    },
+    {
+      "attempted_nodes": 29,
+      "attempted_qnodes": 28,
+      "backend": "hip-bounded",
+      "bestmove": "f7g7",
+      "chosen_mates_in_one": true,
+      "reported_depth": 1,
+      "reported_nodes": 29,
+      "root": "mate",
+      "stop_reason": "mate",
+      "teacher_unscored_reason": "decisive_mate_tablebase_or_extreme_evidence",
+      "unfinished_iteration_nodes": 0,
+      "wall_ms": 2.0671710080932826
+    }
+  ],
+  "scope": "Cold saved-artifact legality/counter/packet summary; no quality/rating or hardware causal proof",
+  "status": "PASS",
+  "teacher_binding": {
+    "relative_path": "../hip-bounded-decisions-2026-10-03/teacher-results.json",
+    "scope": "Previously closed ordinary full-root diagnostic estimates, reused unchanged; no teacher search rerun.",
+    "sha256": "5b78203b7ee905ef9ec7b577a03dfa6854f5c09d6379415def81c7aaa3a13597",
+    "source_commit": "8eb2681"
+  }
+}
