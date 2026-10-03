@@ -76,6 +76,14 @@ bounded execution, but they are configurable engineering bounds, not the target
 metric. Permit larger justified artifacts or resident allocations when measured
 latency improves; avoid duplicated checkpoint tensors and needless transfers.
 
+The [completed precision/capture controls](../../chen-neural/docs/PRECISION_CAPTURE.md)
+use captured FP32 as the next integration reference. Captured INT8 wins the
+tested batch-one anchors, loses at batches32/256, and nearly ties complete-root
+transitions. Retain INT8 as a named small-batch option rather than applying one
+precision globally. FP16 remains a useful fidelity control. Measure the complete
+producer/inference/search path before deployment; these TRAIN diagnostics do
+not change the selected-NONE quality gate.
+
 The theory track uses Lean to prove finite-model invariants and execution-policy
 equivalence: stable argmax under monotone reservations, dependency-ordered backup,
 packed field separation and exact symbolic transition facts. Keep assumptions and

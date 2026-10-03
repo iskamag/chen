@@ -20,6 +20,16 @@ remain small with no spills. Six counter passes complete but wave/occupancy
 metrics fail sanity checks; achieved utilization remains unestablished. The
 default wave32 kernels are unchanged.
 
+Neural `21d19f9` records the [whole-model precision/capture controls](../../../chen-neural/docs/PRECISION_CAPTURE.md):
+eight same-checkpoint representatives, 80 graphs and 160 exact own-eager checks.
+Captured INT8 wins all four batch-one anchors by 1.03–1.20x, loses all anchors
+at batches32/256, and nearly ties conditioned complete-root FP32. Native/Torch
+FP16 and autocast lose FP32 in these graph contexts despite better numerical
+fidelity than INT8. A checkpoint-compatible constant buffer fixes relation
+capture. One failed partial run and a separately pinned seven-key continuation
+remain distinct. No model is promoted; use captured FP32 as the next integration
+reference and compare producer, inference and search together.
+
 The [retained-prefix selector](../GPU_RETAINED_SELECTION_PATH.md) removes repeated
 root traversal during one classical choose call without new storage. Forty-eight
 synthetic cases and 1,336 snapshots across 33 native cases preserve exact behavior.
