@@ -1,0 +1,15 @@
+{
+  "files_sha256": {
+    "audit.json": "bd317bd323c6adf48e0d556407c34cca7d3120d21c90b5c38fbeb046fb23aa7e",
+    "chess-oracle-source.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "cross-pilot-audit.json": "bb85edae07ac4881170124a16224b6ee6b61b6e719e2907ffd410a9601c06b82",
+    "declaration.json": "cedd511727747a46f17be466ef2f88d28ed6d95cef6b351d1f60948f0bb9b454",
+    "exclusions.json.gz": "88a7eab925ddd5ed31c2867d21735419237cf3e73a888b0e5330a7a392ab66ff",
+    "families.jsonl.gz": "e1d72f74007cf68d8c6be625c7b7dda1052565f716d2e135366ae3a33f951ded",
+    "generator-source.py": "6790ba6cadd47f8cdb6d04114f390f2c9ce720d653332771683de68b81fd4cee",
+    "python-chess-LICENSE.txt": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "report.json": "fb904e58deacf70759f89c2ae564fb3e6140b60e929bda53a8d4a0460ae13593",
+    "reviewed-auditor-source.py": "bcc1ca1e7202b6c837cc984ceb716ceb9009233132057d8eea9650fd7cc42a77"
+  },
+  "scope": "TRAIN-only CPU mechanics; no strength or neural training evidence"
+}

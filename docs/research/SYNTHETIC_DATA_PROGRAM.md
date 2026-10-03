@@ -5,8 +5,10 @@ select deployment candidates by decision quality at an inference budget. Cheap
 synthetic rules data can be regenerated almost indefinitely. Strong strategic
 labels, independent game families and coverage of difficult decisions remain
 separate resources. Repeating one teacher's errors is not more supervision.
-This is a generation design and first-pack proposal. The generator, trace
-emitter and large training study still need implementation and execution.
+This is the generation design and first-pack proposal. The
+[reachable mechanics generator and pilots](../SYNTHETIC_MECHANICS.md) now exist;
+tactical trace production, strategic labeling and the large training study
+still need implementation and execution.
 
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) defines the bounded search
 reference and recurrent tactical operator. The neural worktree's

@@ -22,6 +22,17 @@ make this a correctness reference. UCI/iterative publication, deadlines, PVS/TT,
 scalable scheduling and playing-strength tests remain pending. Production
 `hip-selective` is unchanged.
 
+The [reachable mechanics generator](../SYNTHETIC_MECHANICS.md) now completes a
+256-family TRAIN pilot:1940 roots,35,533 complete legal action effects and95,790
+changed-source attack targets, in25.827s excluding exclusion-index preparation.
+Independent scalar-ray replay admits every action and all histories/terminals.
+The pilot exposed70.2% White-to-move sampling; alternating anchors/balanced event
+selection fixes the live sampler and a separate16-family control has60/60 movers.
+Both runs exclude777,264 supplied spent/planned identities; their roots and
+planned children do not overlap. Four focused tests pass, including corruption
+rejection and mover parity. This is CPU mechanics generation, without strategic
+labels, neural training, GPU generation or a new strength result.
+
 The [CPU Coz study](../COZ_PROFILE.md) completed 164 stationary fixed-node
 searches. Actual zero-control interventions identify piece lookup as a useful
 CPU hypothesis; a 75% virtual line acceleration reduces the finer node-marker

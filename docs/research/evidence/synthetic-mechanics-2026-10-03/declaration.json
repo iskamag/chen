@@ -1,0 +1,63 @@
+{
+  "schema": "chen_reachable_mechanics_v1",
+  "config": {
+    "seed": 20261003,
+    "families": 256,
+    "max_plies": 192,
+    "roots_per_family": 8,
+    "min_ply": 12,
+    "min_separation": 8,
+    "max_attempts": 1024
+  },
+  "split": "train",
+  "teacher_labels": false,
+  "selected_using_teacher": false,
+  "generated_on": "cpu_python_chess",
+  "oracle_version": "1.11.2",
+  "source_sha256": "1d332b3c5a7908f218e32bb3a1d707561497e6ba6fdb1d0569ed3a582237e735",
+  "exclusion_sources": [
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/semantic-data-admission-2026-10-01.json.gz",
+      "sha256": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/semantic-data-unscored-admission-revision1-2026-10-01.json.gz",
+      "sha256": "0423041db00762479e203c17a85a73668ccee75d5178a6f1a5fb59324eddd66e"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/value-study-pilot-2026-10-01.json",
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+      "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+      "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+      "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208"
+    },
+    {
+      "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+      "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14"
+    }
+  ],
+  "exclusion_key_count": 777264,
+  "exclusion_sha256": "9e28f9a734511b27a6524cf92ba1ac0b7c47f2d09f45157e42f3236eb094593f",
+  "effect_frame": "parent_mover",
+  "root_frame": "root_mover",
+  "outcomes": false,
+  "selection": "phase_spread_then_event_priority_min_separation",
+  "inclusion_probability": null
+}

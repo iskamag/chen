@@ -1,0 +1,44 @@
+{
+  "kind": "synthetic_mechanics_train_pilot",
+  "complete": true,
+  "counts": {
+    "attempted_families": 261,
+    "families": 256,
+    "roots": 1940,
+    "actions": 35533,
+    "changed_attack_sources": 95790,
+    "empty_or_duplicate_family": 5
+  },
+  "policies": {
+    "uniform": 130,
+    "noisy_one_ply_material": 126
+  },
+  "root_motifs": {
+    "capture": 1193,
+    "castling": 65,
+    "check": 533,
+    "pin": 331,
+    "promotion": 160,
+    "low_material": 840,
+    "en_passant": 12
+  },
+  "material_buckets": {
+    "high_25_32": 447,
+    "middle_11_24": 653,
+    "low_10": 840
+  },
+  "movers": {
+    "white": 1362,
+    "black": 578
+  },
+  "wall_seconds": 25.826657024997985,
+  "roots_per_second": 75.11618705131859,
+  "actions_per_second": 1375.8265332445894,
+  "compressed_bytes": 3710185,
+  "bytes_per_root": 1912.4664948453608,
+  "shard_sha256": "b876235575681f742db2683efc5e87c7c3f40618a180c03cc89057f75133d5f1",
+  "declaration_sha256": "50ab81d555f5302c2c264a6eefc9d33fea78ec5e1747874cb72a4ad02221e997",
+  "strength_evidence": false,
+  "neural_training": false,
+  "closed_test_access": false
+}

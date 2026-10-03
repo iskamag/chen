@@ -1,0 +1,15 @@
+{
+  "kind": "scalar_ray_legal_replay_audit",
+  "counts": {
+    "actions": 35533,
+    "changed_attack_sources": 95790,
+    "roots": 1940,
+    "families": 256
+  },
+  "passed": true,
+  "independent_attack_rays": true,
+  "shared_python_chess_legality": true,
+  "shared_hash_formula": true,
+  "source_sha256": "cd549b6db526eb4f4a4da4fd35db67dade096f2eda321f2fd56f136a0a47a735",
+  "strength_evidence": false
+}
