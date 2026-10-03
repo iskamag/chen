@@ -63,8 +63,8 @@ and claims about optimal chess decisions. [Architecture direction](../DIRECTION.
 defines the residual, quantization and proof ownership boundaries.
 
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) now owns implementation
-priority: bounded GPU alpha-beta/quiescence and useful work allocation; one
-recurrent tactical processor; shared exact topology; fresh learning curves and
+priority: bounded GPU alpha-beta/quiescence and useful work allocation; a scalable
+transformer and recurrent tactical processor; shared exact topology; fresh learning curves and
 tuning before persistent memory or adaptive refresh. Prior microkernel results
 remain controls, not the primary strength program.
 
@@ -72,6 +72,10 @@ Current bounded ownership: coherence implements tactical processor mechanics
 in the neural worktree; fusion implements the standalone GPU bounded-search
 reference; RDNA independently reviews search completion and topology ingress.
 Root reviews sources/evidence, maintains direction and commits milestones.
+Offline training is amortized: train to declared convergence/new-data checks
+and compare quality at inference budgets. Tiny defaults and short update counts
+are mechanics/learning-curve controls, not preferred-size assumptions. A separate
+compute-constrained training study does not define the deployment winner.
 GPU experiments take exclusive sequential hardware reservations while source
 review and CPU fixtures proceed in parallel. Frozen comparison arms remain
 available independently of defaults.

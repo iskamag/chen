@@ -46,10 +46,18 @@ identity without a replacement correctness argument is not the next change.
 
 ## Search candidate: device-owned bounded negamax
 
-Implement a separate experimental GPU worker, initially without TT, PVS, LMR or
-null move. Reuse exact HIP legal generation, transitions and classical evaluation.
-Use an explicit device stack and branch-local history, with ordered moves and
-alpha-beta windows. Tactical continuation includes captures/promotions and all
+The [experimental reference](../../gpu/experiments/bounded_search.hip) now passes
+strict compilation and actual gfx1030 checks on 33 fixtures/131 result packets,
+including deliberate aborts. Nineteen exhaustive reference cases check bound
+inequalities; nine malformed host requests preserve output. The initial worker
+uses canonical ordering, one block of at most64 scalar jobs and per-call
+allocation. It is not integrated into UCI and has no strength/performance result.
+
+The separate experimental GPU worker initially omits TT, PVS, LMR and null move.
+It reuses exact HIP legal generation, transitions and classical evaluation,
+with an explicit device stack, branch-local history and alpha-beta windows.
+Add capture/promotion ordering as a separately measured control beside canonical
+ordering. Tactical continuation includes captures/promotions and all
 legal evasions in check. Give stack exhaustion, node exhaustion and cancellation
 explicit failure semantics rather than silently static-scoring unfinished work.
 
@@ -157,7 +165,21 @@ untested allocation of learning objectives, not decoder cost at deployment.
 
 ## One new processor, with two substantive extensions
 
+The [scalable transformer program](../../../chen-neural/docs/SCALING_STUDY.md)
+is a serious parallel candidate, with allocation-free profiles around 1M, 10M,
+50M, 100M and 270M value-path parameters. No large model has been allocated or
+trained. Tiny mechanics defaults are not deployment size targets. Compare
+converged/overtrained models at actual inference budgets; an equal-short-update
+study can describe a learning curve but cannot select the best architecture.
+Separate data-family and training-compute curves from the parameter ladder.
+Our [local curve fitter](../../scripts/analyze_scaling.py) cannot extract a
+chess exponent from the old fixed-size experiments; no real curve exists yet.
+
 ### A. Recurrent tactical operator network — implement first
+
+The [mechanics prototype](../../../chen-neural/docs/TACTICAL_OPERATOR.md) is
+committed as neural `1ff620b` with nine focused CPU tests. It is untrained;
+native topology production and trace supervision remain pending.
 
 Represent actual piece objects (at most 32), 64 squares and every legal root action
 as nodes. Consume exact supplied typed occupancy, pseudoattack, pin, check and
@@ -240,16 +262,21 @@ controls for actual model/search batch shapes after a quality winner exists.
    behind separate seams. No production promotion on mechanics alone.
 2. Hold classical evaluation fixed for search correctness and tactical tests;
    compare equal-time decisions and direct paired games before scheduler tuning.
-3. Admit fresh independent root families with the exclusion ledger. Declare one
+3. Follow the [synthetic data program](SYNTHETIC_DATA_PROGRAM.md): admit fresh
+   independent root families with the exclusion ledger. Declare one
    teacher-query protocol per target; retain terminal utility outside ordinary CP.
    Record label instability and tactical/quiet strata. Earlier consumed validation
    can explain failure but cannot serve as a fresh final evaluation.
-4. Train exact-child and recurrent-action controls on identical data. Report
+4. Train exact-child, recurrent-action and scalable-transformer controls on
+   comparable admitted data. Report
    convergence and data-scaling curves. Start with value and complete-root ranking
    objectives; auxiliary board reconstruction is an explicit on/off experiment.
 5. Predeclare a bounded development sweep of recurrence, width, learning rate,
    ranking weight, trace weight and residual shrinkage with paired seeds. Freeze
    choices before fresh evaluation; account for training and inference time.
+   Offline training continues through declared convergence and new-data checks;
+   deployment selection prioritizes quality at inference budgets. Compute-optimal
+   training allocation is a separate study, not the preferred-size assumption.
    The sweep budget is not yet sealed and no HPO is claimed.
 6. Test a frozen neural winner in a fixed search at one second per move. Then
    investigate persistent memory and adaptive computation, retaining exact-child

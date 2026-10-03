@@ -12,8 +12,9 @@ from an actual Lichess rating; larger reference-pool checks are still needed.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now
-prioritizes a bounded GPU alpha-beta/quiescence reference and one recurrent
-tactical neural processor. Hardware throughput and playing strength remain
+prioritizes a bounded GPU alpha-beta/quiescence reference, a scalable transformer
+and one recurrent tactical neural processor. Hardware throughput and playing
+strength remain
 separate comparisons; further selector/dispatch microtuning is deprioritized.
 
 This file defines architectural direction. [STATUS](research/STATUS.md) owns the
@@ -136,13 +137,17 @@ Include fully observed transformer scoring and classical baselines. Latent
 transition models must separately demonstrate decision quality and multistep
 refresh agreement before imagined search is deployed. A successful reconstruction
 loss or a larger model alone does not establish a strength gain.
-The next new architecture is the recurrent tactical operator in the
-[redesign](research/ALGORITHMIC_REDESIGN.md#one-new-processor-with-two-substantive-extensions):
-actual piece/square/legal-action nodes and supplied exact typed edges. Establish
+The recurrent tactical operator in the
+[redesign](research/ALGORITHMIC_REDESIGN.md#one-new-processor-with-two-substantive-extensions)
+uses actual piece/square/legal-action nodes and supplied exact typed edges. Establish
 exact-child and recurrent-action controls, fresh data, convergence and bounded
 hyperparameter tuning before extending it to persistent object memory or
-search-aware adaptive refresh. Existing modern transformer and symbolic
-projection prototypes remain untrained controls.
+search-aware adaptive refresh. The [scalable transformer](../../chen-neural/docs/SCALING_STUDY.md)
+is also a serious candidate: compare roughly 1M through 270M descriptors and
+width/depth alternatives rather than assume the tiny processor is preferable.
+Both families remain untrained. Offline training may substantially exceed
+compute-efficient schedules when extra training improves inference-budget
+quality; short update counts are learning-curve controls, not size verdicts.
 
 **Resident corpus and learning.** The main-worktree corpus package is a shared
 data boundary, not a second model library. Keep complete legal-root groups,
@@ -159,7 +164,9 @@ separate. Do not reopen spent families to tune the next architecture.
    completed window bounds and abort semantics against matched-rule oracles.
    Hold Tapered fixed for tactical decisions and paired equal-time play before
    introducing PVS/TT or a dependency work pool.
-2. Implement the recurrent tactical processor and shared exact topology ingress.
+2. Implement the recurrent tactical processor and shared exact topology ingress,
+   and scale the fully observed transformer through explicit model/data/compute
+   studies. Model cache capacity does not define the preferred size.
    Compare exact-child evaluation to parent/action processing. Keep terminal,
    history, state identity and score-frame authority in the symbolic engine.
 3. Admit fresh root families and a consistent teacher protocol. Report learning

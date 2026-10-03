@@ -7,10 +7,20 @@ checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
 The single 1367 ms first-move wall-time outlier remains to be instrumented.
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) is the current next-work
 authority: experimental device-owned alpha-beta/quiescence, then PVS/TT and
-dependency work allocation; one recurrent tactical neural processor before
+dependency work allocation; a scalable transformer and recurrent tactical processor before
 persistent memory/adaptive refresh. CPU and GPU matches used different searches
 and are not a calibrated head-to-head rating gap. Further dispatch/selector
 microtuning is deprioritized.
+
+The experimental [bounded GPU worker](../../gpu/experiments/bounded_search.hip)
+now passes strict compilation and an actual gfx1030 oracle run: 33 fixtures,
+131 checked result packets (including intentional aborts), 19 exhaustive
+reference comparisons and nine unchanged-output preflight rejections. It executes
+nonrecursive alpha-beta and tactical quiescence with typed completed bounds.
+Canonical ordering, one block of at most 64 scalar jobs and per-call allocations
+make this a correctness reference. UCI/iterative publication, deadlines, PVS/TT,
+scalable scheduling and playing-strength tests remain pending. Production
+`hip-selective` is unchanged.
 
 The [CPU Coz study](../COZ_PROFILE.md) completed 164 stationary fixed-node
 searches. Actual zero-control interventions identify piece lookup as a useful
@@ -58,6 +68,34 @@ the target. The latest bounded assignments are GPU search implementation,
 tactical processor mechanics, and independent search/topology review. Root owns
 direction, strength evaluation and integration in the two original worktrees.
 Timed hardware studies receive sequential reserved windows.
+
+Neural `1ff620b` adds the
+[sparse recurrent tactical processor](../../../chen-neural/docs/TACTICAL_OPERATOR.md):
+piece/square/complete-action nodes, supplied exact typed edges, shared 1/2/4/8
+iterations, parent-frame readouts and a same-model exact-child control. Nine
+focused CPU tests pass; default 18,850 parameters include 17,248 processor
+parameters. Node projections run once per node before edge gathering. Native
+topology emission, algorithm-trace supervision, GPU execution, training and
+quality remain open. This is a mechanics prototype, not a new strength result.
+
+The [completed-bound Lean model](SEARCH_BOUND_CONTRACT.md) compiles eight
+certificates for negation, cutoff prerequisites, root-bound composition and
+abort publication. Sound completed scores and matching semantic context remain
+premises; the certificates do not prove HIP refinement or latency optimality.
+
+Neural `490e38f` removes tiny transformer size caps and adds exact allocation-free
+parameter/MAC reports and caller allocation budgets. Five descriptor bands span
+1.087M through 264.140M value-path parameters (2.078M through 274.033M stored).
+Twenty focused CPU fixtures check count/arithmetic reports and budget admission;
+no large model has been allocated or trained. The
+[scaling study](../../../chen-neural/docs/SCALING_STUDY.md) selects converged or
+overtrained models at inference budgets and keeps compute-constrained training
+separate. [Synthetic data design](SYNTHETIC_DATA_PROGRAM.md) defines cheap exact
+targets, bounded tactical traces, stronger complete-root decisions and failure
+mining; the generator/traces/study still need implementation and execution.
+[Curve analysis](../../scripts/analyze_scaling.py) has four statistical/admission
+fixtures; only synthetic exponents have been tested. No empirical Chen scaling
+law or neural strength winner is established.
 
 The [new retained-prefix proofs](RETAINED_PREFIX_COST.md) compile 20 additional
 finite certificates. They establish conditional canonical-prefix equivalence
