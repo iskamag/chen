@@ -1,0 +1,152 @@
+{
+  "runtime": {
+    "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "hipRuntimeGetVersion": 70051831,
+    "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "symbol": "hipRuntimeGetVersion"
+  },
+  "device": {
+    "architecture": "gfx1030",
+    "name": "AMD Radeon Graphics",
+    "torch_version": "2.10.0+rocm7.0",
+    "rocm_build": "7.0.51831",
+    "override": false
+  },
+  "native_manifest": {
+    "rows": 20,
+    "root_epoch": 1,
+    "start": 1,
+    "context_sha256": "64965a769dc71e3905053555601d76c1fdd30ea115e7dc3c25e83dd42354c6e7",
+    "producer_sha256": "177b600836cf4bef2944ffdb31e9ea2202751b3f51eac524b3b8422a6637f80d",
+    "feature_schema": "chen_tactical_exact_v1",
+    "edge_slots": 6144,
+    "legal_slots": 256,
+    "kernel_event_ms": 0.596884997561574,
+    "wall_ms": 1.1594009993132204,
+    "device": {
+      "architecture": "gfx1030",
+      "name": "AMD Radeon Graphics",
+      "torch_version": "2.10.0+rocm7.0",
+      "rocm_build": "7.0.51831",
+      "override": false
+    },
+    "runtime": {
+      "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+      "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+      "hipRuntimeGetVersion": 70051831,
+      "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+      "symbol": "hipRuntimeGetVersion"
+    },
+    "state_download": false,
+    "teacher_input": false,
+    "graph_capture": false,
+    "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+  },
+  "roots": "all20 native children of standard initial board",
+  "slot_counts": [
+    [
+      32,
+      20,
+      263
+    ],
+    [
+      32,
+      20,
+      262
+    ],
+    [
+      32,
+      20,
+      262
+    ],
+    [
+      32,
+      20,
+      260
+    ],
+    [
+      32,
+      20,
+      264
+    ],
+    [
+      32,
+      20,
+      261
+    ],
+    [
+      32,
+      20,
+      264
+    ],
+    [
+      32,
+      20,
+      263
+    ],
+    [
+      32,
+      20,
+      265
+    ],
+    [
+      32,
+      20,
+      263
+    ],
+    [
+      32,
+      20,
+      262
+    ],
+    [
+      32,
+      20,
+      259
+    ],
+    [
+      32,
+      20,
+      262
+    ],
+    [
+      32,
+      20,
+      260
+    ],
+    [
+      32,
+      20,
+      263
+    ],
+    [
+      32,
+      20,
+      262
+    ],
+    [
+      32,
+      20,
+      263
+    ],
+    [
+      32,
+      20,
+      270
+    ],
+    [
+      32,
+      20,
+      270
+    ],
+    [
+      32,
+      20,
+      263
+    ]
+  ],
+  "training": false,
+  "quality": false,
+  "graph_capacity_policy": "cold diagnostic intervention only"
+}

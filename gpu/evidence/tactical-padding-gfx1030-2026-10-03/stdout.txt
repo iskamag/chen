@@ -1,0 +1,6 @@
+{"width": 32, "batch": 1, "edges": 263, "eager_ratio": 0.9959020905218837, "captured_ratio": 1.3661807832582724}
+{"width": 32, "batch": 20, "edges": 270, "eager_ratio": 1.1527839646079712, "captured_ratio": 3.800026890421211}
+{"width": 128, "batch": 1, "edges": 263, "eager_ratio": 1.0303630815325306, "captured_ratio": 1.4175354036537784}
+{"width": 128, "batch": 20, "edges": 270, "eager_ratio": 3.6384535977302597, "captured_ratio": 6.379232975857289}
+{"width": 256, "batch": 1, "edges": 263, "eager_ratio": 1.029920916863592, "captured_ratio": 1.6161294933970325}
+{"width": 256, "batch": 20, "edges": 270, "eager_ratio": 5.900913088630922, "captured_ratio": 6.195598558148359}

@@ -1,0 +1,18 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/chen-native-tactical-20261003-dj0vjgka/source/gpu/profile_tactical_padding.py", line 164, in <module>
+    main()
+  File "/tmp/chen-native-tactical-20261003-dj0vjgka/source/gpu/profile_tactical_padding.py", line 132, in main
+    record['eager_parity_max_abs'] = compare(eager['full'],eager['tight'])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-native-tactical-20261003-dj0vjgka/source/gpu/profile_tactical_padding.py", line 76, in compare
+    torch.testing.assert_close(a, b, rtol=1e-5, atol=1e-4)
+  File "/usr/local/lib/python3.12/dist-packages/torch/testing/_comparison.py", line 1578, in assert_close
+    error_metas = not_close_error_metas(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/testing/_comparison.py", line 1293, in not_close_error_metas
+    raise error_meta.to_error() from None  # noqa: RSE102
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: No comparison pair was able to handle inputs of type <class 'str'> and <class 'str'>.

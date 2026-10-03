@@ -1,0 +1,36 @@
+{
+  "source_sha256": {
+    "gpu/profile_tactical_padding.py": "753e3ddabad909d216c1d35638a306a19616860cd03e819a3dab087e351a678d",
+    "gpu/test_native_tactical.py": "a18804c4f9004884a7f15a090cc39cfd3f85d8ddb79667adfab405d57155355e",
+    "neural/native_tactical.py": "feb5629d8f22edd4bdd7dace86c0c038e086b08cbaaaccd5acc2c89e3af86f8b"
+  },
+  "source_closure": "native-tactical-gfx1030-2026-10-03 initial archive+composition overlay",
+  "library_sha256": "177b600836cf4bef2944ffdb31e9ea2202751b3f51eac524b3b8422a6637f80d",
+  "widths": [
+    32,
+    128,
+    256
+  ],
+  "batches": [
+    1,
+    20
+  ],
+  "steps": 4,
+  "layouts": [
+    "fullE6144",
+    "tightEmaxActiveCold"
+  ],
+  "execution": [
+    "eagerFP32",
+    "capturedFP32"
+  ],
+  "samples": 3,
+  "calls_per_sample": 3,
+  "external_timeout_seconds": 90,
+  "no_training": true,
+  "overlap": "CPU-only parallel GPU source/proof/neural dataset preparation; no concurrentGPU",
+  "scope": "cold exact payload padding intervention; export/setup/copy excluded",
+  "revision": 1,
+  "prior_attempt": "30692 terminal exit1, non-tensor score-frame comparison bug before first timing row; no accepted timing",
+  "output": "/tmp/chen-tactical-padding-results-20261003-rev1"
+}

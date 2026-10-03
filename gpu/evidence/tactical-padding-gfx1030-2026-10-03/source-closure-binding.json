@@ -1,0 +1,11 @@
+{
+  "comment": "Extract initial source archive and composition overlay, then place source.py at gpu/profile_tactical_padding.py. No other numerical source changed.",
+  "native_packet": "../native-tactical-gfx1030-2026-10-03",
+  "profiler_source_sha256": "753e3ddabad909d216c1d35638a306a19616860cd03e819a3dab087e351a678d",
+  "required_payload_sha256": {
+    "composition-overlay.tar.gz": "53e289d5593051598b499aeea3a343bcc6c28f5ced14040c86639c5c24d9eec4",
+    "composition-source-binding.json": "5a853f3386d4389f83c9d399f0e0440357eebc6452b22de60911f5c970fb0aa9",
+    "initial-source-binding.json": "c8958e9ab2a4218600271e228f7ea562dbd0acc008611aeeab91111461b974b1",
+    "initial-sources.tar.gz": "3518ddf689acbe7a651b533122ee43270186f8c7a6ec8cef1a71a38fdb375697"
+  }
+}

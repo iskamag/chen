@@ -1,0 +1,16 @@
+{
+  "initial": {
+    "exec_session": 30692,
+    "exit_code": 1,
+    "reason": "Probe compared score-frame metadata string with Tensor comparator before first timing row; no timing admitted."
+  },
+  "retirement": "Both observed terminal; subsequent container ps only init and inspection.",
+  "revision1": {
+    "exec_session": 59661,
+    "exit_code": 0,
+    "external_timeout_seconds": 90,
+    "process_body_seconds": 5.175114208017476,
+    "status": "PASS"
+  },
+  "timestamps": "No instrumented launch/end wall interval; durations from profiler and exact owned terminal handles retained."
+}
