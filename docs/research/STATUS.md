@@ -4,9 +4,18 @@ Paused at the user's requested milestone after saving search recovery, bucketed
 tactical ingress and the first learning chunk. [HANDOFF](../HANDOFF.md) records
 the next bounded experiments and retained runtime; the full goal is unfinished.
 
+The requested [fresh CPU one-second evaluation](../harness/cpu-rating-current-2026-10-03.md)
+is now closed and independently audited: 64 games, 32 complete pairs, 5810 legal
+plies, no errors or caps. Default PVS-off scores 5W/2D/9L against Stockfish
+configured1800, proxy1711. PVS-on scores 11W/3D/2L, 6W/4D/6L and 4W/4D/8L against
+configured1600/1800/2000; its separate 48-game pooled proxy is1844. These describe
+configured opponent settings, without Lichess calibration or confidence
+intervals. Source `28c6f86` / binary `d979d1f` are frozen, all owned workers are retired,
+and defaults remain unchanged. GPU/neural work stays paused.
+
 The [GPU one-second reference](../harness/gpu-one-second-reference-2026-10-03.md)
 closed with 4 wins, 5 draws and 7 losses against Stockfish configured1320:
-proxy1254, versus the earlier CPU alpha-beta proxy1714. Independent replay
+proxy1254, versus the historical CPU alpha-beta proxy1714. Independent replay
 checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
 The single 1367 ms first-move wall-time outlier remains to be instrumented.
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) is the current next-work

@@ -1,0 +1,5 @@
+{
+  "supervisor_sha256": "30b66a289445b0850db60e70d4fe5eb696754fcc4f236842e5ff4b94bca51ab0",
+  "dependency_license_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "scope": "Executed supervisor and license envelope; fixed match declaration unchanged"
+}

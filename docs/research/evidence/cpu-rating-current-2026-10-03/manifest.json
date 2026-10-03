@@ -1,0 +1,76 @@
+{
+  "kind": "closed_CPU_configured_strength_pool_evidence_manifest",
+  "source_commit": "28c6f86caa57e360798afc38e9f50a33aa1729ed",
+  "declaration_sha256": "c30fb2dec5585ba26ed78eee0592ce8f0ef8357cd8c8d24a9e0e3fbc84881d0c",
+  "auditor_commit": "c5d25e2",
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 1637,
+      "sha256": "7fe53f5b8c5921990b8f365f182d7467cf3199157c1442a39584d5084191a01c"
+    },
+    {
+      "path": "analysis.json",
+      "size_bytes": 8167,
+      "sha256": "53b8a7da483696d453bbd37d96b268f06423f9b3f3c4fa0499305ba78602336f"
+    },
+    {
+      "path": "archive-inventory.json",
+      "size_bytes": 31652,
+      "sha256": "ae92bd72355278d8df83c7f3d5663d26982253a7f04095df5420751c48ff0d65"
+    },
+    {
+      "path": "archive-review.json",
+      "size_bytes": 679,
+      "sha256": "ebb50fc1352722118733b9afca3d4e54af83f04c5ca2654c0597836fb7b70a28"
+    },
+    {
+      "path": "audit.json",
+      "size_bytes": 19777,
+      "sha256": "3f9755956dddfb270ce9a6e250ea342c37890124c5795a4eb1191fa9b47dbb16"
+    },
+    {
+      "path": "build.json",
+      "size_bytes": 561,
+      "sha256": "4bef7dc325cf916f923e4f20e9b5b93712bd1b8133e832cc8f85a01c1417b950"
+    },
+    {
+      "path": "declaration.json",
+      "size_bytes": 8561,
+      "sha256": "c30fb2dec5585ba26ed78eee0592ce8f0ef8357cd8c8d24a9e0e3fbc84881d0c"
+    },
+    {
+      "path": "external-stockfish.json",
+      "size_bytes": 1269,
+      "sha256": "4ee79c8bb046db45ca198afa7b9f176d62d4e08f476b4430e55c38907845ee55"
+    },
+    {
+      "path": "frozen-run.tar.gz",
+      "size_bytes": 1049590,
+      "sha256": "418d5fafa261e940557557f65954243f2829042e312bc26a695e175c4ca30a58"
+    },
+    {
+      "path": "retirement.json",
+      "size_bytes": 385,
+      "sha256": "55ffe84c011a859225d324c370cabd5d9268ec37536261c24727a9ddc6ae974d"
+    },
+    {
+      "path": "supervisor-binding.json",
+      "size_bytes": 283,
+      "sha256": "9fdf321382f0417ae78b7de301debb26eedb8a37fc3deb9d979dc65a183a6cfd"
+    },
+    {
+      "path": "watch-start.json",
+      "size_bytes": 179,
+      "sha256": "6bf6290f90a3982bf794acb5cffe512006896099244d4c4c097763501711da32"
+    },
+    {
+      "path": "watch-terminal.json",
+      "size_bytes": 909,
+      "sha256": "744c98bf70d323f22c83479196620e350a5210a201bcadb985586de64885216c"
+    }
+  ],
+  "files_count": 13,
+  "total_payload_bytes": 1123649,
+  "scope": "All 64 games complete; source-bound saved-PGN/JSONL audit and cold archive hash review only. No new engine/GPU/training execution. Uncalibrated configured-setting descriptions; no Lichess rating, CI or default change."
+}

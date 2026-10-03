@@ -1,0 +1,276 @@
+{
+  "kind": "closed_CPU_configured_pool_descriptive_results",
+  "audit_sha256": "3f9755956dddfb270ce9a6e250ea342c37890124c5795a4eb1191fa9b47dbb16",
+  "source_commit": "28c6f86caa57e360798afc38e9f50a33aa1729ed",
+  "engine_sha256": "d979d1f2841f9f707ad2fd7bd619bc7068defebd7026136b09115aa477e0a37f",
+  "lanes": [
+    {
+      "id": "off1800",
+      "pvs": false,
+      "stockfish_configured_setting": 1800,
+      "declared_cpu": 1,
+      "wins": 5,
+      "draws": 2,
+      "losses": 9,
+      "included_games": 16,
+      "candidate_points": 6.0,
+      "legal_plies": 1603,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 800,
+          "minimum_ms": 0.55588,
+          "median_ms": 1000.9961975,
+          "maximum_ms": 1011.144162,
+          "above_requested_1second": 735,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 803,
+          "minimum_ms": 4.717143,
+          "median_ms": 1000.648327,
+          "maximum_ms": 1006.59441,
+          "above_requested_1second": 744,
+          "above_1point1seconds": 0
+        }
+      },
+      "single_setting_fit": {
+        "included_games": 16,
+        "observed_points": 6.0,
+        "groups": [
+          {
+            "setting": 1800,
+            "games": 16,
+            "points": 6.0
+          }
+        ],
+        "configured_setting_logistic_point_estimate": 1711.2605001534575,
+        "expected_points_at_estimate": 6.000000000000002,
+        "score_equation_residual": 1.7763568394002505e-15,
+        "lichess_rating": null,
+        "confidence_interval": null,
+        "independence_asserted": false,
+        "calibrated_rating": false,
+        "status": "finite_descriptive_fit",
+        "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+      }
+    },
+    {
+      "id": "on1600",
+      "pvs": true,
+      "stockfish_configured_setting": 1600,
+      "declared_cpu": 2,
+      "wins": 11,
+      "draws": 3,
+      "losses": 2,
+      "included_games": 16,
+      "candidate_points": 12.5,
+      "legal_plies": 1263,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 634,
+          "minimum_ms": 0.57964,
+          "median_ms": 1000.9547325,
+          "maximum_ms": 1019.148056,
+          "above_requested_1second": 595,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 629,
+          "minimum_ms": 4.700332,
+          "median_ms": 1000.616557,
+          "maximum_ms": 1006.62538,
+          "above_requested_1second": 565,
+          "above_1point1seconds": 0
+        }
+      },
+      "single_setting_fit": {
+        "included_games": 16,
+        "observed_points": 12.5,
+        "groups": [
+          {
+            "setting": 1600,
+            "games": 16,
+            "points": 12.5
+          }
+        ],
+        "configured_setting_logistic_point_estimate": 1821.1367874631123,
+        "expected_points_at_estimate": 12.500000000000002,
+        "score_equation_residual": 1.7763568394002505e-15,
+        "lichess_rating": null,
+        "confidence_interval": null,
+        "independence_asserted": false,
+        "calibrated_rating": false,
+        "status": "finite_descriptive_fit",
+        "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+      }
+    },
+    {
+      "id": "on1800",
+      "pvs": true,
+      "stockfish_configured_setting": 1800,
+      "declared_cpu": 3,
+      "wins": 6,
+      "draws": 4,
+      "losses": 6,
+      "included_games": 16,
+      "candidate_points": 8.0,
+      "legal_plies": 1369,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 685,
+          "minimum_ms": 0.53282,
+          "median_ms": 1000.946248,
+          "maximum_ms": 1017.432305,
+          "above_requested_1second": 627,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 684,
+          "minimum_ms": 4.859423,
+          "median_ms": 1000.5791770000001,
+          "maximum_ms": 1008.40211,
+          "above_requested_1second": 632,
+          "above_1point1seconds": 0
+        }
+      },
+      "single_setting_fit": {
+        "included_games": 16,
+        "observed_points": 8.0,
+        "groups": [
+          {
+            "setting": 1800,
+            "games": 16,
+            "points": 8.0
+          }
+        ],
+        "configured_setting_logistic_point_estimate": 1800.0,
+        "expected_points_at_estimate": 8.0,
+        "score_equation_residual": 0.0,
+        "lichess_rating": null,
+        "confidence_interval": null,
+        "independence_asserted": false,
+        "calibrated_rating": false,
+        "status": "finite_descriptive_fit",
+        "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+      }
+    },
+    {
+      "id": "on2000",
+      "pvs": true,
+      "stockfish_configured_setting": 2000,
+      "declared_cpu": 4,
+      "wins": 4,
+      "draws": 4,
+      "losses": 8,
+      "included_games": 16,
+      "candidate_points": 6.0,
+      "legal_plies": 1575,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 787,
+          "minimum_ms": 0.69974,
+          "median_ms": 1000.974738,
+          "maximum_ms": 1017.098285,
+          "above_requested_1second": 736,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 788,
+          "minimum_ms": 5.373353,
+          "median_ms": 1000.647247,
+          "maximum_ms": 1008.03368,
+          "above_requested_1second": 729,
+          "above_1point1seconds": 0
+        }
+      },
+      "single_setting_fit": {
+        "included_games": 16,
+        "observed_points": 6.0,
+        "groups": [
+          {
+            "setting": 2000,
+            "games": 16,
+            "points": 6.0
+          }
+        ],
+        "configured_setting_logistic_point_estimate": 1911.2605001534575,
+        "expected_points_at_estimate": 6.000000000000002,
+        "score_equation_residual": 1.7763568394002505e-15,
+        "lichess_rating": null,
+        "confidence_interval": null,
+        "independence_asserted": false,
+        "calibrated_rating": false,
+        "status": "finite_descriptive_fit",
+        "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+      }
+    }
+  ],
+  "pvs_on_pool": {
+    "included_games": 48,
+    "observed_points": 26.5,
+    "groups": [
+      {
+        "setting": 1600,
+        "games": 16,
+        "points": 12.5
+      },
+      {
+        "setting": 1800,
+        "games": 16,
+        "points": 8.0
+      },
+      {
+        "setting": 2000,
+        "games": 16,
+        "points": 6.0
+      }
+    ],
+    "configured_setting_logistic_point_estimate": 1844.2552308431782,
+    "expected_points_at_estimate": 26.500000000000004,
+    "score_equation_residual": 3.552713678800501e-15,
+    "lichess_rating": null,
+    "confidence_interval": null,
+    "independence_asserted": false,
+    "calibrated_rating": false,
+    "status": "finite_descriptive_fit",
+    "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+  },
+  "default_off": {
+    "included_games": 16,
+    "observed_points": 6.0,
+    "groups": [
+      {
+        "setting": 1800,
+        "games": 16,
+        "points": 6.0
+      }
+    ],
+    "configured_setting_logistic_point_estimate": 1711.2605001534575,
+    "expected_points_at_estimate": 6.000000000000002,
+    "score_equation_residual": 1.7763568394002505e-15,
+    "lichess_rating": null,
+    "confidence_interval": null,
+    "independence_asserted": false,
+    "calibrated_rating": false,
+    "status": "finite_descriptive_fit",
+    "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+  },
+  "total_legal_plies": 5810,
+  "supervisor_elapsed_seconds": 1516.5658794349874,
+  "confidence_interval": null,
+  "lichess_rating": null,
+  "architecture_winner": null,
+  "defaults_changed": false
+}

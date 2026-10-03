@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-03T12:36:04.302746+00:00",
+  "supervisor_pid": 7715,
+  "supervisor_pid_absent": true,
+  "owned_worker_pgids": [
+    7721,
+    7722,
+    7723,
+    7724
+  ],
+  "remaining_group_members": [],
+  "owned_groups_absent": true,
+  "scope": "Independent /proc check of declared supervisor and worker process groups after authoritative terminal; no process killed."
+}

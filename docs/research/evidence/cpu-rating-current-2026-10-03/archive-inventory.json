@@ -1,0 +1,1010 @@
+{
+  "kind": "regular_frozen_CPU_pool_archive_inventory",
+  "stage_original_absolute_path": "/home/iskam/src/vibe/chen/results/cpu-rating-20261003-_584k376",
+  "members": [
+    {
+      "path": "stage/audit.json",
+      "size_bytes": 19777,
+      "sha256": "3f9755956dddfb270ce9a6e250ea342c37890124c5795a4eb1191fa9b47dbb16",
+      "mode": 420
+    },
+    {
+      "path": "stage/build.json",
+      "size_bytes": 561,
+      "sha256": "4bef7dc325cf916f923e4f20e9b5b93712bd1b8133e832cc8f85a01c1417b950",
+      "mode": 420
+    },
+    {
+      "path": "stage/declaration.json",
+      "size_bytes": 8561,
+      "sha256": "c30fb2dec5585ba26ed78eee0592ce8f0ef8357cd8c8d24a9e0e3fbc84881d0c",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/__init__.py",
+      "size_bytes": 150843,
+      "sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/engine.py",
+      "size_bytes": 127685,
+      "sha256": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/gaviota.py",
+      "size_bytes": 59324,
+      "sha256": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/pgn.py",
+      "size_bytes": 60466,
+      "sha256": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/polyglot.py",
+      "size_bytes": 27418,
+      "sha256": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/py.typed",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/svg.py",
+      "size_bytes": 32835,
+      "sha256": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/syzygy.py",
+      "size_bytes": 69418,
+      "sha256": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/chess/variant.py",
+      "size_bytes": 46221,
+      "sha256": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+      "mode": 420
+    },
+    {
+      "path": "stage/deps/python-chess-LICENSE.txt",
+      "size_bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "mode": 420
+    },
+    {
+      "path": "stage/engine/chen",
+      "size_bytes": 714912,
+      "sha256": "d979d1f2841f9f707ad2fd7bd619bc7068defebd7026136b09115aa477e0a37f",
+      "mode": 493
+    },
+    {
+      "path": "stage/off1800/config.json",
+      "size_bytes": 933,
+      "sha256": "d4fe284ed2eb709549d2b3df72fc781638da329e17c929e944d887cfe5089a86",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/launch.json",
+      "size_bytes": 736,
+      "sha256": "c52e8fe94f79cd2f2b41b0a67e3eabfa773b37f943096f0371f1e6f5d60bcbb2",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/run/games.jsonl",
+      "size_bytes": 390873,
+      "sha256": "4f06d7bc6f2549b16ab245612dc19a7e5d8e92d35317dc555ec16e03c9a4c9bc",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/run/games.pgn",
+      "size_bytes": 14379,
+      "sha256": "b40bb5a9700ace66bf8492db40314827290378fb24ac9c04701c98d8147c1391",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/run/metadata.json",
+      "size_bytes": 2590,
+      "sha256": "a18a7bba928fc92fdd8bcbe6e7bfbf963d3b92e93408d895defcd7b7111737d3",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/run/summary.json",
+      "size_bytes": 523,
+      "sha256": "cd6f21aac6abb3a893a2e0474e549cd7636143b2d9ae464c937626922683f129",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/stdout.log",
+      "size_bytes": 614,
+      "sha256": "896d2cc2b5a0894b39ae153ac1effb340f83682ba080bef61da0ef559ce036d7",
+      "mode": 420
+    },
+    {
+      "path": "stage/off1800/terminal.json",
+      "size_bytes": 155,
+      "sha256": "10080d4ced78a46303fb0b3a8cc661fb97b81fa40d970debea011094ecac2b92",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/config.json",
+      "size_bytes": 932,
+      "sha256": "38dcaf12a797c7e33dd6b59a21363854e138ba3749366e84ddbb94fd49383780",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/launch.json",
+      "size_bytes": 734,
+      "sha256": "3ff2f3a0d66301a5c726b7a74872a85655d66bedcc425d52a45e49d666d1c643",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/run/games.jsonl",
+      "size_bytes": 310827,
+      "sha256": "2a9b0f414ed67c64ab766322340f747b4d73e4d110da0beab73efaf616fb790b",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/run/games.pgn",
+      "size_bytes": 12250,
+      "sha256": "d9270a1c52bb00b70ed540ba766db37fc9e206a7682c4b36cbfba77936fc6c0d",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/run/metadata.json",
+      "size_bytes": 2587,
+      "sha256": "665086f20bb2f00ee068d700363e615bfd12285ef696ccbc8d893b710ddea84a",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/run/summary.json",
+      "size_bytes": 524,
+      "sha256": "0db294f864c3b80c3082d8072c77db9713d52da78f1f56ba89d5cc298a371f52",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/stdout.log",
+      "size_bytes": 614,
+      "sha256": "65eb7b9d4d9af6243ec878a2bc190f72f86a5d5fd6865addb1fcdea8d26d7fbd",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1600/terminal.json",
+      "size_bytes": 155,
+      "sha256": "bc99eac7f1109a3e13536c6200b8fe6460c20c255d22115647245ee2fcdcc5aa",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/config.json",
+      "size_bytes": 932,
+      "sha256": "287c91ac963264be12dd0d5f9bf0f62480d4d774e4b149282c7657a37074b2ec",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/launch.json",
+      "size_bytes": 734,
+      "sha256": "cfd8a31b5d425af524cacf52e31ce65308660bb6f9f309e2728573289b1f0acb",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/run/games.jsonl",
+      "size_bytes": 335767,
+      "sha256": "3a23d7686cd49843d61523b75f341a9d01e0d016d197050f1d03c30599f40d5f",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/run/games.pgn",
+      "size_bytes": 12940,
+      "sha256": "6b86fa0181628de1158a8c697a4015e8f474287ca4d24499817373b386928e7d",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/run/metadata.json",
+      "size_bytes": 2587,
+      "sha256": "ca6a55e8c18b3221b181b9687e50bfdab4de7661d38fa8b1ef108d89ac782ff2",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/run/summary.json",
+      "size_bytes": 506,
+      "sha256": "198f2cc20b495b2d057802675c20c0b1c55008d7b79108fd2e68be05c12d7a19",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/stdout.log",
+      "size_bytes": 596,
+      "sha256": "24b0d4d0b12a3770364b5feaf49a78c0f481365911cd63c175d4afae092c187f",
+      "mode": 420
+    },
+    {
+      "path": "stage/on1800/terminal.json",
+      "size_bytes": 155,
+      "sha256": "46dba945d1768d33e0d15a9a120e1bfd395afa446b3a17ea80f20912272a9699",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/config.json",
+      "size_bytes": 932,
+      "sha256": "cc1384ab86480b467261fbb694f0efcdaeffc4cac9a852b28758a0bc963b8242",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/launch.json",
+      "size_bytes": 734,
+      "sha256": "8941c883979dcec19c64f8bdc071fc642e9e020c9785601338885778d512d7b8",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/run/games.jsonl",
+      "size_bytes": 387394,
+      "sha256": "6cbb025232818222050fca4d39cf5207ff9d1d1b389fa92353d93ab0b5d6d308",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/run/games.pgn",
+      "size_bytes": 14140,
+      "sha256": "47f570d740037f049409745f5fabebb5c791e358b02851f82cd9cdd6c1987a9b",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/run/metadata.json",
+      "size_bytes": 2587,
+      "sha256": "05879021eae2bbfee72063eee555c0c5a30e7e7498c74ac20e761ed12e5d15b7",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/run/summary.json",
+      "size_bytes": 523,
+      "sha256": "7c810f9dd8ffd55f628672219672eccf7cc434320ba66983e6de8a28fd9fdd3f",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/stdout.log",
+      "size_bytes": 613,
+      "sha256": "f3accf4db64de29af6641a01e6308747fcc80419ef62746c6c0d603ee612053c",
+      "mode": 420
+    },
+    {
+      "path": "stage/on2000/terminal.json",
+      "size_bytes": 155,
+      "sha256": "0ede39b7d70810c19dc452ed24708ed5ec09440675a826c02643c4ad4925edbf",
+      "mode": 420
+    },
+    {
+      "path": "stage/openings.txt",
+      "size_bytes": 704,
+      "sha256": "58df68de6c75adad5782022060535ee445993ccc503037bcd8871083e9f5ac22",
+      "mode": 420
+    },
+    {
+      "path": "stage/preflight.json",
+      "size_bytes": 1133,
+      "sha256": "45904d14427a32e6588ceca623c8f8dc745cb8aebcfd4eb4f510159ba5f2f8c4",
+      "mode": 420
+    },
+    {
+      "path": "stage/progress.json",
+      "size_bytes": 755,
+      "sha256": "bd96d927a79feea7c12285a69a7f9b2f317b9bf2c240a67000f48b60109658b6",
+      "mode": 420
+    },
+    {
+      "path": "stage/retirement.json",
+      "size_bytes": 385,
+      "sha256": "55ffe84c011a859225d324c370cabd5d9268ec37536261c24727a9ddc6ae974d",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/harness/stats.py",
+      "size_bytes": 1867,
+      "sha256": "1a0f50e9c8c530d6a663703ba0064f23c9fc496597fc2d8c86f1b66db59cb990",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/Cargo.lock",
+      "size_bytes": 5262,
+      "sha256": "bb158b896e60f7c25b3ec34becd27ab1a447b593513267d389ca0f1b973a9601",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/Cargo.toml",
+      "size_bytes": 913,
+      "sha256": "250aa605ef6d6170b746c2a9e1ebb47860a6dface5843e0950c63a7184a2be68",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/attacks.rs",
+      "size_bytes": 1819,
+      "sha256": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/backend.rs",
+      "size_bytes": 5323,
+      "sha256": "49e3a0601fd8b144fc31ee56179df55ac42a19a296fc4bb16ebde5c7bd0a3273",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/core.rs",
+      "size_bytes": 28120,
+      "sha256": "d9be42853b1aac94dae5904f639647420a44cd30ade6eecf62612a97e50ec833",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/device.rs",
+      "size_bytes": 26608,
+      "sha256": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/eval.rs",
+      "size_bytes": 4014,
+      "sha256": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/frontier.rs",
+      "size_bytes": 8536,
+      "sha256": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/hip.rs",
+      "size_bytes": 10494,
+      "sha256": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/hip_bounded.rs",
+      "size_bytes": 26571,
+      "sha256": "ed4b34954ac6d45a39f6bf3246c52ecf3b684cbc36d7755add2a92557aaf8f8e",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/hip_root_pool.rs",
+      "size_bytes": 19676,
+      "sha256": "46d3ff823155308f4e81dbf6565a8a51f802aa62c81c973cf8367ef8eab31adb",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/hip_root_retry.rs",
+      "size_bytes": 21127,
+      "sha256": "f6c8374d4ab1535ec62d117d150374e0e08e246f1a043f84fea71e7ca629d34f",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/lib.rs",
+      "size_bytes": 868,
+      "sha256": "57d1b5d0bb831527667e435b33c325acfa51290916a036f6be64a36f0a080e8d",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/main.rs",
+      "size_bytes": 35978,
+      "sha256": "fd44e229c044062830804def04b86f34ee213ce923f5f38cdbb47a3ddd83fd33",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/neural.rs",
+      "size_bytes": 33966,
+      "sha256": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/resident.rs",
+      "size_bytes": 19491,
+      "sha256": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/rules.rs",
+      "size_bytes": 5442,
+      "sha256": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/search.rs",
+      "size_bytes": 22511,
+      "sha256": "e12d8a4ab40042e2d80a8aafa33a44bcc074eaeae5a95ba6d5104d53d089c558",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/selective.rs",
+      "size_bytes": 19967,
+      "sha256": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/strength.rs",
+      "size_bytes": 2076,
+      "sha256": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/tt.rs",
+      "size_bytes": 2643,
+      "sha256": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/rust/src/two_fidelity.rs",
+      "size_bytes": 46014,
+      "sha256": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+      "mode": 420
+    },
+    {
+      "path": "stage/source/scripts/match.py",
+      "size_bytes": 8650,
+      "sha256": "f10df8a9eef36de10f8c14809d944b6bd12607fbff7049f9eb2f94360b9d496c",
+      "mode": 420
+    },
+    {
+      "path": "stage/supervise.py",
+      "size_bytes": 6372,
+      "sha256": "30b66a289445b0850db60e70d4fe5eb696754fcc4f236842e5ff4b94bca51ab0",
+      "mode": 420
+    },
+    {
+      "path": "stage/supervisor-binding.json",
+      "size_bytes": 283,
+      "sha256": "9fdf321382f0417ae78b7de301debb26eedb8a37fc3deb9d979dc65a183a6cfd",
+      "mode": 420
+    },
+    {
+      "path": "stage/watch-start.json",
+      "size_bytes": 179,
+      "sha256": "6bf6290f90a3982bf794acb5cffe512006896099244d4c4c097763501711da32",
+      "mode": 420
+    },
+    {
+      "path": "stage/watch-terminal.json",
+      "size_bytes": 909,
+      "sha256": "744c98bf70d323f22c83479196620e350a5210a201bcadb985586de64885216c",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/Makefile",
+      "size_bytes": 46710,
+      "sha256": "3dd5246221b5e98280ac035f5752b10008ae818d1ce21abcf219ca0bb8b81274",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/attacks.cpp",
+      "size_bytes": 6182,
+      "sha256": "260c2cceb38d7a87a69e4df0f84d84e6729b1a77bbc321a13fed8cff66b2c704",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/attacks.h",
+      "size_bytes": 11668,
+      "sha256": "561d2eb1268ba66e7aa065387a033e686a49925d8e8c58a75826239a358cb1f5",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/benchmark.cpp",
+      "size_bytes": 27174,
+      "sha256": "5706d3a9f7990442d0adf6bc4d9b0f50fff92c7e96156f62f3d166ca146acf0c",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/benchmark.h",
+      "size_bytes": 1345,
+      "sha256": "af18da73fecd343a43971722550524f7a260ac83f9c76e2e32e5e28ddbf4c52e",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/bitboard.cpp",
+      "size_bytes": 1409,
+      "sha256": "b73064f2270344bce175865174666b92d1f3653c6ee4f98fd075f0fb1865b735",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/bitboard.h",
+      "size_bytes": 8626,
+      "sha256": "5d739e8b8300a04084c4dea41b9124f2a2d59dea365ad2996804f53c5340f5b7",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/engine.cpp",
+      "size_bytes": 12223,
+      "sha256": "15c87f0b4ac5741d9b4f287cd7420a8599bda4193b2e0209fb0f7f9beb16960b",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/engine.h",
+      "size_bytes": 4894,
+      "sha256": "be37f8052c96707478840fd2e5512eae79d50f581f1a5a1b6471246defaffe86",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/evaluate.cpp",
+      "size_bytes": 3844,
+      "sha256": "68a1675ef7ae943026ca0e54368b88ab90dd0082d22b5504f743afb2765dffb7",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/evaluate.h",
+      "size_bytes": 1767,
+      "sha256": "bab0750b2d80c72bb121bfe730a55ecba5fc221394d3d8a7ae2aa3ae04fe9998",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/history.h",
+      "size_bytes": 9247,
+      "sha256": "f6e957d6e717348f58aa308f88aefddb5975e6a6c1d23e936ecf3548cbb48c39",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/incbin/UNLICENCE",
+      "size_bytes": 1292,
+      "sha256": "80f60d0578200231dac96e2a42bf508f22ce8540b96f96777b649498656842ff",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/incbin/incbin.h",
+      "size_bytes": 16036,
+      "sha256": "70995329299ec55d414ad6df6929ddcfe0a43a40102cf6c05ff3c74ddd2765cb",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/main.cpp",
+      "size_bytes": 1602,
+      "sha256": "20ecc928260f46dfa3622ef0a4d810fe880322b1444659d155ce295be84b343a",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/memory.cpp",
+      "size_bytes": 7669,
+      "sha256": "7181c3b2c98d4ac247e7d0282b1cf265c9f00768a0e01e5adf8854de6ac24537",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/memory.h",
+      "size_bytes": 13202,
+      "sha256": "0c96b7742ed66a4ed1fe49c8f9e78b05833790155e3e33b4c64e81ddf71487ba",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/misc.cpp",
+      "size_bytes": 17371,
+      "sha256": "9a5a58e3404afc0a30de142b1b81049877b42cee308379654253c593b9e14513",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/misc.h",
+      "size_bytes": 18048,
+      "sha256": "fa97bd3c16ab7ea48f1e1e392f7723843daaa6aa0056a43127facb158ccc10d4",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/movegen.cpp",
+      "size_bytes": 9759,
+      "sha256": "a7f19e6167aae8b9f69da69cc656d346913aa37322ceecb8217597e1b91e71c2",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/movegen.h",
+      "size_bytes": 2130,
+      "sha256": "8180128aafed4aacdfc75999b17e7cb64da250b6c94b87e06a2e1bf65b3a6276",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/movepick.cpp",
+      "size_bytes": 11713,
+      "sha256": "5ac6b57885a7e12428422438a28207f25a24182b008aca85a788e000a7a38217",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/movepick.h",
+      "size_bytes": 2794,
+      "sha256": "6082a59beec9cd7badae9d2463df91d5067af490ae498a377eac9bc94ad1fe06",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/full_threats.cpp",
+      "size_bytes": 12348,
+      "sha256": "4bd9602142ca97cb40ba3c02718236e0e15e41e29913d5917de599288dd23277",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/full_threats.h",
+      "size_bytes": 4424,
+      "sha256": "dd1d9b1cd360b8c5e41b5e0e9836c335cc250ade8a30fc28357e482f0aeff874",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/half_ka_v2_hm.cpp",
+      "size_bytes": 4799,
+      "sha256": "c00c84b37f979f9ff62b7081d5147a58982805fa5b42b802b841701a04802679",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/half_ka_v2_hm.h",
+      "size_bytes": 5604,
+      "sha256": "c6c24b6246a10278e992e5494f38a02f96436764fe0fb0e11f21e96e6b3b45d5",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/pp_3wide.cpp",
+      "size_bytes": 10602,
+      "sha256": "55dad256e38a27149d48958747131afa6c87a41f6b4771e12c6113bc82b6614f",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/features/pp_3wide.h",
+      "size_bytes": 3153,
+      "sha256": "3889a046b7eb5c9147d0c89be69514200d414e276a68809b4f512c8fe139e635",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/layers/affine_transform.h",
+      "size_bytes": 16937,
+      "sha256": "b0a30ba12d1f11e8fddab66d8592c42ac3ca56233d0117ccf3bb9a9c27fefda2",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/layers/affine_transform_sparse_input.h",
+      "size_bytes": 18056,
+      "sha256": "5471180cbe69b91f7f39278bef5c79ce37f538307cb8f11d3f51fafe9a0eab14",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/layers/clipped_relu.h",
+      "size_bytes": 7033,
+      "sha256": "13d0f93da3b40df3a7c4b23fe34a4199e5f3cee03f529eac4f060299efa64e76",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/layers/sqr_clipped_relu.h",
+      "size_bytes": 11029,
+      "sha256": "d2b6fb4f7045d2851f7ca48c4daa9a6292655ba026dc7b94c34105706eb7504b",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/network.cpp",
+      "size_bytes": 12385,
+      "sha256": "95cafe51c0d05842fdeffb8d2690549e9deee43edc0b56caf277f21fda63ec4b",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/network.h",
+      "size_bytes": 3836,
+      "sha256": "9f5f0e8282ed8478a59005946618dfbfb4d8484a9d38923cfbe1a261436359c8",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_accumulator.cpp",
+      "size_bytes": 38316,
+      "sha256": "4450e090389760851e7aebaf38bb9b1acf0bfca73130ded3e8677a22c7c0824c",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_accumulator.h",
+      "size_bytes": 5476,
+      "sha256": "50f65fa2bd5a5c31f1ac70e34b3f9213d7b3ef22c922b4cf955e283be9931b26",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_architecture.h",
+      "size_bytes": 7309,
+      "sha256": "00870050cb0c7c8862b76ed0ee65da2fd0118343432bcebbdb896f885283bc8e",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_common.h",
+      "size_bytes": 10557,
+      "sha256": "89a9c40893ea8e341bb7874796fcec2e69aecf548e969b55fa33a59579b60eae",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_feature_transformer.h",
+      "size_bytes": 17977,
+      "sha256": "9edc933b6bd53871ff8ba8cda35d35490a4eef34f0b72b6562da17b60fa888bc",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_misc.cpp",
+      "size_bytes": 3115,
+      "sha256": "3008e556a3352b607b6940be7c215aba8e53b577bfc82a1d0d0b0d57cf1f8ac1",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnue_misc.h",
+      "size_bytes": 2011,
+      "sha256": "658f48eec561c9f040527ace4ef42c87e1943e2bd4f17a74fe90e69e142436a7",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/nnz_helper.h",
+      "size_bytes": 5760,
+      "sha256": "5118876cd8008d84f397c07785be4f5ad2df9715e5d671b1537888f3d469fd0b",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/nnue/simd.h",
+      "size_bytes": 18476,
+      "sha256": "3581a018aa6bafa18e130b7ca4c65c27bd59abb987a580ae96c0815e31e2da14",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/numa.h",
+      "size_bytes": 63050,
+      "sha256": "6d39ba07c1ae5f3f3f9c541a59913bd54d63a2c4955643c84767e5cbacd7c7ad",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/perft.h",
+      "size_bytes": 1994,
+      "sha256": "3fd970d05be7e38299cdeeee8a9dc45b446a5527173245ff7d7296e0d439d356",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/position.cpp",
+      "size_bytes": 58345,
+      "sha256": "79bb06e1f73768e1a7e6ce39766fde94f481327168cf0aa2580f55a0865f8dec",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/position.h",
+      "size_bytes": 14842,
+      "sha256": "2d67489c98c16b828fe80e5fdd000820613b79a0c5ff63161efd9ad6e9ee05b1",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/score.cpp",
+      "size_bytes": 1414,
+      "sha256": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/score.h",
+      "size_bytes": 1605,
+      "sha256": "b1355a14624fb743e7bde5b68030ae40650e3b34c36a4feac6d4b4704e56efd1",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/search.cpp",
+      "size_bytes": 94212,
+      "sha256": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/search.h",
+      "size_bytes": 14636,
+      "sha256": "06a9339666e75c43a92185c33a111307bca143cf57c85e64f368ca34a87c8071",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/shm.h",
+      "size_bytes": 20148,
+      "sha256": "f0c660b640602b35f9fb324fb799cc37448e03c30b678200ce88f565d23a10d5",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/shm_unix.h",
+      "size_bytes": 20190,
+      "sha256": "155defb7084b0f81bedb37dbb65c1f399929d7a06952ace2b6cec9d8c5467a70",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/syzygy/tbprobe.cpp",
+      "size_bytes": 70928,
+      "sha256": "39d87629573a92ee75c30ea6d76bc53c8aaaa0ea16a706300a840de0a256bc32",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/syzygy/tbprobe.h",
+      "size_bytes": 2640,
+      "sha256": "5b86ca73b73cd9850f7cd89a766a7d8e861fbb2e0dfa8ae3ebf151801e1d3930",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/thread.cpp",
+      "size_bytes": 16274,
+      "sha256": "26d04132676189a6b9ce59afb574c116a672ce8bb273f1b008af8522e7760006",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/thread.h",
+      "size_bytes": 6185,
+      "sha256": "d39544eea0dc30fa6edd541f5f87ed06af554ba0364161ab04a78b4b9757a897",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/thread_native.h",
+      "size_bytes": 5080,
+      "sha256": "e716bc066bac3feb1a80d65d03022a9a4a415fd961bf72a4922cbc85b55666d4",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/timeman.cpp",
+      "size_bytes": 5507,
+      "sha256": "96d3c58a5f20afe65423affc28ef43665c3325a98adad60da00b55ee84bce4b7",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/timeman.h",
+      "size_bytes": 2106,
+      "sha256": "8aed34863e004e978ab6c011d9ded7318c3e25da817d1760aa904b1249e88e85",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/tt.cpp",
+      "size_bytes": 10528,
+      "sha256": "56435808c1ed7557e69afb85fc0fa0116fcb574bfa528d53cc0f07d20a926702",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/tt.h",
+      "size_bytes": 3824,
+      "sha256": "0e8deb3207a9fc3adfe5f6df806bf7dd70cc818f89c3284484979aac20b15033",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/tune.cpp",
+      "size_bytes": 3512,
+      "sha256": "3f0157baeaf981aa1e60aa178a33e9017f73efe82724d3694aa6088307fdaa36",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/tune.h",
+      "size_bytes": 6712,
+      "sha256": "9298669723766aea05f2d4317e5cd8119cdb6ad3f1d3e48f47ecc63c25bc3703",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/types.h",
+      "size_bytes": 16233,
+      "sha256": "9a6bae5b151595eb80b56e90c4496fefa92e013f1772bcc7b3ce60c178bb95f6",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/uci.cpp",
+      "size_bytes": 22760,
+      "sha256": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/uci.h",
+      "size_bytes": 2571,
+      "sha256": "6ad20b4d5f02ad529ccc947d425f182ff68ad17dd8ab6f3984a652709f9307d0",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/ucioption.cpp",
+      "size_bytes": 6326,
+      "sha256": "5d699e2fa1d57cfa5f3169412dc8fc5d26685563be38c221cdbfde7237305e8a",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/ucioption.h",
+      "size_bytes": 3179,
+      "sha256": "85468dec1694abd49af3997edac57eb48a897a844369f86ecfb75ea575d546cb",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/entry_arm64.cpp",
+      "size_bytes": 2202,
+      "sha256": "8d344fa02d4a6315c49bae32a5182578557c8543a8f146cf6690495f48691bdf",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/entry_riscv64.cpp",
+      "size_bytes": 3158,
+      "sha256": "85ef23b0eeb56620df3dfe149ed2f60b2b6fbee2f66944e22173ac3fd9f718dc",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/entry_x86.cpp",
+      "size_bytes": 6925,
+      "sha256": "523fa2ebc9bcca8378ce5a8e46ec0fee21385cc50bfae4eadbcabda6ba3c7225",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/nnue_embed.cpp",
+      "size_bytes": 2838,
+      "sha256": "a1c8960bb0f57ca54d83ea99c0170b79061ebeb103bacc7866212e4aba78a3a2",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/patch_x86_slice.sh",
+      "size_bytes": 2754,
+      "sha256": "f20555e2a4327077ba4d4f3a83292e4da54c7033516c523d2299219db2cd8bd8",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/src/universal/rewrite_asm_sections.awk",
+      "size_bytes": 2731,
+      "sha256": "0811fae900d717365f261755e87c5d926506ee20de8f95dde3d7df873176dee3",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/Copying.txt",
+      "size_bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/README.md",
+      "size_bytes": 7772,
+      "sha256": "ae3ef5c2282400d643c6e923d0b8b8d8fe35cf98762701f0379c79bde16c3a26",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/AUTHORS",
+      "size_bytes": 6922,
+      "sha256": "59c7a457f0665f26453ad90f474db7cd328f0983a7e8031cded5d6f25e1a1eb6",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/CITATION.cff",
+      "size_bytes": 704,
+      "sha256": "f98b029076a0aa0a668f03e5e2623a98cfa34854ff6cb66b852e0a736802a701",
+      "mode": 420
+    },
+    {
+      "path": "audit/audit_cpu_pool.py",
+      "size_bytes": 19807,
+      "sha256": "080c94ffb9ff3504c3bd2260a709a77e728c37a979cbeced44de0a9c5729ef30",
+      "mode": 420
+    },
+    {
+      "path": "audit/test_audit_cpu_pool.py",
+      "size_bytes": 16234,
+      "sha256": "acb8678ef0e903b6f308713185d16dc7fbd17fb04822f3f7859a67478689770e",
+      "mode": 420
+    },
+    {
+      "path": "stockfish/download-manifest.json",
+      "size_bytes": 2606,
+      "sha256": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8",
+      "mode": 420
+    },
+    {
+      "path": "chen-LICENSE",
+      "size_bytes": 1074,
+      "sha256": "53e9c11798a8528191529a3454426293f8c1c13edbe81038f8ddc94443d6e0af",
+      "mode": 420
+    },
+    {
+      "path": "external-stockfish.json",
+      "size_bytes": 1269,
+      "sha256": "4ee79c8bb046db45ca198afa7b9f176d62d4e08f476b4430e55c38907845ee55",
+      "mode": 420
+    }
+  ],
+  "total_bytes": 4265399,
+  "restore_scope": "Restore stage/ at its original absolute stage path for unchanged provenance replay. Do not execute supervise.py or match.py again. Auditor is read-only and requires the externally pinned Stockfish binary at its declared original path."
+}

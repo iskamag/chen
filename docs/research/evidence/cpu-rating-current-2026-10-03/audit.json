@@ -1,0 +1,794 @@
+{
+  "kind": "independent_CPU_configured_strength_pool_audit",
+  "status": "COMPLETE",
+  "declaration_sha256": "c30fb2dec5585ba26ed78eee0592ce8f0ef8357cd8c8d24a9e0e3fbc84881d0c",
+  "auditor_sha256": "080c94ffb9ff3504c3bd2260a709a77e728c37a979cbeced44de0a9c5729ef30",
+  "source_commit": "28c6f86caa57e360798afc38e9f50a33aa1729ed",
+  "lanes": [
+    {
+      "id": "off1800",
+      "collector_state": "COMPLETE",
+      "pvs": false,
+      "stockfish_configured_setting": 1800,
+      "declared_cpu": 1,
+      "observed_games": 16,
+      "planned_games": 16,
+      "missing_games": 0,
+      "legal_plies": 1603,
+      "complete_pairs": [
+        {
+          "opening_index": 0,
+          "opening": "italian",
+          "row_indices": [
+            0,
+            1
+          ],
+          "scores": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 1,
+          "opening": "ruy-lopez",
+          "row_indices": [
+            2,
+            3
+          ],
+          "scores": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 2,
+          "opening": "scotch",
+          "row_indices": [
+            4,
+            5
+          ],
+          "scores": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 3,
+          "opening": "four-knights",
+          "row_indices": [
+            6,
+            7
+          ],
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 4,
+          "opening": "petrov",
+          "row_indices": [
+            8,
+            9
+          ],
+          "scores": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 5,
+          "opening": "vienna",
+          "row_indices": [
+            10,
+            11
+          ],
+          "scores": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 6,
+          "opening": "sicilian-open",
+          "row_indices": [
+            12,
+            13
+          ],
+          "scores": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 7,
+          "opening": "sicilian-alapin",
+          "row_indices": [
+            14,
+            15
+          ],
+          "scores": [
+            0.0,
+            0.5
+          ]
+        }
+      ],
+      "excluded_pairs": [],
+      "included_games": 16,
+      "candidate_points": 6.0,
+      "wins": 5,
+      "draws": 2,
+      "losses": 9,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_game_indices": [],
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 800,
+          "minimum_ms": 0.55588,
+          "median_ms": 1000.9961975,
+          "maximum_ms": 1011.144162,
+          "above_requested_1second": 735,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 803,
+          "minimum_ms": 4.717143,
+          "median_ms": 1000.648327,
+          "maximum_ms": 1006.59441,
+          "above_requested_1second": 744,
+          "above_1point1seconds": 0
+        }
+      },
+      "reported_telemetry": {
+        "candidate": {
+          "depth": {
+            "count": 800,
+            "minimum": 1,
+            "maximum": 15
+          },
+          "nodes": {
+            "count": 800,
+            "minimum": 6,
+            "maximum": 1421912
+          },
+          "time": {
+            "count": 800,
+            "minimum": 0.0,
+            "maximum": 1.0
+          }
+        },
+        "base": {
+          "depth": {
+            "count": 803,
+            "minimum": 12,
+            "maximum": 245
+          },
+          "nodes": {
+            "count": 803,
+            "minimum": 490,
+            "maximum": 4443511
+          },
+          "time": {
+            "count": 803,
+            "minimum": 0.001,
+            "maximum": 1.001
+          }
+        }
+      },
+      "timing_scope": "requested movetime1s; witnessed wall includes transport/scheduling, early finishes and overruns reported, no asserted hard deadline",
+      "affinity_scope": "declared CPU only; saved games do not independently certify core affinity/isolation",
+      "artifact_sha256": {
+        "metadata.json": "a18a7bba928fc92fdd8bcbe6e7bfbf963d3b92e93408d895defcd7b7111737d3",
+        "games.jsonl": "4f06d7bc6f2549b16ab245612dc19a7e5d8e92d35317dc555ec16e03c9a4c9bc",
+        "games.pgn": "b40bb5a9700ace66bf8492db40314827290378fb24ac9c04701c98d8147c1391"
+      },
+      "summary_sha256": "cd6f21aac6abb3a893a2e0474e549cd7636143b2d9ae464c937626922683f129"
+    },
+    {
+      "id": "on1600",
+      "collector_state": "COMPLETE",
+      "pvs": true,
+      "stockfish_configured_setting": 1600,
+      "declared_cpu": 2,
+      "observed_games": 16,
+      "planned_games": 16,
+      "missing_games": 0,
+      "legal_plies": 1263,
+      "complete_pairs": [
+        {
+          "opening_index": 0,
+          "opening": "italian",
+          "row_indices": [
+            0,
+            1
+          ],
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 1,
+          "opening": "ruy-lopez",
+          "row_indices": [
+            2,
+            3
+          ],
+          "scores": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 2,
+          "opening": "scotch",
+          "row_indices": [
+            4,
+            5
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 3,
+          "opening": "four-knights",
+          "row_indices": [
+            6,
+            7
+          ],
+          "scores": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 4,
+          "opening": "petrov",
+          "row_indices": [
+            8,
+            9
+          ],
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 5,
+          "opening": "vienna",
+          "row_indices": [
+            10,
+            11
+          ],
+          "scores": [
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 6,
+          "opening": "sicilian-open",
+          "row_indices": [
+            12,
+            13
+          ],
+          "scores": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 7,
+          "opening": "sicilian-alapin",
+          "row_indices": [
+            14,
+            15
+          ],
+          "scores": [
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "excluded_pairs": [],
+      "included_games": 16,
+      "candidate_points": 12.5,
+      "wins": 11,
+      "draws": 3,
+      "losses": 2,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_game_indices": [],
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 634,
+          "minimum_ms": 0.57964,
+          "median_ms": 1000.9547325,
+          "maximum_ms": 1019.148056,
+          "above_requested_1second": 595,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 629,
+          "minimum_ms": 4.700332,
+          "median_ms": 1000.616557,
+          "maximum_ms": 1006.62538,
+          "above_requested_1second": 565,
+          "above_1point1seconds": 0
+        }
+      },
+      "reported_telemetry": {
+        "candidate": {
+          "depth": {
+            "count": 634,
+            "minimum": 1,
+            "maximum": 16
+          },
+          "nodes": {
+            "count": 634,
+            "minimum": 7,
+            "maximum": 1445856
+          },
+          "time": {
+            "count": 634,
+            "minimum": 0.0,
+            "maximum": 0.997
+          }
+        },
+        "base": {
+          "depth": {
+            "count": 629,
+            "minimum": 9,
+            "maximum": 245
+          },
+          "nodes": {
+            "count": 629,
+            "minimum": 490,
+            "maximum": 4544692
+          },
+          "time": {
+            "count": 629,
+            "minimum": 0.001,
+            "maximum": 1.001
+          }
+        }
+      },
+      "timing_scope": "requested movetime1s; witnessed wall includes transport/scheduling, early finishes and overruns reported, no asserted hard deadline",
+      "affinity_scope": "declared CPU only; saved games do not independently certify core affinity/isolation",
+      "artifact_sha256": {
+        "metadata.json": "665086f20bb2f00ee068d700363e615bfd12285ef696ccbc8d893b710ddea84a",
+        "games.jsonl": "2a9b0f414ed67c64ab766322340f747b4d73e4d110da0beab73efaf616fb790b",
+        "games.pgn": "d9270a1c52bb00b70ed540ba766db37fc9e206a7682c4b36cbfba77936fc6c0d"
+      },
+      "summary_sha256": "0db294f864c3b80c3082d8072c77db9713d52da78f1f56ba89d5cc298a371f52"
+    },
+    {
+      "id": "on1800",
+      "collector_state": "COMPLETE",
+      "pvs": true,
+      "stockfish_configured_setting": 1800,
+      "declared_cpu": 3,
+      "observed_games": 16,
+      "planned_games": 16,
+      "missing_games": 0,
+      "legal_plies": 1369,
+      "complete_pairs": [
+        {
+          "opening_index": 0,
+          "opening": "italian",
+          "row_indices": [
+            0,
+            1
+          ],
+          "scores": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 1,
+          "opening": "ruy-lopez",
+          "row_indices": [
+            2,
+            3
+          ],
+          "scores": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 2,
+          "opening": "scotch",
+          "row_indices": [
+            4,
+            5
+          ],
+          "scores": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 3,
+          "opening": "four-knights",
+          "row_indices": [
+            6,
+            7
+          ],
+          "scores": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 4,
+          "opening": "petrov",
+          "row_indices": [
+            8,
+            9
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 5,
+          "opening": "vienna",
+          "row_indices": [
+            10,
+            11
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 6,
+          "opening": "sicilian-open",
+          "row_indices": [
+            12,
+            13
+          ],
+          "scores": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 7,
+          "opening": "sicilian-alapin",
+          "row_indices": [
+            14,
+            15
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "excluded_pairs": [],
+      "included_games": 16,
+      "candidate_points": 8.0,
+      "wins": 6,
+      "draws": 4,
+      "losses": 6,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_game_indices": [],
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 685,
+          "minimum_ms": 0.53282,
+          "median_ms": 1000.946248,
+          "maximum_ms": 1017.432305,
+          "above_requested_1second": 627,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 684,
+          "minimum_ms": 4.859423,
+          "median_ms": 1000.5791770000001,
+          "maximum_ms": 1008.40211,
+          "above_requested_1second": 632,
+          "above_1point1seconds": 0
+        }
+      },
+      "reported_telemetry": {
+        "candidate": {
+          "depth": {
+            "count": 685,
+            "minimum": 1,
+            "maximum": 14
+          },
+          "nodes": {
+            "count": 685,
+            "minimum": 4,
+            "maximum": 1332674
+          },
+          "time": {
+            "count": 685,
+            "minimum": 0.0,
+            "maximum": 0.995
+          }
+        },
+        "base": {
+          "depth": {
+            "count": 684,
+            "minimum": 11,
+            "maximum": 245
+          },
+          "nodes": {
+            "count": 684,
+            "minimum": 490,
+            "maximum": 4545433
+          },
+          "time": {
+            "count": 684,
+            "minimum": 0.001,
+            "maximum": 1.001
+          }
+        }
+      },
+      "timing_scope": "requested movetime1s; witnessed wall includes transport/scheduling, early finishes and overruns reported, no asserted hard deadline",
+      "affinity_scope": "declared CPU only; saved games do not independently certify core affinity/isolation",
+      "artifact_sha256": {
+        "metadata.json": "ca6a55e8c18b3221b181b9687e50bfdab4de7661d38fa8b1ef108d89ac782ff2",
+        "games.jsonl": "3a23d7686cd49843d61523b75f341a9d01e0d016d197050f1d03c30599f40d5f",
+        "games.pgn": "6b86fa0181628de1158a8c697a4015e8f474287ca4d24499817373b386928e7d"
+      },
+      "summary_sha256": "198f2cc20b495b2d057802675c20c0b1c55008d7b79108fd2e68be05c12d7a19"
+    },
+    {
+      "id": "on2000",
+      "collector_state": "COMPLETE",
+      "pvs": true,
+      "stockfish_configured_setting": 2000,
+      "declared_cpu": 4,
+      "observed_games": 16,
+      "planned_games": 16,
+      "missing_games": 0,
+      "legal_plies": 1575,
+      "complete_pairs": [
+        {
+          "opening_index": 0,
+          "opening": "italian",
+          "row_indices": [
+            0,
+            1
+          ],
+          "scores": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 1,
+          "opening": "ruy-lopez",
+          "row_indices": [
+            2,
+            3
+          ],
+          "scores": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 2,
+          "opening": "scotch",
+          "row_indices": [
+            4,
+            5
+          ],
+          "scores": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 3,
+          "opening": "four-knights",
+          "row_indices": [
+            6,
+            7
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 4,
+          "opening": "petrov",
+          "row_indices": [
+            8,
+            9
+          ],
+          "scores": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "opening_index": 5,
+          "opening": "vienna",
+          "row_indices": [
+            10,
+            11
+          ],
+          "scores": [
+            0.5,
+            0.0
+          ]
+        },
+        {
+          "opening_index": 6,
+          "opening": "sicilian-open",
+          "row_indices": [
+            12,
+            13
+          ],
+          "scores": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "opening_index": 7,
+          "opening": "sicilian-alapin",
+          "row_indices": [
+            14,
+            15
+          ],
+          "scores": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "excluded_pairs": [],
+      "included_games": 16,
+      "candidate_points": 6.0,
+      "wins": 4,
+      "draws": 4,
+      "losses": 8,
+      "capped_unscored_games": 0,
+      "technical_failures": 0,
+      "unpaired_finished_game_indices": [],
+      "unpaired_finished_games": 0,
+      "move_wall_ms": {
+        "candidate": {
+          "moves": 787,
+          "minimum_ms": 0.69974,
+          "median_ms": 1000.974738,
+          "maximum_ms": 1017.098285,
+          "above_requested_1second": 736,
+          "above_1point1seconds": 0
+        },
+        "base": {
+          "moves": 788,
+          "minimum_ms": 5.373353,
+          "median_ms": 1000.647247,
+          "maximum_ms": 1008.03368,
+          "above_requested_1second": 729,
+          "above_1point1seconds": 0
+        }
+      },
+      "reported_telemetry": {
+        "candidate": {
+          "depth": {
+            "count": 787,
+            "minimum": 1,
+            "maximum": 11
+          },
+          "nodes": {
+            "count": 787,
+            "minimum": 6,
+            "maximum": 1511198
+          },
+          "time": {
+            "count": 787,
+            "minimum": 0.0,
+            "maximum": 0.997
+          }
+        },
+        "base": {
+          "depth": {
+            "count": 788,
+            "minimum": 10,
+            "maximum": 245
+          },
+          "nodes": {
+            "count": 788,
+            "minimum": 1469,
+            "maximum": 4517527
+          },
+          "time": {
+            "count": 788,
+            "minimum": 0.003,
+            "maximum": 1.001
+          }
+        }
+      },
+      "timing_scope": "requested movetime1s; witnessed wall includes transport/scheduling, early finishes and overruns reported, no asserted hard deadline",
+      "affinity_scope": "declared CPU only; saved games do not independently certify core affinity/isolation",
+      "artifact_sha256": {
+        "metadata.json": "05879021eae2bbfee72063eee555c0c5a30e7e7498c74ac20e761ed12e5d15b7",
+        "games.jsonl": "6cbb025232818222050fca4d39cf5207ff9d1d1b389fa92353d93ab0b5d6d308",
+        "games.pgn": "47f570d740037f049409745f5fabebb5c791e358b02851f82cd9cdd6c1987a9b"
+      },
+      "summary_sha256": "7c810f9dd8ffd55f628672219672eccf7cc434320ba66983e6de8a28fd9fdd3f"
+    }
+  ],
+  "pvs_on_configured_pool_fit": {
+    "included_games": 48,
+    "observed_points": 26.5,
+    "groups": [
+      {
+        "setting": 1600,
+        "games": 16,
+        "points": 12.5
+      },
+      {
+        "setting": 1800,
+        "games": 16,
+        "points": 8.0
+      },
+      {
+        "setting": 2000,
+        "games": 16,
+        "points": 6.0
+      }
+    ],
+    "configured_setting_logistic_point_estimate": 1844.2552308431782,
+    "expected_points_at_estimate": 26.500000000000004,
+    "score_equation_residual": 3.552713678800501e-15,
+    "lichess_rating": null,
+    "confidence_interval": null,
+    "independence_asserted": false,
+    "calibrated_rating": false,
+    "status": "finite_descriptive_fit",
+    "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+  },
+  "default_pvs_off_1800_fit": {
+    "included_games": 16,
+    "observed_points": 6.0,
+    "groups": [
+      {
+        "setting": 1800,
+        "games": 16,
+        "points": 6.0
+      }
+    ],
+    "configured_setting_logistic_point_estimate": 1711.2605001534575,
+    "expected_points_at_estimate": 6.000000000000002,
+    "score_equation_residual": 1.7763568394002505e-15,
+    "lichess_rating": null,
+    "confidence_interval": null,
+    "independence_asserted": false,
+    "calibrated_rating": false,
+    "status": "finite_descriptive_fit",
+    "equation": "sum(points) = sum(n_setting/(1+10**((setting-rating)/400)))"
+  },
+  "fit_scope": "descriptive Stockfish19 configured-setting score equation over complete pairs only; authored openings correlated and completion selection explicit",
+  "shared_cache_power_clocks": "uncontrolled",
+  "lichess_rating": null,
+  "confidence_interval": null,
+  "independence_asserted": false,
+  "architecture_winner": null,
+  "auditor_chess_version": "1.11.2",
+  "auditor_rules_provider_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "auditor_pgn_provider_sha256": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+  "default_off_in_on_fit": false,
+  "no_cap_or_failure_imputation": true
+}

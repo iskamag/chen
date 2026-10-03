@@ -4,11 +4,14 @@ Chen has two cooperating worktrees: `chen` on `master` owns the runnable Rust
 engine, gfx1030 runtime and evaluation harness; `../chen-neural` on
 `research/neural` owns model, latent-transition and training experiments. The
 target is a GPU engine with useful learned representations, adjustable play and
-eventual 2500 Lichess performance. A working UCI engine exists; a rating above
-750 at one second per move now has a useful provisional reference: [13 wins,
-3 draws against Stockfish configured 1320](harness/one-second-reference-2026-10-02.md),
-giving an uncalibrated configured-opponent proxy of 1714. This remains separate
-from an actual Lichess rating; larger reference-pool checks are still needed.
+eventual 2500 Lichess performance. A working UCI engine exists. The
+[fresh CPU one-second evaluation](harness/cpu-rating-current-2026-10-03.md)
+scores 5W/2D/9L for default PVS-off against Stockfish configured1800, proxy1711.
+PVS-on's separate 48-game configured1600/1800/2000 pool gives proxy1844.
+All 64 games form complete pairs with no errors/caps. These are descriptive
+configured-setting proxies, separate from an actual Lichess rating; defaults
+remain unchanged. This replaces the older 1320-only CPU proxy1714 as the current
+CPU reference. GPU/neural research remains paused at the saved milestone.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now

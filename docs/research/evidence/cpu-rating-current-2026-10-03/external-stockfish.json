@@ -1,0 +1,18 @@
+{
+  "kind": "existing_Stockfish_dependency_binding",
+  "path": "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal",
+  "size_bytes": 103153472,
+  "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "official_release_pin": {
+    "version": "sf_19",
+    "url": "https://github.com/official-stockfish/Stockfish/releases/download/sf_19/stockfish-linux-x86-64-universal.tar.gz",
+    "sha256": "9defc0d4e55d49c65a6d042f3e571a39fcea499ade6dbe741b53b8c65e03611f",
+    "archive": "stockfish.tar.gz",
+    "binary": "stockfish/stockfish-linux-x86-64-universal",
+    "license": "GPL-3.0; official source, networks and licensing retained in archive"
+  },
+  "existing_tools_manifest_sha256": "ac15acf156a3a0e13ad6a21dd8f39978e0ccf6e42277569e75c2ac0e6333f8e8",
+  "default_embedded_network_reported_by_preflight": "nn-1a298aa575a0.nnue",
+  "network_scope": "No EvalFile override; exact engine binary binds its bundled default network. No separate network bytes are claimed or newly distributed.",
+  "archive_scope": "The 103153472-byte Stockfish binary is not duplicated; licenses and bundled corresponding source are included. Existing official download archive is retained at results/match-tools/stockfish.tar.gz."
+}

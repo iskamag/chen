@@ -41,10 +41,14 @@ two actual one-step typed HPO fits saved. Best DEV macro-family errors are
 restricted recapture game, not unrestricted strategic chess value. TEST stays
 unlabeled and closed. No HPO arm or architecture winner has been selected.
 
-The CPU reference and older production GPU selective match retain their
-uncalibrated configured-opponent proxies1714/1254. Neither measures the new GPU
-retry worker, neural quality, or Lichess rating. Do not add the small direct PVS
-match's relative estimate to either proxy.
+The requested [fresh CPU evaluation](harness/cpu-rating-current-2026-10-03.md)
+is saved: 64 games/32 complete pairs, no errors/caps, all owned processes retired.
+Default PVS-off scores 5W/2D/9L against configured1800, proxy1711. PVS-on's
+configured1600/1800/2000 rows score 11W/3D/2L, 6W/4D/6L, 4W/4D/8L, with separate
+pooled proxy1844. The older production GPU selective proxy1254 remains historical.
+None measures the new GPU retry worker, neural quality, or Lichess rating;
+no confidence interval or default change follows. Do not add the small direct
+PVS match's relative estimate to these proxies. GPU/neural work remains paused.
 
 ## Next bounded work
 

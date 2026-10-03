@@ -1,0 +1,14 @@
+{
+  "kind": "cold_CPU_pool_archive_byte_review",
+  "checked_utc": "2026-10-03T12:37:52.633750+00:00",
+  "status": "PASS",
+  "regular_members": 167,
+  "total_uncompressed_bytes": 4265399,
+  "inventory_sha256": "ae92bd72355278d8df83c7f3d5663d26982253a7f04095df5420751c48ff0d65",
+  "archive_sha256": "418d5fafa261e940557557f65954243f2829042e312bc26a695e175c4ca30a58",
+  "all_members_regular_unique_hash_and_size_matched": true,
+  "audit_status": "COMPLETE",
+  "all_64_games_in_complete_pairs": true,
+  "owned_processes_retired": true,
+  "scope": "Cold archive byte replay and independent existing saved-game audit; no new engine searches, strength games or hardware experiments."
+}
