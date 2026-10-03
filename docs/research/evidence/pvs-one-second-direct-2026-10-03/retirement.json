@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-03T10:39:25.044978+00:00",
+  "owned_pgids_absent": [
+    29636
+  ],
+  "collector_engine_pids_absent": [
+    29637,
+    29640,
+    29642
+  ],
+  "supervisor_pid": 29622,
+  "supervisor_retired": true,
+  "group_members_at_supervisor_retirement": [],
+  "scope": "Only owned match processes retired; concurrent agents manage their own jobs"
+}

@@ -1,0 +1,79 @@
+{
+  "kind": "independent_direct_pvs_timed_match_audit",
+  "status": "pass",
+  "games": 16,
+  "complete_opening_pairs": 8,
+  "legal_plies": 1773,
+  "wins": 6,
+  "draws": 6,
+  "losses": 4,
+  "candidate_score": 0.5625,
+  "relative_logistic_point_estimate": 43.657787770027234,
+  "configured_opponent_proxy_rating": null,
+  "proxy_scope": "same-binary PVS-only direct diagnostic; no external rating anchor",
+  "lichess_rating": null,
+  "confidence_interval": null,
+  "independence_asserted": false,
+  "technical_failures": 0,
+  "move_timing_ms": {
+    "candidate": {
+      "moves": 887,
+      "maximum": 1004.244809,
+      "median": 1000.949367
+    },
+    "base": {
+      "moves": 886,
+      "maximum": 1002.826368,
+      "median": 1000.946338
+    }
+  },
+  "requested_seconds_per_move": 1.0,
+  "timing_scope": "wall time includes UCI transport and scheduling; early completion allowed",
+  "declaration_sha256": "24e7786672840439c761b69bcb637567b37a6e6fc75f0f69ef212ef6b747b558",
+  "auditor_sha256": "4dbf3a05bb30b5b97ae4465eff3a27a6f5a869fba6414d78eb2cdb87a4f57dd9",
+  "run_sha256": {
+    "games.jsonl": "e94fe52f2fe5c09eaa129ea42bc9378a2d72793dba8ff5fc521eaad1e0834581",
+    "games.pgn": "a817977e9130ac9ed85934499c89138daee126326ff125bec2e718f69c233724",
+    "metadata.json": "b45977eacc1f37609e3251247a1a45a93faed5d7f7c241e6a491f4a8578f2d63",
+    "summary.json": "da30c8a8fba7ee89a062f07b3b6168d9ee5dc146c43623b6f5f71483dc8d24d0"
+  },
+  "capped_unscored_games": 0,
+  "completed_paired_games": 16,
+  "unpaired_completed_games": 0,
+  "per_move_telemetry": {
+    "candidate": {
+      "depth": {
+        "minimum": 1,
+        "maximum": 13,
+        "mean": 7.074408117249154
+      },
+      "nodes": {
+        "minimum": 4,
+        "maximum": 1331715,
+        "mean": 320933.47012401355
+      },
+      "time": {
+        "minimum": 0.0,
+        "maximum": 0.999,
+        "mean": 0.4746065388951522
+      }
+    },
+    "base": {
+      "depth": {
+        "minimum": 1,
+        "maximum": 13,
+        "mean": 6.959367945823928
+      },
+      "nodes": {
+        "minimum": 4,
+        "maximum": 1266306,
+        "mean": 303870.65011286683
+      },
+      "time": {
+        "minimum": 0.0,
+        "maximum": 0.998,
+        "mean": 0.4395823927765237
+      }
+    }
+  }
+}
