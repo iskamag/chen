@@ -1,15 +1,24 @@
+use std::path::Path;
 use std::process::Command;
-fn main() {
-    let mut revision = Command::new("git")
-        .current_dir("..")
-        .args(["rev-parse", "--short", "HEAD"])
+
+fn git(repo: &Path, args: &[&str]) -> Option<String> {
+    Command::new("git")
+        .current_dir(repo)
+        .args(args)
         .output()
         .ok()
-        .filter(|o| o.status.success())
-        .and_then(|o| String::from_utf8(o.stdout).ok())
-        .unwrap_or_else(|| "unknown".into());
+        .filter(|output| output.status.success())
+        .and_then(|output| String::from_utf8(output.stdout).ok())
+        .map(|output| output.trim().to_owned())
+}
+
+fn main() {
+    let manifest = std::env::var("CARGO_MANIFEST_DIR").unwrap();
+    let repo = Path::new(&manifest).parent().unwrap();
+    let mut revision =
+        git(repo, &["rev-parse", "--short", "HEAD"]).unwrap_or_else(|| "unknown".into());
     if Command::new("git")
-        .current_dir("..")
+        .current_dir(repo)
         .args([
             "diff",
             "--quiet",
@@ -19,8 +28,8 @@ fn main() {
             "Cargo.toml",
             "Cargo.lock",
         ])
-        .status()
-        .is_ok_and(|status| !status.success())
+        .output()
+        .is_ok_and(|output| revision != "unknown" && !output.status.success())
     {
         revision = format!("{}+dirty", revision.trim());
     }
@@ -28,6 +37,13 @@ fn main() {
     println!("cargo:rerun-if-changed=../src");
     println!("cargo:rerun-if-changed=../Cargo.toml");
     println!("cargo:rerun-if-changed=../Cargo.lock");
-    println!("cargo:rerun-if-changed=../.git/HEAD");
-    println!("cargo:rerun-if-changed=../.git/refs/heads/master");
+    let mut git_paths = vec!["HEAD".to_owned(), "packed-refs".to_owned()];
+    if let Some(branch) = git(repo, &["symbolic-ref", "-q", "HEAD"]) {
+        git_paths.push(branch);
+    }
+    for git_path in git_paths {
+        if let Some(path) = git(repo, &["rev-parse", "--git-path", &git_path]) {
+            println!("cargo:rerun-if-changed={}", repo.join(path).display());
+        }
+    }
 }

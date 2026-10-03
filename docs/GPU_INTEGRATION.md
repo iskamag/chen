@@ -14,7 +14,26 @@ one scheduler for `HostTree` and `HipRules`. The latter runs legal generation,
 hash-preserving transitions, adjudication, evaluation and reduction in HIP
 kernels. [GPU_RULES.md](GPU_RULES.md) specifies its ABI and measured scope.
 
-## Run on the existing container
+## Run
+
+The portable engine does not require ROCm. These experiments require Linux,
+an AMD gfx1030 GPU, and a ROCm environment with `hipcc` available. Build directly:
+
+```sh
+cargo build --release --locked --features hip
+bash gpu/build.sh
+CHEN_GPU_LIBRARY="$PWD/gpu/build/libchen_gpu.so" ./target/release/chen
+```
+
+Select a HIP backend through UCI, for example
+`setoption name Backend value hip-resident`, before searching.
+The library path must point to the built shared library.
+
+Alternatively, use the wrapper with an existing ROCm Docker container. Set
+`CHEN_ROCM_CONTAINER` to its name; the historical default is `cpp-rocm`.
+The wrapper does not create or provision the container.
+
+### Container wrapper
 
 ```sh
 scripts/rocm_run.sh test

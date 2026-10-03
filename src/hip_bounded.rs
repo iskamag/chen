@@ -608,14 +608,13 @@ mod tests {
         p.search.abort_reason = reason;
         p
     }
-    fn backend(
-        answers: Vec<TimedPacket>,
-        wait_last: bool,
-    ) -> (
+    type MockBackend = (
         HipBoundedSearch,
         Arc<Mutex<Vec<TimedJob>>>,
         Arc<Mutex<Vec<u64>>>,
-    ) {
+    );
+
+    fn backend(answers: Vec<TimedPacket>, wait_last: bool) -> MockBackend {
         let jobs = Arc::new(Mutex::new(Vec::new()));
         let history = Arc::new(Mutex::new(Vec::new()));
         (

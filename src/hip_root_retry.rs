@@ -585,9 +585,11 @@ mod tests {
             hashfull: 0,
             selective: None,
         };
-        let mut s = Snapshot::default();
-        s.nodes = 200;
-        s.qnodes = 50;
+        let mut s = Snapshot {
+            nodes: 200,
+            qnodes: 50,
+            ..Snapshot::default()
+        };
         s.published.kind = 3;
         s.published.score = 0;
         assert!(!HipRootRetry::publish(&s, &mut result).unwrap());
@@ -598,11 +600,13 @@ mod tests {
     }
     #[test]
     fn foreign_epoch_rejected() {
-        let mut s = Snapshot::default();
-        s.abi_version = 4;
-        s.struct_size = 432;
-        s.root_hash = 7;
-        s.root_epoch = 3;
+        let mut s = Snapshot {
+            abi_version: 4,
+            struct_size: 432,
+            root_hash: 7,
+            root_epoch: 3,
+            ..Snapshot::default()
+        };
         s.published.abi_version = 1;
         s.published.struct_size = 304;
         s.published.kind = 3;
@@ -611,14 +615,16 @@ mod tests {
     }
     #[test]
     fn resource_failure_is_not_a_root_bound() {
-        let mut s = Snapshot::default();
-        s.abi_version = 4;
-        s.struct_size = 432;
-        s.root_hash = 7;
-        s.root_epoch = 3;
-        s.root_count = 2;
-        s.failed_children = 1;
-        s.paused_children = 1;
+        let mut s = Snapshot {
+            abi_version: 4,
+            struct_size: 432,
+            root_hash: 7,
+            root_epoch: 3,
+            root_count: 2,
+            failed_children: 1,
+            paused_children: 1,
+            ..Snapshot::default()
+        };
         s.published.abi_version = 1;
         s.published.struct_size = 304;
         s.published.kind = 3;

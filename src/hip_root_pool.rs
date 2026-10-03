@@ -566,9 +566,11 @@ mod tests {
             hashfull: 0,
             selective: None,
         };
-        let mut s = Snapshot::default();
-        s.nodes = 200;
-        s.qnodes = 50;
+        let mut s = Snapshot {
+            nodes: 200,
+            qnodes: 50,
+            ..Snapshot::default()
+        };
         s.published.kind = 3;
         s.published.score = 0;
         assert!(!HipRootPool::publish(&s, &mut result).unwrap());
@@ -579,11 +581,13 @@ mod tests {
     }
     #[test]
     fn foreign_epoch_rejected() {
-        let mut s = Snapshot::default();
-        s.abi_version = 3;
-        s.struct_size = 408;
-        s.root_hash = 7;
-        s.root_epoch = 3;
+        let mut s = Snapshot {
+            abi_version: 3,
+            struct_size: 408,
+            root_hash: 7,
+            root_epoch: 3,
+            ..Snapshot::default()
+        };
         s.published.abi_version = 1;
         s.published.struct_size = 304;
         s.published.kind = 3;
