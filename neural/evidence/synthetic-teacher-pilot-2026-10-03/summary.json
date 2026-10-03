@@ -1,0 +1,42 @@
+{
+  "schema": "chen_synthetic_teacher_pilot_summary_v1",
+  "run_status": "complete",
+  "base": {
+    "queries": 32,
+    "accepted": 21,
+    "ordinary_action_rows": 410
+  },
+  "calibration": {
+    "queries": 8,
+    "accepted": 3,
+    "ordinary_action_rows": 65
+  },
+  "ordinary_pair_calibration": {
+    "comparable_roots": 3,
+    "canonical_selected_packet_choice_changes": 1,
+    "pairs": 729,
+    "ordering_or_tie_changes": 60,
+    "strict_reversals": 58
+  },
+  "all_final_uci_choice_changes": {
+    "changes": 0,
+    "roots": 8
+  },
+  "missing": {
+    "base": 11,
+    "calibration_4x": 5,
+    "reason": "decisive_mate_tablebase_or_extreme_evidence; no fallback or replacement"
+  },
+  "generation_wall_seconds": 18.02050228198641,
+  "requested_nodes": 16777216,
+  "sum_maximum_reported_scoreline_nodes": 16314458,
+  "sum_selected_accepted_packet_nodes": 4659174,
+  "scope": "Finite selective teacher pilot, not model quality/Elo/calibrated uncertainty. Base410rows are distinct;65calibration rows revisit3roots and must not be counted as new input coverage.",
+  "runtime_overlap": "Concurrent CPU0 PVS match. Teacher collector and SF onCPU4; packagecache/power shared.",
+  "retirement": {
+    "watchdog_pgid": 30083,
+    "collector_pid": 30093,
+    "stockfish_pid": 30101,
+    "all_absent": true
+  }
+}
