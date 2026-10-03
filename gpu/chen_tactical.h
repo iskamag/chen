@@ -33,6 +33,21 @@ typedef struct ChenTacticalSink {
 uint32_t chen_tactical_abi_version(void);
 int32_t chen_rules_export_tactical(ChenRulesContext *,uint64_t,uint64_t,uint64_t,
     const ChenTacticalSink *,ChenSymbolicExport *,char *,uint64_t);
+/* Independently versioned bucket API2; same tensor layout/feature schema as ABI1,
+ * sink.abi_version=2, 1<=E<=65536. Returns 0 only for a COMPLETE graph.
+ * -2 means edge bucket capacity: discard ALL tensor outputs, then retry with a
+ * larger disjoint bucket. Other schema/move capacity failures are -1, not retryable.
+ * Completion metadata is untouched on any failure; tensor payloads may be partial.
+ * 0/-1/-2 guarantee no in-flight writes by this call when it returns. -3 means
+ * retirement could not be established: retain allocations, stop using context,
+ * and retire the owning process. Never free/retry an unretired packet.
+ * All ownership, alias, exact-terminal/history and complete-action conditions
+ * of ABI1 continue to apply. No payload/count download selects the bucket. */
+#define CHEN_TACTICAL_BUCKET_CAPACITY -2
+#define CHEN_TACTICAL_BUCKET_UNRETIRED -3
+uint32_t chen_tactical_bucket_abi_version(void);
+int32_t chen_rules_export_tactical_bucket(ChenRulesContext *,uint64_t,uint64_t,uint64_t,
+    const ChenTacticalSink *,ChenSymbolicExport *,char *,uint64_t);
 #ifdef __cplusplus
 }
 static_assert(sizeof(ChenTacticalSink)==192,"tactical sink ABI");

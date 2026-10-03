@@ -1,0 +1,31 @@
+{
+  "phase": "semantic",
+  "parent_pid": 10489,
+  "pid": 10495,
+  "pgid": 10495,
+  "argv": [
+    "taskset",
+    "-c",
+    "5",
+    "python3",
+    "-m",
+    "unittest",
+    "gpu.test_tactical_buckets",
+    "-v"
+  ],
+  "start_utc": "2026-10-03T11:21:11.428749+00:00",
+  "timeout_seconds": 120,
+  "kill_grace_seconds": 5,
+  "library_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "environment_overrides": {
+    "PYTHONPATH": "/tmp/chen-tactical-buckets-build-20261003-0wx0ta5d/python",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CHEN_GPU_LIBRARY": "/tmp/chen-tactical-buckets-build-20261003-0wx0ta5d/libchen_tactical_bucket.so",
+    "CHEN_GPU_LIBRARY_SHA256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+    "HIP_VISIBLE_DEVICES": "0",
+    "ROCR_VISIBLE_DEVICES": "0"
+  },
+  "removed_environment": [
+    "HSA_OVERRIDE_GFX_VERSION"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "phase": "timing",
+  "frozen_utc": "2026-10-03T11:22:40.320877+00:00",
+  "library_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "window_seconds": 120,
+  "kill_grace_seconds": 5,
+  "cpu": 5,
+  "arms": [
+    "abi1_E6144",
+    "api2_E6144",
+    "api2_buckets_512_1024_2048_4096_6144"
+  ],
+  "batches": [
+    1,
+    20
+  ],
+  "widths": [
+    32,
+    128,
+    256
+  ],
+  "steps": 4,
+  "dtype": "FP32",
+  "pairs": 6,
+  "order": "three-arm forward/reverse alternating, three each",
+  "primary": "synchronized fresh producer export/allocation/admission + resident copy + captured inference wall",
+  "separate": "reset/expand/model/capture/checkpoint setup excluded; export/copy/inference components recorded",
+  "state": "all20 native children from standard initial root; B1 first native child",
+  "semantic_prior": "seven GPU tests and six CPU wrapper tests PASS before timing",
+  "scope": "untrained same-checkpoint mechanics only, no training/strength/search claim; GPU exclusive, clocks/power and CPU-only preparation uncontrolled",
+  "root_authorized": true
+}

@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-10-03T11:19:33.722595+00:00",
+  "compiler_command": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "/opt/rocm/bin/hipcc",
+    "--version"
+  ],
+  "build_command": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "bash",
+    "/tmp/chen-tactical-buckets-build-20261003-0wx0ta5d/candidate/gpu/build.sh",
+    "/tmp/chen-tactical-buckets-build-20261003-0wx0ta5d/libchen_tactical_bucket.so"
+  ],
+  "build_exit_code": 0,
+  "build_scope": "Observed GPU code compilation only; no runtime called",
+  "binary_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "build_script_flags": "-O3 -std=c++17 --offload-arch=gfx1030 -fPIC -shared -Wall -Wextra -Werror"
+}

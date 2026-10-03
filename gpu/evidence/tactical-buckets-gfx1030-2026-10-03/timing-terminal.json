@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "timed_out": false,
+  "pid": 10513,
+  "pgid": 10513,
+  "process_group_absent": true,
+  "elapsed_seconds": 6.124021739989985,
+  "start_utc": "2026-10-03T11:22:40.423835+00:00",
+  "end_utc": "2026-10-03T11:22:46.547880+00:00"
+}

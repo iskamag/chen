@@ -1,0 +1,14 @@
+{
+  "phase": "semantic",
+  "frozen_utc": "2026-10-03T11:21:11.262792+00:00",
+  "library_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "window_seconds": 120,
+  "kill_grace_seconds": 5,
+  "cpu": 5,
+  "runtime_python_binding": "runtime-python-binding.json",
+  "source_binding": "source-binding.json",
+  "cases": "existing complete oracle suite plus API2 sentinel/overflow/retry/exact-boundary/snapshot checks",
+  "scope": "No performance/strength/training; no payload downloads in producer path; cold independent oracle comparisons only",
+  "exclusive_gpu": true,
+  "root_authorized": true
+}

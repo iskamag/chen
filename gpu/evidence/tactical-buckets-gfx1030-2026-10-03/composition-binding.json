@@ -1,0 +1,71 @@
+{
+  "recorded_utc": "2026-10-03T11:31:03.897353+00:00",
+  "native_base_commit": "4c92070",
+  "neural_wrapper_commit": "21ea33f8365900989a48f009841e6caa41d551fc",
+  "native_live_sha256": {
+    "gpu/chen_tactical.h": "0a5bd4b16f44b35575a2b1634354d40aa0adab5a63e2ccf2cbe2654e64941452",
+    "gpu/chen_tactical.inc": "79126a2b38e6a04ff71ec05a91eaa02676bf5800ccadd89b94dbe898805a6b2b",
+    "gpu/test_tactical_buckets.py": "3c16b3bbfd18c024b6541f9dfcd83bf119cca199616b12ff9ad46430db59ddee",
+    "gpu/profile_tactical_buckets.py": "460cf0f6f3b760c1ed7fbe7de25530fe90c179d42865bb82554c9622ce8e9564",
+    "gpu/analyze_tactical_buckets.py": "5d8566e99c2c92fed345ec112c44b6e3ba818972f7381d61e0c25752038aa889",
+    "docs/TACTICAL_BUCKETS.md": "fb2c0e167fa196536de1d25e049c10825d58008ef05e36b15e73e9a14b429cdf"
+  },
+  "neural_live_sha256": {
+    "neural/native_tactical.py": "07b48628b0966e5d7bddc5f60c15a13aef4622c7b8982b262c176255ced9282b",
+    "neural/tests/test_native_tactical_bucket.py": "9fcdb4c9d3ba5b6fd766453efe0ed633964dc9095e3b4d62526f334027dc8a09"
+  },
+  "native_library_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+  "source_closure": "exact compiled quoted-include closure and frozen Python/provider preflight set; Python set is broader than active imports, including tracked historical source files but no historical artifacts",
+  "cpu_tests": {
+    "exit_code": 0,
+    "count": 6,
+    "seconds_reported": 0.003,
+    "gpu_visible": false,
+    "command": [
+      "docker",
+      "exec",
+      "-e",
+      "HIP_VISIBLE_DEVICES=",
+      "-e",
+      "ROCR_VISIBLE_DEVICES=",
+      "-e",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "-e",
+      "PYTHONPATH=/tmp/chen-tactical-buckets-build-20261003-0wx0ta5d/python",
+      "cpp-rocm",
+      "python3",
+      "-m",
+      "unittest",
+      "neural.tests.test_native_tactical_bucket",
+      "-v"
+    ]
+  },
+  "semantic": {
+    "exit_code": 0,
+    "tests": 7,
+    "test_seconds": 2.012,
+    "oracle_row_comparisons_including_repeats": 50
+  },
+  "retirement": {
+    "independent_command": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "ps",
+      "-p",
+      "10489,10495,10507,10513",
+      "-o",
+      "pid,ppid,pgid,args"
+    ],
+    "exit_code": 1,
+    "stdout": "    PID    PPID    PGID COMMAND\n",
+    "all_four_pids_absent": true,
+    "host_semantic_session": 97035,
+    "host_timing_session": 67375,
+    "host_sessions_terminal": true
+  },
+  "no_more_gpu_calls": true,
+  "old_evidence_unchanged": true,
+  "hardware_fault_injection": false,
+  "scope": "retired capacity failures actual GPU tested; unretired quarantine mocked CPU only; whole snapshot/copy/captured pipeline timing, no neural quality or strength claim"
+}

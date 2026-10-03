@@ -26,9 +26,12 @@ __global__ void tactical_piece_preflight(const ChenRulePosition *positions,uint6
     if(row<count && __popcll(occupied(positions[start+row]))>TP) device_error(error,2);
 }
 struct TacticalWriter {
-    ChenTacticalSink sink;uint64_t row;uint32_t edges;uint32_t *error;
+    ChenTacticalSink sink;uint64_t row;uint32_t edges;uint32_t *error;bool bucket;
     __device__ void add(int source,int receiver,int kind,int ss,int rs,int old,int next) {
-        if(edges>=sink.edge_slots) { device_error(error,2);return; }
+        if(edges>=sink.edge_slots) {
+            if(bucket) reinterpret_cast<uint8_t *>(sink.edge_overflow)[row]=1;
+            device_error(error,bucket?7:2);return;
+        }
         const uint64_t at=row*sink.edge_slots+edges++;
         auto *indices=reinterpret_cast<int64_t *>(sink.edge_index)+at*2;
         indices[0]=source;indices[1]=receiver;
@@ -41,7 +44,7 @@ struct TacticalWriter {
 };
 __global__ void tactical_export_kernel(const ChenRulePosition *positions,const Node *nodes,
     const uint64_t *history,uint64_t history_count,uint64_t start,uint64_t count,uint64_t epoch,
-    ChenTacticalSink sink,uint32_t *error) {
+    ChenTacticalSink sink,uint32_t *error,bool bucket) {
     const uint64_t row=blockIdx.x;
     if(row>=count) return;
     const int lane=int(threadIdx.x),E=int(sink.edge_slots);
@@ -137,7 +140,7 @@ __global__ void tactical_export_kernel(const ChenRulePosition *positions,const N
     }
     __syncthreads();
     if(lane) return;
-    TacticalWriter writer{sink,row,0,error};
+    TacticalWriter writer{sink,row,0,error,bucket};
     for(int s=0;s<64;++s) if(codes[s]) {
         const int object=objects[s],color=int(codes[s]>6);
         writer.add(object,TP+s,0,s,s,codes[s],codes[s]);
@@ -199,17 +202,39 @@ __global__ void tactical_export_kernel(const ChenRulePosition *positions,const N
     auto *counts=reinterpret_cast<int32_t *>(sink.slot_counts)+row*3;
     counts[0]=np;counts[1]=nk;counts[2]=int(writer.edges);
 }
+// Called only for API2 failure after some work may have been queued. The shared
+// complete() already attempts retirement; its generic status does not distinguish
+// failed retirement from another error, so confirm explicitly before releasing
+// failed output ownership or reading its status. No additional success-path fence.
+int32_t tactical_bucket_failure(ChenRulesContext *ctx,int32_t status,bool read_status,
+    char *error,uint64_t cap) {
+    const hipError_t retired=hipStreamSynchronize(ctx->stream);
+    if(retired!=hipSuccess)
+        return fail(error,cap,"tactical bucket stream unretired; retain buffers and retire process",
+            CHEN_TACTICAL_BUCKET_UNRETIRED);
+    if(read_status) {
+        Summary summary{};
+        const hipError_t code=hipMemcpy(&summary,ctx->summary,sizeof(summary),hipMemcpyDeviceToHost);
+        if(code!=hipSuccess) return hip_fail(error,cap,code);
+        if(summary.error==7)
+            return fail(error,cap,"tactical edge bucket capacity exceeded; discard all outputs",
+                CHEN_TACTICAL_BUCKET_CAPACITY);
+    }
+    // API2 retries only edge-capacity failures; >32 pieces, >256 moves, or other
+    // schemas cannot become complete by growing E.
+    return status==CHEN_RULES_CAPACITY?
+        fail(error,cap,"tactical object/move capacity unsupported") : status;
 }
-extern "C" uint32_t chen_tactical_abi_version() { return 1; }
-extern "C" int32_t chen_rules_export_tactical(ChenRulesContext *ctx,uint64_t start,uint64_t count,
-    uint64_t epoch,const ChenTacticalSink *sink,ChenSymbolicExport *out,char *error,uint64_t cap) {
+int32_t tactical_export(ChenRulesContext *ctx,uint64_t start,uint64_t count,
+    uint64_t epoch,const ChenTacticalSink *sink,ChenSymbolicExport *out,char *error,uint64_t cap,
+    bool bucket) {
     clear_error(error,cap);
     if(!ctx || !sink || !out || !range_valid(ctx,start,count) || ctx->mode==0)
         return fail(error,cap,"invalid tactical range or non-search arena");
     if(epoch!=ctx->root_epoch) return fail(error,cap,"stale tactical root epoch");
-    if(sink->abi_version!=1 || sink->struct_size!=sizeof(*sink) || sink->reserved ||
+    if(sink->abi_version!=(bucket?2u:1u) || sink->struct_size!=sizeof(*sink) || sink->reserved ||
         sink->device!=ctx->device || sink->capacity>uint64_t(INT32_MAX) ||
-        sink->legal_slots!=TK || sink->edge_slots<4992 || sink->edge_slots>65536)
+        sink->legal_slots!=TK || sink->edge_slots<(bucket?1u:4992u) || sink->edge_slots>65536)
         return fail(error,cap,"invalid tactical schema/device/capacity");
     hipError_t code=hipSetDevice(ctx->device);
     if(code!=hipSuccess) return hip_fail(error,cap,code);
@@ -223,19 +248,38 @@ extern "C" int32_t chen_rules_export_tactical(ChenRulesContext *ctx,uint64_t sta
     const uint64_t aligns[]={4,4,4,1,8,1,8,8,8,1,4,1,4,4,8,8,8,8,4,4};
     int32_t status=export_intervals_valid(ctx,addresses,strides,aligns,20,sink->capacity,error,cap);
     if(status) return status;
-    if(count>sink->capacity) return fail(error,cap,"tactical sink capacity exceeded",CHEN_RULES_CAPACITY);
+    if(count>sink->capacity) return fail(error,cap,"tactical sink capacity exceeded",bucket?-1:CHEN_RULES_CAPACITY);
     if(!count) { *out=ChenSymbolicExport{0,epoch,0};return 0; }
     status=prepare(ctx,error,cap);
-    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    if(status) {
+        if(bucket) return tactical_bucket_failure(ctx,status,false,error,cap);
+        (void)hipStreamSynchronize(ctx->stream);return status;
+    }
     hipLaunchKernelGGL(symbolic_preflight,grid(count),dim3(64),0,ctx->stream,
         ctx->positions,ctx->nodes,start,count,ctx->used,&ctx->summary->error);
     hipLaunchKernelGGL(tactical_piece_preflight,grid(count),dim3(64),0,ctx->stream,
         ctx->positions,start,count,&ctx->summary->error);
-    double preflight_ms=0;status=complete(ctx,&preflight_ms,error,cap);if(status) return status;
+    double preflight_ms=0;status=complete(ctx,&preflight_ms,error,cap);
+    if(status) return bucket?tactical_bucket_failure(ctx,status,true,error,cap):status;
     status=prepare(ctx,error,cap);
-    if(status) { (void)hipStreamSynchronize(ctx->stream);return status; }
+    if(status) {
+        if(bucket) return tactical_bucket_failure(ctx,status,false,error,cap);
+        (void)hipStreamSynchronize(ctx->stream);return status;
+    }
     hipLaunchKernelGGL(tactical_export_kernel,dim3(uint32_t(count)),dim3(64),0,ctx->stream,
-        ctx->positions,ctx->nodes,ctx->history,ctx->history_count,start,count,epoch,*sink,&ctx->summary->error);
-    double export_ms=0;status=complete(ctx,&export_ms,error,cap);if(status) return status;
+        ctx->positions,ctx->nodes,ctx->history,ctx->history_count,start,count,epoch,*sink,&ctx->summary->error,bucket);
+    double export_ms=0;status=complete(ctx,&export_ms,error,cap);
+    if(status) return bucket?tactical_bucket_failure(ctx,status,true,error,cap):status;
     *out=ChenSymbolicExport{count,epoch,preflight_ms+export_ms};return 0;
+}
+}
+extern "C" uint32_t chen_tactical_abi_version() { return 1; }
+extern "C" uint32_t chen_tactical_bucket_abi_version() { return 2; }
+extern "C" int32_t chen_rules_export_tactical(ChenRulesContext *ctx,uint64_t start,uint64_t count,
+    uint64_t epoch,const ChenTacticalSink *sink,ChenSymbolicExport *out,char *error,uint64_t cap) {
+    return tactical_export(ctx,start,count,epoch,sink,out,error,cap,false);
+}
+extern "C" int32_t chen_rules_export_tactical_bucket(ChenRulesContext *ctx,uint64_t start,uint64_t count,
+    uint64_t epoch,const ChenTacticalSink *sink,ChenSymbolicExport *out,char *error,uint64_t cap) {
+    return tactical_export(ctx,start,count,epoch,sink,out,error,cap,true);
 }

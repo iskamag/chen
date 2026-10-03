@@ -1,0 +1,3406 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "width": 32,
+      "batch": 1,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "838344696f4390b22abe75be983bb54142af814e6e3662f909ac844d84dede5e",
+      "model_setup_wall_ms": 9.76213501417078,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.4145910099614412,
+          "capture_warmup_and_setup_wall_ms": 33.764406020054594,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.5735240150243044,
+            "wall_ms": 1.3713910011574626,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 0.9712410101201385,
+          "capture_warmup_and_setup_wall_ms": 33.28422599588521,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33428300730884075,
+            "wall_ms": 0.9445110044907779,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.8760709897615016
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9431299986317754,
+          "capture_warmup_and_setup_wall_ms": 29.366764007136226,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.30040300637483597,
+            "wall_ms": 0.9162700152955949,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8464099955745041
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 3.5762786865234375e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.1920928955078125e-05,
+          "action_scores_cp": 1.1920928955078125e-05,
+          "action_probabilities": 2.123415470123291e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 3.5762786865234375e-07,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 1.1920928955078125e-05,
+          "action_scores_cp": 1.1920928955078125e-05,
+          "action_probabilities": 4.284083843231201e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 3.5762786865234375e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 9.5367431640625e-06,
+          "action_scores_cp": 9.5367431640625e-06,
+          "action_probabilities": 2.1979212760925293e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.1920928955078125e-05,
+          "action_scores_cp": 1.1920928955078125e-05,
+          "action_probabilities": 2.123415470123291e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 6.198883056640625e-06,
+          "action_scores_cp": 6.198883056640625e-06,
+          "action_probabilities": 2.384185791015625e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.3731309920549393,
+              "synchronized_export_wall_ms": 0.8250300015788525,
+              "copy_and_replay_wall_ms": 1.5481009904760867,
+              "copy_event_ms": 0.16360099613666534,
+              "captured_inference_event_ms": 1.3602110147476196,
+              "native_event_ms": 0.2986819874495268,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 2.386050997301936,
+              "synchronized_export_wall_ms": 0.8310099947266281,
+              "copy_and_replay_wall_ms": 1.555041002575308,
+              "copy_event_ms": 0.15836100280284882,
+              "captured_inference_event_ms": 1.363131046295166,
+              "native_event_ms": 0.2972419988363981,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.1210910053923726,
+              "synchronized_export_wall_ms": 0.8468810119666159,
+              "copy_and_replay_wall_ms": 1.2742099934257567,
+              "copy_event_ms": 0.22184200584888458,
+              "captured_inference_event_ms": 1.0218479633331299,
+              "native_event_ms": 0.2962819878011942,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.1514910040423274,
+              "synchronized_export_wall_ms": 0.9374310029670596,
+              "copy_and_replay_wall_ms": 1.2140600010752678,
+              "copy_event_ms": 0.15988099575042725,
+              "captured_inference_event_ms": 1.0241680145263672,
+              "native_event_ms": 0.3282429948449135,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 2.383721002843231,
+              "synchronized_export_wall_ms": 0.8510510087944567,
+              "copy_and_replay_wall_ms": 1.5326699940487742,
+              "copy_event_ms": 0.16252100467681885,
+              "captured_inference_event_ms": 1.340811014175415,
+              "native_event_ms": 0.3036420028656721,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.364712010603398,
+              "synchronized_export_wall_ms": 0.8231709944084287,
+              "copy_and_replay_wall_ms": 1.5415410161949694,
+              "copy_event_ms": 0.1730010062456131,
+              "captured_inference_event_ms": 1.3399709463119507,
+              "native_event_ms": 0.2954819854348898,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.363180974498391,
+              "synchronized_export_wall_ms": 0.8330099808517843,
+              "copy_and_replay_wall_ms": 1.5301709936466068,
+              "copy_event_ms": 0.15620100498199463,
+              "captured_inference_event_ms": 1.3417309522628784,
+              "native_event_ms": 0.2975619900971651,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 2.4464610032737255,
+              "synchronized_export_wall_ms": 0.8592699887230992,
+              "copy_and_replay_wall_ms": 1.5871910145506263,
+              "copy_event_ms": 0.2082819938659668,
+              "captured_inference_event_ms": 1.343850016593933,
+              "native_event_ms": 0.30220301263034344,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.0880310039501637,
+              "synchronized_export_wall_ms": 0.8811599982436746,
+              "copy_and_replay_wall_ms": 1.206871005706489,
+              "copy_event_ms": 0.16632099449634552,
+              "captured_inference_event_ms": 1.0109679698944092,
+              "native_event_ms": 0.3200829867273569,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.1378810051828623,
+              "synchronized_export_wall_ms": 0.8484999998472631,
+              "copy_and_replay_wall_ms": 1.2893810053355992,
+              "copy_event_ms": 0.2393220067024231,
+              "captured_inference_event_ms": 1.0120879411697388,
+              "native_event_ms": 0.2922020088881254,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.4254520141985267,
+              "synchronized_export_wall_ms": 1.4840209914837033,
+              "copy_and_replay_wall_ms": 1.9414310227148235,
+              "copy_event_ms": 0.1833219975233078,
+              "captured_inference_event_ms": 1.7218530178070068,
+              "native_event_ms": 0.6210049986839294,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.493760985089466,
+              "synchronized_export_wall_ms": 0.955619994783774,
+              "copy_and_replay_wall_ms": 1.538140990305692,
+              "copy_event_ms": 0.16168199479579926,
+              "captured_inference_event_ms": 1.3440899848937988,
+              "native_event_ms": 0.2956030033528805,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.387751010246575,
+              "synchronized_export_wall_ms": 0.8527300087735057,
+              "copy_and_replay_wall_ms": 1.5350210014730692,
+              "copy_event_ms": 0.1626020073890686,
+              "captured_inference_event_ms": 1.3431700468063354,
+              "native_event_ms": 0.2982029914855957,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 2.36276097712107,
+              "synchronized_export_wall_ms": 0.8245299977716058,
+              "copy_and_replay_wall_ms": 1.5382309793494642,
+              "copy_event_ms": 0.16988100111484528,
+              "captured_inference_event_ms": 1.340170979499817,
+              "native_event_ms": 0.3030419945716858,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.062280982499942,
+              "synchronized_export_wall_ms": 0.8529309998266399,
+              "copy_and_replay_wall_ms": 1.2093499826733023,
+              "copy_event_ms": 0.16364100575447083,
+              "captured_inference_event_ms": 1.01692795753479,
+              "native_event_ms": 0.291761988773942,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.0364309893921018,
+              "synchronized_export_wall_ms": 0.8263110066764057,
+              "copy_and_replay_wall_ms": 1.210119982715696,
+              "copy_event_ms": 0.15792100131511688,
+              "captured_inference_event_ms": 1.0192079544067383,
+              "native_event_ms": 0.29384299740195274,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 2.385491010500118,
+              "synchronized_export_wall_ms": 0.8552110230084509,
+              "copy_and_replay_wall_ms": 1.5302799874916673,
+              "copy_event_ms": 0.15988099575042725,
+              "captured_inference_event_ms": 1.3416110277175903,
+              "native_event_ms": 0.3032830134034157,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 2.743371995165944,
+              "synchronized_export_wall_ms": 0.8142110018525273,
+              "copy_and_replay_wall_ms": 1.9291609933134168,
+              "copy_event_ms": 0.16592200100421906,
+              "captured_inference_event_ms": 1.7315729856491089,
+              "native_event_ms": 0.2955229990184307,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.239776611328125e-05,
+          "action_scores_cp": 1.239776611328125e-05,
+          "action_probabilities": 1.1175870895385742e-08,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.4781951904296875e-05,
+          "action_scores_cp": 1.4781951904296875e-05,
+          "action_probabilities": 4.172325134277344e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 1.1920928955078125e-05,
+          "action_scores_cp": 1.1920928955078125e-05,
+          "action_probabilities": 6.556510925292969e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 2.380441001150757,
+          "synchronized_export_wall_ms": 0.8290199912153184,
+          "copy_and_replay_wall_ms": 1.5398410032503307,
+          "copy_event_ms": 0.16310150176286697,
+          "captured_inference_event_ms": 1.3436300158500671,
+          "native_event_ms": 0.2965824967250228
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 2.385771003901027,
+          "synchronized_export_wall_ms": 0.8531310159014538,
+          "copy_and_replay_wall_ms": 1.5466359909623861,
+          "copy_event_ms": 0.16620100289583206,
+          "captured_inference_event_ms": 1.3427305221557617,
+          "native_event_ms": 0.30316250398755074
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 2.104561004671268,
+          "synchronized_export_wall_ms": 0.8507154998369515,
+          "copy_and_replay_wall_ms": 1.212089991895482,
+          "copy_event_ms": 0.16498100012540817,
+          "captured_inference_event_ms": 1.0180679559707642,
+          "native_event_ms": 0.29506249260157347
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        1.118825635496928,
+        1.0991038336486003,
+        1.1317748491414616,
+        1.1664638859898395,
+        1.15782040881359,
+        1.3471470476811358
+      ]
+    },
+    {
+      "width": 32,
+      "batch": 20,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "838344696f4390b22abe75be983bb54142af814e6e3662f909ac844d84dede5e",
+      "model_setup_wall_ms": 9.76213501417078,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          261
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          265
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          259
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9929100051522255,
+          "capture_warmup_and_setup_wall_ms": 34.794547013007104,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3032019902020693,
+            "wall_ms": 0.964550010394305,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0191100009251386,
+          "capture_warmup_and_setup_wall_ms": 34.7422469931189,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33464199118316174,
+            "wall_ms": 0.9946500067599118,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.932380004087463
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9579499892424792,
+          "capture_warmup_and_setup_wall_ms": 29.940123989945278,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.32368301413953304,
+            "wall_ms": 0.9322200203314424,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8689799869898707
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 2.09808349609375e-05,
+          "action_scores_cp": 2.09808349609375e-05,
+          "action_probabilities": 6.556510925292969e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 2.384185791015625e-05,
+          "action_scores_cp": 2.384185791015625e-05,
+          "action_probabilities": 2.682209014892578e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.811981201171875e-05,
+          "action_scores_cp": 1.811981201171875e-05,
+          "action_probabilities": 6.556510925292969e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 1.9073486328125e-05,
+          "action_scores_cp": 1.9073486328125e-05,
+          "action_probabilities": 7.152557373046875e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 4.76837158203125e-07,
+          "value_cp": 1.1444091796875e-05,
+          "residual_cp": 1.1444091796875e-05,
+          "action_residual_cp": 3.0517578125e-05,
+          "action_scores_cp": 3.0517578125e-05,
+          "action_probabilities": 2.384185791015625e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 9.086495003430173,
+              "synchronized_export_wall_ms": 0.8600710134487599,
+              "copy_and_replay_wall_ms": 8.226423989981413,
+              "copy_event_ms": 0.16472099721431732,
+              "captured_inference_event_ms": 8.026985168457031,
+              "native_event_ms": 0.33028298430144787,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 8.510373998433352,
+              "synchronized_export_wall_ms": 0.8666900102980435,
+              "copy_and_replay_wall_ms": 7.643683988135308,
+              "copy_event_ms": 0.16252200305461884,
+              "captured_inference_event_ms": 7.441779136657715,
+              "native_event_ms": 0.3297629877924919,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.9656219887547195,
+              "synchronized_export_wall_ms": 1.0526700061745942,
+              "copy_and_replay_wall_ms": 2.9129519825801253,
+              "copy_event_ms": 0.18720099329948425,
+              "captured_inference_event_ms": 2.688662052154541,
+              "native_event_ms": 0.32756299152970314,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.6367810098454356,
+              "synchronized_export_wall_ms": 1.1863300169352442,
+              "copy_and_replay_wall_ms": 2.4504509929101914,
+              "copy_event_ms": 0.1607609987258911,
+              "captured_inference_event_ms": 2.2566978931427,
+              "native_event_ms": 0.5214830040931702,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 8.466704020975158,
+              "synchronized_export_wall_ms": 0.8269110112451017,
+              "copy_and_replay_wall_ms": 7.639793009730056,
+              "copy_event_ms": 0.16356100142002106,
+              "captured_inference_event_ms": 7.443698883056641,
+              "native_event_ms": 0.30124199017882347,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 9.144014999037609,
+              "synchronized_export_wall_ms": 0.9488509967923164,
+              "copy_and_replay_wall_ms": 8.195164002245292,
+              "copy_event_ms": 0.1769610047340393,
+              "captured_inference_event_ms": 7.983182907104492,
+              "native_event_ms": 0.32660199888050556,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 8.456273993942887,
+              "synchronized_export_wall_ms": 0.8686599903739989,
+              "copy_and_replay_wall_ms": 7.587614003568888,
+              "copy_event_ms": 0.16408200562000275,
+              "captured_inference_event_ms": 7.375817775726318,
+              "native_event_ms": 0.3269230034202337,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 9.17841400951147,
+              "synchronized_export_wall_ms": 0.9414800151716918,
+              "copy_and_replay_wall_ms": 8.236933994339779,
+              "copy_event_ms": 0.1777610033750534,
+              "captured_inference_event_ms": 8.023862838745117,
+              "native_event_ms": 0.3085620068013668,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.4010119852609932,
+              "synchronized_export_wall_ms": 0.8792509906925261,
+              "copy_and_replay_wall_ms": 2.521760994568467,
+              "copy_event_ms": 0.17292100191116333,
+              "captured_inference_event_ms": 2.3177380561828613,
+              "native_event_ms": 0.31532198563218117,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.3481509890407324,
+              "synchronized_export_wall_ms": 0.8918899984564632,
+              "copy_and_replay_wall_ms": 2.456260990584269,
+              "copy_event_ms": 0.16228100657463074,
+              "captured_inference_event_ms": 2.2602179050445557,
+              "native_event_ms": 0.35212199576199055,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 9.058094990905374,
+              "synchronized_export_wall_ms": 0.8370809955522418,
+              "copy_and_replay_wall_ms": 8.221013995353132,
+              "copy_event_ms": 0.17016099393367767,
+              "captured_inference_event_ms": 8.01822280883789,
+              "native_event_ms": 0.30120200477540493,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 8.567193988710642,
+              "synchronized_export_wall_ms": 0.8929299947340041,
+              "copy_and_replay_wall_ms": 7.674263993976638,
+              "copy_event_ms": 0.16488100588321686,
+              "captured_inference_event_ms": 7.46661901473999,
+              "native_event_ms": 0.32808199524879456,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 9.122434013988823,
+              "synchronized_export_wall_ms": 0.8743600046727806,
+              "copy_and_replay_wall_ms": 8.248074009316042,
+              "copy_event_ms": 0.4702039957046509,
+              "captured_inference_event_ms": 7.742741107940674,
+              "native_event_ms": 0.33056300692260265,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 8.850204001646489,
+              "synchronized_export_wall_ms": 0.8841509988997132,
+              "copy_and_replay_wall_ms": 7.966053002746776,
+              "copy_event_ms": 0.16832099854946136,
+              "captured_inference_event_ms": 7.7633819580078125,
+              "native_event_ms": 0.30832199193537235,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.7990310229361057,
+              "synchronized_export_wall_ms": 0.9015400137286633,
+              "copy_and_replay_wall_ms": 2.8974910092074424,
+              "copy_event_ms": 0.17052100598812103,
+              "captured_inference_event_ms": 2.6965420246124268,
+              "native_event_ms": 0.32452200911939144,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.2820920168887824,
+              "synchronized_export_wall_ms": 0.8354810124728829,
+              "copy_and_replay_wall_ms": 2.4466110044158995,
+              "copy_event_ms": 0.15856100618839264,
+              "captured_inference_event_ms": 2.255657911300659,
+              "native_event_ms": 0.31476301327347755,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 8.470484026474878,
+              "synchronized_export_wall_ms": 0.8522999996785074,
+              "copy_and_replay_wall_ms": 7.618184026796371,
+              "copy_event_ms": 0.16408200562000275,
+              "captured_inference_event_ms": 7.421379089355469,
+              "native_event_ms": 0.3005230128765106,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 9.277934004785493,
+              "synchronized_export_wall_ms": 1.279171003261581,
+              "copy_and_replay_wall_ms": 7.998763001523912,
+              "copy_event_ms": 0.19700099527835846,
+              "captured_inference_event_ms": 7.753342151641846,
+              "native_event_ms": 0.6250450275838375,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 2.6702880859375e-05,
+          "action_scores_cp": 2.6702880859375e-05,
+          "action_probabilities": 4.76837158203125e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.1444091796875e-05,
+          "residual_cp": 1.1444091796875e-05,
+          "action_residual_cp": 2.288818359375e-05,
+          "action_scores_cp": 2.288818359375e-05,
+          "action_probabilities": 4.76837158203125e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.1444091796875e-05,
+          "residual_cp": 1.1444091796875e-05,
+          "action_residual_cp": 2.86102294921875e-05,
+          "action_scores_cp": 2.86102294921875e-05,
+          "action_probabilities": 4.544854164123535e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 9.104464508709498,
+          "synchronized_export_wall_ms": 0.8836449997033924,
+          "copy_and_replay_wall_ms": 8.096963501884602,
+          "copy_event_ms": 0.17092100530862808,
+          "captured_inference_event_ms": 7.74804162979126,
+          "native_event_ms": 0.3291824897751212
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 8.68028900003992,
+          "synchronized_export_wall_ms": 0.8594950049882755,
+          "copy_and_replay_wall_ms": 7.804868495441042,
+          "copy_event_ms": 0.16620150208473206,
+          "captured_inference_event_ms": 7.603540420532227,
+          "native_event_ms": 0.3047819910570979
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 3.5188964975532144,
+          "synchronized_export_wall_ms": 0.8967150060925633,
+          "copy_and_replay_wall_ms": 2.489010992576368,
+          "copy_event_ms": 0.16640100628137589,
+          "captured_inference_event_ms": 2.2889779806137085,
+          "native_event_ms": 0.3260425003245473
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        2.2913164767586696,
+        2.5143155373620454,
+        2.4863993513077705,
+        2.5587836440928253,
+        2.401252834976454,
+        2.826835432109668
+      ]
+    },
+    {
+      "width": 128,
+      "batch": 1,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "16c683530d368a8ca1065691b9c7aa9221c064eddee5e24bc6cfa8d4bc785d17",
+      "model_setup_wall_ms": 2.8854109987150878,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9815299999900162,
+          "capture_warmup_and_setup_wall_ms": 30.524475005222484,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33432299830019474,
+            "wall_ms": 0.9511800017207861,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0222499840892851,
+          "capture_warmup_and_setup_wall_ms": 33.010765007929876,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3028020057827234,
+            "wall_ms": 0.9979100141208619,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9330500033684075
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9400509879924357,
+          "capture_warmup_and_setup_wall_ms": 29.09747400553897,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3050420042127371,
+            "wall_ms": 0.9156209998764098,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.840651016915217
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 3.5762786865234375e-05,
+          "action_scores_cp": 3.5762786865234375e-05,
+          "action_probabilities": 2.2941717969793274e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.52587890625e-05,
+          "residual_cp": 1.52587890625e-05,
+          "action_residual_cp": 3.0517578125e-05,
+          "action_scores_cp": 3.0517578125e-05,
+          "action_probabilities": 4.0766001685454967e-17,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.9073486328125e-05,
+          "residual_cp": 1.9073486328125e-05,
+          "action_residual_cp": 3.2901763916015625e-05,
+          "action_scores_cp": 3.2901763916015625e-05,
+          "action_probabilities": 8.239936510889834e-18,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.1444091796875e-05,
+          "residual_cp": 1.1444091796875e-05,
+          "action_residual_cp": 4.57763671875e-05,
+          "action_scores_cp": 4.57763671875e-05,
+          "action_probabilities": 3.200564813177209e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 3.814697265625e-06,
+          "residual_cp": 3.814697265625e-06,
+          "action_residual_cp": 2.6702880859375e-05,
+          "action_scores_cp": 2.6702880859375e-05,
+          "action_probabilities": 8.239936510889834e-18,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.0967320199124515,
+              "synchronized_export_wall_ms": 0.8214410045184195,
+              "copy_and_replay_wall_ms": 2.275291015394032,
+              "copy_event_ms": 0.1618019938468933,
+              "captured_inference_event_ms": 2.082495927810669,
+              "native_event_ms": 0.3000429943203926,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.245591011364013,
+              "synchronized_export_wall_ms": 0.8406999986618757,
+              "copy_and_replay_wall_ms": 2.4048910127021372,
+              "copy_event_ms": 0.17204099893569946,
+              "captured_inference_event_ms": 2.199457883834839,
+              "native_event_ms": 0.2950819879770279,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.41052100318484,
+              "synchronized_export_wall_ms": 0.8419610094279051,
+              "copy_and_replay_wall_ms": 1.568559993756935,
+              "copy_event_ms": 0.16804100573062897,
+              "captured_inference_event_ms": 1.3683710098266602,
+              "native_event_ms": 0.2986419890075922,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.757771988399327,
+              "synchronized_export_wall_ms": 1.175590994535014,
+              "copy_and_replay_wall_ms": 1.5821809938643128,
+              "copy_event_ms": 0.18948200345039368,
+              "captured_inference_event_ms": 1.3505699634552002,
+              "native_event_ms": 0.6072050221264362,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.261380974436179,
+              "synchronized_export_wall_ms": 0.9448399941902608,
+              "copy_and_replay_wall_ms": 2.316540980245918,
+              "copy_event_ms": 0.20336200296878815,
+              "captured_inference_event_ms": 2.083695888519287,
+              "native_event_ms": 0.30188300274312496,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.1207120046019554,
+              "synchronized_export_wall_ms": 0.844750989926979,
+              "copy_and_replay_wall_ms": 2.2759610146749765,
+              "copy_event_ms": 0.16196200251579285,
+              "captured_inference_event_ms": 2.0832560062408447,
+              "native_event_ms": 0.30296200327575207,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.214130993001163,
+              "synchronized_export_wall_ms": 0.851029995828867,
+              "copy_and_replay_wall_ms": 2.363100997172296,
+              "copy_event_ms": 0.24052199721336365,
+              "captured_inference_event_ms": 2.0854969024658203,
+              "native_event_ms": 0.29832299798727036,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.3723920059856027,
+              "synchronized_export_wall_ms": 1.095771003747359,
+              "copy_and_replay_wall_ms": 2.276621002238244,
+              "copy_event_ms": 0.16496099531650543,
+              "captured_inference_event_ms": 2.070496082305908,
+              "native_event_ms": 0.2964020147919655,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.832900994690135,
+              "synchronized_export_wall_ms": 0.8476099756080657,
+              "copy_and_replay_wall_ms": 1.9852910190820694,
+              "copy_event_ms": 0.17464099824428558,
+              "captured_inference_event_ms": 1.7799739837646484,
+              "native_event_ms": 0.29668300971388817,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.9067219875287265,
+              "synchronized_export_wall_ms": 0.8550210040993989,
+              "copy_and_replay_wall_ms": 2.0517009834293276,
+              "copy_event_ms": 0.6583260297775269,
+              "captured_inference_event_ms": 1.3622100353240967,
+              "native_event_ms": 0.2969230115413666,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.0925610044505447,
+              "synchronized_export_wall_ms": 0.8126900065690279,
+              "copy_and_replay_wall_ms": 2.279870997881517,
+              "copy_event_ms": 0.16072200238704681,
+              "captured_inference_event_ms": 2.088495969772339,
+              "native_event_ms": 0.29564301297068596,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.0805720016360283,
+              "synchronized_export_wall_ms": 0.8137310214806348,
+              "copy_and_replay_wall_ms": 2.2668409801553935,
+              "copy_event_ms": 0.160521000623703,
+              "captured_inference_event_ms": 2.077056884765625,
+              "native_event_ms": 0.3016020096838474,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.2262309978250414,
+              "synchronized_export_wall_ms": 0.8875899948179722,
+              "copy_and_replay_wall_ms": 2.3386410030070692,
+              "copy_event_ms": 0.16420100629329681,
+              "captured_inference_event_ms": 2.142056941986084,
+              "native_event_ms": 0.29856198839843273,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.418412001337856,
+              "synchronized_export_wall_ms": 0.8272310078609735,
+              "copy_and_replay_wall_ms": 2.5911809934768826,
+              "copy_event_ms": 0.16188199818134308,
+              "captured_inference_event_ms": 2.4006190299987793,
+              "native_event_ms": 0.29468199983239174,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.79608101118356,
+              "synchronized_export_wall_ms": 0.8323100046254694,
+              "copy_and_replay_wall_ms": 1.9637710065580904,
+              "copy_event_ms": 0.1621209979057312,
+              "captured_inference_event_ms": 1.7670140266418457,
+              "native_event_ms": 0.29940200597047806,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.429020998533815,
+              "synchronized_export_wall_ms": 0.8542909927200526,
+              "copy_and_replay_wall_ms": 1.5747300058137625,
+              "copy_event_ms": 0.18056200444698334,
+              "captured_inference_event_ms": 1.365051031112671,
+              "native_event_ms": 0.2947629913687706,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 3.0851720075588673,
+              "synchronized_export_wall_ms": 0.8146209875121713,
+              "copy_and_replay_wall_ms": 2.270551020046696,
+              "copy_event_ms": 0.16216200590133667,
+              "captured_inference_event_ms": 2.076335906982422,
+              "native_event_ms": 0.2966030016541481,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 3.1869910017121583,
+              "synchronized_export_wall_ms": 0.840680004330352,
+              "copy_and_replay_wall_ms": 2.3463109973818064,
+              "copy_event_ms": 0.1644819974899292,
+              "captured_inference_event_ms": 2.147017002105713,
+              "native_event_ms": 0.30268299393355846,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 2.682209014892578e-05,
+          "action_scores_cp": 2.682209014892578e-05,
+          "action_probabilities": 2.42861286636753e-17,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 1.9073486328125e-05,
+          "residual_cp": 1.9073486328125e-05,
+          "action_residual_cp": 5.245208740234375e-05,
+          "action_scores_cp": 5.245208740234375e-05,
+          "action_probabilities": 1.6393136847980827e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 7.62939453125e-06,
+          "residual_cp": 7.62939453125e-06,
+          "action_residual_cp": 3.0517578125e-05,
+          "action_scores_cp": 3.0517578125e-05,
+          "action_probabilities": 4.0766001685454967e-17,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 3.153851503157057,
+          "synchronized_export_wall_ms": 0.8427154971286654,
+          "copy_and_replay_wall_ms": 2.307301008841023,
+          "copy_event_ms": 0.16308150440454483,
+          "captured_inference_event_ms": 2.0843764543533325,
+          "native_event_ms": 0.30082250200212
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 3.253485992900096,
+          "synchronized_export_wall_ms": 0.8339655032614246,
+          "copy_and_replay_wall_ms": 2.2982059890637174,
+          "copy_event_ms": 0.16356150060892105,
+          "captured_inference_event_ms": 2.086095929145813,
+          "native_event_ms": 0.2960225138813257
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 2.7769264997914433,
+          "synchronized_export_wall_ms": 0.8509504841640592,
+          "copy_and_replay_wall_ms": 1.7729760002112016,
+          "copy_event_ms": 0.17760150134563446,
+          "captured_inference_event_ms": 1.3667110204696655,
+          "native_event_ms": 0.2977825002744794
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        1.2846733199258469,
+        1.1316062450881905,
+        1.1345722985115219,
+        1.059809646348431,
+        1.1538403161142323,
+        1.3120475301102223
+      ]
+    },
+    {
+      "width": 128,
+      "batch": 20,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "16c683530d368a8ca1065691b9c7aa9221c064eddee5e24bc6cfa8d4bc785d17",
+      "model_setup_wall_ms": 2.8854109987150878,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          261
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          265
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          259
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.1467710137367249,
+          "capture_warmup_and_setup_wall_ms": 95.6770759948995,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3333629872649908,
+            "wall_ms": 1.1102809803560376,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0539499926380813,
+          "capture_warmup_and_setup_wall_ms": 89.73013298236765,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33664199709892273,
+            "wall_ms": 1.0298800189048052,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9615200106054544
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9761900000739843,
+          "capture_warmup_and_setup_wall_ms": 29.650744021637365,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3314419984817505,
+            "wall_ms": 0.9521399915684015,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8843000105116516
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 4.1961669921875e-05,
+          "residual_cp": 4.1961669921875e-05,
+          "action_residual_cp": 5.7220458984375e-05,
+          "action_scores_cp": 5.7220458984375e-05,
+          "action_probabilities": 2.2638141361497333e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 4.1961669921875e-05,
+          "residual_cp": 4.1961669921875e-05,
+          "action_residual_cp": 5.507469177246094e-05,
+          "action_scores_cp": 5.507469177246094e-05,
+          "action_probabilities": 1.8127860323957634e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 3.814697265625e-05,
+          "residual_cp": 3.814697265625e-05,
+          "action_residual_cp": 5.4836273193359375e-05,
+          "action_scores_cp": 5.4836273193359375e-05,
+          "action_probabilities": 1.721713049906981e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 3.0517578125e-05,
+          "residual_cp": 3.0517578125e-05,
+          "action_residual_cp": 7.2479248046875e-05,
+          "action_scores_cp": 7.2479248046875e-05,
+          "action_probabilities": 2.0383000842727483e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 2.288818359375e-05,
+          "residual_cp": 2.288818359375e-05,
+          "action_residual_cp": 5.91278076171875e-05,
+          "action_scores_cp": 5.91278076171875e-05,
+          "action_probabilities": 2.2638141361497333e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 28.272184019442648,
+              "synchronized_export_wall_ms": 1.0799110168591142,
+              "copy_and_replay_wall_ms": 27.192273002583534,
+              "copy_event_ms": 0.1697620004415512,
+              "captured_inference_event_ms": 26.970932006835938,
+              "native_event_ms": 0.3210030011832714,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.136663004057482,
+              "synchronized_export_wall_ms": 1.0358900181017816,
+              "copy_and_replay_wall_ms": 26.1007729859557,
+              "copy_event_ms": 0.18316200375556946,
+              "captured_inference_event_ms": 25.863683700561523,
+              "native_event_ms": 0.3336019944399595,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 6.427123007597402,
+              "synchronized_export_wall_ms": 1.1385600082576275,
+              "copy_and_replay_wall_ms": 5.288562999339774,
+              "copy_event_ms": 0.12724100053310394,
+              "captured_inference_event_ms": 5.062399864196777,
+              "native_event_ms": 0.3286429923027754,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 5.635771987726912,
+              "synchronized_export_wall_ms": 0.8471400069538504,
+              "copy_and_replay_wall_ms": 4.7886319807730615,
+              "copy_event_ms": 0.17028099298477173,
+              "captured_inference_event_ms": 4.584436893463135,
+              "native_event_ms": 0.3148820083588362,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.666494017466903,
+              "synchronized_export_wall_ms": 0.9396810200996697,
+              "copy_and_replay_wall_ms": 26.726812997367233,
+              "copy_event_ms": 0.16540099680423737,
+              "captured_inference_event_ms": 26.503408432006836,
+              "native_event_ms": 0.38020301051437855,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 27.3355929821264,
+              "synchronized_export_wall_ms": 0.9615099988877773,
+              "copy_and_replay_wall_ms": 26.374082983238623,
+              "copy_event_ms": 0.17560100555419922,
+              "captured_inference_event_ms": 26.135087966918945,
+              "native_event_ms": 0.3322820086032152,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 27.82681299140677,
+              "synchronized_export_wall_ms": 1.1834999895654619,
+              "copy_and_replay_wall_ms": 26.643313001841307,
+              "copy_event_ms": 0.227401003241539,
+              "captured_inference_event_ms": 26.32908821105957,
+              "native_event_ms": 0.329282995313406,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.69686299143359,
+              "synchronized_export_wall_ms": 1.129510987084359,
+              "copy_and_replay_wall_ms": 26.56735200434923,
+              "copy_event_ms": 0.19616100192070007,
+              "captured_inference_event_ms": 26.302248001098633,
+              "native_event_ms": 0.33524299785494804,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 5.927043006522581,
+              "synchronized_export_wall_ms": 1.0202509874943644,
+              "copy_and_replay_wall_ms": 4.906792019028217,
+              "copy_event_ms": 0.1783210039138794,
+              "captured_inference_event_ms": 4.690637111663818,
+              "native_event_ms": 0.3290429934859276,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 6.08414298039861,
+              "synchronized_export_wall_ms": 0.8614700054749846,
+              "copy_and_replay_wall_ms": 5.222672974923626,
+              "copy_event_ms": 0.16280099749565125,
+              "captured_inference_event_ms": 5.004039764404297,
+              "native_event_ms": 0.32324300706386566,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.089183015050367,
+              "synchronized_export_wall_ms": 1.0318999993614852,
+              "copy_and_replay_wall_ms": 26.05728301568888,
+              "copy_event_ms": 0.212801992893219,
+              "captured_inference_event_ms": 25.78240394592285,
+              "native_event_ms": 0.31780300848186016,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 28.136192995589226,
+              "synchronized_export_wall_ms": 1.0061799839604646,
+              "copy_and_replay_wall_ms": 27.130013011628762,
+              "copy_event_ms": 0.1950410008430481,
+              "captured_inference_event_ms": 26.859811782836914,
+              "native_event_ms": 0.32836300134658813,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 27.774594025686383,
+              "synchronized_export_wall_ms": 1.010621024761349,
+              "copy_and_replay_wall_ms": 26.763973000925034,
+              "copy_event_ms": 0.18224099278450012,
+              "captured_inference_event_ms": 26.517290115356445,
+              "native_event_ms": 0.3342029955238104,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.481233002617955,
+              "synchronized_export_wall_ms": 1.0625300055835396,
+              "copy_and_replay_wall_ms": 26.418702997034416,
+              "copy_event_ms": 0.19756199419498444,
+              "captured_inference_event_ms": 26.151445388793945,
+              "native_event_ms": 0.3348019924014807,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 6.300782988546416,
+              "synchronized_export_wall_ms": 1.0489700071047992,
+              "copy_and_replay_wall_ms": 5.251812981441617,
+              "copy_event_ms": 0.1804410070180893,
+              "captured_inference_event_ms": 5.032680034637451,
+              "native_event_ms": 0.3301629964262247,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 6.079703016439453,
+              "synchronized_export_wall_ms": 1.2726300046779215,
+              "copy_and_replay_wall_ms": 4.807073011761531,
+              "copy_event_ms": 0.16088199615478516,
+              "captured_inference_event_ms": 4.6029558181762695,
+              "native_event_ms": 0.30876200273633003,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 27.527843019925058,
+              "synchronized_export_wall_ms": 0.9810400079004467,
+              "copy_and_replay_wall_ms": 26.54680301202461,
+              "copy_event_ms": 0.19064199924468994,
+              "captured_inference_event_ms": 26.275127410888672,
+              "native_event_ms": 0.3029630109667778,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 27.371362986741588,
+              "synchronized_export_wall_ms": 1.1205409828107804,
+              "copy_and_replay_wall_ms": 26.250822003930807,
+              "copy_event_ms": 0.1809220016002655,
+              "captured_inference_event_ms": 26.01120376586914,
+              "native_event_ms": 0.3377619944512844,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 3.814697265625e-05,
+          "residual_cp": 3.814697265625e-05,
+          "action_residual_cp": 7.05718994140625e-05,
+          "action_scores_cp": 7.05718994140625e-05,
+          "action_probabilities": 2.3809079707781677e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 3.814697265625e-05,
+          "residual_cp": 3.814697265625e-05,
+          "action_residual_cp": 6.4849853515625e-05,
+          "action_scores_cp": 6.4849853515625e-05,
+          "action_probabilities": 1.973247953923618e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 3.4332275390625e-05,
+          "residual_cp": 3.4332275390625e-05,
+          "action_residual_cp": 5.91278076171875e-05,
+          "action_scores_cp": 5.91278076171875e-05,
+          "action_probabilities": 1.6566609195578508e-16,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 27.800703508546576,
+          "synchronized_export_wall_ms": 1.0452660208102316,
+          "copy_and_replay_wall_ms": 26.70364300138317,
+          "copy_event_ms": 0.1815814971923828,
+          "captured_inference_event_ms": 26.423189163208008,
+          "native_event_ms": 0.3307825019583106
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 27.504538011271507,
+          "synchronized_export_wall_ms": 1.0338950087316334,
+          "copy_and_replay_wall_ms": 26.482753004529513,
+          "copy_event_ms": 0.193401500582695,
+          "captured_inference_event_ms": 26.21328639984131,
+          "native_event_ms": 0.3342019934207201
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 6.0819229984190315,
+          "synchronized_export_wall_ms": 1.0346104972995818,
+          "copy_and_replay_wall_ms": 5.064732496975921,
+          "copy_event_ms": 0.1665409952402115,
+          "captured_inference_event_ms": 4.847338438034058,
+          "native_event_ms": 0.3259429996833205
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        4.3988864046981115,
+        4.850372414223898,
+        4.6948896710862345,
+        4.624512127054885,
+        4.408117860300082,
+        4.502088821235135
+      ]
+    },
+    {
+      "width": 256,
+      "batch": 1,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "b3acdac4a37cacce34c85ab0c2a44509fa065dac9a98dbb12e9dcfa83b3f2818",
+      "model_setup_wall_ms": 5.818403005832806,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 1.4909200253896415,
+          "capture_warmup_and_setup_wall_ms": 30.317224998725578,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.6979649979621172,
+            "wall_ms": 1.4488000015262514,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0146099957637489,
+          "capture_warmup_and_setup_wall_ms": 30.423585005337372,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3342829942703247,
+            "wall_ms": 0.9891700174193829,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9246400150004774
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 0.9261000086553395,
+          "capture_warmup_and_setup_wall_ms": 29.427753994241357,
+          "first_export_manifest": {
+            "rows": 1,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "be9b42d834dbfd7a6d96caf29f7eb6070489cbf49fff5d3ce27e13ad241e2959",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.322122011333704,
+            "wall_ms": 0.9043000172823668,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 0.8422799874097109
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 2.288818359375e-05,
+          "residual_cp": 2.288818359375e-05,
+          "action_residual_cp": 5.340576171875e-05,
+          "action_scores_cp": 5.340576171875e-05,
+          "action_probabilities": 4.172325134277344e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 3.0517578125e-05,
+          "residual_cp": 3.0517578125e-05,
+          "action_residual_cp": 3.814697265625e-05,
+          "action_scores_cp": 3.814697265625e-05,
+          "action_probabilities": 1.564621925354004e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 1.9073486328125e-05,
+          "residual_cp": 1.9073486328125e-05,
+          "action_residual_cp": 8.392333984375e-05,
+          "action_scores_cp": 8.392333984375e-05,
+          "action_probabilities": 1.2516975402832031e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 4.1961669921875e-05,
+          "residual_cp": 4.1961669921875e-05,
+          "action_residual_cp": 4.9591064453125e-05,
+          "action_scores_cp": 4.9591064453125e-05,
+          "action_probabilities": 1.55717134475708e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 1.1444091796875e-05,
+          "residual_cp": 1.1444091796875e-05,
+          "action_residual_cp": 6.866455078125e-05,
+          "action_scores_cp": 6.866455078125e-05,
+          "action_probabilities": 7.82310962677002e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 4.214802000205964,
+              "synchronized_export_wall_ms": 0.8197799907065928,
+              "copy_and_replay_wall_ms": 3.395022009499371,
+              "copy_event_ms": 0.162882000207901,
+              "captured_inference_event_ms": 3.1988649368286133,
+              "native_event_ms": 0.306402999907732,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 4.294542013667524,
+              "synchronized_export_wall_ms": 0.8251700201071799,
+              "copy_and_replay_wall_ms": 3.469371993560344,
+              "copy_event_ms": 0.16280099749565125,
+              "captured_inference_event_ms": 3.275386095046997,
+              "native_event_ms": 0.30128300189971924,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.0070309876464307,
+              "synchronized_export_wall_ms": 0.8270000107586384,
+              "copy_and_replay_wall_ms": 2.1800309768877923,
+              "copy_event_ms": 0.16272099316120148,
+              "captured_inference_event_ms": 1.988976001739502,
+              "native_event_ms": 0.29744200594723225,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.671912010759115,
+              "synchronized_export_wall_ms": 1.1684609926305711,
+              "copy_and_replay_wall_ms": 2.503451018128544,
+              "copy_event_ms": 0.169841006398201,
+              "captured_inference_event_ms": 2.3017780780792236,
+              "native_event_ms": 0.6137250121682882,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 4.23372199293226,
+              "synchronized_export_wall_ms": 0.8382099913433194,
+              "copy_and_replay_wall_ms": 3.3955120015889406,
+              "copy_event_ms": 0.1777620017528534,
+              "captured_inference_event_ms": 3.1890249252319336,
+              "native_event_ms": 0.3004820141941309,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 4.238141991663724,
+              "synchronized_export_wall_ms": 0.8325100061483681,
+              "copy_and_replay_wall_ms": 3.405631985515356,
+              "copy_event_ms": 0.1650809943675995,
+              "captured_inference_event_ms": 3.2069849967956543,
+              "native_event_ms": 0.29744299314916134,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 4.168742016190663,
+              "synchronized_export_wall_ms": 0.8339000050909817,
+              "copy_and_replay_wall_ms": 3.3348420110996813,
+              "copy_event_ms": 0.16244100034236908,
+              "captured_inference_event_ms": 3.1308250427246094,
+              "native_event_ms": 0.31072299741208553,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 5.042281991336495,
+              "synchronized_export_wall_ms": 1.2820209958590567,
+              "copy_and_replay_wall_ms": 3.760260995477438,
+              "copy_event_ms": 0.17288100719451904,
+              "captured_inference_event_ms": 3.5463480949401855,
+              "native_event_ms": 0.6590049751102924,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.0977319984231144,
+              "synchronized_export_wall_ms": 0.9105009958148003,
+              "copy_and_replay_wall_ms": 2.187231002608314,
+              "copy_event_ms": 0.16400200128555298,
+              "captured_inference_event_ms": 1.9929349422454834,
+              "native_event_ms": 0.298403000459075,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 2.962621016195044,
+              "synchronized_export_wall_ms": 0.8125300228130072,
+              "copy_and_replay_wall_ms": 2.1500909933820367,
+              "copy_event_ms": 0.1613609939813614,
+              "captured_inference_event_ms": 1.9585360288619995,
+              "native_event_ms": 0.2976030148565769,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 4.306092014303431,
+              "synchronized_export_wall_ms": 0.8237910224124789,
+              "copy_and_replay_wall_ms": 3.482300991890952,
+              "copy_event_ms": 0.17956100404262543,
+              "captured_inference_event_ms": 3.27034592628479,
+              "native_event_ms": 0.3000019956380129,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 5.021563003538176,
+              "synchronized_export_wall_ms": 0.8662710024509579,
+              "copy_and_replay_wall_ms": 4.1552920010872185,
+              "copy_event_ms": 0.16828100383281708,
+              "captured_inference_event_ms": 3.952070951461792,
+              "native_event_ms": 0.30028300918638706,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 4.193871980533004,
+              "synchronized_export_wall_ms": 0.8456999785266817,
+              "copy_and_replay_wall_ms": 3.348172002006322,
+              "copy_event_ms": 0.16252100467681885,
+              "captured_inference_event_ms": 3.15374493598938,
+              "native_event_ms": 0.3044819850474596,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 4.19799197698012,
+              "synchronized_export_wall_ms": 0.825850002001971,
+              "copy_and_replay_wall_ms": 3.372141974978149,
+              "copy_event_ms": 0.1634809970855713,
+              "captured_inference_event_ms": 3.1647450923919678,
+              "native_event_ms": 0.3014420010149479,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.17766098305583,
+              "synchronized_export_wall_ms": 0.9740399837028235,
+              "copy_and_replay_wall_ms": 2.2036209993530065,
+              "copy_event_ms": 0.1616010069847107,
+              "captured_inference_event_ms": 2.0109760761260986,
+              "native_event_ms": 0.2983620036393404,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 3.286862018285319,
+              "synchronized_export_wall_ms": 0.8327310206368566,
+              "copy_and_replay_wall_ms": 2.4541309976484627,
+              "copy_event_ms": 0.16224099695682526,
+              "captured_inference_event_ms": 2.2631380558013916,
+              "native_event_ms": 0.29964299127459526,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 4.575832019327208,
+              "synchronized_export_wall_ms": 1.2190010165795684,
+              "copy_and_replay_wall_ms": 3.35683100274764,
+              "copy_event_ms": 0.16376100480556488,
+              "captured_inference_event_ms": 3.157824993133545,
+              "native_event_ms": 0.6665650270879269,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 4.302771994844079,
+              "synchronized_export_wall_ms": 0.8361710060853511,
+              "copy_and_replay_wall_ms": 3.466600988758728,
+              "copy_event_ms": 0.20096200704574585,
+              "captured_inference_event_ms": 3.2313849925994873,
+              "native_event_ms": 0.2970829885452986,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 7.152557373046875e-07,
+          "value_cp": 2.6702880859375e-05,
+          "residual_cp": 2.6702880859375e-05,
+          "action_residual_cp": 6.866455078125e-05,
+          "action_scores_cp": 6.866455078125e-05,
+          "action_probabilities": 2.346932888031006e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 1.9073486328125e-05,
+          "residual_cp": 1.9073486328125e-05,
+          "action_residual_cp": 6.866455078125e-05,
+          "action_scores_cp": 6.866455078125e-05,
+          "action_probabilities": 4.023313522338867e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 2.288818359375e-05,
+          "residual_cp": 2.288818359375e-05,
+          "action_residual_cp": 3.814697265625e-05,
+          "action_scores_cp": 3.814697265625e-05,
+          "action_probabilities": 7.82310962677002e-07,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 4.226471995934844,
+          "synchronized_export_wall_ms": 0.8350355055881664,
+          "copy_and_replay_wall_ms": 3.4003269975073636,
+          "copy_event_ms": 0.16398149728775024,
+          "captured_inference_event_ms": 3.202924966812134,
+          "native_event_ms": 0.30238249711692333
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 4.300317013985477,
+          "synchronized_export_wall_ms": 0.8320299966726452,
+          "copy_and_replay_wall_ms": 3.4324419975746423,
+          "copy_event_ms": 0.16832100600004196,
+          "captured_inference_event_ms": 3.229685425758362,
+          "native_event_ms": 0.30136250145733356
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 3.137696490739472,
+          "synchronized_export_wall_ms": 0.8716160082258284,
+          "copy_and_replay_wall_ms": 2.1954260009806603,
+          "copy_event_ms": 0.16248099505901337,
+          "captured_inference_event_ms": 2.001955509185791,
+          "native_event_ms": 0.2983825020492077
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        1.4016490077825376,
+        1.1542057596275432,
+        1.3457400505636836,
+        1.6949731255155527,
+        1.319798431266234,
+        1.3090820274496149
+      ]
+    },
+    {
+      "width": 256,
+      "batch": 20,
+      "steps": 4,
+      "dtype": "float32",
+      "checkpoint_sha256": "b3acdac4a37cacce34c85ab0c2a44509fa065dac9a98dbb12e9dcfa83b3f2818",
+      "model_setup_wall_ms": 5.818403005832806,
+      "active_counts_cold_diagnostic": [
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          261
+        ],
+        [
+          32,
+          20,
+          264
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          265
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          259
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          260
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          262
+        ],
+        [
+          32,
+          20,
+          263
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          270
+        ],
+        [
+          32,
+          20,
+          263
+        ]
+      ],
+      "setup": {
+        "abi1_E6144": {
+          "first_export_wall_ms": 0.9961710020434111,
+          "capture_warmup_and_setup_wall_ms": 191.3647209876217,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.33108300156891346,
+            "wall_ms": 0.9580309852026403,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion"
+          }
+        },
+        "api2_E6144": {
+          "first_export_wall_ms": 1.0848400124814361,
+          "capture_warmup_and_setup_wall_ms": 195.257343002595,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 6144,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.3296419959515333,
+            "wall_ms": 1.0616800282150507,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 6144,
+                "status": 0,
+                "wall_ms": 0.9844400046858937
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        },
+        "api2_buckets": {
+          "first_export_wall_ms": 1.1317410098854452,
+          "capture_warmup_and_setup_wall_ms": 44.12764101289213,
+          "first_export_manifest": {
+            "rows": 20,
+            "root_epoch": 1,
+            "start": 1,
+            "context_sha256": "e11c5a63dba838d050e6059ce92d59a9a0b0528ac5ebe455725e1429ca85d5c7",
+            "producer_sha256": "bde1bac9bf8cb052b5d056765329c946a68f1a52ac0a90de63b172e221ff3c05",
+            "feature_schema": "chen_tactical_exact_v1",
+            "edge_slots": 512,
+            "legal_slots": 256,
+            "kernel_event_ms": 0.35224198922514915,
+            "wall_ms": 1.0999910009559244,
+            "device": {
+              "architecture": "gfx1030",
+              "name": "AMD Radeon Graphics",
+              "torch_version": "2.10.0+rocm7.0",
+              "rocm_build": "7.0.51831",
+              "override": false
+            },
+            "runtime": {
+              "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+              "hipRuntimeGetVersion": 70051831,
+              "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+              "symbol": "hipRuntimeGetVersion"
+            },
+            "state_download": false,
+            "teacher_input": false,
+            "graph_capture": false,
+            "ownership": "owned_Torch_snapshot_after_native_stream_completion",
+            "producer_variant": "native_tactical_bucket_v2",
+            "bucket_policy": [
+              512,
+              1024,
+              2048,
+              4096,
+              6144
+            ],
+            "attempts": [
+              {
+                "edge_slots": 512,
+                "status": 0,
+                "wall_ms": 1.0316710104234517
+              }
+            ],
+            "retries": 0,
+            "count_download": false
+          }
+        }
+      },
+      "prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 0.0,
+          "value_cp": 0.0,
+          "residual_cp": 0.0,
+          "action_residual_cp": 0.0,
+          "action_scores_cp": 0.0,
+          "action_probabilities": 0.0,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 6.103515625e-05,
+          "residual_cp": 6.103515625e-05,
+          "action_residual_cp": 0.00016021728515625,
+          "action_scores_cp": 0.00016021728515625,
+          "action_probabilities": 8.985400199890137e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 6.4849853515625e-05,
+          "residual_cp": 6.4849853515625e-05,
+          "action_residual_cp": 0.000152587890625,
+          "action_scores_cp": 0.000152587890625,
+          "action_probabilities": 6.318092346191406e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "abi1_E6144_captured": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 7.62939453125e-05,
+          "residual_cp": 7.62939453125e-05,
+          "action_residual_cp": 0.00012969970703125,
+          "action_scores_cp": 0.00012969970703125,
+          "action_probabilities": 6.541609764099121e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144_captured": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 4.9591064453125e-05,
+          "residual_cp": 4.9591064453125e-05,
+          "action_residual_cp": 0.00020599365234375,
+          "action_scores_cp": 0.00020599365234375,
+          "action_probabilities": 7.510185241699219e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets_captured": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 4.9591064453125e-05,
+          "residual_cp": 4.9591064453125e-05,
+          "action_residual_cp": 0.0001220703125,
+          "action_scores_cp": 0.0001220703125,
+          "action_probabilities": 7.450580596923828e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "samples": [
+        {
+          "pair": 0,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 58.641227980842814,
+              "synchronized_export_wall_ms": 1.0375309793744236,
+              "copy_and_replay_wall_ms": 57.60369700146839,
+              "copy_event_ms": 0.18596099317073822,
+              "captured_inference_event_ms": 57.35233688354492,
+              "native_event_ms": 0.32892298698425293,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 58.75640801968984,
+              "synchronized_export_wall_ms": 1.075150998076424,
+              "copy_and_replay_wall_ms": 57.68125702161342,
+              "copy_event_ms": 0.19308200478553772,
+              "captured_inference_event_ms": 57.39021301269531,
+              "native_event_ms": 0.33612299151718616,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.985996010480449,
+              "synchronized_export_wall_ms": 1.0697710094973445,
+              "copy_and_replay_wall_ms": 10.916225000983104,
+              "copy_event_ms": 0.18956099450588226,
+              "captured_inference_event_ms": 10.667284965515137,
+              "native_event_ms": 0.3207630105316639,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 1,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.9762459944468,
+              "synchronized_export_wall_ms": 1.0174399940297008,
+              "copy_and_replay_wall_ms": 10.958806000417098,
+              "copy_event_ms": 0.1870409995317459,
+              "captured_inference_event_ms": 10.707204818725586,
+              "native_event_ms": 0.32780199125409126,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 58.98582798545249,
+              "synchronized_export_wall_ms": 1.047619996825233,
+              "copy_and_replay_wall_ms": 57.938207988627255,
+              "copy_event_ms": 0.19344200193881989,
+              "captured_inference_event_ms": 57.674137115478516,
+              "native_event_ms": 0.3332829996943474,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 58.88019801932387,
+              "synchronized_export_wall_ms": 1.023479999275878,
+              "copy_and_replay_wall_ms": 57.85671802004799,
+              "copy_event_ms": 0.18984100222587585,
+              "captured_inference_event_ms": 57.571895599365234,
+              "native_event_ms": 0.33300299756228924,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 2,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 58.163017994957045,
+              "synchronized_export_wall_ms": 1.0260399722028524,
+              "copy_and_replay_wall_ms": 57.13697802275419,
+              "copy_event_ms": 0.19532200694084167,
+              "captured_inference_event_ms": 56.87168884277344,
+              "native_event_ms": 0.33164299465715885,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 59.408497996628284,
+              "synchronized_export_wall_ms": 1.036290021147579,
+              "copy_and_replay_wall_ms": 58.372207975480705,
+              "copy_event_ms": 0.1828410029411316,
+              "captured_inference_event_ms": 58.12525939941406,
+              "native_event_ms": 0.33368299156427383,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.559025995666161,
+              "synchronized_export_wall_ms": 1.012071006698534,
+              "copy_and_replay_wall_ms": 10.546954988967627,
+              "copy_event_ms": 0.17980200052261353,
+              "captured_inference_event_ms": 10.307921409606934,
+              "native_event_ms": 0.32728200778365135,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 3,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.72220500302501,
+              "synchronized_export_wall_ms": 1.2178500182926655,
+              "copy_and_replay_wall_ms": 10.504354984732345,
+              "copy_event_ms": 0.5352039933204651,
+              "captured_inference_event_ms": 9.92879867553711,
+              "native_event_ms": 0.32672201469540596,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 59.02269802754745,
+              "synchronized_export_wall_ms": 0.9183110087178648,
+              "copy_and_replay_wall_ms": 58.104387018829584,
+              "copy_event_ms": 0.18184199929237366,
+              "captured_inference_event_ms": 57.86337661743164,
+              "native_event_ms": 0.3250030092895031,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 58.35329802357592,
+              "synchronized_export_wall_ms": 1.0135510237887502,
+              "copy_and_replay_wall_ms": 57.33974699978717,
+              "copy_event_ms": 0.1820410043001175,
+              "captured_inference_event_ms": 57.08757019042969,
+              "native_event_ms": 0.3322830069810152,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 4,
+          "order": [
+            "abi1_E6144",
+            "api2_E6144",
+            "api2_buckets"
+          ],
+          "arms": {
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 59.33461899985559,
+              "synchronized_export_wall_ms": 1.05169098242186,
+              "copy_and_replay_wall_ms": 58.28292801743373,
+              "copy_event_ms": 0.2555620074272156,
+              "captured_inference_event_ms": 57.94557571411133,
+              "native_event_ms": 0.33288200944662094,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 58.18782700225711,
+              "synchronized_export_wall_ms": 1.0325800103601068,
+              "copy_and_replay_wall_ms": 57.155246991897,
+              "copy_event_ms": 0.18404099345207214,
+              "captured_inference_event_ms": 56.900089263916016,
+              "native_event_ms": 0.33512300066649914,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.938386014662683,
+              "synchronized_export_wall_ms": 0.9975210123229772,
+              "copy_and_replay_wall_ms": 10.940865002339706,
+              "copy_event_ms": 0.18008199334144592,
+              "captured_inference_event_ms": 10.720724105834961,
+              "native_event_ms": 0.322123009711504,
+              "edge_slots": 512,
+              "retries": 0
+            }
+          }
+        },
+        {
+          "pair": 5,
+          "order": [
+            "api2_buckets",
+            "api2_E6144",
+            "abi1_E6144"
+          ],
+          "arms": {
+            "api2_buckets": {
+              "synchronized_pipeline_wall_ms": 11.757525993743911,
+              "synchronized_export_wall_ms": 0.8621810120530427,
+              "copy_and_replay_wall_ms": 10.895344981690869,
+              "copy_event_ms": 0.16232100129127502,
+              "captured_inference_event_ms": 10.66712474822998,
+              "native_event_ms": 0.3257220070809126,
+              "edge_slots": 512,
+              "retries": 0
+            },
+            "api2_E6144": {
+              "synchronized_pipeline_wall_ms": 58.72003798140213,
+              "synchronized_export_wall_ms": 1.025969977490604,
+              "copy_and_replay_wall_ms": 57.694068003911525,
+              "copy_event_ms": 0.18220199644565582,
+              "captured_inference_event_ms": 57.44001388549805,
+              "native_event_ms": 0.3326830118894577,
+              "edge_slots": 6144,
+              "retries": 0
+            },
+            "abi1_E6144": {
+              "synchronized_pipeline_wall_ms": 59.20533798052929,
+              "synchronized_export_wall_ms": 1.0173699993174523,
+              "copy_and_replay_wall_ms": 58.18796798121184,
+              "copy_event_ms": 0.19736100733280182,
+              "captured_inference_event_ms": 57.924617767333984,
+              "native_event_ms": 0.33212300203740597,
+              "edge_slots": 6144,
+              "retries": 0
+            }
+          }
+        }
+      ],
+      "pipeline_prediction_parity_max_abs": {
+        "abi1_E6144": {
+          "latent": 1.1920928955078125e-06,
+          "value_cp": 0.000102996826171875,
+          "residual_cp": 0.000102996826171875,
+          "action_residual_cp": 0.000152587890625,
+          "action_scores_cp": 0.000152587890625,
+          "action_probabilities": 7.569789886474609e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_E6144": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 5.340576171875e-05,
+          "residual_cp": 5.340576171875e-05,
+          "action_residual_cp": 0.0001678466796875,
+          "action_scores_cp": 0.0001678466796875,
+          "action_probabilities": 9.372830390930176e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        },
+        "api2_buckets": {
+          "latent": 9.5367431640625e-07,
+          "value_cp": 5.340576171875e-05,
+          "residual_cp": 5.340576171875e-05,
+          "action_residual_cp": 0.00018310546875,
+          "action_scores_cp": 0.00018310546875,
+          "action_probabilities": 7.510185241699219e-06,
+          "canonical_action": 0.0,
+          "has_legal_action": 0.0
+        }
+      },
+      "median_ms": {
+        "abi1_E6144": {
+          "synchronized_pipeline_wall_ms": 58.76071300008334,
+          "synchronized_export_wall_ms": 1.0247599857393652,
+          "copy_and_replay_wall_ms": 57.73020751075819,
+          "copy_event_ms": 0.19258150458335876,
+          "captured_inference_event_ms": 57.46211624145508,
+          "native_event_ms": 0.3322030045092106
+        },
+        "api2_E6144": {
+          "synchronized_pipeline_wall_ms": 58.871118002571166,
+          "synchronized_export_wall_ms": 1.034435015753843,
+          "copy_and_replay_wall_ms": 57.81613799626939,
+          "copy_event_ms": 0.18344099819660187,
+          "captured_inference_event_ms": 57.55707550048828,
+          "native_event_ms": 0.3334829956293106
+        },
+        "api2_buckets": {
+          "synchronized_pipeline_wall_ms": 11.847956004203297,
+          "synchronized_export_wall_ms": 1.0147555003641173,
+          "copy_and_replay_wall_ms": 10.905784991336986,
+          "copy_event_ms": 0.18356149643659592,
+          "captured_inference_event_ms": 10.667204856872559,
+          "native_event_ms": 0.3262220108881593
+        }
+      },
+      "paired_pipeline_control_over_bucket_ratios": [
+        4.8924785165594455,
+        4.916415214469184,
+        5.031826904512903,
+        4.97801377885111,
+        4.970070403736403,
+        5.035526862711764
+      ]
+    }
+  ],
+  "elapsed_seconds": 4.39680437601055,
+  "scope": "Producer allocations/export/admission plus resident copy and captured inference; reset/expand/model/capture/checkpoint hashing/cold validation separately excluded. Untrained same-opening diagnostic, six paired rounds, shared clocks/power uncontrolled; no training, search throughput, strength or general speed claim."
+}
