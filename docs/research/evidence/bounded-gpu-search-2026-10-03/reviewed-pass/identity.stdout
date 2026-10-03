@@ -1,0 +1,14 @@
+{
+  "total_memory": 17163091968,
+  "compute_units": 30,
+  "wave_size": 32,
+  "async_engines": 8,
+  "runtime_version": 70253211,
+  "name": "AMD Radeon RX 6800",
+  "architecture": "gfx1030",
+  "providers": {
+    "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac",
+    "/opt/rocm-7.2.4/lib/libhsa-runtime64.so.1.18.70204": "b8cdfe93d343649a35c1daf73a0a3a6840f09379ebeee9be65670461ffea43f4",
+    "/usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1.125.0": "9988639ea60668f464b7bd0feba299f7da826793fbc1eb06d48d85ae4fdf1e02"
+  }
+}

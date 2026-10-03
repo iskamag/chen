@@ -1,0 +1,90 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/source-binding.json",
+        "cpp-rocm:/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/source-binding.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.031817155017051846,
+      "stdout": "copy-binding.stdout",
+      "stderr": "copy-binding.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python3",
+        "-c",
+        "import pathlib,json,hashlib; p=pathlib.Path('/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d'); b=json.loads((p/'source-binding.json').read_text()); pins={**b['source_sha256'],'libchen_bounded_search.so':b['library_sha256'],'cases.json':b['cases_sha256']}; bad=[n for n,h in pins.items() if hashlib.sha256((p/n).read_bytes()).hexdigest()!=h]; assert not bad,bad; print(json.dumps({'admission':'PASS','pinned_files':len(pins)}))"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.11399511402123608,
+      "stdout": "admission.stdout",
+      "stderr": "admission.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "timeout",
+        "--kill-after=3s",
+        "120s",
+        "taskset",
+        "-c",
+        "5",
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONPATH=/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/deps",
+        "python3",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/gpu/experiments/bounded_search_probe.py",
+        "--cases",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/cases.json",
+        "--library",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/libchen_bounded_search.so",
+        "--output",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/results.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.5648167799809016,
+      "stdout": "runtime.stdout",
+      "stderr": "runtime.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cpp-rocm:/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/results.json",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/results.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.03201378500671126,
+      "stdout": "copy-results.stdout",
+      "stderr": "copy-results.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "ps",
+        "-eo",
+        "pid,ppid,pgid,args"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.06466159099363722,
+      "stdout": "retirement.stdout",
+      "stderr": "retirement.stderr"
+    }
+  ],
+  "hardware_execution": true,
+  "source_binding_sha256": "e41bb57c23c0b7f9ae3c4ac0bf4777d1c0baa4815314f0132a0c9bb2743a8bd5",
+  "source": "root finished reviewed final probe after agent capacity failure",
+  "result": "PASS"
+}

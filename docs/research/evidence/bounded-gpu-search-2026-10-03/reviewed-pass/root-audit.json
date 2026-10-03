@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "fixtures": 33,
+  "result_packets": 131,
+  "kinds": {
+    "0": 72,
+    "1": 20,
+    "2": 16,
+    "3": 23
+  },
+  "exhaustive_case_comparisons": 19,
+  "distinct_exhaustive_reference_packets": 8,
+  "unchanged_output_rejections": 9,
+  "source_files": 26,
+  "scope": "Artifact/source hashes, packets and bound comparisons reconstructed; no GPU replay or independent evaluator proof",
+  "distinct_exhaustive_input_configurations": 11
+}

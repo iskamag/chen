@@ -1,0 +1,105 @@
+{
+  "timestamp_utc": "2026-10-03T08:56:46.615504+00:00",
+  "stage": "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d",
+  "previous_pass_stage": "/tmp/chen-bounded-search-final-20261003-h96ussdl",
+  "changes_since_previous_pass": [
+    "Header comment clarifies selective pruning; kernel source unchanged",
+    "Repetition fixtures remove Black queen: descendant draw becomes best move/value-sensitive"
+  ],
+  "source_sha256": {
+    "deps/chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "deps/chess/engine.py": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+    "deps/chess/gaviota.py": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+    "deps/chess/pgn.py": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+    "deps/chess/polyglot.py": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+    "deps/chess/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "deps/chess/svg.py": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+    "deps/chess/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+    "deps/chess/variant.py": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+    "gpu/chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "702020d45809c243f7c63f6742d26a636bfcb1e95854b8828cfaa9f2b6c5bf73",
+    "gpu/chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+    "gpu/chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+    "gpu/chen_symbolic.h": "310323c79c901664c51a09574ad08bd48f1ef02e00981b99720e114a35a899ff",
+    "gpu/chen_symbolic.inc": "f5e88941ba24e109e37ec877b24902816a3156d15682f2635806b4559861ac09",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/experiments/bounded_search.h": "cead139b241a428e9bcb6ed4567e80ec3c1ff0fa197ccb5375bf3ec6e8481816",
+    "gpu/experiments/bounded_search.hip": "b794c4df05abdcfef7c6b371a58ffc3c5062aeda0b21e30f988d2db8cb72b7b0",
+    "gpu/experiments/bounded_search_build.sh": "16da48ad5fc27d7d28c299ad14a5a81915a4dc3dbad1a285fae370ddcf27371a",
+    "gpu/experiments/bounded_search_probe.py": "9ff470a02f36cc8c4b36c3a0048d1f6582a15dc5dd12b759c1df0e73af337cdf",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4"
+  },
+  "hardware_execution": false,
+  "production_sources_edited": false,
+  "commands": [
+    {
+      "argv": [
+        "results/qa-venv/bin/python",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/gpu/experiments/bounded_search_probe.py",
+        "--prepare",
+        "--cases",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/cases.json"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 90,
+      "stdout": "build-0.stdout",
+      "stderr": "build-0.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "mkdir",
+        "-p",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 90,
+      "stdout": "build-1.stdout",
+      "stderr": "build-1.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/.",
+        "cpp-rocm:/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 90,
+      "stdout": "build-2.stdout",
+      "stderr": "build-2.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "bash",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/gpu/experiments/bounded_search_build.sh",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/libchen_bounded_search.so"
+      ],
+      "exit_code": 0,
+      "timeout_seconds": 90,
+      "stdout": "build-3.stdout",
+      "stderr": "build-3.stderr"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cpp-rocm:/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/libchen_bounded_search.so",
+        "/tmp/chen-bounded-search-reviewed-20261003-o8zmna7d/libchen_bounded_search.so"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "library_sha256": "f0a02f917cc2ab68b712cddf0f0374986c07f193bd9354faa21e1f20fc9ccaa8",
+  "cases_sha256": "aae760884b52bc3305392a2a5a2b8d8972fa72e4740abd22b1ccc395c7246e6d"
+}

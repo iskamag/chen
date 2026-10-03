@@ -1,0 +1,1058 @@
+[
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 21,
+      "optimal_moves": [],
+      "pv": [
+        "b1c3"
+      ],
+      "qnodes": 20,
+      "score": 36
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "start-d1",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 248,
+      "optimal_moves": [],
+      "pv": [
+        "b1c3",
+        "b8c6"
+      ],
+      "qnodes": 227,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "start-d2",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 0,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 60,
+      "optimal_moves": [],
+      "pv": [
+        "a2a3",
+        "a7a6"
+      ],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "material-static-d2",
+    "node_budget": 50000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 242,
+      "optimal_moves": [],
+      "pv": [
+        "b1c3",
+        "b8c6"
+      ],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "tapered-static-d2",
+    "node_budget": 50000,
+    "quiescence": 0,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 167,
+      "optimal_moves": [
+        "d4e4"
+      ],
+      "pv": [
+        "d4e4",
+        "h7g7",
+        "e4e6"
+      ],
+      "qnodes": 166,
+      "score": 395
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 106,
+      "optimal_moves": [],
+      "pv": [
+        "d4e4",
+        "h7g7",
+        "e4e6"
+      ],
+      "qnodes": 105,
+      "score": 395
+    },
+    "fen": "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "recapture",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 393,
+    "beta": 394,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 167,
+      "optimal_moves": [
+        "d4e4"
+      ],
+      "pv": [
+        "d4e4",
+        "h7g7",
+        "e4e6"
+      ],
+      "qnodes": 166,
+      "score": 395
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 1,
+      "nodes": 54,
+      "optimal_moves": [],
+      "pv": [
+        "d4e4",
+        "h7g8",
+        "e4e6",
+        "g8f8"
+      ],
+      "qnodes": 53,
+      "score": 394
+    },
+    "fen": "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "recapture-lower",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 396,
+    "beta": 397,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 167,
+      "optimal_moves": [
+        "d4e4"
+      ],
+      "pv": [
+        "d4e4",
+        "h7g7",
+        "e4e6"
+      ],
+      "qnodes": 166,
+      "score": 395
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 2,
+      "nodes": 72,
+      "optimal_moves": [],
+      "pv": [
+        "d4e4",
+        "h7g7",
+        "e4e6"
+      ],
+      "qnodes": 71,
+      "score": 395
+    },
+    "fen": "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "recapture-upper",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 0,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 3,
+      "optimal_moves": [
+        "a1a2"
+      ],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 3,
+      "optimal_moves": [],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/r7/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "quiet-evasion",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -2,
+    "beta": -1,
+    "depth": 0,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 3,
+      "optimal_moves": [
+        "a1a2"
+      ],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 1,
+      "nodes": 3,
+      "optimal_moves": [],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/r7/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "quiet-evasion-lower",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 1,
+    "beta": 2,
+    "depth": 0,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 3,
+      "optimal_moves": [
+        "a1a2"
+      ],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 2,
+      "nodes": 3,
+      "optimal_moves": [],
+      "pv": [
+        "a1a2"
+      ],
+      "qnodes": 3,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/r7/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "quiet-evasion-upper",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 7 12",
+    "max_qply": 16,
+    "name": "ep",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 178,
+    "beta": 179,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 1,
+      "nodes": 3,
+      "optimal_moves": [],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 2,
+      "score": 180
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 7 12",
+    "max_qply": 16,
+    "name": "ep-lower",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 181,
+    "beta": 182,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 8,
+      "optimal_moves": [
+        "e5d6"
+      ],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 2,
+      "nodes": 8,
+      "optimal_moves": [],
+      "pv": [
+        "e5d6"
+      ],
+      "qnodes": 7,
+      "score": 180
+    },
+    "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 7 12",
+    "max_qply": 16,
+    "name": "ep-upper",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive": false,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 35,
+      "optimal_moves": [],
+      "pv": [
+        "h7d3"
+      ],
+      "qnodes": 34,
+      "score": 23
+    },
+    "fen": "8/6bb/8/8/R1pP2k1/4P3/P7/K7 b - d3 0 1",
+    "max_qply": 16,
+    "name": "ep-pin",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 12,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 11,
+      "score": 884
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 11,
+      "optimal_moves": [],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 10,
+      "score": 884
+    },
+    "fen": "7k/P7/8/8/8/8/8/7K w - - 0 1",
+    "max_qply": 16,
+    "name": "promotion",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 882,
+    "beta": 883,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 12,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 11,
+      "score": 884
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 1,
+      "nodes": 4,
+      "optimal_moves": [],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 3,
+      "score": 884
+    },
+    "fen": "7k/P7/8/8/8/8/8/7K w - - 0 1",
+    "max_qply": 16,
+    "name": "promotion-lower",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 885,
+    "beta": 886,
+    "depth": 1,
+    "evaluator": 1,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 12,
+      "optimal_moves": [
+        "a7a8q"
+      ],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 11,
+      "score": 884
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 2,
+      "nodes": 10,
+      "optimal_moves": [],
+      "pv": [
+        "a7a8q",
+        "h8g7"
+      ],
+      "qnodes": 9,
+      "score": 884
+    },
+    "fen": "7k/P7/8/8/8/8/8/7K w - - 0 1",
+    "max_qply": 16,
+    "name": "promotion-upper",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": -30000
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": -30000
+    },
+    "fen": "7k/6Q1/6K1/8/8/8/8/8 b - - 100 1",
+    "max_qply": 16,
+    "name": "mate",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+    "max_qply": 16,
+    "name": "stalemate",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "4k3/8/8/8/8/8/8/4K3 w - - 0 1",
+    "max_qply": 16,
+    "name": "insufficient",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/7P/K7 w - - 100 1",
+    "max_qply": 16,
+    "name": "fifty",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": -29993
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": -29993
+    },
+    "fen": "7k/6Q1/6K1/8/8/8/8/8 b - - 100 1",
+    "max_qply": 16,
+    "name": "mate-root-ply7",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 7
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 0,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 1,
+      "score": 116
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 1,
+      "score": 116
+    },
+    "fen": "7k/8/8/8/8/8/7P/K7 w - - 0 1",
+    "max_qply": 0,
+    "name": "qcap-quiet",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 0,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 2,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 1,
+      "score": 0
+    },
+    "fen": "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+    "max_qply": 0,
+    "name": "qcap-capture",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 0,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 2,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 1,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/r7/K7 w - - 0 1",
+    "max_qply": 0,
+    "name": "qcap-check",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": 265,
+    "beta": 266,
+    "depth": 0,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 1,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 1,
+      "score": 267
+    },
+    "fen": "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+    "max_qply": 0,
+    "name": "qcap-standpat-cutoff",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 1,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 0,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/7P/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "zero-budget",
+    "node_budget": 0,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 1,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/7P/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "one-budget-abort",
+    "node_budget": 1,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 21,
+      "optimal_moves": [],
+      "pv": [
+        "b1c3"
+      ],
+      "qnodes": 20,
+      "score": 36
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "exact-budget",
+    "node_budget": 21,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 1,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 20,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 19,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "max_qply": 16,
+    "name": "one-short-budget",
+    "node_budget": 20,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 2,
+    "evaluator": 1,
+    "exhaustive": true,
+    "exhaustive_reference": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 2,
+      "kind": 0,
+      "nodes": 1,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 8 5",
+    "history": [
+      2739153840427306153,
+      3222825834938587282,
+      4571492137041555809,
+      3876360140474819930,
+      2739153840427306153,
+      3222825834938587282,
+      4571492137041555809,
+      3876360140474819930
+    ],
+    "max_qply": 16,
+    "name": "threefold-root",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "depth": 1,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 0,
+      "completed_depth": 1,
+      "kind": 0,
+      "nodes": 23,
+      "optimal_moves": [],
+      "pv": [
+        "b8c6"
+      ],
+      "qnodes": 22,
+      "score": 72
+    },
+    "fen": "rnbqkb1r/pppppppp/5n2/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 7 4",
+    "history": [
+      2739153840427306153,
+      3222825834938587282,
+      4571492137041555809,
+      3876360140474819930,
+      2739153840427306153,
+      3222825834938587282,
+      4571492137041555809
+    ],
+    "max_qply": 16,
+    "name": "threefold-descendant",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  },
+  {
+    "alpha": -32000,
+    "beta": 32000,
+    "corrupt_hash": true,
+    "depth": 0,
+    "evaluator": 1,
+    "expected": {
+      "abort_reason": 4,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 0,
+      "optimal_moves": [],
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "fen": "7k/8/8/8/8/8/7P/K7 w - - 0 1",
+    "max_qply": 16,
+    "name": "invalid-root-hash",
+    "node_budget": 50000,
+    "quiescence": 1,
+    "root_ply": 0
+  }
+]

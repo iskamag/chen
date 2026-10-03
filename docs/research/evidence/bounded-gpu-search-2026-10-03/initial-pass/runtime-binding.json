@@ -1,0 +1,69 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/source-binding.json",
+        "cpp-rocm:/tmp/chen-bounded-search-final-20261003-h96ussdl/source-binding.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "python3",
+        "-c",
+        "import pathlib,json,hashlib; p=pathlib.Path('/tmp/chen-bounded-search-final-20261003-h96ussdl'); b=json.loads((p/'source-binding.json').read_text()); pins=dict(b['source_sha256'],**{'libchen_bounded_search.so':b['library_sha256'],'cases.json':b['cases_sha256']}); bad=[n for n,h in pins.items() if hashlib.sha256((p/n).read_bytes()).hexdigest()!=h]; assert not bad,bad; print(json.dumps({'admission':'PASS','pinned_files':len(pins),'library_sha256':b['library_sha256']}))"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cpp-rocm",
+        "timeout",
+        "--kill-after=3s",
+        "120s",
+        "taskset",
+        "-c",
+        "5",
+        "env",
+        "PYTHONDONTWRITEBYTECODE=1",
+        "PYTHONPATH=/tmp/chen-bounded-search-final-20261003-h96ussdl/deps",
+        "python3",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/gpu/experiments/bounded_search_probe.py",
+        "--cases",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/cases.json",
+        "--library",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/libchen_bounded_search.so",
+        "--output",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/results.json"
+      ],
+      "exit_code": 0,
+      "host_pid": 31533,
+      "host_pgid": 31533,
+      "started_utc": "2026-10-03T08:52:14.036159+00:00",
+      "finished_utc": "2026-10-03T08:52:14.701093+00:00",
+      "wall_seconds": 0.6649445469956845,
+      "container_timeout_seconds": 120,
+      "kill_after_seconds": 3
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cpp-rocm:/tmp/chen-bounded-search-final-20261003-h96ussdl/results.json",
+        "/tmp/chen-bounded-search-final-20261003-h96ussdl/results.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "hardware_execution": true,
+  "source_binding_sha256": "44188efc3dc56f4b70045b4c64988054a025bbca366984b69124430b8edb55ab"
+}

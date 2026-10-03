@@ -1,0 +1,1869 @@
+{
+  "batches": [
+    {
+      "batch": "single",
+      "rows": [
+        {
+          "case": "start-d1",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        }
+      ],
+      "seconds": 0.006303503003437072
+    },
+    {
+      "batch": "mixed",
+      "rows": [
+        {
+          "case": "start-d1",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "start-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 248,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 227,
+            "score": 0
+          }
+        },
+        {
+          "case": "material-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 60,
+            "pv": [
+              "a2a3",
+              "a7a6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "tapered-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 242,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "recapture",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 106,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 105,
+            "score": 395
+          }
+        },
+        {
+          "case": "recapture-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 54,
+            "pv": [
+              "d4e4",
+              "h7g8",
+              "e4e6",
+              "g8f8"
+            ],
+            "qnodes": 53,
+            "score": 394
+          }
+        },
+        {
+          "case": "recapture-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 72,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 71,
+            "score": 395
+          }
+        },
+        {
+          "case": "quiet-evasion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 2,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "ep",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 2,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-pin",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 35,
+            "pv": [
+              "h7d3"
+            ],
+            "qnodes": 34,
+            "score": 23
+          }
+        },
+        {
+          "case": "promotion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 11,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 10,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 4,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 3,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 10,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 9,
+            "score": 884
+          }
+        },
+        {
+          "case": "mate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -30000
+          }
+        },
+        {
+          "case": "stalemate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "insufficient",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "fifty",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "mate-root-ply7",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -29993
+          }
+        },
+        {
+          "case": "qcap-quiet",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 116
+          }
+        },
+        {
+          "case": "qcap-capture",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-check",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-standpat-cutoff",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 267
+          }
+        },
+        {
+          "case": "zero-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "one-budget-abort",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "exact-budget",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "one-short-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 20,
+            "pv": [],
+            "qnodes": 19,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-root",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-descendant",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 24,
+            "pv": [
+              "f6g8"
+            ],
+            "qnodes": 23,
+            "score": 0
+          }
+        },
+        {
+          "case": "invalid-root-hash",
+          "result": {
+            "abort_reason": 4,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        }
+      ],
+      "seconds": 0.04133107900270261
+    },
+    {
+      "batch": "max64",
+      "rows": [
+        {
+          "case": "start-d1",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "start-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 248,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 227,
+            "score": 0
+          }
+        },
+        {
+          "case": "material-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 60,
+            "pv": [
+              "a2a3",
+              "a7a6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "tapered-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 242,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "recapture",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 106,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 105,
+            "score": 395
+          }
+        },
+        {
+          "case": "recapture-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 54,
+            "pv": [
+              "d4e4",
+              "h7g8",
+              "e4e6",
+              "g8f8"
+            ],
+            "qnodes": 53,
+            "score": 394
+          }
+        },
+        {
+          "case": "recapture-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 72,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 71,
+            "score": 395
+          }
+        },
+        {
+          "case": "quiet-evasion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 2,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "ep",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 2,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-pin",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 35,
+            "pv": [
+              "h7d3"
+            ],
+            "qnodes": 34,
+            "score": 23
+          }
+        },
+        {
+          "case": "promotion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 11,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 10,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 4,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 3,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 10,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 9,
+            "score": 884
+          }
+        },
+        {
+          "case": "mate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -30000
+          }
+        },
+        {
+          "case": "stalemate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "insufficient",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "fifty",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "mate-root-ply7",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -29993
+          }
+        },
+        {
+          "case": "qcap-quiet",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 116
+          }
+        },
+        {
+          "case": "qcap-capture",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-check",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-standpat-cutoff",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 267
+          }
+        },
+        {
+          "case": "zero-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "one-budget-abort",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "exact-budget",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "one-short-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 20,
+            "pv": [],
+            "qnodes": 19,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-root",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-descendant",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 24,
+            "pv": [
+              "f6g8"
+            ],
+            "qnodes": 23,
+            "score": 0
+          }
+        },
+        {
+          "case": "invalid-root-hash",
+          "result": {
+            "abort_reason": 4,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "start-d1",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "start-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 248,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 227,
+            "score": 0
+          }
+        },
+        {
+          "case": "material-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 60,
+            "pv": [
+              "a2a3",
+              "a7a6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "tapered-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 242,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "recapture",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 106,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 105,
+            "score": 395
+          }
+        },
+        {
+          "case": "recapture-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 54,
+            "pv": [
+              "d4e4",
+              "h7g8",
+              "e4e6",
+              "g8f8"
+            ],
+            "qnodes": 53,
+            "score": 394
+          }
+        },
+        {
+          "case": "recapture-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 72,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 71,
+            "score": 395
+          }
+        },
+        {
+          "case": "quiet-evasion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 2,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "ep",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 2,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-pin",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 35,
+            "pv": [
+              "h7d3"
+            ],
+            "qnodes": 34,
+            "score": 23
+          }
+        },
+        {
+          "case": "promotion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 11,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 10,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 4,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 3,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 10,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 9,
+            "score": 884
+          }
+        },
+        {
+          "case": "mate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -30000
+          }
+        },
+        {
+          "case": "stalemate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "insufficient",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "fifty",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "mate-root-ply7",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -29993
+          }
+        },
+        {
+          "case": "qcap-quiet",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 116
+          }
+        },
+        {
+          "case": "qcap-capture",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-check",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-standpat-cutoff",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 267
+          }
+        },
+        {
+          "case": "zero-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "one-budget-abort",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "exact-budget",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "one-short-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 20,
+            "pv": [],
+            "qnodes": 19,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-root",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        }
+      ],
+      "seconds": 0.04537850199267268
+    },
+    {
+      "batch": "reverse-reuse",
+      "rows": [
+        {
+          "case": "invalid-root-hash",
+          "result": {
+            "abort_reason": 4,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-descendant",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 24,
+            "pv": [
+              "f6g8"
+            ],
+            "qnodes": 23,
+            "score": 0
+          }
+        },
+        {
+          "case": "threefold-root",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "one-short-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 20,
+            "pv": [],
+            "qnodes": 19,
+            "score": 0
+          }
+        },
+        {
+          "case": "exact-budget",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        },
+        {
+          "case": "one-budget-abort",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "zero-budget",
+          "result": {
+            "abort_reason": 1,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 0,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-standpat-cutoff",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 267
+          }
+        },
+        {
+          "case": "qcap-check",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-capture",
+          "result": {
+            "abort_reason": 2,
+            "completed_depth": 0,
+            "kind": 3,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 0
+          }
+        },
+        {
+          "case": "qcap-quiet",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 1,
+            "score": 116
+          }
+        },
+        {
+          "case": "mate-root-ply7",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -29993
+          }
+        },
+        {
+          "case": "fifty",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "insufficient",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "stalemate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "mate",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 1,
+            "pv": [],
+            "qnodes": 0,
+            "score": -30000
+          }
+        },
+        {
+          "case": "promotion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 10,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 9,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 4,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 3,
+            "score": 884
+          }
+        },
+        {
+          "case": "promotion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 11,
+            "pv": [
+              "a7a8q",
+              "h8g7"
+            ],
+            "qnodes": 10,
+            "score": 884
+          }
+        },
+        {
+          "case": "ep-pin",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 35,
+            "pv": [
+              "h7d3"
+            ],
+            "qnodes": 34,
+            "score": 23
+          }
+        },
+        {
+          "case": "ep-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 2,
+            "score": 180
+          }
+        },
+        {
+          "case": "ep",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 8,
+            "pv": [
+              "e5d6"
+            ],
+            "qnodes": 7,
+            "score": 180
+          }
+        },
+        {
+          "case": "quiet-evasion-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 2,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 1,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "quiet-evasion",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 0,
+            "kind": 0,
+            "nodes": 3,
+            "pv": [
+              "a1a2"
+            ],
+            "qnodes": 3,
+            "score": 0
+          }
+        },
+        {
+          "case": "recapture-upper",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 2,
+            "nodes": 72,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 71,
+            "score": 395
+          }
+        },
+        {
+          "case": "recapture-lower",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 1,
+            "nodes": 54,
+            "pv": [
+              "d4e4",
+              "h7g8",
+              "e4e6",
+              "g8f8"
+            ],
+            "qnodes": 53,
+            "score": 394
+          }
+        },
+        {
+          "case": "recapture",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 106,
+            "pv": [
+              "d4e4",
+              "h7g7",
+              "e4e6"
+            ],
+            "qnodes": 105,
+            "score": 395
+          }
+        },
+        {
+          "case": "tapered-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 242,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "material-static-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 60,
+            "pv": [
+              "a2a3",
+              "a7a6"
+            ],
+            "qnodes": 0,
+            "score": 0
+          }
+        },
+        {
+          "case": "start-d2",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 2,
+            "kind": 0,
+            "nodes": 248,
+            "pv": [
+              "b1c3",
+              "b8c6"
+            ],
+            "qnodes": 227,
+            "score": 0
+          }
+        },
+        {
+          "case": "start-d1",
+          "result": {
+            "abort_reason": 0,
+            "completed_depth": 1,
+            "kind": 0,
+            "nodes": 21,
+            "pv": [
+              "b1c3"
+            ],
+            "qnodes": 20,
+            "score": 36
+          }
+        }
+      ],
+      "seconds": 0.04159887001151219
+    }
+  ],
+  "cases_sha256": "aae760884b52bc3305392a2a5a2b8d8972fa72e4740abd22b1ccc395c7246e6d",
+  "cpu_affinity": [
+    5
+  ],
+  "device_info": {
+    "architecture": "gfx1030",
+    "async_engines": 8,
+    "compute_units": 30,
+    "name": "AMD Radeon RX 6800",
+    "runtime_version": 70253211,
+    "total_memory": 17163091968,
+    "wave_size": 32
+  },
+  "library_sha256": "f0a02f917cc2ab68b712cddf0f0374986c07f193bd9354faa21e1f20fc9ccaa8",
+  "python": "3.12.3",
+  "python_chess": "1.11.2",
+  "rejections": [
+    {
+      "case": "depth17",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "empty-window",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "qply33",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "stack-sum",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "history-range",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "reserved",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "budget",
+      "error": "invalid bounded job configuration",
+      "status": -1
+    },
+    {
+      "case": "batch65",
+      "error": "invalid bounded batch buffers/counts",
+      "status": -1
+    },
+    {
+      "case": "history65536",
+      "error": "invalid bounded batch buffers/counts",
+      "status": -1
+    }
+  ],
+  "scope": "Rules/traversal independent; Tapered formula reused; no speed/strength claim",
+  "status": "PASS"
+}
