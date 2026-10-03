@@ -22,12 +22,13 @@ The certificates establish:
 - A sound extracted lower bound can justify a beta cutoff; a sound upper bound
   can reject an action below alpha.
 - Aborted results expose neither bound.
-- A single child lower bound gives a root lower bound, while a root upper bound
-  requires coverage of **all** child values.
+- A single child lower bound gives a root lower bound; upper-bound composition
+  from child certificates uses coverage of **all** child values. This is a
+  sufficient construction, not a proof that no other upper-bound method exists.
 - An exact candidate dominates the root only when all competitors are bounded
   beneath it.
-- Interrupted publication retains the previous completed result. Actual
-  publication also requires matching state/job epochs.
+- Interrupted publication retains the supplied previous result. The caller
+  must establish that it was completed and belongs to the matching state/job epoch.
 
 This identifies useful pruning and publication obligations before building a
 parallel dependency scheduler. It does not establish quiescence's game-theoretic

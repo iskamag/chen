@@ -62,7 +62,7 @@ theorem root_lower_from_one_child (values : List Int) (root child score : Int)
   have upper := h.2 child member
   omega
 
-theorem root_upper_requires_all_children (values : List Int) (root score : Int)
+theorem root_upper_from_all_children (values : List Int) (root score : Int)
     (h : RootValue values root) (all : ∀ child ∈ values, child ≤ score) :
     root ≤ score := by
   exact all root h.1
@@ -91,6 +91,6 @@ end Chen.SearchBounds
 #print axioms Chen.SearchBounds.upper_rejection
 #print axioms Chen.SearchBounds.aborted_has_no_bounds
 #print axioms Chen.SearchBounds.root_lower_from_one_child
-#print axioms Chen.SearchBounds.root_upper_requires_all_children
+#print axioms Chen.SearchBounds.root_upper_from_all_children
 #print axioms Chen.SearchBounds.completed_winner
 #print axioms Chen.SearchBounds.interrupted_publication_preserves
