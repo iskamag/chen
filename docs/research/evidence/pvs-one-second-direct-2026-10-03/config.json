@@ -1,0 +1,52 @@
+{
+  "base": {
+    "command": [
+      "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/chen"
+    ],
+    "options": {
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 16,
+      "UseTT": true,
+      "Quiescence": true,
+      "MoveOrdering": true,
+      "AspirationWindow": 0,
+      "PVS": false
+    },
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "cwd": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny",
+    "artifacts": {
+      "engine_binary": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/chen",
+      "source_binding": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/source-binding.json"
+    }
+  },
+  "candidate": {
+    "command": [
+      "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/chen"
+    ],
+    "options": {
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 16,
+      "UseTT": true,
+      "Quiescence": true,
+      "MoveOrdering": true,
+      "AspirationWindow": 0,
+      "PVS": true
+    },
+    "env": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "cwd": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny",
+    "artifacts": {
+      "engine_binary": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/chen",
+      "source_binding": "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/source-binding.json"
+    }
+  }
+}

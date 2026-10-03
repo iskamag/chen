@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_binary_admission_unchanged": true,
+  "independent_audit_byte_exact_replay": true,
+  "argv": [
+    "/usr/bin/python3.14",
+    "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/scripts/audit_timed_match.py",
+    "--run",
+    "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/run",
+    "--declaration",
+    "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/declaration.json",
+    "--out",
+    "/tmp/chen-pvs-direct-1s-20261003-lhqwh0ny/replayed-independent-audit.json"
+  ],
+  "exit_code": 0
+}

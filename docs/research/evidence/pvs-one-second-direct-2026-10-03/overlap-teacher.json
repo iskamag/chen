@@ -1,0 +1,21 @@
+{
+  "kind": "concurrent_cpu_teacher_overlap",
+  "start_utc": "2026-10-03T10:08:19.348153+00:00",
+  "collector_pid": 30093,
+  "stockfish_pid": 30101,
+  "pgid": 30083,
+  "cpu_affinity": [
+    4
+  ],
+  "source": "coherence reported actual launch",
+  "scope": "Shared package power/cache; CPU4 separate from matchCPU0. No causal isolated latency claim.",
+  "end_utc": "2026-10-03T10:08:37.368685+00:00",
+  "elapsed_seconds": 18.0205,
+  "exit_code": 0,
+  "reported_absent_pids": [
+    30083,
+    30093,
+    30101
+  ],
+  "device_used": false
+}

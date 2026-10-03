@@ -1,0 +1,47 @@
+{
+  "kind": "reported_concurrent_gpu_correctness_overlap",
+  "jobs": [
+    {
+      "interval_start_utc": "2026-10-03T10:16:14.149+00:00",
+      "interval_end_utc": "2026-10-03T10:16:16.028+00:00",
+      "elapsed_seconds": 1.878,
+      "exit_code": 0,
+      "host_pid": 1856,
+      "container_pgid": 9761,
+      "retirement_reported": true,
+      "timestamp_scope": "Approximate reconstructed filesystem envelope: stderr created immediately before Popen; terminal.json written after retirement. Not instrumented start/end."
+    }
+  ],
+  "additional_decision_phase": {
+    "elapsed_seconds": 16.5866,
+    "status": "terminal PASS",
+    "interval_start_utc": "2026-10-03T10:31:04.092+00:00",
+    "interval_end_utc": "2026-10-03T10:31:20.680+00:00",
+    "exit_code": 0,
+    "host_pid": 9150,
+    "all_three_engine_children_reported_absent": true,
+    "timestamp_scope": "Approximate reconstructed filesystem envelope; not exact per-kernel interval. GPU bounded/selective and CPU5 alpha-beta jobs ran sequentially."
+  },
+  "source": "RDNA agent actual runtime report",
+  "scope": "GPU and CPU5 work shared package power/cache with CPU0 match; no causal effect/isolation inference",
+  "additional_cpu_teacher": {
+    "start_utc": "2026-10-03T10:33:09.914897+00:00",
+    "affinity": [
+      4
+    ],
+    "device_visibility": "GPUs hidden",
+    "gpu_calls": false,
+    "status": "terminal PASS",
+    "end_utc": "2026-10-03T10:33:13.916769+00:00",
+    "elapsed_seconds": 4.0019,
+    "exit_code": 0,
+    "host_pid": 10274,
+    "host_pid_reported_retired": true,
+    "timestamp_scope": "Instrumented host wall clock, not filesystem reconstruction",
+    "query_count": 6,
+    "ordinary_eligible": 5,
+    "mate_unscored": 1,
+    "stockfish_child_pid": 9954,
+    "stockfish_child_reported_retired": true
+  }
+}
