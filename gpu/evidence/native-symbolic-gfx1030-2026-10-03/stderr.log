@@ -1,0 +1,12 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+test_deep_ancestor_and_root_prefix_history (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_deep_ancestor_and_root_prefix_history) ... ok
+test_native_admission_failure_leaves_output_and_epoch_intact (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_native_admission_failure_leaves_output_and_epoch_intact) ... ok
+test_native_channels_feed_both_learned_residual_models (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_native_channels_feed_both_learned_residual_models) ... ok
+test_random_legal_roots_and_complete_children (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_random_legal_roots_and_complete_children) ... ok
+test_repetition_window_and_owned_snapshot_after_reset_close (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_repetition_window_and_owned_snapshot_after_reset_close) ... ok
+test_special_rules_pins_checkers_colors_and_clock_saturation (neural.tests.test_native_symbolic.NativeSymbolicGPU.test_special_rules_pins_checkers_colors_and_clock_saturation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.773s
+
+OK

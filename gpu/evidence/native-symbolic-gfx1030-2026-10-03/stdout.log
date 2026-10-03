@@ -1,0 +1,6 @@
+{"kind": "symbolic_oracle_test", "test": "test_deep_ancestor_and_root_prefix_history", "oracle_rows": 2}
+{"kind": "symbolic_oracle_test", "test": "test_native_admission_failure_leaves_output_and_epoch_intact", "oracle_rows": 1}
+{"kind": "symbolic_oracle_test", "test": "test_native_channels_feed_both_learned_residual_models", "oracle_rows": 0}
+{"kind": "symbolic_oracle_test", "test": "test_random_legal_roots_and_complete_children", "oracle_rows": 908}
+{"kind": "symbolic_oracle_test", "test": "test_repetition_window_and_owned_snapshot_after_reset_close", "oracle_rows": 1}
+{"kind": "symbolic_oracle_test", "test": "test_special_rules_pins_checkers_colors_and_clock_saturation", "oracle_rows": 28}
