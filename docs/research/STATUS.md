@@ -1,5 +1,9 @@
 # Research checkpoint — 2026-10-03
 
+Paused at the user's requested milestone after saving search recovery, bucketed
+tactical ingress and the first learning chunk. [HANDOFF](../HANDOFF.md) records
+the next bounded experiments and retained runtime; the full goal is unfinished.
+
 The [GPU one-second reference](../harness/gpu-one-second-reference-2026-10-03.md)
 closed with 4 wins, 5 draws and 7 losses against Stockfish configured1320:
 proxy1254, versus the earlier CPU alpha-beta proxy1714. Independent replay
@@ -22,8 +26,24 @@ Kiwipete completes no depth and returns its fallback, middlegame reaches depth1.
 Five complete ordinary teacher packets evaluate these reused roots; Kiwipete's
 fallback is rank30/48 with a reported623cp gap. This is a diagnostic, not an Elo
 or correctness claim about teacher minimax. Production `hip-selective` is unchanged.
-The next native search candidate is a parallel retained root-child pool in
-`../chen-gpu-pool`; its source exists but hardware evidence is still pending.
+Main `7fef232` integrates the [concurrent retained root-child pool](../HIP_ROOT_POOL.md).
+Its [actual GPU diagnostic](evidence/hip-root-pool-2026-10-03/README.md) passes
+23 exhaustive roots,5 native controls,7 Rust/UCI controls and18 decisions.
+At one second it gains one completed depth on start/rook-ending/middlegame,
+but every chosen move matches the scalar control. Kiwipete exits after49.77ms
+on one child's qply32 failure, retaining depth0 fallback `a2a3`.
+Main `a3d7a68` adds the separately named [hip-root-retry](../HIP_ROOT_RETRY.md)
+repair and [its closed hardware evidence](evidence/hip-root-retry-2026-10-03/README.md):
+23 exhaustive roots,8 window admissions,6 native controls,7 Rust/UCI controls
+and3 one-second Kiwipete decisions pass. Root's main integration checks pass
+53 CPU tests with GPU hidden, formatting and all31 evidence payload hashes.
+Quiescence/stack failures remain child-local and supply no bound; retry requires a
+strictly tighter window from a completed Exact incumbent. Its soft-cap fixture
+allows5 other children to complete and2 retries. Actual one-second Kiwipete
+still completes no child, with15 failures/33 paused and no incumbent to admit
+a retry. This fixes cancellation, not decision quality. Deterministic capture,
+promotion and PV ordering is the next bounded search experiment; no ordering
+implementation or strength gain is claimed.
 
 Main `16574cd` adds independently switchable
 [CPU PVS and aspiration](../CLASSICAL_SEARCH.md), with defaults off. All18 search
@@ -51,9 +71,17 @@ Holding graph/checkpoint/P/K fixed, captured FP32 inference at batch20 improves
 3.80/6.38/6.20x at widths32/128/256 when E6144 padding is replaced by the admitted
 actual maximum270. All prediction/capture checks pass. These are three small
 samples on untrained opening-child graphs, excluding export/copy/setup/capture
-costs. Native E admission remains conservative. A separately named bucketed
-native producer is now being implemented; the measured inference-only ratio is
-not imported as a pipeline result. Offline learning should collate active work.
+costs. Main `a9415d2` and neural `21ea33f` implement the separately named
+[complete edge-bucket producer](../TACTICAL_BUCKETS.md), preserving ABI1.
+Retired capacity failure discards all partial outputs before retrying a larger
+bucket; unproven retirement quarantines the arena until process retirement.
+Six CPU fixtures and7 actual GPU tests pass. Six balanced rounds include native
+export, resident buffer copy and captured inference: width128/batch20 falls
+27.801→6.082ms (paired4.563x), width256/batch20 58.761→11.848ms (4.974x).
+All measured rows fit E512 without retry; batch-one gains are smaller. Setup,
+capture-cache behavior, learned quality and engine speed remain separate gates.
+Root verifies all24 payloads/204 archive members and reproduces the cold timing
+analysis exactly. Offline learning collates active work independently.
 
 Main `4c92070` adds [parallel root certificates](PARALLEL_ROOT_CERTIFICATES.md):
 23 Lean theorems cover complete competitor bounds, canonical ties, retained
@@ -67,9 +95,16 @@ queries are retained as missing, without substitution. Neural `7607c36` adds
 [closed restricted-exchange labels](../../../chen-neural/docs/EXCHANGE_TARGETS.md):
 3175 closed targets from3864 complete initial capture/promotion actions;1172
 returns differ from immediate material.604 outside-task check evasions and85
-terminals carry no ordinary CP. This is not unrestricted chess value. A separate
-task head/fresh whole-family split/convergence runner is being implemented in
-`../chen-neural`; no recurrent/transformer quality winner has been trained yet.
+terminals carry no ordinary CP. This is not unrestricted chess value.
+Neural `58cd90c` adds a separate task head and fresh256 TRAIN/64 DEV/64 closed
+TEST families, excluding838,236 known spent keys. Neural `861b3d3` archives the
+first2 actual one-step typed HPO fits: retained-best DEV macro-family error
+12.705/13.506 versus immediate-material129.292; nonzero-family error22.354/25.107
+versus414.138. Both reach the declared plateau after39/43 epochs. These are
+restricted-task DEV tuning results, not strategic chess values or an architecture
+winner. Two LR0.0003 controls remain before this arm can select hyperparameters;
+recurrence/typing ablations, selected-seed replication and transformer learning
+remain pending. TEST stays unlabeled/closed. No new fits start during wrap-up.
 
 The [reachable mechanics generator](../SYNTHETIC_MECHANICS.md) now completes a
 256-family TRAIN pilot:1940 roots,35,533 complete legal action effects and95,790
@@ -113,7 +148,7 @@ comparison regresses 0.80% with noisy individual pairs. It stays experimental.
 A generic workload-driven pair runner replaces the copied harness's hardcoded
 argv for new experiments. Production remains the packed-cache implementation.
 
-Latest integration: main `d2a54be` exports exact native symbolic observations;
+Earlier symbolic integration: main `d2a54be` exports exact native symbolic observations;
 neural `0d86d43` consumes typed compact GPU state in symbolic/transformer residual
 streams. [Six actual GPU tests](../GPU_SYMBOLIC_RESIDUAL.md) pass with 940 oracle
 rows and consumer gradients. The bridge remains synchronous; no learned quality
@@ -124,19 +159,17 @@ dimensions, copies, publication and fences constant across graph/queued arms.
 All 48 timed searches preserve their full trajectories. Graph dispatch alone
 saves only about 0.2%/0.45% in these warmed workloads, with noisy individual
 pairs. Further graph-launch tuning is deprioritized; full GPU execution remains
-the target. The latest bounded assignments are GPU search implementation,
-tactical processor mechanics, and independent search/topology review. Root owns
-direction, strength evaluation and integration in the two original worktrees.
-Timed hardware studies receive sequential reserved windows.
+the target. Root owns direction, strength evaluation and integration in the two
+original worktrees. Timed hardware studies receive sequential reserved windows;
+all current workers retire at this requested pause.
 
-Two isolated implementation worktrees now support the original boundaries:
-`../chen-classical` retains the reviewed CPU controls and owns their paired
-strength comparison; `../chen-gpu-search` owns an experimental timed bounded
-GPU backend. The latter is implementing device cancellation/deadlines and
-last-completed iterative publication; it has no new executable/strength claim
-yet. The neural worktree is collecting a bounded TRAIN strategic-label pilot
-before convergence studies. These tasks do not replace the original data,
-fully GPU search or eventual rating requirements.
+Temporary CPU, bounded-search, root-pool and producer worktrees have finished
+their current milestones. Wrap-up retains the main and neural worktrees,
+committed evidence and resumable neural runtime; clean temporary worktrees are
+removed after integration. [The handoff](../HANDOFF.md) records remaining work
+and cleanup scope. All experiment workers are retired before the pause. These
+milestones do not satisfy fully GPU neural deployment or the eventual rating
+requirement.
 
 Neural `1ff620b` adds the
 [sparse recurrent tactical processor](../../../chen-neural/docs/TACTICAL_OPERATOR.md):

@@ -56,16 +56,20 @@ production, latent updates, neural scoring, frontier decisions and backup retain
 their state on the device. CPU implementations remain references for comparison.
 The new [PVS/aspiration controls](CLASSICAL_SEARCH.md) stay independently
 selectable; their completed16-game direct one-second diagnostic favors PVS
-6W/6D/4L, with broader play still needed before default adoption. Temporary
-`../chen-classical`, `../chen-gpu-search` and `../chen-gpu-pool` worktrees keep
-CPU/proof controls, bounded reference and parallel GPU candidate isolated; reviewed code enters
-main, while model/data work remains in the neural worktree.
+6W/6D/4L, with broader play still needed before default adoption.
+CPU/proof controls, bounded reference and parallel GPU candidates were developed
+in isolated temporary worktrees. Their reviewed milestones are integrated on
+main; clean temporary worktrees are removed at the requested wrap-up, retaining
+their branches. Model/data work remains in the neural worktree. See the
+[handoff](HANDOFF.md) before resuming experiments.
 Measure host scheduling and publication costs explicitly while moving suitable
 control work into the GPU. A CPU result does not replace this target.
 
 The [native tactical observation](GPU_TACTICAL.md) now exposes a versioned, typed
-residual-input boundary to the neural engine; [padding measurements](TACTICAL_PADDING.md)
-motivate a separately named bucketed producer candidate. Derive channels from the current exact state and legal actions:
+residual-input boundary to the neural engine. The separately named
+[complete edge-bucket producer](TACTICAL_BUCKETS.md) now measures the full
+export/copy/captured-inference path; ABI1 remains the conservative control.
+Derive channels from the current exact state and legal actions:
 occupancy, attacks, pins, check constraints, material/phase, clocks/history and
 move events. Keep parent/child identity, player orientation, validity masks,
 stream dependencies and allocation ownership explicit. Learned projections may
@@ -153,7 +157,11 @@ hyperparameter tuning before extending it to persistent object memory or
 search-aware adaptive refresh. The [scalable transformer](../../chen-neural/docs/SCALING_STUDY.md)
 is also a serious candidate: compare roughly 1M through 270M descriptors and
 width/depth alternatives rather than assume the tiny processor is preferable.
-Both families remain untrained. Offline training may substantially exceed
+The recurrent processor's separate restricted-exchange head has its first two
+DEV HPO fits in neural `861b3d3`; recurrence/typing comparisons and transformer
+learning are still pending. Those labels describe an artificial recapture game,
+not strategic chess value. No architecture winner or neural engine is selected.
+Offline training may substantially exceed
 compute-efficient schedules when extra training improves inference-budget
 quality; short update counts are learning-curve controls, not size verdicts.
 
@@ -168,10 +176,13 @@ separate. Do not reopen spent families to tune the next architecture.
 
 ## Order of evidence and integration
 
-1. Build the experimental device-owned alpha-beta/quiescence reference. Admit
-   completed window bounds and abort semantics against matched-rule oracles.
-   Hold Tapered fixed for tactical decisions and paired equal-time play before
-   introducing PVS/TT or a dependency work pool.
+1. The device-owned alpha-beta/quiescence reference and retained root-child pool
+   are implemented. Keep their admitted window/abort controls; fix useful work
+   allocation before adding precision changes. The child-local resource retry
+   candidate still cannot bootstrap an Exact incumbent on Kiwipete. Next test
+   deterministic capture/promotion/PV ordering as a no-pruning permutation,
+   preserving canonical root identities and charging all work. Compare completed
+   decisions and paired equal-time play before promoting a new policy or adding TT/PVS.
 2. Implement the recurrent tactical processor and shared exact topology ingress,
    and scale the fully observed transformer through explicit model/data/compute
    studies. Model cache capacity does not define the preferred size.
