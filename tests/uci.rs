@@ -204,14 +204,14 @@ fn selective_uci_reports_mixed_depth_and_recovers_after_invalid_option() {
 }
 
 #[test]
-fn catnip_uci_controls_telemetry_and_infinite_attention() {
+fn drowsy_uci_controls_telemetry_and_infinite_attention() {
     let mut engine = Engine::new();
-    engine.send("setoption name Backend value catnip");
-    engine.send("setoption name CatnipDelta value 250");
-    engine.send("setoption name CatnipTheta value 0.55");
+    engine.send("setoption name Backend value drowsy");
+    engine.send("setoption name DrowsyDelta value 250");
+    engine.send("setoption name DrowsyTheta value 0.55");
     engine.send("position startpos moves e2e4");
     engine.send("go nodes 100 depth 4");
-    let stats = engine.until("info string catnip ");
+    let stats = engine.until("info string drowsy ");
     assert!(stats.contains("fail-meow ") && stats.contains("fail-zoomies "));
     let best = engine.until("bestmove ");
     let mut position = Position::startpos();
@@ -221,19 +221,19 @@ fn catnip_uci_controls_telemetry_and_infinite_attention() {
             .parse_uci_move(best.split_whitespace().nth(1).unwrap())
             .is_ok()
     );
-    engine.send("setoption name CatnipTheta value inf");
+    engine.send("setoption name DrowsyTheta value inf");
     engine.send("go nodes 100 depth 4");
-    let stats = engine.until("info string catnip ");
+    let stats = engine.until("info string drowsy ");
     assert!(stats.contains("walkers 0"));
     assert_eq!(
         engine.until("bestmove "),
         format!("bestmove {}", position.legal_moves()[0])
     );
-    engine.send("setoption name CatnipTheta value NaN");
+    engine.send("setoption name DrowsyTheta value NaN");
     engine.until("info string invalid or unsupported option");
     engine.send("position fen 7k/6Q1/6K1/8/8/8/8/8 b - - 0 1");
     engine.send("go depth 2");
-    engine.until("info string catnip ");
+    engine.until("info string drowsy ");
     assert_eq!(engine.until("bestmove "), "bestmove 0000");
     engine.send("quit");
 }

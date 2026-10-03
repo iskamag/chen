@@ -1,0 +1,24 @@
+{
+  "scope": "Local native browser check of Drowsy naming and migration of a previously saved Catnip toy game",
+  "choices": [
+    "Serious Chen",
+    "Drowsy Chen · experimental"
+  ],
+  "old_moves": [
+    "g1f3"
+  ],
+  "migrated_backend": "drowsy",
+  "migrated_fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+  "delta_cp": 250,
+  "theta": 0.75,
+  "telemetry": {
+    "deepest_ply": 2,
+    "fail_meow": 1,
+    "fail_zoomies": 0,
+    "ignored_boring": 39,
+    "noticed_drift": 0,
+    "peak_walkers": 1
+  },
+  "caption": "Build e5b2ca3+dirty · Drowsy · resource level 20",
+  "page_errors": []
+}

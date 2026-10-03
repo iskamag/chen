@@ -142,7 +142,7 @@ this deliberately limits sharing, leaving a measurable optimization question.
 TT scores normalize mate distance. A returned PV can end at a cached bound;
 it is not guaranteed to reach the reported depth.
 
-Choose `Backend=catnip` in UCI or **Catnip Chen** in the browser for the deliberately distracted [δ–θ rollout toy](docs/CATNIP_TOY.md). It has adjustable fish attention and stale evaluation memories, with fail-meow/fail-zoomies telemetry. Its strength is unmeasured.
+Choose `Backend=drowsy` in UCI or **Drowsy Chen** in the browser for the deliberately distracted [δ–θ rollout toy](docs/DROWSY_CHEN.md). It has adjustable fish attention and stale evaluation memories, with fail-meow/fail-zoomies telemetry. Its strength is unmeasured.
 
 ## Experiments and the neural layer
 

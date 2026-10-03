@@ -1,9 +1,13 @@
-# Catnip: batched attack and refutation search
+# Catnip Chen: batched attack and refutation search
 
 Status: **design only, 2026-10-03**. No new engine backend, SIMD kernel, GPU
 execution, training, speedup or strength result is claimed here. The experiment
 asks whether searching related moves together can buy stronger decisions per
 second, rather than merely increasing raw node throughput.
+
+**Catnip Chen** names the ambitious strength candidate. The playful δ–θ rollout
+backend is separately named [Drowsy Chen](../DROWSY_CHEN.md). Neither the ordinary
+alpha-beta checkpoint nor Drowsy implements this proposed batched strategy.
 
 ## Start from the actual code
 

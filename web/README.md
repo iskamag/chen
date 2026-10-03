@@ -15,13 +15,16 @@ Open **http://127.0.0.1:8787**. Choose your side, time per move and resource lev
 then start a game. Level 20 gets the selected time budget; lower levels additionally
 cap depth and nodes using Chen's existing strength policy. Optional node/depth limits
 can stop search earlier. Levels are not ratings.
-Choose **Catnip Chen** for the deliberately distracted δ–θ search toy. Its two
+Choose **Drowsy Chen** for the deliberately distracted δ–θ search toy. Its two
 sliders control score drift before a walker notices (δ, centipawns), and minimum
 fish attention (θ). Higher δ keeps remembered scores stale for longer; higher θ
 ignores more nonterminal moves. It shares Chen's exact rules and draw handling,
 but is an uncalibrated experiment rather than the serious search. Its telemetry
 reports explored ply, fail-meows, zoomies and ignored moves; explored ply is not
-completed minimax depth. Backend and dials stay with that tab's saved game.
+completed minimax depth. Backend and dials stay with that tab's saved game. Reload older tabs to pick up
+the Drowsy name; games saved under the former toy name migrate without losing
+the board or settings. **Catnip Chen** is reserved for the ambitious
+[batched-search candidate](../docs/research/CATNIP_SEARCH.md), currently design only.
 
 Promotion offers all four pieces. Threefold repetition and the fifty-move rule
 are automatically claimed. The board is keyboard operable using Tab and Enter.

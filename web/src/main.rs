@@ -1,5 +1,5 @@
 use chen::backend::SearchBackend;
-use chen::catnip::{CatnipConfig, CatnipSearch};
+use chen::drowsy::{DrowsyConfig, DrowsySearch};
 use chen::strength::{BudgetStrength, StrengthPolicy};
 use chen::{Color, Position, SearchConfig, SearchLimits, Searcher, Tapered};
 use serde_json::{Value, json};
@@ -17,13 +17,13 @@ use std::{
 
 enum WebSearch {
     Serious(Box<Searcher>),
-    Catnip(Box<CatnipSearch>),
+    Drowsy(Box<DrowsySearch>),
 }
 impl WebSearch {
     fn stop_handle(&self) -> Arc<AtomicBool> {
         match self {
             Self::Serious(searcher) => searcher.stop_handle(),
-            Self::Catnip(searcher) => searcher.stop_handle(),
+            Self::Drowsy(searcher) => searcher.stop_handle(),
         }
     }
     fn search(
@@ -34,13 +34,13 @@ impl WebSearch {
     ) -> Result<chen::SearchResult, String> {
         match self {
             Self::Serious(searcher) => Ok(searcher.search(position, limits, history, |_| {})),
-            Self::Catnip(searcher) => searcher.search(position, limits, history, &mut |_| {}),
+            Self::Drowsy(searcher) => searcher.search(position, limits, history, &mut |_| {}),
         }
     }
-    fn catnip_stats(&self) -> Value {
+    fn drowsy_stats(&self) -> Value {
         match self {
             Self::Serious(_) => Value::Null,
-            Self::Catnip(searcher) => {
+            Self::Drowsy(searcher) => {
                 let stats = searcher.stats();
                 json!({"ignored_boring":stats.ignored_boring, "fail_meow":stats.fail_meow,
                     "fail_zoomies":stats.fail_zoomies, "noticed_drift":stats.noticed_drift,
@@ -142,7 +142,7 @@ impl Game {
         self.telemetry = json!({ "depth": result.depth, "nodes": result.nodes,
             "nps": result.nps(), "ms": result.elapsed.as_millis(),
             "pv": result.pv.iter().map(ToString::to_string).collect::<Vec<_>>(),
-            "catnip": self.searcher.catnip_stats() });
+            "drowsy": self.searcher.drowsy_stats() });
         if let Some(mv) = result.best_move {
             self.push(mv);
         }
@@ -203,25 +203,25 @@ impl Game {
         };
         game.backend = match data["backend"].as_str() {
             None | Some("serious") => "serious",
-            Some("catnip") => "catnip",
-            _ => return Err("Backend must be serious or catnip".into()),
+            Some("drowsy") => "drowsy",
+            _ => return Err("Backend must be serious or drowsy".into()),
         };
         game.delta_cp = match data.get("delta_cp") {
             None => 80,
             Some(value) => value
                 .as_i64()
                 .filter(|n| (0..=1000).contains(n))
-                .ok_or("Catnip drift must be 0–1000 cp")? as i32,
+                .ok_or("Drowsy drift must be 0–1000 cp")? as i32,
         };
         game.theta = match data.get("theta") {
             None => 0.55,
             Some(value) => value
                 .as_f64()
                 .filter(|n| n.is_finite() && (0.0..=1.0).contains(n))
-                .ok_or("Catnip attention must be 0–1")? as f32,
+                .ok_or("Drowsy attention must be 0–1")? as f32,
         };
-        if game.backend == "catnip" {
-            game.searcher = WebSearch::Catnip(Box::new(CatnipSearch::new(CatnipConfig {
+        if game.backend == "drowsy" {
+            game.searcher = WebSearch::Drowsy(Box::new(DrowsySearch::new(DrowsyConfig {
                 delta_cp: game.delta_cp,
                 theta: game.theta,
                 ..Default::default()

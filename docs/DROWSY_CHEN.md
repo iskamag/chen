@@ -1,7 +1,7 @@
-# Distracted Chen: the δ–θ toy
+# Drowsy Chen: the δ–θ toy
 
-This is a playable **deliberately silly rollout backend**, `catnip-toy`, not the
-serious [batched attack/refutation design](research/CATNIP_SEARCH.md). It is
+This is a playable **deliberately silly rollout backend**, `drowsy-toy`, not the
+ambitious **Catnip Chen** [batched attack/refutation design](research/CATNIP_SEARCH.md). It is
 unrated. Neither its jokes nor its score imply strong chess.
 
 Several cats follow different root moves. They notice knights, forward motion,
@@ -33,25 +33,25 @@ This is neither alpha-beta with a check bonus nor an exact search replacement.
 In UCI:
 
 ```text
-setoption name Backend value catnip
-setoption name CatnipDelta value 80
-setoption name CatnipTheta value 0.55
+setoption name Backend value drowsy
+setoption name DrowsyDelta value 80
+setoption name DrowsyTheta value 0.55
 position startpos
 go movetime 1000
 ```
 
-`CatnipTheta` also accepts `inf` for perfect boredom. UCI prints `fail-meow`,
-`fail-zoomies`, ignored moves and explored ply in an `info string catnip` line.
-The browser offers Catnip as a selectable mood with δ and θ sliders.
-A bounded CLI probe is `cargo run --release -- bench --backend catnip --depth 6
---nodes 1000 --catnip-delta 80 --catnip-theta 0.55` (on one line).
+`DrowsyTheta` also accepts `inf` for perfect boredom. UCI prints `fail-meow`,
+`fail-zoomies`, ignored moves and explored ply in an `info string drowsy` line.
+The browser offers Drowsy as a selectable mood with δ and θ sliders.
+A bounded CLI probe is `cargo run --release -- bench --backend drowsy --depth 6
+--nodes 1000 --drowsy-delta 80 --drowsy-theta 0.55` (on one line).
 
 ## API and limits
 
 ```rust
-use chen::catnip::{CatnipConfig, CatnipSearch};
+use chen::drowsy::{DrowsyConfig, DrowsySearch};
 
-let search = CatnipSearch::new(CatnipConfig {
+let search = DrowsySearch::new(DrowsyConfig {
     delta_cp: 80,
     theta: 0.55,
     seed: 0x4348_454e,
@@ -60,7 +60,7 @@ let search = CatnipSearch::new(CatnipConfig {
 })?;
 ```
 
-`CatnipSearch` implements `SearchBackend`, including cancellation via
+`DrowsySearch` implements `SearchBackend`, including cancellation via
 `stop_handle()`. `stats()` returns counters, maximum visited ply and peak retained
 walkers. Invalid negative δ/θ, NaN θ, or walker/ply capacities outside 1..32 are
 rejected. Positive infinite θ is permitted. It owns a stateless tapered evaluator;
@@ -107,7 +107,7 @@ ignores every nonterminal root child.
 
 ## Checks
 
-`tests/catnip.rs` covers legal PV replay and root restoration, fixed-budget
+`tests/drowsy.rs` covers legal PV replay and root restoration, fixed-budget
 reproducibility, bounded node use, θ=∞ distraction, δ-dependent noticing,
 invalid configurations, precancellation/zero time, root repetitions and terminal
 precedence. These establish mechanics, not quality or Elo. The serious CPU PVS

@@ -1,19 +1,19 @@
 use chen::{
     Position, SearchLimits,
     backend::SearchBackend,
-    catnip::{CatnipConfig, CatnipSearch},
+    drowsy::{DrowsyConfig, DrowsySearch},
     search::MATE,
 };
 use std::{sync::atomic::Ordering, time::Duration};
 
 fn run(
     fen: &str,
-    config: CatnipConfig,
+    config: DrowsyConfig,
     nodes: Option<u64>,
-) -> (chen::SearchResult, chen::catnip::CatnipStats) {
+) -> (chen::SearchResult, chen::drowsy::DrowsyStats) {
     let mut position = Position::from_fen(fen).unwrap();
     let before = position;
-    let mut search = CatnipSearch::new(config).unwrap();
+    let mut search = DrowsySearch::new(config).unwrap();
     let result = search
         .search(
             &mut position,
@@ -39,9 +39,9 @@ fn run(
 }
 #[test]
 fn deterministic_cat_school_and_pv() {
-    let config = CatnipConfig {
+    let config = DrowsyConfig {
         theta: 0.1,
-        ..CatnipConfig::default()
+        ..DrowsyConfig::default()
     };
     let (a, sa) = run(&Position::startpos().to_fen(), config, Some(700));
     let (b, sb) = run(&Position::startpos().to_fen(), config, Some(700));
@@ -58,9 +58,9 @@ fn deterministic_cat_school_and_pv() {
 fn infinity_ignores_quiet_root_but_has_legal_fallback() {
     let (result, stats) = run(
         &Position::startpos().to_fen(),
-        CatnipConfig {
+        DrowsyConfig {
             theta: f32::INFINITY,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
         None,
     );
@@ -72,9 +72,9 @@ fn infinity_ignores_quiet_root_but_has_legal_fallback() {
 }
 #[test]
 fn terminals_precede_attention_and_draw_clock() {
-    let config = CatnipConfig {
+    let config = DrowsyConfig {
         theta: f32::INFINITY,
-        ..CatnipConfig::default()
+        ..DrowsyConfig::default()
     };
     let (mate, _) = run("7k/6Q1/6K1/8/8/8/8/8 b - - 100 1", config, None);
     assert_eq!(mate.score, -MATE);
@@ -92,9 +92,9 @@ fn terminals_precede_attention_and_draw_clock() {
 fn mate_in_one_preserves_previously_retained_walker_peak() {
     // Native move order visits quiet queen moves before reaching the mating move.
     // With theta=0 those earlier children retain walkers before the early return.
-    let config = CatnipConfig {
+    let config = DrowsyConfig {
         theta: 0.0,
-        ..CatnipConfig::default()
+        ..DrowsyConfig::default()
     };
     let (result, stats) = run("7k/5Q2/6K1/8/8/8/8/8 w - - 0 1", config, None);
     assert_eq!(result.score, MATE - 1);
@@ -113,7 +113,7 @@ fn root_repetition_is_exact() {
         let mv = position.parse_uci_move(text).unwrap();
         position.make_move(mv);
     }
-    let mut search = CatnipSearch::new(CatnipConfig::default()).unwrap();
+    let mut search = DrowsySearch::new(DrowsyConfig::default()).unwrap();
     let result = search
         .search(
             &mut position,
@@ -130,7 +130,7 @@ fn root_repetition_is_exact() {
 fn zero_budget_precancel_and_zero_time_return_fallback() {
     for mode in 0..4 {
         let mut position = Position::startpos();
-        let mut search = CatnipSearch::new(CatnipConfig::default()).unwrap();
+        let mut search = DrowsySearch::new(DrowsyConfig::default()).unwrap();
         search.stop_handle().store(mode == 1, Ordering::Relaxed);
         let result = search
             .search(
@@ -155,7 +155,7 @@ fn zero_budget_precancel_and_zero_time_return_fallback() {
     for budget in [1, 2, 7, 21, 90] {
         let (result, _) = run(
             &Position::startpos().to_fen(),
-            CatnipConfig::default(),
+            DrowsyConfig::default(),
             Some(budget),
         );
         assert!(result.nodes <= budget);
@@ -164,14 +164,14 @@ fn zero_budget_precancel_and_zero_time_return_fallback() {
 #[test]
 fn delta_really_suppresses_noticing() {
     let fen = Position::startpos().to_fen();
-    let config = CatnipConfig {
+    let config = DrowsyConfig {
         theta: 0.0,
         max_plies: 4,
-        ..CatnipConfig::default()
+        ..DrowsyConfig::default()
     };
     let (_, alert) = run(
         &fen,
-        CatnipConfig {
+        DrowsyConfig {
             delta_cp: 0,
             ..config
         },
@@ -179,7 +179,7 @@ fn delta_really_suppresses_noticing() {
     );
     let (_, distracted) = run(
         &fen,
-        CatnipConfig {
+        DrowsyConfig {
             delta_cp: i32::MAX,
             ..config
         },
@@ -192,31 +192,31 @@ fn delta_really_suppresses_noticing() {
 #[test]
 fn invalid_configuration_is_rejected() {
     for config in [
-        CatnipConfig {
+        DrowsyConfig {
             theta: f32::NAN,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
-        CatnipConfig {
+        DrowsyConfig {
             theta: -1.0,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
-        CatnipConfig {
+        DrowsyConfig {
             delta_cp: -1,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
-        CatnipConfig {
+        DrowsyConfig {
             walkers: 0,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
-        CatnipConfig {
+        DrowsyConfig {
             walkers: 33,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
-        CatnipConfig {
+        DrowsyConfig {
             max_plies: 0,
-            ..CatnipConfig::default()
+            ..DrowsyConfig::default()
         },
     ] {
-        assert!(CatnipSearch::new(config).is_err());
+        assert!(DrowsySearch::new(config).is_err());
     }
 }

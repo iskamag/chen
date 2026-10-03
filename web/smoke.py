@@ -136,25 +136,25 @@ class ApiSmoke(unittest.TestCase):
             for job in jobs:
                 self.assertEqual(self.done(job)["phase"], "cancelled")
 
-    def test_06_catnip_dispatch_controls_and_legal_reply(self):
-        cat = self.done(self.submit(backend="catnip", delta_cp=240,
+    def test_06_drowsy_dispatch_controls_and_legal_reply(self):
+        cat = self.done(self.submit(backend="drowsy", delta_cp=240,
             theta=0.75, nodes=128, depth=3))["state"]
-        self.assertEqual(cat["backend"], "catnip")
+        self.assertEqual(cat["backend"], "drowsy")
         self.assertEqual(cat["delta_cp"], 240)
         self.assertAlmostEqual(cat["theta"], 0.75)
         self.assertEqual(len(cat["moves"]), 1)
         self.assertEqual(cat["side"], "black")
         self.assertLessEqual(cat["telemetry"]["nodes"], 128)
-        self.assertLessEqual(cat["telemetry"]["catnip"]["deepest_ply"], 3)
-        self.assertIn("fail_meow", cat["telemetry"]["catnip"])
-        self.assertIn("fail_zoomies", cat["telemetry"]["catnip"])
-        distracted = self.done(self.submit(backend="catnip", theta=1, nodes=128))["state"]
-        self.assertGreater(distracted["telemetry"]["catnip"]["ignored_boring"], 0)
+        self.assertLessEqual(cat["telemetry"]["drowsy"]["deepest_ply"], 3)
+        self.assertIn("fail_meow", cat["telemetry"]["drowsy"])
+        self.assertIn("fail_zoomies", cat["telemetry"]["drowsy"])
+        distracted = self.done(self.submit(backend="drowsy", theta=1, nodes=128))["state"]
+        self.assertGreater(distracted["telemetry"]["drowsy"]["ignored_boring"], 0)
         serious = self.done(self.submit(nodes=128))["state"]
         self.assertEqual(serious["backend"], "serious")
-        self.assertIsNone(serious["telemetry"]["catnip"])
+        self.assertIsNone(serious["telemetry"]["drowsy"])
         with self.assertRaises(urllib.error.HTTPError) as error:
-            self.submit(backend="catnip", theta=1.1)
+            self.submit(backend="drowsy", theta=1.1)
         self.assertEqual(error.exception.code, 400)
         error.exception.close()
 

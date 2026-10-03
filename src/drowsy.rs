@@ -15,7 +15,7 @@ use std::{
 };
 
 #[derive(Clone, Copy, Debug)]
-pub struct CatnipConfig {
+pub struct DrowsyConfig {
     /// Centipawn drift required before a walker updates its remembered score.
     pub delta_cp: i32,
     /// Ignore nonterminal moves whose deterministic fish attention is below theta.
@@ -25,7 +25,7 @@ pub struct CatnipConfig {
     pub walkers: usize,
     pub max_plies: u8,
 }
-impl Default for CatnipConfig {
+impl Default for DrowsyConfig {
     fn default() -> Self {
         Self {
             delta_cp: 80,
@@ -37,7 +37,7 @@ impl Default for CatnipConfig {
     }
 }
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
-pub struct CatnipStats {
+pub struct DrowsyStats {
     pub nodes: u64,
     pub ignored_boring: u64,
     /// Suppressed evaluation notices plus walkers finding no interesting move.
@@ -63,31 +63,31 @@ struct Kitten {
     attention: f32,
     terminal: bool,
 }
-pub struct CatnipSearch {
-    config: CatnipConfig,
+pub struct DrowsySearch {
+    config: DrowsyConfig,
     stop: Arc<AtomicBool>,
-    stats: CatnipStats,
+    stats: DrowsyStats,
 }
-impl CatnipSearch {
-    pub fn new(config: CatnipConfig) -> Result<Self, String> {
+impl DrowsySearch {
+    pub fn new(config: DrowsyConfig) -> Result<Self, String> {
         if config.delta_cp < 0
             || config.theta.is_nan()
             || config.theta < 0.0
             || !(1..=32).contains(&config.walkers)
             || !(1..=32).contains(&config.max_plies)
         {
-            return Err("Catnip requires delta>=0, theta>=0, 1..32 walkers and plies".into());
+            return Err("Drowsy requires delta>=0, theta>=0, 1..32 walkers and plies".into());
         }
         Ok(Self {
             config,
             stop: Arc::new(AtomicBool::new(false)),
-            stats: CatnipStats::default(),
+            stats: DrowsyStats::default(),
         })
     }
-    pub fn stats(&self) -> CatnipStats {
+    pub fn stats(&self) -> DrowsyStats {
         self.stats
     }
-    pub fn config(&self) -> CatnipConfig {
+    pub fn config(&self) -> DrowsyConfig {
         self.config
     }
     fn interrupted(&self, start: Instant, limits: &SearchLimits) -> bool {
@@ -227,18 +227,18 @@ impl CatnipSearch {
         }
     }
 }
-impl SearchBackend for CatnipSearch {
+impl SearchBackend for DrowsySearch {
     fn name(&self) -> &str {
-        "catnip-toy"
+        "drowsy-toy"
     }
-    fn catnip_stats(&self) -> Option<CatnipStats> {
+    fn drowsy_stats(&self) -> Option<DrowsyStats> {
         Some(self.stats)
     }
     fn stop_handle(&self) -> Arc<AtomicBool> {
         self.stop.clone()
     }
     fn clear(&mut self) {
-        self.stats = CatnipStats::default();
+        self.stats = DrowsyStats::default();
     }
     fn search(
         &mut self,
@@ -248,7 +248,7 @@ impl SearchBackend for CatnipSearch {
         report: &mut dyn FnMut(&SearchResult),
     ) -> Result<SearchResult, String> {
         let start = Instant::now();
-        self.stats = CatnipStats::default();
+        self.stats = DrowsyStats::default();
         // Mandatory root bootstrap permits a legal fallback even at a zero budget.
         let root = position.side_to_move();
         let moves = position.legal_moves();

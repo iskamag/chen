@@ -135,7 +135,7 @@ pub trait SearchBackend: Send {
         history: &[u64],
         report: &mut dyn FnMut(&SearchResult),
     ) -> Result<SearchResult, String>;
-    fn catnip_stats(&self) -> Option<crate::catnip::CatnipStats> {
+    fn drowsy_stats(&self) -> Option<crate::drowsy::DrowsyStats> {
         None
     }
     fn root_pool_stats(&self) -> Option<String> {

@@ -2,7 +2,7 @@
 
 **https://iskamag.com/games/play-with-chen/** proxies through nginx on
 `iskamag.com` to this machine's native CPU server. Both serious Chen and the
-experimental δ–θ Catnip mood use the same bounded request queue. The selected
+experimental δ–θ Drowsy mood use the same bounded request queue. The selected
 search time excludes queue wait.
 
 The installed OpenRC **user services** are `chen-web` and `chen-tunnel`. They

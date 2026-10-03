@@ -20,18 +20,20 @@ real native moves, separate queue time, cancellation and desktop/mobile layout.
 It creates a fresh TT per request, so the frozen UCI match rating does not describe
 its strength. It is live at [iskamag.com/games/play-with-chen](https://iskamag.com/games/play-with-chen/),
 through nginx and a supervised reverse SSH tunnel to this machine. Public browser
-QA verifies both backends, a real 1000 ms serious move, saved Catnip controls,
+QA verifies both backends, a real 1000 ms serious move, saved Drowsy controls,
 asset hashes and mobile layout. The existing homepage hash is unchanged; the
 [runbook](../../deployment/README.md) records service and rollback boundaries.
 
-The explicitly requested [δ–θ Catnip toy](../CATNIP_TOY.md) is now implemented as
+The explicitly requested [δ–θ Drowsy toy](../DROWSY_CHEN.md) is now implemented as
 a distinct `SearchBackend`, with bounded attention-driven rollouts, stale score
 memories, legal fallback and terminal-before-attention checks. UCI and the web
 select it independently; benchmark JSON includes its configuration and counters.
 It reports explored ply separately from completed search depth. Independent
 review found and fixed zero-ply and early-mate telemetry edges. Release tests,
 strict Clippy, six web API checks and three browser cancellation-race checks pass.
-No playing-strength measurement or promotion follows.
+No playing-strength measurement or promotion follows. The toy is named **Drowsy
+Chen**; **Catnip Chen** remains the ambitious batched-search design. Saved browser
+games migrate the old toy identifier to Drowsy on reload.
 
 The requested [fresh CPU one-second evaluation](../harness/cpu-rating-current-2026-10-03.md)
 is now closed and independently audited: 64 games, 32 complete pairs, 5810 legal
