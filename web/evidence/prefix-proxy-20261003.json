@@ -1,0 +1,16 @@
+{
+  "scope": "HTTP prefix-stripping proxy and relative resource/API paths; not browser layout QA",
+  "prefix": "/games/play-with-chen/",
+  "bare_path_redirect": 308,
+  "assets": [
+    "style.css",
+    "app.js",
+    "chen.svg"
+  ],
+  "native_engine_reply": [
+    "b1c3"
+  ],
+  "nodes": 128,
+  "revision": "0a77042",
+  "status": "PASS"
+}

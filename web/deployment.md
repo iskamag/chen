@@ -1,7 +1,8 @@
 # Proxy the browser site back to this machine
 
-Deployment preparation only: no service, public DNS, tunnel, or remote host is
-changed by this checkout. The server performs real native Chen searches on the
+Chosen URL: **https://iskamag.com/games/play-with-chen/**. The bare path should
+redirect to its trailing-slash form so browser assets and API requests resolve
+inside the prefix. No service, tunnel, or remote host is changed by this checkout. The server performs real native Chen searches on the
 machine running it. A reverse proxy forwards both the board assets and API.
 
 1. Build and run on the engine machine:
@@ -20,18 +21,34 @@ machine running it. A reverse proxy forwards both the board assets and API.
    ```
 
 3. On the public host, merge the following into a Caddy configuration using the
-   actual chosen hostname. The tunnel binds to loopback, so searches remain behind
+   existing `iskamag.com` site. The tunnel binds to loopback, so searches remain behind
    the proxy rather than exposing the engine port publicly.
 
    ```caddyfile
-   chen.example.com {
+   # Merge these routes into the existing iskamag.com site.
+   redir /games/play-with-chen /games/play-with-chen/ 308
+   handle_path /games/play-with-chen/* {
        reverse_proxy 127.0.0.1:18787
    }
    ```
 
    When proxy and engine run on the same host, use `127.0.0.1:8787` instead.
-   Configure HTTPS on the proxy. Use a dedicated hostname with the app at `/`;
-   this prototype's asset/API paths are absolute.
+   Configure HTTPS on the proxy. `handle_path` strips the public prefix before
+   forwarding; assets and browser API calls are relative to the trailing-slash URL.
+   Local hosting at `/` continues to work.
+
+   Equivalent locations for an existing Nginx HTTPS server:
+
+   ```nginx
+   location = /games/play-with-chen {
+       return 308 /games/play-with-chen/;
+   }
+   location ^~ /games/play-with-chen/ {
+       proxy_pass http://127.0.0.1:18787/;
+       proxy_http_version 1.1;
+       proxy_set_header Host $host;
+   }
+   ```
 
 The browser posts to `/api/new` or `/api/move` and receives a job ID immediately.
 It polls `/api/jobs/<id>` until `queued → running → done`; it can cancel with
@@ -47,6 +64,5 @@ excludes queue wait, replay, HTTP transport and TT allocation. Polling does not
 block behind the running engine. Restarting the server forgets pending results,
 while tabs retain their last completed board and can submit a new request.
 
-Public publishing still needs a real hostname, SSH/proxy destination and the
-user's deployment instruction. No existing homepage or server configuration is
-modified by these examples.
+Public publishing uses the selected URL and needs the actual SSH/proxy destination.
+These examples do not modify an existing homepage or server configuration.

@@ -12,7 +12,8 @@ function setBusy(value) {
   if(value) mood('thinking', 'A little wiggle while I think…');
 }
 async function request(path, data) {
-  const response = await fetch(path, data === undefined ? {} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+  const endpoint = path.startsWith('/') ? '.'+path : path;
+  const response = await fetch(endpoint, data === undefined ? {} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   const result = await response.json();
   if (!response.ok) throw new Error(result.error || 'Request failed');
   return result;
@@ -119,7 +120,7 @@ $('cancel').onclick=async()=>{
   $('status').textContent='Search cancelled. Your board is unchanged.';mood('idle','A little breather. We can pounce later.');
   if(id)try{await request('/api/cancel',{id});}catch{}
 };
-fetch('/chen.svg').then(response=>response.text()).then(svg=>{$('avatar').innerHTML=svg;});
+fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').innerHTML=svg;});
 (async()=>{
   try{
     let saved;try{saved=JSON.parse(sessionStorage.getItem('chen-game'));}catch{}

@@ -27,7 +27,8 @@ work; the browser keeps its previous position. Results expire after two minutes.
 
 The server binds to loopback. Set `CHEN_WEB_PORT` to choose another port. Ctrl+C
 stops it. This Linux checkpoint uses `/dev/urandom` for opaque job identifiers.
-For a public host proxying back to this machine, see [deployment.md](deployment.md).
+The intended public path is `https://iskamag.com/games/play-with-chen/`; a proxy
+strips that prefix and forwards to this machine. See [deployment.md](deployment.md).
 
 This crate builds against the current checkout. Rebuild after changing the engine;
 its displayed base revision and tracked-engine dirty suffix are captured at compile
