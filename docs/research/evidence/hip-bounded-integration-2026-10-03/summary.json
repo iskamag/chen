@@ -1,0 +1,28 @@
+{
+  "exhaustive_reference_cases": 19,
+  "focused_rust_mock_tests": 6,
+  "hip_lib_bin_unit_tests": 29,
+  "native_admission_rejections": 4,
+  "native_cancel_response_ms": 1.3485300005413592,
+  "native_deadlines": 4,
+  "native_semantics_cases": 33,
+  "nonhip_lib_bin_unit_tests": 17,
+  "one_second": {
+    "aborted_iteration_nodes": 8034,
+    "aborted_work_fraction": 0.7386227820171003,
+    "attempted_nodes": 10877,
+    "bestmove": "b1c3",
+    "completed_depth": 3,
+    "wall_ms": 1001.648057019338
+  },
+  "runtime": {
+    "hipRuntimeGetVersion": 70253211,
+    "path": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+    "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac"
+  },
+  "rust_uci_cases": 8,
+  "scope": "One scalar worker reference; no NN/no strength/parallel efficiency success; CPU0 match concurrent power/cache uncontrolled",
+  "status": "PASS",
+  "uci_cancel_response_ms": 1.1072009801864624,
+  "wall_clock_khz": 100000
+}

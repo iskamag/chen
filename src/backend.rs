@@ -74,6 +74,49 @@ impl BatchEvaluator for CpuBatchEvaluator {
         })
     }
 }
+/// Per-iteration bounded GPU work, separate from search-value publication.
+#[derive(Clone, Debug, Default)]
+pub struct BoundedIterationStats {
+    pub requested_depth: u32,
+    pub kind: u32,
+    pub abort_reason: u32,
+    pub nodes: u64,
+    pub qnodes: u64,
+    pub elapsed_ticks: u64,
+    pub wall_ms: f64,
+}
+#[derive(Clone, Debug, Default)]
+pub struct BoundedSearchStats {
+    pub bootstrap_nodes: u64,
+    pub history_upload_ms: f64,
+    pub wall_clock_khz: u64,
+    pub scratch_bytes: u64,
+    pub node_limit: u64,
+    pub quiescence: bool,
+    pub completed_depth: u8,
+    pub stop_reason: &'static str,
+    pub iterations: Vec<BoundedIterationStats>,
+}
+impl BoundedSearchStats {
+    #[cfg(feature = "hip")]
+    pub fn to_json(&self) -> String {
+        serde_json::json!({
+            "bootstrap_nodes": self.bootstrap_nodes,
+            "history_upload_ms": self.history_upload_ms,
+            "wall_clock_khz": self.wall_clock_khz,
+            "scratch_bytes": self.scratch_bytes,
+            "node_limit": self.node_limit,
+            "quiescence": self.quiescence,
+            "completed_depth": self.completed_depth,
+            "stop_reason": self.stop_reason,
+            "ordering": "canonical", "tt": false,
+            "iterations": self.iterations.iter().map(|i| serde_json::json!({
+                "requested_depth":i.requested_depth,"kind":i.kind,"abort_reason":i.abort_reason,
+                "nodes":i.nodes,"qnodes":i.qnodes,"elapsed_ticks":i.elapsed_ticks,"wall_ms":i.wall_ms
+            })).collect::<Vec<_>>()
+        }).to_string()
+    }
+}
 /// Search scheduling is independent from the evaluation backend and UCI transport.
 pub trait SearchBackend: Send {
     fn name(&self) -> &str;
@@ -92,6 +135,9 @@ pub trait SearchBackend: Send {
         history: &[u64],
         report: &mut dyn FnMut(&SearchResult),
     ) -> Result<SearchResult, String>;
+    fn bounded_stats(&self) -> Option<BoundedSearchStats> {
+        None
+    }
     fn batch_telemetry(&self) -> BatchTelemetry {
         BatchTelemetry::default()
     }

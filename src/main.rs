@@ -70,7 +70,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -161,6 +161,18 @@ fn make_backend(
                 eval,
                 selective,
             )?))
+        }
+        "hip-bounded" => {
+            #[cfg(all(feature = "hip", target_os = "linux"))]
+            {
+                Ok(Box::new(
+                    chen::hip_bounded::HipBoundedSearch::from_environment(eval, config.quiescence)?,
+                ))
+            }
+            #[cfg(not(all(feature = "hip", target_os = "linux")))]
+            {
+                Err("HIP requires Linux and cargo build --release --features hip".into())
+            }
         }
         "hip-selective" => {
             #[cfg(all(feature = "hip", target_os = "linux"))]
@@ -273,7 +285,7 @@ fn uci() -> Result<(), String> {
                 output("option name Quiescence type check default true");
                 output("option name MoveOrdering type check default true");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective",
+                    "option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded",
                 );
                 output("option name SelectiveBatch type spin default 32 min 1 max 256");
                 output("option name SelectiveCandidates type spin default 1024 min 1 max 1024");
@@ -338,6 +350,7 @@ fn uci() -> Result<(), String> {
                                     | "hip-resident"
                                     | "cpu-selective"
                                     | "hip-selective"
+                                    | "hip-bounded"
                             ) =>
                         {
                             next_backend = value;
@@ -451,10 +464,16 @@ fn uci() -> Result<(), String> {
                             let result =
                                 searcher.search(&mut p, limits, &h, &mut |r| output(r.uci_info()));
                             match result {
-                                Ok(result) => output(format!(
-                                    "bestmove {}",
-                                    result.best_move.map_or("0000".into(), |m| m.to_string())
-                                )),
+                                Ok(result) => {
+                                    #[cfg(feature = "hip")]
+                                    if let Some(stats) = searcher.bounded_stats() {
+                                        output(format!("info string bounded {}", stats.to_json()));
+                                    }
+                                    output(format!(
+                                        "bestmove {}",
+                                        result.best_move.map_or("0000".into(), |m| m.to_string())
+                                    ));
+                                }
                                 Err(error) => {
                                     output(format!("info string search backend failed: {error}"));
                                     output("bestmove 0000");
@@ -579,6 +598,7 @@ fn bench(args: &[String]) -> Result<(), String> {
     let mut selective_config = SelectiveConfig::default();
     let mut depth = 4;
     let mut node_limit = None;
+    let mut time_limit = None;
     let mut eval = "tapered".to_string();
     let mut suite = "benches/positions.txt".to_string();
     let mut i = 0;
@@ -589,6 +609,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             "--no-ordering" => config.move_ordering = false,
             "--depth"
             | "--nodes"
+            | "--movetime"
             | "--eval"
             | "--suite"
             | "--hash"
@@ -600,6 +621,11 @@ fn bench(args: &[String]) -> Result<(), String> {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
+                    "--movetime" => {
+                        time_limit = Some(std::time::Duration::from_millis(
+                            value.parse::<u64>().map_err(|_| "invalid movetime")?,
+                        ))
+                    }
                     "--nodes" => {
                         node_limit = Some(value.parse::<u64>().map_err(|_| "invalid nodes")?)
                     }
@@ -659,7 +685,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             SearchLimits {
                 depth,
                 nodes: node_limit,
-                time: None,
+                time: time_limit,
             },
             &[],
             &mut |_| {},
@@ -673,6 +699,12 @@ fn bench(args: &[String]) -> Result<(), String> {
             "{{\"mode\":{},\"max_cached_shapes\":{},\"retained_budget_bytes\":{},\"first_used\":{},\"cached_shapes\":{},\"hits\":{},\"misses\":{},\"captures\":{},\"evictions\":{},\"retained_pool_bytes\":{},\"staging_logical_bytes\":{},\"peak_observed_pool_bytes\":{},\"capture_wall_ms\":{}}}",
             json_string(s.mode), s.max_cached_shapes, s.retained_budget_bytes, s.first_used, s.cached_shapes, s.hits, s.misses, s.captures, s.evictions, s.retained_pool_bytes, s.staging_logical_bytes, s.peak_observed_pool_bytes, s.capture_wall_ms
         ));
+        #[cfg(feature = "hip")]
+        let bounded = searcher
+            .bounded_stats()
+            .map_or_else(|| "null".to_owned(), |s| s.to_json());
+        #[cfg(not(feature = "hip"))]
+        let bounded = "null";
         let selective = result.selective.map_or_else(|| "null".to_owned(), |s| format!(
             "{{\"abi_version\":{},\"struct_size\":{},\"batch_leaves\":{},\"candidate_limit\":{},\"arena_positions\":{},\"classified_positions\":{},\"evaluated_positions\":{},\"completed_steps\":{},\"expanded_leaves\":{},\"open_frontier_leaves\":{},\"last_selected\":{},\"last_added\":{},\"kernel_ms\":{},\"minimum_frontier_depth\":{},\"maximum_frontier_depth\":{},\"pv_depth\":{},\"root_flags\":{},\"stop_reason\":{}}}",
             s.abi_version, s.struct_size, selective_config.batch_leaves, selective_config.candidate_limit,
@@ -681,7 +713,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -696,9 +728,11 @@ fn bench(args: &[String]) -> Result<(), String> {
             evaluator_artifact,
             execution,
             selective,
+            bounded,
+            time_limit.map_or_else(|| "null".to_owned(), |t| t.as_millis().to_string()),
             node_limit.map_or_else(|| "null".to_owned(), |n| n.to_string()),
             config.tt && backend_name == "alphabeta",
-            config.quiescence && backend_name == "alphabeta",
+            config.quiescence && matches!(backend_name.as_str(), "alphabeta" | "hip-bounded"),
             config.move_ordering && backend_name == "alphabeta",
             if backend_name == "alphabeta" {
                 config.hash_mb
