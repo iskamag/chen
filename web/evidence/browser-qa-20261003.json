@@ -1,0 +1,28 @@
+{
+  "played": {
+    "status": "Your move.",
+    "moves": "1.e2e4b8c6",
+    "telemetry": "Depth 7 · 1,325,568 nodes · 1325k nodes/s · 1000 ms search · 0 ms queue",
+    "mood": "idle"
+  },
+  "independent": "The board is all yours.",
+  "black": {
+    "status": "Your move.",
+    "moves": "1.b1c3"
+  },
+  "geometry": {
+    "width": 390,
+    "scrollWidth": 390,
+    "board": {
+      "x": 18,
+      "y": 173.296875,
+      "width": 354,
+      "height": 354,
+      "top": 173.296875,
+      "right": 372,
+      "bottom": 527.296875,
+      "left": 18
+    }
+  },
+  "pageErrors": []
+}

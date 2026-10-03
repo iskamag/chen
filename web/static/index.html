@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Chen — a little chess mischief</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<main>
+  <header><div id="avatar" aria-label="Animated Chen, a catgirl in a green chess cap"></div><div><p class="eyebrow">A LITTLE CHESS MISCHIEF</p><h1>Play with Chen.</h1><p class="intro" id="chen-says" aria-live="polite">Two tails. One board. Your move.</p></div></header>
+  <div class="layout">
+    <section class="play" aria-label="Chess game"><div class="board-top"><span id="opponent">Chen · Black</span><span id="thinking" aria-live="polite">Ready to pounce</span></div><div id="board" class="board" aria-label="Chess board"></div><div class="board-bottom"><strong id="player">You · White</strong><button id="flip" class="quiet">Flip board ↻</button></div><p id="status" role="status" aria-live="polite"></p><button id="cancel" class="quiet" hidden>Cancel this search</button></section>
+    <aside>
+      <form id="setup"><p class="eyebrow">SET THE PACE</p><h2>A fresh little duel</h2><label>Your side<select id="side"><option value="white">White — you move first</option><option value="black">Black — Chen moves first</option></select></label><label>Chen's time per move<select id="time"><option value="100">0.1 seconds · quick paws</option><option value="500">0.5 seconds</option><option value="1000" selected>1 second</option><option value="3000">3 seconds · a little patience</option><option value="5000">5 seconds</option></select></label><label class="level-label">Resource level <output id="level-value">20</output><input id="level" type="range" min="1" max="20" value="20"></label><p class="hint">Lower levels get smaller depth and node budgets. Levels aren't ratings.</p><details class="limits"><summary>Optional search limits</summary><label>Maximum completed depth<input id="depth" type="number" min="1" max="64" placeholder="Uncapped (up to 64)"></label><label>Maximum nodes<input id="nodes" type="number" min="1" max="20000000" placeholder="Uncapped"></label></details><button class="primary" type="submit">New game ↗</button></form>
+      <section class="record"><p class="eyebrow">PAWPRINTS</p><div id="moves" class="moves">The board is all yours.</div></section>
+      <details><summary>Under the cap</summary><p>Native Chen CPU search, tapered evaluation, PVS enabled. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.</p><p id="telemetry">No search yet.</p><p id="revision"></p><button id="copy" class="quiet">Copy current FEN</button></details>
+    </aside>
+  </div>
+  <footer>Chen is an independent chess experiment. Character inspiration: Touhou Project, © Team Shanghai Alice.</footer>
+</main>
+<dialog id="promotion"><form method="dialog"><h2>What shall your pawn become?</h2><div id="promotion-choices"></div><button value="cancel" class="quiet">Cancel</button></form></dialog>
+</body></html>
