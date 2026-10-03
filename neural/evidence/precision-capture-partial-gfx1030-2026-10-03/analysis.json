@@ -1,0 +1,361 @@
+{
+  "captured_own_eager_checks": {
+    "changed_inputs_checked": true,
+    "checks": 30,
+    "exact": true,
+    "graphs": 15,
+    "original_inputs_restored_before_timing": true
+  },
+  "cold_setup_scope": "3warmups+synchronization+capture; separate input checks excluded from reported cold setup, no cold compilation latency claim",
+  "completed_checkpoints": [
+    "square/20261021"
+  ],
+  "declaration_sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f",
+  "device_retirement": {
+    "child_pgid": 8939,
+    "exclusive_device_released": true,
+    "owned_proc_scan": "absent",
+    "watchdog_pid": 8933
+  },
+  "failure": {
+    "cause": "features.new_tensor(Pythonconstant) copies a host constant to device inside captured forward",
+    "encoder": "relation",
+    "message": "HIP operation not permitted when stream is capturing",
+    "source": "neural/models.py::ChessLatent.attack_edges",
+    "stage": "first_graph_capture"
+  },
+  "fidelity": {
+    "int8_fused": {
+      "changed_fp32_best_second_gaps_cp": [],
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 7.449554443359375,
+        "mean_absolute": 2.0414323295134844,
+        "mean_squared": 6.632221806714463
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.04430270195007324,
+        "mean_absolute": 0.00847423030663074,
+        "mean_squared": 0.00011372360997421611
+      },
+      "roots": 0
+    },
+    "native_fp16_affine": {
+      "changed_fp32_best_second_gaps_cp": [],
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 0.22159957885742188,
+        "mean_absolute": 0.05123497078858732,
+        "mean_squared": 0.003949482097838058
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.0019825398921966553,
+        "mean_absolute": 0.0003633831006618688,
+        "mean_squared": 2.2855475994953727e-07
+      },
+      "roots": 0
+    },
+    "torch_autocast_fp16": {
+      "changed_fp32_best_second_gaps_cp": [],
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 0.3361663818359375,
+        "mean_absolute": 0.0667926459992904,
+        "mean_squared": 0.006993721996717827
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.0030574798583984375,
+        "mean_absolute": 0.0005100498209775389,
+        "mean_squared": 4.225997423475048e-07
+      },
+      "roots": 0
+    },
+    "torch_fp16_affine": {
+      "changed_fp32_best_second_gaps_cp": [],
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 0.338470458984375,
+        "mean_absolute": 0.06224762549216144,
+        "mean_squared": 0.006027115303063726
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.0029053688049316406,
+        "mean_absolute": 0.0004821092021739502,
+        "mean_squared": 3.769694001074691e-07
+      },
+      "roots": 0
+    }
+  },
+  "kind": "chen_precision_capture_partial_v1",
+  "scope": "one square checkpoint TRAIN numerical fidelity and fixed-shape eager/capture timings; no completed transition or remaining encoder claim; no learning/calibration/heldout/quality/promotion",
+  "status": "terminal_failure_with_one_completed_checkpoint",
+  "timings": {
+    "1": {
+      "cold_setup_wall_ms": {
+        "fp32_value": 7.89241399616003,
+        "int8_fused": 9.45421401411295,
+        "native_fp16_affine": 4.649752983823419,
+        "torch_autocast_fp16": 4.589411983033642,
+        "torch_fp16_affine": 7.908593979664147
+      },
+      "medians": {
+        "fp32_value": {
+          "eager": {
+            "event_us": 558.7314414978027,
+            "synchronized_wall_us": 560.0437597604468
+          },
+          "graph_replay": {
+            "event_us": 153.85806560516357,
+            "synchronized_wall_us": 154.70957005163655
+          },
+          "resident_copy_graph": {
+            "event_us": 147.1828269958496,
+            "synchronized_wall_us": 147.86087005631998
+          }
+        },
+        "int8_fused": {
+          "eager": {
+            "event_us": 739.3197250366211,
+            "synchronized_wall_us": 740.4439500533044
+          },
+          "graph_replay": {
+            "event_us": 127.82304763793945,
+            "synchronized_wall_us": 128.63726034993306
+          },
+          "resident_copy_graph": {
+            "event_us": 143.0215883255005,
+            "synchronized_wall_us": 143.97607010323554
+          }
+        },
+        "native_fp16_affine": {
+          "eager": {
+            "event_us": 757.8302764892578,
+            "synchronized_wall_us": 758.5655598086305
+          },
+          "graph_replay": {
+            "event_us": 169.2146110534668,
+            "synchronized_wall_us": 170.2287798980251
+          },
+          "resident_copy_graph": {
+            "event_us": 180.21187782287598,
+            "synchronized_wall_us": 181.41198001103476
+          }
+        },
+        "torch_autocast_fp16": {
+          "eager": {
+            "event_us": 702.2629928588867,
+            "synchronized_wall_us": 703.3895497443154
+          },
+          "graph_replay": {
+            "event_us": 260.2153778076172,
+            "synchronized_wall_us": 261.1740300199017
+          },
+          "resident_copy_graph": {
+            "event_us": 250.45367240905762,
+            "synchronized_wall_us": 251.33082031970844
+          }
+        },
+        "torch_fp16_affine": {
+          "eager": {
+            "event_us": 728.8796615600586,
+            "synchronized_wall_us": 729.9859600607306
+          },
+          "graph_replay": {
+            "event_us": 178.7742805480957,
+            "synchronized_wall_us": 179.81487995712087
+          },
+          "resident_copy_graph": {
+            "event_us": 176.57145500183105,
+            "synchronized_wall_us": 177.31838976033032
+          }
+        }
+      }
+    },
+    "256": {
+      "cold_setup_wall_ms": {
+        "fp32_value": 4.364811989944428,
+        "int8_fused": 4.398601973662153,
+        "native_fp16_affine": 4.677122022258118,
+        "torch_autocast_fp16": 4.539012006716803,
+        "torch_fp16_affine": 4.740312986541539
+      },
+      "medians": {
+        "fp32_value": {
+          "eager": {
+            "event_us": 603.729419708252,
+            "synchronized_wall_us": 604.8500901670195
+          },
+          "graph_replay": {
+            "event_us": 563.8890647888184,
+            "synchronized_wall_us": 564.9061698932201
+          },
+          "resident_copy_graph": {
+            "event_us": 563.7182807922363,
+            "synchronized_wall_us": 565.4113800846972
+          }
+        },
+        "int8_fused": {
+          "eager": {
+            "event_us": 755.329475402832,
+            "synchronized_wall_us": 756.3125601154752
+          },
+          "graph_replay": {
+            "event_us": 729.8553085327148,
+            "synchronized_wall_us": 731.4111397136003
+          },
+          "resident_copy_graph": {
+            "event_us": 731.5124893188477,
+            "synchronized_wall_us": 732.8112600953318
+          }
+        },
+        "native_fp16_affine": {
+          "eager": {
+            "event_us": 707.5350570678711,
+            "synchronized_wall_us": 708.51843978744
+          },
+          "graph_replay": {
+            "event_us": 625.0775527954102,
+            "synchronized_wall_us": 626.175100042019
+          },
+          "resident_copy_graph": {
+            "event_us": 626.7035865783691,
+            "synchronized_wall_us": 628.0518000130542
+          }
+        },
+        "torch_autocast_fp16": {
+          "eager": {
+            "event_us": 733.3468627929688,
+            "synchronized_wall_us": 734.609339851886
+          },
+          "graph_replay": {
+            "event_us": 671.5743637084961,
+            "synchronized_wall_us": 672.8115200530738
+          },
+          "resident_copy_graph": {
+            "event_us": 675.6096267700195,
+            "synchronized_wall_us": 677.1733198547736
+          }
+        },
+        "torch_fp16_affine": {
+          "eager": {
+            "event_us": 689.1225814819336,
+            "synchronized_wall_us": 689.902720041573
+          },
+          "graph_replay": {
+            "event_us": 636.6120529174805,
+            "synchronized_wall_us": 637.9242101684213
+          },
+          "resident_copy_graph": {
+            "event_us": 640.0985145568848,
+            "synchronized_wall_us": 641.2825000006706
+          }
+        }
+      }
+    },
+    "32": {
+      "cold_setup_wall_ms": {
+        "fp32_value": 3.6158119910396636,
+        "int8_fused": 4.222161980578676,
+        "native_fp16_affine": 4.406352003570646,
+        "torch_autocast_fp16": 4.164621990639716,
+        "torch_fp16_affine": 4.665842017857358
+      },
+      "medians": {
+        "fp32_value": {
+          "eager": {
+            "event_us": 511.9002342224121,
+            "synchronized_wall_us": 513.0214398377575
+          },
+          "graph_replay": {
+            "event_us": 185.58833122253418,
+            "synchronized_wall_us": 186.35658983839676
+          },
+          "resident_copy_graph": {
+            "event_us": 181.7615032196045,
+            "synchronized_wall_us": 182.49389017000794
+          }
+        },
+        "int8_fused": {
+          "eager": {
+            "event_us": 745.0705718994141,
+            "synchronized_wall_us": 746.0624596569687
+          },
+          "graph_replay": {
+            "event_us": 199.21883583068848,
+            "synchronized_wall_us": 200.38739021401852
+          },
+          "resident_copy_graph": {
+            "event_us": 196.2160301208496,
+            "synchronized_wall_us": 197.1489901188761
+          }
+        },
+        "native_fp16_affine": {
+          "eager": {
+            "event_us": 775.4840087890625,
+            "synchronized_wall_us": 776.4449703972787
+          },
+          "graph_replay": {
+            "event_us": 222.24984169006348,
+            "synchronized_wall_us": 223.10040978481993
+          },
+          "resident_copy_graph": {
+            "event_us": 227.763090133667,
+            "synchronized_wall_us": 228.74211019370705
+          }
+        },
+        "torch_autocast_fp16": {
+          "eager": {
+            "event_us": 691.1197471618652,
+            "synchronized_wall_us": 692.1604301896878
+          },
+          "graph_replay": {
+            "event_us": 248.9064598083496,
+            "synchronized_wall_us": 249.60871989605948
+          },
+          "resident_copy_graph": {
+            "event_us": 249.8660659790039,
+            "synchronized_wall_us": 250.70062023587525
+          }
+        },
+        "torch_fp16_affine": {
+          "eager": {
+            "event_us": 711.7279052734375,
+            "synchronized_wall_us": 712.7990300068632
+          },
+          "graph_replay": {
+            "event_us": 209.99255180358887,
+            "synchronized_wall_us": 210.69590002298355
+          },
+          "resident_copy_graph": {
+            "event_us": 212.5285530090332,
+            "synchronized_wall_us": 213.40289997169748
+          }
+        }
+      }
+    }
+  },
+  "watchdog": {
+    "child_pid": 8939,
+    "child_retired": true,
+    "elapsed_seconds": 22.104096879978897,
+    "exitcode": 1,
+    "interrupted_signal": null,
+    "no_retry": true,
+    "status": "terminal",
+    "stderr_sha256": "3574ee2cebb98c88e69b1be97320dda5d1e6c3de78ffe445ee6fd3fe031de05c",
+    "stdout_sha256": "a2265aaff74e0c3078b5155ef6ad75ea69cca2bc00cc98838b181b30c60c192e",
+    "timed_out": false
+  }
+}

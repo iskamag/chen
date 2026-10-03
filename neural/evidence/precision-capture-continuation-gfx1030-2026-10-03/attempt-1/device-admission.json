@@ -1,0 +1,28 @@
+{
+  "accumulation": "native FDOT2 FP32; Torch output FP16 and reduced_precision_reduction disabled",
+  "device": {
+    "architecture": "gfx1030",
+    "name": "AMD Radeon Graphics",
+    "override": false,
+    "rocm_build": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "native_half": {
+    "Npad": 32,
+    "accumulation": "FP32_FDOT2_four_accumulators",
+    "bias": "FP32",
+    "library_path": "/tmp/chen-precision-continuation-20261003.NGmYzRH1/lib/libchen_float_linear.so",
+    "library_sha256": "428541f4da764777ed10ea5b07550d7d356e0f1c402578999717ea15cd17278d",
+    "output": "FP32",
+    "source_path": "/tmp/chen-precision-continuation-20261003.NGmYzRH1/native/float_linear_reference.hip",
+    "source_sha256": "ab2e4161c6a8035ef7f8b14a1e0a96c2e6f2b80b78eb131b87aa116a898a4346",
+    "wave": 32
+  },
+  "runtime": {
+    "hipRuntimeGetVersion": 70051831,
+    "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "symbol": "hipRuntimeGetVersion",
+    "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so"
+  }
+}

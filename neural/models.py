@@ -71,6 +71,7 @@ class ChessLatent(nn.Module):
         self.register_buffer("geometry", self._geometry())
         self.register_buffer("attack_patterns", self._attack_patterns())
         self.register_buffer("between", self._between())
+        self.register_buffer("sliding_mask", torch.tensor([0, 0, 1, 1, 1, 0] * 2).float(), persistent=False)
         self.register_buffer("next_orientation", torch.arange(64) ^ 56)
 
     @staticmethod
@@ -113,7 +114,7 @@ class ChessLatent(nn.Module):
         rays = torch.einsum("bs,ijs->bij", pieces.sum(1), self.between)
         open_rays = (rays == 0).to(features.dtype)
         patterns = self.attack_patterns.to(features.dtype).unsqueeze(0)
-        sliding = features.new_tensor([0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0]).view(1, 12, 1, 1)
+        sliding = self.sliding_mask.to(features.dtype).view(1, 12, 1, 1)
         patterns = patterns * ((1 - sliding) + sliding * open_rays[:, None])
         return torch.einsum("bps,bpst->bst", pieces, patterns)
 

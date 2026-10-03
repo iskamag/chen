@@ -1,0 +1,14 @@
+{
+  "CPU_fixture_tests": 11,
+  "GPU_calls_started": false,
+  "declaration_sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f",
+  "files": {
+    "docs/PRECISION_CAPTURE.md": "6907925a44430d2966a3c9fd8a487b81ecb312144e337baf4cdf6ba6c630294a",
+    "neural/precision_inference.py": "9319e2dfc58e5fc2b7f2ef2ad12079f144b5d7d5643c8ce8f8e4de8b9e1e20fb",
+    "neural/profile_precision_capture.py": "783484352005541be955c0d1aae06bbfbb5646c117de537274db254ca079d418",
+    "neural/tests/test_precision_inference.py": "9e925119dc253992b4864a0d9785c6d340557ffecc689c0e1ce8d321223f4f5f"
+  },
+  "kind": "chen_precision_capture_source_freeze_v1",
+  "runtime": "/tmp/chen-precision-capture-20261003.7ao0nMLy",
+  "source_only": true
+}

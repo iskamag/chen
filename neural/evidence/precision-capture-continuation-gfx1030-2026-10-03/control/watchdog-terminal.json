@@ -1,0 +1,12 @@
+{
+  "child_pid": 9040,
+  "child_retired": true,
+  "elapsed_seconds": 86.26209143301821,
+  "exitcode": 0,
+  "interrupted_signal": null,
+  "no_retry": true,
+  "status": "terminal",
+  "stderr_sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4",
+  "stdout_sha256": "358eb26d601925a144edec2df51cfdd65b4cba9b37b0f2ef9efaf259cc82bf20",
+  "timed_out": false
+}

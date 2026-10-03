@@ -1,0 +1,45 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/profile_precision_capture.py", line 232, in <module>
+    run(args.declaration, args.sha256, args.output)
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/profile_precision_capture.py", line 207, in run
+    row['timings'][str(count)] = routes(calls, features, None, config, deadline, alternate)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/profile_precision_capture.py", line 89, in routes
+    graphs[name] = StaticCapturedInference(calls[name], features, actions, warmups=config['warmups'])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/precision_inference.py", line 180, in __init__
+    self.outputs = call(self.features, self.actions)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/profile_precision_capture.py", line 194, in <lambda>
+    calls = {name:(lambda features, actions, name=name:forward(models[name], features, actions, control,
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/profile_precision_capture.py", line 29, in forward
+    return model(features) if actions is None else study.branch(model, control, features, actions)
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/semantic_strategy.py", line 162, in forward
+    return self.decode(self.encode(features), features[:, :12])
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/semantic_strategy.py", line 142, in encode
+    objects = self.base.encode(features)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/models.py", line 128, in encode
+    attacks = self.attack_edges(features)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-precision-capture-20261003.7ao0nMLy/neural-worktree/neural/models.py", line 116, in attack_edges
+    sliding = features.new_tensor([0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0]).view(1, 12, 1, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: HIP error: operation not permitted when stream is capturing
+Search for `hipErrorStreamCaptureUnsupported' in https://rocm.docs.amd.com/projects/HIP/en/latest/index.html for more information.
+HIP kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing AMD_SERIALIZE_KERNEL=3
+Compile with `TORCH_USE_HIP_DSA` to enable device-side assertions.
+

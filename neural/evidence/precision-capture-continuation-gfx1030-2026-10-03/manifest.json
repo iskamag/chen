@@ -1,0 +1,201 @@
+{
+  "kind": "chen_precision_capture_continuation_archive_v1",
+  "payloads": {
+    "CPU-import-closure.stderr.log": {
+      "bytes": 63,
+      "sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    },
+    "CPU-import-closure.stdout.log": {
+      "bytes": 370,
+      "sha256": "a86f46e6366ea8c0cdb099f33956c311e3c17e67fc9d540c93bc0b6f3cf02fb7"
+    },
+    "CPU-tests.log": {
+      "bytes": 3002,
+      "sha256": "576ea9ae24256a3ced3b152df2fddcdea1493c318d88e52ec80b701249f4d367"
+    },
+    "README.md": {
+      "bytes": 1708,
+      "sha256": "22ecc3e576fec71ea770d663f86ac3912037f48eea8ea47750a7c09ba5454779"
+    },
+    "analysis.json": {
+      "bytes": 46491,
+      "sha256": "575053bfb80359ef35f56ea7ef88a3e1b8aa0b11c6fe9e4786cc30ada2add81e"
+    },
+    "analyze.py": {
+      "bytes": 4790,
+      "sha256": "822a4c9c36580e92d29d9f7d7d34b8958032799fa7fccf8b223d006ee8e807e9"
+    },
+    "attempt-1/anchor-plan-20261021.json": {
+      "bytes": 59537,
+      "sha256": "57e3d888afb81c8f4e1206ae4561f9bf72e63a0f929b33c4e692f2b113e0c9ed"
+    },
+    "attempt-1/anchor-relation-20261021.json": {
+      "bytes": 59208,
+      "sha256": "b1e75031c6aa349b86b1b12131cad3446cd2b5df48b358d5d4f72bbe61f78129"
+    },
+    "attempt-1/anchor-threat-20261021.json": {
+      "bytes": 59301,
+      "sha256": "c5c7ebde80d214a35259f92a9bfcd194b24d161f834eae42e8d799e5404f9390"
+    },
+    "attempt-1/complete.json": {
+      "bytes": 307541,
+      "sha256": "e63cddd19937513e9a544cc1a4137d0d87b589fc093a243473a859414734ebf3"
+    },
+    "attempt-1/device-admission.json": {
+      "bytes": 1161,
+      "sha256": "b0604c35b714332a595f6a9e6d783a93bb1b85518e8b0c950e9b7519bdca5f27"
+    },
+    "attempt-1/train-rocm-admission.json": {
+      "bytes": 387,
+      "sha256": "cb3e12a6598b1ff9f3938e92e0e9697aca2f1f06860891af3bb8c3553bedf215"
+    },
+    "attempt-1/transition-plan-conditioned-20261021.json": {
+      "bytes": 23454,
+      "sha256": "914cf52b1a91f19a64779027d789e4b58bde67032b1ce6200f4495cef18b0324"
+    },
+    "attempt-1/transition-relation-conditioned-20261021.json": {
+      "bytes": 23072,
+      "sha256": "c81a530345af52bca1a47456f96ed27e05e57d8d908285c0ac36eacd020f37fa"
+    },
+    "attempt-1/transition-square-conditioned-20261021.json": {
+      "bytes": 22695,
+      "sha256": "025478b1db727be0432d5dfa61bf84efd0e7c327ac29206f20324aafb28574c7"
+    },
+    "attempt-1/transition-threat-conditioned-20261021.json": {
+      "bytes": 23083,
+      "sha256": "f190bc5300593d0276deefaf3fc6026c47a2284f573c9f2038ad8986c3db553f"
+    },
+    "control/declaration.json": {
+      "bytes": 12034,
+      "sha256": "abeb9491083d8b1fc652100de2f75cb4352e865000755a37446a937d3459cd4e"
+    },
+    "control/parent-declaration.json": {
+      "bytes": 10677,
+      "sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f"
+    },
+    "control/parent-square_partial.json": {
+      "bytes": 58839,
+      "sha256": "0ea938f34e05f4a834b38cf1b70b4029401f28cfae3929f4e3f3d25dc16e4011"
+    },
+    "control/parent-terminal.json": {
+      "bytes": 377,
+      "sha256": "52824da34cd151d7590dc4a9f78c6fd0d65c7a922a16aff93e7fa979205dac00"
+    },
+    "control/stderr.log": {
+      "bytes": 63,
+      "sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    },
+    "control/stdout.log": {
+      "bytes": 575,
+      "sha256": "358eb26d601925a144edec2df51cfdd65b4cba9b37b0f2ef9efaf259cc82bf20"
+    },
+    "control/watch-precision.py": {
+      "bytes": 2647,
+      "sha256": "c7593eb21b7883c27ebe94fe1d874c886906a41e8b760835c99cddccd2ce325d"
+    },
+    "control/watchdog-claim.json": {
+      "bytes": 161,
+      "sha256": "042f6e46a54beafca29928e0b2286d4403fe5deb6a3b1f49c6c06754d8aa064b"
+    },
+    "control/watchdog-started.json": {
+      "bytes": 692,
+      "sha256": "73bce7fcf76345eb4bc7df0987ae2c37db642e1bfd082b65bbf687e11cfbb036"
+    },
+    "control/watchdog-terminal.json": {
+      "bytes": 376,
+      "sha256": "d09838df640ecb76a3aa17e221d880fdad6ab358e91ba351b772881de2829d33"
+    },
+    "mechanical-terminal-check.json": {
+      "bytes": 925,
+      "sha256": "6ceead5aca5f508b8b39cecc185dd869bc0b82a1331c3ce1d22b6d7a7d6a1cad"
+    },
+    "result-documentation.md": {
+      "bytes": 7776,
+      "sha256": "05b6e97e9884857520d40057eadc0dcdcee180633544726daf36ba4761ca01d1"
+    },
+    "source-freeze.json": {
+      "bytes": 1159,
+      "sha256": "994eae92f5da0ec560c661620942bc76900db8497ec6239e2ffd245e9fa49250"
+    },
+    "source/docs/PRECISION_CAPTURE.md": {
+      "bytes": 5850,
+      "sha256": "2bd27bb5cc1167519ad1fe3c437c15b628234d8aa6d5589bca962d14c9a756d1"
+    },
+    "source/lib/libchen_float_linear.so": {
+      "bytes": 25232,
+      "sha256": "428541f4da764777ed10ea5b07550d7d356e0f1c402578999717ea15cd17278d"
+    },
+    "source/native/float_linear_reference.hip": {
+      "bytes": 2250,
+      "sha256": "ab2e4161c6a8035ef7f8b14a1e0a96c2e6f2b80b78eb131b87aa116a898a4346"
+    },
+    "source/neural-worktree/neural/diamonds.py": {
+      "bytes": 18005,
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854"
+    },
+    "source/neural-worktree/neural/dynamics.py": {
+      "bytes": 23362,
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc"
+    },
+    "source/neural-worktree/neural/features.py": {
+      "bytes": 4380,
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+    },
+    "source/neural-worktree/neural/int8_inference.py": {
+      "bytes": 17643,
+      "sha256": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9"
+    },
+    "source/neural-worktree/neural/models.py": {
+      "bytes": 11564,
+      "sha256": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f"
+    },
+    "source/neural-worktree/neural/precision_inference.py": {
+      "bytes": 10747,
+      "sha256": "9319e2dfc58e5fc2b7f2ef2ad12079f144b5d7d5643c8ce8f8e4de8b9e1e20fb"
+    },
+    "source/neural-worktree/neural/profile_int8_inference.py": {
+      "bytes": 15562,
+      "sha256": "70a45f0b1f51f1c3ed36aea03bca1d15ae9cca068a7fb2fa2c632c5a3261efc5"
+    },
+    "source/neural-worktree/neural/profile_precision_capture.py": {
+      "bytes": 15897,
+      "sha256": "b9af0cda1aef7ebd9f7dd40eb94ef3cc7cb140046c98e8b0ce1a9a3f92f27dac"
+    },
+    "source/neural-worktree/neural/run_semantic_corpus_study.py": {
+      "bytes": 35900,
+      "sha256": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c"
+    },
+    "source/neural-worktree/neural/score_frames.py": {
+      "bytes": 6675,
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57"
+    },
+    "source/neural-worktree/neural/semantic_corpus_study.py": {
+      "bytes": 32851,
+      "sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da"
+    },
+    "source/neural-worktree/neural/semantic_strategy.py": {
+      "bytes": 24381,
+      "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84"
+    },
+    "source/neural-worktree/neural/strategic_transport.py": {
+      "bytes": 16838,
+      "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f"
+    },
+    "source/neural-worktree/neural/value_heads.py": {
+      "bytes": 10832,
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+    },
+    "source/neural/tests/test_capture_mask.py": {
+      "bytes": 3009,
+      "sha256": "20407e607a464f0ed6b2f18d10ff3c3b5d058dae19766a4bfafa7a130440ae4d"
+    },
+    "source/neural/tests/test_precision_continuation.py": {
+      "bytes": 2393,
+      "sha256": "8238e57cf0dc2b958354ed726b4266f833d7cb0fa3a8defc05ee6bd8fd88d437"
+    },
+    "source/neural/tests/test_precision_inference.py": {
+      "bytes": 2130,
+      "sha256": "9e925119dc253992b4864a0d9785c6d340557ffecc689c0e1ce8d321223f4f5f"
+    }
+  }
+}
