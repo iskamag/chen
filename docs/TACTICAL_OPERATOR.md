@@ -1,18 +1,18 @@
 # Tactical operator mechanics prototype
 
 `neural/tactical_operator.py` implements one sparse recurrent processor over
-piece, square and complete legal-action tokens. It is untrained, has no GPU
-runtime measurement or deployment admission, and has not played a game. The
-CPU fixtures verify arithmetic and interfaces; they do not establish chess
-strength or an algorithmic generalization result.
+piece, square and complete legal-action tokens. It is untrained, has no inference-latency measurement or deployment admission,
+and has not played a game. CPU fixtures verify arithmetic/interfaces; the
+[exact GPU producer](../../chen/docs/GPU_TACTICAL.md) now supplies resident
+observations with an actual width8/steps2 forward/backward check. Neither scope
+establishes chess strength or algorithmic generalization.
 
 ## Supplied evidence and learned computation
 
 `TacticalBatch` contains FP32 piece `[B,P,Cp]` (`1<=P<=32`), square `[B,64,Cs]`
 and legal-action `[B,K,Ca]` features. Feature widths and their schema are
-explicit configuration. The default widths are placeholders for a future
-producer contract, not a claim that the existing native producer emits these
-features. Node IDs concatenate the P piece slots, 64 canonical squares and K
+explicit configuration. The default widths match the versioned `chen_tactical_exact_v1` CPU and native
+producer schema; callers must select that schema explicitly in configuration. Node IDs concatenate the P piece slots, 64 canonical squares and K
 action slots. `piece_squares[B,P]` binds object slots to canonical squares.
 Piece identities are packet-local; persistent event memory is not implemented.
 
@@ -99,7 +99,8 @@ Approximate cell work is
 `O(N D^2 + E Ce D + E D)` per iteration, with `N=P+64+K`; input/readout work
 is separate. Source/receiver projections cost N D^2, not E D^2. This is an
 operation model, not measured latency. Sparse edge-expanded tensors still have
-storage O(E D), and scatter max/min gradients and GPU support are unmeasured.
+storage O(E D), and scatter max/min gradients were checked on actual gfx1030 at width8/steps2; measured inference cost remains
+open for useful learned shapes.
 
 ## Evidence and next boundary
 
@@ -112,9 +113,13 @@ are checked without host scalar extraction. No optimizer steps are performed.
 
 The [exact CPU replay adapter](TACTICAL_INPUTS.md) now supplies complete sparse
 relations, action effects and causal material priors under a versioned schema.
-Its compact topology words match the independent native ABI, but device-side
-tensor emission and joint state/history/action ownership remain an integration
-boundary. Next work requires a declared teacher/data protocol and bounded learning study. First train
+Its compact topology words match the independent native ABI.
+`neural/native_tactical.py` now constructs an owned `TacticalBatch` directly
+from native arena storage, with exact state/history/action/epoch admission and
+terminal sidecars. This synchronous correctness bridge allocates output tensors;
+it does not claim captured or allocation-free inference. The
+[closed exchange targets](EXCHANGE_TARGETS.md) supply a separately typed
+restricted task for the next learning study. First train
 this processor and the static exact-child reference, with trace-loss and
 recurrence controls. Persistent move-event memory and learned search-aware
 refresh are extensions of this same processor after a quality signal, not
