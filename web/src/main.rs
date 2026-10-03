@@ -1,3 +1,5 @@
+use chen::backend::SearchBackend;
+use chen::catnip::{CatnipConfig, CatnipSearch};
 use chen::strength::{BudgetStrength, StrengthPolicy};
 use chen::{Color, Position, SearchConfig, SearchLimits, Searcher, Tapered};
 use serde_json::{Value, json};
@@ -13,6 +15,40 @@ use std::{
     time::{Duration, Instant},
 };
 
+enum WebSearch {
+    Serious(Box<Searcher>),
+    Catnip(Box<CatnipSearch>),
+}
+impl WebSearch {
+    fn stop_handle(&self) -> Arc<AtomicBool> {
+        match self {
+            Self::Serious(searcher) => searcher.stop_handle(),
+            Self::Catnip(searcher) => searcher.stop_handle(),
+        }
+    }
+    fn search(
+        &mut self,
+        position: &mut Position,
+        limits: SearchLimits,
+        history: &[u64],
+    ) -> Result<chen::SearchResult, String> {
+        match self {
+            Self::Serious(searcher) => Ok(searcher.search(position, limits, history, |_| {})),
+            Self::Catnip(searcher) => searcher.search(position, limits, history, &mut |_| {}),
+        }
+    }
+    fn catnip_stats(&self) -> Value {
+        match self {
+            Self::Serious(_) => Value::Null,
+            Self::Catnip(searcher) => {
+                let stats = searcher.stats();
+                json!({"ignored_boring":stats.ignored_boring, "fail_meow":stats.fail_meow,
+                    "fail_zoomies":stats.fail_zoomies, "noticed_drift":stats.noticed_drift,
+                    "deepest_ply":stats.deepest_ply, "peak_walkers":stats.peak_walkers})
+            }
+        }
+    }
+}
 struct Game {
     position: Position,
     history: Vec<u64>,
@@ -22,7 +58,10 @@ struct Game {
     milliseconds: u64,
     depth_limit: u8,
     node_limit: Option<u64>,
-    searcher: Searcher,
+    backend: &'static str,
+    delta_cp: i32,
+    theta: f32,
+    searcher: WebSearch,
     telemetry: Value,
 }
 impl Game {
@@ -36,13 +75,16 @@ impl Game {
             milliseconds: 1000,
             depth_limit: 64,
             node_limit: None,
-            searcher: Searcher::new(
+            backend: "serious",
+            delta_cp: 80,
+            theta: 0.55,
+            searcher: WebSearch::Serious(Box::new(Searcher::new(
                 Box::new(Tapered),
                 SearchConfig {
                     pvs: true,
                     ..Default::default()
                 },
-            ),
+            ))),
             telemetry: Value::Null,
         }
     }
@@ -83,9 +125,9 @@ impl Game {
         self.moves.push(mv.to_string());
         self.position.make_move(mv);
     }
-    fn reply(&mut self) {
+    fn reply(&mut self) -> Result<(), String> {
         if self.position.side_to_move() == self.human || self.outcome().is_some() {
-            return;
+            return Ok(());
         }
         let limits = BudgetStrength::new(self.level)
             .unwrap()
@@ -96,13 +138,15 @@ impl Game {
             });
         let result = self
             .searcher
-            .search(&mut self.position, limits, &self.history, |_| {});
+            .search(&mut self.position, limits, &self.history)?;
         self.telemetry = json!({ "depth": result.depth, "nodes": result.nodes,
             "nps": result.nps(), "ms": result.elapsed.as_millis(),
-            "pv": result.pv.iter().map(ToString::to_string).collect::<Vec<_>>() });
+            "pv": result.pv.iter().map(ToString::to_string).collect::<Vec<_>>(),
+            "catnip": self.searcher.catnip_stats() });
         if let Some(mv) = result.best_move {
             self.push(mv);
         }
+        Ok(())
     }
     fn state(&self) -> Value {
         let pieces: Vec<_> = (0..64)
@@ -123,7 +167,8 @@ impl Game {
             "human": if self.human == Color::White { "white" } else { "black" },
             "check": self.position.is_in_check(self.position.side_to_move()),
             "outcome": self.outcome(), "moves": self.moves, "telemetry": self.telemetry,
-            "revision": env!("CHEN_REVISION"), "level": self.level, "milliseconds": self.milliseconds, "depth_limit": self.depth_limit, "node_limit": self.node_limit })
+            "revision": env!("CHEN_REVISION"), "level": self.level, "milliseconds": self.milliseconds, "depth_limit": self.depth_limit, "node_limit": self.node_limit,
+            "backend": self.backend, "delta_cp": self.delta_cp, "theta": self.theta })
     }
     fn from_request(path: &str, data: Value) -> Result<Self, String> {
         let mut game = Self::new();
@@ -156,6 +201,32 @@ impl Game {
                     .ok_or("Nodes must be 1–20000000")?,
             ),
         };
+        game.backend = match data["backend"].as_str() {
+            None | Some("serious") => "serious",
+            Some("catnip") => "catnip",
+            _ => return Err("Backend must be serious or catnip".into()),
+        };
+        game.delta_cp = match data.get("delta_cp") {
+            None => 80,
+            Some(value) => value
+                .as_i64()
+                .filter(|n| (0..=1000).contains(n))
+                .ok_or("Catnip drift must be 0–1000 cp")? as i32,
+        };
+        game.theta = match data.get("theta") {
+            None => 0.55,
+            Some(value) => value
+                .as_f64()
+                .filter(|n| n.is_finite() && (0.0..=1.0).contains(n))
+                .ok_or("Catnip attention must be 0–1")? as f32,
+        };
+        if game.backend == "catnip" {
+            game.searcher = WebSearch::Catnip(Box::new(CatnipSearch::new(CatnipConfig {
+                delta_cp: game.delta_cp,
+                theta: game.theta,
+                ..Default::default()
+            })?));
+        }
         if path == "/api/new" {
             return Ok(game);
         }
@@ -217,7 +288,13 @@ fn worker(receiver: mpsc::Receiver<Job>, jobs: Jobs, queued: Arc<AtomicUsize>) {
             jobs.lock().unwrap().get_mut(&job.id).unwrap().status =
                 json!({"phase":"running", "queue_ms":queue_ms});
             // Search's own timer starts inside Searcher::search, after dequeue and history replay.
-            job.game.reply();
+            if let Err(error) = job.game.reply() {
+                if let Some(entry) = jobs.lock().unwrap().get_mut(&job.id) {
+                    entry.status = json!({"phase":"error", "error":error});
+                    entry.finished = true;
+                }
+                continue;
+            }
         }
         let result = if stop.load(Ordering::Relaxed) {
             json!({"phase":"cancelled"})

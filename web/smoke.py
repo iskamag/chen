@@ -63,6 +63,8 @@ class ApiSmoke(unittest.TestCase):
         deadline = time.monotonic() + 12
         while time.monotonic() < deadline:
             result = self.call("/api/jobs/" + job)
+            if result["phase"] == "error":
+                self.fail(result["error"])
             if result["phase"] in ("done", "cancelled"):
                 return result
             time.sleep(0.02)
@@ -133,6 +135,28 @@ class ApiSmoke(unittest.TestCase):
                 self.call("/api/cancel", {"id": job})
             for job in jobs:
                 self.assertEqual(self.done(job)["phase"], "cancelled")
+
+    def test_06_catnip_dispatch_controls_and_legal_reply(self):
+        cat = self.done(self.submit(backend="catnip", delta_cp=240,
+            theta=0.75, nodes=128, depth=3))["state"]
+        self.assertEqual(cat["backend"], "catnip")
+        self.assertEqual(cat["delta_cp"], 240)
+        self.assertAlmostEqual(cat["theta"], 0.75)
+        self.assertEqual(len(cat["moves"]), 1)
+        self.assertEqual(cat["side"], "black")
+        self.assertLessEqual(cat["telemetry"]["nodes"], 128)
+        self.assertLessEqual(cat["telemetry"]["catnip"]["deepest_ply"], 3)
+        self.assertIn("fail_meow", cat["telemetry"]["catnip"])
+        self.assertIn("fail_zoomies", cat["telemetry"]["catnip"])
+        distracted = self.done(self.submit(backend="catnip", theta=1, nodes=128))["state"]
+        self.assertGreater(distracted["telemetry"]["catnip"]["ignored_boring"], 0)
+        serious = self.done(self.submit(nodes=128))["state"]
+        self.assertEqual(serious["backend"], "serious")
+        self.assertIsNone(serious["telemetry"]["catnip"])
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.submit(backend="catnip", theta=1.1)
+        self.assertEqual(error.exception.code, 400)
+        error.exception.close()
 
 
 if __name__ == "__main__":

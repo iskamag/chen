@@ -23,7 +23,7 @@ function mood(name, line) {
   $('chen-says').textContent=line;
 }
 function limits() {
-  return {side:$('side').value, level:Number($('level').value), time_ms:Number($('time').value),
+  return {backend:$('backend').value, delta_cp:Number($('delta').value), theta:Number($('theta').value), side:$('side').value, level:Number($('level').value), time_ms:Number($('time').value),
     depth:$('depth').value ? Number($('depth').value) : null,
     nodes:$('nodes').value ? Number($('nodes').value) : null};
 }
@@ -85,8 +85,11 @@ function render() {
   for(let i=0;i<state.moves.length;i+=2){const row=document.createElement('div');row.className='move-row';for(const text of [i/2+1+'.',state.moves[i],state.moves[i+1]||'']){const span=document.createElement('span');span.textContent=text;row.append(span);}$('moves').append(row);}
   $('moves').scrollTop=$('moves').scrollHeight;
   const t=state.telemetry;
-  $('telemetry').textContent=t ? `Depth ${t.depth} · ${t.nodes.toLocaleString()} nodes · ${Math.round(t.nps/1000)}k nodes/s · ${t.ms} ms search · ${Math.round(state.queue_ms||0)} ms queue` : 'No search yet.';
-  $('revision').textContent='Build '+state.revision+' · resource level '+state.level;
+  const horizon=t?.catnip ? `Explored ply ${t.catnip.deepest_ply}` : `Depth ${t?.depth}`;
+  $('telemetry').textContent=t ? `${horizon} · ${t.nodes.toLocaleString()} nodes · ${Math.round(t.nps/1000)}k nodes/s · ${t.ms} ms search · ${Math.round(state.queue_ms||0)} ms queue` : 'No search yet.';
+  if(t?.catnip) $('telemetry').textContent+=` · ${t.catnip.fail_meow} fail-meows · ${t.catnip.fail_zoomies} zoomies · ${t.catnip.ignored_boring} ignored moves`;
+  $('search-description').textContent=state.backend==='catnip' ? 'Catnip Chen: an experimental drifting-score, selective attention search toy. Strength is unmeasured. Search time excludes queue wait.' : 'Native Chen CPU search, tapered evaluation, PVS enabled. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.';
+  $('revision').textContent='Build '+state.revision+' · '+(state.backend==='catnip'?'Catnip':'Serious')+' · resource level '+state.level;
 }
 function capitalize(s){return s[0].toUpperCase()+s.slice(1);}
 async function promotion(moves) {
@@ -103,7 +106,7 @@ async function click(name) {
     if(move==='cancel')return;
     selected=null;setBusy(true);
     const before=state;
-    try{const next=await submit('/api/move',{side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
+    try{const next=await submit('/api/move',{backend:state.backend||'serious',delta_cp:state.delta_cp??80,theta:state.theta??0.55,side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
     setBusy(false);render();return;
   }
   selected=selected===name ? null : (state.legal.some(m=>m.startsWith(name)) ? name : null);render();
@@ -112,6 +115,10 @@ $('setup').onsubmit=async event=>{
   event.preventDefault();if(busy)return;setBusy(true);selected=null;
   try{const next=await submit('/api/new',limits());if(!next)return;state=next;flipped=state.human==='black';save();setBusy(false);react(null,state);render();}catch(error){setBusy(false);$('status').textContent=error.message;mood('idle','A tiny pause. Try again in a moment.');}
 };
+function catnipControls(){ $('catnip-controls').hidden=$('backend').value!=='catnip'; }
+$('backend').onchange=catnipControls;
+$('delta').oninput=()=>{$('delta-value').textContent=$('delta').value;};
+$('theta').oninput=()=>{$('theta-value').textContent=Number($('theta').value).toFixed(2);};
 $('level').oninput=()=>{$('level-value').textContent=$('level').value;};
 $('flip').onclick=()=>{flipped=!flipped;render();};
 $('copy').onclick=async()=>{try{await navigator.clipboard.writeText(state.fen);$('copy').textContent='FEN copied ✓';setTimeout(()=>{$('copy').textContent='Copy current FEN';},1800);}catch{$('status').textContent=state.fen;}};
@@ -125,6 +132,7 @@ fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').inner
   try{
     let saved;try{saved=JSON.parse(sessionStorage.getItem('chen-game'));}catch{}
     state=saved && Array.isArray(saved.moves) && saved.pieces?.length===64 ? saved : await request('/api/state');
+    $('backend').value=state.backend||'serious';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);catnipControls();
     flipped=state.human==='black';$('side').value=state.human;$('level').value=state.level;$('level-value').textContent=state.level;$('time').value=state.milliseconds;
     $('depth').value=state.depth_limit===64?'':state.depth_limit||'';$('nodes').value=state.node_limit||'';render();
   }catch(error){$('status').textContent='Could not connect: '+error.message;}
