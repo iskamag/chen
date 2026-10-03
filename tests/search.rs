@@ -104,6 +104,7 @@ fn full_width_ablations_preserve_scores() {
                     quiescence: q,
                     move_ordering: false,
                     hash_mb: 1,
+                    ..SearchConfig::default()
                 },
             );
             for (tt, ordering) in [(true, false), (false, true), (true, true)] {
@@ -115,6 +116,7 @@ fn full_width_ablations_preserve_scores() {
                         quiescence: q,
                         move_ordering: ordering,
                         hash_mb: 1,
+                        ..SearchConfig::default()
                     },
                 );
                 assert_eq!(
@@ -124,6 +126,71 @@ fn full_width_ablations_preserve_scores() {
             }
         }
     }
+}
+
+#[test]
+fn pvs_aspiration_controls_preserve_scores_with_and_without_qsearch_and_tt() {
+    let mut probes = 0;
+    let mut retries = 0;
+    for fen in [
+        "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "8/7k/4p3/3r4/3Q4/8/8/K7 w - - 0 1",
+        "4k3/8/8/3pP3/8/8/8/4K3 w - d6 7 12",
+        "7k/P7/8/8/8/8/8/7K w - - 0 1",
+    ] {
+        for q in [false, true] {
+            let reference = search(
+                fen,
+                3,
+                SearchConfig {
+                    tt: false,
+                    quiescence: q,
+                    hash_mb: 1,
+                    ..SearchConfig::default()
+                },
+            );
+            for tt in [false, true] {
+                for (pvs, aspiration_window) in [(false, 0), (true, 0), (false, 1), (true, 1)] {
+                    let mut p = Position::from_fen(fen).unwrap();
+                    let before = p;
+                    let mut s = Searcher::new(
+                        Box::new(Tapered),
+                        SearchConfig {
+                            tt,
+                            quiescence: q,
+                            pvs,
+                            aspiration_window,
+                            hash_mb: 1,
+                            ..SearchConfig::default()
+                        },
+                    );
+                    let r = s.search(
+                        &mut p,
+                        SearchLimits {
+                            depth: 3,
+                            nodes: None,
+                            time: None,
+                        },
+                        &[],
+                        |_| {},
+                    );
+                    assert_eq!(
+                        r.score, reference.score,
+                        "{fen} q={q} tt={tt} pvs={pvs} asp={aspiration_window}"
+                    );
+                    assert!(!r.stopped);
+                    assert_eq!(p, before);
+                    for mv in r.pv {
+                        assert!(p.legal_moves().contains(&mv));
+                        p.make_move(mv);
+                    }
+                    probes += s.stats().pvs_probes;
+                    retries += s.stats().aspiration_retries;
+                }
+            }
+        }
+    }
+    assert!(probes > 0 && retries > 0);
 }
 #[test]
 fn node_limit_and_stop_restore_position() {
@@ -204,7 +271,11 @@ fn incremental_evaluator_hooks_are_balanced_on_abort() {
             stack: Vec::new(),
             events: events.clone(),
         }),
-        SearchConfig::default(),
+        SearchConfig {
+            pvs: true,
+            aspiration_window: 1,
+            ..SearchConfig::default()
+        },
     );
     s.search(
         &mut Position::startpos(),

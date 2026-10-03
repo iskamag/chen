@@ -1,0 +1,121 @@
+{
+  "base_commit": "ba3e1516b8c75a2465368a97b1906a043dc9fc96",
+  "source_sha256": {
+    "Cargo.toml": "250aa605ef6d6170b746c2a9e1ebb47860a6dface5843e0950c63a7184a2be68",
+    "Cargo.lock": "bb158b896e60f7c25b3ec34becd27ab1a447b593513267d389ca0f1b973a9601",
+    "examples/classical_ablation.rs": "b9a8552390c95a9f823badec45725afea98400c6f40512ac690d36db3e7ceaa6",
+    "benches/positions.txt": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74",
+    "src/attacks.rs": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+    "src/backend.rs": "f6f9e25edc8f5cae1c70f3d5c79d926605cfd166c308bf73065b6d0ca9ed278f",
+    "src/core.rs": "d9be42853b1aac94dae5904f639647420a44cd30ade6eecf62612a97e50ec833",
+    "src/device.rs": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+    "src/eval.rs": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+    "src/frontier.rs": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+    "src/hip.rs": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+    "src/lib.rs": "a8aa3a6778d6b2e35f28e67ee7ed670b36f9d43850d8cfcc11988a037dbc3046",
+    "src/main.rs": "ed84dc81256b897824468f0561f5f01e446008d7962442bfc56009b7a9e87ba1",
+    "src/neural.rs": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+    "src/resident.rs": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/search.rs": "e12d8a4ab40042e2d80a8aafa33a44bcc074eaeae5a95ba6d5104d53d089c558",
+    "src/selective.rs": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+    "src/strength.rs": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+    "src/tt.rs": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+    "src/two_fidelity.rs": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+    "tests/search.rs": "9d16bf3b2947f3453326d407de6b639efad40e35e42066b36af97edc42dcb92a",
+    "tests/uci.rs": "f6f99a2972599f2939923b8eccfb27868a083cbaf4a464af50937e60c2a8700c"
+  },
+  "binary_sha256": {
+    "target/release/chen": "e48ef713dbe4ccd26532c6a5021a1ea460201240ad0a86dc3abcfbb68f671bb9",
+    "target/release/examples/classical_ablation": "907854a62c8b4b5de5977884f6ff7e4e26dde3b3aa708d02bb14cdc1a5daca5c"
+  },
+  "policies": [
+    "baseline",
+    "pvs",
+    "aspiration25",
+    "pvs_aspiration25"
+  ],
+  "rounds": 4,
+  "depths": [
+    4,
+    5
+  ],
+  "node_safety_per_search": 2000000,
+  "affinity": [
+    5
+  ],
+  "evaluator": "Tapered",
+  "tt_mib": 16,
+  "quiescence": true,
+  "ordering": true,
+  "no_gpu_work": true,
+  "decision": "Bounded CPU fixed-depth useful-work and elapsed comparison; no strength claim",
+  "declared_utc": "2026-10-03T09:50:51.493387+00:00",
+  "commands": [
+    {
+      "argv": [
+        "rustc",
+        "-Vv"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "cargo",
+        "-V"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "lscpu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "ldd",
+        "target/release/examples/classical_ablation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "taskset",
+        "-c",
+        "5",
+        "target/release/examples/classical_ablation",
+        "4",
+        "4",
+        "benches/positions.txt"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-03T09:50:51.529446+00:00",
+      "wall_seconds": 4.120128654991277,
+      "pid": 20439,
+      "pgid": 20439
+    },
+    {
+      "argv": [
+        "timeout",
+        "--kill-after=3s",
+        "60s",
+        "taskset",
+        "-c",
+        "5",
+        "target/release/examples/classical_ablation",
+        "5",
+        "4",
+        "benches/positions.txt"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-03T09:50:55.649817+00:00",
+      "wall_seconds": 16.29015925701242,
+      "pid": 20456,
+      "pgid": 20456
+    }
+  ]
+}

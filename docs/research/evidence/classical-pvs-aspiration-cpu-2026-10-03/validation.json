@@ -1,0 +1,74 @@
+{
+  "observed_commands": [
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "5",
+        "cargo",
+        "test",
+        "search",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "search_unit_tests_passed": 3,
+      "new_control_integration_tests_passed": 1,
+      "uci_search_test_passed": 1
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "5",
+        "cargo",
+        "test",
+        "--test",
+        "search",
+        "--test",
+        "uci",
+        "--",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "search_tests_passed": 11,
+      "uci_tests_passed": 4
+    },
+    {
+      "argv": [
+        "taskset",
+        "-c",
+        "5",
+        "cargo",
+        "build",
+        "--release",
+        "--example",
+        "classical_ablation",
+        "--bin",
+        "chen"
+      ],
+      "exit_code": 0,
+      "elapsed_reported_seconds": 17.8
+    },
+    {
+      "argv": [
+        "cargo",
+        "fmt",
+        "--check"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "cargo",
+        "check",
+        "--features",
+        "hip"
+      ],
+      "exit_code": 0,
+      "elapsed_reported_seconds": 2.58
+    }
+  ],
+  "source": "Observed tool terminal results; this compact record does not pretend omitted full test stdout is archived",
+  "gpu_runtime_used": false
+}

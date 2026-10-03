@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-10-03T09:56:54.083073+00:00",
+  "absent_host_pgids": [
+    20439,
+    20456
+  ],
+  "no_agent_gpu_jobs": true
+}

@@ -1,0 +1,699 @@
+{
+  "depths": {
+    "depth4": {
+      "aspiration25": {
+        "aggregate_nodes_ratio": 0.7921195862860333,
+        "aggregate_wall_ratio": 0.8110487212415451,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.7429971181556196,
+            "paired_wall_median": 0.7752655718809626,
+            "paired_wall_ratios": [
+              0.7948557469975106,
+              0.7792461292637056,
+              0.7636908668095045,
+              0.7712850144982195
+            ],
+            "wall_ratio": 0.7777010172736494
+          },
+          "mate": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0282305196132122,
+            "paired_wall_ratios": [
+              0.9502732240437158,
+              1.099104143337066,
+              1.2974842767295598,
+              0.9573568958893585
+            ],
+            "wall_ratio": 1.0573697016263286
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9686010515453786,
+            "paired_wall_median": 0.963863641445585,
+            "paired_wall_ratios": [
+              0.9454848120858499,
+              0.9700428591772049,
+              0.9576844237139652,
+              0.9834819335806118
+            ],
+            "wall_ratio": 0.9635640012483743
+          },
+          "promotion": {
+            "nodes_ratio": 1.0189633375474083,
+            "paired_wall_median": 1.0180380401906082,
+            "paired_wall_ratios": [
+              0.990177540194405,
+              0.8424477491222587,
+              1.0524671939600936,
+              1.0458985401868113
+            ],
+            "wall_ratio": 0.9757691368733801
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.875625,
+            "paired_wall_median": 0.8552496044545546,
+            "paired_wall_ratios": [
+              0.8949713801598674,
+              0.8643618591740208,
+              0.8461373497350885,
+              0.7765237118231623
+            ],
+            "wall_ratio": 0.8443091649075128
+          },
+          "start": {
+            "nodes_ratio": 1.3630754627432369,
+            "paired_wall_median": 1.3995938109725934,
+            "paired_wall_ratios": [
+              1.3651563802285451,
+              1.42024867493824,
+              1.4163925141272986,
+              1.3827951078178882
+            ],
+            "wall_ratio": 1.3955048905107392
+          }
+        },
+        "round_total_wall_ratios": [
+          0.823272001520239,
+          0.8133186082324684,
+          0.7984939220592123,
+          0.807846057713486
+        ],
+        "totals": {
+          "aspiration_retries": 32,
+          "elapsed_ns": 975643776,
+          "nodes": 408664,
+          "pvs_probes": 0,
+          "pvs_researches": 0,
+          "qnodes": 386228
+        }
+      },
+      "baseline": {
+        "aggregate_nodes_ratio": 1.0,
+        "aggregate_wall_ratio": 1.0,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "mate": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "middlegame": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "promotion": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "rook-ending": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "start": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          }
+        },
+        "round_total_wall_ratios": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "totals": {
+          "aspiration_retries": 0,
+          "elapsed_ns": 1202941020,
+          "nodes": 515912,
+          "pvs_probes": 0,
+          "pvs_researches": 0,
+          "qnodes": 494580
+        }
+      },
+      "pvs": {
+        "aggregate_nodes_ratio": 0.6986462807610601,
+        "aggregate_wall_ratio": 0.7191708318334676,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.6309414024975984,
+            "paired_wall_median": 0.6595152154110681,
+            "paired_wall_ratios": [
+              0.6641076565093351,
+              0.7107027599478133,
+              0.6522226319619856,
+              0.654922774312801
+            ],
+            "wall_ratio": 0.6702599812737743
+          },
+          "mate": {
+            "nodes_ratio": 1.1379310344827587,
+            "paired_wall_median": 1.0168058562738427,
+            "paired_wall_ratios": [
+              0.9939890710382514,
+              1.4574468085106382,
+              1.039622641509434,
+              0.7852477910103727
+            ],
+            "wall_ratio": 1.0396977846075042
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9841285440518893,
+            "paired_wall_median": 0.9772219030001942,
+            "paired_wall_ratios": [
+              0.9580037333555719,
+              0.9765642998180477,
+              0.9778795061823407,
+              0.9949089922285248
+            ],
+            "wall_ratio": 0.976241592523027
+          },
+          "promotion": {
+            "nodes_ratio": 1.0063211125158027,
+            "paired_wall_median": 0.9922454020913671,
+            "paired_wall_ratios": [
+              0.9946134897840285,
+              0.8442032315582434,
+              0.9898773143987057,
+              1.0146775546730802
+            ],
+            "wall_ratio": 0.9556752250403852
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.911875,
+            "paired_wall_median": 0.979379514630081,
+            "paired_wall_ratios": [
+              0.9829692963072276,
+              0.9757897329529344,
+              0.8416430622515252,
+              1.0166277000131576
+            ],
+            "wall_ratio": 0.9551104287521086
+          },
+          "start": {
+            "nodes_ratio": 1.0028476506881823,
+            "paired_wall_median": 0.9872412961562211,
+            "paired_wall_ratios": [
+              0.9643776278242965,
+              1.0480983501368102,
+              1.0008300430959771,
+              0.9736525492164652
+            ],
+            "wall_ratio": 0.9965355514425766
+          }
+        },
+        "round_total_wall_ratios": [
+          0.7119345487313086,
+          0.7533889240954235,
+          0.7032189932790315,
+          0.7091317858339544
+        ],
+        "totals": {
+          "aspiration_retries": 0,
+          "elapsed_ns": 865120094,
+          "nodes": 360440,
+          "pvs_probes": 6180,
+          "pvs_researches": 192,
+          "qnodes": 338668
+        }
+      },
+      "pvs_aspiration25": {
+        "aggregate_nodes_ratio": 0.750817968955946,
+        "aggregate_wall_ratio": 0.7697365927383538,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.6879442843419789,
+            "paired_wall_median": 0.7202244341353938,
+            "paired_wall_ratios": [
+              0.7376849958794102,
+              0.7176235954221997,
+              0.7161339174913983,
+              0.7228252728485881
+            ],
+            "wall_ratio": 0.7239261840647772
+          },
+          "mate": {
+            "nodes_ratio": 1.1379310344827587,
+            "paired_wall_median": 1.0993970430828484,
+            "paired_wall_ratios": [
+              0.973224043715847,
+              1.1293393057110863,
+              1.0823899371069183,
+              1.1164041490587784
+            ],
+            "wall_ratio": 1.0788833397362019
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9827526902854896,
+            "paired_wall_median": 0.9742882338013477,
+            "paired_wall_ratios": [
+              0.9650385768962263,
+              0.9793980298892679,
+              0.9691784377134275,
+              0.9966372353555027
+            ],
+            "wall_ratio": 0.9771599573105484
+          },
+          "promotion": {
+            "nodes_ratio": 1.0012642225031605,
+            "paired_wall_median": 0.9781244295428995,
+            "paired_wall_ratios": [
+              0.9661375553216064,
+              0.8550026653921803,
+              1.1480765773863024,
+              0.9901113037641927
+            ],
+            "wall_ratio": 0.9823577687628882
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.91,
+            "paired_wall_median": 0.9071930321576145,
+            "paired_wall_ratios": [
+              1.2720528752119917,
+              0.9403441145537699,
+              0.874041949761459,
+              0.8423694038752663
+            ],
+            "wall_ratio": 0.9808010248268265
+          },
+          "start": {
+            "nodes_ratio": 1.3967726625533934,
+            "paired_wall_median": 1.518955659728037,
+            "paired_wall_ratios": [
+              1.437905504909745,
+              1.5247157685808719,
+              1.52750354773672,
+              1.513195550875202
+            ],
+            "wall_ratio": 1.499240831241171
+          }
+        },
+        "round_total_wall_ratios": [
+          0.7810699291599519,
+          0.7644703841447151,
+          0.7616241251851982,
+          0.7705616271476874
+        ],
+        "totals": {
+          "aspiration_retries": 32,
+          "elapsed_ns": 925947722,
+          "nodes": 387356,
+          "pvs_probes": 6912,
+          "pvs_researches": 176,
+          "qnodes": 364320
+        }
+      }
+    },
+    "depth5": {
+      "aspiration25": {
+        "aggregate_nodes_ratio": 0.8339491072574466,
+        "aggregate_wall_ratio": 0.8391326552526791,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.8085387611630649,
+            "paired_wall_median": 0.8167842982139815,
+            "paired_wall_ratios": [
+              0.8282110770367149,
+              0.816528418925841,
+              0.8170401775021218,
+              0.8077133810281156
+            ],
+            "wall_ratio": 0.8173679130139722
+          },
+          "mate": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0461818495241704,
+            "paired_wall_ratios": [
+              0.8332491157150076,
+              1.2591145833333333,
+              0.8110801115982463,
+              1.3070739549839228
+            ],
+            "wall_ratio": 1.0211660329531052
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9752997505968338,
+            "paired_wall_median": 0.9837404915949219,
+            "paired_wall_ratios": [
+              0.9865876163313142,
+              0.9564151960917368,
+              1.001962084681545,
+              0.9808933668585297
+            ],
+            "wall_ratio": 0.9813372737685183
+          },
+          "promotion": {
+            "nodes_ratio": 1.0071496663489037,
+            "paired_wall_median": 1.003114552055721,
+            "paired_wall_ratios": [
+              1.0183666164297023,
+              0.9878624876817396,
+              1.282074385878474,
+              0.9644477688666091
+            ],
+            "wall_ratio": 1.0612535251793536
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.9677321617936676,
+            "paired_wall_median": 0.9167389460344001,
+            "paired_wall_ratios": [
+              0.9458289589701996,
+              0.9588293718848551,
+              0.8535625466514307,
+              0.8876489330986006
+            ],
+            "wall_ratio": 0.9091735222583243
+          },
+          "start": {
+            "nodes_ratio": 0.75649685174585,
+            "paired_wall_median": 0.778278902641975,
+            "paired_wall_ratios": [
+              0.7705114821775739,
+              0.8058736044827728,
+              0.7860463231063759,
+              0.7649053811486124
+            ],
+            "wall_ratio": 0.7818292361398316
+          }
+        },
+        "round_total_wall_ratios": [
+          0.8483351854151783,
+          0.8361289046440464,
+          0.841768940901137,
+          0.8303749049046185
+        ],
+        "totals": {
+          "aspiration_retries": 32,
+          "elapsed_ns": 3821591243,
+          "nodes": 1715460,
+          "pvs_probes": 0,
+          "pvs_researches": 0,
+          "qnodes": 1643732
+        }
+      },
+      "baseline": {
+        "aggregate_nodes_ratio": 1.0,
+        "aggregate_wall_ratio": 1.0,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "mate": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "middlegame": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "promotion": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "rook-ending": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          },
+          "start": {
+            "nodes_ratio": 1.0,
+            "paired_wall_median": 1.0,
+            "paired_wall_ratios": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "wall_ratio": 1.0
+          }
+        },
+        "round_total_wall_ratios": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "totals": {
+          "aspiration_retries": 0,
+          "elapsed_ns": 4554215855,
+          "nodes": 2057032,
+          "pvs_probes": 0,
+          "pvs_researches": 0,
+          "qnodes": 1978496
+        }
+      },
+      "pvs": {
+        "aggregate_nodes_ratio": 0.8687293148575229,
+        "aggregate_wall_ratio": 0.8767734358959145,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.8513971836032158,
+            "paired_wall_median": 0.866358267242467,
+            "paired_wall_ratios": [
+              0.8690548958448147,
+              0.8689876826366507,
+              0.8637288518482832,
+              0.8535819963619057
+            ],
+            "wall_ratio": 0.8638310746046498
+          },
+          "mate": {
+            "nodes_ratio": 1.1379310344827587,
+            "paired_wall_median": 1.0182572108042343,
+            "paired_wall_ratios": [
+              0.8696311268317332,
+              1.4850260416666667,
+              1.0231167795934635,
+              1.0133976420150053
+            ],
+            "wall_ratio": 1.0722433460076046
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9794075674522199,
+            "paired_wall_median": 0.9701105141884225,
+            "paired_wall_ratios": [
+              0.9932622132400245,
+              0.9530455042846822,
+              0.9739098947117673,
+              0.9663111336650777
+            ],
+            "wall_ratio": 0.9714076509693956
+          },
+          "promotion": {
+            "nodes_ratio": 0.9590085795996187,
+            "paired_wall_median": 0.9632181912174905,
+            "paired_wall_ratios": [
+              0.9539977371215725,
+              0.9724386453134085,
+              1.0090595839464171,
+              0.9087198324088043
+            ],
+            "wall_ratio": 0.9602911659518432
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.7844266020299955,
+            "paired_wall_median": 0.7691484679539314,
+            "paired_wall_ratios": [
+              0.7887501166429157,
+              0.7864133864749544,
+              0.7255070380675674,
+              0.7518835494329085
+            ],
+            "wall_ratio": 0.7617070149570405
+          },
+          "start": {
+            "nodes_ratio": 0.8240984544934172,
+            "paired_wall_median": 0.8409606184617648,
+            "paired_wall_ratios": [
+              0.8427558933723092,
+              0.8257221332946785,
+              0.8391653435512205,
+              0.8570398823377513
+            ],
+            "wall_ratio": 0.8411728882802474
+          }
+        },
+        "round_total_wall_ratios": [
+          0.8838688171923366,
+          0.8787846430311514,
+          0.8767531979762432,
+          0.8677410445263816
+        ],
+        "totals": {
+          "aspiration_retries": 0,
+          "elapsed_ns": 3993015483,
+          "nodes": 1787004,
+          "pvs_probes": 10612,
+          "pvs_researches": 284,
+          "qnodes": 1703376
+        }
+      },
+      "pvs_aspiration25": {
+        "aggregate_nodes_ratio": 0.8289846730629373,
+        "aggregate_wall_ratio": 0.8320286799405558,
+        "per_position": {
+          "kiwipete": {
+            "nodes_ratio": 0.8048397287699023,
+            "paired_wall_median": 0.8091304613221211,
+            "paired_wall_ratios": [
+              0.8073068652454014,
+              0.8050607585468557,
+              0.8191590393395893,
+              0.8109540573988409
+            ],
+            "wall_ratio": 0.8106075596617942
+          },
+          "mate": {
+            "nodes_ratio": 1.1379310344827587,
+            "paired_wall_median": 1.0168819901089199,
+            "paired_wall_ratios": [
+              0.8216270843860536,
+              1.2200520833333333,
+              0.8569151056197688,
+              1.1768488745980707
+            ],
+            "wall_ratio": 0.9944233206590621
+          },
+          "middlegame": {
+            "nodes_ratio": 0.9783672761706611,
+            "paired_wall_median": 0.978862865636462,
+            "paired_wall_ratios": [
+              0.991169071066718,
+              0.951362711045998,
+              0.9665566602062059,
+              1.0025543843681741
+            ],
+            "wall_ratio": 0.9777682438766275
+          },
+          "promotion": {
+            "nodes_ratio": 0.9571020019065777,
+            "paired_wall_median": 1.0616347796260275,
+            "paired_wall_ratios": [
+              1.384077540355699,
+              0.9406269704287259,
+              1.0602216875728838,
+              1.0630478716791711
+            ],
+            "wall_ratio": 1.1109607917534272
+          },
+          "rook-ending": {
+            "nodes_ratio": 0.7824572034540221,
+            "paired_wall_median": 0.774784676804189,
+            "paired_wall_ratios": [
+              0.7655226443186556,
+              0.7840467092897224,
+              0.7097468610099085,
+              0.848815468949512
+            ],
+            "wall_ratio": 0.7755927758758944
+          },
+          "start": {
+            "nodes_ratio": 0.7604464796794504,
+            "paired_wall_median": 0.7826595282549828,
+            "paired_wall_ratios": [
+              0.7760482811828628,
+              0.7982188682891965,
+              0.752874917930561,
+              0.7892707753271027
+            ],
+            "wall_ratio": 0.7790063058040096
+          }
+        },
+        "round_total_wall_ratios": [
+          0.8308545277112559,
+          0.824348246089562,
+          0.8365689138310268,
+          0.8363517564092852
+        ],
+        "totals": {
+          "aspiration_retries": 32,
+          "elapsed_ns": 3789238206,
+          "nodes": 1705248,
+          "pvs_probes": 10172,
+          "pvs_researches": 232,
+          "qnodes": 1627092
+        }
+      }
+    }
+  },
+  "rows": 192,
+  "scope": "Fixed-depth fresh-TT CPU5 observations, four balanced-order rounds; no strength or universal latency claim",
+  "status": "PASS"
+}

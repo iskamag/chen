@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "replayed_summary_byte_exact": true,
+  "argv": [
+    "python3",
+    "analyze.py",
+    "EVIDENCE_DIRECTORY",
+    "--output",
+    "replayed-summary.json"
+  ]
+}
