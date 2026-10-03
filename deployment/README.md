@@ -53,3 +53,49 @@ Chen include from the existing nginx server and validate/reload nginx to remove
 the public route; restore the saved full config only after checking that no other
 changes have occurred since the backup. These services do not run GPU or training
 jobs.
+
+## Activity monitoring
+
+`chen-traffic` is a supervised OpenRC user service that refreshes
+`~/.local/state/chen-host/traffic.json` every 60 seconds by reading nginx's
+existing access logs over SSH. It does not change the game server or add browser
+tracking. The report contains aggregate counts, not visitor addresses or agents.
+
+```sh
+python3 deployment/traffic.py             # fetch and summarize now
+python3 deployment/traffic.py --watch 15  # watch in the terminal; Ctrl+C to stop
+rc-service --user chen-traffic status
+cat "$HOME/.local/state/chen-host/traffic.json"
+```
+
+Page loads, accepted game-start requests and accepted player moves are separate.
+Only successful `POST /api/move` responses count as accepted player moves: the
+server has validated the move/history and admitted the job. This indicates play
+requests, not guaranteed completed turns or games. Starting as White need not
+produce a game-start request, so these counters cannot estimate unique games.
+Crawler and QA user agents are counted separately. Browser-like agents can still
+be bots, and an IP/agent pair is only a rough playing-client estimate; it cannot
+identify people or distinguish the owner from friends.
+
+The default window is the last 24 hours, using the current and latest rotated
+nginx log. The report lists its input files and observed time range. It is not a
+lifetime counter. Failed refreshes retain the last good counters and mark the
+snapshot `stale` with an error and failure time. The service needs network and
+existing root SSH access to `iskamag.com`; it runs independently of the engine
+and tunnel. Errors go to `~/.local/state/chen-host/traffic-monitor-error.log`.
+
+The installed script is `~/.local/share/chen-host/traffic.py`. To install/start or
+stop this monitor:
+
+```sh
+install -m644 deployment/traffic.py "$HOME/.local/share/chen-host/traffic.py"
+install -m755 deployment/chen-traffic.openrc "$HOME/.config/rc/init.d/chen-traffic"
+rc-update --user add chen-traffic default
+setsid rc-service --user chen-traffic start
+# Stop monitoring:
+rc-service --user chen-traffic stop
+```
+
+`python3 deployment/test_traffic.py` checks visit/play separation, crawler/QA
+classification and compressed-log rotation using synthetic local logs, without
+SSH or live game traffic.

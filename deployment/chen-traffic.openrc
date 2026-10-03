@@ -1,0 +1,9 @@
+#!/usr/bin/openrc-run
+description="Chen gameplay traffic summary"
+supervisor=supervise-daemon
+command=/usr/bin/python3
+command_args="${HOME}/.local/share/chen-host/traffic.py --watch 60 --quiet --output ${HOME}/.local/state/chen-host/traffic.json"
+respawn_delay=5
+respawn_max=0
+output_log="${HOME}/.local/state/chen-host/traffic-monitor.log"
+error_log="${HOME}/.local/state/chen-host/traffic-monitor-error.log"

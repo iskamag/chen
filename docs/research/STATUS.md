@@ -24,7 +24,10 @@ QA verifies both backends, a real 1000 ms serious move, saved Drowsy controls,
 asset hashes and mobile layout. A later website update adds six independent
 single-threaded search workers with a shared eight-job queue, SAN move notation,
 correct Chen-only capture reactions, and removal of the 3-second menu choice.
-API checks exercise overlapping searches, queued timing and cancellation. The existing homepage hash is unchanged; the
+API checks exercise overlapping searches, queued timing and cancellation.
+A separate supervised traffic monitor now reads existing nginx logs each minute
+and records aggregate visits, accepted move requests, crawler/QA categories and
+last-play time; it does not change the engine or identify individual players. The existing homepage hash is unchanged; the
 [runbook](../../deployment/README.md) records service and rollback boundaries.
 
 The explicitly requested [δ–θ Drowsy toy](../DROWSY_CHEN.md) is now implemented as
