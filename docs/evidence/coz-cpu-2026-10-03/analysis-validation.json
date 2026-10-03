@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "analyzer_replay_byte_identical": true,
+  "independent_same_period_formula_as_pinned_official_cli": true,
+  "official_formula_points_checked": 14,
+  "actual_zero_baseline_required": true,
+  "process_groups_absent": [
+    5325,
+    5491,
+    5788
+  ],
+  "profiler_cli_sample_snapshot_cumulative_behavior_not_used_for_our_sample_aggregation": true,
+  "confirmation_analysis_sha256": "6f42dd017b5a2dd2c6ea0e0fab6c232c48f3c7ec58069644e92589c5da12f753"
+}

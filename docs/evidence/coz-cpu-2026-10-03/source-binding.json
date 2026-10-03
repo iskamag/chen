@@ -1,0 +1,219 @@
+{
+  "timestamp_utc": "2026-10-03T07:38:12.953809+00:00",
+  "bindings": {
+    "examples/coz_search.rs": {
+      "sha256": "623cc2e53b0b56a288b95140b80535e8ac23ee0cb9328f78105f86698ac35284",
+      "bytes": 2009
+    },
+    "src/attacks.rs": {
+      "sha256": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+      "bytes": 1819
+    },
+    "src/backend.rs": {
+      "sha256": "f6f9e25edc8f5cae1c70f3d5c79d926605cfd166c308bf73065b6d0ca9ed278f",
+      "bytes": 3606
+    },
+    "src/core.rs": {
+      "sha256": "d9be42853b1aac94dae5904f639647420a44cd30ade6eecf62612a97e50ec833",
+      "bytes": 28120
+    },
+    "src/eval.rs": {
+      "sha256": "92e8e9f2446cd2818eac7f93f987da465111697c43e975c7ec99983666ac1369",
+      "bytes": 4014
+    },
+    "src/frontier.rs": {
+      "sha256": "613d747b7fbc4dac00e689526c748b3968f12e9f3e54462437a7363bba213256",
+      "bytes": 8536
+    },
+    "src/lib.rs": {
+      "sha256": "a8aa3a6778d6b2e35f28e67ee7ed670b36f9d43850d8cfcc11988a037dbc3046",
+      "bytes": 650
+    },
+    "src/resident.rs": {
+      "sha256": "4e1a803b09fef699b2eb441d81cd8df858c12219342613e4f0b965ab60097ee1",
+      "bytes": 19491
+    },
+    "src/rules.rs": {
+      "sha256": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+      "bytes": 5442
+    },
+    "src/search.rs": {
+      "sha256": "7c4594ee770e0d0fea89afa34345a6f2ef8ef51b5e3bd3ed540f2038a7622467",
+      "bytes": 15335
+    },
+    "src/selective.rs": {
+      "sha256": "72d54eb82b78c1cb8277c04dc7c6a3104b985ee0e8de1541f44b66b3a3ce35c4",
+      "bytes": 19967
+    },
+    "src/strength.rs": {
+      "sha256": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+      "bytes": 2076
+    },
+    "src/tt.rs": {
+      "sha256": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+      "bytes": 2643
+    },
+    "src/two_fidelity.rs": {
+      "sha256": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+      "bytes": 46014
+    },
+    "Cargo.toml": {
+      "sha256": "250aa605ef6d6170b746c2a9e1ebb47860a6dface5843e0950c63a7184a2be68",
+      "bytes": 913
+    },
+    "Cargo.lock": {
+      "sha256": "bb158b896e60f7c25b3ec34becd27ab1a447b593513267d389ca0f1b973a9601",
+      "bytes": 5262
+    },
+    "/home/iskam/src/vibe/chen/results/coz-build/causal/examples/coz_search": {
+      "frozen_path": "bin/coz_search",
+      "sha256": "4f405455ca8fe2845f71758214f2c0e0abebe07c45ee6dd0014b75aab18dedc1",
+      "bytes": 5612648
+    },
+    "/home/iskam/src/vibe/chen/results/coz-build/causal/examples/coz_search.d": {
+      "frozen_path": "build/coz_search.d",
+      "sha256": "7b7c741cde0bbc7240451a1adb23f0d222cfcc8992eba42a8036d9d4481b1c11",
+      "bytes": 646
+    },
+    "/home/iskam/src/vibe/chen/results/coz-build/.rustc_info.json": {
+      "frozen_path": "build/rustc-info.json",
+      "sha256": "68531536b18623e2e461dc56029a5f3e0a2eafa08a3021da0165cddffb1ef69d",
+      "bytes": 1241
+    },
+    "/usr/bin/coz": {
+      "frozen_path": "tools/coz",
+      "sha256": "ca0f4e3efd13da941bd4ca566995dcae6862197bc3fc7a3c5b89a71e66a69c1c",
+      "bytes": 93137
+    },
+    "/usr/lib/libcoz.so": {
+      "frozen_path": "tools/libcoz.so",
+      "sha256": "60877fa2d6d0db36a1b83aed572ca92af1ab0d19a03bc721989c5009ee29766b",
+      "bytes": 1460656
+    },
+    "results/coz-build/causal/.fingerprint/chen-fbb10484c8c974c8/example-coz_search.json": {
+      "frozen_path": "build/chen-fbb10484c8c974c8/example-coz_search.json",
+      "sha256": "fecce4af0556b139fed7ab1d589ca36a4982eeb1f77a081ff7ff1afc9efcce36",
+      "bytes": 551
+    },
+    "/home/iskam/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/coz-0.1.3/src/lib.rs": {
+      "frozen_path": "sources/dependencies/coz-0.1.3/lib.rs",
+      "sha256": "965007e3919f29092ae764e0b1bc74883409c0f819b562de4ff2edf164e265da",
+      "bytes": 8237
+    }
+  },
+  "static_commands": {
+    "coz-version": {
+      "argv": [
+        "coz",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    "coz-run-help": {
+      "argv": [
+        "coz",
+        "run",
+        "--help"
+      ],
+      "exit_code": 0
+    },
+    "rustc-version": {
+      "argv": [
+        "rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0
+    },
+    "debug-sections": {
+      "argv": [
+        "readelf",
+        "-S",
+        "/home/iskam/src/vibe/chen/results/coz-build/causal/examples/coz_search"
+      ],
+      "exit_code": 0
+    },
+    "git-head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0
+    }
+  },
+  "perf_event_paranoid": "2",
+  "kptr_restrict": "0",
+  "build_code_base": "b3f3709 plus root-owned optional Coz Cargo/search/example changes; b0b3d8f is later proof-only HEAD",
+  "actual_build_invocation": {
+    "source": "root relay of independently observed up-to-date validation",
+    "argv": [
+      "taskset",
+      "-c",
+      "3",
+      "cargo",
+      "build",
+      "--profile",
+      "causal",
+      "--features",
+      "causal-profile",
+      "--example",
+      "coz_search"
+    ],
+    "environment_overrides": {
+      "CARGO_TARGET_DIR": "results/coz-build"
+    },
+    "exit_code": 0,
+    "finished_seconds": 0.03,
+    "fresh_recompilation": false,
+    "binary_sha256_before_and_after": "4f405455ca8fe2845f71758214f2c0e0abebe07c45ee6dd0014b75aab18dedc1"
+  },
+  "cpu_affinity": 5,
+  "avoid_smt_sibling": 11,
+  "runtime_started": true,
+  "release_required": "explicit root release after active one-second GPU match retires",
+  "original_recompilation": {
+    "source": "root relay",
+    "session": 8952,
+    "exit_code": 0,
+    "observed_seconds": 7.22,
+    "exact_argv_available": false,
+    "command_not_invented": true
+  },
+  "planned_runs": [
+    {
+      "phase": "pilot",
+      "iterations": 4,
+      "nodes_per_search": 200000,
+      "bound_seconds": 20
+    },
+    {
+      "phase": "scout",
+      "iterations": 80,
+      "nodes_per_search": 200000,
+      "bound_seconds": 45,
+      "source_scope": [
+        "%src/core.rs",
+        "%src/attacks.rs",
+        "%src/eval.rs"
+      ]
+    },
+    {
+      "phase": "confirmation",
+      "iterations": "ceil(30 / pilot_seconds_per_search), clamped 80..1000",
+      "nodes_per_search": 200000,
+      "bound_seconds": 45,
+      "line_selection": "most sampled line in admitted scout scope; prefer a line with causal exposures; adaptation declared before execution",
+      "fixed_speedup": null,
+      "zero_control": "required actual0%-speedup experiment before predicting"
+    }
+  ],
+  "runtime_terminal": true,
+  "cpu_release_before_runs": "explicit parent release after terminal16-game match and PID audit",
+  "cpu_released_after_confirmation": true,
+  "run_scripts_sha256": {
+    "run_bounded.py": "380c41ee66482093b4daba204b4b8c3bd964dfd3972baa28afa3466f0751022f",
+    "analyze.py": "056e4ac9f82cb93fb479acdf89961082e403c530723d22a61785ea2698e1f9a0"
+  },
+  "runtime_failures": []
+}

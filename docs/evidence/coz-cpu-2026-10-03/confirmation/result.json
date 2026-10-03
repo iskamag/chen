@@ -1,0 +1,13 @@
+{
+  "phase": "confirmation",
+  "pid": 5788,
+  "pgid": 5788,
+  "exit_code": 0,
+  "elapsed_seconds": 40.017626971995924,
+  "timed_out": false,
+  "exact_stationary_assertions_passed": true,
+  "process_group_absent_on_retirement": true,
+  "binary_hash_unchanged": true,
+  "runtime_hash_unchanged": true,
+  "perf_event_paranoid_after": "2"
+}

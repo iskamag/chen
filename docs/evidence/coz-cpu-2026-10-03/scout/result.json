@@ -1,0 +1,13 @@
+{
+  "phase": "scout",
+  "pid": 5491,
+  "pgid": 5491,
+  "exit_code": 0,
+  "elapsed_seconds": 40.0078093969787,
+  "timed_out": false,
+  "exact_stationary_assertions_passed": true,
+  "process_group_absent_on_retirement": true,
+  "binary_hash_unchanged": true,
+  "runtime_hash_unchanged": true,
+  "perf_event_paranoid_after": "2"
+}

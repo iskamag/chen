@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-10-03T07:44:53.909404+00:00",
+  "fixed_line": "/home/iskam/src/vibe/chen/src/core.rs:376",
+  "reason": "most sampled line in scout admitted source scope; only selected line with actual0% exposure in scout; no observed nonzero causal curve yet",
+  "iterations": 80,
+  "bound_seconds": 45,
+  "scout_experiments": 8,
+  "scout_causal_curves": 0,
+  "selection_uses_samples_not_observed_gain": true
+}

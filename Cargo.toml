@@ -11,6 +11,8 @@ default = []
 # Frozen ray-walk control for rule/search experiments; default uses SWAR.
 ray-attacks = []
 hip = ["dep:serde_json", "dep:sha2"]
+# CPU causal markers are absent from normal engine builds.
+causal-profile = ["dep:coz"]
 
 [lib]
 name = "chen"
@@ -20,6 +22,11 @@ path = "src/lib.rs"
 name = "chen"
 path = "src/main.rs"
 
+[[example]]
+name = "coz_search"
+path = "examples/coz_search.rs"
+required-features = ["causal-profile"]
+
 [profile.release]
 lto = "thin"
 codegen-units = 1
@@ -28,6 +35,11 @@ codegen-units = 1
 lto = "thin"
 codegen-units = 1
 
+[profile.causal]
+inherits = "release"
+debug = 1
+
 [dependencies]
 serde_json = { version = "1.0.151", optional = true }
 sha2 = { version = "0.11.0", optional = true }
+coz = { version = "0.1.3", optional = true }

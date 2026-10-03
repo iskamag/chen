@@ -1,0 +1,239 @@
+{
+  "timestamp_utc": "2026-10-03T07:52:12.944808+00:00",
+  "status": "PASS",
+  "stationary_assertions_passed": true,
+  "total_completed_searches": 164,
+  "nodes_each": 200000,
+  "completed_visited_nodes": 32800000,
+  "workload": "one Kiwipete FEN, CPU alpha-beta/Tapered/defaultSWAR, cleared searcher, fixed-node cap, no clock/GPU",
+  "binary_sha256": "4f405455ca8fe2845f71758214f2c0e0abebe07c45ee6dd0014b75aab18dedc1",
+  "profiler_runtime_sha256": "60877fa2d6d0db36a1b83aed572ca92af1ab0d19a03bc721989c5009ee29766b",
+  "profiler_cli_sha256": "ca0f4e3efd13da941bd4ca566995dcae6862197bc3fc7a3c5b89a71e66a69c1c",
+  "results": {
+    "pilot": {
+      "phase": "pilot",
+      "pid": 5325,
+      "pgid": 5325,
+      "exit_code": 0,
+      "elapsed_seconds": 1.9193191850208677,
+      "timed_out": false,
+      "exact_stationary_assertions_passed": true,
+      "process_group_absent_on_retirement": true,
+      "binary_hash_unchanged": true,
+      "runtime_hash_unchanged": true,
+      "perf_event_paranoid_after": "2"
+    },
+    "scout": {
+      "phase": "scout",
+      "pid": 5491,
+      "pgid": 5491,
+      "exit_code": 0,
+      "elapsed_seconds": 40.0078093969787,
+      "timed_out": false,
+      "exact_stationary_assertions_passed": true,
+      "process_group_absent_on_retirement": true,
+      "binary_hash_unchanged": true,
+      "runtime_hash_unchanged": true,
+      "perf_event_paranoid_after": "2"
+    },
+    "confirmation": {
+      "phase": "confirmation",
+      "pid": 5788,
+      "pgid": 5788,
+      "exit_code": 0,
+      "elapsed_seconds": 40.017626971995924,
+      "timed_out": false,
+      "exact_stationary_assertions_passed": true,
+      "process_group_absent_on_retirement": true,
+      "binary_hash_unchanged": true,
+      "runtime_hash_unchanged": true,
+      "perf_event_paranoid_after": "2"
+    }
+  },
+  "scout": {
+    "experiments": 8,
+    "causal_curves": 0,
+    "sampled_lines": 139,
+    "most_sampled_line": "/home/iskam/src/vibe/chen/src/core.rs:376"
+  },
+  "confirmation": {
+    "experiments": 8,
+    "sampled_lines": 142,
+    "fixed_line": "/home/iskam/src/vibe/chen/src/core.rs:376",
+    "curves": [
+      {
+        "selected": "/home/iskam/src/vibe/chen/src/core.rs:376",
+        "progress_point": "cpu_256_visited_nodes",
+        "points": [
+          {
+            "virtual_speedup_fraction": 0.0,
+            "experiments": 2,
+            "duration_ns": 8000094014,
+            "progress": 13309,
+            "selected_samples": 678,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0,
+            "predicted_period_reduction_percent": 0.0
+          },
+          {
+            "virtual_speedup_fraction": 0.15,
+            "experiments": 1,
+            "duration_ns": 3951466288,
+            "progress": 6716,
+            "selected_samples": 324,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0216498415580508,
+            "predicted_period_reduction_percent": 2.119105849909797
+          },
+          {
+            "virtual_speedup_fraction": 0.75,
+            "experiments": 1,
+            "duration_ns": 3755559517,
+            "progress": 6726,
+            "selected_samples": 326,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0765442351307792,
+            "predicted_period_reduction_percent": 7.110180207456185
+          },
+          {
+            "virtual_speedup_fraction": 0.85,
+            "experiments": 1,
+            "duration_ns": 3720406647,
+            "progress": 6662,
+            "selected_samples": 329,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0763756942332916,
+            "predicted_period_reduction_percent": 7.0956353476278045
+          },
+          {
+            "virtual_speedup_fraction": 0.9,
+            "experiments": 1,
+            "duration_ns": 3705757637,
+            "progress": 6725,
+            "selected_samples": 327,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0908497639698482,
+            "predicted_period_reduction_percent": 8.328347951346249
+          },
+          {
+            "virtual_speedup_fraction": 0.95,
+            "experiments": 1,
+            "duration_ns": 3676107958,
+            "progress": 6682,
+            "selected_samples": 341,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0926168150402795,
+            "predicted_period_reduction_percent": 8.476605317195784
+          },
+          {
+            "virtual_speedup_fraction": 1.0,
+            "experiments": 1,
+            "duration_ns": 3693042118,
+            "progress": 6679,
+            "selected_samples": 307,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0871184049183038,
+            "predicted_period_reduction_percent": 8.01369975194659
+          }
+        ]
+      },
+      {
+        "selected": "/home/iskam/src/vibe/chen/src/core.rs:376",
+        "progress_point": "cpu_completed_fixed_node_search",
+        "points": [
+          {
+            "virtual_speedup_fraction": 0.0,
+            "experiments": 2,
+            "duration_ns": 8000094014,
+            "progress": 16,
+            "selected_samples": 678,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0,
+            "predicted_period_reduction_percent": 0.0
+          },
+          {
+            "virtual_speedup_fraction": 0.15,
+            "experiments": 1,
+            "duration_ns": 3951466288,
+            "progress": 9,
+            "selected_samples": 324,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.1388311464382155,
+            "predicted_period_reduction_percent": 12.190669957738764
+          },
+          {
+            "virtual_speedup_fraction": 0.75,
+            "experiments": 1,
+            "duration_ns": 3755559517,
+            "progress": 9,
+            "selected_samples": 326,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.1982376693818748,
+            "predicted_period_reduction_percent": 16.544102597286738
+          },
+          {
+            "virtual_speedup_fraction": 0.85,
+            "experiments": 1,
+            "duration_ns": 3720406647,
+            "progress": 8,
+            "selected_samples": 329,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.0751639233376522,
+            "predicted_period_reduction_percent": 6.990926844375444
+          },
+          {
+            "virtual_speedup_fraction": 0.9,
+            "experiments": 1,
+            "duration_ns": 3705757637,
+            "progress": 9,
+            "selected_samples": 327,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.214340851097327,
+            "predicted_period_reduction_percent": 17.65079803612306
+          },
+          {
+            "virtual_speedup_fraction": 0.95,
+            "experiments": 1,
+            "duration_ns": 3676107958,
+            "progress": 9,
+            "selected_samples": 341,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.2241351272293075,
+            "predicted_period_reduction_percent": 18.309672048755942
+          },
+          {
+            "virtual_speedup_fraction": 1.0,
+            "experiments": 1,
+            "duration_ns": 3693042118,
+            "progress": 9,
+            "selected_samples": 307,
+            "zero_control_admitted": true,
+            "predicted_throughput_ratio": 1.2185219499505855,
+            "predicted_period_reduction_percent": 17.9333618043932
+          }
+        ]
+      }
+    ],
+    "zero_experiments": 2,
+    "nonzero_experiments": 6,
+    "level_repeats": 1
+  },
+  "independent_analysis_validation": {
+    "status": "PASS",
+    "analyzer_replay_byte_identical": true,
+    "independent_same_period_formula_as_pinned_official_cli": true,
+    "official_formula_points_checked": 14,
+    "actual_zero_baseline_required": true,
+    "process_groups_absent": [
+      5325,
+      5491,
+      5788
+    ],
+    "profiler_cli_sample_snapshot_cumulative_behavior_not_used_for_our_sample_aggregation": true,
+    "confirmation_analysis_sha256": "6f42dd017b5a2dd2c6ea0e0fab6c232c48f3c7ec58069644e92589c5da12f753"
+  },
+  "settings_unchanged": true,
+  "cpu_released": true,
+  "hardware_or_source_optimization_implemented": false,
+  "scope": "Exploratory virtual-speedup observations; sparse level repeats and completed-search boundary quantization prohibit precise whole-search implemented-gain claim; no GPU/neural/strength result."
+}

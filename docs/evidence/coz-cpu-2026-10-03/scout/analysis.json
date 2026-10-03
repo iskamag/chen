@@ -1,0 +1,407 @@
+{
+  "profile": "results/coz-cpu-2026-10-03/scout/profile.jsonl",
+  "experiment_count": 8,
+  "runtime_ns": 39642684853,
+  "cumulative_samples": {
+    "/home/iskam/src/vibe/chen/src/attacks.rs:15": 170,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:16": 265,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:17": 495,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:18": 84,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:19": 526,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:20": 133,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:22": 535,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:23": 253,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:24": 511,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:25": 260,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:26": 846,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:27": 384,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:36": 730,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:37": 119,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:38": 92,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:39": 3,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:48": 96,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:49": 563,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:50": 165,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:51": 2,
+    "/home/iskam/src/vibe/chen/src/attacks.rs:52": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:24": 15,
+    "/home/iskam/src/vibe/chen/src/core.rs:40": 145,
+    "/home/iskam/src/vibe/chen/src/core.rs:52": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:347": 3,
+    "/home/iskam/src/vibe/chen/src/core.rs:350": 390,
+    "/home/iskam/src/vibe/chen/src/core.rs:353": 35,
+    "/home/iskam/src/vibe/chen/src/core.rs:356": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:359": 16,
+    "/home/iskam/src/vibe/chen/src/core.rs:362": 3,
+    "/home/iskam/src/vibe/chen/src/core.rs:371": 186,
+    "/home/iskam/src/vibe/chen/src/core.rs:376": 3113,
+    "/home/iskam/src/vibe/chen/src/core.rs:388": 440,
+    "/home/iskam/src/vibe/chen/src/core.rs:391": 1634,
+    "/home/iskam/src/vibe/chen/src/core.rs:392": 237,
+    "/home/iskam/src/vibe/chen/src/core.rs:393": 236,
+    "/home/iskam/src/vibe/chen/src/core.rs:394": 3110,
+    "/home/iskam/src/vibe/chen/src/core.rs:396": 156,
+    "/home/iskam/src/vibe/chen/src/core.rs:400": 37,
+    "/home/iskam/src/vibe/chen/src/core.rs:403": 31,
+    "/home/iskam/src/vibe/chen/src/core.rs:404": 5,
+    "/home/iskam/src/vibe/chen/src/core.rs:407": 28,
+    "/home/iskam/src/vibe/chen/src/core.rs:411": 13,
+    "/home/iskam/src/vibe/chen/src/core.rs:413": 2,
+    "/home/iskam/src/vibe/chen/src/core.rs:418": 63,
+    "/home/iskam/src/vibe/chen/src/core.rs:420": 10,
+    "/home/iskam/src/vibe/chen/src/core.rs:421": 9,
+    "/home/iskam/src/vibe/chen/src/core.rs:426": 12,
+    "/home/iskam/src/vibe/chen/src/core.rs:427": 44,
+    "/home/iskam/src/vibe/chen/src/core.rs:435": 60,
+    "/home/iskam/src/vibe/chen/src/core.rs:436": 17,
+    "/home/iskam/src/vibe/chen/src/core.rs:439": 107,
+    "/home/iskam/src/vibe/chen/src/core.rs:447": 111,
+    "/home/iskam/src/vibe/chen/src/core.rs:449": 87,
+    "/home/iskam/src/vibe/chen/src/core.rs:450": 8,
+    "/home/iskam/src/vibe/chen/src/core.rs:453": 16,
+    "/home/iskam/src/vibe/chen/src/core.rs:454": 4,
+    "/home/iskam/src/vibe/chen/src/core.rs:457": 74,
+    "/home/iskam/src/vibe/chen/src/core.rs:458": 455,
+    "/home/iskam/src/vibe/chen/src/core.rs:462": 5,
+    "/home/iskam/src/vibe/chen/src/core.rs:463": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:469": 6,
+    "/home/iskam/src/vibe/chen/src/core.rs:471": 4,
+    "/home/iskam/src/vibe/chen/src/core.rs:473": 5,
+    "/home/iskam/src/vibe/chen/src/core.rs:475": 6,
+    "/home/iskam/src/vibe/chen/src/core.rs:476": 10,
+    "/home/iskam/src/vibe/chen/src/core.rs:478": 8,
+    "/home/iskam/src/vibe/chen/src/core.rs:479": 2,
+    "/home/iskam/src/vibe/chen/src/core.rs:481": 3,
+    "/home/iskam/src/vibe/chen/src/core.rs:485": 28,
+    "/home/iskam/src/vibe/chen/src/core.rs:486": 1739,
+    "/home/iskam/src/vibe/chen/src/core.rs:492": 24,
+    "/home/iskam/src/vibe/chen/src/core.rs:493": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:497": 770,
+    "/home/iskam/src/vibe/chen/src/core.rs:498": 1613,
+    "/home/iskam/src/vibe/chen/src/core.rs:500": 76,
+    "/home/iskam/src/vibe/chen/src/core.rs:503": 537,
+    "/home/iskam/src/vibe/chen/src/core.rs:504": 78,
+    "/home/iskam/src/vibe/chen/src/core.rs:507": 576,
+    "/home/iskam/src/vibe/chen/src/core.rs:508": 104,
+    "/home/iskam/src/vibe/chen/src/core.rs:516": 233,
+    "/home/iskam/src/vibe/chen/src/core.rs:521": 41,
+    "/home/iskam/src/vibe/chen/src/core.rs:522": 22,
+    "/home/iskam/src/vibe/chen/src/core.rs:527": 4,
+    "/home/iskam/src/vibe/chen/src/core.rs:531": 13,
+    "/home/iskam/src/vibe/chen/src/core.rs:538": 521,
+    "/home/iskam/src/vibe/chen/src/core.rs:540": 1,
+    "/home/iskam/src/vibe/chen/src/core.rs:542": 9,
+    "/home/iskam/src/vibe/chen/src/core.rs:546": 283,
+    "/home/iskam/src/vibe/chen/src/core.rs:551": 209,
+    "/home/iskam/src/vibe/chen/src/core.rs:554": 207,
+    "/home/iskam/src/vibe/chen/src/core.rs:556": 80,
+    "/home/iskam/src/vibe/chen/src/core.rs:557": 93,
+    "/home/iskam/src/vibe/chen/src/core.rs:559": 82,
+    "/home/iskam/src/vibe/chen/src/core.rs:560": 715,
+    "/home/iskam/src/vibe/chen/src/core.rs:561": 260,
+    "/home/iskam/src/vibe/chen/src/core.rs:562": 1,
+    "/home/iskam/src/vibe/chen/src/core.rs:565": 521,
+    "/home/iskam/src/vibe/chen/src/core.rs:567": 29,
+    "/home/iskam/src/vibe/chen/src/core.rs:570": 812,
+    "/home/iskam/src/vibe/chen/src/core.rs:571": 1916,
+    "/home/iskam/src/vibe/chen/src/core.rs:604": 2,
+    "/home/iskam/src/vibe/chen/src/core.rs:625": 586,
+    "/home/iskam/src/vibe/chen/src/core.rs:627": 57,
+    "/home/iskam/src/vibe/chen/src/core.rs:629": 96,
+    "/home/iskam/src/vibe/chen/src/core.rs:636": 13,
+    "/home/iskam/src/vibe/chen/src/core.rs:637": 2,
+    "/home/iskam/src/vibe/chen/src/core.rs:639": 11,
+    "/home/iskam/src/vibe/chen/src/core.rs:640": 3,
+    "/home/iskam/src/vibe/chen/src/core.rs:645": 2253,
+    "/home/iskam/src/vibe/chen/src/core.rs:703": 103,
+    "/home/iskam/src/vibe/chen/src/core.rs:705": 7,
+    "/home/iskam/src/vibe/chen/src/core.rs:708": 32,
+    "/home/iskam/src/vibe/chen/src/eval.rs:10": 37,
+    "/home/iskam/src/vibe/chen/src/eval.rs:52": 30,
+    "/home/iskam/src/vibe/chen/src/eval.rs:58": 119,
+    "/home/iskam/src/vibe/chen/src/eval.rs:59": 1,
+    "/home/iskam/src/vibe/chen/src/eval.rs:60": 50,
+    "/home/iskam/src/vibe/chen/src/eval.rs:61": 62,
+    "/home/iskam/src/vibe/chen/src/eval.rs:62": 16,
+    "/home/iskam/src/vibe/chen/src/eval.rs:63": 43,
+    "/home/iskam/src/vibe/chen/src/eval.rs:64": 38,
+    "/home/iskam/src/vibe/chen/src/eval.rs:65": 44,
+    "/home/iskam/src/vibe/chen/src/eval.rs:70": 418,
+    "/home/iskam/src/vibe/chen/src/eval.rs:71": 84,
+    "/home/iskam/src/vibe/chen/src/eval.rs:72": 102,
+    "/home/iskam/src/vibe/chen/src/eval.rs:73": 34,
+    "/home/iskam/src/vibe/chen/src/eval.rs:74": 21,
+    "/home/iskam/src/vibe/chen/src/eval.rs:75": 20,
+    "/home/iskam/src/vibe/chen/src/eval.rs:78": 18,
+    "/home/iskam/src/vibe/chen/src/eval.rs:79": 15,
+    "/home/iskam/src/vibe/chen/src/eval.rs:84": 8,
+    "/home/iskam/src/vibe/chen/src/eval.rs:85": 1,
+    "/home/iskam/src/vibe/chen/src/eval.rs:87": 23,
+    "/home/iskam/src/vibe/chen/src/eval.rs:88": 54,
+    "/home/iskam/src/vibe/chen/src/eval.rs:91": 10,
+    "/home/iskam/src/vibe/chen/src/eval.rs:97": 48,
+    "/home/iskam/src/vibe/chen/src/eval.rs:98": 6,
+    "/home/iskam/src/vibe/chen/src/eval.rs:103": 3
+  },
+  "sampled_source_lines": 139,
+  "curves": [
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/attacks.rs:26",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.5,
+          "experiments": 1,
+          "duration_ns": 3937062257,
+          "progress": 6667,
+          "selected_samples": 126,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/attacks.rs:26",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.5,
+          "experiments": 1,
+          "duration_ns": 3937062257,
+          "progress": 8,
+          "selected_samples": 126,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:376",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.0,
+          "experiments": 1,
+          "duration_ns": 4000056248,
+          "progress": 6723,
+          "selected_samples": 337,
+          "zero_control_admitted": true,
+          "predicted_throughput_ratio": 1.0,
+          "predicted_period_reduction_percent": 0.0
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:376",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.0,
+          "experiments": 1,
+          "duration_ns": 4000056248,
+          "progress": 8,
+          "selected_samples": 337,
+          "zero_control_admitted": true,
+          "predicted_throughput_ratio": 1.0,
+          "predicted_period_reduction_percent": 0.0
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:458",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.5,
+          "experiments": 1,
+          "duration_ns": 3976059557,
+          "progress": 6644,
+          "selected_samples": 48,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:458",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.5,
+          "experiments": 1,
+          "duration_ns": 3976059557,
+          "progress": 9,
+          "selected_samples": 48,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:486",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.75,
+          "experiments": 1,
+          "duration_ns": 3850807867,
+          "progress": 6731,
+          "selected_samples": 199,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:486",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.75,
+          "experiments": 1,
+          "duration_ns": 3850807867,
+          "progress": 9,
+          "selected_samples": 199,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:497",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.85,
+          "experiments": 1,
+          "duration_ns": 3923560278,
+          "progress": 6739,
+          "selected_samples": 90,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:497",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.85,
+          "experiments": 1,
+          "duration_ns": 3923560278,
+          "progress": 9,
+          "selected_samples": 90,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:498",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.4,
+          "experiments": 1,
+          "duration_ns": 3920058787,
+          "progress": 6588,
+          "selected_samples": 200,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:498",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.4,
+          "experiments": 1,
+          "duration_ns": 3920058787,
+          "progress": 8,
+          "selected_samples": 200,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:565",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.35,
+          "experiments": 1,
+          "duration_ns": 3981130928,
+          "progress": 6750,
+          "selected_samples": 54,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:565",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.35,
+          "experiments": 1,
+          "duration_ns": 3981130928,
+          "progress": 9,
+          "selected_samples": 54,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:625",
+      "progress_point": "cpu_256_visited_nodes",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.2,
+          "experiments": 1,
+          "duration_ns": 3987258138,
+          "progress": 6704,
+          "selected_samples": 64,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    },
+    {
+      "selected": "/home/iskam/src/vibe/chen/src/core.rs:625",
+      "progress_point": "cpu_completed_fixed_node_search",
+      "points": [
+        {
+          "virtual_speedup_fraction": 0.2,
+          "experiments": 1,
+          "duration_ns": 3987258138,
+          "progress": 9,
+          "selected_samples": 64,
+          "zero_control_admitted": false,
+          "predicted_throughput_ratio": null,
+          "predicted_period_reduction_percent": null
+        }
+      ]
+    }
+  ],
+  "latency_records": 8,
+  "scope": "Coz virtual-speedup throughput observations with exact zero controls; not an implemented optimization, clean timing, strength, GPU or latency-model estimate"
+}

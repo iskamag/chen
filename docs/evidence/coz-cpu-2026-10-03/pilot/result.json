@@ -1,0 +1,13 @@
+{
+  "phase": "pilot",
+  "pid": 5325,
+  "pgid": 5325,
+  "exit_code": 0,
+  "elapsed_seconds": 1.9193191850208677,
+  "timed_out": false,
+  "exact_stationary_assertions_passed": true,
+  "process_group_absent_on_retirement": true,
+  "binary_hash_unchanged": true,
+  "runtime_hash_unchanged": true,
+  "perf_event_paranoid_after": "2"
+}

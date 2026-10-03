@@ -1,0 +1,41 @@
+{
+  "phase": "confirmation",
+  "argv": [
+    "taskset",
+    "-c",
+    "5",
+    "python3",
+    "/home/iskam/src/vibe/chen/results/coz-cpu-2026-10-03/tools/coz",
+    "run",
+    "--output",
+    "/home/iskam/src/vibe/chen/results/coz-cpu-2026-10-03/confirmation/profile.jsonl",
+    "--source-scope",
+    "%src/core.rs",
+    "--source-scope",
+    "%src/attacks.rs",
+    "--source-scope",
+    "%src/eval.rs",
+    "--fixed-line",
+    "/home/iskam/src/vibe/chen/src/core.rs:376",
+    "---",
+    "/home/iskam/src/vibe/chen/results/coz-cpu-2026-10-03/bin/coz_search",
+    "80",
+    "200000"
+  ],
+  "environment_overrides": {
+    "COZ_PRELOAD": "/home/iskam/src/vibe/chen/results/coz-cpu-2026-10-03/tools/libcoz.so",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "timeout_seconds": 45,
+  "termination_grace_seconds": 2,
+  "release": "Root explicitly released CPU5 after terminal exit0 16-game match and process audit",
+  "iterations": 80,
+  "nodes_per_search": 200000,
+  "binary_sha256": "4f405455ca8fe2845f71758214f2c0e0abebe07c45ee6dd0014b75aab18dedc1",
+  "profiler_runtime_sha256": "60877fa2d6d0db36a1b83aed572ca92af1ab0d19a03bc721989c5009ee29766b",
+  "profiler_cli_sha256": "ca0f4e3efd13da941bd4ca566995dcae6862197bc3fc7a3c5b89a71e66a69c1c",
+  "cpu": 5,
+  "fixed_speedup": null,
+  "fixed_line": "/home/iskam/src/vibe/chen/src/core.rs:376",
+  "timestamp_utc": "2026-10-03T07:45:02.904912+00:00"
+}

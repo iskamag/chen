@@ -7,6 +7,12 @@ checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
 The single 1367 ms first-move wall-time outlier remains to be instrumented.
 Bounded tactical leaf scoring is the next isolated search-quality hypothesis.
 
+The [CPU Coz study](../COZ_PROFILE.md) completed 164 stationary fixed-node
+searches. Actual zero-control interventions identify piece lookup as a useful
+CPU hypothesis; a 75% virtual line acceleration reduces the finer node-marker
+period about 7.1%. Whole-search counters are coarse and disagree at several
+levels. No implemented lookup speedup or GPU result follows from this study.
+
 The [retained-prefix selector](../GPU_RETAINED_SELECTION_PATH.md) removes repeated
 root traversal during one classical choose call without new storage. Forty-eight
 synthetic cases and 1,336 snapshots across 33 native cases preserve exact behavior.

@@ -1,0 +1,1 @@
+completed 4 identical searches, 200000 visited nodes each

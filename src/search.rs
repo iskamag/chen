@@ -231,6 +231,10 @@ impl Searcher {
             return false;
         }
         self.nodes += 1;
+        #[cfg(feature = "causal-profile")]
+        if self.nodes & 255 == 0 {
+            coz::progress!("cpu_256_visited_nodes");
+        }
         if q {
             self.qnodes += 1;
         }
