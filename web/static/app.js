@@ -1,6 +1,24 @@
 'use strict';
 const $ = id => document.getElementById(id);
-const glyphs = {P:'♟',N:'♞',B:'♝',R:'♜',Q:'♛',K:'♚',p:'♟',n:'♞',b:'♝',r:'♜',q:'♛',k:'♚'};
+// Vector silhouettes avoid platform emoji fonts and keep both sides distinct.
+const pieceShapes = {
+  p: '<circle cx="32" cy="17" r="8"/><path d="M25 27h14l-3 7 3 13H25l3-13z"/>',
+  n: '<path d="M21 47c0-9 6-13 11-19l-10 5-8-5 10-14 1-7 8 5c14 3 18 18 16 35z"/><path d="M24 20h3"/>',
+  b: '<path d="M32 8c-3 5-11 10-11 17 0 5 4 8 8 9l-6 13h18l-6-13c4-1 8-4 8-9 0-7-8-12-11-17z"/><path d="m35 19-6 8"/>',
+  r: '<path d="M18 10h7v7h5v-7h5v7h5v-7h7v14l-7 5 1 18H23l1-18-6-5z"/>',
+  q: '<path d="m17 19 6 25h18l6-25-10 12-5-17-5 17z"/><circle cx="16" cy="16" r="3"/><circle cx="32" cy="11" r="3"/><circle cx="48" cy="16" r="3"/>',
+  k: '<path d="M32 6v13m-6-7h12"/><path d="M25 44 20 29c-4-11 7-13 12-5 5-8 16-6 12 5l-5 15z"/>'
+};
+function pieceIcon(piece) {
+  // An image document isolates these semantic colors from page recoloring.
+  const white=piece===piece.toUpperCase();
+  const image=document.createElement('img');
+  image.className='piece '+(white ? 'white':'black');
+  image.alt='';image.setAttribute('aria-hidden', 'true');image.draggable=false;
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="color-scheme:only light"><g fill="'+(white ? '#fff8e9':'#243e31')+'" stroke="'+(white ? '#3f4e42':'#dbe6d7')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+pieceShapes[piece.toLowerCase()]+'<path d="M22 47h20l4 7H18z"/><path d="M17 54h30v4H17z"/></g></svg>';
+  image.src='data:image/svg+xml,'+encodeURIComponent(svg);
+  return image;
+}
 const names = {p:'pawn',n:'knight',b:'bishop',r:'rook',q:'queen',k:'king'};
 let state, selected = null, flipped = false, busy = false, activeJob = null, generation = 0;
 const squareName = n => 'abcdefgh'[n % 8] + (Math.floor(n / 8) + 1);
@@ -73,7 +91,7 @@ function render() {
     if (last && [last.slice(0,2),last.slice(2,4)].includes(name)) button.classList.add('last');
     button.setAttribute('aria-label', name + (piece ? ', '+ (piece===piece.toUpperCase() ? 'white ' : 'black ') + names[piece.toLowerCase()] : ', empty'));
     if (piece) {
-      const span = document.createElement('span'); span.className='piece '+(piece===piece.toUpperCase() ? 'white':'black');span.textContent=glyphs[piece];span.setAttribute('aria-hidden','true');button.append(span);
+      button.append(pieceIcon(piece));
     }
     if(column===0){const span=document.createElement('span');span.className='coordinate rank';span.textContent=rank+1;button.append(span);}
     if(row===7){const span=document.createElement('span');span.className='coordinate file';span.textContent='abcdefgh'[file];button.append(span);}
@@ -97,7 +115,7 @@ function render() {
 function capitalize(s){return s[0].toUpperCase()+s.slice(1);}
 async function promotion(moves) {
   $('promotion-choices').replaceChildren();
-  for(const move of moves){const button=document.createElement('button');button.value=move;button.textContent=glyphs[move[4]];button.setAttribute('aria-label','Promote to '+names[move[4]]);$('promotion-choices').append(button);}
+  for(const move of moves){const button=document.createElement('button');button.value=move;button.append(pieceIcon(state.human==='white' ? move[4].toUpperCase() : move[4]));button.setAttribute('aria-label','Promote to '+names[move[4]]);$('promotion-choices').append(button);}
   $('promotion').returnValue='cancel';$('promotion').showModal();
   return new Promise(resolve=>$('promotion').addEventListener('close',()=>resolve($('promotion').returnValue),{once:true}));
 }
