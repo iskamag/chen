@@ -1,0 +1,33 @@
+{
+  "split": "dev",
+  "input_sha256": "38713a8e43d062438fff0a034e8c546f2dde27b02985803ba866253c91e3aa94",
+  "admission_sha256": "cb183a2864ebfee71461fbb49247fdc2de96d8c292bb056ebe12a0544fc30909",
+  "target_sha256": "32678a5e95cc48d10b2d39a7b768fe336434c115ec69e48003dfd1355030feef",
+  "target_kind": "restricted_exchange_material_delta_not_strategic_CP",
+  "limits": {
+    "max_plies": 16,
+    "nodes_per_action": 4096,
+    "global_nodes": 500000,
+    "wall_seconds": 180
+  },
+  "counts": {
+    "actions": 795,
+    "closed": 651,
+    "nonzero_correction": 244,
+    "unsupported_check_evasion": 139,
+    "typed_terminal": 5
+  },
+  "dependency_rounds": {
+    "1": 378,
+    "4": 23,
+    "2": 199,
+    "6": 4,
+    "3": 47
+  },
+  "nodes": 1562,
+  "wall_seconds": 1.1827059740026016,
+  "source_sha256": {
+    "exchange_study_data.py": "102e255527844c0f3b6132318eb86681797149095efbf05e4553c030ec91165f",
+    "exchange_targets.py": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e"
+  }
+}
