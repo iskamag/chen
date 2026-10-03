@@ -11,12 +11,21 @@ import tempfile
 import time
 
 REMOTE = r'''
-import collections, datetime, gzip, json, pathlib, re, sys
+import collections, datetime, gzip, json, pathlib, re, socket, subprocess, sys
 now = datetime.datetime.now(datetime.timezone.utc)
 since = now - datetime.timedelta(hours=float(sys.argv[1]))
 pattern = re.compile(r'^(\S+) \S+ \S+ \[([^]]+)\] "(\S+) (\S+) [^"]+" (\d+) \S+ "[^"]*" "(.*)"$')
 fields = ('page_loads', 'game_start_requests', 'accepted_player_moves', 'result_polls', 'http_errors')
-groups = {kind: dict.fromkeys(fields, 0) for kind in ('browser_like', 'crawler', 'checks')}
+groups = {kind: dict.fromkeys(fields, 0) for kind in ('browser_like', 'own_proxy', 'crawler', 'checks')}
+def local_addresses():
+    own = set()
+    interfaces = json.loads(subprocess.check_output(['ip', '-j', 'address', 'show'], text=True))
+    for interface in interfaces:
+        for address in interface.get('addr_info', []):
+            if address.get('scope') == 'global': own.add(address['local'])
+    own.update(item[4][0] for item in socket.getaddrinfo('iskamag.com', 443))
+    return own
+own = local_addresses()
 players = collections.defaultdict(set)
 first = last = None
 prefix = '/games/play-with-chen/'
@@ -43,6 +52,7 @@ for path in files:
             agent_lower = agent.lower()
             kind = ('checks' if any(word in agent_lower for word in
                 ('headlesschrome', 'playwright', 'curl/', 'python-urllib', 'chen-monitor'))
+                else 'own_proxy' if ip in own
                 else 'crawler' if any(word in agent_lower for word in
                 ('bot', 'spider', 'crawl', 'facebookexternalhit', 'linkring', 'flipboardproxy'))
                 else 'browser_like')
@@ -93,12 +103,12 @@ def write_snapshot(path, report):
 def display(report):
     group = report['groups']['browser_like']
     print(f"Chen activity since {report['since_utc']} (snapshot {report['updated_at_utc']})")
-    print(f"  Browser-like: {group['page_loads']} page loads, "
+    print(f"  Browser-like outside your proxy: {group['page_loads']} page loads, "
           f"{group['game_start_requests']} game-start requests, "
           f"{group['accepted_player_moves']} accepted player moves")
     print(f"  Rough playing clients: {group['rough_playing_clients']}; "
           f"last accepted move: {group['last_player_move_utc'] or 'none'}")
-    for kind in ('crawler', 'checks'):
+    for kind in ('own_proxy', 'crawler', 'checks'):
         item = report['groups'][kind]
         print(f"  {kind}: {item['page_loads']} page loads, "
               f"{item['accepted_player_moves']} accepted moves (separate from browser-like counts)")

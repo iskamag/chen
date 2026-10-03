@@ -29,6 +29,7 @@ class TrafficSummary(unittest.TestCase):
                 line(prefix, agent='facebookexternalhit/1.1'),
                 line(prefix + 'api/move', 202, 'POST', agent='HeadlessChrome/131'),
                 line(prefix, method='HEAD'),
+                line(prefix + 'api/move', 202, 'POST', ip='192.0.2.99'),
                 line('/games/play-with-chen-other/'),
                 line(prefix, when=now - datetime.timedelta(days=2)),
                 'malformed unrelated log line\n',
@@ -36,7 +37,8 @@ class TrafficSummary(unittest.TestCase):
             with gzip.open(Path(directory, 'access.log.1.gz'), 'wt') as log:
                 log.write(line(prefix + 'api/move', 202, 'POST', ip='192.0.2.2'))
             result = subprocess.run([sys.executable, '-', '24'],
-                input=traffic.REMOTE.replace('/var/log/nginx', directory),
+                input=traffic.REMOTE.replace('/var/log/nginx', directory).replace(
+                    'own = local_addresses()', "own = {'192.0.2.99'}"),
                 capture_output=True, text=True, check=True)
             report = json.loads(result.stdout)
         browser = report['groups']['browser_like']
@@ -48,6 +50,7 @@ class TrafficSummary(unittest.TestCase):
         self.assertEqual(browser['http_errors'], 1)
         self.assertEqual(report['groups']['crawler']['page_loads'], 1)
         self.assertEqual(report['groups']['checks']['accepted_player_moves'], 1)
+        self.assertEqual(report['groups']['own_proxy']['accepted_player_moves'], 1)
         self.assertNotIn('192.0.2.', json.dumps(report))
 
 

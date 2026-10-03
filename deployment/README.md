@@ -73,7 +73,11 @@ Only successful `POST /api/move` responses count as accepted player moves: the
 server has validated the move/history and admitted the job. This indicates play
 requests, not guaranteed completed turns or games. Starting as White need not
 produce a game-start request, so these counters cannot estimate unique games.
-Crawler and QA user agents are counted separately. Browser-like agents can still
+Your own forward-proxy traffic is separated using the public host's current
+interface/DNS addresses. The browser-like counters exclude this `own_proxy`
+group. Other people using that same proxy would also fall into that group; it
+identifies the proxy origin, not a person. Crawler and QA user agents are counted
+separately. Browser-like agents can still
 be bots, and an IP/agent pair is only a rough playing-client estimate; it cannot
 identify people or distinguish the owner from friends.
 

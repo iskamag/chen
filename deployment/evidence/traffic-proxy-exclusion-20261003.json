@@ -1,0 +1,53 @@
+{
+  "status": "ok",
+  "updated_at_utc": "2026-10-03T17:46:08.010439+00:00",
+  "since_utc": "2026-10-02T17:46:08.010439+00:00",
+  "first_observed_utc": "2026-10-03T15:05:03+00:00",
+  "last_observed_utc": "2026-10-03T17:40:02+00:00",
+  "log_files": [
+    "/var/log/nginx/access.log",
+    "/var/log/nginx/access.log.1"
+  ],
+  "groups": {
+    "browser_like": {
+      "page_loads": 6,
+      "game_start_requests": 0,
+      "accepted_player_moves": 0,
+      "result_polls": 0,
+      "http_errors": 1,
+      "last_page_load_utc": "2026-10-03T17:04:49+00:00",
+      "rough_playing_clients": 0,
+      "last_player_move_utc": null
+    },
+    "own_proxy": {
+      "page_loads": 2,
+      "game_start_requests": 1,
+      "accepted_player_moves": 44,
+      "result_polls": 104,
+      "http_errors": 2,
+      "last_page_load_utc": "2026-10-03T16:33:26+00:00",
+      "last_player_move_utc": "2026-10-03T15:59:16+00:00",
+      "rough_playing_clients": 1
+    },
+    "crawler": {
+      "page_loads": 15,
+      "game_start_requests": 0,
+      "accepted_player_moves": 0,
+      "result_polls": 0,
+      "http_errors": 4,
+      "last_page_load_utc": "2026-10-03T17:40:02+00:00",
+      "rough_playing_clients": 0,
+      "last_player_move_utc": null
+    },
+    "checks": {
+      "page_loads": 10,
+      "game_start_requests": 3,
+      "accepted_player_moves": 1,
+      "result_polls": 8,
+      "http_errors": 1,
+      "last_page_load_utc": "2026-10-03T16:51:38+00:00",
+      "last_player_move_utc": "2026-10-03T16:02:48+00:00",
+      "rough_playing_clients": 1
+    }
+  }
+}
