@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "cause": "Pre-query readyok included in replay shifts packet line provenance; executed driver selected only post-go responses.",
+  "session": 22157,
+  "source_sha256": "935c38cc4713f726ac3ad06873980ca2b89fbe5f6d23a317b2ba88ceca4de3a4"
+}

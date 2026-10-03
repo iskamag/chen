@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 4.001869158004411,
+  "host_pid": 10274,
+  "start_utc": "2026-10-03T10:33:09.914897+00:00",
+  "post_retirement_utc": "2026-10-03T10:33:13.916769+00:00",
+  "host_retired": true,
+  "candidate_present": false
+}
