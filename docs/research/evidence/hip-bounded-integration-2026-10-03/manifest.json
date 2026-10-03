@@ -1,0 +1,20 @@
+{
+  "payload_sha256": {
+    "README.md": "08f086e437c038ecc5db9b3d3d80f03e84eea11f4605d3f40d8a011b665f06af",
+    "cases.json": "aae760884b52bc3305392a2a5a2b8d8972fa72e4740abd22b1ccc395c7246e6d",
+    "compiler.txt": "dfbceb5633e00ea1fb2f6ea5fc0c95a503e53b3b1c27b7f56244ec8e2934b2ef",
+    "declaration.json": "513df3046c9476d1e014a4a6b733b8c4d8dd160439c4f906d9ce71b5d1b19441",
+    "failed-compile-source.hip": "2163ffcf496de7aedff999007873f9a7fbf9a0315367a9a34e8e0534e2932a33",
+    "failed-compile.txt": "cb79afa92b0e8003b0d70e5c784230593fbe5659ca57a6dd265bc870388f9401",
+    "native-results.json": "3bb17fd30cc1eb4d321eebfbc978877dc6ef5f311e4b52158a864c84a9f62f46",
+    "retirement.txt": "bf0c71339c65b638fc3f75270c4a8d8231ad8fac467deefdb1afdd68394321b8",
+    "rust-compiler.txt": "61d85334aa58da96b169523979e0b59f4186eff1d2923b70a2017d03df7bedfa",
+    "source-binding.json": "834cba0e86fd1a253c160d88d86cfc926a5155fb097520cf5ead66388daf8cf2",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.txt": "6952c34bab569761a1c2eee8e55e4323fcd4b21faa7d31463675c6541ac5a035",
+    "summary.json": "31777ee8e2c0bf9a9127f4651d87f2837d452bc4aaba70a79323c1b1a457a559",
+    "terminal.json": "6772a39752ff24a85821333efd0c443da2b40aa3f36d462217c86536ea872cde",
+    "uci-results.json": "5ffc69a6794a539f086518b79138738326707235699a6e661e1745429b61e981"
+  },
+  "schema": 1
+}

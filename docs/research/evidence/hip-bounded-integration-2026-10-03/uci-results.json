@@ -1,0 +1,356 @@
+{
+  "library_path": "/tmp/chen-bounded-timed-v2-20261003-crnnqh9f/libchen_bounded_timed.so",
+  "rows": [
+    {
+      "bestmove": "a2a3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "history_upload_ms": 0.00535999983549118,
+        "iterations": [],
+        "node_limit": 0,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "nodes",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go nodes 0",
+      "infos": [],
+      "position": "position startpos",
+      "stop_response_ms": null,
+      "wall_ms": 4.409202025271952
+    },
+    {
+      "bestmove": "a2a3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "history_upload_ms": 0.005080000031739473,
+        "iterations": [],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "deadline",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go movetime 0",
+      "infos": [],
+      "position": "position startpos",
+      "stop_response_ms": null,
+      "wall_ms": 0.36268102121539414
+    },
+    {
+      "bestmove": "b1c3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 1,
+        "history_upload_ms": 0.005080999806523323,
+        "iterations": [
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 183876,
+            "kind": 0,
+            "nodes": 21,
+            "qnodes": 20,
+            "requested_depth": 1,
+            "wall_ms": 1.893451
+          },
+          {
+            "abort_reason": 1,
+            "elapsed_ticks": 25700,
+            "kind": 3,
+            "nodes": 3,
+            "qnodes": 1,
+            "requested_depth": 2,
+            "wall_ms": 0.31831
+          }
+        ],
+        "node_limit": 24,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "nodes",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go nodes 24 depth 16",
+      "infos": [
+        "info depth 1 score cp 36 nodes 21 nps 10062 hashfull 0 time 2 pv b1c3"
+      ],
+      "position": "position startpos",
+      "stop_response_ms": null,
+      "wall_ms": 3.0702209915034473
+    },
+    {
+      "bestmove": "f6g8",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 1,
+        "history_upload_ms": 0.009879999794065952,
+        "iterations": [
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 198800,
+            "kind": 0,
+            "nodes": 24,
+            "qnodes": 23,
+            "requested_depth": 1,
+            "wall_ms": 2.090461
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "depth",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go depth 1",
+      "infos": [
+        "info depth 1 score cp 0 nodes 24 nps 10369 hashfull 0 time 2 pv f6g8"
+      ],
+      "position": "position fen rnb1kbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 moves g1f3 g8f6 f3g1 f6g8 g1f3 g8f6 f3g1",
+      "stop_response_ms": null,
+      "wall_ms": 3.242251987103373
+    },
+    {
+      "bestmove": "0000",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "history_upload_ms": 0.005040000192821026,
+        "iterations": [],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "terminal",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go movetime 1000",
+      "infos": [],
+      "position": "position fen 7k/6Q1/6K1/8/8/8/8/8 b - - 100 1",
+      "stop_response_ms": null,
+      "wall_ms": 0.23919000523164868
+    },
+    {
+      "bestmove": "b1c3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 2,
+        "history_upload_ms": 0.005080000031739473,
+        "iterations": [
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 178852,
+            "kind": 0,
+            "nodes": 21,
+            "qnodes": 20,
+            "requested_depth": 1,
+            "wall_ms": 1.8448010000000001
+          },
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 2296464,
+            "kind": 0,
+            "nodes": 248,
+            "qnodes": 227,
+            "requested_depth": 2,
+            "wall_ms": 23.053261
+          },
+          {
+            "abort_reason": 7,
+            "elapsed_ticks": 150376,
+            "kind": 3,
+            "nodes": 18,
+            "qnodes": 15,
+            "requested_depth": 3,
+            "wall_ms": 1.576531
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "cancelled",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go movetime 1000 depth 16",
+      "infos": [
+        "info depth 1 score cp 36 nodes 21 nps 10324 hashfull 0 time 2 pv b1c3",
+        "info depth 2 score cp 0 nodes 269 nps 10714 hashfull 0 time 25 pv b1c3 b8c6"
+      ],
+      "position": "position startpos",
+      "stop_response_ms": 1.1072009801864624,
+      "wall_ms": 26.83893300127238
+    },
+    {
+      "bestmove": "b1c3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 1,
+        "history_upload_ms": 0.005080000031739473,
+        "iterations": [
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 176784,
+            "kind": 0,
+            "nodes": 21,
+            "qnodes": 20,
+            "requested_depth": 1,
+            "wall_ms": 1.830351
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "depth",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go depth 1",
+      "infos": [
+        "info depth 1 score cp 36 nodes 21 nps 10373 hashfull 0 time 2 pv b1c3"
+      ],
+      "position": "position startpos",
+      "stop_response_ms": null,
+      "wall_ms": 3.0524210014846176
+    },
+    {
+      "bestmove": "b1c3",
+      "bounded": {
+        "bootstrap_nodes": 1,
+        "completed_depth": 3,
+        "history_upload_ms": 0.00571999978274107,
+        "iterations": [
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 220800,
+            "kind": 0,
+            "nodes": 21,
+            "qnodes": 20,
+            "requested_depth": 1,
+            "wall_ms": 2.299591
+          },
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 2286552,
+            "kind": 0,
+            "nodes": 248,
+            "qnodes": 227,
+            "requested_depth": 2,
+            "wall_ms": 22.976141
+          },
+          {
+            "abort_reason": 0,
+            "elapsed_ticks": 23730764,
+            "kind": 0,
+            "nodes": 2574,
+            "qnodes": 2368,
+            "requested_depth": 3,
+            "wall_ms": 237.411403
+          },
+          {
+            "abort_reason": 6,
+            "elapsed_ticks": 73708820,
+            "kind": 3,
+            "nodes": 8034,
+            "qnodes": 7337,
+            "requested_depth": 4,
+            "wall_ms": 737.2373719999999
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "canonical",
+        "quiescence": true,
+        "scratch_bytes": 95496,
+        "stop_reason": "deadline",
+        "tt": false,
+        "wall_clock_khz": 100000
+      },
+      "go": "go movetime 1000 depth 16",
+      "infos": [
+        "info depth 1 score cp 36 nodes 21 nps 7556 hashfull 0 time 2 pv b1c3",
+        "info depth 2 score cp 0 nodes 269 nps 10421 hashfull 0 time 25 pv b1c3 b8c6",
+        "info depth 3 score cp 36 nodes 2843 nps 10797 hashfull 0 time 263 pv b1c3 b8c6 g1f3"
+      ],
+      "position": "position startpos",
+      "stop_response_ms": null,
+      "wall_ms": 1001.648057019338
+    }
+  ],
+  "rust_binary_sha256": "ccebec06e558432d1694fb4536fb41ee719df762e83c6399a7d51c8ad9efc3f2",
+  "scope": "Runnable scalar fullGPU reference; no strength/parallel-efficiency claim; root CPU match may share system power",
+  "status": "PASS",
+  "stderr": "",
+  "transcript": [
+    "> uci",
+    "< id name Chen 0.1.0",
+    "< id author Chen contributors",
+    "< option name Hash type spin default 16 min 1 max 1024",
+    "< option name Eval type combo default tapered var tapered var material var neural",
+    "< option name UseTT type check default true",
+    "< option name Quiescence type check default true",
+    "< option name MoveOrdering type check default true",
+    "< option name Backend type combo default alphabeta var alphabeta var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded",
+    "< option name SelectiveBatch type spin default 32 min 1 max 256",
+    "< option name SelectiveCandidates type spin default 1024 min 1 max 1024",
+    "< option name BatchSize type spin default 4096 min 1 max 65536",
+    "< option name MaxPositions type spin default 250000 min 1 max 2000000",
+    "< option name Level type spin default 20 min 1 max 20",
+    "< uciok",
+    "> setoption name Backend value hip-bounded",
+    "> isready",
+    "< readyok",
+    "> position startpos",
+    "> go nodes 0",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":0,\"history_upload_ms\":0.00535999983549118,\"iterations\":[],\"node_limit\":0,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"nodes\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove a2a3",
+    "> position startpos",
+    "> go movetime 0",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":0,\"history_upload_ms\":0.005080000031739473,\"iterations\":[],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"deadline\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove a2a3",
+    "> position startpos",
+    "> go nodes 24 depth 16",
+    "< info depth 1 score cp 36 nodes 21 nps 10062 hashfull 0 time 2 pv b1c3",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":1,\"history_upload_ms\":0.005080999806523323,\"iterations\":[{\"abort_reason\":0,\"elapsed_ticks\":183876,\"kind\":0,\"nodes\":21,\"qnodes\":20,\"requested_depth\":1,\"wall_ms\":1.893451},{\"abort_reason\":1,\"elapsed_ticks\":25700,\"kind\":3,\"nodes\":3,\"qnodes\":1,\"requested_depth\":2,\"wall_ms\":0.31831}],\"node_limit\":24,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"nodes\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove b1c3",
+    "> position fen rnb1kbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 moves g1f3 g8f6 f3g1 f6g8 g1f3 g8f6 f3g1",
+    "> go depth 1",
+    "< info depth 1 score cp 0 nodes 24 nps 10369 hashfull 0 time 2 pv f6g8",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":1,\"history_upload_ms\":0.009879999794065952,\"iterations\":[{\"abort_reason\":0,\"elapsed_ticks\":198800,\"kind\":0,\"nodes\":24,\"qnodes\":23,\"requested_depth\":1,\"wall_ms\":2.090461}],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"depth\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove f6g8",
+    "> position fen 7k/6Q1/6K1/8/8/8/8/8 b - - 100 1",
+    "> go movetime 1000",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":0,\"history_upload_ms\":0.005040000192821026,\"iterations\":[],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"terminal\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove 0000",
+    "> position startpos",
+    "> go movetime 1000 depth 16",
+    "> stop",
+    "< info depth 1 score cp 36 nodes 21 nps 10324 hashfull 0 time 2 pv b1c3",
+    "< info depth 2 score cp 0 nodes 269 nps 10714 hashfull 0 time 25 pv b1c3 b8c6",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":2,\"history_upload_ms\":0.005080000031739473,\"iterations\":[{\"abort_reason\":0,\"elapsed_ticks\":178852,\"kind\":0,\"nodes\":21,\"qnodes\":20,\"requested_depth\":1,\"wall_ms\":1.8448010000000001},{\"abort_reason\":0,\"elapsed_ticks\":2296464,\"kind\":0,\"nodes\":248,\"qnodes\":227,\"requested_depth\":2,\"wall_ms\":23.053261},{\"abort_reason\":7,\"elapsed_ticks\":150376,\"kind\":3,\"nodes\":18,\"qnodes\":15,\"requested_depth\":3,\"wall_ms\":1.576531}],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"cancelled\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove b1c3",
+    "> position startpos",
+    "> go depth 1",
+    "< info depth 1 score cp 36 nodes 21 nps 10373 hashfull 0 time 2 pv b1c3",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":1,\"history_upload_ms\":0.005080000031739473,\"iterations\":[{\"abort_reason\":0,\"elapsed_ticks\":176784,\"kind\":0,\"nodes\":21,\"qnodes\":20,\"requested_depth\":1,\"wall_ms\":1.830351}],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"depth\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove b1c3",
+    "> position startpos",
+    "> go movetime 1000 depth 16",
+    "< info depth 1 score cp 36 nodes 21 nps 7556 hashfull 0 time 2 pv b1c3",
+    "< info depth 2 score cp 0 nodes 269 nps 10421 hashfull 0 time 25 pv b1c3 b8c6",
+    "< info depth 3 score cp 36 nodes 2843 nps 10797 hashfull 0 time 263 pv b1c3 b8c6 g1f3",
+    "< info string bounded {\"bootstrap_nodes\":1,\"completed_depth\":3,\"history_upload_ms\":0.00571999978274107,\"iterations\":[{\"abort_reason\":0,\"elapsed_ticks\":220800,\"kind\":0,\"nodes\":21,\"qnodes\":20,\"requested_depth\":1,\"wall_ms\":2.299591},{\"abort_reason\":0,\"elapsed_ticks\":2286552,\"kind\":0,\"nodes\":248,\"qnodes\":227,\"requested_depth\":2,\"wall_ms\":22.976141},{\"abort_reason\":0,\"elapsed_ticks\":23730764,\"kind\":0,\"nodes\":2574,\"qnodes\":2368,\"requested_depth\":3,\"wall_ms\":237.411403},{\"abort_reason\":6,\"elapsed_ticks\":73708820,\"kind\":3,\"nodes\":8034,\"qnodes\":7337,\"requested_depth\":4,\"wall_ms\":737.2373719999999}],\"node_limit\":1000000,\"ordering\":\"canonical\",\"quiescence\":true,\"scratch_bytes\":95496,\"stop_reason\":\"deadline\",\"tt\":false,\"wall_clock_khz\":100000}",
+    "< bestmove b1c3",
+    "> quit"
+  ]
+}

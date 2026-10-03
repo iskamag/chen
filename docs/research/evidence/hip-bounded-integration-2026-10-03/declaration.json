@@ -1,0 +1,54 @@
+{
+  "argv": [
+    "docker",
+    "exec",
+    "-e",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "-e",
+    "PYTHONPATH=/tmp/chen-gpu",
+    "-e",
+    "CHEN_BOUNDED_LIBRARY=/tmp/chen-bounded-timed-v2-20261003-crnnqh9f/libchen_bounded_timed.so",
+    "-e",
+    "OMP_NUM_THREADS=1",
+    "cpp-rocm",
+    "timeout",
+    "--kill-after=5s",
+    "30s",
+    "taskset",
+    "-c",
+    "3",
+    "python3",
+    "/tmp/chen-bounded-timed-v2-20261003-crnnqh9f/run_validation.py"
+  ],
+  "build_exit_code": 0,
+  "cases_sha256": "aae760884b52bc3305392a2a5a2b8d8972fa72e4740abd22b1ccc395c7246e6d",
+  "kill_after_seconds": 5,
+  "ordering": "canonical legal generation; no TT/PVS/parallel task split",
+  "ownership": "Root released GPU explicitly; no other agent GPU jobs. Root CPU0 match live; teacherCPU4 retired. Shared power/cache uncontrolled, no throughput timing inference",
+  "runner_sha256": "c0e6fd8ec66c3c9f6206aa86e7b1ad834f70825b0a7e89cd0765afb909ab04dd",
+  "runner_source": "import os,subprocess,json\nfrom pathlib import Path\np=Path(__file__).resolve().parent\nprint(json.dumps({'container_pid':os.getpid(),'container_pgid':os.getpgrp()}),flush=True)\nsubprocess.run(['python3',str(p/'gpu/experiments/bounded_search_timed_probe.py'),'--cases',str(p/'cases.json'),'--library',str(p/'libchen_bounded_timed.so'),'--output',str(p/'native-results.json')],check=True)\nsubprocess.run(['python3',str(p/'gpu/experiments/bounded_search_uci_probe.py'),'--engine',str(p/'chen'),'--output',str(p/'uci-results.json')],check=True)\n",
+  "rust_tests": {
+    "focused_bounded": 6,
+    "hip_lib_bin": 29,
+    "nonhip_lib_bin": 17
+  },
+  "scope": "Actual gfx1030 correctness + realized device deadline/cancel + Rust publication/UCI; scalar reference, not efficiency/strength claim",
+  "source_binding": "source-binding.json",
+  "tests": {
+    "cancel_response_limit_ms": 100,
+    "deadline_max_device_overshoot_ms": 20,
+    "elapsed_allowances_ns": [
+      1,
+      1000000,
+      20000000,
+      50000000
+    ],
+    "exhaustive_cases": 19,
+    "independent_cases": 33,
+    "mid_kernel_cancel_delay_ms": 20,
+    "uci_cases": 8,
+    "uci_one_second_overshoot_limit_ms": 300,
+    "unchanged_output_rejections": 4
+  },
+  "timeout_seconds": 30
+}

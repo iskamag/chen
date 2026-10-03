@@ -1,0 +1,4 @@
+Strict compile exit1, no GPU execution. Initial closure /tmp/chen-bounded-timed-20261003-_66iwrgy.
+gpu/experiments/bounded_search_timed.hip:214:31: error: no matching function for call to 'hipHostGetDevicePointer'
+Candidate hipHostGetDevicePointer(void** devPtr, void* hstPtr, unsigned int flags) does not accept uint32_t**.
+Correction uses a local void* output and casts its returned pointer after the call; cleanup error-buffer write is also guarded.

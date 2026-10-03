@@ -1,0 +1,638 @@
+{
+  "admission": {
+    "d2h_ms": 0.03195999935269356,
+    "h2d_ms": 0.01056000031530857,
+    "history_capacity": 65535,
+    "kernel_ms": 47.637935638427734,
+    "scratch_bytes": 6111744,
+    "wall_clock_khz": 100000
+  },
+  "cancellation": {
+    "device_ms": 21.94856,
+    "pre_cancelled_nodes": 0,
+    "response_ms": 1.3485300005413592,
+    "result": {
+      "abort_reason": 7,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 217,
+      "pv": [],
+      "qnodes": 197,
+      "score": 0
+    },
+    "wall_ms": 22.039959992980585
+  },
+  "cases_sha256": "aae760884b52bc3305392a2a5a2b8d8972fa72e4740abd22b1ccc395c7246e6d",
+  "deadlines": [
+    {
+      "allowance_ns": 1,
+      "device_ms": 0.01016,
+      "kernel_event_ms": 0.02080100029706955,
+      "overshoot_ms": 0.010159000000000001,
+      "result": {
+        "abort_reason": 6,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 0,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      },
+      "wall_ms": 0.07539999205619097
+    },
+    {
+      "allowance_ns": 1000000,
+      "device_ms": 2.53568,
+      "kernel_event_ms": 2.546299934387207,
+      "overshoot_ms": 1.5356800000000002,
+      "result": {
+        "abort_reason": 6,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 24,
+        "pv": [],
+        "qnodes": 8,
+        "score": 0
+      },
+      "wall_ms": 2.6504720153752714
+    },
+    {
+      "allowance_ns": 20000000,
+      "device_ms": 20.235,
+      "kernel_event_ms": 20.249439239501953,
+      "overshoot_ms": 0.23499999999999943,
+      "result": {
+        "abort_reason": 6,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 200,
+        "pv": [],
+        "qnodes": 181,
+        "score": 0
+      },
+      "wall_ms": 20.362479001050815
+    },
+    {
+      "allowance_ns": 50000000,
+      "device_ms": 50.28592,
+      "kernel_event_ms": 50.303443908691406,
+      "overshoot_ms": 0.2859199999999973,
+      "result": {
+        "abort_reason": 6,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 488,
+        "pv": [],
+        "qnodes": 464,
+        "score": 0
+      },
+      "wall_ms": 50.41786402580328
+    }
+  ],
+  "history_h2d_ms": 0.026319999247789383,
+  "library_sha256": "ec56be9e3588eb224b3723f727ef3842d0fc1da4e44b7b57d7ebe87b879b9123",
+  "policy": "unchanged finite ABI1 semantics; independent Python-chess traversal; reused Tapered arithmetic",
+  "rejections": [
+    {
+      "error": "invalid timed job configuration",
+      "field": "abi_version",
+      "value": 1
+    },
+    {
+      "error": "invalid timed job configuration",
+      "field": "struct_size",
+      "value": 200
+    },
+    {
+      "error": "invalid timed job configuration",
+      "field": "elapsed_ns",
+      "value": 0
+    },
+    {
+      "error": "invalid timed job configuration",
+      "field": "elapsed_ns",
+      "value": 5000000001
+    }
+  ],
+  "rows": [
+    {
+      "case": "start-d1",
+      "device_elapsed_ticks": 720996,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "b1c3"
+        ],
+        "qnodes": 20,
+        "score": 36
+      }
+    },
+    {
+      "case": "start-d2",
+      "device_elapsed_ticks": 4347364,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 248,
+        "pv": [
+          "b1c3",
+          "b8c6"
+        ],
+        "qnodes": 227,
+        "score": 0
+      }
+    },
+    {
+      "case": "material-static-d2",
+      "device_elapsed_ticks": 1861268,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 60,
+        "pv": [
+          "a2a3",
+          "a7a6"
+        ],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "tapered-static-d2",
+      "device_elapsed_ticks": 4304828,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 242,
+        "pv": [
+          "b1c3",
+          "b8c6"
+        ],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "recapture",
+      "device_elapsed_ticks": 2756272,
+      "legal_root_count": 26,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 106,
+        "pv": [
+          "d4e4",
+          "h7g7",
+          "e4e6"
+        ],
+        "qnodes": 105,
+        "score": 395
+      }
+    },
+    {
+      "case": "recapture-lower",
+      "device_elapsed_ticks": 1698624,
+      "legal_root_count": 26,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 1,
+        "nodes": 54,
+        "pv": [
+          "d4e4",
+          "h7g8",
+          "e4e6",
+          "g8f8"
+        ],
+        "qnodes": 53,
+        "score": 394
+      }
+    },
+    {
+      "case": "recapture-upper",
+      "device_elapsed_ticks": 2118760,
+      "legal_root_count": 26,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 2,
+        "nodes": 72,
+        "pv": [
+          "d4e4",
+          "h7g7",
+          "e4e6"
+        ],
+        "qnodes": 71,
+        "score": 395
+      }
+    },
+    {
+      "case": "quiet-evasion",
+      "device_elapsed_ticks": 132900,
+      "legal_root_count": 2,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 0,
+        "kind": 0,
+        "nodes": 3,
+        "pv": [
+          "a1a2"
+        ],
+        "qnodes": 3,
+        "score": 0
+      }
+    },
+    {
+      "case": "quiet-evasion-lower",
+      "device_elapsed_ticks": 132900,
+      "legal_root_count": 2,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 0,
+        "kind": 1,
+        "nodes": 3,
+        "pv": [
+          "a1a2"
+        ],
+        "qnodes": 3,
+        "score": 0
+      }
+    },
+    {
+      "case": "quiet-evasion-upper",
+      "device_elapsed_ticks": 132900,
+      "legal_root_count": 2,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 0,
+        "kind": 2,
+        "nodes": 3,
+        "pv": [
+          "a1a2"
+        ],
+        "qnodes": 3,
+        "score": 0
+      }
+    },
+    {
+      "case": "ep",
+      "device_elapsed_ticks": 320440,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 7,
+        "score": 180
+      }
+    },
+    {
+      "case": "ep-lower",
+      "device_elapsed_ticks": 132900,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 1,
+        "nodes": 3,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 2,
+        "score": 180
+      }
+    },
+    {
+      "case": "ep-upper",
+      "device_elapsed_ticks": 320440,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 2,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 7,
+        "score": 180
+      }
+    },
+    {
+      "case": "ep-pin",
+      "device_elapsed_ticks": 1156320,
+      "legal_root_count": 21,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 35,
+        "pv": [
+          "h7d3"
+        ],
+        "qnodes": 34,
+        "score": 23
+      }
+    },
+    {
+      "case": "promotion",
+      "device_elapsed_ticks": 419336,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 11,
+        "pv": [
+          "a7a8q",
+          "h8g7"
+        ],
+        "qnodes": 10,
+        "score": 884
+      }
+    },
+    {
+      "case": "promotion-lower",
+      "device_elapsed_ticks": 166112,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 1,
+        "nodes": 4,
+        "pv": [
+          "a7a8q",
+          "h8g7"
+        ],
+        "qnodes": 3,
+        "score": 884
+      }
+    },
+    {
+      "case": "promotion-upper",
+      "device_elapsed_ticks": 364216,
+      "legal_root_count": 7,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 2,
+        "nodes": 10,
+        "pv": [
+          "a7a8q",
+          "h8g7"
+        ],
+        "qnodes": 9,
+        "score": 884
+      }
+    },
+    {
+      "case": "mate",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 0,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": -30000
+      }
+    },
+    {
+      "case": "stalemate",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 0,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "insufficient",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 5,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "fifty",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 5,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "mate-root-ply7",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 0,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": -29993
+      }
+    },
+    {
+      "case": "qcap-quiet",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 5,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 0,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 1,
+        "score": 116
+      }
+    },
+    {
+      "case": "qcap-capture",
+      "device_elapsed_ticks": 48548,
+      "legal_root_count": 26,
+      "result": {
+        "abort_reason": 2,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 1,
+        "score": 0
+      }
+    },
+    {
+      "case": "qcap-check",
+      "device_elapsed_ticks": 48548,
+      "legal_root_count": 2,
+      "result": {
+        "abort_reason": 2,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 1,
+        "score": 0
+      }
+    },
+    {
+      "case": "qcap-standpat-cutoff",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 26,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 0,
+        "kind": 1,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 1,
+        "score": 267
+      }
+    },
+    {
+      "case": "zero-budget",
+      "device_elapsed_ticks": 4620,
+      "legal_root_count": 0,
+      "result": {
+        "abort_reason": 1,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 0,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "one-budget-abort",
+      "device_elapsed_ticks": 54344,
+      "legal_root_count": 5,
+      "result": {
+        "abort_reason": 1,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "exact-budget",
+      "device_elapsed_ticks": 720996,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "b1c3"
+        ],
+        "qnodes": 20,
+        "score": 36
+      }
+    },
+    {
+      "case": "one-short-budget",
+      "device_elapsed_ticks": 685636,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 1,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 20,
+        "pv": [],
+        "qnodes": 19,
+        "score": 0
+      }
+    },
+    {
+      "case": "threefold-root",
+      "device_elapsed_ticks": 53496,
+      "legal_root_count": 20,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 1,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    },
+    {
+      "case": "threefold-descendant",
+      "device_elapsed_ticks": 828124,
+      "legal_root_count": 23,
+      "result": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 24,
+        "pv": [
+          "f6g8"
+        ],
+        "qnodes": 23,
+        "score": 0
+      }
+    },
+    {
+      "case": "invalid-root-hash",
+      "device_elapsed_ticks": 2980,
+      "legal_root_count": 0,
+      "result": {
+        "abort_reason": 4,
+        "completed_depth": 0,
+        "kind": 3,
+        "nodes": 0,
+        "pv": [],
+        "qnodes": 0,
+        "score": 0
+      }
+    }
+  ],
+  "runtime": {
+    "hipRuntimeGetVersion": 70253211,
+    "path": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+    "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac"
+  },
+  "status": "PASS"
+}
