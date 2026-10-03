@@ -1,0 +1,1 @@
+SOURCE-ONLY REJECTION; never launched. Full64 __shfl_xor/down directly lowers to ds_bpermute_b32. RDNA2 ISA section10.4.4 limits this to separate32-lane halves. V4 replaces cross-half step with explicit readlane merge. Empty v1 path-error staging and unrun v2 remain in /tmp.

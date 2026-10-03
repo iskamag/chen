@@ -1,0 +1,200 @@
+[
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_112pack_weightsEPKiPiiii",
+    "vgpr_count": "11",
+    "sgpr_count": "20",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16scalarILb0EEEvPKiS2_PKfS4_S4_S4_Pfii",
+    "vgpr_count": "11",
+    "sgpr_count": "22",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16linearILb0EEEvPKiS2_PKfS4_S4_S4_Pfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "26",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_114dynamic_linearILb1EEEvPKfPKiS2_S2_S2_Pfiiii",
+    "vgpr_count": "19",
+    "sgpr_count": "28",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_114dynamic_linearILb0EEEvPKfPKiS2_S2_S2_Pfiiii",
+    "vgpr_count": "17",
+    "sgpr_count": "28",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16linearILb1EEEvPKiS2_PKfS4_S4_S4_Pfiii",
+    "vgpr_count": "16",
+    "sgpr_count": "33",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16scalarILb1EEEvPKiS2_PKfS4_S4_S4_Pfii",
+    "vgpr_count": "11",
+    "sgpr_count": "22",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-float_linear_reference-code",
+    "name": "_ZN12_GLOBAL__N_16affineILb1EEEvPKvS2_PKfPfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "21",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave32-float_linear_reference-code",
+    "name": "_ZN12_GLOBAL__N_16affineILb0EEEvPKvS2_PKfPfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "21",
+    "wavefront_size": "32",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_112pack_weightsEPKiPiiii",
+    "vgpr_count": "11",
+    "sgpr_count": "21",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16scalarILb0EEEvPKiS2_PKfS4_S4_S4_Pfii",
+    "vgpr_count": "11",
+    "sgpr_count": "22",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16linearILb0EEEvPKiS2_PKfS4_S4_S4_Pfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "26",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_114dynamic_linearILb1EEEvPKfPKiS2_S2_S2_Pfiiii",
+    "vgpr_count": "19",
+    "sgpr_count": "29",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_114dynamic_linearILb0EEEvPKfPKiS2_S2_S2_Pfiiii",
+    "vgpr_count": "17",
+    "sgpr_count": "29",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16linearILb1EEEvPKiS2_PKfS4_S4_S4_Pfiii",
+    "vgpr_count": "16",
+    "sgpr_count": "33",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-chen_int8_linear-code",
+    "name": "_ZN12_GLOBAL__N_16scalarILb1EEEvPKiS2_PKfS4_S4_S4_Pfii",
+    "vgpr_count": "11",
+    "sgpr_count": "22",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-float_linear_reference-code",
+    "name": "_ZN12_GLOBAL__N_16affineILb1EEEvPKvS2_PKfPfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "22",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  },
+  {
+    "library": "libwave64-float_linear_reference-code",
+    "name": "_ZN12_GLOBAL__N_16affineILb0EEEvPKvS2_PKfPfiii",
+    "vgpr_count": "12",
+    "sgpr_count": "22",
+    "wavefront_size": "64",
+    "group_segment_fixed_size": "0",
+    "private_segment_fixed_size": "0",
+    "vgpr_spill_count": "0",
+    "sgpr_spill_count": "0"
+  }
+]

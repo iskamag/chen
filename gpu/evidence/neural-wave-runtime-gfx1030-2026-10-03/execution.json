@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "main_argv": [
+    "docker",
+    "exec",
+    "cpp-rocm",
+    "taskset",
+    "-c",
+    "2",
+    "python3",
+    "-u",
+    "/tmp/chen-neural-wave-v4-analysis/neural_wave_probe.py",
+    "--closure",
+    "/tmp/chen-neural-wave-v4-analysis",
+    "--output",
+    "/tmp/chen-neural-wave-v4-analysis/wave-timing.json",
+    "--samples",
+    "9",
+    "--repeats",
+    "24"
+  ],
+  "exclusive_device_authorization": "root release after strength match and Coz terminal; no concurrent owned CPU/perf jobs",
+  "main_exit": 0,
+  "counter_admission_exit": 0,
+  "counter_pass_exits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "retirement_scan": {
+    "owned_live_probe_processes": [],
+    "method": "exact probe-script argv element in /proc/*/cmdline after runner completion"
+  },
+  "GPU_released": true,
+  "raw_copy": "/tmp/chen-neural-wave-v4-runtime-host",
+  "preparation_manifest_sha256": "52c471671f312f5e40cecabdcec23a9f09d6aa3fa87856b4a50b888364e96f1a",
+  "probe_sha256": "e35818fc609d27fb216bbf6effa53047b73b427070fec823481c4bdfcdf4cdb9",
+  "status": "PASS_WITH_COUNTER_LIMITATIONS"
+}

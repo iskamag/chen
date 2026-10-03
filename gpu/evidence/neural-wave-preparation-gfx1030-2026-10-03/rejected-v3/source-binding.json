@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "mapping": "one physical wave per row/output tile",
+  "padding": "round_up_N_to_physical_wave_width",
+  "source_inputs": {
+    "chen_int8_linear.hip": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+    "float_linear_reference.hip": "ab2e4161c6a8035ef7f8b14a1e0a96c2e6f2b80b78eb131b87aa116a898a4346"
+  },
+  "generated": {
+    "wave32-chen_int8_linear.hip": "74365b93c13f0915ae6eed1c15945bb8b0361ab39dc82f91b6265742f718bb21",
+    "wave64-chen_int8_linear.hip": "357db249d9ad8866dfc52a7ca9444876066554cadcfdaa49c8531a072bd1abc9",
+    "wave32-float_linear_reference.hip": "a0b77c2ee8ea263c6fd6d0ae6adc63bcd28c4ab77dc206f2e3af22dbc9e2662a",
+    "wave64-float_linear_reference.hip": "31c2b6a70e643ceed59fe30e9e2a5482b9f31be863ea98aae01e7c7d5e20dc4f"
+  },
+  "build_commands": [
+    [
+      "/opt/rocm/bin/hipcc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "--offload-arch=gfx1030",
+      "-mno-wavefrontsize64",
+      "wave32-chen_int8_linear.hip",
+      "-o",
+      "libwave32-chen_int8_linear.so"
+    ],
+    [
+      "/opt/rocm/bin/hipcc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "--offload-arch=gfx1030",
+      "-mwavefrontsize64",
+      "wave64-chen_int8_linear.hip",
+      "-o",
+      "libwave64-chen_int8_linear.so"
+    ],
+    [
+      "/opt/rocm/bin/hipcc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "--offload-arch=gfx1030",
+      "-mno-wavefrontsize64",
+      "wave32-float_linear_reference.hip",
+      "-o",
+      "libwave32-float_linear_reference.so"
+    ],
+    [
+      "/opt/rocm/bin/hipcc",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "--offload-arch=gfx1030",
+      "-mwavefrontsize64",
+      "wave64-float_linear_reference.hip",
+      "-o",
+      "libwave64-float_linear_reference.so"
+    ]
+  ],
+  "stage_script_sha256": "cfa81ca300ad0c35f9180227c288b7cbe99ae991650c64c39a4f287deedda00b"
+}

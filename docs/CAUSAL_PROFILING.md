@@ -5,8 +5,9 @@ search latency, after holding GPU work and synchronization constant?
 
 This is a **real execution intervention**, inspired by [Coz causal profiling](https://arxiv.org/abs/1608.03676).
 It is not stock Coz's CPU-thread virtual speedup and does not predict line-level
-GPU optimization potential. Coz is absent from the host/container PATH; ordinary
-CPU sampling would not automatically measure GPU queue critical paths.
+GPU optimization potential. Coz was unavailable for this GPU dispatch study;
+it is now installed and the separate [CPU Coz experiment](COZ_PROFILE.md)
+has completed. CPU sampling does not automatically measure GPU queue critical paths.
 
 ## Matched controls
 

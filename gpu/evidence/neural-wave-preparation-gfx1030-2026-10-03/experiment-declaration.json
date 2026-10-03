@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "status": "SOURCE_COMPILED_NO_DEVICE_CALLS",
+  "payload_sha256": {
+    "baseline-chen_int8_linear.hip": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+    "baseline-float_linear_reference.hip": "ab2e4161c6a8035ef7f8b14a1e0a96c2e6f2b80b78eb131b87aa116a898a4346",
+    "int8_linear_probe.py": "13ec8699fbf56595de330d80488dc668b9f6de6954ceaf3ec9cdfe18e333faf7",
+    "libwave32-chen_int8_linear.so": "ae519e9d933e0e071e5da6444cb98a48c9283213110864bf35e453c6c72254bb",
+    "libwave32-float_linear_reference.so": "e8421704cff563ce8fd0ce807ba10c8c8c618bd1a08b2dcf738ab6d8f065b88f",
+    "libwave64-chen_int8_linear.so": "9243e7b7b394b7ba03711b3c908e8ef4c9b0874245a5633f0c84760ff03ca34f",
+    "libwave64-float_linear_reference.so": "6b5d87fa500f046bff62ab498525cef44d2f4b2ee8fc00bd18846a66b0721d70",
+    "neural_wave_probe.py": "e35818fc609d27fb216bbf6effa53047b73b427070fec823481c4bdfcdf4cdb9",
+    "source-binding.json": "5cc9d5fa4c8c62bb41c6bf3543b028cf69234c81bf8f6a7dd06f33f90413531c",
+    "wave32-chen_int8_linear.hip": "5b79d64f6e408c8e27be89936fd9627df1d30312e4f19beb67d7ae1860e5d5fb",
+    "wave32-float_linear_reference.hip": "1a96d1079c6f12230c4fc667eb0982a2e009df64180cc994c9574474132663fc",
+    "wave64-chen_int8_linear.hip": "0da8c2070483b4fbebe8e6a9fbd9184f704ac9735b17a8297b25873724e8b92e",
+    "wave64-float_linear_reference.hip": "951f9e9a4e0eef8ec65fd97b8f55975823472b2ec60dd66f48e6b0f3a5dcb7e4"
+  },
+  "rejected_preparation": "v3 full64 HIP shuffle lowers to half32 ds_bpermute; never executed",
+  "parity_flags": {
+    "parity_only": true,
+    "widths": "32,64"
+  },
+  "timing_flags": {
+    "parity_only": false,
+    "samples": 9,
+    "repeats": 24,
+    "widths": "32,64"
+  },
+  "compiler": "HIP7.2.4 clang22 gfx1030",
+  "affinity": 2,
+  "runtime_admission_pending": true,
+  "counter_admission_pending": true,
+  "counter_pass_proposal": {
+    "widths": [
+      32,
+      64
+    ],
+    "shape": "8192,32,22",
+    "samples": 1,
+    "repeats": 1,
+    "kernel_include_regex": "dynamic_linear|affine",
+    "groups": [
+      [
+        "GL2C_HIT",
+        "GL2C_MISS"
+      ],
+      [
+        "SQ_WAVES",
+        "SQ_WAVE32_INSTS",
+        "SQ_WAVE64_INSTS"
+      ],
+      [
+        "MeanOccupancyPerCU"
+      ]
+    ]
+  }
+}

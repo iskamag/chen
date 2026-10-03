@@ -1,0 +1,295 @@
+{
+  "definitions": [
+    {
+      "name": "GL2C_HIT",
+      "description": "Number of cache hits",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx11",
+            "gfx1100",
+            "gfx1101",
+            "gfx1102",
+            "gfx1150",
+            "gfx1151"
+          ],
+          "block": "GL2C",
+          "event": 42
+        }
+      ]
+    },
+    {
+      "name": "GL2C_MISS",
+      "description": "Number of cache misses.  UC reads count as misses.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx11",
+            "gfx1100",
+            "gfx1101",
+            "gfx1102",
+            "gfx1150",
+            "gfx1151"
+          ],
+          "block": "GL2C",
+          "event": 43
+        }
+      ]
+    },
+    {
+      "name": "L2CacheHit",
+      "description": "The percentage of fetch, write, atomic, and other instructions that hit the data in L2 cache. Value range: 0% (no hit) to 100% (optimal).",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx11",
+            "gfx1100",
+            "gfx1101",
+            "gfx1102",
+            "gfx1150",
+            "gfx1151",
+            "gfx12",
+            "gfx1200",
+            "gfx1201"
+          ],
+          "expression": "100*reduce(GL2C_HIT,sum)/(reduce(GL2C_HIT,sum)+reduce(GL2C_MISS,sum))"
+        }
+      ]
+    },
+    {
+      "name": "MeanOccupancyPerCU",
+      "description": "Mean occupancy per compute unit.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx90a",
+            "gfx940",
+            "gfx941",
+            "gfx942",
+            "gfx950"
+          ],
+          "expression": "reduce(accumulate(SQ_LEVEL_WAVES, HIGH_RES),sum)/reduce(GRBM_GUI_ACTIVE,max)/CU_NUM"
+        }
+      ]
+    },
+    {
+      "name": "OccupancyPercent",
+      "description": "GPU Occupancy as % of maximum.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx11",
+            "gfx1100",
+            "gfx1101",
+            "gfx1102",
+            "gfx1150",
+            "gfx1151",
+            "gfx12",
+            "gfx1200",
+            "gfx1201"
+          ],
+          "expression": "100*reduce(SQ_WAVE_CYCLES,sum)/reduce(GRBM_GUI_ACTIVE,max)/CU_NUM/32"
+        }
+      ]
+    },
+    {
+      "name": "SQ_INSTS_SALU",
+      "description": "Total Number of SALU (Scalar ALU) instructions issued. This value is returned per-SE (aggregate of values in SIMDs in the SE). See AMD ISAs for more information on SALU instructions.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx940",
+            "gfx941",
+            "gfx942"
+          ],
+          "block": "SQ",
+          "event": 60
+        }
+      ]
+    },
+    {
+      "name": "SQ_INSTS_VALU",
+      "description": "The number of VALU (Vector ALU) instructions issued. The value is returned per-SE (aggregate of values in SIMDs in the SE). See AMD ISAs for more information on VALU instructions.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 64
+        }
+      ]
+    },
+    {
+      "name": "SQ_LEVEL_WAVES",
+      "description": "Track the number of waves. Set ACCUM_PREV for the next counter to use this. This value is returned on a per-SIMD basis.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 7
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAIT_ANY",
+      "description": "Number of wave-cycles spent waiting for anything (per-simd, nondeterministic). Units in quad-cycles(4 cycles)",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 37
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAIT_INST_ANY",
+      "description": "Number of wave-cycles spent waiting for any instruction issue. Units in quad-cycles(4 cycles).",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 28
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAVE32_INSTS",
+      "description": "Number of instructions issued by wave32 waves. Skipped instructions are not counted. {emulated}",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 84
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAVE64_INSTS",
+      "description": "Number of instructions issued by wave64 waves. Skipped instructions are not counted. {emulated}",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 85
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAVES",
+      "description": "Count number of waves sent to distributed sequencers (SQs). This value represents the number of waves that are sent to each SQ. This only counts new waves sent since the start of collection (for dispatch profiling this is the timeframe of kernel execution, for agent profiling it is the timeframe between start_context and read counter data). A sum of all SQ_WAVES values will give the total number of waves started by the application during the collection timeframe. Returns one value per-SE (aggregates of SIMD values).",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032",
+            "gfx11",
+            "gfx1100",
+            "gfx1101",
+            "gfx1102",
+            "gfx1150",
+            "gfx1151",
+            "gfx12",
+            "gfx1200",
+            "gfx1201",
+            "gfx9",
+            "gfx900",
+            "gfx906",
+            "gfx908",
+            "gfx90a",
+            "gfx940",
+            "gfx941",
+            "gfx942",
+            "gfx950"
+          ],
+          "block": "SQ",
+          "event": 4
+        }
+      ]
+    },
+    {
+      "name": "SQ_WAVE_CYCLES",
+      "description": "The cycles spent executing waves in the CUs. This value is reported per-SE (aggregates of SIMD values) and is nondeterministic. Units are in quad-cycles (4 cycles). Useful for determining how much time is spent executing wave code vs overhead/waiting. Low cycle count relative to actual number of cycles processed by the CU can indicate that the CU is stalling or is overloaded.",
+      "definitions": [
+        {
+          "architectures": [
+            "gfx10",
+            "gfx1010",
+            "gfx1030",
+            "gfx1031",
+            "gfx1032"
+          ],
+          "block": "SQ",
+          "event": 26
+        }
+      ]
+    }
+  ]
+}

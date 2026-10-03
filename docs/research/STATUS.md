@@ -13,6 +13,13 @@ CPU hypothesis; a 75% virtual line acceleration reduces the finer node-marker
 period about 7.1%. Whole-search counters are coarse and disagree at several
 levels. No implemented lookup speedup or GPU result follows from this study.
 
+The [native wave-width experiment](../NEURAL_WAVE_EXPERIMENT.md) passes 15 shapes
+and 887,777 outputs per operator path. Wave64 loses on most vector shapes;
+scalar dynamic readout has a diagnostic 1.174x speedup. Used-register counts
+remain small with no spills. Six counter passes complete but wave/occupancy
+metrics fail sanity checks; achieved utilization remains unestablished. The
+default wave32 kernels are unchanged.
+
 The [retained-prefix selector](../GPU_RETAINED_SELECTION_PATH.md) removes repeated
 root traversal during one classical choose call without new storage. Forty-eight
 synthetic cases and 1,336 snapshots across 33 native cases preserve exact behavior.

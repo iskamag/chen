@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "input_path": "/tmp/chen-neural-wave-v4-build-copy/libwave64-float_linear_reference.so",
+  "input_sha256": "6b5d87fa500f046bff62ab498525cef44d2f4b2ee8fc00bd18846a66b0721d70",
+  "fatbin_sha256": "5c8a3716e2697a375a849c52bb2891e3d5d1da04c096445c47fe645f6bd149b5",
+  "records": [
+    {
+      "bundle": 0,
+      "bundle_start": 0,
+      "relative_offset": 4096,
+      "size": 10184,
+      "target": "hipv4-amdgcn-amd-amdhsa--gfx1030",
+      "elf": "bundle0.gfx1030.elf",
+      "sha256": "2fe91f4cc32b1a6bd5b40f44618a05e6ebf6193839be6b797d69631e063c2b1a"
+    }
+  ],
+  "input_read_only": true
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "input_path": "/tmp/chen-neural-wave-v4-build-copy/libwave32-chen_int8_linear.so",
+  "input_sha256": "ae519e9d933e0e071e5da6444cb98a48c9283213110864bf35e453c6c72254bb",
+  "fatbin_sha256": "597e3ae606d31ef20b4c7de0717bf2f5ce64c4a297eb3e5bdb36029a79f7894d",
+  "records": [
+    {
+      "bundle": 0,
+      "bundle_start": 0,
+      "relative_offset": 4096,
+      "size": 32920,
+      "target": "hipv4-amdgcn-amd-amdhsa--gfx1030",
+      "elf": "bundle0.gfx1030.elf",
+      "sha256": "af1853c326e18514fa88a6075a630203873623224692602cfe458ea8f981fdfa"
+    }
+  ],
+  "input_read_only": true
+}

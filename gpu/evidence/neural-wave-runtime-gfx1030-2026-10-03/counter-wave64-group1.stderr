@@ -1,0 +1,8 @@
+W20261003 07:48:15.952134 140057401795072 simple_timer.cpp:55] [rocprofv3] tool initialization ::     0.149340 sec
+W20261003 07:48:15.952579 140057401795072 simple_timer.cpp:55] [rocprofv3] 'python3 /tmp/chen-neural-wave-v4-analysis/neural_wave_probe.py --closure /tmp/chen-neural-wave-v4-analysis --output /tmp/chen-neural-wave-v4-analysis/counter-probe-wave64-group1.json --shape 8192,32,22 --widths 64 --samples 1 --repeats 1' ::     0.000000 sec
+W20261003 07:48:17.229847 140057401795072 tool.cpp:2422] HSA version 8.20.4 initialized (instance=0)
+W20261003 07:48:17.749577 140057401795072 simple_timer.cpp:55] [rocprofv3] 'python3 /tmp/chen-neural-wave-v4-analysis/neural_wave_probe.py --closure /tmp/chen-neural-wave-v4-analysis --output /tmp/chen-neural-wave-v4-analysis/counter-probe-wave64-group1.json --shape 8192,32,22 --widths 64 --samples 1 --repeats 1' ::     1.796998 sec
+E20261003 07:48:17.759037 140057401795072 output_stream.cpp:111] Opened result file: /tmp/chen-neural-wave-v4-analysis/counter-wave64-group1/ignucino/8917_counter_collection.csv
+E20261003 07:48:17.762049 140057401795072 output_stream.cpp:111] Opened result file: /tmp/chen-neural-wave-v4-analysis/counter-wave64-group1/ignucino/8917_agent_info.csv
+W20261003 07:48:17.763749 140057401795072 simple_timer.cpp:55] [rocprofv3] output generation ::     0.012567 sec
+W20261003 07:48:17.764128 140057401795072 simple_timer.cpp:55] [rocprofv3] tool finalization ::     0.012952 sec
