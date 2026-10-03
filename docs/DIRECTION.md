@@ -53,6 +53,11 @@ these names and scopes in every benchmark. A CPU fallback must be explicit.
 Full GPU execution remains the deployment target: exact rules, symbolic feature
 production, latent updates, neural scoring, frontier decisions and backup retain
 their state on the device. CPU implementations remain references for comparison.
+The new [PVS/aspiration controls](CLASSICAL_SEARCH.md) stay independently
+selectable; their fixed-depth useful-work savings need equal-time play before
+default adoption. Temporary `../chen-classical` and `../chen-gpu-search` worktrees
+keep CPU controls and bounded GPU integration isolated; reviewed code enters
+main, while model/data work remains in the neural worktree.
 Measure host scheduling and publication costs explicitly while moving suitable
 control work into the GPU. A CPU result does not replace this target.
 

@@ -22,6 +22,24 @@ make this a correctness reference. UCI/iterative publication, deadlines, PVS/TT,
 scalable scheduling and playing-strength tests remain pending. Production
 `hip-selective` is unchanged.
 
+Main `16574cd` adds independently switchable
+[CPU PVS and aspiration](../CLASSICAL_SEARCH.md), with defaults off. All18 search
+and UCI boundary tests pass after integration.192 fixed-depth control rows preserve
+scores and legal PVs. PVS reduces suite-total nodes30.1%/13.1% and search elapsed
+28.1%/12.3% at depths4/5; Kiwipete dominates the suite, so these are not general
+population estimates. Aspiration has large local regressions and stays separate.
+PVS-only equal-time paired play is the next gate; no updated rating follows.
+
+Main `7311733` adds the [compact native topology ABI](../GPU_TOPOLOGY.md):
+source pseudoattack masks, pins, pinners, checkers and state identity in
+caller-owned GPU allocations. Four actual gfx1030 tests pass755 oracle rows,
+48,320 complete source masks and12 unchanged-output rejections. Original symbolic
+ABI1 bodies/layout remain intact. Neural `f30a46f` adds the
+[exact sparse input reference](../../../chen-neural/docs/TACTICAL_INPUTS.md)
+with all14 relations, complete legal effects, history and causal material priors.
+Eight CPU tests pass, including replay of three fresh TRAIN roots and sparse
+forward/backward. Device sparse emission and neural training remain pending.
+
 The [reachable mechanics generator](../SYNTHETIC_MECHANICS.md) now completes a
 256-family TRAIN pilot:1940 roots,35,533 complete legal action effects and95,790
 changed-source attack targets, in25.827s excluding exclusion-index preparation.
@@ -79,6 +97,15 @@ the target. The latest bounded assignments are GPU search implementation,
 tactical processor mechanics, and independent search/topology review. Root owns
 direction, strength evaluation and integration in the two original worktrees.
 Timed hardware studies receive sequential reserved windows.
+
+Two isolated implementation worktrees now support the original boundaries:
+`../chen-classical` retains the reviewed CPU controls and owns their paired
+strength comparison; `../chen-gpu-search` owns an experimental timed bounded
+GPU backend. The latter is implementing device cancellation/deadlines and
+last-completed iterative publication; it has no new executable/strength claim
+yet. The neural worktree is collecting a bounded TRAIN strategic-label pilot
+before convergence studies. These tasks do not replace the original data,
+fully GPU search or eventual rating requirements.
 
 Neural `1ff620b` adds the
 [sparse recurrent tactical processor](../../../chen-neural/docs/TACTICAL_OPERATOR.md):
