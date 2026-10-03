@@ -7,9 +7,13 @@ Each seed/encoder trains one anchor, freezes its readout, then trains transport,
 conditioned, action blind, and shuffled conditioned controls from identical
 transition initialization. This produces eight anchors and 32 transitions.
 
-The source currently has synthetic CPU orchestration evidence. Those tests do
-not establish successful actual training, evaluation, GPU throughput, playing
-strength, or a better architecture. Actual updates require both a root-reviewed
+The corrected actual gfx1030 attempt completed all eight anchors and 32
+transitions in 142.158 seconds and reached validation. The paired joint gate
+selected **NONE**; TEST remained closed. See the
+[frozen results](../neural/evidence/semantic-corpus-study-manifest-2026-10-02/validation-results.json)
+and [attempt record](../neural/evidence/semantic-corpus-study-manifest-2026-10-02/README.md).
+This establishes execution and a negative bounded quality result, not playing
+strength or a tuned architecture winner. Actual updates require both a root-reviewed
 phase-kernel declaration and a separately reviewed outer suite declaration,
 sealed against their explicit source and dataset hashes inside the runtime
 where they will execute. CPU training is rejected.
