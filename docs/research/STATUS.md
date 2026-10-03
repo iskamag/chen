@@ -369,8 +369,8 @@ role-injection candidates now have arithmetic/causality fixtures. Commit
 oracles, including zero/tiny rows, ties, residuals and unpadded input tails.
 Fused dynamic quantization improves small affine calls but loses to wider routes
 at larger batches. The actual loaded Torch HIP provider is recorded separately
-from the native compiler. Whole-model fidelity/latency and simulator integration
-remain pending; no neural deployment or strength result follows. Timing
+from the native compiler. The whole-model comparison below is now complete;
+simulator integration remains pending and no neural deployment or strength result follows. Timing
 is primary; memory bounds are engineering controls rather than the optimization
 objective. Commit `b1505ef` adds [22 Lean certificates and a latency strategy
 comparison](FINITE_MODEL_STRATEGIES.md), including finite selection obstruction,
@@ -403,8 +403,17 @@ grid. Its full-GPU classical phase controller is under hardware validation;
 final independent archive admission and equal-work score/PV timing checks are
 pending. The current Torch callback still requires an explicit host boundary;
 native symbolic and INT8 graph phases are the next integration work. The
-whole-model TRAIN-only INT8 diagnostic is separately bounded and measures
-same-checkpoint numerical error and latency without retraining or promotion.
+whole-model TRAIN-only INT8 diagnostic is committed as neural `c2e80fe`, with
+[94 hash-bound payloads](../../../chen-neural/neural/evidence/int8-whole-model-gfx1030-2026-10-03/README.md).
+All 40 frozen models complete in 110.416 seconds; the watchdog is terminal and
+its child/group are absent. Exact FP32 value-only latent/CP parity passes;
+eight fresh CPU fixtures also pass. INT8 changes 97 of 7,456 model-root choices,
+all with FP32 top-two gaps at most 1.098 CP. These are repeated TRAIN observations,
+without learning, heldout quality or strength claims. Fused INT8 beats the
+multi-launch INT8 path but loses all grouped eager comparisons to value-only
+FP32: paired speed ratios range 0.700–0.880. It remains experimental; timing,
+rather than storage reduction, determines adoption. Captured/native execution
+and exact native symbolic production are the next integration steps.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.
