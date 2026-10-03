@@ -35,13 +35,71 @@ class TransformerConfig:
         for name in ('width', 'heads', 'depth', 'expansion', 'symbolic_channels'):
             if type(getattr(self, name)) is not int:
                 raise ValueError('transformer dimensions must be integers')
-        if (not 8 <= self.width <= 256 or not 1 <= self.heads <= 16 or
-                self.width % self.heads or not 1 <= self.depth <= 8 or
+        if (not 8 <= self.width or not 1 <= self.heads or
+                self.width % self.heads or not 1 <= self.depth or
                 not 1 <= self.expansion <= 8 or not 0 <= self.symbolic_channels <= 64):
             raise ValueError('invalid transformer dimensions')
         if any(type(getattr(self, name)) is not bool for name in
                ('geometry_bias', 'rule_bias', 'piece_keys_only')):
             raise ValueError('transformer controls must be booleans')
+
+    def estimate(self, *, batch_size=1, value_only=True):
+        """Pure integer descriptor: never constructs a module or allocates tensors."""
+        return estimate_transformer(self, batch_size=batch_size, value_only=value_only)
+
+
+def estimate_transformer(config, *, batch_size=1, value_only=True):
+    """Exact parameter counts and dense matmul MAC accounting, not runtime.
+
+    Counts matrix multiply-accumulates as ONE MAC, not two FLOPs. Normalization,
+    activations, softmax, material/evidence production, bias adds, allocator and
+    synchronization are excluded. Attention elements are summed logit shapes,
+    not a peak memory estimate. Stored FP32 weights exclude buffers/optimizers.
+    """
+    if (not isinstance(config, TransformerConfig) or type(batch_size) is not int or batch_size < 1 or
+            type(value_only) is not bool):
+        raise ValueError('configuration, positive integer batch and boolean value_only required')
+    d, h, depth, r, c = config.width, config.heads, config.depth, config.expansion, config.symbolic_channels
+    biases = (6 * h if config.geometry_bias else 0) + (4 * h if config.rule_bias else 0)
+    groups = dict(input_position_ep=d * d + 83 * d,
+                  square_blocks=depth * ((4 + 2 * r) * d * d + (r + 9) * d + biases),
+                  role_pool=4 * d * d + 18 * d,
+                  symbolic_injection=3 * c * d + 3 * d if c else 0,
+                  value_head=8 * d + 1, auxiliary_heads=7728 * d + 1414)
+    total = sum(groups.values())
+    active = total - groups['auxiliary_heads']
+    macs = dict(input_position_ep=64 * 18 * d + 64 * d + d * d,
+                square_blocks=depth * (64 * (4 + 2 * r) * d * d + 2 * 64 * 64 * d),
+                geometry_bias=depth * 64 * 64 * 6 * h if config.geometry_bias else 0,
+                rule_bias=depth * 64 * 64 * 4 * h if config.rule_bias else 0,
+                role_pool=(2 * 8 + 2 * 64) * d * d + 2 * 8 * 64 * d,
+                symbolic_injection=3 * 64 * c * d + 2 * 8 * 64 * d if c else 0,
+                value_head=8 * d,
+                auxiliary_heads=0 if value_only else 7728 * d)
+    logits = depth * h * 64 * 64 + h * 8 * 64 + (8 * 64 if c else 0)
+    # Static geometry is computed once and broadcast, unlike batched rule bias.
+    batched_macs = {name: count * (1 if name == 'geometry_bias' else batch_size)
+                    for name, count in macs.items()}
+    return dict(kind=KIND, architecture=asdict(config), stored_parameters=total,
+                parameter_groups=groups, value_path_parameters=active,
+                forward_parameters=active if value_only else total,
+                stored_fp32_parameter_bytes=4 * total, batch_size=batch_size,
+                value_only=value_only, forward_matmul_macs=sum(batched_macs.values()),
+                matmul_macs_by_group=batched_macs,
+                summed_attention_logit_elements=batch_size * logits,
+                largest_attention_logit_elements=batch_size * h * 64 * 64,
+                token_compaction=False, allocated=False, measured_runtime=None,
+                exclusions=['pointwise_norm_activation_softmax', 'material_and_rule_topology_production',
+                            'bias_adds', 'buffer_optimizer_activation_memory', 'dispatch_and_synchronization'])
+
+
+def scaling_profiles():
+    """Allocation-free candidate bands by VALUE-path parameters, not trained models."""
+    bands = ((1000000, 128, 2, 5), (10000000, 320, 5, 8), (50000000, 640, 10, 10),
+             (100000000, 768, 12, 14), (270000000, 1280, 20, 13))
+    return [dict(target_value_parameters=target,
+                 **TransformerConfig(width=d, heads=h, depth=depth).estimate())
+            for target, d, h, depth in bands]
 
 
 class MultiheadAttention(nn.Module):
@@ -126,12 +184,21 @@ class TransformerSemantics(nn.Module):
     when keys are restricted to pieces. Learned symbolic projections enter both
     square and role residual streams and start at zero for shared-weight controls.
     """
-    def __init__(self, config=TransformerConfig(), *, material_scale=1., anchor_kind='material'):
+    def __init__(self, config=TransformerConfig(), *, material_scale=1., anchor_kind='material',
+                 max_parameters=None):
         super().__init__()
         if (not isinstance(config, TransformerConfig) or
                 type(material_scale) not in (int, float) or not math.isfinite(material_scale) or
                 not 0 < material_scale <= 10 or anchor_kind not in ('material', 'zero')):
             raise ValueError('invalid semantic transformer configuration')
+        # Caller resource policy, checked BEFORE Diagram/buffers/weights allocate.
+        # None is uncapped; there is no implied small-model architectural ceiling.
+        if (max_parameters is not None and
+                (type(max_parameters) is not int or max_parameters < 1)):
+            raise ValueError('max_parameters must be a positive integer or None')
+        if max_parameters is not None and config.estimate()['stored_parameters'] > max_parameters:
+            raise ValueError('declared parameter allocation budget exceeded')
+        self.max_parameters = max_parameters
         self.settings = config
         self.width, self.depth = config.width, config.depth
         self.material_scale, self.anchor_kind = float(material_scale), anchor_kind
@@ -228,6 +295,11 @@ class TransformerSemantics(nn.Module):
     def active_parameters(self):
         return self.parameters()
 
+    def parameter_report(self, *, batch_size=1, value_only=True):
+        report = self.settings.estimate(batch_size=batch_size, value_only=value_only)
+        return dict(report, allocated=True, actual_stored_parameters=sum(p.numel() for p in self.parameters()),
+                    max_parameters=self.max_parameters)
+
     def copy_shared_state(self, source):
         """Copy same-meaning controls before fitting; never a training shortcut."""
         if not isinstance(source, TransformerSemantics):
@@ -259,4 +331,5 @@ class TransformerSemantics(nn.Module):
             symbolic_token_ownership='all_64_squares' if self.settings.symbolic_channels else 'absent',
             token_compaction=False, ep_context='position_weighted_exact_EP_plane',
             symbolic_injection='zero_initial_square_and_eight_role_residual_projections',
+            allocation_policy=dict(max_parameters=self.max_parameters),
             terminal_responsibility='exact_simulator', deployment_admitted=False)

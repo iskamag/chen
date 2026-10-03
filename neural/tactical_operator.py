@@ -52,15 +52,23 @@ class TacticalConfig:
     cp_scale: float = 800.
 
     def __post_init__(self):
-        if (type(self.width) is not int or not 8 <= self.width <= 256 or
+        if (type(self.width) is not int or not 8 <= self.width or
                 type(self.steps) is not int or self.steps not in STEPS):
-            raise ValueError('width must be 8..256 and steps one of 1/2/4/8')
+            raise ValueError('width must be at least 8 and steps one of 1/2/4/8')
         for name in ('piece_channels', 'square_channels', 'action_channels', 'edge_channels'):
             if type(getattr(self, name)) is not int or not 1 <= getattr(self, name) <= 128:
                 raise ValueError('feature widths must be integer 1..128')
         if (not isinstance(self.feature_schema, str) or not self.feature_schema or
                 type(self.cp_scale) not in (int, float) or not 0 < self.cp_scale <= 10000):
             raise ValueError('a feature schema and finite positive CP scale are required')
+
+    def estimate(self):
+        d = self.width
+        processor = 16 * d * d + (self.edge_channels + 23) * d
+        total = processor + (self.piece_channels + self.square_channels + self.action_channels + 10) * d + 2
+        return dict(parameters=total, processor_parameters=processor, steps=self.steps,
+                    stored_fp32_parameter_bytes=4 * total, allocated=False,
+                    trained=False, measured_runtime=None)
 
 
 @dataclass(frozen=True)
@@ -265,10 +273,16 @@ def _action_outputs(scores, ids, mask):
 
 
 class TacticalOperator(nn.Module):
-    def __init__(self, config=TacticalConfig()):
+    def __init__(self, config=TacticalConfig(), *, max_parameters=None):
         super().__init__()
         if not isinstance(config, TacticalConfig):
             raise ValueError('expected TacticalConfig')
+        if (max_parameters is not None and
+                (type(max_parameters) is not int or max_parameters < 1)):
+            raise ValueError('max_parameters must be a positive integer or None')
+        if max_parameters is not None and config.estimate()['parameters'] > max_parameters:
+            raise ValueError('declared parameter allocation budget exceeded')
+        self.max_parameters = max_parameters
         self.settings = config
         d = config.width
         self.piece_input = nn.Linear(config.piece_channels, d)
@@ -285,12 +299,13 @@ class TacticalOperator(nn.Module):
         return dict(kind=KIND, **asdict(self.settings), relations=[kind.name for kind in Relation],
                     topology='caller_supplied_directed_sparse_edges', score_frame=SCORE_FRAME,
                     exact_rules='caller_owned', recurrent_weights='one_shared_cell',
+                    allocation_policy=dict(max_parameters=self.max_parameters),
                     trained=False, deployment_admitted=False)
 
     def parameter_report(self):
-        total = sum(parameter.numel() for parameter in self.parameters())
-        return dict(parameters=total, processor_parameters=sum(p.numel() for p in self.cell.parameters()),
-                    steps=self.settings.steps, trained=False, measured_runtime=None)
+        return dict(self.settings.estimate(), allocated=True,
+                    actual_parameters=sum(parameter.numel() for parameter in self.parameters()),
+                    max_parameters=self.max_parameters)
 
     def forward(self, batch, *, steps=None, typed=True, return_trace=False):
         b, p, k, _ = _metadata(batch, self.settings)

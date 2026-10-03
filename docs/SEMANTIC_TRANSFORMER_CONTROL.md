@@ -5,6 +5,11 @@ It is outside the sealed four-encoder study and existing deployment loaders.
 CPU mechanics are checked; training, native GPU execution, quality and playing
 strength have not been measured for this candidate.
 
+The same family now supports large width/depth/head descriptors, allocation-free
+parameter/work estimates and explicit caller allocation budgets. The
+[scaling study](SCALING_STUDY.md) defines~1M through~270M value-path bands and
+separate data/training/inference axes; no large model has been allocated here.
+
 The body uses 64 schema1 square tokens, learned absolute positions, pre-LayerNorm
 multihead attention and residual GELU blocks. Every head has its own six static
 geometry coefficients; optional four-channel blocked pseudoattack/support bias

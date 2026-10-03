@@ -11,7 +11,7 @@ from torch.utils._python_dispatch import TorchDispatchMode
 from neural.features import encode_fen
 from neural.semantic_strategy import anchor_losses
 from neural.transformer_semantics import (MultiheadAttention, TransformerConfig,
-                                         TransformerSemantics)
+                                         TransformerSemantics, scaling_profiles)
 from neural.value_heads import material_cp
 
 
@@ -19,6 +19,25 @@ class NoHostScalar(TorchDispatchMode):
     def __torch_dispatch__(self, function, types, args=(), kwargs=None):
         if function is torch.ops.aten._local_scalar_dense.default:
             raise AssertionError('host scalar extraction')
+        return function(*args, **(kwargs or {}))
+
+
+class MatmulMACs(TorchDispatchMode):
+    """Independent executed shape accounting; no performance measurement."""
+    def __init__(self):
+        super().__init__()
+        self.macs = 0
+
+    def __torch_dispatch__(self, function, types, args=(), kwargs=None):
+        if function is torch.ops.aten.addmm.default:
+            left, right = args[1:3]
+            self.macs += left.shape[0] * left.shape[1] * right.shape[1]
+        elif function is torch.ops.aten.mm.default:
+            left, right = args[:2]
+            self.macs += left.shape[0] * left.shape[1] * right.shape[1]
+        elif function is torch.ops.aten.bmm.default:
+            left, right = args[:2]
+            self.macs += left.shape[0] * left.shape[1] * left.shape[2] * right.shape[2]
         return function(*args, **(kwargs or {}))
 
 
@@ -160,6 +179,58 @@ class TransformerFixtures(unittest.TestCase):
                 model(invalid)
         with self.assertRaises(ValueError):
             self.model(symbolic_channels=2)(features(), torch.zeros(2, 64, 3))
+
+    def test_exact_size_reports_and_executed_matmul_counts_on_small_fixtures(self):
+        for settings in (dict(width=8, heads=2, depth=1),
+                         dict(width=12, heads=3, depth=2, expansion=2, geometry_bias=False),
+                         dict(width=8, heads=1, depth=2, rule_bias=True, symbolic_channels=3)):
+            config = TransformerConfig(**settings)
+            model = TransformerSemantics(config)
+            symbols = torch.randn(2, 64, 3) if config.symbolic_channels else None
+            estimate = config.estimate(batch_size=2)
+            self.assertEqual(estimate['stored_parameters'], sum(p.numel() for p in model.parameters()))
+            self.assertEqual(estimate['value_path_parameters'],
+                             sum(p.numel() for name, p in model.named_parameters()
+                                 if not name.startswith(('board.', 'maps.', 'rights.', 'ep.', 'clock.'))))
+            for value_only in (False, True):
+                # Topology production is expressly excluded; substitute supplied zero edges.
+                with patch.object(model.diagram, 'typed_edges', return_value=torch.zeros(2, 4, 64, 64)):
+                    counter = MatmulMACs()
+                    with counter:
+                        model(features(), symbols, value_only=value_only)
+                predicted = config.estimate(batch_size=2, value_only=value_only)
+                self.assertEqual(counter.macs, predicted['forward_matmul_macs'])
+            report = model.parameter_report(batch_size=2)
+            self.assertTrue(report['allocated'])
+            self.assertIsNone(report['measured_runtime'])
+
+    def test_large_descriptors_allocate_nothing_and_explicit_budget_precedes_modules(self):
+        with patch('neural.transformer_semantics.Diagram', side_effect=AssertionError('allocated')):
+            profiles = scaling_profiles()
+            large = TransformerConfig(width=2048, heads=32, depth=48)
+            estimate = large.estimate(batch_size=32)
+            self.assertGreater(estimate['value_path_parameters'], 1000000000)
+            self.assertFalse(estimate['allocated'])
+            self.assertEqual(len(profiles), 5)
+            for profile in profiles:
+                self.assertFalse(profile['allocated'])
+                self.assertLess(abs(profile['value_path_parameters'] / profile['target_value_parameters'] - 1), .15)
+            with self.assertRaisesRegex(ValueError, 'budget exceeded'):
+                TransformerSemantics(large, max_parameters=1000)
+        config = TransformerConfig(width=8, heads=2, depth=1)
+        exact = config.estimate()['stored_parameters']
+        model = TransformerSemantics(config, max_parameters=exact)
+        self.assertEqual(model.parameter_report()['max_parameters'], exact)
+        for invalid in (0, -1, True, 1.5):
+            with self.assertRaises(ValueError):
+                TransformerSemantics(config, max_parameters=invalid)
+
+    def test_heads_separate_attention_workspace_from_dense_work(self):
+        one = TransformerConfig(width=16, heads=1, depth=2, geometry_bias=False).estimate(batch_size=3)
+        four = TransformerConfig(width=16, heads=4, depth=2, geometry_bias=False).estimate(batch_size=3)
+        self.assertEqual(one['stored_parameters'], four['stored_parameters'])
+        self.assertEqual(one['forward_matmul_macs'], four['forward_matmul_macs'])
+        self.assertEqual(four['summed_attention_logit_elements'], 4 * one['summed_attention_logit_elements'])
 
 
 if __name__ == '__main__':

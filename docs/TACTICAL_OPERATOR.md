@@ -90,7 +90,12 @@ responsibility, even when the learned value residual is finite.
 status. `parameter_report()` separates total/processor parameters and explicitly
 leaves measured runtime empty. The default width32 configuration has 18,850
 parameters, of which 17,248 belong to the shared processor; all step counts
-use the same parameter set. Approximate cell work is
+use the same parameter set. That default is a mechanics fixture, not a target
+model size. Width has no arbitrary256 ceiling; `TacticalConfig.estimate()`
+describes large settings without allocation, and constructor `max_parameters`
+is an optional caller budget checked before weights allocate. See the
+[scaling design](SCALING_STUDY.md) for separate size and compute experiments.
+Approximate cell work is
 `O(N D^2 + E Ce D + E D)` per iteration, with `N=P+64+K`; input/readout work
 is separate. Source/receiver projections cost N D^2, not E D^2. This is an
 operation model, not measured latency. Sparse edge-expanded tensors still have

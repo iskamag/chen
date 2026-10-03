@@ -1,6 +1,7 @@
 """CPU mechanics only: sparse oracle, shared controls, admission and causality."""
 from dataclasses import replace
 import unittest
+from unittest.mock import patch
 
 import chess
 import torch
@@ -289,6 +290,21 @@ class TacticalMechanics(unittest.TestCase):
                                   edge_mask=torch.zeros_like(batch.edge_mask))
                 with self.assertRaisesRegex(ValueError, 'coverage'):
                     admit_contents(trimmed, config, expected_legal_actions=[legal])
+
+    def test_allocation_free_scaling_and_explicit_caller_budget(self):
+        config, _ = fixture()
+        small = TacticalOperator(config)
+        self.assertEqual(config.estimate()['parameters'], sum(p.numel() for p in small.parameters()))
+        self.assertEqual(config.estimate()['processor_parameters'], sum(p.numel() for p in small.cell.parameters()))
+        large = replace(config, width=4096)
+        with patch('neural.tactical_operator.nn.Linear', side_effect=AssertionError('allocated')):
+            descriptor = large.estimate()
+            self.assertFalse(descriptor['allocated'])
+            self.assertGreater(descriptor['parameters'], 250000000)
+            with self.assertRaisesRegex(ValueError, 'budget exceeded'):
+                TacticalOperator(large, max_parameters=1000)
+        exact = config.estimate()['parameters']
+        self.assertEqual(TacticalOperator(config, max_parameters=exact).parameter_report()['max_parameters'], exact)
 
 
 if __name__ == '__main__':
