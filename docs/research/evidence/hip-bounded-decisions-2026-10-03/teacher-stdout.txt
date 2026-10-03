@@ -1,0 +1,6 @@
+{"root": "start", "teacher_eligible": true, "rejection": null, "wall_ms": 297.7433819905855}
+{"root": "kiwipete", "teacher_eligible": true, "rejection": null, "wall_ms": 313.6565799941309}
+{"root": "rook-ending", "teacher_eligible": true, "rejection": null, "wall_ms": 209.86390998587012}
+{"root": "middlegame", "teacher_eligible": true, "rejection": null, "wall_ms": 319.901562994346}
+{"root": "promotion", "teacher_eligible": true, "rejection": null, "wall_ms": 121.23806797899306}
+{"root": "mate", "teacher_eligible": false, "rejection": "decisive_mate_tablebase_or_extreme_evidence", "wall_ms": 83.57832999899983}

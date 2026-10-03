@@ -1,0 +1,5 @@
+{
+  "source": "Filesystem timestamps: empty stderr opened immediately before Popen; terminal written after process retirement. Approximate execution bounds, not instrumented device spans.",
+  "start_utc": "2026-10-03T10:31:04.091655+00:00",
+  "post_retirement_utc": "2026-10-03T10:31:20.680137+00:00"
+}

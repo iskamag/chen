@@ -1,0 +1,354 @@
+{
+  "decisions": 18,
+  "eligible_ordinary_queries": 5,
+  "overlap": "Root CPU0 PVS match remains live; CPU/power/cache uncontrolled. Coherence CPU3 mechanics tests may overlap; no concurrent GPU work.",
+  "rows": [
+    {
+      "backend": "alphabeta",
+      "bestmove": "g1f3",
+      "chosen_mates_in_one": false,
+      "reported_depth": 7,
+      "reported_nodes": 350127,
+      "root": "start",
+      "teacher_best_moves": [
+        "e2e4"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 3,
+      "teacher_reference_gap_interval": [
+        19.562370922371123,
+        21.425453971091187
+      ],
+      "teacher_reported_gap_cp": 22,
+      "wall_ms": 1000.609626993537
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "a2a4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 2,
+      "reported_nodes": 835317,
+      "root": "start",
+      "teacher_best_moves": [
+        "e2e4"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 15,
+      "teacher_reference_gap_interval": [
+        53.097864009569776,
+        54.9609470731945
+      ],
+      "teacher_reported_gap_cp": 58,
+      "wall_ms": 1000.3350169863552
+    },
+    {
+      "aborted_fraction": 0.7286436957144221,
+      "aborted_nodes": 7634,
+      "attempted_nodes": 10477,
+      "backend": "hip-bounded",
+      "bestmove": "b1c3",
+      "bounded_stop": "deadline",
+      "chosen_mates_in_one": false,
+      "reported_depth": 3,
+      "reported_nodes": 2843,
+      "root": "start",
+      "teacher_best_moves": [
+        "e2e4"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 8,
+      "teacher_reference_gap_interval": [
+        30.740868631766617,
+        32.60395165812968
+      ],
+      "teacher_reported_gap_cp": 34,
+      "wall_ms": 1001.1207869974896
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "d5e6",
+      "chosen_mates_in_one": false,
+      "reported_depth": 2,
+      "reported_nodes": 832876,
+      "root": "kiwipete",
+      "teacher_best_moves": [
+        "e2a6"
+      ],
+      "teacher_common_depth": 9,
+      "teacher_rank": 2,
+      "teacher_reference_gap_interval": [
+        38.19320015484166,
+        40.056283732677315
+      ],
+      "teacher_reported_gap_cp": 42,
+      "wall_ms": 1001.6749970091041
+    },
+    {
+      "aborted_fraction": 1.0,
+      "aborted_nodes": 6476,
+      "attempted_nodes": 6476,
+      "backend": "hip-bounded",
+      "bestmove": "a2a3",
+      "bounded_stop": "deadline",
+      "chosen_mates_in_one": false,
+      "reported_depth": 0,
+      "reported_nodes": 0,
+      "root": "kiwipete",
+      "teacher_best_moves": [
+        "e2a6"
+      ],
+      "teacher_common_depth": 9,
+      "teacher_rank": 30,
+      "teacher_reference_gap_interval": [
+        579.4187965022888,
+        581.2818811625757
+      ],
+      "teacher_reported_gap_cp": 623,
+      "wall_ms": 1001.8409779877402
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "d5e6",
+      "chosen_mates_in_one": false,
+      "reported_depth": 5,
+      "reported_nodes": 413081,
+      "root": "kiwipete",
+      "teacher_best_moves": [
+        "e2a6"
+      ],
+      "teacher_common_depth": 9,
+      "teacher_rank": 2,
+      "teacher_reference_gap_interval": [
+        38.19320015484166,
+        40.056283732677315
+      ],
+      "teacher_reported_gap_cp": 42,
+      "wall_ms": 1000.1922269875649
+    },
+    {
+      "aborted_fraction": 0.8194191659412835,
+      "aborted_nodes": 10355,
+      "attempted_nodes": 12637,
+      "backend": "hip-bounded",
+      "bestmove": "b4f4",
+      "bounded_stop": "deadline",
+      "chosen_mates_in_one": false,
+      "reported_depth": 3,
+      "reported_nodes": 2282,
+      "root": "rook-ending",
+      "teacher_best_moves": [
+        "b4f4"
+      ],
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1001.5023979940452
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "b4f4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 9,
+      "reported_nodes": 459993,
+      "root": "rook-ending",
+      "teacher_best_moves": [
+        "b4f4"
+      ],
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.3114769933745
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "b4f4",
+      "chosen_mates_in_one": false,
+      "reported_depth": 2,
+      "reported_nodes": 472867,
+      "root": "rook-ending",
+      "teacher_best_moves": [
+        "b4f4"
+      ],
+      "teacher_common_depth": 12,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.2066470042337
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "d4c5",
+      "chosen_mates_in_one": false,
+      "reported_depth": 6,
+      "reported_nodes": 372600,
+      "root": "middlegame",
+      "teacher_best_moves": [
+        "d4c5"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.1928769925144
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "d4c5",
+      "chosen_mates_in_one": false,
+      "reported_depth": 2,
+      "reported_nodes": 831976,
+      "root": "middlegame",
+      "teacher_best_moves": [
+        "d4c5"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.3349269973114
+    },
+    {
+      "aborted_fraction": 0.9921644187540142,
+      "aborted_nodes": 7724,
+      "attempted_nodes": 7785,
+      "backend": "hip-bounded",
+      "bestmove": "a2a4",
+      "bounded_stop": "deadline",
+      "chosen_mates_in_one": false,
+      "reported_depth": 1,
+      "reported_nodes": 61,
+      "root": "middlegame",
+      "teacher_best_moves": [
+        "d4c5"
+      ],
+      "teacher_common_depth": 10,
+      "teacher_rank": 9,
+      "teacher_reference_gap_interval": [
+        32.60395158333253,
+        34.46703460596943
+      ],
+      "teacher_reported_gap_cp": 36,
+      "wall_ms": 1001.7787170072552
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "a7a8q",
+      "chosen_mates_in_one": false,
+      "reported_depth": 2,
+      "reported_nodes": 529083,
+      "root": "promotion",
+      "teacher_best_moves": [
+        "a7a8q"
+      ],
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.7572869944852
+    },
+    {
+      "aborted_fraction": 0.6646627841442796,
+      "aborted_nodes": 7076,
+      "attempted_nodes": 10646,
+      "backend": "hip-bounded",
+      "bestmove": "a7a8q",
+      "bounded_stop": "deadline",
+      "chosen_mates_in_one": false,
+      "reported_depth": 5,
+      "reported_nodes": 3570,
+      "root": "promotion",
+      "teacher_best_moves": [
+        "a7a8q"
+      ],
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1002.450867992593
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "a7a8q",
+      "chosen_mates_in_one": false,
+      "reported_depth": 10,
+      "reported_nodes": 502192,
+      "root": "promotion",
+      "teacher_best_moves": [
+        "a7a8q"
+      ],
+      "teacher_common_depth": 13,
+      "teacher_rank": 1,
+      "teacher_reference_gap_interval": [
+        0,
+        0
+      ],
+      "teacher_reported_gap_cp": 0,
+      "wall_ms": 1000.6173470173962
+    },
+    {
+      "aborted_fraction": 0.0,
+      "aborted_nodes": 0,
+      "attempted_nodes": 29,
+      "backend": "hip-bounded",
+      "bestmove": "f7g7",
+      "bounded_stop": "mate",
+      "chosen_mates_in_one": true,
+      "reported_depth": 1,
+      "reported_nodes": 29,
+      "root": "mate",
+      "teacher_rank": null,
+      "teacher_rejection": "decisive_mate_tablebase_or_extreme_evidence",
+      "wall_ms": 2.7793010231107473
+    },
+    {
+      "backend": "alphabeta",
+      "bestmove": "f7g7",
+      "chosen_mates_in_one": true,
+      "reported_depth": 1,
+      "reported_nodes": 29,
+      "root": "mate",
+      "teacher_rank": null,
+      "teacher_rejection": "decisive_mate_tablebase_or_extreme_evidence",
+      "wall_ms": 0.20921998657286167
+    },
+    {
+      "backend": "hip-selective",
+      "bestmove": "f7g7",
+      "chosen_mates_in_one": true,
+      "reported_depth": 1,
+      "reported_nodes": 27,
+      "root": "mate",
+      "teacher_rank": null,
+      "teacher_rejection": "decisive_mate_tablebase_or_extreme_evidence",
+      "wall_ms": 0.7226399902720004
+    }
+  ],
+  "scope": "Diagnostic decisions on six reused authored benchmark FENs with empty history, not training or closed holdout; no match/rating/efficiency promotion",
+  "status": "PASS",
+  "teacher_policy": "complete ordinary same-depth/same-nodes full-support packets only; no bound/mate points; historical selected packet not final-bestmove equivalence",
+  "teacher_queries": 6,
+  "teacher_retired_pid": 9954
+}

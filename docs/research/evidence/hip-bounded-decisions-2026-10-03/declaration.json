@@ -1,0 +1,111 @@
+{
+  "chess_source_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "code_commit": "3eac5f550c67c1e2c3222529b669f30ba5084b89",
+  "driver_sha256": "3c3a9249a14968be6ee8a3be7e43fc21f1a1026a43c046ae37c6260c079748ca",
+  "limits": {
+    "engine_cpu": 5,
+    "engine_phase_watchdog_seconds": 30,
+    "kill_after_seconds": 5,
+    "per_move_ms": 1000,
+    "teacher_cpu": 4,
+    "teacher_phase_watchdog_seconds": 120,
+    "teacher_uci_per_query_timeout_seconds": 30
+  },
+  "native_library_path": "/tmp/chen-bounded-timed-v2-20261003-crnnqh9f/libchen_bounded_timed.so",
+  "native_library_sha256": "ec56be9e3588eb224b3723f727ef3842d0fc1da4e44b7b57d7ebe87b879b9123",
+  "ordering": "Latin cyclic backend order across six roots; one fresh root/newgame per search, persistent warmed constructors",
+  "overlap": "Root CPU0 PVS match remains live; CPU/power/cache uncontrolled. Coherence CPU3 mechanics tests may overlap; no concurrent GPU work.",
+  "packet_policy": {
+    "eligible": "ordered_1_to_K_same_depth_same_nodes_complete_unique_legal_support_ordinary_unbounded_cp_min_depth6",
+    "emission_boundary": "each_rank_one_starts_new_emission_finalize_at_next_rank_one_or_end",
+    "final_bestmove": "record_separately_may_differ_from_selected_packet_PV1",
+    "ineligible": "clean_incomplete_mixed_depth_bound_only_below_depth_floor",
+    "query_rejection": "malformed_scored_grammar_rank_duplicate_gap_excess_support_PV_rank_score_or_any_mate_tbhits_reserved_decisive_cp",
+    "search_source_sha256": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+    "search_source_url": "https://github.com/official-stockfish/Stockfish/blob/sf_19/src/search.cpp",
+    "selection": "highest_eligible_common_reported_depth_latest_completion_ordinal_tiebreak",
+    "source_context": "output_pv_2273_2342_final_inexact_250_264_completed_iteration_495_498",
+    "version": 2
+  },
+  "policies": {
+    "alphabeta": "Rust CPU Tapered +TT/qsearch/ordering, no optionalPVS (same3eac binary)",
+    "hip-bounded": "GPU scalar alpha-beta canonical order/noTT/PVS, qply32/main16/nodecap1M, completedExactroot publication",
+    "hip-selective": "GPU Tapered static-horizon greedy selected-leaf minimax,32leaves/1024candidates/cap1M; no qsearch/TT"
+  },
+  "python_chess_version": "1.11.2",
+  "roots": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "history": [],
+      "legal_count": 20,
+      "mate_in_one_moves": [],
+      "name": "start"
+    },
+    {
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "history": [],
+      "legal_count": 48,
+      "mate_in_one_moves": [],
+      "name": "kiwipete"
+    },
+    {
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "history": [],
+      "legal_count": 14,
+      "mate_in_one_moves": [],
+      "name": "rook-ending"
+    },
+    {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "history": [],
+      "legal_count": 37,
+      "mate_in_one_moves": [],
+      "name": "middlegame"
+    },
+    {
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "history": [],
+      "legal_count": 9,
+      "mate_in_one_moves": [],
+      "name": "promotion"
+    },
+    {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "history": [],
+      "legal_count": 26,
+      "mate_in_one_moves": [
+        "f7e8",
+        "f7f8",
+        "f7g7",
+        "f7h7"
+      ],
+      "name": "mate"
+    }
+  ],
+  "rust_binary_path": "/tmp/chen-bounded-timed-v2-20261003-crnnqh9f/chen",
+  "rust_binary_sha256": "ccebec06e558432d1694fb4536fb41ee719df762e83c6399a7d51c8ad9efc3f2",
+  "scope": "Diagnostic decisions on six reused authored benchmark FENs with empty history, not training or closed holdout; no match/rating/efficiency promotion",
+  "stage": "/tmp/chen-bounded-decisions-20261003-5erutz67",
+  "stockfish": {
+    "binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "embedded_net_name": "nn-1a298aa575a0.nnue",
+    "embedded_net_sha256": "1a298aa575a085434d29027978dc36867fe9c5bcea9376654b7a8eba1e52dfc2",
+    "options": "verbatim teacher_session setup trace",
+    "release": "sf_19",
+    "source_license": "GPL-3.0-or-later",
+    "source_sha256": {
+      "Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "src/evaluate.h": "bab0750b2d80c72bb121bfe730a55ecba5fc221394d3d8a7ae2aa3ae04fe9998",
+      "src/nnue/network.cpp": "95cafe51c0d05842fdeffb8d2690549e9deee43edc0b56caf277f21fda63ec4b",
+      "src/score.cpp": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01",
+      "src/search.cpp": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+      "src/uci.cpp": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21"
+    }
+  },
+  "teacher_nodes": 262144,
+  "teacher_source_sha256": {
+    "neural/ordinary_packets.py": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "neural/teacher_session.py": "7ee6d3863a5497e4803ffd6be0b2c881857c3b7181c0ffee236ca8308f9ea684"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "all_move_PV_packet_frame_gap_and_retirement_fields_replayed": true,
+  "decisions": 18,
+  "eligible_queries": 5,
+  "legal_teacher_support": 128,
+  "rejected_queries": 1,
+  "scope": "CPU mechanical replay, shared pinned packet/frame controls; no new engine/GPU execution or quality proof",
+  "status": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": {
+    "preparation": "PASS",
+    "roots": 6,
+    "legal_actions": 154,
+    "ordinary_control_cases": 12,
+    "noGPU": true
+  },
+  "scope": "Observed CPU-only preparation; no teacher search/engine/GPU call",
+  "source_sha256": "00edb3b0d71b11f380aaf4d7a06c1556c146bb4a97948bcbd5f5b1ef4b47da75"
+}
