@@ -90,6 +90,54 @@ class SymbolicState:
                           history[:, None].expand(-1, 64, -1)), -1)
 
 
+@dataclass(frozen=True)
+class CompactSymbolicState:
+    """Same twelve channels, computed directly by the admitted native producer.
+
+    Avoids materializing/reducing a dense pseudoattack graph during inference.
+    History retains raw counters; normalized_channels includes their declared
+    clipped broadcast. The producer owns value/identity certification; metadata
+    checks do not independently establish contents or current arena selection.
+    Snapshots remain owned and valid after the producing arena advances/closes.
+    """
+    features: torch.Tensor
+    normalized_channels: torch.Tensor
+    history: torch.Tensor
+    position_hash: torch.Tensor
+    node_id: torch.Tensor
+    root_epoch: torch.Tensor
+    context_sha256: str
+    producer_sha256: str
+    epoch: int
+
+    def validate_metadata(self):
+        if (not isinstance(self.features, torch.Tensor) or self.features.ndim != 4 or
+                tuple(self.features.shape[1:]) != (18, 8, 8) or not self.features.shape[0]):
+            raise ValueError('compact symbolic state requires nonempty schema1 features')
+        b, device = self.features.shape[0], self.features.device
+        if device.type != 'cuda':
+            raise ValueError('compact symbolic state must remain on GPU')
+        for value, dtype, shape in (
+                (self.features, torch.float32, (b, 18, 8, 8)),
+                (self.normalized_channels, torch.float32, (b, 64, len(CHANNELS))),
+                (self.history, torch.int64, (b, 4)),
+                (self.position_hash, torch.int64, (b,)),
+                (self.node_id, torch.int64, (b,)),
+                (self.root_epoch, torch.int64, (b,))):
+            if (not isinstance(value, torch.Tensor) or value.dtype != dtype or
+                    tuple(value.shape) != shape or value.device != device or
+                    not value.is_contiguous()):
+                raise ValueError('compact symbolic field dtype/shape/device mismatch')
+        if (type(self.epoch) is not int or not 0 <= self.epoch <= 2**64 - 1 or
+                any(not isinstance(pin, str) or not re.fullmatch('[0-9a-f]{64}', pin)
+                    for pin in (self.context_sha256, self.producer_sha256))):
+            raise ValueError('compact symbolic context/producer/epoch identity required')
+
+    def channels(self):
+        self.validate_metadata()
+        return self.normalized_channels
+
+
 class SymbolicResidualAnchor(nn.Module):
     """Separate trainable architecture; actual symbols affect learned roles.
 
@@ -109,7 +157,7 @@ class SymbolicResidualAnchor(nn.Module):
         self.to(device=anchor.queries.device, dtype=torch.float32)
 
     def forward(self, state):
-        if not isinstance(state, SymbolicState):
+        if not isinstance(state, (SymbolicState, CompactSymbolicState)):
             raise ValueError('symbolic residual accepts the typed current-state seam only')
         symbols = state.channels()
         if state.features.device != self.anchor.queries.device:

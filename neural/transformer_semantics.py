@@ -216,8 +216,8 @@ class TransformerSemantics(nn.Module):
 
     def forward_symbolic(self, state, *, value_only=False):
         # Lazy import keeps this candidate outside the frozen old source closure.
-        from .symbolic_residual import SymbolicState
-        if not isinstance(state, SymbolicState):
+        from .symbolic_residual import SymbolicState, CompactSymbolicState
+        if not isinstance(state, (SymbolicState, CompactSymbolicState)):
             raise ValueError('requires the typed admitted current-state symbolic seam')
         state.validate_metadata()
         return self(state.features, state.channels(), value_only=value_only)
