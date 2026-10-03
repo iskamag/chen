@@ -1,0 +1,13 @@
+#!/usr/bin/openrc-run
+# The remote bind is loopback-only; nginx is the public entry point.
+description="Chen loopback reverse SSH tunnel"
+supervisor=supervise-daemon
+command=/usr/bin/ssh
+command_args="-NT -o BatchMode=yes -o StrictHostKeyChecking=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -o ServerAliveCountMax=3 -R 127.0.0.1:18787:127.0.0.1:8788 root@iskamag.com"
+respawn_delay=5
+respawn_max=0
+output_log="${HOME}/.local/state/chen-host/tunnel.log"
+error_log="${HOME}/.local/state/chen-host/tunnel-error.log"
+depend() {
+    need chen-web
+}

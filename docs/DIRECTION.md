@@ -17,6 +17,12 @@ Later requested CPU work removes discarded quiet-move legality tests from
 controls. Its throughput gain does not update the frozen strength estimate.
 [Catnip](research/CATNIP_SEARCH.md) defines a separate proposed sibling-batched
 attack/refutation strategy and data-reuse controls; it is design only.
+The separately named [δ–θ Catnip toy](CATNIP_TOY.md) is implemented in
+`src/catnip.rs`: a deliberately distracted rollout policy for playful weaker
+opposition, with heuristic scores and no completed minimax horizon. It uses the
+same exact rules and `SearchBackend` limits/cancellation. UCI and the
+[browser checkpoint](../web/README.md) select it independently from serious Chen;
+it is not a replacement for the strength research track.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now
@@ -36,7 +42,7 @@ not alternative implementations to import or edit.
 | Boundary | Authority | Extensions belong here |
 | --- | --- | --- |
 | Exact chess state and legal moves | `src/core.rs`, `src/rules.rs`; CPU reference and `RulesBackend` | Faster attacks or GPU transitions, checked against exact state/hash/legal-action oracles |
-| Scheduling, budgets, cancellation and terminal decisions | `SearchBackend`; `src/search.rs`, `frontier.rs`, `resident.rs`, `selective.rs` | Named search policies with explicit work, completed horizon and failure semantics |
+| Scheduling, budgets, cancellation and terminal decisions | `SearchBackend`; `src/search.rs`, `frontier.rs`, `resident.rs`, `selective.rs`, `catnip.rs` | Named search policies with explicit work, completed horizon and failure semantics |
 | Position scores | `Evaluator`, `BatchEvaluator`; `src/eval.rs`, `backend.rs` | Classical, fully observed neural or incremental scoring, always with a declared score frame |
 | Device storage and dispatch | `src/hip.rs`, `device.rs`, `gpu/` | Versioned HIP ABI, bounded arenas, stream ownership and measured kernels |
 | Deployment admission and inference | `src/neural.rs`; neural worktree exporter/plugin | Fingerprinted model artifacts, exact feature contracts, same-model numerical and lifetime checks |

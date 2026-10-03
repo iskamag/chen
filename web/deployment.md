@@ -2,7 +2,9 @@
 
 Chosen URL: **https://iskamag.com/games/play-with-chen/**. The bare path should
 redirect to its trailing-slash form so browser assets and API requests resolve
-inside the prefix. No service, tunnel, or remote host is changed by this checkout. The server performs real native Chen searches on the
+inside the prefix. The installed nginx/SSH/OpenRC setup is documented in
+[the deployment runbook](../deployment/README.md). The examples below also allow
+independent local hosting. The server performs real native Chen searches on the
 machine running it. A reverse proxy forwards both the board assets and API.
 
 1. Build and run on the engine machine:
@@ -64,5 +66,5 @@ excludes queue wait, replay, HTTP transport and TT allocation. Polling does not
 block behind the running engine. Restarting the server forgets pending results,
 while tabs retain their last completed board and can submit a new request.
 
-Public publishing uses the selected URL and needs the actual SSH/proxy destination.
-These examples do not modify an existing homepage or server configuration.
+The installed public route forwards to local port 8788 through remote port 18787.
+The existing homepage stays unchanged.

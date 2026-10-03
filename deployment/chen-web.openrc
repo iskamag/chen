@@ -1,0 +1,11 @@
+#!/usr/bin/openrc-run
+# Install at ~/.config/rc/init.d/chen-web (OpenRC user service).
+description="Chen native chess browser service"
+supervisor=supervise-daemon
+command="${HOME}/.local/share/chen-host/chen-web"
+command_args=""
+export CHEN_WEB_PORT=8788
+respawn_delay=3
+respawn_max=0
+output_log="${HOME}/.local/state/chen-host/web.log"
+error_log="${HOME}/.local/state/chen-host/web-error.log"

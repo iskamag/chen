@@ -1,0 +1,86 @@
+{
+  "url": "https://iskamag.com/games/play-with-chen/",
+  "checked_at": "2026-10-03T15:10:45.743Z",
+  "serious": {
+    "backend": "serious",
+    "moves": [
+      "g1f3"
+    ],
+    "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+    "revision": "5eb3111",
+    "queue_ms": 0,
+    "telemetry": {
+      "catnip": null,
+      "depth": 7,
+      "ms": 1000,
+      "nodes": 1143552,
+      "nps": 1143302,
+      "pv": [
+        "g1f3",
+        "b8c6",
+        "e2e3",
+        "d7d5",
+        "f1d3",
+        "g8f6",
+        "e1g1"
+      ]
+    },
+    "delta_cp": 80,
+    "theta": 0.550000011920929
+  },
+  "catnip": {
+    "backend": "catnip",
+    "moves": [
+      "g1f3"
+    ],
+    "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+    "revision": "5eb3111",
+    "queue_ms": 0,
+    "telemetry": {
+      "catnip": {
+        "deepest_ply": 2,
+        "fail_meow": 1,
+        "fail_zoomies": 0,
+        "ignored_boring": 39,
+        "noticed_drift": 0,
+        "peak_walkers": 1
+      },
+      "depth": 0,
+      "ms": 0,
+      "nodes": 41,
+      "nps": 630177,
+      "pv": [
+        "g1f3"
+      ]
+    },
+    "delta_cp": 250,
+    "theta": 0.75
+  },
+  "restored": {
+    "backend": "catnip",
+    "delta": "250",
+    "theta": "0.75"
+  },
+  "mobile": {
+    "scroll": 390,
+    "client": 390
+  },
+  "assets": [
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "1a6a46168dee95ea24c9b949f3d77cf4b8e6cadf7dbb34ea97315a9e27698ea0"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "sha256": "a59456cb2e7a2804a961749b2e89ca403d9affeafe2d967ef4c1b60881d2883f"
+    },
+    {
+      "file": "chen.svg",
+      "status": 200,
+      "sha256": "0737ac2c68a7f4c7368e9434490c54f89c27e8b20c1f6627f5b5a8abb06783f2"
+    }
+  ],
+  "page_errors": []
+}

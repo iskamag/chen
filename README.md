@@ -27,6 +27,12 @@ cargo clippy --all-targets -- -D warnings
 python3 scripts/bench.py --repeats 5 --candidate-args='--no-tt'
 ```
 
+Play at **[iskamag.com/games/play-with-chen](https://iskamag.com/games/play-with-chen/)**,
+or run the browser checkpoint with `cargo run --release --manifest-path web/Cargo.toml`,
+then open `http://127.0.0.1:8787`. It includes an animated Chen, independent games
+and queued native searches. [Browser instructions](web/README.md) and
+[service runbook](deployment/README.md) describe the running proxy and local services.
+
 Load `target/release/chen` as a UCI engine in a chess GUI. A short session:
 
 ```text
@@ -135,6 +141,8 @@ the reversible history and halfmove clock to protect draw-sensitive results;
 this deliberately limits sharing, leaving a measurable optimization question.
 TT scores normalize mate distance. A returned PV can end at a cached bound;
 it is not guaranteed to reach the reported depth.
+
+Choose `Backend=catnip` in UCI or **Catnip Chen** in the browser for the deliberately distracted [δ–θ rollout toy](docs/CATNIP_TOY.md). It has adjustable fish attention and stale evaluation memories, with fail-meow/fail-zoomies telemetry. Its strength is unmeasured.
 
 ## Experiments and the neural layer
 

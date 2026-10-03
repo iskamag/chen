@@ -13,6 +13,26 @@ Zen2 builds; no new playing-strength estimate follows. The
 batched attack/refutation search, not an implemented backend. GPU and neural
 experiments remain paused.
 
+The [browser checkpoint](../../web/README.md) runs this CPU backend through a
+bounded asynchronous queue, with independent browser histories and animated SVG
+reactions. Search time starts after queueing/replay. API and browser checks cover
+real native moves, separate queue time, cancellation and desktop/mobile layout.
+It creates a fresh TT per request, so the frozen UCI match rating does not describe
+its strength. It is live at [iskamag.com/games/play-with-chen](https://iskamag.com/games/play-with-chen/),
+through nginx and a supervised reverse SSH tunnel to this machine. Public browser
+QA verifies both backends, a real 1000 ms serious move, saved Catnip controls,
+asset hashes and mobile layout. The existing homepage hash is unchanged; the
+[runbook](../../deployment/README.md) records service and rollback boundaries.
+
+The explicitly requested [δ–θ Catnip toy](../CATNIP_TOY.md) is now implemented as
+a distinct `SearchBackend`, with bounded attention-driven rollouts, stale score
+memories, legal fallback and terminal-before-attention checks. UCI and the web
+select it independently; benchmark JSON includes its configuration and counters.
+It reports explored ply separately from completed search depth. Independent
+review found and fixed zero-ply and early-mate telemetry edges. Release tests,
+strict Clippy, six web API checks and three browser cancellation-race checks pass.
+No playing-strength measurement or promotion follows.
+
 The requested [fresh CPU one-second evaluation](../harness/cpu-rating-current-2026-10-03.md)
 is now closed and independently audited: 64 games, 32 complete pairs, 5810 legal
 plies, no errors or caps. Default PVS-off scores 5W/2D/9L against Stockfish

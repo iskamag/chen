@@ -1,0 +1,14 @@
+{
+  "engine_revision": "5eb3111",
+  "installed_binary_sha256": "2464ab7be6e56d549bd50d2bc71ebc14ae5e786bb1dc5d1aab5b6b0ef011c91a",
+  "homepage_before_and_after_sha256": "b9cbe439da685d8bedb391bda4ffb384d80caef8c30e38985cc1d112e3c1c0ce",
+  "nginx_snippet_sha256": "db83e233c080819f0c4b9ee92f432fc2edbdad04d1160a7d29a43bd2e5d3104a",
+  "bare_path_http_status": 308,
+  "site_and_assets_http_status": 200,
+  "nginx_test": "passed",
+  "user_services": "started, supervised; both child exits recovered",
+  "service_runlevel": "user default",
+  "preview_port_8787": "retired",
+  "runtime_dependency": "engine machine and user OpenRC session must stay running",
+  "strength": "unmeasured for website and Catnip toy"
+}
