@@ -1,0 +1,21 @@
+{
+  "child_pgid": 6607,
+  "child_pid": 6607,
+  "command": [
+    "python3",
+    "-m",
+    "neural.profile_int8_inference",
+    "--declaration",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/control/declaration.json",
+    "--sha256",
+    "a1da8f6421f8be5dd72a16139209c3d92b937f767fe93df8ffb4681059fbc84e",
+    "--output",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/attempt-1"
+  ],
+  "declaration_sha256": "a1da8f6421f8be5dd72a16139209c3d92b937f767fe93df8ffb4681059fbc84e",
+  "external_cap_seconds": 660,
+  "runner_cap_seconds": 600,
+  "source_sha256": "fceb1dc017a480a523902c48b5707b117b7e73b10b6210ab9c69519046bd3d07",
+  "status": "running",
+  "watchdog_pid": 6601
+}

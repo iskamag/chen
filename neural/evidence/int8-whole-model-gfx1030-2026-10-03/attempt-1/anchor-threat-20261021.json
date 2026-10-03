@@ -1,0 +1,1196 @@
+{
+  "checkpoint_sha256": "44b24990af3211b5348d4aebd39d3c9ef9392c79d4cc00ce6825d5ea4e43201b",
+  "control": null,
+  "fidelity": {
+    "fp32_value": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "roots": 0
+    },
+    "int8_fused": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 13.39288330078125,
+        "mean_absolute": 2.842265008345182,
+        "mean_squared": 13.731515598911072
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.06808149814605713,
+        "mean_absolute": 0.009581129598259415,
+        "mean_squared": 0.00014260100519790237
+      },
+      "roots": 0
+    },
+    "int8_hybrid": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 13.39288330078125,
+        "mean_absolute": 2.842265008345182,
+        "mean_squared": 13.731515598911072
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.06808149814605713,
+        "mean_absolute": 0.009581129598259415,
+        "mean_squared": 0.00014260100519790237
+      },
+      "roots": 0
+    },
+    "int8_multi": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 1864,
+        "maximum_absolute": 13.39288330078125,
+        "mean_absolute": 2.842265008345182,
+        "mean_squared": 13.731515598911072
+      },
+      "first_canonical_action_agreement": null,
+      "latent": {
+        "count": 477184,
+        "maximum_absolute": 0.06808149814605713,
+        "mean_absolute": 0.009581129598259415,
+        "mean_squared": 0.00014260100519790237
+      },
+      "roots": 0
+    }
+  },
+  "phase": "anchor",
+  "separate_instrumented_linear_profile": {
+    "fp32_value": [
+      {
+        "event_us": 81.28099888563156,
+        "input_shape": [
+          32,
+          64,
+          20
+        ],
+        "int8_module": false,
+        "name": "objects",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 46.51999846100807,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "messages.0.messages.0",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 35.08099913597107,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "messages.0.messages.1",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 34.2399999499321,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "messages.0.messages.2",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 34.40000116825104,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "messages.0.messages.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 48.99999871850014,
+        "input_shape": [
+          32,
+          64,
+          160
+        ],
+        "int8_module": false,
+        "name": "messages.0.update.1",
+        "output_shape": [
+          32,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 50.68099871277809,
+        "input_shape": [
+          32,
+          64,
+          64
+        ],
+        "int8_module": false,
+        "name": "messages.0.update.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 44.520001858472824,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "key",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 45.680999755859375,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "value",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 45.32000049948692,
+        "input_shape": [
+          32,
+          256
+        ],
+        "int8_module": false,
+        "name": "cp",
+        "output_shape": [
+          32,
+          1
+        ]
+      }
+    ],
+    "int8_fused": [
+      {
+        "event_us": 65.92000275850296,
+        "input_shape": [
+          32,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "objects",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 66.20100140571594,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.0",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 61.40099838376045,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.1",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 60.80099940299988,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.2",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 60.88100001215935,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 105.64099997282028,
+        "input_shape": [
+          32,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.1",
+        "output_shape": [
+          32,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 34.400999546051025,
+        "input_shape": [
+          32,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 60.47999858856201,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "key",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 67.32100248336792,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "value",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.320998817682266,
+        "input_shape": [
+          32,
+          256
+        ],
+        "int8_module": true,
+        "name": "cp",
+        "output_shape": [
+          32,
+          1
+        ]
+      }
+    ],
+    "int8_hybrid": [
+      {
+        "event_us": 64.96100127696991,
+        "input_shape": [
+          32,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "objects",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 66.28099828958511,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.0",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 54.32099848985672,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.1",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 63.72000277042389,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.2",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 119.72100287675858,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 65.76000154018402,
+        "input_shape": [
+          32,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.1",
+        "output_shape": [
+          32,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 23.40099960565567,
+        "input_shape": [
+          32,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 16.200000420212746,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "key",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 63.120998442173004,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "value",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 57.56000056862831,
+        "input_shape": [
+          32,
+          256
+        ],
+        "int8_module": true,
+        "name": "cp",
+        "output_shape": [
+          32,
+          1
+        ]
+      }
+    ],
+    "int8_multi": [
+      {
+        "event_us": 267.1220004558563,
+        "input_shape": [
+          32,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "objects",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 197.32199609279633,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.0",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 184.20200049877167,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.1",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 216.36199951171875,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.2",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 238.20200562477112,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "messages.0.messages.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 189.4810050725937,
+        "input_shape": [
+          32,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.1",
+        "output_shape": [
+          32,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 181.68100714683533,
+        "input_shape": [
+          32,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "messages.0.update.3",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 190.08199870586395,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "key",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 200.16199350357056,
+        "input_shape": [
+          32,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "value",
+        "output_shape": [
+          32,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 176.68099701404572,
+        "input_shape": [
+          32,
+          256
+        ],
+        "int8_module": true,
+        "name": "cp",
+        "output_shape": [
+          32,
+          1
+        ]
+      }
+    ]
+  },
+  "setup": {
+    "int8_fused": {
+      "event_ms": 5.6371660232543945,
+      "linears": [
+        "objects",
+        "messages.0.messages.0",
+        "messages.0.messages.1",
+        "messages.0.messages.2",
+        "messages.0.messages.3",
+        "messages.0.update.1",
+        "messages.0.update.3",
+        "key",
+        "value",
+        "cp"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 5.6707529874984175
+    },
+    "int8_hybrid": {
+      "event_ms": 6.224170207977295,
+      "linears": [
+        "objects",
+        "messages.0.messages.0",
+        "messages.0.messages.1",
+        "messages.0.messages.2",
+        "messages.0.messages.3",
+        "messages.0.update.1",
+        "messages.0.update.3",
+        "key",
+        "value",
+        "cp"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 6.255442975088954
+    },
+    "int8_multi": {
+      "event_ms": 6.081968784332275,
+      "linears": [
+        "objects",
+        "messages.0.messages.0",
+        "messages.0.messages.1",
+        "messages.0.messages.2",
+        "messages.0.messages.3",
+        "messages.0.update.1",
+        "messages.0.update.3",
+        "key",
+        "value",
+        "cp"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 6.1261330265551805
+    }
+  },
+  "timings": {
+    "1": {
+      "fp32_full": {
+        "event_us_median": 1537.0444297790527,
+        "samples": [
+          {
+            "event_us": 1451.7036437988281,
+            "iterations": 10,
+            "synchronized_wall_us": 1457.1167004760355
+          },
+          {
+            "event_us": 1537.0444297790527,
+            "iterations": 10,
+            "synchronized_wall_us": 1543.71969983913
+          },
+          {
+            "event_us": 1539.0643119812012,
+            "iterations": 10,
+            "synchronized_wall_us": 1545.8837995538488
+          }
+        ],
+        "synchronized_wall_us_median": 1543.71969983913
+      },
+      "fp32_value": {
+        "event_us_median": 1064.9605751037598,
+        "samples": [
+          {
+            "event_us": 1061.7844581604004,
+            "iterations": 10,
+            "synchronized_wall_us": 1066.776501829736
+          },
+          {
+            "event_us": 1091.1287307739258,
+            "iterations": 10,
+            "synchronized_wall_us": 1099.8954996466637
+          },
+          {
+            "event_us": 1064.9605751037598,
+            "iterations": 10,
+            "synchronized_wall_us": 1070.4065003665164
+          }
+        ],
+        "synchronized_wall_us_median": 1070.4065003665164
+      },
+      "int8_fused": {
+        "event_us_median": 1466.983699798584,
+        "samples": [
+          {
+            "event_us": 1466.983699798584,
+            "iterations": 10,
+            "synchronized_wall_us": 1472.4976994330063
+          },
+          {
+            "event_us": 1513.380241394043,
+            "iterations": 10,
+            "synchronized_wall_us": 1517.899800091982
+          },
+          {
+            "event_us": 1443.1076049804688,
+            "iterations": 10,
+            "synchronized_wall_us": 1448.4537008684129
+          }
+        ],
+        "synchronized_wall_us_median": 1472.4976994330063
+      },
+      "int8_hybrid": {
+        "event_us_median": 1503.108024597168,
+        "samples": [
+          {
+            "event_us": 1503.108024597168,
+            "iterations": 10,
+            "synchronized_wall_us": 1508.1527002621442
+          },
+          {
+            "event_us": 1597.9687690734863,
+            "iterations": 10,
+            "synchronized_wall_us": 1602.8596990508959
+          },
+          {
+            "event_us": 1437.1556282043457,
+            "iterations": 10,
+            "synchronized_wall_us": 1441.6265999898314
+          }
+        ],
+        "synchronized_wall_us_median": 1508.1527002621442
+      },
+      "int8_multi": {
+        "event_us_median": 2923.487663269043,
+        "samples": [
+          {
+            "event_us": 2923.487663269043,
+            "iterations": 10,
+            "synchronized_wall_us": 2927.2393992869183
+          },
+          {
+            "event_us": 3038.284492492676,
+            "iterations": 10,
+            "synchronized_wall_us": 3043.9163994742557
+          },
+          {
+            "event_us": 2761.366081237793,
+            "iterations": 10,
+            "synchronized_wall_us": 2766.9264003634453
+          }
+        ],
+        "synchronized_wall_us_median": 2927.2393992869183
+      }
+    },
+    "256": {
+      "fp32_full": {
+        "event_us_median": 2062.8646850585938,
+        "samples": [
+          {
+            "event_us": 2062.8646850585938,
+            "iterations": 10,
+            "synchronized_wall_us": 2071.2289988296106
+          },
+          {
+            "event_us": 2087.776756286621,
+            "iterations": 10,
+            "synchronized_wall_us": 2094.8060002410784
+          },
+          {
+            "event_us": 2046.8923568725586,
+            "iterations": 10,
+            "synchronized_wall_us": 2053.997997427359
+          }
+        ],
+        "synchronized_wall_us_median": 2071.2289988296106
+      },
+      "fp32_value": {
+        "event_us_median": 1851.546859741211,
+        "samples": [
+          {
+            "event_us": 1890.599250793457,
+            "iterations": 10,
+            "synchronized_wall_us": 1898.211901425384
+          },
+          {
+            "event_us": 1844.0227508544922,
+            "iterations": 10,
+            "synchronized_wall_us": 1848.8368979888037
+          },
+          {
+            "event_us": 1851.546859741211,
+            "iterations": 10,
+            "synchronized_wall_us": 1857.5828988105059
+          }
+        ],
+        "synchronized_wall_us_median": 1857.5828988105059
+      },
+      "int8_fused": {
+        "event_us_median": 2357.23876953125,
+        "samples": [
+          {
+            "event_us": 2360.594940185547,
+            "iterations": 10,
+            "synchronized_wall_us": 2365.8110992982984
+          },
+          {
+            "event_us": 2323.8588333129883,
+            "iterations": 10,
+            "synchronized_wall_us": 2329.2471014428884
+          },
+          {
+            "event_us": 2357.23876953125,
+            "iterations": 10,
+            "synchronized_wall_us": 2363.6801983229816
+          }
+        ],
+        "synchronized_wall_us_median": 2363.6801983229816
+      },
+      "int8_hybrid": {
+        "event_us_median": 1888.5431289672852,
+        "samples": [
+          {
+            "event_us": 1888.5431289672852,
+            "iterations": 10,
+            "synchronized_wall_us": 1893.7409011414275
+          },
+          {
+            "event_us": 1920.2394485473633,
+            "iterations": 10,
+            "synchronized_wall_us": 1926.4799018856138
+          },
+          {
+            "event_us": 1868.9790725708008,
+            "iterations": 10,
+            "synchronized_wall_us": 1874.1748004686087
+          }
+        ],
+        "synchronized_wall_us_median": 1893.7409011414275
+      },
+      "int8_multi": {
+        "event_us_median": 2636.6212844848633,
+        "samples": [
+          {
+            "event_us": 2681.1416625976562,
+            "iterations": 10,
+            "synchronized_wall_us": 2686.512199579738
+          },
+          {
+            "event_us": 2636.6212844848633,
+            "iterations": 10,
+            "synchronized_wall_us": 2642.09030137863
+          },
+          {
+            "event_us": 2632.8651428222656,
+            "iterations": 10,
+            "synchronized_wall_us": 2637.621300527826
+          }
+        ],
+        "synchronized_wall_us_median": 2642.09030137863
+      }
+    },
+    "32": {
+      "fp32_full": {
+        "event_us_median": 1433.3914756774902,
+        "samples": [
+          {
+            "event_us": 1409.3433380126953,
+            "iterations": 10,
+            "synchronized_wall_us": 1414.1656982246786
+          },
+          {
+            "event_us": 1433.3914756774902,
+            "iterations": 10,
+            "synchronized_wall_us": 1437.721701222472
+          },
+          {
+            "event_us": 1455.9637069702148,
+            "iterations": 10,
+            "synchronized_wall_us": 1461.1166989197955
+          }
+        ],
+        "synchronized_wall_us_median": 1437.721701222472
+      },
+      "fp32_value": {
+        "event_us_median": 1084.7006797790527,
+        "samples": [
+          {
+            "event_us": 1084.7006797790527,
+            "iterations": 10,
+            "synchronized_wall_us": 1091.3995007285848
+          },
+          {
+            "event_us": 1068.3686256408691,
+            "iterations": 10,
+            "synchronized_wall_us": 1072.0394988311455
+          },
+          {
+            "event_us": 1158.0653190612793,
+            "iterations": 10,
+            "synchronized_wall_us": 1164.6025988738984
+          }
+        ],
+        "synchronized_wall_us_median": 1091.3995007285848
+      },
+      "int8_fused": {
+        "event_us_median": 1430.2194595336914,
+        "samples": [
+          {
+            "event_us": 1410.3273391723633,
+            "iterations": 10,
+            "synchronized_wall_us": 1417.8766985423863
+          },
+          {
+            "event_us": 1430.2194595336914,
+            "iterations": 10,
+            "synchronized_wall_us": 1434.2587004648522
+          },
+          {
+            "event_us": 1438.0515098571777,
+            "iterations": 10,
+            "synchronized_wall_us": 1443.8757003517821
+          }
+        ],
+        "synchronized_wall_us_median": 1434.2587004648522
+      },
+      "int8_hybrid": {
+        "event_us_median": 1445.8395957946777,
+        "samples": [
+          {
+            "event_us": 1643.8371658325195,
+            "iterations": 10,
+            "synchronized_wall_us": 1648.7938002683222
+          },
+          {
+            "event_us": 1371.055030822754,
+            "iterations": 10,
+            "synchronized_wall_us": 1375.0136975431815
+          },
+          {
+            "event_us": 1445.8395957946777,
+            "iterations": 10,
+            "synchronized_wall_us": 1455.3067012457177
+          }
+        ],
+        "synchronized_wall_us_median": 1455.3067012457177
+      },
+      "int8_multi": {
+        "event_us_median": 2737.1620178222656,
+        "samples": [
+          {
+            "event_us": 2737.1620178222656,
+            "iterations": 10,
+            "synchronized_wall_us": 2742.9213019786403
+          },
+          {
+            "event_us": 2662.453269958496,
+            "iterations": 10,
+            "synchronized_wall_us": 2667.3202984966338
+          },
+          {
+            "event_us": 2875.0471115112305,
+            "iterations": 10,
+            "synchronized_wall_us": 2880.95329888165
+          }
+        ],
+        "synchronized_wall_us_median": 2742.9213019786403
+      }
+    },
+    "4": {
+      "fp32_full": {
+        "event_us_median": 1486.7439270019531,
+        "samples": [
+          {
+            "event_us": 1470.387840270996,
+            "iterations": 10,
+            "synchronized_wall_us": 1474.2706989636645
+          },
+          {
+            "event_us": 1523.8001823425293,
+            "iterations": 10,
+            "synchronized_wall_us": 1530.4218017263338
+          },
+          {
+            "event_us": 1486.7439270019531,
+            "iterations": 10,
+            "synchronized_wall_us": 1492.3857001122087
+          }
+        ],
+        "synchronized_wall_us_median": 1492.3857001122087
+      },
+      "fp32_value": {
+        "event_us_median": 1120.361042022705,
+        "samples": [
+          {
+            "event_us": 1120.361042022705,
+            "iterations": 10,
+            "synchronized_wall_us": 1126.2835992965847
+          },
+          {
+            "event_us": 1137.3571395874023,
+            "iterations": 10,
+            "synchronized_wall_us": 1142.515501123853
+          },
+          {
+            "event_us": 1103.156852722168,
+            "iterations": 10,
+            "synchronized_wall_us": 1108.6465005064383
+          }
+        ],
+        "synchronized_wall_us_median": 1126.2835992965847
+      },
+      "int8_fused": {
+        "event_us_median": 1417.0514106750488,
+        "samples": [
+          {
+            "event_us": 1417.0514106750488,
+            "iterations": 10,
+            "synchronized_wall_us": 1422.5366991013288
+          },
+          {
+            "event_us": 1688.6455535888672,
+            "iterations": 10,
+            "synchronized_wall_us": 1696.5968010481447
+          },
+          {
+            "event_us": 1395.2232360839844,
+            "iterations": 10,
+            "synchronized_wall_us": 1400.0896975630894
+          }
+        ],
+        "synchronized_wall_us_median": 1422.5366991013288
+      },
+      "int8_hybrid": {
+        "event_us_median": 1416.9954299926758,
+        "samples": [
+          {
+            "event_us": 1416.9954299926758,
+            "iterations": 10,
+            "synchronized_wall_us": 1421.3677000952885
+          },
+          {
+            "event_us": 1571.0125923156738,
+            "iterations": 10,
+            "synchronized_wall_us": 1574.5108015835285
+          },
+          {
+            "event_us": 1354.7148704528809,
+            "iterations": 10,
+            "synchronized_wall_us": 1359.5295982668176
+          }
+        ],
+        "synchronized_wall_us_median": 1421.3677000952885
+      },
+      "int8_multi": {
+        "event_us_median": 2778.8223266601562,
+        "samples": [
+          {
+            "event_us": 2778.8223266601562,
+            "iterations": 10,
+            "synchronized_wall_us": 2785.4112995555624
+          },
+          {
+            "event_us": 3150.7211685180664,
+            "iterations": 10,
+            "synchronized_wall_us": 3156.3305004965514
+          },
+          {
+            "event_us": 2735.346031188965,
+            "iterations": 10,
+            "synchronized_wall_us": 2741.112298099324
+          }
+        ],
+        "synchronized_wall_us_median": 2785.4112995555624
+      }
+    }
+  }
+}

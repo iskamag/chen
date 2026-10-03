@@ -1,0 +1,14 @@
+test_cpu_linear_cannot_become_a_gpu_runtime_fallback (neural.tests.test_int8_inference.Int8Fixtures.test_cpu_linear_cannot_become_a_gpu_runtime_fallback) ... ok
+test_integer_dot_reference_matches_declared_dequantization (neural.tests.test_int8_inference.Int8Fixtures.test_integer_dot_reference_matches_declared_dequantization) ... ok
+test_quantization_padding_zero_and_rounding_error_bound (neural.tests.test_int8_inference.Int8Fixtures.test_quantization_padding_zero_and_rounding_error_bound) ... ok
+test_symbolic_channels_feed_actual_learned_residual_not_unused_metadata (neural.tests.test_int8_inference.Int8Fixtures.test_symbolic_channels_feed_actual_learned_residual_not_unused_metadata) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ok
+test_symbolic_runtime_rejects_cpu_and_untyped_teacher_fields (neural.tests.test_int8_inference.Int8Fixtures.test_symbolic_runtime_rejects_cpu_and_untyped_teacher_fields) ... ok
+test_value_only_anchor_exact_parity_with_nonzero_head_all_encoders (neural.tests.test_int8_inference.Int8Fixtures.test_value_only_anchor_exact_parity_with_nonzero_head_all_encoders) ... ok
+test_value_only_transition_exact_parity_and_action_blind_ties (neural.tests.test_int8_inference.Int8Fixtures.test_value_only_transition_exact_parity_and_action_blind_ties) ... ok
+test_zero_tiny_and_half_ties_match_v3_policy (neural.tests.test_int8_inference.Int8Fixtures.test_zero_tiny_and_half_ties_match_v3_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.365s
+
+OK
