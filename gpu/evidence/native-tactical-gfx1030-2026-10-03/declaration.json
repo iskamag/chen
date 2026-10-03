@@ -1,0 +1,11 @@
+{
+  "kind": "native_tactical_gpu_correctness",
+  "abi": 1,
+  "source_binding_sha256": "12d6cc341607be4cb890e5df090749f1f2dfcf64cb5dbf62a73f84ba2f79cc39",
+  "library_sha256": "177b600836cf4bef2944ffdb31e9ea2202751b3f51eac524b3b8422a6637f80d",
+  "tests": 4,
+  "external_timeout_seconds": 30,
+  "training": false,
+  "timing_comparison": false,
+  "concurrent_work": "CPU0 direct PVS match; CPU4 exchange target preparation, shared power/cache uncontrolled"
+}

@@ -1,0 +1,13 @@
+{
+  "chess": {
+    "redistributed": false,
+    "source_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "version": "1.11.2"
+  },
+  "comment": "Install external dependencies; archive contains own local source closure only.",
+  "system_python": "container Python3.12",
+  "torch": {
+    "rocm_build": "7.0.51831",
+    "version": "2.10.0+rocm7.0"
+  }
+}

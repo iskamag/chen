@@ -1,0 +1,20 @@
+{
+  "composition": {
+    "exec_session": 5960,
+    "exit_code": 0,
+    "external_timeout_seconds": 10,
+    "states": 4,
+    "tests": 1,
+    "unittest_body_seconds": 0.249
+  },
+  "initial": {
+    "exec_session": 54266,
+    "exit_code": 0,
+    "external_timeout_seconds": 30,
+    "oracle_rows": 45,
+    "tests": 4,
+    "unittest_body_seconds": 2.08
+  },
+  "retirement": "Both owned exec sessions terminal0; current process inventory recorded separately.",
+  "timing_scope": "Unittest durations do not establish producer/inference latency; execution start/end were not instrumented."
+}

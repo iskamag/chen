@@ -1,0 +1,7 @@
+test_abi1_symbolic_channels_composition (gpu.test_native_tactical.TacticalGPU.test_abi1_symbolic_channels_composition) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.249s
+
+OK

@@ -1,0 +1,25 @@
+{
+  "abi1_composition_states": 4,
+  "complete_graph_oracle_rows": 45,
+  "composition_tests": 1,
+  "device": "actual gfx1030",
+  "inference_latency_measured": false,
+  "initial_source_files": 35,
+  "initial_tests": 4,
+  "limitations": [
+    "CPU reference uses python-chess geometry/legality and the shared expected Chen hash formula; it is independent of the native emitter but not an independently proved chess oracle.",
+    "Forward/backward finite gradients on width8 steps2 is a mechanics check, not learned quality.",
+    "Runtime failure after preflight may partially write; discard snapshot.",
+    "Native C has no per-call device allocation; Torch wrapper allocates owned output tensors and synchronizes.",
+    "Serial edge assembly, padding initialization and per-call pointer admission have not been optimized.",
+    "HIP7.2.4 compiler/Torch ROCm7.0 provider combination tested only for these fixtures."
+  ],
+  "optimizer_steps": 0,
+  "relations": 14,
+  "source_overlay_note": "Apply composition-overlay.tar.gz over initial source tree for current five-test suite; initial four-test output binds initial source tree.",
+  "status": "PASS",
+  "strength_measured": false,
+  "trained": false,
+  "unchanged_output_host_rejections": 9,
+  "unchanged_output_occupied_piece_limit_rejection": 1
+}

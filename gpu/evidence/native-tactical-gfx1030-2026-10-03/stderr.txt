@@ -1,0 +1,10 @@
+test_all_relations_special_moves_and_mover_frames (gpu.test_native_tactical.TacticalGPU.test_all_relations_special_moves_and_mover_frames) ... /opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ok
+test_complete_native_children_history_and_snapshot_lifetime (gpu.test_native_tactical.TacticalGPU.test_complete_native_children_history_and_snapshot_lifetime) ... ok
+test_preflight_preserves_outputs (gpu.test_native_tactical.TacticalGPU.test_preflight_preserves_outputs) ... ok
+test_resident_model_forward_backward_and_terminal_authority (gpu.test_native_tactical.TacticalGPU.test_resident_model_forward_backward_and_terminal_authority) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.080s
+
+OK

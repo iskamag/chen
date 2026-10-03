@@ -692,7 +692,8 @@ bool overlaps(ReplayRange a,ReplayRange b) {
 int32_t export_intervals_valid(ChenRulesContext *ctx,const uint64_t *addresses,
     const uint64_t *strides,const uint64_t *alignments,uint32_t n,uint64_t capacity,
     char *error,uint64_t cap) {
-    ReplayRange ranges[14]{};
+    if(n>32) return fail(error,cap,"too many typed export intervals");
+    ReplayRange ranges[32]{};
     for(uint32_t i=0;i<n;++i) {
         const uint64_t bytes=capacity*strides[i],address=addresses[i];
         if(!bytes) continue;
@@ -974,3 +975,4 @@ extern "C" int32_t chen_rules_evaluate_external(ChenRulesContext *ctx,uint64_t s
 // Independently versioned selective arena; full-width ABI1 above stays intact.
 #include "chen_selective.inc"
 #include "chen_symbolic.inc"
+#include "chen_tactical.inc"

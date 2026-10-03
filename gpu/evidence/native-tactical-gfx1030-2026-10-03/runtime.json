@@ -1,0 +1,30 @@
+{
+  "device": {
+    "architecture": "gfx1030",
+    "name": "AMD Radeon Graphics",
+    "override": false,
+    "rocm_build": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "provider": {
+    "hipRuntimeGetVersion": 70051831,
+    "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "symbol": "hipRuntimeGetVersion",
+    "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so"
+  },
+  "strict_build": {
+    "argv": [
+      "docker",
+      "exec",
+      "cpp-rocm",
+      "bash",
+      "/tmp/chen-native-tactical-20261003-dj0vjgka/source/gpu/build.sh",
+      "/tmp/chen-native-tactical-20261003-dj0vjgka/libchen_gpu_tactical.so"
+    ],
+    "compiler_identity_recorded_post_run": true,
+    "exit_code": 0,
+    "library_sha256": "177b600836cf4bef2944ffdb31e9ea2202751b3f51eac524b3b8422a6637f80d",
+    "observed_exec_session": 9407
+  }
+}

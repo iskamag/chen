@@ -1,0 +1,4 @@
+{"kind": "tactical_test", "test": "test_all_relations_special_moves_and_mover_frames", "oracle_rows": 20}
+{"kind": "tactical_test", "test": "test_complete_native_children_history_and_snapshot_lifetime", "oracle_rows": 24}
+{"kind": "tactical_test", "test": "test_preflight_preserves_outputs", "oracle_rows": 0}
+{"kind": "tactical_test", "test": "test_resident_model_forward_backward_and_terminal_authority", "oracle_rows": 1}
