@@ -1,0 +1,31 @@
+{
+  "url": "https://iskamag.com/games/play-with-chen/",
+  "continued_moves": [
+    "g1f3",
+    "e7e5",
+    "f3e5"
+  ],
+  "build": "5344623",
+  "scope": "Public browser check of Drowsy naming, saved-game migration and continued legal play on committed build 5344623",
+  "choices": [
+    "Serious Chen",
+    "Drowsy Chen \u00b7 experimental"
+  ],
+  "old_moves": [
+    "g1f3"
+  ],
+  "migrated_backend": "drowsy",
+  "migrated_fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+  "delta_cp": 250,
+  "theta": 0.75,
+  "telemetry": {
+    "deepest_ply": 2,
+    "fail_meow": 1,
+    "fail_zoomies": 0,
+    "ignored_boring": 39,
+    "noticed_drift": 0,
+    "peak_walkers": 1
+  },
+  "caption": "Build 5344623 \u00b7 Drowsy \u00b7 resource level 20",
+  "page_errors": []
+}
