@@ -1,0 +1,27 @@
+{
+  "source_sha256": "a20bc75bd48574729718f1483806675e44ab0488c7f05061a7a29de866ffeaa5",
+  "library_sha256": "3f2ee295ffcec7ad4efe4b736acf970b72f15dc9b4546218da9b2be7626d7951",
+  "fixtures": [
+    [
+      "batch32",
+      32,
+      50000
+    ],
+    [
+      "batch1",
+      1,
+      5000
+    ]
+  ],
+  "samples": 8,
+  "warmups": 1,
+  "seed": 20261003,
+  "cpu_affinity": [
+    2
+  ],
+  "bound": 4,
+  "capacity": 100000,
+  "compared": "graph4 versus queued4; production contextual only",
+  "progress": "same completed advance trajectory and classified positions",
+  "scope": "real launch intervention, no virtual-speedup curve or strength claim"
+}

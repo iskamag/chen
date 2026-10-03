@@ -1,0 +1,50 @@
+{
+  "commit": "4e5782a547e506098219e804b4b2323dcb39b3a6",
+  "baseline_sha256": {
+    "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "chen_rules.hip": "fa21b56619cac948295318007656fd3452adde85bd3745348f0c7f4ffbe01153",
+    "chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+    "chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+    "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+  },
+  "archival_differences": {
+    "chen_selective.h": {
+      "archive_sha256": "93fc02f4bec9c34738bcf52e427a75247d6686648523bdd030e00f95612d6bcf",
+      "commit_sha256": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388"
+    }
+  },
+  "candidate_sha256": {
+    "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+    "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "chen_neural.h": "f286ec171049674e7a5527e96f455b3662fe08251f85d14f167ae58fe713e81a",
+    "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "chen_rules.hip": "fc91fc2499f1ea727fc88ad3a605e50e881bd582a4cb8a0cb1fe63868f33de07",
+    "chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+    "chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+    "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "device_epoch.h": "0eaf4a45d452c096f1c1c0056bed48857e874d894e6cfe143bc2dc1dc5c36166",
+    "device_epoch.inc": "92b7e55b3ecdde42ccc6430539c678c6b545e678f1feafd464f6824c84e89c8f"
+  },
+  "transform": "original kernels unchanged; append exact device-helper copies with explicit logical row, then experiment include",
+  "library_sha256": "3f2ee295ffcec7ad4efe4b736acf970b72f15dc9b4546218da9b2be7626d7951",
+  "strict_compile_exitcode": 0,
+  "probe_exitcode": 0,
+  "gpu_processes_absent_after": true,
+  "compiler_command": "docker exec cpp-rocm bash /tmp/chen-causal-dispatch-source-20261003/build.sh /tmp/libchen_causal_dispatch_20261003.so",
+  "driver_sha256": {
+    "gpu/experiments/causal_dispatch_probe.py": "a20bc75bd48574729718f1483806675e44ab0488c7f05061a7a29de866ffeaa5",
+    "gpu/experiments/device_epoch_probe.py": "d745d8ed203736c15e3371a480d46e7b171db68f499bc01932877ff9378963af",
+    "gpu/experiments/device_epoch_stage.py": "fc37755a819b3c7fb1cc521e20331413d92863e47eed230b53a21a7cd96b6099",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4"
+  },
+  "scope": "source bound real graph versus queued launch intervention; original epoch reports not re-admitted or adopted"
+}

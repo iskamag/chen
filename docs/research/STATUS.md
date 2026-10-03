@@ -1,4 +1,19 @@
-# Research checkpoint — 2026-10-02
+# Research checkpoint — 2026-10-03
+
+Latest integration: main `d2a54be` exports exact native symbolic observations;
+neural `0d86d43` consumes typed compact GPU state in symbolic/transformer residual
+streams. [Six actual GPU tests](../GPU_SYMBOLIC_RESIDUAL.md) pass with 940 oracle
+rows and consumer gradients. The bridge remains synchronous; no learned quality
+or neural search deployment follows.
+
+The [causal dispatch experiment](../CAUSAL_PROFILING.md) holds GPU kernels,
+dimensions, copies, publication and fences constant across graph/queued arms.
+All 48 timed searches preserve their full trajectories. Graph dispatch alone
+saves only about 0.2%/0.45% in these warmed workloads, with noisy individual
+pairs. Further graph-launch tuning is deprioritized; full GPU execution remains
+the target. All three subagents stopped at the usage limit; none is running.
+Root is integrating preserved work in the two original worktrees, using bounded
+changed-boundary checks and compact evidence records.
 
 The original scope remains active: gfx1030 GPU execution, modular comparable
 search, independent neural architecture/latent research, resident training data,
@@ -413,7 +428,8 @@ without learning, heldout quality or strength claims. Fused INT8 beats the
 multi-launch INT8 path but loses all grouped eager comparisons to value-only
 FP32: paired speed ratios range 0.700–0.880. It remains experimental; timing,
 rather than storage reduction, determines adoption. Captured/native execution
-and exact native symbolic production are the next integration steps.
+and asynchronous integration of the now-verified native symbolic producer are
+the next execution steps.
 
 1. Optimize the executed GPU rules/resident arena against its frozen oracles:
    attack generation, parallel prefix assignment, compact edges and level reuse.

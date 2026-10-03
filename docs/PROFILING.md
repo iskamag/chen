@@ -1,5 +1,10 @@
 # Measured CPU and gfx1030 search profiles
 
+Latest decision: the [matched causal dispatch intervention](CAUSAL_PROFILING.md)
+finds only 0.2%/0.45% observed graph-launch savings with identical GPU work and
+fences. Prior phase shares below locate hypotheses; they do not by themselves
+predict whole-program gains. Avoid another graph-launch tuning cycle now.
+
 The frozen fusion profile identified **GPU ancestor backup and selection**, and
 **CPU move application and legal generation**. The actual one-second profiles
 are archived in [the summary](../gpu/evidence/engine-profiling-gfx1030-2026-10-02/summary.json)

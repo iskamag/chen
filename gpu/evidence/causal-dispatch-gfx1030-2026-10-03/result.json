@@ -1,0 +1,1777 @@
+{
+  "terminal": "PASS",
+  "rows": [
+    {
+      "fixture": "batch32",
+      "sample": 0,
+      "arm": "queued4",
+      "elapsed_ns": 51880035,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 0,
+      "arm": "production",
+      "elapsed_ns": 53788675,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 0,
+      "arm": "graph4",
+      "elapsed_ns": 52024005,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 1,
+      "arm": "queued4",
+      "elapsed_ns": 52860925,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 1,
+      "arm": "graph4",
+      "elapsed_ns": 51575535,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 1,
+      "arm": "production",
+      "elapsed_ns": 53828816,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 2,
+      "arm": "queued4",
+      "elapsed_ns": 52066465,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 2,
+      "arm": "production",
+      "elapsed_ns": 53182445,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 2,
+      "arm": "graph4",
+      "elapsed_ns": 52243325,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 3,
+      "arm": "queued4",
+      "elapsed_ns": 51582755,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 3,
+      "arm": "production",
+      "elapsed_ns": 53697986,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 3,
+      "arm": "graph4",
+      "elapsed_ns": 51887234,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 4,
+      "arm": "graph4",
+      "elapsed_ns": 52083955,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 4,
+      "arm": "production",
+      "elapsed_ns": 54006936,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 4,
+      "arm": "queued4",
+      "elapsed_ns": 51937064,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 5,
+      "arm": "graph4",
+      "elapsed_ns": 51819985,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 5,
+      "arm": "production",
+      "elapsed_ns": 54048796,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 5,
+      "arm": "queued4",
+      "elapsed_ns": 51899944,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 6,
+      "arm": "graph4",
+      "elapsed_ns": 51851035,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 6,
+      "arm": "production",
+      "elapsed_ns": 53401156,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 6,
+      "arm": "queued4",
+      "elapsed_ns": 51937085,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 7,
+      "arm": "graph4",
+      "elapsed_ns": 52818625,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 7,
+      "arm": "production",
+      "elapsed_ns": 53609335,
+      "calls": 39,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch32",
+      "sample": 7,
+      "arm": "queued4",
+      "elapsed_ns": 52968795,
+      "calls": 10,
+      "attempts": 39,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 50000,
+          "classified_positions": 50000,
+          "evaluated_positions": 49999,
+          "completed_steps": 38,
+          "expanded_leaves": 1173,
+          "open_frontier_leaves": 48827,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 2,
+          "maximum_frontier_depth": 12,
+          "pv_depth": 6,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": -12,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "d2c3",
+          "e6d5",
+          "e5d3",
+          "e7c5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 0,
+      "arm": "graph4",
+      "elapsed_ns": 50487954,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 0,
+      "arm": "queued4",
+      "elapsed_ns": 51188334,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 0,
+      "arm": "production",
+      "elapsed_ns": 54340105,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 1,
+      "arm": "production",
+      "elapsed_ns": 54499096,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 1,
+      "arm": "queued4",
+      "elapsed_ns": 51022965,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 1,
+      "arm": "graph4",
+      "elapsed_ns": 50504254,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 2,
+      "arm": "queued4",
+      "elapsed_ns": 51289574,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 2,
+      "arm": "production",
+      "elapsed_ns": 54131645,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 2,
+      "arm": "graph4",
+      "elapsed_ns": 51015054,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 3,
+      "arm": "queued4",
+      "elapsed_ns": 51421405,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 3,
+      "arm": "graph4",
+      "elapsed_ns": 50894444,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 3,
+      "arm": "production",
+      "elapsed_ns": 54686077,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 4,
+      "arm": "queued4",
+      "elapsed_ns": 51077994,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 4,
+      "arm": "production",
+      "elapsed_ns": 55018056,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 4,
+      "arm": "graph4",
+      "elapsed_ns": 50699224,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 5,
+      "arm": "graph4",
+      "elapsed_ns": 50955134,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 5,
+      "arm": "production",
+      "elapsed_ns": 54285916,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 5,
+      "arm": "queued4",
+      "elapsed_ns": 51284175,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 6,
+      "arm": "queued4",
+      "elapsed_ns": 50723294,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 6,
+      "arm": "production",
+      "elapsed_ns": 54384486,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 6,
+      "arm": "graph4",
+      "elapsed_ns": 50973604,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 7,
+      "arm": "production",
+      "elapsed_ns": 55068546,
+      "calls": 123,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 7,
+      "arm": "queued4",
+      "elapsed_ns": 50310384,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    },
+    {
+      "fixture": "batch1",
+      "sample": 7,
+      "arm": "graph4",
+      "elapsed_ns": 50945374,
+      "calls": 31,
+      "attempts": 123,
+      "final": {
+        "stats": {
+          "abi_version": 1,
+          "struct_size": 96,
+          "arena_positions": 5000,
+          "classified_positions": 5000,
+          "evaluated_positions": 4999,
+          "completed_steps": 122,
+          "expanded_leaves": 122,
+          "open_frontier_leaves": 4878,
+          "last_selected": 0,
+          "last_added": 0,
+          "minimum_frontier_depth": 1,
+          "maximum_frontier_depth": 6,
+          "pv_depth": 4,
+          "root_flags": 1,
+          "stop_reason": 2,
+          "reserved": 0
+        },
+        "score": 173,
+        "pv": [
+          "e2a6",
+          "b4c3",
+          "b2c3",
+          "g6g5"
+        ]
+      }
+    }
+  ],
+  "summary": [
+    {
+      "fixture": "batch32",
+      "totals_ns": {
+        "production": 429564145,
+        "graph4": 416303699,
+        "queued4": 417133068
+      },
+      "queued_over_graph": 1.0019922210683985,
+      "production_over_graph": 1.031852818103353,
+      "paired_queued_over_graph": [
+        0.9972326236705537,
+        1.0249224753558057,
+        0.9966146871394576,
+        0.994131909209113,
+        0.997179726462785,
+        1.0015430147268471,
+        1.001659561858312,
+        1.002843125885992
+      ]
+    },
+    {
+      "fixture": "batch1",
+      "totals_ns": {
+        "production": 436413927,
+        "graph4": 406475042,
+        "queued4": 408318125
+      },
+      "queued_over_graph": 1.0045343079145312,
+      "production_over_graph": 1.073654915816455,
+      "paired_queued_over_graph": [
+        1.0138722198962549,
+        1.0102706397762058,
+        1.0053811567071946,
+        1.0103539985622005,
+        1.0074709230263563,
+        1.0064574651103853,
+        0.9950894192217603,
+        0.9875358653761184
+      ]
+    }
+  ],
+  "exact_all_advance_graph_queued_score_pv_stats": true,
+  "exact_all_advance_production_stats_and_final_score_pv": true
+}

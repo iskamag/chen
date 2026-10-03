@@ -62,7 +62,8 @@ Keep proven finite-model equivalence separate from kernel refinement evidence
 and claims about optimal chess decisions. [Architecture direction](../DIRECTION.md)
 defines the residual, quantization and proof ownership boundaries.
 
-Current execution ownership: the coherence agent owns native symbolic production,
+Assigned execution ownership (all three agents stopped at the service usage
+limit as of 2026-10-03; root is integrating directly): the coherence agent owns native symbolic production,
 INT8 whole-model fidelity/timing and architecture contracts; the RDNA agent owns
 device epoch scheduling and hardware/resource evidence; the fusion agent owns
 selection experiments and Lean/theoretical strategy analysis. The integration

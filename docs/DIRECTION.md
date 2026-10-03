@@ -157,6 +157,11 @@ performance and playing strength are distinct gates.
 
 ## Coherence rules for contributors
 
+The [causal profiling policy](CAUSAL_PROFILING.md#avoiding-redundant-work)
+governs new experiments: use a bounded intervention with an end-to-end progress
+metric, reuse reviewed source-bound results, and repeat broad verification only
+for a specific changed boundary or unresolved concern.
+
 - Give each parallel task explicit file ownership; coordinate shared Git staging
   and commits. Keep each commit reviewable with its validation and evidence scope.
 - Add a new implementation behind an existing seam when its semantics fit;
