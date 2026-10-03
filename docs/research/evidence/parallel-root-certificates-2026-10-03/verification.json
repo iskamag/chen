@@ -1,0 +1,202 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-10-03T10:56:42.919862+00:00",
+  "source_sha256": {
+    "proofs/SearchBounds.lean": "bdbdf9521ef012bfa47a5a1a9522bf8fd2c24b5baa19c2bc943e877e3c6d9db0",
+    "proofs/RootCertificates.lean": "def1500e853248ab65f5f9c629ff881551a068d5f10018989a686c7023ee10e6"
+  },
+  "verifier_sha256": "eb0444b326bd56d02411930f2706fb2789319b8c416120f2d39e7c1af42af2fe",
+  "lean_launcher": "/usr/bin/lean",
+  "lean_launcher_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "toolchain_prefix": "/usr",
+  "toolchain_lean_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "std_olean_sha256": "69e00403c2c21cc4103e51709877351fe334b3534f7242215102873bcf9734c9",
+  "commands": [
+    {
+      "phase": "version",
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "cwd": "/tmp/chen-root-certificates-final-v3-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/chen-root-certificates-final-v3-2026-10-03"
+      }
+    },
+    {
+      "phase": "toolchain-prefix",
+      "argv": [
+        "lean",
+        "--print-prefix"
+      ],
+      "cwd": "/tmp/chen-root-certificates-final-v3-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/chen-root-certificates-final-v3-2026-10-03"
+      }
+    },
+    {
+      "phase": "dependency-compile",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "-o",
+        "proofs/SearchBounds.olean",
+        "proofs/SearchBounds.lean"
+      ],
+      "cwd": "/tmp/chen-root-certificates-final-v3-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/chen-root-certificates-final-v3-2026-10-03"
+      }
+    },
+    {
+      "phase": "compile",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "-o",
+        "proofs/RootCertificates.olean",
+        "proofs/RootCertificates.lean"
+      ],
+      "cwd": "/tmp/chen-root-certificates-final-v3-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/chen-root-certificates-final-v3-2026-10-03"
+      }
+    },
+    {
+      "phase": "axioms-audit",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "axioms-audit.lean"
+      ],
+      "cwd": "/tmp/chen-root-certificates-final-v3-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/tmp/chen-root-certificates-final-v3-2026-10-03"
+      }
+    }
+  ],
+  "warnings_as_errors": true,
+  "theorems": [
+    "admitted_parent_sound",
+    "wrong_provenance_not_admitted",
+    "child_lower_is_parent_upper",
+    "child_upper_is_parent_lower",
+    "lower_endpoint_negates_to_upper",
+    "challenger_window_exact_range",
+    "mate_range_admits_challenger_window",
+    "minimum_endpoint_needs_other_window",
+    "integer_challenger_cutoff_strict",
+    "aborted_parent_has_no_bound",
+    "strict_upper_dominates",
+    "certificate_incumbent_exact",
+    "certificate_canonical_winner",
+    "certificate_all_children_maximum",
+    "aborted_competitor_prevents_certificate",
+    "domination_tightens",
+    "certificate_retained_under_tightening",
+    "same_family_tightening_preserves_winner",
+    "abort_retains_completed_packet",
+    "spike_feasible",
+    "unresolved_competitor_obstruction",
+    "earlier_tie_obstruction",
+    "unresolved_not_universally_safe"
+  ],
+  "theorem_count": 23,
+  "theorem_axioms": {
+    "admitted_parent_sound": [
+      "propext"
+    ],
+    "wrong_provenance_not_admitted": [],
+    "child_lower_is_parent_upper": [],
+    "child_upper_is_parent_lower": [],
+    "lower_endpoint_negates_to_upper": [
+      "propext"
+    ],
+    "challenger_window_exact_range": [
+      "propext",
+      "Quot.sound"
+    ],
+    "mate_range_admits_challenger_window": [
+      "propext",
+      "Quot.sound"
+    ],
+    "minimum_endpoint_needs_other_window": [
+      "propext",
+      "Quot.sound"
+    ],
+    "integer_challenger_cutoff_strict": [
+      "propext",
+      "Quot.sound"
+    ],
+    "aborted_parent_has_no_bound": [
+      "propext"
+    ],
+    "strict_upper_dominates": [
+      "propext",
+      "Quot.sound"
+    ],
+    "certificate_incumbent_exact": [
+      "propext"
+    ],
+    "certificate_canonical_winner": [
+      "propext",
+      "Quot.sound"
+    ],
+    "certificate_all_children_maximum": [
+      "propext",
+      "Quot.sound"
+    ],
+    "aborted_competitor_prevents_certificate": [
+      "propext"
+    ],
+    "domination_tightens": [
+      "propext",
+      "Quot.sound"
+    ],
+    "certificate_retained_under_tightening": [
+      "propext",
+      "Quot.sound"
+    ],
+    "same_family_tightening_preserves_winner": [
+      "propext",
+      "Quot.sound"
+    ],
+    "abort_retains_completed_packet": [
+      "propext"
+    ],
+    "spike_feasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "unresolved_competitor_obstruction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "earlier_tie_obstruction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "unresolved_not_universally_safe": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "trusted_axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "sorryAx_absent_from_actual_print_axioms": true,
+  "dependency_recompiled": true,
+  "historical_archive_reaudited": false,
+  "scope": "Finite packet and interval information model; worker soundness, complete legal IDs, identity checking and atomic publication are premises. No HIP refinement, global chess optimum, minimal-query theorem or GPU latency optimum."
+}

@@ -1,0 +1,24 @@
+import proofs.RootCertificates
+#print axioms Chen.RootCertificates.admitted_parent_sound
+#print axioms Chen.RootCertificates.wrong_provenance_not_admitted
+#print axioms Chen.RootCertificates.child_lower_is_parent_upper
+#print axioms Chen.RootCertificates.child_upper_is_parent_lower
+#print axioms Chen.RootCertificates.lower_endpoint_negates_to_upper
+#print axioms Chen.RootCertificates.challenger_window_exact_range
+#print axioms Chen.RootCertificates.mate_range_admits_challenger_window
+#print axioms Chen.RootCertificates.minimum_endpoint_needs_other_window
+#print axioms Chen.RootCertificates.integer_challenger_cutoff_strict
+#print axioms Chen.RootCertificates.aborted_parent_has_no_bound
+#print axioms Chen.RootCertificates.strict_upper_dominates
+#print axioms Chen.RootCertificates.certificate_incumbent_exact
+#print axioms Chen.RootCertificates.certificate_canonical_winner
+#print axioms Chen.RootCertificates.certificate_all_children_maximum
+#print axioms Chen.RootCertificates.aborted_competitor_prevents_certificate
+#print axioms Chen.RootCertificates.domination_tightens
+#print axioms Chen.RootCertificates.certificate_retained_under_tightening
+#print axioms Chen.RootCertificates.same_family_tightening_preserves_winner
+#print axioms Chen.RootCertificates.abort_retains_completed_packet
+#print axioms Chen.RootCertificates.spike_feasible
+#print axioms Chen.RootCertificates.unresolved_competitor_obstruction
+#print axioms Chen.RootCertificates.earlier_tie_obstruction
+#print axioms Chen.RootCertificates.unresolved_not_universally_safe
