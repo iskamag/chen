@@ -463,9 +463,13 @@ impl Searcher {
         if !self.visit(true) {
             return 0;
         }
-        let mut moves = p.legal_moves();
         let check = p.is_in_check(p.side_to_move());
-        if moves.is_empty() {
+        let mut moves = if check {
+            p.legal_moves()
+        } else {
+            p.legal_tactical_moves()
+        };
+        if moves.is_empty() && (check || !p.has_legal_move()) {
             return if check { -MATE + ply as i32 } else { 0 };
         }
         if self.draw(p) {
@@ -480,7 +484,6 @@ impl Searcher {
                 return best;
             }
             alpha = alpha.max(best);
-            moves.retain(|&mv| Self::capture(p, mv) || mv.promotion.is_some());
         }
         self.ordered(p, &mut moves, None, ply);
         for mv in moves {
@@ -532,6 +535,33 @@ fn from_tt(score: i32, ply: usize) -> i32 {
 mod tests {
     use super::*;
     use crate::eval::{Material, Tapered};
+
+    #[test]
+    fn quiescence_preserves_terminals_and_quiet_check_evasions() {
+        for (fen, expected) in [
+            ("7k/5Q2/6K1/8/8/8/8/8 b - - 0 1", Some(0)),
+            ("7k/6Q1/6K1/8/8/8/8/8 b - - 100 1", Some(-MATE + 3)),
+            ("7k/8/8/8/8/8/1P6/r6K w - - 0 1", None),
+        ] {
+            let mut p = Position::from_fen(fen).unwrap();
+            let original = p;
+            let mut s = Searcher::new(Box::new(Tapered), SearchConfig::default());
+            s.history.push(p.hash());
+            let mut pv = Vec::new();
+            let score = s.quiesce(&mut p, 3, -INF, INF, &mut pv);
+            if let Some(expected) = expected {
+                assert_eq!(score, expected);
+                assert!(pv.is_empty());
+            } else {
+                assert!(p.is_in_check(p.side_to_move()));
+                assert!(p.legal_tactical_moves().is_empty());
+                assert!(score > -MATE + MAX_PLY as i32);
+                assert!(p.legal_moves().contains(&pv[0]));
+            }
+            assert_eq!(p, original);
+            assert_eq!(s.history, vec![p.hash()]);
+        }
+    }
 
     // Exhaustive finite-horizon oracle: no ordering, TT, PVS or alpha-beta.
     fn exhaustive(p: &mut Position, depth: i32, ply: i32) -> i32 {
@@ -636,7 +666,7 @@ mod tests {
         let first = scout.search(&mut p, limits, &[], |_| {});
         let mut pv = Vec::new();
         let value = scout.negamax(&mut p, 2, 0, first.score - 1, first.score + 1, &mut pv);
-        assert!(value <= first.score - 1);
+        assert!(value < first.score);
         let budget = scout.nodes;
         let mut s = Searcher::new(Box::new(Tapered), config);
         let mut publications = Vec::new();

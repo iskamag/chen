@@ -401,6 +401,28 @@ impl Position {
     }
 
     pub fn legal_moves(&self) -> Vec<Move> {
+        self.filter_legal(self.pseudo_legal_moves::<false>())
+    }
+
+    /// Legal captures and promotions, including en passant and quiet underpromotions.
+    /// This is not an evasion generator: checked searches must use `legal_moves`.
+    pub fn legal_tactical_moves(&self) -> Vec<Move> {
+        self.filter_legal(self.pseudo_legal_moves::<true>())
+    }
+
+    /// Terminal detection without checking the legality of every candidate.
+    pub fn has_legal_move(&self) -> bool {
+        let side = self.side;
+        let mut scratch = *self;
+        self.pseudo_legal_moves::<false>().into_iter().any(|mv| {
+            let undo = scratch.make_move(mv);
+            let legal = !scratch.is_in_check(side);
+            scratch.unmake_move(mv, undo);
+            legal
+        })
+    }
+
+    fn pseudo_legal_moves<const TACTICAL: bool>(&self) -> Vec<Move> {
         let mut moves = Vec::with_capacity(64);
         let own = self.occupancy(self.side);
         let enemy =
@@ -415,7 +437,8 @@ impl Position {
             } else {
                 from - 8
             };
-            if occupied & (1u64 << to) == 0 {
+            let promotes = from / 8 == if self.side == Color::White { 6 } else { 1 };
+            if (!TACTICAL || promotes) && occupied & (1u64 << to) == 0 {
                 push_pawn_moves(&mut moves, from, to);
                 if from / 8 == if self.side == Color::White { 1 } else { 6 } {
                     let double = if self.side == Color::White {
@@ -454,12 +477,15 @@ impl Position {
                     Piece::King => KING_ATTACKS[from as usize],
                     Piece::Pawn => unreachable!(),
                 } & allowed;
+                if TACTICAL {
+                    targets &= enemy;
+                }
                 while targets != 0 {
                     moves.push(Move::new(from, pop_square(&mut targets), None));
                 }
             }
         }
-        if !self.is_in_check(self.side) {
+        if !TACTICAL && !self.is_in_check(self.side) {
             let (base, kingside, queenside) = if self.side == Color::White {
                 (0, WHITE_KING, WHITE_QUEEN)
             } else {
@@ -481,6 +507,10 @@ impl Position {
                 moves.push(Move::new(base + 4, base + 2, None));
             }
         }
+        moves
+    }
+
+    fn filter_legal(&self, mut moves: Vec<Move>) -> Vec<Move> {
         let side = self.side;
         let mut scratch = *self;
         moves.retain(|&mv| {

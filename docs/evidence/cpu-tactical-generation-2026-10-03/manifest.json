@@ -1,0 +1,11 @@
+{
+  "candidate_source_sha256": {
+    "src/core.rs": "e19244c163d5304ab286fe5680975b03b49917ec081d16d130e2973e280bb20b",
+    "src/search.rs": "343e211bd61984c51597a7cbdf6ee35b99d421975dc34d258e2f1b32c0a876a7",
+    "tests/core.rs": "1090d98b5a6b51450c8046fa771094f918cfb623b6c1e0a11eabb69bfeb8dde9"
+  },
+  "records": {
+    "comparison.json": "28d9fbe4783e748a8ca15b709064e83544f14d4e91766c10bba656cbfeba7828",
+    "one-second.jsonl": "f7baafd4c4536805828e4b26c4a40c3b8ce4b28f5835b0db719edd30b00264bc"
+  }
+}

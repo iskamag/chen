@@ -4,6 +4,15 @@ Paused at the user's requested milestone after saving search recovery, bucketed
 tactical ingress and the first learning chunk. [HANDOFF](../HANDOFF.md) records
 the next bounded experiments and retained runtime; the full goal is unfinished.
 
+Subsequent explicitly requested CPU work adds
+[direct tactical generation](../CPU_TACTICAL_GENERATION.md). All 61 portable
+release tests and Clippy pass. Four balanced fixed-node rounds preserve full
+search outputs and measure a 2.388x median round-total speedup with matched
+Zen2 builds; no new playing-strength estimate follows. The
+[Catnip candidate](CATNIP_SEARCH.md) is a design for sibling data reuse and
+batched attack/refutation search, not an implemented backend. GPU and neural
+experiments remain paused.
+
 The requested [fresh CPU one-second evaluation](../harness/cpu-rating-current-2026-10-03.md)
 is now closed and independently audited: 64 games, 32 complete pairs, 5810 legal
 plies, no errors or caps. Default PVS-off scores 5W/2D/9L against Stockfish

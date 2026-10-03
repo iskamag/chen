@@ -12,6 +12,11 @@ All 64 games form complete pairs with no errors/caps. These are descriptive
 configured-setting proxies, separate from an actual Lichess rating; defaults
 remain unchanged. This replaces the older 1320-only CPU proxy1714 as the current
 CPU reference. GPU/neural research remains paused at the saved milestone.
+Later requested CPU work removes discarded quiet-move legality tests from
+[quiescence](CPU_TACTICAL_GENERATION.md), preserving search outputs in fixed-work
+controls. Its throughput gain does not update the frozen strength estimate.
+[Catnip](research/CATNIP_SEARCH.md) defines a separate proposed sibling-batched
+attack/refutation strategy and data-reuse controls; it is design only.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now

@@ -1,6 +1,48 @@
 use chen::core::{Color, Piece, Position, parse_square, perft};
 
 #[test]
+fn tactical_generation_and_terminal_probe_match_full_legal_reference() {
+    let fixtures = [
+        Position::startpos().to_fen(),
+        "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1".into(),
+        "7k/6Q1/6K1/8/8/8/8/8 b - - 100 1".into(),
+        "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1".into(),
+        "4r2k/8/8/3pP3/8/8/8/4K3 w - d6 0 1".into(),
+        "8/8/8/r4pPK/8/8/8/7k w - f6 0 1".into(),
+        "4k3/P6r/8/8/8/8/7p/4K3 w - - 0 1".into(),
+        "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1".into(),
+    ];
+    let mut random = 0xc4e0_2026_1003_u64;
+    for fen in fixtures {
+        let mut p = Position::from_fen(&fen).unwrap();
+        for _ in 0..128 {
+            let before = p;
+            let full = p.legal_moves();
+            let reference: Vec<_> = full
+                .iter()
+                .copied()
+                .filter(|mv| {
+                    mv.promotion.is_some()
+                        || p.piece_at(mv.to).is_some()
+                        || (p.piece_at(mv.from).unwrap().1 == Piece::Pawn
+                            && mv.from % 8 != mv.to % 8)
+                })
+                .collect();
+            assert_eq!(p.legal_tactical_moves(), reference, "{}", p.to_fen());
+            assert_eq!(p.has_legal_move(), !full.is_empty(), "{}", p.to_fen());
+            assert_eq!(p, before);
+            if full.is_empty() {
+                break;
+            }
+            random ^= random << 13;
+            random ^= random >> 7;
+            random ^= random << 17;
+            p.make_move(full[random as usize % full.len()]);
+        }
+    }
+}
+
+#[test]
 fn initial_position_perft() {
     let mut position = Position::startpos();
     let original = position;

@@ -9,9 +9,11 @@ neural architecture research lives in the separate `../chen-neural` worktree.
 
 [Architecture and direction](docs/DIRECTION.md) defines module ownership and
 the profiling, 2FFS and transformer research tracks. [Current evidence](docs/research/STATUS.md)
-records what has actually passed. One-second reference matches give provisional
-configured-opponent proxies of [1714 for CPU alpha-beta](docs/harness/one-second-reference-2026-10-02.md)
-and [1254 for GPU selective search](docs/harness/gpu-one-second-reference-2026-10-03.md).
+records what has actually passed. The latest frozen CPU checkpoint gives
+[configured-opponent proxies of 1711 with default search and 1844 with PVS](docs/harness/cpu-rating-current-2026-10-03.md),
+before the [tactical-generation optimization](docs/CPU_TACTICAL_GENERATION.md).
+The GPU selective reference gives a
+[configured-opponent proxy of 1254](docs/harness/gpu-one-second-reference-2026-10-03.md).
 Actual Lichess strength remains uncalibrated, with 2500 the target.
 
 ```sh
