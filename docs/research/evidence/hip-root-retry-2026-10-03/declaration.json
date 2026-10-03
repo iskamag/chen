@@ -1,0 +1,40 @@
+{
+  "abi_version": 4,
+  "abort_bound_rule": "Every resource Aborted has zero score,completed_depth,PV; separate legal witness is diagnostic and unscored",
+  "base_commit": "4275b78",
+  "canonical_index": "deterministic native legal-generation ordinal",
+  "cases_sha256": "6ce4739a709805352dbbcc5ab33f7b916fbc9a170fe5f5293637f1ed505e2f22",
+  "control_library_sha256": "400963b8da019b1560c751660db2e491d82302ce8134a795b603a0aa2d1a49e5",
+  "decision_driver_sha256": "79683c82e1a3e2032e57ea3ac59015fa62fbc227297a7ed1d3a79a6a231152b0",
+  "external_watchdog_seconds": 45,
+  "frozen_retry_rule": "beta=1-current_completed_Exact_incumbent; admitted -32000<beta<=32000 and beta<failed_attempt_beta; all retry nodes charge strict total budget",
+  "go": "go movetime 1000 nodes 1000000 depth 64",
+  "gpu_exclusive": true,
+  "hardware_order": [
+    "23 exhaustive roots +8 admission +6 nativecontrols +200ms Kiwipete witness diagnostic",
+    "7 Rust UCI controls",
+    "3 matched1s Kiwipete decisions only on previousPASS"
+  ],
+  "library_sha256": "45e4a5a85cc7c36bf7230bda948052812fb2b2ad650d523a8cad8b52363150a8",
+  "normal_cap_seconds": 30,
+  "overlap": "GPU exclusive; no active root profiling/training; no dedicated competing CPU timing from our jobs. CPU background/shared power and cache not controlled.",
+  "policies": {
+    "alphabeta": "same binary CPU Tapered TT/order/q/PVS/aspiration25",
+    "hip-root-pool": "unchanged ABI3 pool, any q/stack abort stops iteration",
+    "hip-root-retry": "ABI4 only q/stack failures are child-local; strictly tighter immutable beta permits retry; cap32 unchanged; no same-window retries"
+  },
+  "probe_sha256": "ef3998972f903a0de75777dead5857dd6122c045fe9cd23433ac4896e92de8b1",
+  "roots": [
+    {
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "history": [],
+      "legal_count": 48,
+      "mate_in_one_moves": [],
+      "name": "kiwipete"
+    }
+  ],
+  "rust_binary_sha256": "cf76c4edb93e2e54e81311fc2136c9672f1a98005d8c6b759f8680c4f9777aee",
+  "schema": "chen-root-retry-correctness-decision-v1",
+  "scope": "Bounded mechanics/one authored Kiwipete root; no rating/general strength/causal performance claim. Unchanged prior ordinary complete-root teacher labels reused cold only.",
+  "source_closure_sha256": "30641e3a761a5c4df23740cb8e4fdc77bc88cf177d2ad7eb64098da654bfe757"
+}

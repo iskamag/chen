@@ -13,6 +13,8 @@ pub mod hip_bounded;
 #[cfg(all(feature = "hip", target_os = "linux"))]
 pub mod hip_root_pool;
 #[cfg(all(feature = "hip", target_os = "linux"))]
+pub mod hip_root_retry;
+#[cfg(all(feature = "hip", target_os = "linux"))]
 pub mod neural;
 pub mod resident;
 pub mod rules;

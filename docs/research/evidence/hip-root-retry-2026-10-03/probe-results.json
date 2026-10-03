@@ -1,0 +1,3866 @@
+{
+  "admission": {
+    "d2h_ms": 0.048760998994112015,
+    "h2d_ms": 0.0,
+    "history_capacity": 65536,
+    "kernel_ms": 20.902448654174805,
+    "scratch_bytes": 24446976,
+    "wall_clock_khz": 100000
+  },
+  "cases_sha256": "6ce4739a709805352dbbcc5ab33f7b916fbc9a170fe5f5293637f1ed505e2f22",
+  "controls": [
+    {
+      "depth": 2,
+      "name": "pause-resume-retention-and-active-begin-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "strict-global-node-cap",
+      "nodes": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "cancel-retains-completed-root",
+      "status": "PASS",
+      "wall_ms": 0.0916800054255873
+    },
+    {
+      "completed_children": 5,
+      "failed_events": 4,
+      "name": "soft-resource-no-bound-other-workers-continue",
+      "retry_count": 2,
+      "stalled": 1,
+      "status": "PASS"
+    },
+    {
+      "name": "reset-after-cancel",
+      "status": "PASS"
+    },
+    {
+      "name": "device-position-hash-reject",
+      "status": "PASS"
+    }
+  ],
+  "kiwipete_mechanism": {
+    "elapsed_ms": 219.3624639767222,
+    "published": {
+      "abort_reason": 0,
+      "completed_depth": 0,
+      "kind": 3,
+      "nodes": 0,
+      "pv": [],
+      "qnodes": 0,
+      "score": 0
+    },
+    "trajectory": [
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 0,
+        "failed_events": 0,
+        "iteration_complete": 0,
+        "nodes": 130,
+        "paused_children": 1,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 0,
+        "failed_events": 0,
+        "iteration_complete": 0,
+        "nodes": 6224,
+        "paused_children": 48,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 1,
+        "failed_events": 1,
+        "iteration_complete": 0,
+        "nodes": 12186,
+        "paused_children": 47,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 1,
+        "failed_events": 1,
+        "iteration_complete": 0,
+        "nodes": 18249,
+        "paused_children": 47,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 1,
+        "failed_events": 1,
+        "iteration_complete": 0,
+        "nodes": 24149,
+        "paused_children": 47,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 1,
+        "failed_events": 1,
+        "iteration_complete": 0,
+        "nodes": 30341,
+        "paused_children": 47,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 2,
+        "failed_events": 2,
+        "iteration_complete": 0,
+        "nodes": 36467,
+        "paused_children": 46,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 3,
+        "failed_events": 3,
+        "iteration_complete": 0,
+        "nodes": 42096,
+        "paused_children": 45,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 4,
+        "failed_events": 4,
+        "iteration_complete": 0,
+        "nodes": 47818,
+        "paused_children": 44,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      },
+      {
+        "completed_children": 0,
+        "exact_children": 0,
+        "failed_children": 5,
+        "failed_events": 5,
+        "iteration_complete": 0,
+        "nodes": 53462,
+        "paused_children": 43,
+        "retry_count": 0,
+        "stalled": 0,
+        "upper_children": 0
+      }
+    ],
+    "witnesses": [
+      {
+        "action": "c3b5",
+        "bound": {
+          "abort_reason": 2,
+          "completed_depth": 0,
+          "kind": 3,
+          "nodes": 729,
+          "pv": [],
+          "qnodes": 729,
+          "score": 0
+        },
+        "canonical_index": 11,
+        "entered_nodes": 729,
+        "entered_qnodes": 729,
+        "failed_beta": 32000,
+        "failure_fen": "3k4/8/8/8/3b4/8/P1rQ3R/4K3 b - - 3 17",
+        "failure_reason": 2,
+        "failures": 1,
+        "last_attempt_beta": 32000,
+        "legal_tactical_or_evasion_witness": [
+          "c3b5",
+          "h3g2",
+          "d5e6",
+          "g2g1q",
+          "h1g1",
+          "f7e6",
+          "b5a7",
+          "f6e4",
+          "d2b4",
+          "e4f2",
+          "e5d7",
+          "a6e2",
+          "f3e2",
+          "g7b2",
+          "d7b6",
+          "e7b4",
+          "e1f2",
+          "h8h2",
+          "g1g2",
+          "c7b6",
+          "g2h2",
+          "b2a1",
+          "e2e6",
+          "e8d8",
+          "e6g6",
+          "a8a7",
+          "g6b6",
+          "a7c7",
+          "b6b4",
+          "c7c2",
+          "b4d2",
+          "a1d4",
+          "f2e1"
+        ],
+        "retries": 0,
+        "status": 3
+      },
+      {
+        "action": "e5c6",
+        "bound": {
+          "abort_reason": 2,
+          "completed_depth": 0,
+          "kind": 3,
+          "nodes": 664,
+          "pv": [],
+          "qnodes": 664,
+          "score": 0
+        },
+        "canonical_index": 15,
+        "entered_nodes": 664,
+        "entered_qnodes": 664,
+        "failed_beta": 32000,
+        "failure_fen": "r4k2/8/1Q6/8/8/8/P1K5/b7 b - - 0 17",
+        "failure_reason": 2,
+        "failures": 1,
+        "last_attempt_beta": 32000,
+        "legal_tactical_or_evasion_witness": [
+          "e5c6",
+          "h3g2",
+          "d5e6",
+          "g2g1q",
+          "h1g1",
+          "b4c3",
+          "b2c3",
+          "d7c6",
+          "e6f7",
+          "e7f7",
+          "e2a6",
+          "f6e4",
+          "g1g6",
+          "e4d2",
+          "f3c6",
+          "e8e7",
+          "c6c7",
+          "e7f8",
+          "e1d2",
+          "f7f2",
+          "a6e2",
+          "f2e2",
+          "d2e2",
+          "h8h2",
+          "g6g2",
+          "h2g2",
+          "e2d1",
+          "g2c2",
+          "c7a7",
+          "g7c3",
+          "a7b6",
+          "c3a1",
+          "d1c2"
+        ],
+        "retries": 0,
+        "status": 3
+      },
+      {
+        "action": "d2g5",
+        "bound": {
+          "abort_reason": 2,
+          "completed_depth": 0,
+          "kind": 3,
+          "nodes": 1056,
+          "pv": [],
+          "qnodes": 1056,
+          "score": 0
+        },
+        "canonical_index": 22,
+        "entered_nodes": 1056,
+        "entered_qnodes": 1056,
+        "failed_beta": 32000,
+        "failure_fen": "8/8/3k4/8/8/8/P1P2r2/R2K4 b - - 1 17",
+        "failure_reason": 2,
+        "failures": 1,
+        "last_attempt_beta": 32000,
+        "legal_tactical_or_evasion_witness": [
+          "d2g5",
+          "h3g2",
+          "d5e6",
+          "g2g1q",
+          "h1g1",
+          "b4c3",
+          "b2c3",
+          "f6e4",
+          "e6d7",
+          "b6d7",
+          "e5d7",
+          "e4g5",
+          "f3a8",
+          "e8d7",
+          "a8a7",
+          "a6e2",
+          "a7c7",
+          "d7e6",
+          "g1g5",
+          "e7g5",
+          "c7f7",
+          "e6d6",
+          "f7g6",
+          "g7f6",
+          "g6g5",
+          "f6c3",
+          "g5d2",
+          "c3d2",
+          "e1d2",
+          "h8h2",
+          "d2e2",
+          "h2f2",
+          "e2d1"
+        ],
+        "retries": 0,
+        "status": 3
+      },
+      {
+        "action": "e2b5",
+        "bound": {
+          "abort_reason": 2,
+          "completed_depth": 0,
+          "kind": 3,
+          "nodes": 142,
+          "pv": [],
+          "qnodes": 142,
+          "score": 0
+        },
+        "canonical_index": 28,
+        "entered_nodes": 142,
+        "entered_qnodes": 142,
+        "failed_beta": 32000,
+        "failure_fen": "B7/R7/3k4/8/8/8/P1r5/bK6 b - - 1 17",
+        "failure_reason": 2,
+        "failures": 1,
+        "last_attempt_beta": 32000,
+        "legal_tactical_or_evasion_witness": [
+          "e2b5",
+          "h3g2",
+          "d5e6",
+          "g2g1q",
+          "h1g1",
+          "b4c3",
+          "b2c3",
+          "f6e4",
+          "e6d7",
+          "b6d7",
+          "e5d7",
+          "e4d2",
+          "d7e5",
+          "c7c6",
+          "b5c6",
+          "e8d8",
+          "f3f7",
+          "g7e5",
+          "c6a8",
+          "e5c3",
+          "f7e7",
+          "d8e7",
+          "g1g6",
+          "c3a1",
+          "g6a6",
+          "h8h2",
+          "a6a7",
+          "e7d6",
+          "e1d2",
+          "h2f2",
+          "d2c1",
+          "f2c2",
+          "c1b1"
+        ],
+        "retries": 0,
+        "status": 3
+      },
+      {
+        "action": "e1c1",
+        "bound": {
+          "abort_reason": 2,
+          "completed_depth": 0,
+          "kind": 3,
+          "nodes": 949,
+          "pv": [],
+          "qnodes": 949,
+          "score": 0
+        },
+        "canonical_index": 47,
+        "entered_nodes": 949,
+        "entered_qnodes": 949,
+        "failed_beta": 32000,
+        "failure_fen": "8/8/4kq2/8/8/8/Q7/3K3R b - - 0 17",
+        "failure_reason": 2,
+        "failures": 1,
+        "last_attempt_beta": 32000,
+        "legal_tactical_or_evasion_witness": [
+          "e1c1",
+          "h3g2",
+          "d5e6",
+          "g2g1q",
+          "e6d7",
+          "b6d7",
+          "d1g1",
+          "b4c3",
+          "b2c3",
+          "f6e4",
+          "e5d7",
+          "e4d2",
+          "c1d2",
+          "h8h2",
+          "e2a6",
+          "g7c3",
+          "f3c3",
+          "h2f2",
+          "a6e2",
+          "f2e2",
+          "d2d1",
+          "e8d7",
+          "c3c7",
+          "d7e6",
+          "g1g6",
+          "f7f6",
+          "c7a7",
+          "e2c2",
+          "g6f6",
+          "e7f6",
+          "a7a8",
+          "c2a2",
+          "a8a2"
+        ],
+        "retries": 0,
+        "status": 3
+      }
+    ]
+  },
+  "library_sha256": "45e4a5a85cc7c36bf7230bda948052812fb2b2ad650d523a8cad8b52363150a8",
+  "rows": [
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b2b3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b2b4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "c2c3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "c2c4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "d2d3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "d2d4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "e2e3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "e2e4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "f2f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "f2f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g2g3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g2g4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "h2h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "h2h4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -24,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b1a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "b1c3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -36,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g1f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -36,
+          "window": [
+            -32000,
+            -11
+          ]
+        },
+        {
+          "action": "g1h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -11
+          ]
+        }
+      ],
+      "name": "start-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "b1c3"
+        ],
+        "qnodes": 0,
+        "score": 36
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.14336100220680237,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 2.5947009853553027
+        },
+        {
+          "completed_children": 20,
+          "exact_children": 20,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 21,
+          "kernel_ms": 0.13976100087165833,
+          "nodes": 21,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.25367000489495695
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b2b3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b2b4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "c2c3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "c2c4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "d2d3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "d2d4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e2e3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e2e4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "f2f3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "f2f4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g2g3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g2g4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "h2h3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "h2h4",
+          "kind": 1,
+          "nodes": 19,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b1a3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "b1c3",
+          "kind": 0,
+          "nodes": 21,
+          "score": 0,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "g1f3",
+          "kind": 0,
+          "nodes": 21,
+          "score": 0,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "g1h3",
+          "kind": 1,
+          "nodes": 3,
+          "score": 12,
+          "window": [
+            -32000,
+            1
+          ]
+        }
+      ],
+      "name": "start-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 225,
+        "pv": [
+          "b1c3",
+          "b8c6"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 22,
+          "kernel_ms": 1.8889360427856445,
+          "nodes": 43,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 1.957530010258779
+        },
+        {
+          "completed_children": 20,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 225,
+          "kernel_ms": 2.1312179565429688,
+          "nodes": 246,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 18,
+          "wall_ms": 2.205160999437794
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 1,
+          "score": -719,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 1,
+          "score": -318,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 1,
+          "score": -146,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 1,
+          "score": -135,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -718
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -718
+          ]
+        }
+      ],
+      "name": "promotion-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 10,
+        "pv": [
+          "a7a8q"
+        ],
+        "qnodes": 0,
+        "score": 719
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.08748099952936172,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.1775299897417426
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 10,
+          "kernel_ms": 0.0851610004901886,
+          "nodes": 10,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 8,
+          "wall_ms": 0.156409980263561
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 4,
+          "score": -712,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 2,
+          "score": -308,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 2,
+          "score": 567,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 2,
+          "score": 580,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 719,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 728,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 712,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 712,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 720,
+          "window": [
+            -32000,
+            -711
+          ]
+        }
+      ],
+      "name": "promotion-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 21,
+        "pv": [
+          "a7a8q",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 712
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.40636301040649414,
+          "nodes": 15,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.47187000745907426
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 21,
+          "kernel_ms": 0.16748100519180298,
+          "nodes": 31,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 8,
+          "wall_ms": 0.23793999571353197
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -180,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        }
+      ],
+      "name": "ep-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 0,
+        "score": 180
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.07980000227689743,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.14858998474664986
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 4,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 8,
+          "kernel_ms": 0.07304099947214127,
+          "nodes": 8,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.1443399814888835
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 5,
+          "score": -168,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -12,
+          "window": [
+            -32000,
+            -167
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -167
+          ]
+        }
+      ],
+      "name": "ep-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 18,
+        "pv": [
+          "e5d6",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 168
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.21380199491977692,
+          "nodes": 14,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.27872101054526865
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 18,
+          "kernel_ms": 0.12056100368499756,
+          "nodes": 26,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 6,
+          "wall_ms": 0.19428000086918473
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a1b1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -1,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a1c1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "a1a8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -503,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1g1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -1,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -6,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "h1h8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -503,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 4,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -3,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -3,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 1,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1g1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -5,
+          "window": [
+            -32000,
+            0
+          ]
+        },
+        {
+          "action": "e1c1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -11,
+          "window": [
+            -32000,
+            0
+          ]
+        }
+      ],
+      "name": "castle-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 27,
+        "pv": [
+          "a1a8"
+        ],
+        "qnodes": 0,
+        "score": 503
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.16652099788188934,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.24900099379010499
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 23,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 27,
+          "kernel_ms": 0.1665620058774948,
+          "nodes": 27,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.23812998551875353
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a1b1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 3,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1c1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 2,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 509,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a3",
+          "kind": 1,
+          "nodes": 2,
+          "score": 505,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a4",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a5",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a6",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a7",
+          "kind": 1,
+          "nodes": 2,
+          "score": 502,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "a1a8",
+          "kind": 0,
+          "nodes": 4,
+          "score": -498,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "h1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 500,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1g1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 502,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 501,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h3",
+          "kind": 1,
+          "nodes": 2,
+          "score": 499,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h4",
+          "kind": 1,
+          "nodes": 2,
+          "score": 497,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h5",
+          "kind": 1,
+          "nodes": 2,
+          "score": 497,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h6",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h7",
+          "kind": 1,
+          "nodes": 2,
+          "score": 494,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "h1h8",
+          "kind": 0,
+          "nodes": 4,
+          "score": -498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 503,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 510,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 498,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1g1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 504,
+          "window": [
+            -32000,
+            -497
+          ]
+        },
+        {
+          "action": "e1c1",
+          "kind": 1,
+          "nodes": 2,
+          "score": -6,
+          "window": [
+            -32000,
+            -497
+          ]
+        }
+      ],
+      "name": "castle-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 57,
+        "pv": [
+          "a1a8",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 498
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.46576398611068726,
+          "nodes": 32,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.5344099772628397
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 57,
+          "kernel_ms": 0.8891670107841492,
+          "nodes": 84,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 24,
+          "wall_ms": 0.9582100028637797
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        }
+      ],
+      "name": "mate1-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 27,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 0,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.06351999938488007,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.15259999781847
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 14,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 27,
+          "kernel_ms": 0.06756100058555603,
+          "nodes": 27,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 12,
+          "wall_ms": 0.13781999587081373
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": -914,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 1,
+          "nodes": 2,
+          "score": -918,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 1,
+          "nodes": 2,
+          "score": -925,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 1,
+          "nodes": 2,
+          "score": -925,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -911,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -914,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -918,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -29998
+          ]
+        }
+      ],
+      "name": "mate1-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 39,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 0,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.05364000052213669,
+          "nodes": 29,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.11980000999756157
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 4,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 39,
+          "kernel_ms": 0.19356100261211395,
+          "nodes": 66,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 22,
+          "wall_ms": 0.2628900110721588
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": 509,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 520,
+          "window": [
+            -32000,
+            510
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            510
+          ]
+        }
+      ],
+      "name": "check-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 4,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.10792099684476852,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.17667998326942325
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 4,
+          "kernel_ms": 0.11032100021839142,
+          "nodes": 4,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 1,
+          "wall_ms": 0.18046001787297428
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 506,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 2,
+          "score": 516,
+          "window": [
+            -32000,
+            1
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            32000
+          ]
+        }
+      ],
+      "name": "check-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 0,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.057920001447200775,
+          "nodes": 6,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.12243998935446143
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.1388009935617447,
+          "nodes": 10,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 2,
+          "wall_ms": 0.2110009954776615
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 128,
+          "window": [
+            -32000,
+            105
+          ]
+        }
+      ],
+      "name": "quiet-d1",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": -104
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.07952100038528442,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.15162999625317752
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.0785209983587265,
+          "nodes": 6,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.1481700164731592
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 8,
+          "score": 136,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 8,
+          "score": 136,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 3,
+          "score": 148,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 3,
+          "score": 148,
+          "window": [
+            -32000,
+            137
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 144,
+          "window": [
+            -32000,
+            137
+          ]
+        }
+      ],
+      "name": "quiet-d2",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 25,
+        "pv": [
+          "e8d7",
+          "a2a4"
+        ],
+        "qnodes": 0,
+        "score": -136
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 9,
+          "kernel_ms": 0.39940300583839417,
+          "nodes": 15,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.4638110112864524
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 25,
+          "kernel_ms": 0.3951230049133301,
+          "nodes": 31,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.4649499896913767
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "a7a8q",
+          "kind": 0,
+          "nodes": 4,
+          "score": -712,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a7a8r",
+          "kind": 1,
+          "nodes": 2,
+          "score": -308,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8b",
+          "kind": 1,
+          "nodes": 1,
+          "score": -146,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "a7a8n",
+          "kind": 1,
+          "nodes": 1,
+          "score": -135,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -12,
+          "window": [
+            -32000,
+            -711
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -711
+          ]
+        }
+      ],
+      "name": "promotion-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 14,
+        "pv": [
+          "a7a8q",
+          "e8d7"
+        ],
+        "qnodes": 13,
+        "score": 712
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 5,
+          "kernel_ms": 0.4342440068721771,
+          "nodes": 5,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.517959997523576
+        },
+        {
+          "completed_children": 9,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 14,
+          "kernel_ms": 0.17684100568294525,
+          "nodes": 14,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 8,
+          "wall_ms": 0.24756998755037785
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e5e6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e5d6",
+          "kind": 0,
+          "nodes": 1,
+          "score": -180,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": -2,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -26,
+          "window": [
+            -32000,
+            -25
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 1,
+          "nodes": 1,
+          "score": -14,
+          "window": [
+            -32000,
+            -25
+          ]
+        }
+      ],
+      "name": "ep-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 8,
+        "pv": [
+          "e5d6"
+        ],
+        "qnodes": 7,
+        "score": 180
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.0817210003733635,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.16058998880907893
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 4,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 8,
+          "kernel_ms": 0.0748400017619133,
+          "nodes": 8,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.14564002049155533
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "f7f1",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "f7a2",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f2",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b3",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f3",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c4",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f4",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f5",
+          "kind": 0,
+          "nodes": 1,
+          "score": -940,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f6",
+          "kind": 1,
+          "nodes": 2,
+          "score": -922,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7a7",
+          "kind": 1,
+          "nodes": 1,
+          "score": -925,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7b7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -929,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7c7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -932,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -936,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7h7",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7e8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7f8",
+          "kind": 0,
+          "nodes": 1,
+          "score": -29999,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "f7g8",
+          "kind": 1,
+          "nodes": 2,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6g5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h5",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6f6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        },
+        {
+          "action": "g6h6",
+          "kind": 1,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            -928
+          ]
+        }
+      ],
+      "name": "mate1-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 29,
+        "pv": [
+          "f7g7"
+        ],
+        "qnodes": 28,
+        "score": 29999
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.06256099790334702,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.14166001346893609
+        },
+        {
+          "completed_children": 26,
+          "exact_children": 13,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 29,
+          "kernel_ms": 0.20076100528240204,
+          "nodes": 29,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 13,
+          "wall_ms": 0.2715199952945113
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 1,
+          "score": 509,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 1,
+          "nodes": 1,
+          "score": 520,
+          "window": [
+            -32000,
+            510
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 1,
+          "score": 0,
+          "window": [
+            -32000,
+            510
+          ]
+        }
+      ],
+      "name": "check-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 4,
+        "pv": [
+          "e1e2"
+        ],
+        "qnodes": 3,
+        "score": 0
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.11656100302934647,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.18575001740828156
+        },
+        {
+          "completed_children": 3,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 4,
+          "kernel_ms": 0.10948099941015244,
+          "nodes": 4,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 1,
+          "wall_ms": 0.17908000154420733
+        }
+      ]
+    },
+    {
+      "children": [
+        {
+          "action": "e8d7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "e8e7",
+          "kind": 0,
+          "nodes": 1,
+          "score": 104,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f7",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8d8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 116,
+          "window": [
+            -32000,
+            105
+          ]
+        },
+        {
+          "action": "e8f8",
+          "kind": 1,
+          "nodes": 1,
+          "score": 128,
+          "window": [
+            -32000,
+            105
+          ]
+        }
+      ],
+      "name": "quiet-q",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 1,
+        "kind": 0,
+        "nodes": 6,
+        "pv": [
+          "e8d7"
+        ],
+        "qnodes": 5,
+        "score": -104
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 2,
+          "kernel_ms": 0.08027999848127365,
+          "nodes": 2,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.15339002129621804
+        },
+        {
+          "completed_children": 5,
+          "exact_children": 2,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 6,
+          "kernel_ms": 0.07704100012779236,
+          "nodes": 6,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 3,
+          "wall_ms": 0.1481700164731592
+        }
+      ]
+    },
+    {
+      "name": "root-threefold",
+      "score": 0,
+      "terminal": true
+    },
+    {
+      "children": [
+        {
+          "action": "a2a3",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            32000
+          ]
+        },
+        {
+          "action": "a2a4",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1d1",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1f1",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1d2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1e2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        },
+        {
+          "action": "e1f2",
+          "kind": 0,
+          "nodes": 6,
+          "score": -100,
+          "window": [
+            -32000,
+            -99
+          ]
+        }
+      ],
+      "name": "root-not-threefold",
+      "published": {
+        "abort_reason": 0,
+        "completed_depth": 2,
+        "kind": 0,
+        "nodes": 43,
+        "pv": [
+          "a2a3",
+          "e8d7"
+        ],
+        "qnodes": 0,
+        "score": 100
+      },
+      "trajectory": [
+        {
+          "completed_children": 1,
+          "exact_children": 1,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 7,
+          "kernel_ms": 0.2574020028114319,
+          "nodes": 15,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.3213600139133632
+        },
+        {
+          "completed_children": 7,
+          "exact_children": 7,
+          "failed_children": 0,
+          "failed_events": 0,
+          "iteration_nodes": 43,
+          "kernel_ms": 0.3342429995536804,
+          "nodes": 51,
+          "paused_children": 0,
+          "retry_count": 0,
+          "upper_children": 0,
+          "wall_ms": 0.40411000372841954
+        }
+      ]
+    },
+    {
+      "name": "mate",
+      "score": -30000,
+      "terminal": true
+    },
+    {
+      "name": "fifty",
+      "score": 0,
+      "terminal": true
+    }
+  ],
+  "runtime": {
+    "path": "/opt/rocm-7.2.4/lib/libamdhip64.so.7.2.70204",
+    "sha256": "f1043337461c8e54ee135e95fa979a7d0e4344676ad5b0554652f844f8f098ac",
+    "version": 70253211
+  },
+  "status": "PASS"
+}

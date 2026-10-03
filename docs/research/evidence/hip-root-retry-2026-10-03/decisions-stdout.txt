@@ -1,0 +1,3 @@
+{"root": "kiwipete", "backend": "hip-root-pool", "bestmove": "a2a3", "wall_ms": 55.814277002355084, "reported_depth": 0, "reported_nodes": 0}
+{"root": "kiwipete", "backend": "hip-root-retry", "bestmove": "a2a3", "wall_ms": 1001.9905880035367, "reported_depth": 0, "reported_nodes": 0}
+{"root": "kiwipete", "backend": "alphabeta", "bestmove": "d5e6", "wall_ms": 1000.4596869985107, "reported_depth": 5, "reported_nodes": 332464}

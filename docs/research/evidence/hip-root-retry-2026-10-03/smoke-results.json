@@ -1,0 +1,342 @@
+{
+  "retired": {
+    "backend": "hip-root-retry",
+    "exit_code": 0,
+    "pid": 10723,
+    "stderr": ""
+  },
+  "rows": [
+    {
+      "bestmove": "a2a3",
+      "name": "zero-time",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 1,
+        "stop_reason": "deadline",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go movetime 0 depth 64",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":1,\"stop_reason\":\"deadline\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 8.376454003155231
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "zero-nodes",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [],
+        "node_limit": 0,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 2,
+        "stop_reason": "nodes",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go nodes 0 depth 64",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[],\"node_limit\":0,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":2,\"stop_reason\":\"nodes\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 2.6184419984929264
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "one-node",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 1,
+            "clock_khz": 100000,
+            "completed_children": 0,
+            "depth": 1,
+            "elapsed_ticks": 4268,
+            "exact_children": 0,
+            "failed_children": 1,
+            "failed_events": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 1,
+            "kernel_ms": 0.05739999935030937,
+            "nodes": 1,
+            "not_admissible_children": 1,
+            "paused_children": 0,
+            "qnodes": 0,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 0,
+            "wall_ms": 0.16801000000000002
+          }
+        ],
+        "node_limit": 1,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 3,
+        "stop_reason": "nodes",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go nodes 1 depth 64",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":1,\"clock_khz\":100000,\"completed_children\":0,\"depth\":1,\"elapsed_ticks\":4268,\"exact_children\":0,\"failed_children\":1,\"failed_events\":0,\"iteration_complete\":0,\"iteration_nodes\":1,\"kernel_ms\":0.05739999935030937,\"nodes\":1,\"not_admissible_children\":1,\"paused_children\":0,\"qnodes\":0,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":0,\"wall_ms\":0.16801000000000002}],\"node_limit\":1,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":3,\"stop_reason\":\"nodes\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 2.8081310156267136
+    },
+    {
+      "bestmove": "b1c3",
+      "name": "exact-d2",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "completed_depth": 2,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 1,
+            "depth": 1,
+            "elapsed_ticks": 15280,
+            "exact_children": 1,
+            "failed_children": 0,
+            "failed_events": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 2,
+            "kernel_ms": 0.16655999422073364,
+            "nodes": 2,
+            "not_admissible_children": 0,
+            "paused_children": 0,
+            "qnodes": 1,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 0,
+            "wall_ms": 0.25241
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 20,
+            "depth": 1,
+            "elapsed_ticks": 13152,
+            "exact_children": 20,
+            "failed_children": 0,
+            "failed_events": 0,
+            "iteration_complete": 1,
+            "iteration_nodes": 21,
+            "kernel_ms": 0.1544409990310669,
+            "nodes": 21,
+            "not_admissible_children": 0,
+            "paused_children": 0,
+            "qnodes": 20,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 0,
+            "wall_ms": 0.18529
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 1,
+            "depth": 2,
+            "elapsed_ticks": 196116,
+            "exact_children": 1,
+            "failed_children": 0,
+            "failed_events": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 22,
+            "kernel_ms": 1.9744470119476318,
+            "nodes": 43,
+            "not_admissible_children": 0,
+            "paused_children": 0,
+            "qnodes": 40,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 0,
+            "wall_ms": 2.005651
+          },
+          {
+            "abort_reason": 0,
+            "clock_khz": 100000,
+            "completed_children": 20,
+            "depth": 2,
+            "elapsed_ticks": 250164,
+            "exact_children": 2,
+            "failed_children": 0,
+            "failed_events": 0,
+            "iteration_complete": 1,
+            "iteration_nodes": 231,
+            "kernel_ms": 2.5235700607299805,
+            "nodes": 252,
+            "not_admissible_children": 0,
+            "paused_children": 0,
+            "qnodes": 230,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 18,
+            "wall_ms": 2.554532
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 4,
+        "stop_reason": "depth",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos",
+        "> go depth 2 nodes 1000000",
+        "< info depth 1 score cp 36 nodes 21 nps 8210 hashfull 0 time 2 pv b1c3",
+        "< info depth 2 score cp 0 nodes 252 nps 35219 hashfull 0 time 7 pv b1c3 b8c6",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"completed_depth\":2,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":1,\"depth\":1,\"elapsed_ticks\":15280,\"exact_children\":1,\"failed_children\":0,\"failed_events\":0,\"iteration_complete\":0,\"iteration_nodes\":2,\"kernel_ms\":0.16655999422073364,\"nodes\":2,\"not_admissible_children\":0,\"paused_children\":0,\"qnodes\":1,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":0,\"wall_ms\":0.25241},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":20,\"depth\":1,\"elapsed_ticks\":13152,\"exact_children\":20,\"failed_children\":0,\"failed_events\":0,\"iteration_complete\":1,\"iteration_nodes\":21,\"kernel_ms\":0.1544409990310669,\"nodes\":21,\"not_admissible_children\":0,\"paused_children\":0,\"qnodes\":20,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":0,\"wall_ms\":0.18529},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":1,\"depth\":2,\"elapsed_ticks\":196116,\"exact_children\":1,\"failed_children\":0,\"failed_events\":0,\"iteration_complete\":0,\"iteration_nodes\":22,\"kernel_ms\":1.9744470119476318,\"nodes\":43,\"not_admissible_children\":0,\"paused_children\":0,\"qnodes\":40,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":0,\"wall_ms\":2.005651},{\"abort_reason\":0,\"clock_khz\":100000,\"completed_children\":20,\"depth\":2,\"elapsed_ticks\":250164,\"exact_children\":2,\"failed_children\":0,\"failed_events\":0,\"iteration_complete\":1,\"iteration_nodes\":231,\"kernel_ms\":2.5235700607299805,\"nodes\":252,\"not_admissible_children\":0,\"paused_children\":0,\"qnodes\":230,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":18,\"wall_ms\":2.554532}],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":4,\"stop_reason\":\"depth\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove b1c3"
+      ],
+      "wall_ms": 7.575754018034786
+    },
+    {
+      "bestmove": "0000",
+      "name": "mate",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "root_epoch": 5,
+        "stop_reason": "terminal"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position fen 7k/6Q1/6K1/8/8/8/8/8 b - - 0 1",
+        "> go movetime 1000 depth 64",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"root_epoch\":5,\"stop_reason\":\"terminal\"}",
+        "< bestmove 0000"
+      ],
+      "wall_ms": 2.076120988931507
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "threefold",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "root_epoch": 6,
+        "stop_reason": "terminal"
+      },
+      "stop_response_ms": null,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position startpos moves g1f3 g8f6 f3g1 f6g8 g1f3 g8f6 f3g1 f6g8",
+        "> go movetime 1000 depth 64",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"root_epoch\":6,\"stop_reason\":\"terminal\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 2.1621309861075133
+    },
+    {
+      "bestmove": "a2a3",
+      "name": "stop",
+      "stats": {
+        "abi": 4,
+        "bootstrap_nodes": 1,
+        "completed_depth": 0,
+        "epoch_ns": 20000000,
+        "epochs": [
+          {
+            "abort_reason": 7,
+            "clock_khz": 100000,
+            "completed_children": 0,
+            "depth": 1,
+            "elapsed_ticks": 1944592,
+            "exact_children": 0,
+            "failed_children": 0,
+            "failed_events": 0,
+            "iteration_complete": 0,
+            "iteration_nodes": 118,
+            "kernel_ms": 19.46463966369629,
+            "nodes": 118,
+            "not_admissible_children": 0,
+            "paused_children": 1,
+            "qnodes": 117,
+            "retry_count": 0,
+            "scratch_bytes": 24446976,
+            "stalled": 0,
+            "upper_children": 0,
+            "wall_ms": 19.582859000000003
+          }
+        ],
+        "node_limit": 1000000,
+        "ordering": "previous completed PV first; canonical DFS",
+        "pvs": false,
+        "quiescence": true,
+        "root_epoch": 7,
+        "stop_reason": "cancelled",
+        "tt": false,
+        "worker_mapping": "one scalar DFS per root-child workgroup"
+      },
+      "stop_response_ms": 2.385480998782441,
+      "trace": [
+        "> ucinewgame",
+        "> isready",
+        "< readyok",
+        "> position fen r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+        "> go infinite depth 16",
+        "> stop",
+        "< info string root_pool {\"abi\":4,\"bootstrap_nodes\":1,\"completed_depth\":0,\"epoch_ns\":20000000,\"epochs\":[{\"abort_reason\":7,\"clock_khz\":100000,\"completed_children\":0,\"depth\":1,\"elapsed_ticks\":1944592,\"exact_children\":0,\"failed_children\":0,\"failed_events\":0,\"iteration_complete\":0,\"iteration_nodes\":118,\"kernel_ms\":19.46463966369629,\"nodes\":118,\"not_admissible_children\":0,\"paused_children\":1,\"qnodes\":117,\"retry_count\":0,\"scratch_bytes\":24446976,\"stalled\":0,\"upper_children\":0,\"wall_ms\":19.582859000000003}],\"node_limit\":1000000,\"ordering\":\"previous completed PV first; canonical DFS\",\"pvs\":false,\"quiescence\":true,\"root_epoch\":7,\"stop_reason\":\"cancelled\",\"tt\":false,\"worker_mapping\":\"one scalar DFS per root-child workgroup\"}",
+        "< bestmove a2a3"
+      ],
+      "wall_ms": 22.303321020444855
+    }
+  ],
+  "scope": "actual Rust UCI ABI3 ownership/publication/stop controls; no strength claim",
+  "status": "PASS"
+}
