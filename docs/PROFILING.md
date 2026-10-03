@@ -4,6 +4,11 @@ Latest decision: the [matched causal dispatch intervention](CAUSAL_PROFILING.md)
 finds only 0.2%/0.45% observed graph-launch savings with identical GPU work and
 fences. Prior phase shares below locate hypotheses; they do not by themselves
 predict whole-program gains. Avoid another graph-launch tuning cycle now.
+The [retained-prefix intervention](GPU_RETAINED_SELECTION_PATH.md) reduces large
+fixed-work search time 5.00%, but small work regresses 0.80%; it remains a named
+candidate. With the current packed cache, prior measured choose share is
+32–46% and completion 34–44%. The 71–75% selection share below belongs to the
+earlier sparse-backup baseline, before the cache optimization.
 
 The frozen fusion profile identified **GPU ancestor backup and selection**, and
 **CPU move application and legal generation**. The actual one-second profiles

@@ -1,0 +1,33 @@
+{
+  "first_checks": [
+    {
+      "name": "mechanism",
+      "exitcode": 0,
+      "wall_seconds": 1.466516660002526
+    },
+    {
+      "name": "deep",
+      "exitcode": 2,
+      "wall_seconds": 0.11406671401346102
+    }
+  ],
+  "deep_recovery": {
+    "exitcode": 0,
+    "wall_seconds": 2.367480469023576
+  },
+  "large": {
+    "exitcode": 0,
+    "wall_seconds": 19.298470412002644
+  },
+  "small_initial": {
+    "exitcode": 1,
+    "wall_seconds": 0.9156211870140396
+  },
+  "small_recovery": {
+    "exitcode": 0,
+    "wall_seconds": 12.338369204022456
+  },
+  "missing_driver_error": "python3: can't open file '/tmp/chen-selective-cache-2026-10-02/gpu/selective_sparse_followup.py': [Errno 2] No such file or directory\n",
+  "hardcoded_workload_error": "Traceback (most recent call last):\n  File \"/tmp/chen-path-driver-20261003/gpu/selective_path_small_pairs.py\", line 93, in <module>\n    main()\n  File \"/tmp/chen-path-driver-20261003/gpu/selective_path_small_pairs.py\", line 72, in main\n    search(arm,'warmup-'+arm)\n  File \"/tmp/chen-path-driver-20261003/gpu/selective_path_small_pairs.py\", line 62, in search\n    rows = parse_rows(stdout, count, WORKLOAD)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chen-path-driver-20261003/gpu/selective_cache_probe.py\", line 39, in parse_rows\n    raise ValueError(\"requested workload changed\")\nValueError: requested workload changed\n",
+  "scope": "missing driver failed before GPU work; hardcoded small probe rejected its first warmup and measured no pairs"
+}

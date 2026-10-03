@@ -1,0 +1,32 @@
+{
+  "files": {
+    "driver/gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "driver/gpu/selective_cache_probe.py": "3c87bdc7c325c87762c0664a8afe975d8692e939702a2c722cce9f409314856e",
+    "driver/gpu/selective_fusion_probe.py": "33a7fc9050333dbe0b97fc321ec4524708cc7362154094fc52246b9576de898f",
+    "driver/gpu/selective_path_followup.py": "8384f984c7cd93f8df15245d5eaebc1559c1c6f672d98efb2304ce32a8f09cae",
+    "driver/gpu/selective_path_pairs.py": "c122fa025e75ca34b87aab97f500a9b831ff03c4914ac4628f1808b3f26c077f",
+    "driver/gpu/selective_path_small_pairs.py": "6bb558a3a5fcc0e1ac2e496f227bc823fc3553fca801a6258c5c0181bab1e506",
+    "driver/scripts/profile_engine.py": "458bf69309c1810cfef71ba95b236a3dd176a0eede53946dab67fb52e1498b83"
+  },
+  "derived_deep": {
+    "source": "gpu/evidence/selective-cache-gfx1030-2026-10-02/sources/host/gpu/selective_sparse_followup.py",
+    "replace": [
+      "sparse_ply_single_thread_admitted_ancestors_v1",
+      "retained_canonical_prefix_v1"
+    ]
+  },
+  "derived_large_pairs": {
+    "source": "gpu/evidence/selective-best-open-seed-gfx1030-2026-10-02/sources/gpu/selective_seed_pairs.py",
+    "replace": [
+      [
+        "classical_best_open_seed_balanced_pair_confirmation",
+        "classical_retained_path_balanced_pair_comparison"
+      ],
+      [
+        "backup_best_open_seed_v1",
+        "retained_canonical_prefix_v1"
+      ]
+    ]
+  },
+  "successful_small_runner": "gpu/selective_variant_pairs.py"
+}

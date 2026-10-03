@@ -1,5 +1,13 @@
 # Research checkpoint — 2026-10-03
 
+The [retained-prefix selector](../GPU_RETAINED_SELECTION_PATH.md) removes repeated
+root traversal during one classical choose call without new storage. Forty-eight
+synthetic cases and 1,336 snapshots across 33 native cases preserve exact behavior.
+Twelve balanced pairs reduce large fixed-work latency 5.00%; the small-budget
+comparison regresses 0.80% with noisy individual pairs. It stays experimental.
+A generic workload-driven pair runner replaces the copied harness's hardcoded
+argv for new experiments. Production remains the packed-cache implementation.
+
 Latest integration: main `d2a54be` exports exact native symbolic observations;
 neural `0d86d43` consumes typed compact GPU state in symbolic/transformer residual
 streams. [Six actual GPU tests](../GPU_SYMBOLIC_RESIDUAL.md) pass with 940 oracle
