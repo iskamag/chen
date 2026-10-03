@@ -12,33 +12,64 @@ persistent memory/adaptive refresh. CPU and GPU matches used different searches
 and are not a calibrated head-to-head rating gap. Further dispatch/selector
 microtuning is deprioritized.
 
-The experimental [bounded GPU worker](../../gpu/experiments/bounded_search.hip)
-now passes strict compilation and an actual gfx1030 oracle run: 33 fixtures,
-131 checked result packets (including intentional aborts), 19 exhaustive
-reference comparisons and nine unchanged-output preflight rejections. It executes
-nonrecursive alpha-beta and tactical quiescence with typed completed bounds.
-Canonical ordering, one block of at most 64 scalar jobs and per-call allocations
-make this a correctness reference. UCI/iterative publication, deadlines, PVS/TT,
-scalable scheduling and playing-strength tests remain pending. Production
-`hip-selective` is unchanged.
+Main `790acbc` integrates the runnable [timed bounded GPU reference](../HIP_BOUNDED.md),
+with exact device rules/evaluation/alpha-beta/qsearch, persistent allocations,
+deadlines/cancellation and last-completed root publication. Actual gfx1030 checks
+cover33 semantic cases/19 exhaustive controls and8 UCI cases. It is scalar and
+has no TT/PVS. The [18-decision one-second diagnostic](evidence/hip-bounded-decisions-2026-10-03/README.md),
+integrated as `09b9f32`, exposes the throughput problem: start reaches depth3,
+Kiwipete completes no depth and returns its fallback, middlegame reaches depth1.
+Five complete ordinary teacher packets evaluate these reused roots; Kiwipete's
+fallback is rank30/48 with a reported623cp gap. This is a diagnostic, not an Elo
+or correctness claim about teacher minimax. Production `hip-selective` is unchanged.
+The next native search candidate is a parallel retained root-child pool in
+`../chen-gpu-pool`; its source exists but hardware evidence is still pending.
 
 Main `16574cd` adds independently switchable
 [CPU PVS and aspiration](../CLASSICAL_SEARCH.md), with defaults off. All18 search
 and UCI boundary tests pass after integration.192 fixed-depth control rows preserve
 scores and legal PVs. PVS reduces suite-total nodes30.1%/13.1% and search elapsed
-28.1%/12.3% at depths4/5; Kiwipete dominates the suite, so these are not general
-population estimates. Aspiration has large local regressions and stays separate.
-PVS-only equal-time paired play is the next gate; no updated rating follows.
+28.1%/12.3% at depths4/5; Kiwipete dominates the suite. The now-completed
+[same-binary one-second direct match](../harness/pvs-one-second-direct-2026-10-03.md)
+(`ccb191b`) scores6W/6D/4L over8 complete opening pairs,1773 legal plies, no errors/caps.
+This is encouraging small-sample evidence, with no calibrated Elo or default
+promotion. Aspiration's local regressions remain a separate control.
 
-Main `7311733` adds the [compact native topology ABI](../GPU_TOPOLOGY.md):
-source pseudoattack masks, pins, pinners, checkers and state identity in
-caller-owned GPU allocations. Four actual gfx1030 tests pass755 oracle rows,
-48,320 complete source masks and12 unchanged-output rejections. Original symbolic
-ABI1 bodies/layout remain intact. Neural `f30a46f` adds the
-[exact sparse input reference](../../../chen-neural/docs/TACTICAL_INPUTS.md)
-with all14 relations, complete legal effects, history and causal material priors.
-Eight CPU tests pass, including replay of three fresh TRAIN roots and sparse
-forward/backward. Device sparse emission and neural training remain pending.
+Main `7311733` adds the [compact native topology ABI](../GPU_TOPOLOGY.md),
+with four actual gfx1030 tests/755 oracle rows. Main `c4dd06a` and neural `6b51274`
+now add the [complete exact sparse tactical observation](../GPU_TACTICAL.md)
+directly into owned Torch device storage. Four initial hardware tests compare45
+complete CPU-reference graph rows, all14 relations, complete actions/effects,
+history/terminal identity and unchanged-output rejection. An extra four-state
+composition check preserves old symbolic channels/history. A width8/steps2 model
+performs resident forward/backward, without optimizer updates or learned quality.
+Native C allocates no device storage per export; the Torch wrapper allocates
+snapshots and synchronizes. Captured/asynchronous export remains open.
+
+Main `a0ad331` records a [causal edge-padding intervention](../TACTICAL_PADDING.md).
+Holding graph/checkpoint/P/K fixed, captured FP32 inference at batch20 improves
+3.80/6.38/6.20x at widths32/128/256 when E6144 padding is replaced by the admitted
+actual maximum270. All prediction/capture checks pass. These are three small
+samples on untrained opening-child graphs, excluding export/copy/setup/capture
+costs. Native E admission remains conservative. A separately named bucketed
+native producer is now being implemented; the measured inference-only ratio is
+not imported as a pipeline result. Offline learning should collate active work.
+
+Main `4c92070` adds [parallel root certificates](PARALLEL_ROOT_CERTIFICATES.md):
+23 Lean theorems cover complete competitor bounds, canonical ties, retained
+same-provenance certificates and unresolved interval obstructions. Root's fresh
+replay passes, with only propext/Quot.sound. HIP worker soundness, exact action
+coverage, memory ordering and publication refinement remain explicit premises.
+
+Neural `c6b479c` collects32 fresh TRAIN-family strategic teacher roots:21 base
+queries produce complete ordinary packets/410 legal action labels; decisive
+queries are retained as missing, without substitution. Neural `7607c36` adds
+[closed restricted-exchange labels](../../../chen-neural/docs/EXCHANGE_TARGETS.md):
+3175 closed targets from3864 complete initial capture/promotion actions;1172
+returns differ from immediate material.604 outside-task check evasions and85
+terminals carry no ordinary CP. This is not unrestricted chess value. A separate
+task head/fresh whole-family split/convergence runner is being implemented in
+`../chen-neural`; no recurrent/transformer quality winner has been trained yet.
 
 The [reachable mechanics generator](../SYNTHETIC_MECHANICS.md) now completes a
 256-family TRAIN pilot:1940 roots,35,533 complete legal action effects and95,790
@@ -560,8 +591,8 @@ rather than storage reduction, determines adoption. Captured/native execution
 and asynchronous integration of the now-verified native symbolic producer are
 the next execution steps.
 
-Immediate order: bounded tactical GPU search; recurrent tactical processor and
-exact shared topology; fresh data, learning curves and declared tuning;
+Immediate order: parallel retained bounded GPU search; bucketed native tactical
+ingress; fresh family data, recurrent task learning curves and declared tuning;
 equal-time direct search/neural matches; conditional object-memory/adaptive
 computation; then profiling of demonstrated useful paths. See the redesign for
 controls and completion criteria. Calibrate adjustable levels separately. The

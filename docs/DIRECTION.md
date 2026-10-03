@@ -12,8 +12,9 @@ from an actual Lichess rating; larger reference-pool checks are still needed.
 The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-10-03.md)
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now
-prioritizes a bounded GPU alpha-beta/quiescence reference, a scalable transformer
-and one recurrent tactical neural processor. Hardware throughput and playing
+prioritizes parallel retained alpha-beta/quiescence after the now-runnable
+bounded GPU reference, a scalable transformer and one recurrent tactical neural
+processor. Hardware throughput and playing
 strength remain
 separate comparisons; further selector/dispatch microtuning is deprioritized.
 
@@ -54,15 +55,17 @@ Full GPU execution remains the deployment target: exact rules, symbolic feature
 production, latent updates, neural scoring, frontier decisions and backup retain
 their state on the device. CPU implementations remain references for comparison.
 The new [PVS/aspiration controls](CLASSICAL_SEARCH.md) stay independently
-selectable; their fixed-depth useful-work savings need equal-time play before
-default adoption. Temporary `../chen-classical` and `../chen-gpu-search` worktrees
-keep CPU controls and bounded GPU integration isolated; reviewed code enters
+selectable; their completed16-game direct one-second diagnostic favors PVS
+6W/6D/4L, with broader play still needed before default adoption. Temporary
+`../chen-classical`, `../chen-gpu-search` and `../chen-gpu-pool` worktrees keep
+CPU/proof controls, bounded reference and parallel GPU candidate isolated; reviewed code enters
 main, while model/data work remains in the neural worktree.
 Measure host scheduling and publication costs explicitly while moving suitable
 control work into the GPU. A CPU result does not replace this target.
 
-The symbolic engine must expose a versioned, typed residual-input boundary to the
-neural engine. Derive channels from the current exact state and legal actions:
+The [native tactical observation](GPU_TACTICAL.md) now exposes a versioned, typed
+residual-input boundary to the neural engine; [padding measurements](TACTICAL_PADDING.md)
+motivate a separately named bucketed producer candidate. Derive channels from the current exact state and legal actions:
 occupancy, attacks, pins, check constraints, material/phase, clocks/history and
 move events. Keep parent/child identity, player orientation, validity masks,
 stream dependencies and allocation ownership explicit. Learned projections may
