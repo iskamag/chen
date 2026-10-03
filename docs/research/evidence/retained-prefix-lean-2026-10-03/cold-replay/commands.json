@@ -1,0 +1,87 @@
+[
+  {
+    "phase": "version",
+    "argv": [
+      "lean",
+      "--version"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  },
+  {
+    "phase": "lake-version",
+    "argv": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  },
+  {
+    "phase": "toolchain-prefix",
+    "argv": [
+      "lean",
+      "--print-prefix"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  },
+  {
+    "phase": "dependency-compile",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "-o",
+      "proofs/CacheAndBackup.olean",
+      "proofs/CacheAndBackup.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  },
+  {
+    "phase": "compile",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "-o",
+      "proofs/RetainedPrefix.olean",
+      "proofs/RetainedPrefix.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  },
+  {
+    "phase": "axioms-audit",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "axioms-audit.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+    }
+  }
+]

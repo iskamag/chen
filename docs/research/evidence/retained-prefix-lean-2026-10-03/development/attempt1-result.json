@@ -1,0 +1,11 @@
+{
+  "exit_code": 1,
+  "cause": "prefix is a reserved Lean parser keyword used as a binder; replaced with retainedPath",
+  "command": [
+    "lean",
+    "-DwarningAsError=true",
+    "proofs/RetainedPrefix.lean"
+  ],
+  "dependency_compile_exit_code": 0,
+  "old_theorems_reatudited": false
+}

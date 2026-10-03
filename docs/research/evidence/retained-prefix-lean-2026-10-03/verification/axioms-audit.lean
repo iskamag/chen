@@ -1,0 +1,21 @@
+import proofs.RetainedPrefix
+#print axioms Chen.Retained.eligible_child_membership
+#print axioms Chen.Retained.retained_edge_stable
+#print axioms Chen.Retained.retained_path_stable
+#print axioms Chen.Retained.canonical_prefix_unique
+#print axioms Chen.Retained.canonical_take
+#print axioms Chen.Retained.child_available_parent_available
+#print axioms Chen.Retained.eligible_tail_covers_ancestors
+#print axioms Chen.Retained.all_available_members
+#print axioms Chen.Retained.retained_restart_equivalence
+#print axioms Chen.Retained.stack_accounting
+#print axioms Chen.Retained.pops_bounded_by_pushes
+#print axioms Chen.Retained.exact_call_accounting
+#print axioms Chen.Retained.retained_calls_no_more
+#print axioms Chen.Retained.restart_calls_depth_bound
+#print axioms Chen.Retained.unchanged_reservation_accounting
+#print axioms Chen.Retained.stack_bookkeeping_bound
+#print axioms Chen.Retained.strict_ply_path_unique
+#print axioms Chen.Retained.reserve_at_monotone
+#print axioms Chen.Retained.distinct_reservations_commute
+#print axioms Chen.Retained.weighted_work_improves

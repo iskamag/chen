@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-10-03T07:31:21.847796+00:00",
+  "sources": {
+    "proofs/RetainedPrefix.lean": {
+      "sha256": "6f9fdbb61c1d97cfbb5668a6f1c377220c9b210354e0bf291d51dab3b2f40a26",
+      "origin": "new live source frozen for this milestone",
+      "frozen_path": "sources/proofs/RetainedPrefix.lean"
+    },
+    "proofs/verify_retained_prefix.py": {
+      "sha256": "d4f31caeb8856312ec5ddbeed43c2b3013909ef4d63c8bd8c435c47209055d70",
+      "origin": "new live source frozen for this milestone",
+      "frozen_path": "sources/proofs/verify_retained_prefix.py"
+    },
+    "docs/research/RETAINED_PREFIX_COST.md": {
+      "sha256": "bd3a71e64b8eac6966a11b6b70c89323c1fe97a264194658fcd4b7ba1f9aa9d1",
+      "origin": "new live source frozen for this milestone",
+      "frozen_path": "sources/docs/research/RETAINED_PREFIX_COST.md"
+    },
+    "proofs/CacheAndBackup.lean": {
+      "sha256": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a",
+      "origin_commit": "b1505ef",
+      "frozen_path": "sources/proofs/CacheAndBackup.lean"
+    },
+    "gpu/experiments/selective_retained_path.inc": {
+      "sha256": "be32f65630518a7caa542c8f7f7b0aba2124c24cdbcda3422a1419dadbfd9719",
+      "origin_commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+      "frozen_path": "sources/gpu/experiments/selective_retained_path.inc"
+    },
+    "gpu/chen_selective.inc": {
+      "sha256": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+      "origin_commit": "5a2c82b406b24a84a9f75266b477ef3e6c242434",
+      "frozen_path": "sources/gpu/chen_selective.inc"
+    },
+    "gpu/evidence/selective-retained-path-gfx1030-2026-10-03/source-binding.json": {
+      "sha256": "5fce1130f524df68cb1cbe5f9c442924df3c216686f821da92bc08b8673d3f35",
+      "origin_commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+      "frozen_path": "prior-evidence/source-binding.json"
+    },
+    "gpu/evidence/selective-retained-path-gfx1030-2026-10-03/summary.json": {
+      "sha256": "1103d2a2b6c686069779c3ce69c950324afaa6b6913103735c771a6233b7641b",
+      "origin_commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+      "frozen_path": "prior-evidence/summary.json"
+    }
+  },
+  "retained_experiment_commit": "b3f370925f94e06801294c2369b3034f78fde7bc",
+  "compiled_baseline_commit": "5a2c82b406b24a84a9f75266b477ef3e6c242434",
+  "dependency_compiled_not_previous_theorems_reaudited": true,
+  "existing_gpu_source_binding_and_summary_consumed_not_revalidated": true,
+  "cold_replay": {
+    "status": "PASS",
+    "actual_compile_exit_code": 0,
+    "actual_dependency_compile_exit_code": 0,
+    "actual_new_axioms_audit_exit_code": 0,
+    "new_axioms_audit_byte_identical": true,
+    "new_theorem_count": 20,
+    "axioms_stdout_sha256": "a33f1d0dd99290f2f4be88952b58bebc9548edf57d38b25ca14fedde346ae2e9"
+  },
+  "hardware_runs": 0,
+  "shared_gpu_production_edits": false,
+  "scope": "Finite certificate/cost model and source-grounded research; no HIP refinement or hardware latency proof."
+}

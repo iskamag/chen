@@ -1,0 +1,43 @@
+{
+  "compiled_runtime_subset": {
+    "commit": "5a2c82b406b24a84a9f75266b477ef3e6c242434",
+    "baseline_sha256": {
+      "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+      "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "chen_rules.hip": "702020d45809c243f7c63f6742d26a636bfcb1e95854b8828cfaa9f2b6c5bf73",
+      "chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+      "chen_selective.inc": "d530aa64bd3860a3407884b57baa9f4442cbc730215fbca54eb5f1c34445d642",
+      "chen_symbolic.h": "310323c79c901664c51a09574ad08bd48f1ef02e00981b99720e114a35a899ff",
+      "chen_symbolic.inc": "f5e88941ba24e109e37ec877b24902816a3156d15682f2635806b4559861ac09",
+      "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9"
+    },
+    "candidate_sha256": {
+      "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+      "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+      "chen_rules.hip": "702020d45809c243f7c63f6742d26a636bfcb1e95854b8828cfaa9f2b6c5bf73",
+      "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+      "chen_external.h": "f92a1736e46b198071cb718198987c698114da81515dfeb9e6b82bd0f87703a3",
+      "chen_symbolic.inc": "f5e88941ba24e109e37ec877b24902816a3156d15682f2635806b4559861ac09",
+      "chen_position_priors.inc": "402ec332b3be76e869c85e98da8714de0a0a8a84720d3dd57e11beaf2659a444",
+      "chen_selective.h": "9c78e05a53ae48fa5693c4f34f59b60205ed3755d3e96a284995a7a4f8624388",
+      "selective_retained_path.inc": "be32f65630518a7caa542c8f7f7b0aba2124c24cdbcda3422a1419dadbfd9719",
+      "chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+      "chen_selective.inc": "218f00607972e3b3aac302a6d901bb6fc21270a9734d911e00b9c8f86eed6829",
+      "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+      "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+      "chen_symbolic.h": "310323c79c901664c51a09574ad08bd48f1ef02e00981b99720e114a35a899ff"
+    },
+    "scope": "only classical choose replaced; external uncached selector delegates to exact reference"
+  },
+  "candidate_library_sha256": "3bd34168c3cf2e345daff0dce861dbf1212850df0e300f8d1a13482d456e5705",
+  "baseline_library_sha256": "de50490a16d4395f6a71693fd33d6938a3c4f6d0b8660cf22535ece0e1bc8ad3",
+  "mechanism_source": "gpu/evidence/selective-cache-gfx1030-2026-10-02/sources/host/gpu/selective_cache_trace.hip",
+  "mechanism_source_sha256": "f8cb96ce6f248659d2d328405c628a85b2a0a9ecb0d764c1c7f35137ebc85307",
+  "mechanism_binary_sha256": "3e1e64d48297980b10d9a9852f1c479edd1c7796e8d6daccdfa5afa24c220c0a",
+  "staging_note": "initial staging copied extra unused benchmarks; final stager follows actual includes; compiled runtime subset was independently identical"
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "phase": "version",
+    "argv": [
+      "lean",
+      "--version"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  },
+  {
+    "phase": "lake-version",
+    "argv": [
+      "lake",
+      "--version"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  },
+  {
+    "phase": "toolchain-prefix",
+    "argv": [
+      "lean",
+      "--print-prefix"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  },
+  {
+    "phase": "dependency-compile",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "-o",
+      "proofs/CacheAndBackup.olean",
+      "proofs/CacheAndBackup.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  },
+  {
+    "phase": "compile",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "-o",
+      "proofs/RetainedPrefix.olean",
+      "proofs/RetainedPrefix.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  },
+  {
+    "phase": "axioms-audit",
+    "argv": [
+      "lean",
+      "-DwarningAsError=true",
+      "axioms-audit.lean"
+    ],
+    "cwd": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification",
+    "exit_code": 0,
+    "timeout_seconds": 60,
+    "environment_overrides": {
+      "LEAN_PATH": "/home/iskam/src/vibe/chen/docs/research/evidence/retained-prefix-lean-2026-10-03/verification"
+    }
+  }
+]

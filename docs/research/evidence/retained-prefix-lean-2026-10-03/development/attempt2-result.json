@@ -1,0 +1,9 @@
+{
+  "exit_code": 1,
+  "cause": "List.take count [] requires simplification before reducing canonicalPath",
+  "command": [
+    "lean",
+    "-DwarningAsError=true",
+    "proofs/RetainedPrefix.lean"
+  ]
+}

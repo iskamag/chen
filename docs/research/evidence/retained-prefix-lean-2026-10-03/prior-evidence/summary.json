@@ -1,0 +1,85 @@
+{
+  "variant": "retained_canonical_prefix_v1",
+  "status": "PASS",
+  "strict_compile_exitcode": 0,
+  "mechanism_cases": 48,
+  "native_cases": 33,
+  "native_snapshots": 1336,
+  "timings": [
+    {
+      "workload": "large",
+      "pairs": 12,
+      "geometric_paired_speed_ratio": 1.0526203023306897,
+      "reduction_percent": 4.998982274442065,
+      "paired_ratio_range": [
+        1.0495104512723386,
+        1.0566820741015317
+      ],
+      "positions": [
+        {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "reduction_percent": 4.6882587417666155
+        },
+        {
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "reduction_percent": 2.4835476297229486
+        },
+        {
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "reduction_percent": 7.548790864001265
+        },
+        {
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "reduction_percent": 4.925011834762216
+        },
+        {
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "reduction_percent": 4.491664970145037
+        },
+        {
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "reduction_percent": 1.8342489170378395
+        }
+      ]
+    },
+    {
+      "workload": "small",
+      "pairs": 12,
+      "geometric_paired_speed_ratio": 0.9921085579983454,
+      "reduction_percent": -0.7954212205946609,
+      "paired_ratio_range": [
+        0.9362765064003999,
+        1.042688861465859
+      ],
+      "positions": [
+        {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "reduction_percent": 0.0048808090829965955
+        },
+        {
+          "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+          "reduction_percent": -1.7523752642558232
+        },
+        {
+          "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+          "reduction_percent": -1.4873182981565591
+        },
+        {
+          "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+          "reduction_percent": -1.531933378566941
+        },
+        {
+          "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+          "reduction_percent": 0.9428496792714514
+        },
+        {
+          "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+          "reduction_percent": 1.6058298518868974
+        }
+      ]
+    }
+  ],
+  "production_adopted": false,
+  "reason": "large-work win but small-work aggregate regresses about 0.8 percent with noisy pairs",
+  "scope": "machine-local exact-work intervention, no significance, neural or strength claim"
+}

@@ -1,0 +1,203 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-10-03T07:29:50.136880+00:00",
+  "source_sha256": {
+    "proofs/CacheAndBackup.lean": "4d2ea33b4a93440734e53923894454616a10a1efccffe8fd50685078876d0a9a",
+    "proofs/RetainedPrefix.lean": "6f9fdbb61c1d97cfbb5668a6f1c377220c9b210354e0bf291d51dab3b2f40a26"
+  },
+  "verifier_sha256": "d4f31caeb8856312ec5ddbeed43c2b3013909ef4d63c8bd8c435c47209055d70",
+  "lean_launcher": "/usr/bin/lean",
+  "lean_launcher_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "toolchain_prefix": "/usr",
+  "toolchain_lean_sha256": "7f51ecb25aabddd205287a30e976157044bcbbeff1b3f639e294f0f55d028a4d",
+  "std_olean_sha256": "69e00403c2c21cc4103e51709877351fe334b3534f7242215102873bcf9734c9",
+  "commands": [
+    {
+      "phase": "version",
+      "argv": [
+        "lean",
+        "--version"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    },
+    {
+      "phase": "lake-version",
+      "argv": [
+        "lake",
+        "--version"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    },
+    {
+      "phase": "toolchain-prefix",
+      "argv": [
+        "lean",
+        "--print-prefix"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    },
+    {
+      "phase": "dependency-compile",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "-o",
+        "proofs/CacheAndBackup.olean",
+        "proofs/CacheAndBackup.lean"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    },
+    {
+      "phase": "compile",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "-o",
+        "proofs/RetainedPrefix.olean",
+        "proofs/RetainedPrefix.lean"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    },
+    {
+      "phase": "axioms-audit",
+      "argv": [
+        "lean",
+        "-DwarningAsError=true",
+        "axioms-audit.lean"
+      ],
+      "cwd": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03",
+      "exit_code": 0,
+      "timeout_seconds": 60,
+      "environment_overrides": {
+        "LEAN_PATH": "/home/iskam/src/vibe/chen/results/retained-prefix-lean-cold-replay-2026-10-03"
+      }
+    }
+  ],
+  "warnings_as_errors": true,
+  "theorems": [
+    "eligible_child_membership",
+    "retained_edge_stable",
+    "retained_path_stable",
+    "canonical_prefix_unique",
+    "canonical_take",
+    "child_available_parent_available",
+    "eligible_tail_covers_ancestors",
+    "all_available_members",
+    "retained_restart_equivalence",
+    "stack_accounting",
+    "pops_bounded_by_pushes",
+    "exact_call_accounting",
+    "retained_calls_no_more",
+    "restart_calls_depth_bound",
+    "unchanged_reservation_accounting",
+    "stack_bookkeeping_bound",
+    "strict_ply_path_unique",
+    "reserve_at_monotone",
+    "distinct_reservations_commute",
+    "weighted_work_improves"
+  ],
+  "theorem_count": 20,
+  "theorem_axioms": {
+    "eligible_child_membership": [
+      "propext"
+    ],
+    "retained_edge_stable": [
+      "propext"
+    ],
+    "retained_path_stable": [
+      "propext"
+    ],
+    "canonical_prefix_unique": [
+      "propext"
+    ],
+    "canonical_take": [],
+    "child_available_parent_available": [
+      "propext",
+      "Quot.sound"
+    ],
+    "eligible_tail_covers_ancestors": [
+      "propext"
+    ],
+    "all_available_members": [
+      "propext",
+      "Quot.sound"
+    ],
+    "retained_restart_equivalence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "stack_accounting": [
+      "propext",
+      "Quot.sound"
+    ],
+    "pops_bounded_by_pushes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "exact_call_accounting": [
+      "propext",
+      "Quot.sound"
+    ],
+    "retained_calls_no_more": [
+      "propext",
+      "Quot.sound"
+    ],
+    "restart_calls_depth_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "unchanged_reservation_accounting": [
+      "propext",
+      "Quot.sound"
+    ],
+    "stack_bookkeeping_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "strict_ply_path_unique": [],
+    "reserve_at_monotone": [
+      "propext",
+      "Quot.sound"
+    ],
+    "distinct_reservations_commute": [
+      "propext",
+      "Quot.sound"
+    ],
+    "weighted_work_improves": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "trusted_axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "sorryAx_absent_from_actual_print_axioms": true,
+  "previous_theorems_reaudited": false,
+  "scope": "Finite abstract path/cost certificates; no HIP refinement, bitvector/memory-model proof, GPU latency optimum, neural batching equivalence across batch sizes, or chess-strength theorem"
+}
