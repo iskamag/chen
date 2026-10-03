@@ -807,6 +807,14 @@ fn bench(args: &[String]) -> Result<(), String> {
             .map_or_else(|| "null".to_owned(), |s| s.to_json());
         #[cfg(not(feature = "hip"))]
         let bounded = "null";
+        let catnip = searcher.catnip_stats().map_or_else(|| "null".to_owned(), |s| {
+            let theta = if catnip_config.theta.is_infinite() { json_string("inf") }
+                else { catnip_config.theta.to_string() };
+            format!("{{\"delta_cp\":{},\"theta\":{},\"seed\":{},\"walkers\":{},\"max_plies\":{},\"fail_meow\":{},\"fail_zoomies\":{},\"ignored_boring\":{},\"noticed_drift\":{},\"deepest_ply\":{},\"peak_walkers\":{}}}",
+                catnip_config.delta_cp, theta, catnip_config.seed, catnip_config.walkers,
+                catnip_config.max_plies, s.fail_meow, s.fail_zoomies, s.ignored_boring,
+                s.noticed_drift, s.deepest_ply, s.peak_walkers)
+        });
         let root_pool = searcher.root_pool_stats().unwrap_or_else(|| "null".into());
         let selective = result.selective.map_or_else(|| "null".to_owned(), |s| format!(
             "{{\"abi_version\":{},\"struct_size\":{},\"batch_leaves\":{},\"candidate_limit\":{},\"arena_positions\":{},\"classified_positions\":{},\"evaluated_positions\":{},\"completed_steps\":{},\"expanded_leaves\":{},\"open_frontier_leaves\":{},\"last_selected\":{},\"last_added\":{},\"kernel_ms\":{},\"minimum_frontier_depth\":{},\"maximum_frontier_depth\":{},\"pv_depth\":{},\"root_flags\":{},\"stop_reason\":{}}}",
@@ -816,7 +824,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"catnip\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -833,6 +841,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             selective,
             bounded,
             root_pool,
+            catnip,
             time_limit.map_or_else(|| "null".to_owned(), |t| t.as_millis().to_string()),
             node_limit.map_or_else(|| "null".to_owned(), |n| n.to_string()),
             config.tt && backend_name == "alphabeta",
