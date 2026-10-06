@@ -1,7 +1,6 @@
 //! Scheduling and batch evaluation contracts shared by CPU and GPU experiments.
 use crate::{Position, SearchLimits, SearchResult, Searcher, eval::Evaluator};
 use std::sync::{Arc, atomic::AtomicBool};
-
 #[derive(Clone, Copy, Debug, Default)]
 pub struct BatchTelemetry {
     pub positions: u64,
@@ -128,6 +127,14 @@ pub trait SearchBackend: Send {
     }
     fn stop_handle(&self) -> Arc<AtomicBool>;
     fn clear(&mut self);
+    /// Load or drop an opening book. Backends without a book accept the default.
+    fn set_book(
+        &mut self,
+        _book: Option<Arc<crate::opening::OpeningBook>>,
+        _seed: u64,
+        _plies: usize,
+    ) {
+    }
     fn search(
         &mut self,
         position: &mut Position,
@@ -157,6 +164,14 @@ impl SearchBackend for Searcher {
     }
     fn clear(&mut self) {
         Searcher::clear(self);
+    }
+    fn set_book(
+        &mut self,
+        book: Option<Arc<crate::opening::OpeningBook>>,
+        seed: u64,
+        plies: usize,
+    ) {
+        Searcher::set_book(self, book, seed, plies);
     }
     fn search(
         &mut self,

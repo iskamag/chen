@@ -1,0 +1,32 @@
+{
+  "base": {
+    "command": ["results/match-tools/stockfish/stockfish-linux-x86-64-universal"],
+    "options": {
+      "Threads": 1,
+      "Hash": 16,
+      "NumaPolicy": "none",
+      "UCI_LimitStrength": true,
+      "UCI_Elo": 1800,
+      "SyzygyProbeLimit": 0
+    },
+    "artifacts": {
+      "official-release-archive": "results/match-tools/stockfish.tar.gz",
+      "tool-manifest": "results/match-tools/manifest.json"
+    }
+  },
+  "candidate": {
+    "command": ["target/release/chen"],
+    "options": {
+      "Backend": "alphabeta",
+      "Eval": "tapered",
+      "Level": 20,
+      "Hash": 16,
+      "Book": true,
+      "BookSeed": 0,
+      "BookPlies": 12
+    },
+    "artifacts": {
+      "engine": "target/release/chen"
+    }
+  }
+}

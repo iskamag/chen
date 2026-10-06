@@ -500,6 +500,7 @@ impl SearchBackend for HipBoundedSearch {
             pv: fallback.into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         if fallback.is_none() {

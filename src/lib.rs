@@ -17,6 +17,7 @@ pub mod hip_root_pool;
 pub mod hip_root_retry;
 #[cfg(all(feature = "hip", target_os = "linux"))]
 pub mod neural;
+pub mod opening;
 pub mod resident;
 pub mod rules;
 pub mod search;
@@ -27,4 +28,5 @@ pub mod two_fidelity;
 
 pub use core::{Color, Move, Piece, Position, Undo, perft};
 pub use eval::{Evaluator, Material, Tapered};
+pub use opening::{BookMove, OpeningBook};
 pub use search::{SearchConfig, SearchLimits, SearchResult, Searcher};

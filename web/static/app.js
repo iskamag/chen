@@ -41,7 +41,7 @@ function mood(name, line) {
   $('chen-says').textContent=line;
 }
 function limits() {
-  return {backend:$('backend').value, delta_cp:Number($('delta').value), theta:Number($('theta').value), side:$('side').value, level:Number($('level').value), time_ms:Number($('time').value),
+  return {backend:$('backend').value, delta_cp:Number($('delta').value), theta:Number($('theta').value), side:$('side').value, level:Number($('level').value), time_ms:Number($('time').value), book:$('book').checked,
     depth:$('depth').value ? Number($('depth').value) : null,
     nodes:$('nodes').value ? Number($('nodes').value) : null};
 }
@@ -106,10 +106,10 @@ function render() {
   for(let i=0;i<state.moves.length;i+=2){const row=document.createElement('div');row.className='move-row';for(const text of [i/2+1+'.',state.san_moves?.[i]||state.moves[i],state.san_moves?.[i+1]||state.moves[i+1]||'']){const span=document.createElement('span');span.textContent=text;row.append(span);}$('moves').append(row);}
   $('moves').scrollTop=$('moves').scrollHeight;
   const t=state.telemetry;
-  const horizon=t?.drowsy ? `Explored ply ${t.drowsy.deepest_ply}` : `Depth ${t?.depth}`;
+  const horizon=t?.book ? (t.opening ? `Opening: ${t.opening}` : 'From the book') : (t?.drowsy ? `Explored ply ${t.drowsy.deepest_ply}` : `Depth ${t?.depth}`);
   $('telemetry').textContent=t ? `${horizon} · ${t.nodes.toLocaleString()} nodes · ${Math.round(t.nps/1000)}k nodes/s · ${t.ms} ms search · ${Math.round(state.queue_ms||0)} ms queue` : 'No search yet.';
   if(t?.drowsy) $('telemetry').textContent+=` · ${t.drowsy.fail_meow} fail-meows · ${t.drowsy.fail_zoomies} zoomies · ${t.drowsy.ignored_boring} ignored moves`;
-  $('search-description').textContent=state.backend==='drowsy' ? 'Drowsy Chen: an experimental drifting-score, selective attention search toy. Strength is unmeasured. Search time excludes queue wait.' : 'Native Chen CPU search, tapered evaluation, PVS enabled. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.';
+  $('search-description').textContent=state.backend==='drowsy' ? 'Drowsy Chen: an experimental drifting-score, selective attention search toy. Strength is unmeasured. Search time excludes queue wait.' : 'Native Chen CPU search, tapered evaluation, PVS enabled. The opening book plays varied named lines for the first plies, then search takes over. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.';
   $('revision').textContent='Build '+state.revision+' · '+(state.backend==='drowsy'?'Drowsy':'Serious')+' · resource level '+state.level;
 }
 function capitalize(s){return s[0].toUpperCase()+s.slice(1);}
@@ -127,7 +127,7 @@ async function click(name) {
     if(move==='cancel')return;
     selected=null;setBusy(true);
     const before=state;
-    try{const next=await submit('/api/move',{backend:state.backend||'serious',delta_cp:state.delta_cp??80,theta:state.theta??0.55,side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
+    try{const next=await submit('/api/move',{backend:state.backend||'serious',delta_cp:state.delta_cp??80,theta:state.theta??0.55,book:!!state.book,side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
     setBusy(false);render();return;
   }
   selected=selected===name ? null : (state.legal.some(m=>m.startsWith(name)) ? name : null);render();
@@ -152,7 +152,8 @@ fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').inner
 (async()=>{
   try{
     let saved;try{saved=JSON.parse(sessionStorage.getItem('chen-game'));}catch{}
-    state=saved && Array.isArray(saved.moves) && saved.pieces?.length===64 ? saved : await request('/api/state');
+    const restored=!!(saved && Array.isArray(saved.moves) && saved.pieces?.length===64);
+    state=restored ? saved : await request('/api/state');
     // Preserve games saved before the distracted backend was named Drowsy.
     if(state.backend==='catnip') state.backend='drowsy';
     if(state.telemetry?.catnip){state.telemetry.drowsy=state.telemetry.catnip;delete state.telemetry.catnip;}
@@ -162,7 +163,7 @@ fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').inner
       state.san_moves=replay.san_moves;
     }
     save();
-    $('backend').value=state.backend||'serious';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);drowsyControls();
+    $('backend').value=state.backend||'serious';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);drowsyControls();if(restored)$('book').checked=state.book!==false;
     flipped=state.human==='black';$('side').value=state.human;$('level').value=state.level;$('level-value').textContent=state.level;$('time').value=state.milliseconds;
     $('depth').value=state.depth_limit===64?'':state.depth_limit||'';$('nodes').value=state.node_limit||'';render();
   }catch(error){$('status').textContent='Could not connect: '+error.message;}

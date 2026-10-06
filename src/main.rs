@@ -1,5 +1,5 @@
 use chen::{
-    Position, SearchConfig, SearchLimits, Searcher,
+    OpeningBook, Position, SearchConfig, SearchLimits, Searcher,
     backend::{CpuBatchEvaluator, SearchBackend},
     core::perft,
     drowsy::{DrowsyConfig, DrowsySearch},
@@ -71,7 +71,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool|hip-root-retry] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--book] [--book-seed N] [--book-plies N] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool|hip-root-retry] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -292,6 +292,9 @@ fn uci() -> Result<(), String> {
     let mut selective_config = SelectiveConfig::default();
     let mut drowsy_config = DrowsyConfig::default();
     let mut level = 20;
+    let mut book: Option<Arc<OpeningBook>> = None;
+    let mut book_seed = 0u64;
+    let mut book_plies = 12usize;
     let mut engine = Some(make_backend(
         &backend_name,
         &eval_name,
@@ -330,6 +333,9 @@ fn uci() -> Result<(), String> {
                 output("option name BatchSize type spin default 4096 min 1 max 65536");
                 output("option name MaxPositions type spin default 250000 min 1 max 2000000");
                 output("option name Level type spin default 20 min 1 max 20");
+                output("option name Book type check default false");
+                output("option name BookSeed type spin default 0 min 0 max 4294967295");
+                output("option name BookPlies type spin default 12 min 1 max 40");
                 output("uciok");
             }
             "isready" => output("readyok"),
@@ -362,7 +368,36 @@ fn uci() -> Result<(), String> {
                     let mut next_selective = selective_config;
                     let mut next_drowsy = drowsy_config;
                     let mut next_level = level;
+                    let mut next_book = book.clone();
+                    let mut next_book_seed = book_seed;
+                    let mut next_book_plies = book_plies;
                     let valid = match name.as_str() {
+                        "book" => value
+                            .parse::<bool>()
+                            .ok()
+                            .map(|enabled| {
+                                next_book = if enabled {
+                                    book.clone()
+                                        .or_else(|| OpeningBook::bundled().map(Arc::new))
+                                } else {
+                                    None
+                                };
+                                if enabled && next_book.is_none() {
+                                    output("info string opening book unavailable in this build");
+                                }
+                            })
+                            .is_some(),
+                        "bookseed" => value
+                            .parse::<u64>()
+                            .ok()
+                            .map(|v| next_book_seed = v)
+                            .is_some(),
+                        "bookplies" => value
+                            .parse::<usize>()
+                            .ok()
+                            .filter(|v| (1..=40).contains(v))
+                            .map(|v| next_book_plies = v)
+                            .is_some(),
                         "level" => value
                             .parse::<u8>()
                             .ok()
@@ -466,7 +501,7 @@ fn uci() -> Result<(), String> {
                             next_selective,
                             next_drowsy,
                         ) {
-                            Ok(created) => {
+                            Ok(mut created) => {
                                 config = next;
                                 eval_name = next_eval;
                                 backend_name = next_backend;
@@ -474,6 +509,10 @@ fn uci() -> Result<(), String> {
                                 selective_config = next_selective;
                                 drowsy_config = next_drowsy;
                                 level = next_level;
+                                book = next_book;
+                                book_seed = next_book_seed;
+                                book_plies = next_book_plies;
+                                created.set_book(book.clone(), book_seed, book_plies);
                                 engine = Some(created);
                             }
                             Err(error) => {
@@ -484,6 +523,9 @@ fn uci() -> Result<(), String> {
                                 selective_config = next_selective;
                                 drowsy_config = next_drowsy;
                                 level = next_level;
+                                book = next_book;
+                                book_seed = next_book_seed;
+                                book_plies = next_book_plies;
                                 engine = None;
                                 output(format!("info string backend creation failed: {error}"));
                             }
@@ -521,6 +563,7 @@ fn uci() -> Result<(), String> {
                                 drowsy_config,
                             )?,
                         };
+                        searcher.set_book(book.clone(), book_seed, book_plies);
                         let stop = searcher.stop_handle();
                         stop.store(false, Ordering::Relaxed);
                         let mut p = position;
@@ -681,6 +724,9 @@ fn bench(args: &[String]) -> Result<(), String> {
     let mut time_limit = None;
     let mut eval = "tapered".to_string();
     let mut suite = "benches/positions.txt".to_string();
+    let mut book = false;
+    let mut book_seed = 0u64;
+    let mut book_plies = 12usize;
     let mut i = 0;
     while i < args.len() {
         match args[i].as_str() {
@@ -688,6 +734,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             "--no-qsearch" => config.quiescence = false,
             "--no-ordering" => config.move_ordering = false,
             "--pvs" => config.pvs = true,
+            "--book" => book = true,
             "--depth"
             | "--nodes"
             | "--movetime"
@@ -695,6 +742,8 @@ fn bench(args: &[String]) -> Result<(), String> {
             | "--suite"
             | "--hash"
             | "--backend"
+            | "--book-seed"
+            | "--book-plies"
             | "--batch-size"
             | "--max-positions"
             | "--selective-batch"
@@ -705,6 +754,10 @@ fn bench(args: &[String]) -> Result<(), String> {
                 let value = args.get(i + 1).ok_or("missing bench value")?;
                 match args[i].as_str() {
                     "--depth" => depth = value.parse::<u8>().map_err(|_| "invalid depth")?,
+                    "--book-seed" => book_seed = value.parse().map_err(|_| "invalid book seed")?,
+                    "--book-plies" => {
+                        book_plies = value.parse().map_err(|_| "invalid book plies")?
+                    }
                     "--aspiration" => {
                         config.aspiration_window = value
                             .parse::<u16>()
@@ -772,6 +825,11 @@ fn bench(args: &[String]) -> Result<(), String> {
     if positions.is_empty() {
         return Err("empty benchmark suite".into());
     }
+    // The book is parsed once and shared across the suite.
+    let book = book.then(|| OpeningBook::bundled().map(Arc::new)).flatten();
+    if book_seed != 0 && book.is_none() {
+        return Err("--book-seed needs an available opening book".into());
+    }
     for (name, mut p) in positions {
         let fen = p.to_fen();
         let mut searcher = make_backend(
@@ -782,6 +840,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             selective_config,
             drowsy_config,
         )?;
+        searcher.set_book(book.clone(), book_seed, book_plies);
         let result = searcher.search(
             &mut p,
             SearchLimits {
@@ -824,7 +883,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"drowsy\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"drowsy\":{},\"book\":{},\"book_seed\":{},\"book_plies\":{},\"opening\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -842,6 +901,13 @@ fn bench(args: &[String]) -> Result<(), String> {
             bounded,
             root_pool,
             drowsy,
+            result.book_move.is_some(),
+            book_seed,
+            book_plies,
+            result
+                .book_move
+                .as_ref()
+                .map_or_else(|| "null".to_owned(), |entry| json_string(&entry.name)),
             time_limit.map_or_else(|| "null".to_owned(), |t| t.as_millis().to_string()),
             node_limit.map_or_else(|| "null".to_owned(), |n| n.to_string()),
             config.tt && backend_name == "alphabeta",

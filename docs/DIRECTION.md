@@ -71,6 +71,9 @@ their state on the device. CPU implementations remain references for comparison.
 The new [PVS/aspiration controls](CLASSICAL_SEARCH.md) stay independently
 selectable; their completed16-game direct one-second diagnostic favors PVS
 6W/6D/4L, with broader play still needed before default adoption.
+An optional [opening book](OPENING_BOOK.md) plays varied public-domain opening
+lines for the first plies; it is off by default and changes neither search nor
+the default strength policy.
 CPU/proof controls, bounded reference and parallel GPU candidates were developed
 in isolated temporary worktrees. Their reviewed milestones are integrated on
 main; clean temporary worktrees are removed at the requested wrap-up, retaining

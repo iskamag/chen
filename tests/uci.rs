@@ -50,6 +50,21 @@ impl Engine {
             }
         }
     }
+    /// Collect every line up to and including the first starting with `prefix`.
+    fn collect_until(&self, prefix: &str) -> Vec<String> {
+        let mut lines = Vec::new();
+        loop {
+            let line = self
+                .lines
+                .recv_timeout(Duration::from_secs(10))
+                .expect("UCI response timeout");
+            let done = line.starts_with(prefix);
+            lines.push(line);
+            if done {
+                return lines;
+            }
+        }
+    }
 }
 impl Drop for Engine {
     fn drop(&mut self) {
@@ -200,6 +215,59 @@ fn selective_uci_reports_mixed_depth_and_recovers_after_invalid_option() {
             .starts_with("info depth 1 seldepth 1")
     );
     engine.until("bestmove ");
+    engine.send("quit");
+}
+
+#[test]
+fn opening_book_selects_legal_moves_and_toggles() {
+    let mut engine = Engine::new();
+    engine.send("uci");
+    engine.until("uciok");
+    engine.send("setoption name Book value true");
+    engine.send("position startpos");
+    engine.send("go depth 8");
+    let lines = engine.collect_until("bestmove ");
+    let info = lines
+        .iter()
+        .find(|l| l.contains(" book "))
+        .expect("book info line");
+    assert!(
+        info.contains("depth 0") && info.contains("score cp 0"),
+        "{info}"
+    );
+    let move_text = lines
+        .last()
+        .unwrap()
+        .split_whitespace()
+        .nth(1)
+        .unwrap()
+        .to_string();
+    let start = Position::startpos();
+    assert!(start.parse_uci_move(&move_text).is_ok(), "{move_text}");
+
+    // The book also answers deeper in the tree, following the played history.
+    let mut position = Position::startpos();
+    let first = position.parse_uci_move(&move_text).unwrap();
+    position.make_move(first);
+    // Chen is the side to move; let the opponent reply, then Chen's next move.
+    let reply = position.legal_moves()[0];
+    position.make_move(reply);
+    engine.send(&format!("position startpos moves {} {}", first, reply));
+    engine.send("go depth 8");
+    let lines = engine.collect_until("bestmove ");
+    let next = lines.last().unwrap().split_whitespace().nth(1).unwrap();
+    assert!(position.parse_uci_move(next).is_ok(), "{next}");
+
+    // Disabling the book restores a normal searched move.
+    engine.send("setoption name Book value false");
+    engine.send("position startpos");
+    engine.send("go depth 3");
+    let lines = engine.collect_until("bestmove ");
+    assert!(lines.iter().all(|l| !l.contains(" book ")), "{lines:?}");
+    assert!(
+        lines.iter().any(|l| l.starts_with("info depth 3 ")),
+        "{lines:?}"
+    );
     engine.send("quit");
 }
 

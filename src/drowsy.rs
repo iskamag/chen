@@ -263,6 +263,7 @@ impl SearchBackend for DrowsySearch {
             pv: moves.first().copied().into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         if terminal.is_some() {

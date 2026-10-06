@@ -2,6 +2,7 @@
 use crate::{
     core::{Move, Piece, Position},
     eval::{Evaluator, VALUES},
+    opening::{BookMove, OpeningBook, book_result},
     tt::{Bound, Entry, TranspositionTable},
 };
 use std::{
@@ -71,6 +72,8 @@ pub struct SearchResult {
     pub pv: Vec<Move>,
     pub stopped: bool,
     pub hashfull: usize,
+    /// Set when an opening book supplied `best_move` instead of search.
+    pub book_move: Option<BookMove>,
     /// Mixed-depth arena telemetry. Absent for uniform-depth backends.
     pub selective: Option<crate::selective::SelectiveStats>,
 }
@@ -88,10 +91,16 @@ impl SearchResult {
         let selective = self.selective.map_or_else(String::new, |s| {
             format!(" seldepth {}", s.maximum_frontier_depth)
         });
+        let book = if self.book_move.is_some() {
+            " book"
+        } else {
+            ""
+        };
         format!(
-            "info depth {}{} score {} nodes {} nps {} hashfull {} time {} pv {}",
+            "info depth {}{}{} score {} nodes {} nps {} hashfull {} time {} pv {}",
             self.depth,
             selective,
+            book,
             score,
             self.nodes,
             self.nps(),
@@ -119,6 +128,13 @@ pub struct Searcher {
     killers: [[Option<Move>; 2]; MAX_PLY],
     quiet_history: [[i32; 64]; 64],
     stats: SearchStats,
+    /// Book probe depth and, when loaded, the book itself. Disabled by default.
+    book: Option<BookSetting>,
+}
+struct BookSetting {
+    book: std::sync::Arc<OpeningBook>,
+    max_plies: usize,
+    seed: u64,
 }
 impl Searcher {
     pub fn new(evaluator: Box<dyn Evaluator>, config: SearchConfig) -> Self {
@@ -137,6 +153,7 @@ impl Searcher {
             killers: [[None; 2]; MAX_PLY],
             quiet_history: [[0; 64]; 64],
             stats: SearchStats::default(),
+            book: None,
         }
     }
     pub fn config(&self) -> &SearchConfig {
@@ -162,6 +179,23 @@ impl Searcher {
     }
     pub fn stop_handle(&self) -> Arc<AtomicBool> {
         self.stop.clone()
+    }
+    /// Enable the opening book, or disable it with `None`. `seed` of zero picks
+    /// the most common book move; any other seed varies the choice per game.
+    pub fn set_book(
+        &mut self,
+        book: Option<std::sync::Arc<OpeningBook>>,
+        seed: u64,
+        max_plies: usize,
+    ) {
+        self.book = book.map(|book| BookSetting {
+            book,
+            max_plies: max_plies.clamp(1, 64),
+            seed,
+        });
+    }
+    pub fn book_enabled(&self) -> bool {
+        self.book.is_some()
     }
     pub fn clear(&mut self) {
         self.table.clear();
@@ -205,9 +239,20 @@ impl Searcher {
             pv: moves.first().copied().into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         if !moves.is_empty() {
+            // History is previous positions only; its length is the ply count.
+            if let Some(setting) = &self.book
+                && history.len() < setting.max_plies
+                && let Some(entry) = setting.book.probe(p, history.len(), setting.seed)
+                && moves.contains(&entry.mv)
+            {
+                let result = book_result(entry);
+                report(&result);
+                return result;
+            }
             for depth in 1..=self.limits.depth.clamp(1, 64) {
                 let mut delta = if depth > 1 && self.config.aspiration_window > 0 {
                     i32::from(self.config.aspiration_window).min(INF)

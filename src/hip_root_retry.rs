@@ -522,6 +522,7 @@ impl SearchBackend for HipRootRetry {
             pv: fallback.into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         if bootstrap.terminal != 0 {
@@ -583,6 +584,7 @@ mod tests {
             pv: vec![m],
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         let mut s = Snapshot {

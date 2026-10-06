@@ -204,6 +204,7 @@ impl SearchBackend for SelectiveSearch {
             pv: legal.first().copied().into_iter().collect(),
             stopped: false,
             hashfull: 0,
+            book_move: None,
             selective: None,
         };
         let config = SelectiveConfig {

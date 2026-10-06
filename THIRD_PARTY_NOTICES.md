@@ -15,3 +15,11 @@ browser build:
 
 The archived Coz runtime and Rust marker license notices are retained in
 `docs/evidence/coz-cpu-2026-10-03/licenses/`.
+
+## Opening book data
+
+The optional opening book is built from the Lichess
+[`chess-openings`](https://github.com/lichess-org/chess-openings) dataset (ECO
+volumes `a.tsv` … `e.tsv`). It is a collection of facts released under the
+**CC0 1.0 Public Domain Dedication**. `build.rs` fetches the pinned revision at
+build time; the data is not committed. See [the opening book notes](docs/OPENING_BOOK.md).

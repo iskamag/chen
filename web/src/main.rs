@@ -3,19 +3,37 @@ mod notation;
 use chen::backend::SearchBackend;
 use chen::drowsy::{DrowsyConfig, DrowsySearch};
 use chen::strength::{BudgetStrength, StrengthPolicy};
-use chen::{Color, Position, SearchConfig, SearchLimits, Searcher, Tapered};
+use chen::{Color, OpeningBook, Position, SearchConfig, SearchLimits, Searcher, Tapered};
 use serde_json::{Value, json};
 use std::{
     collections::HashMap,
     io::{Read, Write},
     net::{TcpListener, TcpStream},
     sync::{
-        Arc, Mutex,
+        Arc, Mutex, OnceLock,
         atomic::{AtomicBool, AtomicUsize, Ordering},
         mpsc::{self, SyncSender},
     },
     time::{Duration, Instant},
 };
+
+/// Half-moves of book play offered before the search takes over.
+const BOOK_PLIES: usize = 12;
+
+/// The bundled book is parsed once and shared by every game.
+fn bundled_book() -> Option<Arc<OpeningBook>> {
+    static BOOK: OnceLock<Option<Arc<OpeningBook>>> = OnceLock::new();
+    BOOK.get_or_init(|| OpeningBook::bundled().map(Arc::new))
+        .clone()
+}
+
+fn random_seed() -> u64 {
+    let mut bytes = [0u8; 8];
+    match std::fs::File::open("/dev/urandom").and_then(|mut file| file.read_exact(&mut bytes)) {
+        Ok(()) => u64::from_le_bytes(bytes),
+        Err(_) => 0,
+    }
+}
 
 enum WebSearch {
     Serious(Box<Searcher>),
@@ -26,6 +44,12 @@ impl WebSearch {
         match self {
             Self::Serious(searcher) => searcher.stop_handle(),
             Self::Drowsy(searcher) => searcher.stop_handle(),
+        }
+    }
+    fn set_book(&mut self, book: Option<Arc<OpeningBook>>, seed: u64) {
+        match self {
+            Self::Serious(searcher) => searcher.set_book(book, seed, BOOK_PLIES),
+            Self::Drowsy(searcher) => searcher.set_book(book, seed, BOOK_PLIES),
         }
     }
     fn search(
@@ -64,6 +88,8 @@ struct Game {
     backend: &'static str,
     delta_cp: i32,
     theta: f32,
+    book: bool,
+    book_seed: u64,
     searcher: WebSearch,
     telemetry: Value,
 }
@@ -82,6 +108,8 @@ impl Game {
             backend: "serious",
             delta_cp: 80,
             theta: 0.55,
+            book: false,
+            book_seed: 0,
             searcher: WebSearch::Serious(Box::new(Searcher::new(
                 Box::new(Tapered),
                 SearchConfig {
@@ -144,8 +172,10 @@ impl Game {
         let result = self
             .searcher
             .search(&mut self.position, limits, &self.history)?;
+        let opening = result.book_move.as_ref().map(|entry| entry.name.clone());
         self.telemetry = json!({ "depth": result.depth, "nodes": result.nodes,
             "nps": result.nps(), "ms": result.elapsed.as_millis(),
+            "book": result.book_move.is_some(), "opening": opening,
             "pv": result.pv.iter().map(ToString::to_string).collect::<Vec<_>>(),
             "drowsy": self.searcher.drowsy_stats() });
         if let Some(mv) = result.best_move {
@@ -173,7 +203,7 @@ impl Game {
             "check": self.position.is_in_check(self.position.side_to_move()),
             "outcome": self.outcome(), "moves": self.moves, "san_moves": self.san_moves, "telemetry": self.telemetry,
             "revision": env!("CHEN_REVISION"), "level": self.level, "milliseconds": self.milliseconds, "depth_limit": self.depth_limit, "node_limit": self.node_limit,
-            "backend": self.backend, "delta_cp": self.delta_cp, "theta": self.theta })
+            "backend": self.backend, "delta_cp": self.delta_cp, "theta": self.theta, "book": self.book })
     }
     fn from_request(path: &str, data: Value) -> Result<Self, String> {
         let mut game = Self::new();
@@ -225,12 +255,17 @@ impl Game {
                 .filter(|n| n.is_finite() && (0.0..=1.0).contains(n))
                 .ok_or("Drowsy attention must be 0–1")? as f32,
         };
+        game.book = data.get("book").and_then(Value::as_bool).unwrap_or(false);
+        game.book_seed = random_seed();
         if game.backend == "drowsy" {
             game.searcher = WebSearch::Drowsy(Box::new(DrowsySearch::new(DrowsyConfig {
                 delta_cp: game.delta_cp,
                 theta: game.theta,
                 ..Default::default()
             })?));
+        }
+        if game.book {
+            game.searcher.set_book(bundled_book(), game.book_seed);
         }
         if path == "/api/new" {
             return Ok(game);

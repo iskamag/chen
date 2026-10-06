@@ -347,6 +347,64 @@ fn alpha_beta_matches_exhaustive_minimax() {
 }
 
 #[test]
+fn opening_book_bypasses_search_and_respects_ply_cap() {
+    use std::sync::Arc;
+    let book = Arc::new(chen::OpeningBook::bundled().expect("bundled opening book"));
+    let mut position = Position::startpos();
+    let before = position;
+    let mut searcher = Searcher::new(Box::new(Tapered), SearchConfig::default());
+    searcher.set_book(Some(book.clone()), 0, 12);
+    assert!(searcher.book_enabled());
+    let result = searcher.search(
+        &mut position,
+        SearchLimits {
+            depth: 4,
+            nodes: None,
+            time: None,
+        },
+        &[],
+        |_| {},
+    );
+    let entry = result.book_move.expect("book move");
+    assert_eq!(result.best_move, Some(entry.mv));
+    assert_eq!(result.nodes, 0, "book play must not search");
+    assert_eq!(result.depth, 0);
+    assert!(!entry.name.is_empty());
+    assert_eq!(position, before, "search must restore the position");
+    assert!(before.legal_moves().contains(&entry.mv));
+
+    // Past the ply cap the book is ignored and a real search runs.
+    let past_cap = vec![0u64; 12];
+    let result = searcher.search(
+        &mut position,
+        SearchLimits {
+            depth: 2,
+            nodes: None,
+            time: None,
+        },
+        &past_cap,
+        |_| {},
+    );
+    assert!(result.book_move.is_none());
+    assert!(result.nodes > 0);
+
+    // Without a book, the same position is searched normally.
+    searcher.set_book(None, 0, 12);
+    assert!(!searcher.book_enabled());
+    let result = searcher.search(
+        &mut position,
+        SearchLimits {
+            depth: 2,
+            nodes: None,
+            time: None,
+        },
+        &[],
+        |_| {},
+    );
+    assert!(result.book_move.is_none() && result.nodes > 0);
+}
+
+#[test]
 fn experiment_changes_invalidate_cached_scores() {
     let mut p = Position::startpos();
     let mut s = Searcher::new(Box::new(Tapered), SearchConfig::default());

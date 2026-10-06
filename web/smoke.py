@@ -172,6 +172,19 @@ class ApiSmoke(Server):
         self.assertEqual(state["san_moves"], ["e4", "e5", "Nf3", "Nc6", "Bc4", "Nf6", "O-O"])
         self.assertIsNone(state["telemetry"])
 
+    def test_08_opening_book_replies_instantly(self):
+        # Chen is black, so she opens from the book without searching.
+        state = self.done(self.submit(side="black", book=True))["state"]
+        self.assertEqual(len(state["moves"]), 1)
+        self.assertTrue(state["telemetry"]["book"])
+        self.assertIsInstance(state["telemetry"]["opening"], str)
+        self.assertLess(state["telemetry"]["ms"], 900)
+        self.assertTrue(state["book"])
+        # The toggle is off by default and never blocks a normal search.
+        plain = self.done(self.submit(side="black", time_ms=50))["state"]
+        self.assertFalse(plain["telemetry"]["book"])
+        self.assertGreater(plain["telemetry"]["nodes"], 0)
+
 
 class PoolSmoke(Server):
     workers = 6

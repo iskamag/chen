@@ -31,6 +31,11 @@ captures, promotions and check/mate marks. Previous saved histories are
 reconstructed on reload. Chen's pounce reaction celebrates her own captures.
 The time menu offers 0.1, 0.5, 1 and 5 seconds; old 3-second settings become 1 second.
 
+**Open from the book** is on by default: Chen plays varied named opening lines
+from the [public-domain Lichess opening dataset](../docs/OPENING_BOOK.md) for the
+first few plies, seeded per game so friends see different starts, then search
+takes over. Uncheck it to make her search every move from the first.
+
 Promotion offers all four pieces. Threefold repetition and the fifty-move rule
 are automatically claimed. The board is keyboard operable using Tab and Enter.
 

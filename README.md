@@ -5,7 +5,10 @@
 A chess engine written from scratch in Rust, with a playable browser app and
 experimental GPU search backends. The default CPU engine has no runtime dependencies.
 It supports UCI, legal move generation, iterative alpha-beta search, quiescence,
-transposition tables, and material or tapered evaluation.
+transposition tables, and material or tapered evaluation. An optional opening
+book built from the public-domain Lichess `chess-openings` dataset is fetched at
+build time and can be enabled per game; see
+[the opening book notes](docs/OPENING_BOOK.md).
 
 The browser includes serious Chen and **Drowsy Chen**, a deliberately distracted
 rollout experiment. Resource levels are not calibrated ratings.
