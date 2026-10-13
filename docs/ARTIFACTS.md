@@ -20,3 +20,10 @@ summaries with source and environment provenance. Store datasets, model weights,
 executables, and full profiling output outside Git. Source revision identifiers
 predating the cleanup refer to the original history; the rewrite mapping is
 recorded in [history-commit-map.txt](history-commit-map.txt).
+
+The former `chen-neural` worktree was consolidated on 2026-10-13. Its local
+datasets, checkpoints and results are preserved outside Git in a compressed
+archive with a per-file SHA256 manifest and verified contents. The disposable
+Python environment and bytecode caches were excluded. Source drafts are retained
+in the main checkout; frozen evidence remains unchanged. Rebuild a development
+environment and supply the external artifacts before resuming an old study.

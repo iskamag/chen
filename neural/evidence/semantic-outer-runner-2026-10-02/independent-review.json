@@ -1,0 +1,66 @@
+{
+  "kind": "independent_semantic_outer_runner_review_v1",
+  "status": "pass_after_two_bounded_fixes_actual_GPU_execution_unperformed",
+  "original_freeze_sha256": "3a4566d10578d07e9076617e441984cb2bfff420d1594ef04a99ee9fc478d109",
+  "source_sha256": {
+    "neural/run_semantic_corpus_study.py": "d7f110745237a8f1453bb1e0ea8ad274ece7fbc1d44de2513809b7e7810a66ad",
+    "neural/tests/test_run_semantic_corpus_study.py": "20ad7e5ab416ce40426deb0d9808d56216a26414c3a43c7af9822aa4988b1829",
+    "docs/SEMANTIC_CORPUS_STUDY.md": "7614e6b12217ef5bca2b93fb65d13b50e20e1c221bcfcd4c24e459bc625c4dbe"
+  },
+  "phase_kernel_sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+  "findings": [
+    {
+      "id": "kernel_suite_corpus_identity",
+      "original_reproduced": true,
+      "severity": "protocol correctness",
+      "fix": "suite proposal rejects kernel TRAIN and validation pins which differ from actual immutable split manifest hashes",
+      "regression": "new mock proposals reject both mismatches; cold actual metadata proposal rejects both mismatches"
+    },
+    {
+      "id": "final_work_deadline",
+      "original_reproduced": true,
+      "severity": "bounded-run admission",
+      "fix": "check completed evaluation after final GPU-draining reduction, and explicit admission/calibration/freeze/selection/NONE/TEST completion boundaries",
+      "regression": "new final standalone/root probes reject completion at11 underdeadline10"
+    }
+  ],
+  "independent_CPU_tests": {
+    "before": 8,
+    "after": 10,
+    "failed": 0,
+    "training": false,
+    "actual_labels_evaluated": false
+  },
+  "checked_contracts": {
+    "schedule": "8 anchor phases,32 transition phases;two paired seeds;whole legal-root groups and standalone-only scalar fitting",
+    "freeze": "CPU cloned states persisted;all8+32bundle hashed and reloaded beforevalidation;selectedpair hashed beforeTEST;failedphase noheldoutpromotion",
+    "none": "NONE branch creates selection/complete without loading TEST or producing testgate",
+    "evaluation": "anchor standalone interval distance, ordinary masks; transition root interval regret/agreement; equal observations/roots weighting across unequal batches",
+    "causal": "learned root branch receives rootfeatures and legalactions only; exactchildfeatures enter baseline or detached diagnostic/loss branches",
+    "blind": "shared phase/model machinery caches rootresidual across complete siblings; exactsame-materialties retained",
+    "witness": "actual f7e96742... pinnednative Material/Tapered/hash/terminal witness structurally admitted;allterminal states must equalcertified draw support",
+    "source": "proposalbinds13explicitabsolute sourcefiles including runner;kernel12dependencyclosure exact;runtimepath rebinding requiresfresh reviewedkernel/suiteproposal",
+    "teacher": "parentPV conversion and standalone frames remain distinct;drawutility0 override separate from ordinary scalar support"
+  },
+  "limitations": [
+    "No actual corpus training, heldout quality metrics or GPU timing performed by this review.",
+    "Source hashes identify ordinary Python source; not an adversarial runtime isolation boundary. Fresh staged interpreter and matching paths remain required.",
+    "Wall checks reject over-budget completion after work drains; they are not preemptive interruption of a hung HIP call. Root-owned external watchdog remains required.",
+    "Runtime baseline witness must be rebuilt or path-rebound with identical native/source/artifact hashes and mechanically admitted before sealing."
+  ],
+  "next_directions": [
+    "Stage sourceclosure,corpus manifests,native witness/artifacts inside actualROCm runtime;verifyallhashes independently.",
+    "Regeneratekernel andouterproposals from those runtimepaths;cross-checkdataset/sourceidentity;rootseal both onlyafterreview.",
+    "Run exactlyone externallywatchedattempt;archivefailurewithoutresume/retry;noselectedmodel meansleaveTESTclosed.",
+    "Archivephase/checkpoint hashes/runtime/selection beforeconsidering deploymentorpairedstrength; keeptransformerfollowup a separatesealedexperiment."
+  ],
+  "artifacts_sha256": {
+    "independent-failure-probes.py": "d190e6371e09ee01241ac058b762cfb80b95b325dac89931f5860c1ab205c0fb",
+    "independent-failure-probes.jsonl": "963604ef3198cca3dc35d23ee4a87f2f5aca785e981ff417f5b137e8bcefbc18",
+    "independent-unit-tests.log": "e3dc8ef776c52d676e20377a995aff319154652d67a4c705dd6855f39f77b4fa",
+    "independent-unit-tests-fixed.log": "2ebd16d32a27a062f3e939bd371b46d9137cb1659dc96c22ca2d4c697b9c8a2a",
+    "independent-fixed-admission.py": "93f5c1f2dc8cab01746bc504b4689cfe0c4b3cc0f3ca4b629ff6b695db695100",
+    "independent-fixed-admission.jsonl": "08a89b9a5e76026a6d0a7a1af1d2293da6192ec74f97594c3cddb2c1a705b879",
+    "host-reviewed-unsealed-proposal.json": "6c6859d0f913f7f55a43c707ca85b028fcf34415dbe7a7f3adf825dd87888fd2"
+  }
+}

@@ -1,5 +1,12 @@
 # Research checkpoint — 2026-10-03
 
+2026-10-13 consolidation: `research/neural` is merged into `main`; optional
+experiments now live in `neural/` in the engine checkout. The separate worktree
+is retired after preserving its source drafts and archiving local results.
+Current neural direction is the compact recurrent tactical/exchange processor;
+large-transformer training is deferred. Results below describe historical runs,
+not new hardware validation or resumed training.
+
 Paused at the user's requested milestone after saving search recovery, bucketed
 tactical ingress and the first learning chunk. [HANDOFF](../HANDOFF.md) records
 the next bounded experiments and retained runtime; the full goal is unfinished.
@@ -57,7 +64,7 @@ checks 1,774 legal plies and all rule endpoints; no Lichess calibration follows.
 The single 1367 ms first-move wall-time outlier remains to be instrumented.
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) is the current next-work
 authority: experimental device-owned alpha-beta/quiescence, then PVS/TT and
-dependency work allocation; a scalable transformer and recurrent tactical processor before
+dependency work allocation; a compact recurrent tactical processor before
 persistent memory/adaptive refresh. CPU and GPU matches used different searches
 and are not a calibrated head-to-head rating gap. Further dispatch/selector
 microtuning is deprioritized.
@@ -138,7 +145,7 @@ coverage, memory ordering and publication refinement remain explicit premises.
 Neural `c6b479c` collects32 fresh TRAIN-family strategic teacher roots:21 base
 queries produce complete ordinary packets/410 legal action labels; decisive
 queries are retained as missing, without substitution. Neural `7607c36` adds
-[closed restricted-exchange labels](../../../chen-neural/docs/EXCHANGE_TARGETS.md):
+[closed restricted-exchange labels](../EXCHANGE_TARGETS.md):
 3175 closed targets from3864 complete initial capture/promotion actions;1172
 returns differ from immediate material.604 outside-task check evasions and85
 terminals carry no ordinary CP. This is not unrestricted chess value.
@@ -176,7 +183,7 @@ remain small with no spills. Six counter passes complete but wave/occupancy
 metrics fail sanity checks; achieved utilization remains unestablished. The
 default wave32 kernels are unchanged.
 
-Neural `21d19f9` records the [whole-model precision/capture controls](../../../chen-neural/docs/PRECISION_CAPTURE.md):
+Neural `21d19f9` records the [whole-model precision/capture controls](../PRECISION_CAPTURE.md):
 eight same-checkpoint representatives, 80 graphs and 160 exact own-eager checks.
 Captured INT8 wins all four batch-one anchors by 1.03–1.20x, loses all anchors
 at batches32/256, and nearly ties conditioned complete-root FP32. Native/Torch
@@ -218,7 +225,7 @@ milestones do not satisfy fully GPU neural deployment or the eventual rating
 requirement.
 
 Neural `1ff620b` adds the
-[sparse recurrent tactical processor](../../../chen-neural/docs/TACTICAL_OPERATOR.md):
+[sparse recurrent tactical processor](../TACTICAL_OPERATOR.md):
 piece/square/complete-action nodes, supplied exact typed edges, shared 1/2/4/8
 iterations, parent-frame readouts and a same-model exact-child control. Nine
 focused CPU tests pass; default 18,850 parameters include 17,248 processor
@@ -236,7 +243,7 @@ parameter/MAC reports and caller allocation budgets. Five descriptor bands span
 1.087M through 264.140M value-path parameters (2.078M through 274.033M stored).
 Twenty focused CPU fixtures check count/arithmetic reports and budget admission;
 no large model has been allocated or trained. The
-[scaling study](../../../chen-neural/docs/SCALING_STUDY.md) selects converged or
+[scaling study](../SCALING_STUDY.md) selects converged or
 overtrained models at inference budgets and keeps compute-constrained training
 separate. [Synthetic data design](SYNTHETIC_DATA_PROGRAM.md) defines cheap exact
 targets, bounded tactical traces, stronger complete-root decisions and failure
@@ -365,7 +372,7 @@ stall. These finite controls establish no cause, failure rate or production fix;
 warming/history and oracle work remain confounded. Production policy is unchanged.
 
 Neural commit `090f2a4` retains a
-[predeclared 27-run value study](../../../chen-neural/docs/VALUE_STUDY.md): three
+[predeclared 27-run value study](../VALUE_STUDY.md): three
 encoders, three readouts, three seeds, 2048 updates each on the same resident
 corpus/sample streams. All learned runs trail material's 227.1 cp heldout MAE.
 Residual heads reach 232.0/246.9/241.4 cp mean MAE; none improves aggregate
@@ -375,7 +382,7 @@ gap suggest specific regularization/ranking experiments on a fresh split;
 saturation was not observed. These adapters remain outside production inference.
 
 Neural commit `ce63edd` retains the subsequent
-[strategic transport study](../../../chen-neural/docs/STRATEGIC_STUDY.md), which
+[strategic transport study](../STRATEGIC_STUDY.md), which
 completes 30 resident training runs over three encoders, five action/anchor
 controls and two seeds. Prediction receives the root and legal action only;
 exact piece transport, material and pseudoattack covariates are declared priors.
@@ -641,7 +648,7 @@ by 8 bytes per node. This is a frozen comparison arm; production still uses the
 committed packed cache.
 
 Neural commit `d8f886b` adds a separate
-[multihead semantic transformer control](../../../chen-neural/docs/SEMANTIC_TRANSFORMER_CONTROL.md)
+[multihead semantic transformer control](../SEMANTIC_TRANSFORMER_CONTROL.md)
 with eight role tokens, exact empty-key exclusion, preserved EP context, and
 zero-initial current-state symbolic residual projections. Seven CPU mechanics
 tests pass after independent review caught and fixed an extreme-logit masking
@@ -658,7 +665,7 @@ final independent archive admission and equal-work score/PV timing checks are
 pending. The current Torch callback still requires an explicit host boundary;
 native symbolic and INT8 graph phases are the next integration work. The
 whole-model TRAIN-only INT8 diagnostic is committed as neural `c2e80fe`, with
-[94 hash-bound payloads](../../../chen-neural/neural/evidence/int8-whole-model-gfx1030-2026-10-03/README.md).
+[94 hash-bound payloads](../../neural/evidence/int8-whole-model-gfx1030-2026-10-03/README.md).
 All 40 frozen models complete in 110.416 seconds; the watchdog is terminal and
 its child/group are absent. Exact FP32 value-only latent/CP parity passes;
 eight fresh CPU fixtures also pass. INT8 changes 97 of 7,456 model-root choices,

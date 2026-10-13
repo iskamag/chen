@@ -1,0 +1,41 @@
+{
+  "kind": "predeclared_resident_value_head_workload",
+  "strength_evidence": false,
+  "corpus_seed": 20261001,
+  "training_families": 128,
+  "heldout_families": 32,
+  "initialization_and_sample_seeds": [
+    20261001,
+    20261002,
+    20261003
+  ],
+  "architectures": [
+    "square",
+    "relation",
+    "plan"
+  ],
+  "heads": [
+    "three_logit",
+    "direct_cp",
+    "material_residual"
+  ],
+  "steps_per_run": 2048,
+  "total_runs": 27,
+  "batch_size": 128,
+  "width": 32,
+  "depth": 1,
+  "teacher_tree_depth": 3,
+  "remaining_parent_horizon": 2,
+  "evaluator": 1,
+  "arena_capacity": 250000,
+  "loss": "ordinary-only SmoothL1(value_cp/800, teacher_cp/800)",
+  "mate_exclusion_absolute_cp": 29000,
+  "criterion": "compare heldout ordinary CP MAE and observed nonterminal child-order regret to material; preserve negative or tradeoff result, no extension based on heldout result",
+  "pilot_scope": "8train/4heldout families,one seed,64steps per combination; mechanics/timing only",
+  "estimated_gpu_training_seconds": 250,
+  "throughput_scope": "research run; parent CPU-only match tasks may be concurrent; not dedicated throughput benchmark",
+  "source_sha256": {
+    "neural/value_study.py": "9ce8b91d260e6e0c60b126ded6ad251fd758b6c109788063c2f209c1b29728a7",
+    "neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+  }
+}

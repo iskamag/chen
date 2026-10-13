@@ -1,0 +1,1306 @@
+{
+  "checkpoint_sha256": "ef8c3c64611009584a7d0facf2d25ccba01eef8293f6afa45ec9552ec1a88f94",
+  "control": "conditioned",
+  "fidelity": {
+    "fp32_value": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "roots": 233
+    },
+    "int8_fused": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 1,
+        "at_most_10": 1,
+        "at_most_5": 1,
+        "exact_ties": 0,
+        "maximum": 0.0565185546875,
+        "mean": 0.0565185546875,
+        "minimum": 0.0565185546875
+      },
+      "changed_roots": 1,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.0291748046875,
+        "mean_absolute": 1.727148875265424,
+        "mean_squared": 4.631881357237769
+      },
+      "first_canonical_action_agreement": 0.9957081545064378,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02830493450164795,
+        "mean_absolute": 0.0051735158627585825,
+        "mean_squared": 4.1332394880375804e-05
+      },
+      "roots": 233
+    },
+    "int8_hybrid": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 1,
+        "at_most_10": 1,
+        "at_most_5": 1,
+        "exact_ties": 0,
+        "maximum": 0.0565185546875,
+        "mean": 0.0565185546875,
+        "minimum": 0.0565185546875
+      },
+      "changed_roots": 1,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.0291748046875,
+        "mean_absolute": 1.727148875265424,
+        "mean_squared": 4.631881357237769
+      },
+      "first_canonical_action_agreement": 0.9957081545064378,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02830493450164795,
+        "mean_absolute": 0.0051735158627585825,
+        "mean_squared": 4.1332394880375804e-05
+      },
+      "roots": 233
+    },
+    "int8_multi": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 1,
+        "at_most_10": 1,
+        "at_most_5": 1,
+        "exact_ties": 0,
+        "maximum": 0.0565185546875,
+        "mean": 0.0565185546875,
+        "minimum": 0.0565185546875
+      },
+      "changed_roots": 1,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.0291748046875,
+        "mean_absolute": 1.727148875265424,
+        "mean_squared": 4.631881357237769
+      },
+      "first_canonical_action_agreement": 0.9957081545064378,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02830493450164795,
+        "mean_absolute": 0.0051735158627585825,
+        "mean_squared": 4.1332394880375804e-05
+      },
+      "roots": 233
+    }
+  },
+  "phase": "transition",
+  "separate_instrumented_linear_profile": {
+    "fp32_value": [
+      {
+        "event_us": 58.20000171661377,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": false,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 42.840998619794846,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 28.759999200701714,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 36.12000122666359,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 35.88100150227547,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 48.200998455286026,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 43.5199998319149,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 38.88000175356865,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 47.120001167058945,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 33.319998532533646,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": false,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 34.71999987959862,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 43.800998479127884,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": false,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 46.59999907016754,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": false,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 52.20000073313713,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": false,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 47.72099852561951,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": false,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 44.920001178979874,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": false,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 45.520998537540436,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": false,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_fused": [
+      {
+        "event_us": 69.76000219583511,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 67.80099868774414,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.7210031747818,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.880999356508255,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.96000158786774,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 68.76099854707718,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 68.87999922037125,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 62.67999857664108,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 67.16100126504898,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 34.76100042462349,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 31.959999352693558,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 12.280000373721123,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 43.68000105023384,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 59.56000089645386,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 72.4010020494461,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 59.801001101732254,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 66.72000139951706,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_hybrid": [
+      {
+        "event_us": 67.84000247716904,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 61.36099994182587,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 58.40099975466728,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 68.80100071430206,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 55.36099895834923,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 68.80100071430206,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 59.960998594760895,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 63.00099939107895,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 67.35999882221222,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 35.39999946951866,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 73.04099947214127,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 59.04100090265274,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 72.80000299215317,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 61.08099967241287,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 70.68099826574326,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 61.04100123047829,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 58.639999479055405,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_multi": [
+      {
+        "event_us": 217.60199964046478,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 185.68100035190582,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 189.80099260807037,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 196.44099473953247,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 194.0010040998459,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 191.32199883460999,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 186.64099276065826,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 186.72099709510803,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 187.48199939727783,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 169.24099624156952,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 192.3619955778122,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 191.32100045681,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 258.88198614120483,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 203.4820020198822,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 213.72200548648834,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 199.04200732707977,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 189.40100073814392,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ]
+  },
+  "setup": {
+    "int8_fused": {
+      "event_ms": 8.12934398651123,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 8.170183980837464
+    },
+    "int8_hybrid": {
+      "event_ms": 9.07203197479248,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 9.105303994147107
+    },
+    "int8_multi": {
+      "event_ms": 8.494668006896973,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 8.532783976988867
+    }
+  },
+  "timing_root_plan": {
+    "K": 32,
+    "batch": 4,
+    "key": 18,
+    "selection": "closest_K32_then_largest_batch_then_key_no_labels"
+  },
+  "timings": {
+    "complete_root": {
+      "fp32_full": {
+        "event_us_median": 3644.348907470703,
+        "samples": [
+          {
+            "event_us": 3759.8377227783203,
+            "iterations": 10,
+            "synchronized_wall_us": 3765.495799598284
+          },
+          {
+            "event_us": 3628.7246704101562,
+            "iterations": 10,
+            "synchronized_wall_us": 3636.74669933971
+          },
+          {
+            "event_us": 3644.348907470703,
+            "iterations": 10,
+            "synchronized_wall_us": 3651.339700445533
+          }
+        ],
+        "synchronized_wall_us_median": 3651.339700445533
+      },
+      "fp32_value": {
+        "event_us_median": 3290.9778594970703,
+        "samples": [
+          {
+            "event_us": 3544.4839477539062,
+            "iterations": 10,
+            "synchronized_wall_us": 3550.6166983395815
+          },
+          {
+            "event_us": 3290.9778594970703,
+            "iterations": 10,
+            "synchronized_wall_us": 3297.086598468013
+          },
+          {
+            "event_us": 3224.961471557617,
+            "iterations": 10,
+            "synchronized_wall_us": 3229.228500276804
+          }
+        ],
+        "synchronized_wall_us_median": 3297.086598468013
+      },
+      "int8_fused": {
+        "event_us_median": 3988.687515258789,
+        "samples": [
+          {
+            "event_us": 3988.687515258789,
+            "iterations": 10,
+            "synchronized_wall_us": 3994.2068979144096
+          },
+          {
+            "event_us": 4136.252975463867,
+            "iterations": 10,
+            "synchronized_wall_us": 4141.832000459544
+          },
+          {
+            "event_us": 3863.638687133789,
+            "iterations": 10,
+            "synchronized_wall_us": 3869.831800693646
+          }
+        ],
+        "synchronized_wall_us_median": 3994.2068979144096
+      },
+      "int8_hybrid": {
+        "event_us_median": 4077.0645141601562,
+        "samples": [
+          {
+            "event_us": 4082.3165893554688,
+            "iterations": 10,
+            "synchronized_wall_us": 4089.8369014030322
+          },
+          {
+            "event_us": 4077.0645141601562,
+            "iterations": 10,
+            "synchronized_wall_us": 4082.8969998983666
+          },
+          {
+            "event_us": 3811.2144470214844,
+            "iterations": 10,
+            "synchronized_wall_us": 3815.9579009516165
+          }
+        ],
+        "synchronized_wall_us_median": 4082.8969998983666
+      },
+      "int8_multi": {
+        "event_us_median": 6241.849517822266,
+        "samples": [
+          {
+            "event_us": 6284.77783203125,
+            "iterations": 10,
+            "synchronized_wall_us": 6289.970001671463
+          },
+          {
+            "event_us": 6241.849517822266,
+            "iterations": 10,
+            "synchronized_wall_us": 6246.157002169639
+          },
+          {
+            "event_us": 6016.707992553711,
+            "iterations": 10,
+            "synchronized_wall_us": 6021.512899314985
+          }
+        ],
+        "synchronized_wall_us_median": 6246.157002169639
+      }
+    }
+  }
+}

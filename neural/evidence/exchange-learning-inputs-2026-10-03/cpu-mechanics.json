@@ -1,0 +1,130 @@
+{
+  "kind": "CPU_mechanics_and_literal_baseline_not_learned_quality",
+  "python": "3.14.7",
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 taskset -c 3 results/qa-cpu-venv/bin/python -m unittest neural.tests.test_exchange_study -v",
+  "tests_passed": 8,
+  "train": {
+    "macro_family_mae_cp": 124.42521960277062,
+    "macro_nontrivial_family_mae_cp": 393.779337639311,
+    "micro_action_mae_cp": 164.53108156665468,
+    "strata": {
+      "correction_nonzero": {
+        "count": 1117,
+        "mae_cp": 409.9283795881826
+      },
+      "correction_zero": {
+        "count": 1666,
+        "mae_cp": 0.0
+      },
+      "dependency_1": {
+        "count": 1501,
+        "mae_cp": 0.0
+      },
+      "dependency_2": {
+        "count": 897,
+        "mae_cp": 424.23634336677816
+      },
+      "dependency_3-4": {
+        "count": 364,
+        "mae_cp": 194.53296703296704
+      },
+      "dependency_5+": {
+        "count": 21,
+        "mae_cp": 311.42857142857144
+      },
+      "motif_capture": {
+        "count": 2653,
+        "mae_cp": 171.5755748209574
+      },
+      "motif_castling": {
+        "count": 154,
+        "mae_cp": 226.16883116883116
+      },
+      "motif_check": {
+        "count": 250,
+        "mae_cp": 21.6
+      },
+      "motif_en_passant": {
+        "count": 60,
+        "mae_cp": 120.0
+      },
+      "motif_low_material": {
+        "count": 285,
+        "mae_cp": 50.280701754385966
+      },
+      "motif_pin": {
+        "count": 1021,
+        "mae_cp": 195.35749265426054
+      },
+      "motif_promotion": {
+        "count": 538,
+        "mae_cp": 166.2453531598513
+      }
+    },
+    "roots": 910,
+    "families": 245,
+    "closed_actions": 2783
+  },
+  "dev": {
+    "macro_family_mae_cp": 129.29193761734084,
+    "macro_nontrivial_family_mae_cp": 414.1375,
+    "micro_action_mae_cp": 148.70967741935485,
+    "strata": {
+      "correction_nonzero": {
+        "count": 244,
+        "mae_cp": 396.76229508196724
+      },
+      "correction_zero": {
+        "count": 407,
+        "mae_cp": 0.0
+      },
+      "dependency_1": {
+        "count": 378,
+        "mae_cp": 0.0
+      },
+      "dependency_2": {
+        "count": 199,
+        "mae_cp": 413.6180904522613
+      },
+      "dependency_3-4": {
+        "count": 70,
+        "mae_cp": 201.28571428571428
+      },
+      "dependency_5+": {
+        "count": 4,
+        "mae_cp": 102.5
+      },
+      "motif_capture": {
+        "count": 614,
+        "mae_cp": 157.67100977198697
+      },
+      "motif_castling": {
+        "count": 36,
+        "mae_cp": 129.16666666666666
+      },
+      "motif_check": {
+        "count": 52,
+        "mae_cp": 43.84615384615385
+      },
+      "motif_en_passant": {
+        "count": 16,
+        "mae_cp": 45.0
+      },
+      "motif_low_material": {
+        "count": 72,
+        "mae_cp": 0.0
+      },
+      "motif_pin": {
+        "count": 209,
+        "mae_cp": 177.70334928229664
+      },
+      "motif_promotion": {
+        "count": 134,
+        "mae_cp": 97.76119402985074
+      }
+    },
+    "roots": 229,
+    "families": 62,
+    "closed_actions": 651
+  }
+}

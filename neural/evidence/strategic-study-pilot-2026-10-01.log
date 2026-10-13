@@ -1,0 +1,6 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+{"control": "transport", "steps": 64, "seconds": 2.187006083000142, "last_loss": 0.13205108046531677, "rows_per_step": 32}
+{"control": "conditioned", "steps": 64, "seconds": 0.8973697970000103, "last_loss": 0.13200470805168152, "rows_per_step": 32}
+{"control": "action_blind", "steps": 64, "seconds": 0.6610398150000947, "last_loss": 0.1320296972990036, "rows_per_step": 32}
+{"control": "transport_fixed_encoder", "steps": 64, "seconds": 0.7060056359998725, "last_loss": 0.13219839334487915, "rows_per_step": 32}
+{"control": "transport_zero_anchor", "steps": 64, "seconds": 0.9018964399999732, "last_loss": 0.20916621387004852, "rows_per_step": 32}

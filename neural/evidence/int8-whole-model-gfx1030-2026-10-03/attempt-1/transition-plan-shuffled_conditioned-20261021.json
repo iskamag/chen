@@ -1,0 +1,1432 @@
+{
+  "checkpoint_sha256": "f7fe2834c4bdea2820f36ae35b08e65c676611ad7a38b8e529666cf7f2f6f443",
+  "control": "shuffled_conditioned",
+  "fidelity": {
+    "fp32_value": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "roots": 233
+    },
+    "int8_fused": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 6,
+        "at_most_10": 6,
+        "at_most_5": 6,
+        "exact_ties": 0,
+        "maximum": 0.143951416015625,
+        "mean": 0.08207194010416667,
+        "minimum": 0.0048828125
+      },
+      "changed_roots": 6,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 3.268402099609375,
+        "mean_absolute": 0.9834362694687532,
+        "mean_squared": 1.3299114964572807
+      },
+      "first_canonical_action_agreement": 0.9742489270386266,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.029833436012268066,
+        "mean_absolute": 0.005354394208979561,
+        "mean_squared": 4.675050042897034e-05
+      },
+      "roots": 233
+    },
+    "int8_hybrid": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 6,
+        "at_most_10": 6,
+        "at_most_5": 6,
+        "exact_ties": 0,
+        "maximum": 0.143951416015625,
+        "mean": 0.08207194010416667,
+        "minimum": 0.0048828125
+      },
+      "changed_roots": 6,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 3.268402099609375,
+        "mean_absolute": 0.9834362694687532,
+        "mean_squared": 1.3299114964572807
+      },
+      "first_canonical_action_agreement": 0.9742489270386266,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.029833436012268066,
+        "mean_absolute": 0.005354394208979561,
+        "mean_squared": 4.675050042897034e-05
+      },
+      "roots": 233
+    },
+    "int8_multi": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 6,
+        "at_most_10": 6,
+        "at_most_5": 6,
+        "exact_ties": 0,
+        "maximum": 0.143951416015625,
+        "mean": 0.08207194010416667,
+        "minimum": 0.0048828125
+      },
+      "changed_roots": 6,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 3.268402099609375,
+        "mean_absolute": 0.9834362694687532,
+        "mean_squared": 1.3299114964572807
+      },
+      "first_canonical_action_agreement": 0.9742489270386266,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.029833436012268066,
+        "mean_absolute": 0.005354394208979561,
+        "mean_squared": 4.675050042897034e-05
+      },
+      "roots": 233
+    }
+  },
+  "phase": "transition",
+  "separate_instrumented_linear_profile": {
+    "fp32_value": [
+      {
+        "event_us": 64.48099762201309,
+        "input_shape": [
+          4,
+          64,
+          18
+        ],
+        "int8_module": false,
+        "name": "anchor.base.input",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 47.120001167058945,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.relation_layers.0.qkv",
+        "output_shape": [
+          4,
+          64,
+          96
+        ]
+      },
+      {
+        "event_us": 45.361001044511795,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.relation_layers.0.out",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 44.199999421834946,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.relation_layers.0.ff.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 41.680000722408295,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": false,
+        "name": "anchor.base.relation_layers.0.ff.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 45.56100070476532,
+        "input_shape": [
+          4,
+          8,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.plan_query",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 42.52000153064728,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.plan_key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 49.559999257326126,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.plan_value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 43.68000105023384,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.base.plan_output",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 32.96000137925148,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 46.44099995493889,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 40.27999937534332,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": false,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.52099978923798,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.84100222587585,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": false,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 52.239999175071716,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": false,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 47.80000075697899,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": false,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 51.16099864244461,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": false,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 47.919999808073044,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": false,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 67.12000072002411,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": false,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_fused": [
+      {
+        "event_us": 84.23999696969986,
+        "input_shape": [
+          4,
+          64,
+          18
+        ],
+        "int8_module": true,
+        "name": "anchor.base.input",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 65.08100032806396,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.qkv",
+        "output_shape": [
+          4,
+          64,
+          96
+        ]
+      },
+      {
+        "event_us": 65.28100371360779,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.out",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 59.721000492572784,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 57.19999969005585,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 68.55999678373337,
+        "input_shape": [
+          4,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_query",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 54.16100099682808,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 73.04000109434128,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.52099978923798,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_output",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 52.64100059866905,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 63.600003719329834,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 27.92000025510788,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 71.40100002288818,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 55.879998952150345,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 60.27999892830849,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 59.36099961400032,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 67.9209977388382,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 59.51999872922897,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 68.40100139379501,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_hybrid": [
+      {
+        "event_us": 112.7609983086586,
+        "input_shape": [
+          4,
+          64,
+          18
+        ],
+        "int8_module": true,
+        "name": "anchor.base.input",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 66.40099734067917,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.qkv",
+        "output_shape": [
+          4,
+          64,
+          96
+        ]
+      },
+      {
+        "event_us": 66.36100262403488,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.out",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 59.721000492572784,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 58.43999981880188,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 82.0000022649765,
+        "input_shape": [
+          4,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_query",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 56.84100091457367,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 62.80100345611572,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 63.63999843597412,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_output",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 60.40000170469284,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 59.6809983253479,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 27.639999985694885,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 71.48099690675735,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.0000017285347,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 59.52100083231926,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 58.44099819660187,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 68.48099827766418,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 58.88000130653381,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 56.161001324653625,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ],
+    "int8_multi": [
+      {
+        "event_us": 256.44299387931824,
+        "input_shape": [
+          4,
+          64,
+          18
+        ],
+        "int8_module": true,
+        "name": "anchor.base.input",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 192.8820013999939,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.qkv",
+        "output_shape": [
+          4,
+          64,
+          96
+        ]
+      },
+      {
+        "event_us": 193.60099732875824,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.out",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 187.36200034618378,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 185.32200157642365,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.base.relation_layers.0.ff.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 199.4819939136505,
+        "input_shape": [
+          4,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_query",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 184.52100455760956,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 186.20100617408752,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 187.16199696063995,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.base.plan_output",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 184.72200632095337,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 183.72100591659546,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 194.56100463867188,
+        "input_shape": [
+          128,
+          64,
+          22
+        ],
+        "int8_module": true,
+        "name": "local.0",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 191.60200655460358,
+        "input_shape": [
+          128,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "local.2",
+        "output_shape": [
+          128,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 186.32200360298157,
+        "input_shape": [
+          128,
+          8,
+          32
+        ],
+        "int8_module": true,
+        "name": "query",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 205.28100430965424,
+        "input_shape": [
+          128,
+          45
+        ],
+        "int8_module": true,
+        "name": "event.0",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 186.20100617408752,
+        "input_shape": [
+          128,
+          32
+        ],
+        "int8_module": true,
+        "name": "event.2",
+        "output_shape": [
+          128,
+          32
+        ]
+      },
+      {
+        "event_us": 195.08099555969238,
+        "input_shape": [
+          128,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          128,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 187.36200034618378,
+        "input_shape": [
+          128,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          128,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 198.2019990682602,
+        "input_shape": [
+          128,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          128,
+          1
+        ]
+      }
+    ]
+  },
+  "setup": {
+    "int8_fused": {
+      "event_ms": 12.182497024536133,
+      "linears": [
+        "anchor.base.input",
+        "anchor.base.relation_layers.0.qkv",
+        "anchor.base.relation_layers.0.out",
+        "anchor.base.relation_layers.0.ff.1",
+        "anchor.base.relation_layers.0.ff.3",
+        "anchor.base.plan_query",
+        "anchor.base.plan_key",
+        "anchor.base.plan_value",
+        "anchor.base.plan_output",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 12.230246007675305
+    },
+    "int8_hybrid": {
+      "event_ms": 12.637420654296875,
+      "linears": [
+        "anchor.base.input",
+        "anchor.base.relation_layers.0.qkv",
+        "anchor.base.relation_layers.0.out",
+        "anchor.base.relation_layers.0.ff.1",
+        "anchor.base.relation_layers.0.ff.3",
+        "anchor.base.plan_query",
+        "anchor.base.plan_key",
+        "anchor.base.plan_value",
+        "anchor.base.plan_output",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 12.682956003118306
+    },
+    "int8_multi": {
+      "event_ms": 11.862574577331543,
+      "linears": [
+        "anchor.base.input",
+        "anchor.base.relation_layers.0.qkv",
+        "anchor.base.relation_layers.0.out",
+        "anchor.base.relation_layers.0.ff.1",
+        "anchor.base.relation_layers.0.ff.3",
+        "anchor.base.plan_query",
+        "anchor.base.plan_key",
+        "anchor.base.plan_value",
+        "anchor.base.plan_output",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 11.923456011572853
+    }
+  },
+  "timing_root_plan": {
+    "K": 32,
+    "batch": 4,
+    "key": 18,
+    "selection": "closest_K32_then_largest_batch_then_key_no_labels"
+  },
+  "timings": {
+    "complete_root": {
+      "fp32_full": {
+        "event_us_median": 4509.683990478516,
+        "samples": [
+          {
+            "event_us": 4530.332183837891,
+            "iterations": 10,
+            "synchronized_wall_us": 4535.886200028472
+          },
+          {
+            "event_us": 4462.903594970703,
+            "iterations": 10,
+            "synchronized_wall_us": 4468.6200999422
+          },
+          {
+            "event_us": 4509.683990478516,
+            "iterations": 10,
+            "synchronized_wall_us": 4515.834199264646
+          }
+        ],
+        "synchronized_wall_us_median": 4515.834199264646
+      },
+      "fp32_value": {
+        "event_us_median": 3949.567413330078,
+        "samples": [
+          {
+            "event_us": 4310.68229675293,
+            "iterations": 10,
+            "synchronized_wall_us": 4317.0741002541035
+          },
+          {
+            "event_us": 3949.567413330078,
+            "iterations": 10,
+            "synchronized_wall_us": 3956.1798999784514
+          },
+          {
+            "event_us": 3839.6907806396484,
+            "iterations": 10,
+            "synchronized_wall_us": 3844.765800749883
+          }
+        ],
+        "synchronized_wall_us_median": 3956.1798999784514
+      },
+      "int8_fused": {
+        "event_us_median": 4917.563247680664,
+        "samples": [
+          {
+            "event_us": 5249.549865722656,
+            "iterations": 10,
+            "synchronized_wall_us": 5257.861499558203
+          },
+          {
+            "event_us": 4828.554916381836,
+            "iterations": 10,
+            "synchronized_wall_us": 4833.560300176032
+          },
+          {
+            "event_us": 4917.563247680664,
+            "iterations": 10,
+            "synchronized_wall_us": 4924.800398293883
+          }
+        ],
+        "synchronized_wall_us_median": 4924.800398293883
+      },
+      "int8_hybrid": {
+        "event_us_median": 4873.563385009766,
+        "samples": [
+          {
+            "event_us": 4850.914764404297,
+            "iterations": 10,
+            "synchronized_wall_us": 4857.222299324349
+          },
+          {
+            "event_us": 5075.180816650391,
+            "iterations": 10,
+            "synchronized_wall_us": 5084.900400834158
+          },
+          {
+            "event_us": 4873.563385009766,
+            "iterations": 10,
+            "synchronized_wall_us": 4879.715299466625
+          }
+        ],
+        "synchronized_wall_us_median": 4879.715299466625
+      },
+      "int8_multi": {
+        "event_us_median": 7337.3260498046875,
+        "samples": [
+          {
+            "event_us": 7801.734161376953,
+            "iterations": 10,
+            "synchronized_wall_us": 7806.8447997793555
+          },
+          {
+            "event_us": 7337.3260498046875,
+            "iterations": 10,
+            "synchronized_wall_us": 7342.372499988414
+          },
+          {
+            "event_us": 6915.5914306640625,
+            "iterations": 10,
+            "synchronized_wall_us": 6920.9753011818975
+          }
+        ],
+        "synchronized_wall_us_median": 7342.372499988414
+      }
+    }
+  }
+}

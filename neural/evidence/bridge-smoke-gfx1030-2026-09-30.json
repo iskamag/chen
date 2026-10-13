@@ -1,0 +1,137 @@
+{
+  "kind": "direct_resident_rules_to_replay_smoke",
+  "strength_evidence": false,
+  "root_cpu_adapter_seconds": 0.034392405999824405,
+  "phases": {
+    "context_create_seconds": 0.1392439769115299,
+    "initial_root_history_ingress_seconds": 0.00216857111081481,
+    "two_level_resident_expansion_seconds": 0.0012385500594973564,
+    "torch_allocation_barriers_export_and_labels_seconds": 0.009603464975953102,
+    "replay_allocation_validated_admission_barriers_seconds": 0.30946357804350555,
+    "sample_decode_and_training_seconds": 1.011739033041522
+  },
+  "source": {
+    "context_uuid": "25df3ebb-ef69-45b6-a9ac-dbdfa438216d",
+    "python_reset_generation": 1,
+    "root_epoch": 1,
+    "root_packet_sha256": "cec8037f494c79a974a539e1678cdf4b53d9d993d6b10337af72a68837cc28ec",
+    "root_hash_hex": "26036de7bbd10ca9",
+    "history_count": 0,
+    "previous_history_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "history_contract": "caller-supplied previous positions only, root excluded",
+    "rules_abi": 1,
+    "export_abi": 1,
+    "rows": 400,
+    "child_start": 21,
+    "legal_slots": 256,
+    "export_kernel_ms": 0.23768199980258942,
+    "device": "cuda:0",
+    "policy_target": "executed legal action imitation; no best-move teacher",
+    "material_proxy": "tanh(simulator material evaluator0 centipawns clamped +/-29000 /800), current mover, toy supervision",
+    "terminal_policy": "simulator_current_position_draw_policy: mate/stalemate first; halfmove>=100, insufficient, current threefold",
+    "history_scope": "root hash prefix retained in simulator; replay handles absent; model lacks repetition features",
+    "ownership": "Torch-owned output snapshots; synchronous pre-write device barrier and HIP completion",
+    "hip_runtime": {
+      "torch_runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+      "checked_bound_apis": [
+        "hipPointerGetAttributes",
+        "hipMemGetAddressRange",
+        "hipMalloc",
+        "hipFree",
+        "hipStreamSynchronize"
+      ]
+    },
+    "state_download_api_used": false,
+    "copy_evidence": "source-level native path plus Torch dispatch audit; no traced byte-count claim",
+    "strength_evidence": false
+  },
+  "replay": {
+    "compact_version": 1,
+    "feature_schema_version": 1,
+    "device": "cuda:0",
+    "capacity": 400,
+    "size": 400,
+    "cursor": 0,
+    "total_inserted": 400,
+    "max_slots": 256,
+    "bytes_per_record": 801,
+    "allocated_payload_bytes": 320400,
+    "history_scope": "opaque external handles, no repetition adjudication",
+    "admission": "same-device exact tensors; validation synchronizes at ingress"
+  },
+  "environment": {
+    "torch": "2.10.0+rocm7.0",
+    "torch_hip": "7.0.51831",
+    "device": "cuda:0",
+    "architecture": "gfx1030"
+  },
+  "config": {
+    "seed": 20260930,
+    "steps": 4,
+    "batch_size": 32,
+    "model": "relation",
+    "width": 16,
+    "depth": 1,
+    "learning_rate": 0.0003,
+    "arena_capacity": 4096,
+    "resident_levels": 2,
+    "root_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "previous_history_count": 0
+  },
+  "first_loss": {
+    "total": 4.2698588371276855,
+    "policy": 2.9989452362060547,
+    "material_proxy": 0.06457754224538803,
+    "board": 0.6759324073791504,
+    "successor_board": 0.6850001215934753,
+    "rules": 4.178253650665283,
+    "successor_rules": 4.476184368133545,
+    "latent_consistency": 0.006592392921447754
+  },
+  "final_loss": {
+    "total": 4.168297290802002,
+    "policy": 2.9837124347686768,
+    "material_proxy": 0.027776775881648064,
+    "board": 0.665945827960968,
+    "successor_board": 0.6758267879486084,
+    "rules": 4.080303192138672,
+    "successor_rules": 4.126640796661377,
+    "latent_consistency": 0.006707184016704559
+  },
+  "sample_sequence_sha256": "6e6e12c7aa9dc6066d6dfb2f2cca65813f147b497f897c83f3549f1067aed357",
+  "resident_before_training": {
+    "torch_allocated_bytes": 662528,
+    "torch_reserved_bytes": 23068672,
+    "driver_free_total_bytes": [
+      16495542272,
+      17163091968
+    ]
+  },
+  "library": {
+    "path": "/tmp/chen-gpu/build/libchen_gpu.so",
+    "sha256": "333e3427c23c9de726387e62cc85f28bf20f8af27d8d8abc48882e586c101444",
+    "producer_revision": "45f3fb6"
+  },
+  "python_source_sha256": {
+    "neural/bridge.py": "02a05f0919cc82ed97f5b5243649d57284644d6ffb16ae2a0db212d7dd27d477",
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f"
+  },
+  "producer_source_sha256": {
+    "chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "chen_rules.hip": "76b2173a9e0061cbaf78ddba0450e03324d0323dcb5be376b7b6ad70e42a1b7e",
+    "chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf"
+  },
+  "limitations": [
+    "single fixed root, bounded exhaustive two-ply legal tree; not GPU self-play",
+    "executed-action imitation and material proxy targets; no outcome/strength labels",
+    "synchronous barriers and scalar validation/control transfers",
+    "short un-warmed mechanics run; timings are not throughput estimates",
+    "no native byte-count trace collected by this smoke function"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "root_corrected_semantic_study_review_v1",
+  "status": "PASS",
+  "archive_manifest_sha256": "a2828b8df8d2909559f8e9c3911fbdd86751366d092cf643e858f5f058f56f5f",
+  "checks": {
+    "exact_payload_inventory_and_hashes": 45,
+    "all_tar_regular_members_size_and_hash": 109,
+    "tar_regular_bytes": 229096269,
+    "suite_and_kernel_seals_match_root_review": true,
+    "published_validation_gate_independent_replay": "NONE",
+    "candidate_configurations": 16,
+    "paired_seeds_per_configuration": 2,
+    "baselines": 3,
+    "test_outputs_absent": true
+  },
+  "result": {
+    "completed_models": 40,
+    "updates": 9216,
+    "selection": "NONE",
+    "test_opened": false,
+    "model_promoted": false,
+    "rating_claim": null
+  },
+  "scope": "Root independently verified byte closure and selection arithmetic, inspected frozen checkpoint mechanical replay and runner source; did not recalculate quality metrics or rerun training/GPU work."
+}

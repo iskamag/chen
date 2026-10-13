@@ -8,9 +8,10 @@ play and eventual 2500 Lichess performance; it is not achieved.
 
 ## Retained ownership
 
-- `chen` / `master`: Rust engine, exact rules, HIP search/producer interfaces,
-  harness, canonical direction and integrated evidence.
-- `../chen-neural` / `research/neural`: model/data/training experiments. Latest
+- `chen` / `main`: Rust engine, exact rules, HIP search/producer interfaces,
+  harness, canonical direction, integrated evidence and optional `neural/`
+  model/data/training experiments. On 2026-10-13 the `research/neural` branch
+  was merged and its separate worktree retired. Latest
   saved learning milestone is `861b3d3`, following implementation `58cd90c` and
   bucket wrapper `21ea33f`. No neural model is admitted to engine deployment.
 - Temporary implementation branches remain available after their clean
@@ -35,7 +36,7 @@ width128 and58.761 to11.848ms at width256. All measured rows fit E512 without
 retry; batch-one benefits are smaller. This is one untrained opening-child
 workload, not engine throughput or Elo. ABI1 remains the conservative control.
 
-The [restricted-exchange study](../../chen-neural/docs/EXCHANGE_STUDY.md) has
+The [restricted-exchange study](EXCHANGE_STUDY.md) has
 two actual one-step typed HPO fits saved. Best DEV macro-family errors are
 12.705/13.506 versus immediate-material129.292. These targets describe a
 restricted recapture game, not unrestricted strategic chess value. TEST stays
@@ -62,8 +63,8 @@ PVS match's relative estimate to these proxies. GPU/neural work remains paused.
 2. Resume the unchanged neural queue: one-step typed LR0.0003 with weight decay0
    then0.0001, seed6101. Only after all four HPO controls plateau may this arm
    select a pair and run6102/6103. Recurrence1/2/4/8 and typed/untyped arms are
-   declared; only2 of48 planned fits have retired. Exact-child and scalable
-   transformer comparisons still need their own admitted learning runs.
+   declared; only2 of48 planned fits have retired. Exact-child comparisons still
+   need their own admitted learning runs. Large-transformer training is deferred.
 3. Once a frozen model/control comparison justifies it, measure its full native
    producer/inference/search path and paired equal-time games. Precision,
    inference latency, restricted-task quality and engine strength are separate
@@ -89,10 +90,12 @@ closed group000 control logs before a new group, without changing the committed
 archive or overwriting the previous journal. Continue with a fresh owned
 watchdog and exclusive GPU lease, not an automatic fit restart.
 
-Cleanup removes only retired temporary worktrees and disposable bytecode caches.
-Five clean temporary worktrees were removed; all five branch heads are retained.
-Keep the two original worktrees, experiment branches, evidence, release/build
-caches, declared data/checkpoints and resumable runtime. Pre-existing untracked
-semantic drafts in the neural worktree and symbolic-prior extraction evidence
-on main are preserved; they are not part of the new verified milestones.
+The 2026-10-03 cleanup removed five temporary worktrees and retained their
+branches. The 2026-10-13 consolidation also retires `chen-neural`: its tracked
+research and untracked semantic source drafts are retained on main; datasets,
+checkpoints and raw results are preserved in a hash-verified external archive.
+Its disposable CPU virtual environment and bytecode caches are removed.
+The research branch and frozen external runtime are retained. Pre-existing
+symbolic-prior extraction evidence on main is preserved separately; it is not
+part of the merge. Consolidation does not resume any training or GPU experiment.
 No container is stopped and no other user's process is killed.

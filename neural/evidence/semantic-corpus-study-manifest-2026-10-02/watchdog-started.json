@@ -1,0 +1,33 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "neural.run_semantic_corpus_study",
+    "run",
+    "--declaration",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/control/suite-sealed.json",
+    "--declaration-sha256",
+    "9f0c7669f80684ec06ef16a1ced50356cc6d3e243816b84fc386ca32ddf13c31",
+    "--output",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/attempt-1"
+  ],
+  "environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/neural-worktree:/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main:/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef"
+  },
+  "external_timeout_seconds": 7350,
+  "kind": "semantic_external_watchdog_v1",
+  "no_retry": true,
+  "owned_child_pgid": 5105,
+  "owned_child_pid": 5105,
+  "phase_completion_timeout_seconds": 900,
+  "phase_timeout_scope": "runner rejects after draining work, not independent preemption",
+  "runner_timeout_seconds": 7200,
+  "source_sha256": "9a7536756a856cec98985729dd8f3262e6e28baa2341241ee43bbfc4470245ad",
+  "status": "running",
+  "suite_sha256": "9f0c7669f80684ec06ef16a1ced50356cc6d3e243816b84fc386ca32ddf13c31",
+  "watchdog_pid": 5099
+}

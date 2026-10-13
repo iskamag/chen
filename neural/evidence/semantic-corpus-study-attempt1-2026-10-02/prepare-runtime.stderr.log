@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/control/prepare-runtime.py", line 29, in <module>
+    a=dict(original_kernel);a.pop('dependencies');b=dict(kernel);b.pop('dependencies');assert json.dumps(a,sort_keys=True)==json.dumps(b,sort_keys=True)
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

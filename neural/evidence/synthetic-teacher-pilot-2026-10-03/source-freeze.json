@@ -1,0 +1,18 @@
+{
+  "source_sha256": {
+    "neural/synthetic_teacher.py": "82406b7d1d38f3e8154b6891144e9086604b03ef858a1ca8233db949c3a1fa58",
+    "neural/ordinary_packets.py": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f",
+    "neural/teacher_session.py": "7ee6d3863a5497e4803ffd6be0b2c881857c3b7181c0ffee236ca8308f9ea684",
+    "neural/tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "neural/tests/test_synthetic_teacher.py": "f39ad13415c11c1612c8ec560376b07047ae3975f58a0b8204e8e68bdb0d7078"
+  },
+  "declaration_sha256": "1a8e22068f8fab5650496f30d192ee06a02ff5ee87ece0859d5a4b07127130d9",
+  "plan_sha256": "2b8d194b6d7a7cfd02274c92018b0685ac40f9e835b59f21de9bf710876a6187",
+  "metadata_only_correction": "training_authorized false renamed pilot_contains_training false; collector source pin updated; plan/data/options/net/protocol/budgets unchanged",
+  "focused_tests": {
+    "count": 4,
+    "pass": true,
+    "unittest_body_seconds": 0.931
+  }
+}

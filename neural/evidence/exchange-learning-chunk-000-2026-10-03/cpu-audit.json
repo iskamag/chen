@@ -1,0 +1,33 @@
+{
+  "scope": "independent_CPU_byte_envelope_checkpoint_schema_and_plateau_replay_no_prediction_quality_reexecution",
+  "passed": true,
+  "payloads_verified": 9,
+  "archive_members_verified": 44,
+  "source_modules_verified": 15,
+  "fits": [
+    {
+      "name": "r1-typed-hpo-lr0.001-wd0.0",
+      "epochs": 39,
+      "best_epoch": 23,
+      "best_macro_family_mae": 12.70512813534212,
+      "final_macro_family_mae": 15.304214714829863
+    },
+    {
+      "name": "r1-typed-hpo-lr0.001-wd0.0001",
+      "epochs": 43,
+      "best_epoch": 27,
+      "best_macro_family_mae": 13.505965215873026,
+      "final_macro_family_mae": 15.708918858854128
+    }
+  ],
+  "next_fit": {
+    "name": "r1-typed-hpo-lr0.0003-wd0.0",
+    "steps": 1,
+    "typed": true,
+    "seed": 6101,
+    "lr": 0.0003,
+    "wd": 0.0
+  },
+  "test_gate": "CLOSED",
+  "architecture_winner": null
+}

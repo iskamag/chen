@@ -1,0 +1,53 @@
+{
+  "schema": "chen_exchange_pilot_evidence_v1",
+  "payloads": {
+    "README.md": {
+      "bytes": 2193,
+      "sha256": "5a135ccb201c336e18bc971d62f25ed8fa30b6896447c9661c6c61a09cedef7d"
+    },
+    "declaration.json": {
+      "bytes": 853,
+      "sha256": "7db4a17f07c04b06639b99f6e7dfcf2e9b4398c958ec017c24eaf540c04bdbcf"
+    },
+    "freeze.json": {
+      "bytes": 678,
+      "sha256": "85e894dddf6e6179ac1e5e43d62d1c87a07d80e3c8fc685d2a0a9debd073d43f"
+    },
+    "report.json": {
+      "bytes": 927,
+      "sha256": "f22af18d4a567189311d02ff5d78d981443f7322dbc53cbdea1c06cbfbdf9a5a"
+    },
+    "run.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run.stdout.log": {
+      "bytes": 13406,
+      "sha256": "3eb11ede6840335cc6596191df936d6b35b4ebe4497a3d6e762ab842d65bd69d"
+    },
+    "runtime.json": {
+      "bytes": 704,
+      "sha256": "7448bdc2d4a7100a0a28c06d5e07bb7a8a454751aee178f8a36575f8eab21e2f"
+    },
+    "source/neural/exchange_targets.py": {
+      "bytes": 14489,
+      "sha256": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e"
+    },
+    "source/neural/tactical_inputs.py": {
+      "bytes": 18206,
+      "sha256": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e"
+    },
+    "source/neural/tests/test_exchange_targets.py": {
+      "bytes": 9397,
+      "sha256": "cf194fda6921bab348cc0abfc2629921cf3bb5ae1f7cea3871cca64357583505"
+    },
+    "targets.jsonl.gz": {
+      "bytes": 840201,
+      "sha256": "44fd685f66416cd517d89114f4cf05cacbc235a94bf94117286352d86933ac35"
+    },
+    "trace-diagnostics.json": {
+      "bytes": 869,
+      "sha256": "261b0f30c7dc89d7625ebe7ef40203b884346a7909ff327c30e4c86c701b741c"
+    }
+  }
+}

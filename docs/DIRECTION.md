@@ -1,8 +1,8 @@
 # Chen architecture and near-term direction
 
-Chen has two cooperating worktrees: `chen` on `master` owns the runnable Rust
-engine, gfx1030 runtime and evaluation harness; `../chen-neural` on
-`research/neural` owns model, latent-transition and training experiments. The
+Chen's `main` checkout contains the runnable Rust engine, gfx1030 runtime,
+evaluation harness and optional model/data experiments in `neural/`. The former
+`research/neural` worktree is merged and retired. The
 target is a GPU engine with useful learned representations, adjustable play and
 eventual 2500 Lichess performance. A working UCI engine exists. The
 [fresh CPU one-second evaluation](harness/cpu-rating-current-2026-10-03.md)
@@ -27,8 +27,8 @@ The subsequent [GPU selective reference](harness/gpu-one-second-reference-2026-1
 scored 4 wins, 5 draws and 7 losses, proxy1254. The CPU result does not establish
 GPU strength. The [algorithmic redesign](research/ALGORITHMIC_REDESIGN.md) now
 prioritizes parallel retained alpha-beta/quiescence after the now-runnable
-bounded GPU reference, a scalable transformer and one recurrent tactical neural
-processor. Hardware throughput and playing
+bounded GPU reference and one compact recurrent tactical neural processor.
+Large-transformer training is outside the current scope. Hardware throughput and playing
 strength remain
 separate comparisons; further selector/dispatch microtuning is deprioritized.
 
@@ -45,8 +45,8 @@ not alternative implementations to import or edit.
 | Scheduling, budgets, cancellation and terminal decisions | `SearchBackend`; `src/search.rs`, `frontier.rs`, `resident.rs`, `selective.rs`, `drowsy.rs` | Named search policies with explicit work, completed horizon and failure semantics |
 | Position scores | `Evaluator`, `BatchEvaluator`; `src/eval.rs`, `backend.rs` | Classical, fully observed neural or incremental scoring, always with a declared score frame |
 | Device storage and dispatch | `src/hip.rs`, `device.rs`, `gpu/` | Versioned HIP ABI, bounded arenas, stream ownership and measured kernels |
-| Deployment admission and inference | `src/neural.rs`; neural worktree exporter/plugin | Fingerprinted model artifacts, exact feature contracts, same-model numerical and lifetime checks |
-| Data and neural experiments | `experiments/semantic_corpus/`; `../chen-neural/neural/` | Immutable split packs, resident sampling, independent encoders, frozen-target transitions and controlled studies |
+| Deployment admission and inference | `src/neural.rs`; `neural/` exporter/plugin | Fingerprinted model artifacts, exact feature contracts, same-model numerical and lifetime checks |
+| Data and neural experiments | `experiments/semantic_corpus/`; `neural/` | Immutable split packs, resident sampling, independent encoders, frozen-target transitions and controlled studies |
 | Protocol and resource levels | `src/main.rs`, `strength.rs` | UCI, worker lifetime and `StrengthPolicy`; level numbers remain resource policies until calibrated |
 | Performance and strength evidence | `scripts/bench.py`, `scripts/match.py`, pinned Fastchess integration | Reproducible raw timings, paired legal games and separately scoped statistical conclusions |
 
@@ -77,7 +77,7 @@ the default strength policy.
 CPU/proof controls, bounded reference and parallel GPU candidates were developed
 in isolated temporary worktrees. Their reviewed milestones are integrated on
 main; clean temporary worktrees are removed at the requested wrap-up, retaining
-their branches. Model/data work remains in the neural worktree. See the
+their branches. Model/data work now lives in `neural/` on main. See the
 [handoff](HANDOFF.md) before resuming experiments.
 Measure host scheduling and publication costs explicitly while moving suitable
 control work into the GPU. A CPU result does not replace this target.
@@ -108,7 +108,7 @@ bounded execution, but they are configurable engineering bounds, not the target
 metric. Permit larger justified artifacts or resident allocations when measured
 latency improves; avoid duplicated checkpoint tensors and needless transfers.
 
-The [completed precision/capture controls](../../chen-neural/docs/PRECISION_CAPTURE.md)
+The [completed precision/capture controls](PRECISION_CAPTURE.md)
 use captured FP32 as the next integration reference. Captured INT8 wins the
 tested batch-one anchors, loses at batches32/256, and nearly ties complete-root
 transitions. Retain INT8 as a named small-batch option rather than applying one
@@ -156,13 +156,16 @@ it independently establishes them. Add a dedicated policy contract rather than
 overload `SelectiveTree` with unrelated confidence semantics. Compare CPU/GPU
 sampling and decision traces before interpreting speed or strength.
 
-**Transformers and latent architectures.** Keep transformer candidates beside
-the existing square/relation/plan/threat encoders in the neural worktree. Record
-the original paper and precise local hypothesis before adding a candidate.
+**Compact recurrent tactical models.** Prioritize the existing sparse tactical
+processor and restricted-exchange head. Shared recurrent weights let additional
+iterations change computation without increasing model size. Retain classical,
+one-step, typed/untyped and exact-child controls. Large-transformer training and
+the 10M–270M parameter ladder are deferred; preserved transformer source and
+scaling proposals are historical experiments, not the next work queue.
 Compare identical admitted data, legal action support, score frames, seeds,
 readout and selection rules; report parameter counts, retained VRAM, training
 time and inference/search latency rather than calling equal width equal compute.
-Include fully observed transformer scoring and classical baselines. Latent
+Include classical baselines. Latent
 transition models must separately demonstrate decision quality and multistep
 refresh agreement before imagined search is deployed. A successful reconstruction
 loss or a larger model alone does not establish a strength gain.
@@ -171,12 +174,12 @@ The recurrent tactical operator in the
 uses actual piece/square/legal-action nodes and supplied exact typed edges. Establish
 exact-child and recurrent-action controls, fresh data, convergence and bounded
 hyperparameter tuning before extending it to persistent object memory or
-search-aware adaptive refresh. The [scalable transformer](../../chen-neural/docs/SCALING_STUDY.md)
-is also a serious candidate: compare roughly 1M through 270M descriptors and
-width/depth alternatives rather than assume the tiny processor is preferable.
+search-aware adaptive refresh. Start with the existing width256 exchange model
+(1,067,521 parameters), with smaller widths available for cost comparisons.
+Report actual parameter and inference costs before expanding the model budget.
 The recurrent processor's separate restricted-exchange head has its first two
-DEV HPO fits in neural `861b3d3`; recurrence/typing comparisons and transformer
-learning are still pending. Those labels describe an artificial recapture game,
+DEV HPO fits in neural `861b3d3`; recurrence/typing comparisons
+are still pending. Those labels describe an artificial recapture game,
 not strategic chess value. No architecture winner or neural engine is selected.
 Offline training may substantially exceed
 compute-efficient schedules when extra training improves inference-budget
@@ -200,9 +203,8 @@ separate. Do not reopen spent families to tune the next architecture.
    deterministic capture/promotion/PV ordering as a no-pruning permutation,
    preserving canonical root identities and charging all work. Compare completed
    decisions and paired equal-time play before promoting a new policy or adding TT/PVS.
-2. Implement the recurrent tactical processor and shared exact topology ingress,
-   and scale the fully observed transformer through explicit model/data/compute
-   studies. Model cache capacity does not define the preferred size.
+2. Evaluate the compact recurrent tactical processor and shared exact topology
+   ingress with explicit parameter and compute budgets.
    Compare exact-child evaluation to parent/action processing. Keep terminal,
    history, state identity and score-frame authority in the symbolic engine.
 3. Admit fresh root families and a consistent teacher protocol. Report learning
@@ -210,7 +212,7 @@ separate. Do not reopen spent families to tune the next architecture.
    choices before fresh evaluation. Existing negative results are not tuned
    architecture verdicts.
 4. Test a frozen neural winner in a fixed search at equal time before persistent
-   memory or adaptive refresh. Keep 2FFS and modern transformers as named
+   memory or adaptive refresh. Keep 2FFS as a named
    controls with their additional assumptions and budgets visible.
 5. Merge only reviewed contracts and measured decision/strength improvements.
    Profile newly useful paths end to end before precision or kernel tuning.

@@ -1,0 +1,200 @@
+{
+  "schema": "chen_exchange_learning_admission_v1",
+  "counts": {
+    "train": 256,
+    "dev": 64,
+    "test": 64
+  },
+  "generator_config": {
+    "seed": 20261009,
+    "families": 384,
+    "max_plies": 160,
+    "roots_per_family": 6,
+    "min_ply": 24,
+    "min_separation": 12,
+    "max_attempts": 15360
+  },
+  "labels_generated": false,
+  "test_gate": "CLOSED",
+  "training_performed": false,
+  "input_identity": "legacy mover planes/rights/raw_EP/clipped_clock plus full replay context",
+  "collision_scope": "all planned parent and one-ply complete legal child inputs across whole families",
+  "deeper_exchange_trace_states": "supervision only; not supplied to parent or exact-one-child model",
+  "source_sha256": {
+    "/home/iskam/src/vibe/chen-neural/neural/exchange_study_data.py": "102e255527844c0f3b6132318eb86681797149095efbf05e4553c030ec91165f",
+    "/home/iskam/src/vibe/chen/scripts/generate_synthetic.py": "6790ba6cadd47f8cdb6d04114f390f2c9ce720d653332771683de68b81fd4cee",
+    "/home/iskam/src/vibe/chen/scripts/audit_semantic_admission.py": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b"
+  },
+  "known_spent": {
+    "scope": "explicit_known_spent_sources_only",
+    "sources": [
+      {
+        "path": "/home/iskam/src/vibe/chen/docs/research/evidence/synthetic-mechanics-2026-10-03/exclusions.json.gz",
+        "sha256": "88a7eab925ddd5ed31c2867d21735419237cf3e73a888b0e5330a7a392ab66ff",
+        "kind": "key_snapshot",
+        "added_keys": 777264,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/semantic-data-admission-2026-10-01.json.gz",
+        "sha256": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 384,
+        "added_move_identities": 3452
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/semantic-data-unscored-admission-revision1-2026-10-01.json.gz",
+        "sha256": "0423041db00762479e203c17a85a73668ccee75d5178a6f1a5fb59324eddd66e",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 3,
+        "added_move_identities": 1550
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+        "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 80
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/value-study-gfx1030-2026-10-01.json",
+        "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 160
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/value-study-pilot-2026-10-01.json",
+        "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+        "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+        "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 8
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+        "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 144
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+        "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/docs/research/evidence/semantic-teacher-packet-v2-2026-10-01/spent-inputs.json",
+        "sha256": "f9551b7d73111803f4088c706bf674d4320a787ced0b9568dee05ece90aa04c4",
+        "kind": "json",
+        "added_keys": 17077,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/docs/research/evidence/semantic-teacher-packet-v2-2026-10-01/input-admission.json.gz",
+        "sha256": "36ea77f09f05b94043643dfb1132141717bcd4b56157b6ff43bf5917a65c5b6f",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 383,
+        "added_move_identities": 3445
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/results/neural-packet-v2/neural/evidence/semantic-teacher-closed-attempt-spent-inputs.json",
+        "sha256": "9d0123c89d6358537981c334b5d473261c3fd4bdcd6471dd895638cb00df6a5a",
+        "kind": "json",
+        "added_keys": 0,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/docs/research/evidence/synthetic-mechanics-2026-10-03/families.jsonl.gz",
+        "sha256": "b876235575681f742db2683efc5e87c7c3f40618a180c03cc89057f75133d5f1",
+        "kind": "jsonl",
+        "added_keys": 37473,
+        "added_families": 256,
+        "added_move_identities": 256
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/docs/research/evidence/synthetic-mechanics-balanced-2026-10-03/families.jsonl.gz",
+        "sha256": "e1d72f74007cf68d8c6be625c7b7dda1052565f716d2e135366ae3a33f951ded",
+        "kind": "jsonl",
+        "added_keys": 2557,
+        "added_families": 16,
+        "added_move_identities": 16
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/evidence/exchange-target-pilot-2026-10-03/targets.jsonl.gz",
+        "sha256": "44fd685f66416cd517d89114f4cf05cacbc235a94bf94117286352d86933ac35",
+        "kind": "jsonl",
+        "added_keys": 2816,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/gpu/test_native_tactical.py",
+        "sha256": "a18804c4f9004884a7f15a090cc39cfd3f85d8ddb79667adfab405d57155355e",
+        "kind": "fixture_source",
+        "added_keys": 194,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen/gpu/test_native_topology.py",
+        "sha256": "4a9913aa35ed8433033c8a24df248bda828f4724ed38744206f9b545e55f1200",
+        "kind": "fixture_source",
+        "added_keys": 701,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/tests/test_exchange_targets.py",
+        "sha256": "cf194fda6921bab348cc0abfc2629921cf3bb5ae1f7cea3871cca64357583505",
+        "kind": "fixture_source",
+        "added_keys": 148,
+        "added_families": 0,
+        "added_move_identities": 0
+      },
+      {
+        "path": "/home/iskam/src/vibe/chen-neural/neural/tests/test_tactical_inputs.py",
+        "sha256": "afbda1a0bbfa0903ecc40ad93f1469702d7eec5561fe6aa06bf6529ea6772701",
+        "kind": "fixture_source",
+        "added_keys": 6,
+        "added_families": 0,
+        "added_move_identities": 0
+      }
+    ],
+    "feature_count": 838236,
+    "family_count": 1042,
+    "moves_count": 9111,
+    "key_set_sha256": "6fd33ee001726bea7e52e11b85c894d2d9251bae2c54a5f6ebc2252e7ac5d32c",
+    "family_set_sha256": "3a4b72518b477052d0236865c49ac7f04059f44dbad0a68108a31a1830131f8a",
+    "move_set_sha256": "dfb44be46e9b74914ec2783416599e027c47420aefc5a9dae40d51e984ef0db4"
+  },
+  "wall_seconds": 600
+}

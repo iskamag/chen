@@ -1,0 +1,207 @@
+{
+  "kind": "sealed_validation_only_strategic_selection",
+  "selected": null,
+  "candidates": [
+    {
+      "architecture": "square",
+      "control": "transport",
+      "seeds": 2,
+      "validation_cp_mae_mean": 200.37416076660156,
+      "validation_root_regret_mean": 132.36666666666667,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "square",
+      "control": "conditioned",
+      "seeds": 2,
+      "validation_cp_mae_mean": 195.2647476196289,
+      "validation_root_regret_mean": 136.14444444444445,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "square",
+      "control": "action_blind",
+      "seeds": 2,
+      "validation_cp_mae_mean": 207.90103149414062,
+      "validation_root_regret_mean": 141.17777777777778,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "square",
+      "control": "transport_fixed_encoder",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.87029266357422,
+      "validation_root_regret_mean": 140.54444444444442,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "square",
+      "control": "transport_zero_anchor",
+      "seeds": 2,
+      "validation_cp_mae_mean": 337.88267517089844,
+      "validation_root_regret_mean": 287.75555555555553,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "relation",
+      "control": "transport",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.8354034423828,
+      "validation_root_regret_mean": 138.82222222222222,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "relation",
+      "control": "conditioned",
+      "seeds": 2,
+      "validation_cp_mae_mean": 204.8763198852539,
+      "validation_root_regret_mean": 138.55555555555554,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "relation",
+      "control": "action_blind",
+      "seeds": 2,
+      "validation_cp_mae_mean": 213.18173217773438,
+      "validation_root_regret_mean": 141.17777777777778,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "relation",
+      "control": "transport_fixed_encoder",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.7511444091797,
+      "validation_root_regret_mean": 144.06666666666666,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "relation",
+      "control": "transport_zero_anchor",
+      "seeds": 2,
+      "validation_cp_mae_mean": 360.0335693359375,
+      "validation_root_regret_mean": 356.66666666666663,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "transport",
+      "seeds": 2,
+      "validation_cp_mae_mean": 208.88941192626953,
+      "validation_root_regret_mean": 132.33333333333331,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "conditioned",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.42311096191406,
+      "validation_root_regret_mean": 134.43333333333334,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "action_blind",
+      "seeds": 2,
+      "validation_cp_mae_mean": 209.4670867919922,
+      "validation_root_regret_mean": 140.77777777777777,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "transport_fixed_encoder",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.94058227539062,
+      "validation_root_regret_mean": 142.05555555555554,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "transport_zero_anchor",
+      "seeds": 2,
+      "validation_cp_mae_mean": 363.75779724121094,
+      "validation_root_regret_mean": 331.91111111111115,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    }
+  ],
+  "decision_rule": "seed-mean ordinary CP MAE AND selected-child regret must beat BOTH material and static Tapered; choose lowest regret then MAE then names",
+  "test_labels_read": false,
+  "strength_evidence": false,
+  "configuration": {
+    "families": {
+      "train": 96,
+      "validation": 24,
+      "test": 24
+    },
+    "corpus_seed": 20261003,
+    "seeds": [
+      20261003,
+      20261004
+    ],
+    "steps": 1024,
+    "pairs": 8,
+    "width": 16,
+    "depth": 1,
+    "tree_depth": 3,
+    "root_horizon": 3,
+    "child_target_horizon": 2,
+    "evaluator": "classical_tapered1",
+    "arena_capacity": 250000,
+    "architectures": [
+      "square",
+      "relation",
+      "plan"
+    ],
+    "controls": [
+      "transport",
+      "conditioned",
+      "action_blind",
+      "transport_fixed_encoder",
+      "transport_zero_anchor"
+    ],
+    "loss_weights": {
+      "value": 1.0,
+      "score_delta": 0.5,
+      "refresh": 0.05,
+      "latent_delta": 0.05
+    },
+    "loss_scale_cp": 800.0,
+    "teacher_gap_cp": 100,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "grad_clip": 1.0,
+    "latent_target": "frozen initial comparable encoder; never updated or optimized",
+    "batch": "8 broad root-uniform sibling pairs plus8 informative same-material pairs when available; 32rows with informative pool",
+    "selection": "seed-mean CP MAE AND complete-root regret beat BOTH material and static Tapered; choose lowest regret then MAE then names",
+    "test_protocol": "test labels produced only after validation selection JSON written and sealed; all final models evaluated once; no later optimization"
+  }
+}

@@ -1,0 +1,1537 @@
+{
+  "attempts": {
+    "continuation": {
+      "complete_sha256": "e63cddd19937513e9a544cc1a4137d0d87b589fc093a243473a859414734ebf3",
+      "declaration_sha256": "abeb9491083d8b1fc652100de2f75cb4352e865000755a37446a937d3459cd4e",
+      "elapsed_seconds": 84.45923120298539,
+      "status": "terminal_success_seven_remaining_keys"
+    },
+    "parent": {
+      "declaration_sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f",
+      "square_sha256": "0ea938f34e05f4a834b38cf1b70b4029401f28cfae3929f4e3f3d25dc16e4011",
+      "status": "terminal_failure_one_completed_square_anchor"
+    }
+  },
+  "capture_checks": {
+    "all_exact": true,
+    "changed_actions_checks": 20,
+    "changed_features_checks": 80,
+    "checks": 160,
+    "graphs": 80
+  },
+  "cold_setup_scope": "3warmups+synchronization+capture;exact own-eager input checks happen after reported setup time;not compile-only or cold production startup",
+  "cold_setup_wall_ms_range": [
+    3.6158119910396636,
+    19.652898976346478
+  ],
+  "conclusion": "Capture reduces fixed dispatch costs strongly at small batches. INT8 replay beats FP32 for all four batch1 anchors, loses for all batch32/256 anchors, and is near tied for conditioned transitions. Native/Torch FP16 and autocast do not beat FP32 replay in these models/shapes. No blanket precision promotion; preserve batch-specific variants for future producer+search integration.",
+  "fidelity": {
+    "anchor": {
+      "int8_fused": {
+        "changed_roots": 0,
+        "cp_maximum_absolute": 13.39288330078125,
+        "cp_mean_absolute_range": [
+          0.8886496897930751,
+          2.842265008345182
+        ],
+        "first_canonical_action_agreement": null,
+        "latent_maximum_absolute": 0.06808149814605713,
+        "latent_mean_absolute_range": [
+          0.008350471538279702,
+          0.012011313974825353
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0,
+        "models": 4,
+        "roots": 0
+      },
+      "native_fp16_affine": {
+        "changed_roots": 0,
+        "cp_maximum_absolute": 0.22159957885742188,
+        "cp_mean_absolute_range": [
+          0.024842569756405548,
+          0.0540826398031906
+        ],
+        "first_canonical_action_agreement": null,
+        "latent_maximum_absolute": 0.002507925033569336,
+        "latent_mean_absolute_range": [
+          0.00030020825253088075,
+          0.0005240961097384696
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0,
+        "models": 4,
+        "roots": 0
+      },
+      "torch_autocast_fp16": {
+        "changed_roots": 0,
+        "cp_maximum_absolute": 0.348175048828125,
+        "cp_mean_absolute_range": [
+          0.04821166536838711,
+          0.08133208483073845
+        ],
+        "first_canonical_action_agreement": null,
+        "latent_maximum_absolute": 0.004058957099914551,
+        "latent_mean_absolute_range": [
+          0.0004273452548721861,
+          0.0006507772276809543
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0,
+        "models": 4,
+        "roots": 0
+      },
+      "torch_fp16_affine": {
+        "changed_roots": 0,
+        "cp_maximum_absolute": 0.338470458984375,
+        "cp_mean_absolute_range": [
+          0.04362582213888864,
+          0.07396411371333404
+        ],
+        "first_canonical_action_agreement": null,
+        "latent_maximum_absolute": 0.0036667436361312866,
+        "latent_mean_absolute_range": [
+          0.0003927575375349161,
+          0.000625226869000034
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0,
+        "models": 4,
+        "roots": 0
+      }
+    },
+    "transition": {
+      "int8_fused": {
+        "changed_roots": 23,
+        "cp_maximum_absolute": 5.912506103515625,
+        "cp_mean_absolute_range": [
+          0.4721875340924224,
+          1.5333781087681189
+        ],
+        "first_canonical_action_agreement": 0.9753218884120172,
+        "latent_maximum_absolute": 0.03951885551214218,
+        "latent_mean_absolute_range": [
+          0.005318370606089744,
+          0.007876395454971496
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0.47821044921875,
+        "models": 4,
+        "roots": 932
+      },
+      "native_fp16_affine": {
+        "changed_roots": 0,
+        "cp_maximum_absolute": 0.14971923828125,
+        "cp_mean_absolute_range": [
+          0.01144924616073963,
+          0.036266575757380265
+        ],
+        "first_canonical_action_agreement": 1.0,
+        "latent_maximum_absolute": 0.0014557838439941406,
+        "latent_mean_absolute_range": [
+          0.00022580745924458432,
+          0.0003418405562123092
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0,
+        "models": 4,
+        "roots": 932
+      },
+      "torch_autocast_fp16": {
+        "changed_roots": 6,
+        "cp_maximum_absolute": 0.337554931640625,
+        "cp_mean_absolute_range": [
+          0.056330480257182576,
+          0.08384354665508048
+        ],
+        "first_canonical_action_agreement": 0.9935622317596566,
+        "latent_maximum_absolute": 0.0024019479751586914,
+        "latent_mean_absolute_range": [
+          0.0003172340813834803,
+          0.00041659777773412574
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0.097412109375,
+        "models": 4,
+        "roots": 932
+      },
+      "torch_fp16_affine": {
+        "changed_roots": 8,
+        "cp_maximum_absolute": 0.2427978515625,
+        "cp_mean_absolute_range": [
+          0.047459408741058064,
+          0.06169361700859218
+        ],
+        "first_canonical_action_agreement": 0.9914163090128756,
+        "latent_maximum_absolute": 0.002148866653442383,
+        "latent_mean_absolute_range": [
+          0.0002947997054648961,
+          0.000397684304204053
+        ],
+        "maximum_changed_fp32_top_two_gap_cp": 0.097412109375,
+        "models": 4,
+        "roots": 932
+      }
+    }
+  },
+  "kind": "chen_combined_precision_capture_analysis_v1",
+  "median_ratios": {
+    "anchor/1": {
+      "fp32_value": {
+        "fp32_graph_over_variant_graph_range": [
+          1.0,
+          1.0
+        ],
+        "same_variant_eager_over_graph_range": [
+          3.619968432292354,
+          4.1246425829565645
+        ]
+      },
+      "int8_fused": {
+        "fp32_graph_over_variant_graph_range": [
+          1.0312792224091907,
+          1.202680853360673
+        ],
+        "same_variant_eager_over_graph_range": [
+          5.413580891537489,
+          5.91630414427645
+        ]
+      },
+      "native_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8729920048970146,
+          0.9088332192964945
+        ],
+        "same_variant_eager_over_graph_range": [
+          4.456153420491214,
+          4.991860002483745
+        ]
+      },
+      "torch_autocast_fp16": {
+        "fp32_graph_over_variant_graph_range": [
+          0.579650517655394,
+          0.6318980324291852
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.693183352459341,
+          3.245143498074758
+        ]
+      },
+      "torch_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8383374017001783,
+          0.869674246174587
+        ],
+        "same_variant_eager_over_graph_range": [
+          4.059652684109374,
+          4.419341303470821
+        ]
+      }
+    },
+    "anchor/256": {
+      "fp32_value": {
+        "fp32_graph_over_variant_graph_range": [
+          1.0,
+          1.0
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.0497247570116042,
+          1.0707089467288873
+        ]
+      },
+      "int8_fused": {
+        "fp32_graph_over_variant_graph_range": [
+          0.7630266520280864,
+          0.849356361689809
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.0319870773113413,
+          1.0367242680611934
+        ]
+      },
+      "native_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.9021536785083157,
+          0.9502035236458357
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.036417773832625,
+          1.1315020985981323
+        ]
+      },
+      "torch_autocast_fp16": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8396202399279047,
+          0.8833598281710469
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.0525582942437233,
+          1.0918501214038925
+        ]
+      },
+      "torch_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8855380637522389,
+          0.9331909003244098
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.0576700948544837,
+          1.0814806979334248
+        ]
+      }
+    },
+    "anchor/32": {
+      "fp32_value": {
+        "fp32_graph_over_variant_graph_range": [
+          1.0,
+          1.0
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.398125619435849,
+          2.7529020588036914
+        ]
+      },
+      "int8_fused": {
+        "fp32_graph_over_variant_graph_range": [
+          0.861582252904841,
+          0.9299816202973823
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.7666872543984127,
+          3.723100834140093
+        ]
+      },
+      "native_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8228758239372173,
+          0.8532235177606826
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.9030496563583483,
+          3.4802489656839217
+        ]
+      },
+      "torch_autocast_fp16": {
+        "fp32_graph_over_variant_graph_range": [
+          0.7242724301032417,
+          0.752763233689881
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.2848890105903505,
+          2.7729817711413003
+        ]
+      },
+      "torch_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8824828225863812,
+          0.9011699761351424
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.5113504886304057,
+          3.3830702445045593
+        ]
+      }
+    },
+    "transition/complete_root": {
+      "fp32_value": {
+        "fp32_graph_over_variant_graph_range": [
+          1.0,
+          1.0
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.9191399603391495,
+          2.2268566103171414
+        ]
+      },
+      "int8_fused": {
+        "fp32_graph_over_variant_graph_range": [
+          0.9849916894534773,
+          1.0006556555494155
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.1769178843767243,
+          2.574583169729324
+        ]
+      },
+      "native_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.9524143706884699,
+          0.9607232032098871
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.315206390718599,
+          2.474222355412948
+        ]
+      },
+      "torch_autocast_fp16": {
+        "fp32_graph_over_variant_graph_range": [
+          0.8033034125093599,
+          0.8693011117864998
+        ],
+        "same_variant_eager_over_graph_range": [
+          1.9583033939242436,
+          2.0648928334057493
+        ]
+      },
+      "torch_fp16_affine": {
+        "fp32_graph_over_variant_graph_range": [
+          0.9502562707243992,
+          0.963037763950386
+        ],
+        "same_variant_eager_over_graph_range": [
+          2.1154941819800888,
+          2.37748855056347
+        ]
+      }
+    }
+  },
+  "scope": "eight structural one-seed representatives;TRAIN numerical fidelity and eager/graph timings;no retraining/calibration/heldout quality/promotion/engine or rating claim",
+  "status": "completed_representative_comparison_across_two_bound_attempts",
+  "timings": {
+    "plan/20261021/1": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1234.6492767333984,
+          "synchronized_wall_us": 1235.9785998705775
+        },
+        "graph_replay": {
+          "event_us": 298.22813987731934,
+          "synchronized_wall_us": 299.6571399853565
+        },
+        "resident_copy_graph": {
+          "event_us": 304.4701862335205,
+          "synchronized_wall_us": 305.99424993852153
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1621.9246673583984,
+          "synchronized_wall_us": 1622.9932702844962
+        },
+        "graph_replay": {
+          "event_us": 273.04871559143066,
+          "synchronized_wall_us": 274.3255300447345
+        },
+        "resident_copy_graph": {
+          "event_us": 274.6255397796631,
+          "synchronized_wall_us": 276.0167303495109
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1685.3575134277344,
+          "synchronized_wall_us": 1686.500200012233
+        },
+        "graph_replay": {
+          "event_us": 336.47167205810547,
+          "synchronized_wall_us": 337.85005973186344
+        },
+        "resident_copy_graph": {
+          "event_us": 339.0992736816406,
+          "synchronized_wall_us": 340.4165699612349
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1612.4241638183594,
+          "synchronized_wall_us": 1613.6722697410733
+        },
+        "graph_replay": {
+          "event_us": 515.3839874267578,
+          "synchronized_wall_us": 516.9617396313697
+        },
+        "resident_copy_graph": {
+          "event_us": 524.1056442260742,
+          "synchronized_wall_us": 525.7896601688117
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1464.0728759765625,
+          "synchronized_wall_us": 1465.2737899450585
+        },
+        "graph_replay": {
+          "event_us": 356.40064239501953,
+          "synchronized_wall_us": 357.44216991588473
+        },
+        "resident_copy_graph": {
+          "event_us": 360.2310562133789,
+          "synchronized_wall_us": 361.87146994052455
+        }
+      }
+    },
+    "plan/20261021/256": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1815.540542602539,
+          "synchronized_wall_us": 1817.208569846116
+        },
+        "graph_replay": {
+          "event_us": 1729.3978881835938,
+          "synchronized_wall_us": 1731.128619867377
+        },
+        "resident_copy_graph": {
+          "event_us": 1730.5982971191406,
+          "synchronized_wall_us": 1732.3103197850287
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 2105.7933807373047,
+          "synchronized_wall_us": 2107.422600092832
+        },
+        "graph_replay": {
+          "event_us": 2037.4117279052734,
+          "synchronized_wall_us": 2039.0468699042685
+        },
+        "resident_copy_graph": {
+          "event_us": 2048.3289337158203,
+          "synchronized_wall_us": 2050.0998801435344
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1896.754379272461,
+          "synchronized_wall_us": 1897.9062198195606
+        },
+        "graph_replay": {
+          "event_us": 1829.40673828125,
+          "synchronized_wall_us": 1831.2173601589166
+        },
+        "resident_copy_graph": {
+          "event_us": 1830.5162811279297,
+          "synchronized_wall_us": 1832.428679917939
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 2088.556900024414,
+          "synchronized_wall_us": 2090.2126998407766
+        },
+        "graph_replay": {
+          "event_us": 1977.0843505859375,
+          "synchronized_wall_us": 1978.720450133551
+        },
+        "resident_copy_graph": {
+          "event_us": 1996.7691802978516,
+          "synchronized_wall_us": 1998.5047599766403
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1991.8824005126953,
+          "synchronized_wall_us": 1993.536059744656
+        },
+        "graph_replay": {
+          "event_us": 1867.4309539794922,
+          "synchronized_wall_us": 1869.365889870096
+        },
+        "resident_copy_graph": {
+          "event_us": 1882.801513671875,
+          "synchronized_wall_us": 1884.529599628877
+        }
+      }
+    },
+    "plan/20261021/32": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1173.3587646484375,
+          "synchronized_wall_us": 1175.1481500687078
+        },
+        "graph_replay": {
+          "event_us": 466.4843559265137,
+          "synchronized_wall_us": 468.20563002256677
+        },
+        "resident_copy_graph": {
+          "event_us": 467.57598876953125,
+          "synchronized_wall_us": 469.6991198579781
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1550.505599975586,
+          "synchronized_wall_us": 1552.5471398723312
+        },
+        "graph_replay": {
+          "event_us": 504.95906829833984,
+          "synchronized_wall_us": 506.43513997783884
+        },
+        "resident_copy_graph": {
+          "event_us": 513.7211608886719,
+          "synchronized_wall_us": 515.1166499126703
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1659.8712921142578,
+          "synchronized_wall_us": 1661.386399937328
+        },
+        "graph_replay": {
+          "event_us": 556.8747329711914,
+          "synchronized_wall_us": 558.7711700354703
+        },
+        "resident_copy_graph": {
+          "event_us": 550.3018569946289,
+          "synchronized_wall_us": 552.2132696933113
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1475.656967163086,
+          "synchronized_wall_us": 1477.065609942656
+        },
+        "graph_replay": {
+          "event_us": 644.5086288452148,
+          "synchronized_wall_us": 646.4496100670658
+        },
+        "resident_copy_graph": {
+          "event_us": 645.2410888671875,
+          "synchronized_wall_us": 647.0305100083351
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1501.9507598876953,
+          "synchronized_wall_us": 1503.6460099508986
+        },
+        "graph_replay": {
+          "event_us": 528.7252998352051,
+          "synchronized_wall_us": 530.5549502372742
+        },
+        "resident_copy_graph": {
+          "event_us": 536.3609504699707,
+          "synchronized_wall_us": 537.8619601833634
+        }
+      }
+    },
+    "plan/conditioned/20261021/complete_root": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 3229.8133850097656,
+          "synchronized_wall_us": 3231.258839950897
+        },
+        "graph_replay": {
+          "event_us": 1542.5035858154297,
+          "synchronized_wall_us": 1544.2004401120357
+        },
+        "resident_copy_graph": {
+          "event_us": 1544.282455444336,
+          "synchronized_wall_us": 1546.1561401025392
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 3971.6323852539062,
+          "synchronized_wall_us": 3973.0675000464544
+        },
+        "graph_replay": {
+          "event_us": 1541.4359283447266,
+          "synchronized_wall_us": 1543.1886399164796
+        },
+        "resident_copy_graph": {
+          "event_us": 1543.7907409667969,
+          "synchronized_wall_us": 1546.0362401790917
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 3914.5188903808594,
+          "synchronized_wall_us": 3915.556859865319
+        },
+        "graph_replay": {
+          "event_us": 1618.980941772461,
+          "synchronized_wall_us": 1621.353570080828
+        },
+        "resident_copy_graph": {
+          "event_us": 1622.3297882080078,
+          "synchronized_wall_us": 1624.0492698852904
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 3762.2410583496094,
+          "synchronized_wall_us": 3764.4716998329386
+        },
+        "graph_replay": {
+          "event_us": 1920.4594421386719,
+          "synchronized_wall_us": 1922.3128099110909
+        },
+        "resident_copy_graph": {
+          "event_us": 1927.1226501464844,
+          "synchronized_wall_us": 1929.8074199468829
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 3817.982177734375,
+          "synchronized_wall_us": 3819.3625200074166
+        },
+        "graph_replay": {
+          "event_us": 1623.291015625,
+          "synchronized_wall_us": 1625.0357800163329
+        },
+        "resident_copy_graph": {
+          "event_us": 1629.1926574707031,
+          "synchronized_wall_us": 1631.4166798838414
+        }
+      }
+    },
+    "relation/20261021/1": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 889.295654296875,
+          "synchronized_wall_us": 890.5318303732201
+        },
+        "graph_replay": {
+          "event_us": 229.8507595062256,
+          "synchronized_wall_us": 230.62880005454645
+        },
+        "resident_copy_graph": {
+          "event_us": 232.18318939208984,
+          "synchronized_wall_us": 233.31761010922492
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1243.7242889404297,
+          "synchronized_wall_us": 1245.0222001643851
+        },
+        "graph_replay": {
+          "event_us": 213.06941986083984,
+          "synchronized_wall_us": 214.21500016003847
+        },
+        "resident_copy_graph": {
+          "event_us": 212.28381156921387,
+          "synchronized_wall_us": 213.45370972994715
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1294.8514556884766,
+          "synchronized_wall_us": 1295.7962095970288
+        },
+        "graph_replay": {
+          "event_us": 258.3518123626709,
+          "synchronized_wall_us": 259.7788302227855
+        },
+        "resident_copy_graph": {
+          "event_us": 263.95026206970215,
+          "synchronized_wall_us": 265.0551201077178
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1194.0994262695312,
+          "synchronized_wall_us": 1195.2730600023642
+        },
+        "graph_replay": {
+          "event_us": 379.29443359375,
+          "synchronized_wall_us": 380.582989891991
+        },
+        "resident_copy_graph": {
+          "event_us": 385.20647048950195,
+          "synchronized_wall_us": 386.4732797956094
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1195.4022216796875,
+          "synchronized_wall_us": 1196.614570217207
+        },
+        "graph_replay": {
+          "event_us": 269.29511070251465,
+          "synchronized_wall_us": 270.76762984506786
+        },
+        "resident_copy_graph": {
+          "event_us": 272.72274017333984,
+          "synchronized_wall_us": 274.15772987296805
+        }
+      }
+    },
+    "relation/20261021/256": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1590.6124114990234,
+          "synchronized_wall_us": 1592.1894603525288
+        },
+        "graph_replay": {
+          "event_us": 1513.50341796875,
+          "synchronized_wall_us": 1515.2590197976679
+        },
+        "resident_copy_graph": {
+          "event_us": 1535.8258819580078,
+          "synchronized_wall_us": 1537.629030062817
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1839.132080078125,
+          "synchronized_wall_us": 1841.0737797967158
+        },
+        "graph_replay": {
+          "event_us": 1782.0216369628906,
+          "synchronized_wall_us": 1784.0085600619204
+        },
+        "resident_copy_graph": {
+          "event_us": 1787.8092956542969,
+          "synchronized_wall_us": 1789.9411500548013
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1675.805892944336,
+          "synchronized_wall_us": 1677.5637000682764
+        },
+        "graph_replay": {
+          "event_us": 1593.0423736572266,
+          "synchronized_wall_us": 1594.667860190384
+        },
+        "resident_copy_graph": {
+          "event_us": 1597.0723724365234,
+          "synchronized_wall_us": 1598.861159873195
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1803.5161590576172,
+          "synchronized_wall_us": 1805.4912600200623
+        },
+        "graph_replay": {
+          "event_us": 1713.3938598632812,
+          "synchronized_wall_us": 1715.336119523272
+        },
+        "resident_copy_graph": {
+          "event_us": 1731.4076232910156,
+          "synchronized_wall_us": 1733.2292199716903
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1726.0899353027344,
+          "synchronized_wall_us": 1728.1248199287802
+        },
+        "graph_replay": {
+          "event_us": 1631.7839050292969,
+          "synchronized_wall_us": 1633.8977799750865
+        },
+        "resident_copy_graph": {
+          "event_us": 1644.3524932861328,
+          "synchronized_wall_us": 1646.393389964942
+        }
+      }
+    },
+    "relation/20261021/32": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 941.4220809936523,
+          "synchronized_wall_us": 942.5273499800824
+        },
+        "graph_replay": {
+          "event_us": 391.8609619140625,
+          "synchronized_wall_us": 393.02667981246486
+        },
+        "resident_copy_graph": {
+          "event_us": 395.8481788635254,
+          "synchronized_wall_us": 397.2558901295997
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1174.5488739013672,
+          "synchronized_wall_us": 1175.8354702033103
+        },
+        "graph_replay": {
+          "event_us": 423.5236167907715,
+          "synchronized_wall_us": 424.9976098071784
+        },
+        "resident_copy_graph": {
+          "event_us": 426.3844680786133,
+          "synchronized_wall_us": 428.12611965928227
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1428.8054656982422,
+          "synchronized_wall_us": 1430.0101800472476
+        },
+        "graph_replay": {
+          "event_us": 458.77832412719727,
+          "synchronized_wall_us": 460.63741989200935
+        },
+        "resident_copy_graph": {
+          "event_us": 460.24951934814453,
+          "synchronized_wall_us": 462.34201989136636
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1222.6773071289062,
+          "synchronized_wall_us": 1224.037180072628
+        },
+        "graph_replay": {
+          "event_us": 519.793643951416,
+          "synchronized_wall_us": 522.1119499765337
+        },
+        "resident_copy_graph": {
+          "event_us": 523.462085723877,
+          "synchronized_wall_us": 525.2572600147687
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1110.080680847168,
+          "synchronized_wall_us": 1111.2922299071215
+        },
+        "graph_replay": {
+          "event_us": 440.9585762023926,
+          "synchronized_wall_us": 442.5078199710697
+        },
+        "resident_copy_graph": {
+          "event_us": 436.308536529541,
+          "synchronized_wall_us": 437.87500995676965
+        }
+      }
+    },
+    "relation/conditioned/20261021/complete_root": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 3261.459503173828,
+          "synchronized_wall_us": 3263.0145497387275
+        },
+        "graph_replay": {
+          "event_us": 1463.1781768798828,
+          "synchronized_wall_us": 1465.3006999287754
+        },
+        "resident_copy_graph": {
+          "event_us": 1470.9837341308594,
+          "synchronized_wall_us": 1472.800099872984
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 3570.3201293945312,
+          "synchronized_wall_us": 3571.7074101557955
+        },
+        "graph_replay": {
+          "event_us": 1470.7801055908203,
+          "synchronized_wall_us": 1472.9771998827346
+        },
+        "resident_copy_graph": {
+          "event_us": 1476.8717193603516,
+          "synchronized_wall_us": 1478.905499971006
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 3787.7130126953125,
+          "synchronized_wall_us": 3788.9262099633925
+        },
+        "graph_replay": {
+          "event_us": 1529.3714141845703,
+          "synchronized_wall_us": 1531.3604299444705
+        },
+        "resident_copy_graph": {
+          "event_us": 1540.6907653808594,
+          "synchronized_wall_us": 1542.5644401693717
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 3524.031982421875,
+          "synchronized_wall_us": 3525.413580064196
+        },
+        "graph_replay": {
+          "event_us": 1767.4226379394531,
+          "synchronized_wall_us": 1769.3957497249357
+        },
+        "resident_copy_graph": {
+          "event_us": 1767.4054718017578,
+          "synchronized_wall_us": 1769.679340068251
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 3642.4813842773438,
+          "synchronized_wall_us": 3643.933739804197
+        },
+        "graph_replay": {
+          "event_us": 1530.1062774658203,
+          "synchronized_wall_us": 1532.6819298206829
+        },
+        "resident_copy_graph": {
+          "event_us": 1538.2514953613281,
+          "synchronized_wall_us": 1540.1761402608827
+        }
+      }
+    },
+    "square/20261021/1": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 558.7314414978027,
+          "synchronized_wall_us": 560.0437597604468
+        },
+        "graph_replay": {
+          "event_us": 153.85806560516357,
+          "synchronized_wall_us": 154.70957005163655
+        },
+        "resident_copy_graph": {
+          "event_us": 147.1828269958496,
+          "synchronized_wall_us": 147.86087005631998
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 739.3197250366211,
+          "synchronized_wall_us": 740.4439500533044
+        },
+        "graph_replay": {
+          "event_us": 127.82304763793945,
+          "synchronized_wall_us": 128.63726034993306
+        },
+        "resident_copy_graph": {
+          "event_us": 143.0215883255005,
+          "synchronized_wall_us": 143.97607010323554
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 757.8302764892578,
+          "synchronized_wall_us": 758.5655598086305
+        },
+        "graph_replay": {
+          "event_us": 169.2146110534668,
+          "synchronized_wall_us": 170.2287798980251
+        },
+        "resident_copy_graph": {
+          "event_us": 180.21187782287598,
+          "synchronized_wall_us": 181.41198001103476
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 702.2629928588867,
+          "synchronized_wall_us": 703.3895497443154
+        },
+        "graph_replay": {
+          "event_us": 260.2153778076172,
+          "synchronized_wall_us": 261.1740300199017
+        },
+        "resident_copy_graph": {
+          "event_us": 250.45367240905762,
+          "synchronized_wall_us": 251.33082031970844
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 728.8796615600586,
+          "synchronized_wall_us": 729.9859600607306
+        },
+        "graph_replay": {
+          "event_us": 178.7742805480957,
+          "synchronized_wall_us": 179.81487995712087
+        },
+        "resident_copy_graph": {
+          "event_us": 176.57145500183105,
+          "synchronized_wall_us": 177.31838976033032
+        }
+      }
+    },
+    "square/20261021/256": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 603.729419708252,
+          "synchronized_wall_us": 604.8500901670195
+        },
+        "graph_replay": {
+          "event_us": 563.8890647888184,
+          "synchronized_wall_us": 564.9061698932201
+        },
+        "resident_copy_graph": {
+          "event_us": 563.7182807922363,
+          "synchronized_wall_us": 565.4113800846972
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 755.329475402832,
+          "synchronized_wall_us": 756.3125601154752
+        },
+        "graph_replay": {
+          "event_us": 729.8553085327148,
+          "synchronized_wall_us": 731.4111397136003
+        },
+        "resident_copy_graph": {
+          "event_us": 731.5124893188477,
+          "synchronized_wall_us": 732.8112600953318
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 707.5350570678711,
+          "synchronized_wall_us": 708.51843978744
+        },
+        "graph_replay": {
+          "event_us": 625.0775527954102,
+          "synchronized_wall_us": 626.175100042019
+        },
+        "resident_copy_graph": {
+          "event_us": 626.7035865783691,
+          "synchronized_wall_us": 628.0518000130542
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 733.3468627929688,
+          "synchronized_wall_us": 734.609339851886
+        },
+        "graph_replay": {
+          "event_us": 671.5743637084961,
+          "synchronized_wall_us": 672.8115200530738
+        },
+        "resident_copy_graph": {
+          "event_us": 675.6096267700195,
+          "synchronized_wall_us": 677.1733198547736
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 689.1225814819336,
+          "synchronized_wall_us": 689.902720041573
+        },
+        "graph_replay": {
+          "event_us": 636.6120529174805,
+          "synchronized_wall_us": 637.9242101684213
+        },
+        "resident_copy_graph": {
+          "event_us": 640.0985145568848,
+          "synchronized_wall_us": 641.2825000006706
+        }
+      }
+    },
+    "square/20261021/32": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 511.9002342224121,
+          "synchronized_wall_us": 513.0214398377575
+        },
+        "graph_replay": {
+          "event_us": 185.58833122253418,
+          "synchronized_wall_us": 186.35658983839676
+        },
+        "resident_copy_graph": {
+          "event_us": 181.7615032196045,
+          "synchronized_wall_us": 182.49389017000794
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 745.0705718994141,
+          "synchronized_wall_us": 746.0624596569687
+        },
+        "graph_replay": {
+          "event_us": 199.21883583068848,
+          "synchronized_wall_us": 200.38739021401852
+        },
+        "resident_copy_graph": {
+          "event_us": 196.2160301208496,
+          "synchronized_wall_us": 197.1489901188761
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 775.4840087890625,
+          "synchronized_wall_us": 776.4449703972787
+        },
+        "graph_replay": {
+          "event_us": 222.24984169006348,
+          "synchronized_wall_us": 223.10040978481993
+        },
+        "resident_copy_graph": {
+          "event_us": 227.763090133667,
+          "synchronized_wall_us": 228.74211019370705
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 691.1197471618652,
+          "synchronized_wall_us": 692.1604301896878
+        },
+        "graph_replay": {
+          "event_us": 248.9064598083496,
+          "synchronized_wall_us": 249.60871989605948
+        },
+        "resident_copy_graph": {
+          "event_us": 249.8660659790039,
+          "synchronized_wall_us": 250.70062023587525
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 711.7279052734375,
+          "synchronized_wall_us": 712.7990300068632
+        },
+        "graph_replay": {
+          "event_us": 209.99255180358887,
+          "synchronized_wall_us": 210.69590002298355
+        },
+        "resident_copy_graph": {
+          "event_us": 212.5285530090332,
+          "synchronized_wall_us": 213.40289997169748
+        }
+      }
+    },
+    "square/conditioned/20261021/complete_root": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 2608.170166015625,
+          "synchronized_wall_us": 2609.7715500509366
+        },
+        "graph_replay": {
+          "event_us": 1358.1316375732422,
+          "synchronized_wall_us": 1359.8651500069536
+        },
+        "resident_copy_graph": {
+          "event_us": 1368.7005615234375,
+          "synchronized_wall_us": 1371.0886499029584
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 2958.33984375,
+          "synchronized_wall_us": 2959.638810134493
+        },
+        "graph_replay": {
+          "event_us": 1357.9325103759766,
+          "synchronized_wall_us": 1359.5546397846192
+        },
+        "resident_copy_graph": {
+          "event_us": 1373.6666870117188,
+          "synchronized_wall_us": 1375.8064599824138
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 3275.784912109375,
+          "synchronized_wall_us": 3277.081760170404
+        },
+        "graph_replay": {
+          "event_us": 1413.7213134765625,
+          "synchronized_wall_us": 1415.459880081471
+        },
+        "resident_copy_graph": {
+          "event_us": 1425.8721923828125,
+          "synchronized_wall_us": 1427.5240802089684
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 3228.5818481445312,
+          "synchronized_wall_us": 3230.1532398560084
+        },
+        "graph_replay": {
+          "event_us": 1562.0042419433594,
+          "synchronized_wall_us": 1564.3200400518253
+        },
+        "resident_copy_graph": {
+          "event_us": 1572.78076171875,
+          "synchronized_wall_us": 1574.7665500384755
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 2985.9400939941406,
+          "synchronized_wall_us": 2987.2004201752134
+        },
+        "graph_replay": {
+          "event_us": 1410.1336669921875,
+          "synchronized_wall_us": 1412.0579700102098
+        },
+        "resident_copy_graph": {
+          "event_us": 1423.440170288086,
+          "synchronized_wall_us": 1426.0939799714833
+        }
+      }
+    },
+    "threat/20261021/1": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1076.6690826416016,
+          "synchronized_wall_us": 1077.851910085883
+        },
+        "graph_replay": {
+          "event_us": 269.95466232299805,
+          "synchronized_wall_us": 271.5124300448224
+        },
+        "resident_copy_graph": {
+          "event_us": 274.7879123687744,
+          "synchronized_wall_us": 275.9584301384166
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1424.0943145751953,
+          "synchronized_wall_us": 1425.2730697626248
+        },
+        "graph_replay": {
+          "event_us": 261.9902038574219,
+          "synchronized_wall_us": 263.27732019126415
+        },
+        "resident_copy_graph": {
+          "event_us": 268.3714485168457,
+          "synchronized_wall_us": 269.63963988237083
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1466.669921875,
+          "synchronized_wall_us": 1467.8088002256118
+        },
+        "graph_replay": {
+          "event_us": 309.5054054260254,
+          "synchronized_wall_us": 311.01365020731464
+        },
+        "resident_copy_graph": {
+          "event_us": 318.08786392211914,
+          "synchronized_wall_us": 319.4448599242605
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1393.2296752929688,
+          "synchronized_wall_us": 1394.365470041521
+        },
+        "graph_replay": {
+          "event_us": 428.0496025085449,
+          "synchronized_wall_us": 429.67760004103184
+        },
+        "resident_copy_graph": {
+          "event_us": 421.4679527282715,
+          "synchronized_wall_us": 422.9370999382809
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1357.010269165039,
+          "synchronized_wall_us": 1358.157740032766
+        },
+        "graph_replay": {
+          "event_us": 310.858211517334,
+          "synchronized_wall_us": 312.2001499286853
+        },
+        "resident_copy_graph": {
+          "event_us": 314.8938465118408,
+          "synchronized_wall_us": 315.9822497400455
+        }
+      }
+    },
+    "threat/20261021/256": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1798.803482055664,
+          "synchronized_wall_us": 1801.3285601045936
+        },
+        "graph_replay": {
+          "event_us": 1700.9258270263672,
+          "synchronized_wall_us": 1702.582320140209
+        },
+        "resident_copy_graph": {
+          "event_us": 1707.788314819336,
+          "synchronized_wall_us": 1709.444219886791
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 2311.413803100586,
+          "synchronized_wall_us": 2313.298500084784
+        },
+        "graph_replay": {
+          "event_us": 2229.6410369873047,
+          "synchronized_wall_us": 2231.3536697765812
+        },
+        "resident_copy_graph": {
+          "event_us": 2224.945755004883,
+          "synchronized_wall_us": 2227.070660155732
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1975.0233459472656,
+          "synchronized_wall_us": 1976.748639717698
+        },
+        "graph_replay": {
+          "event_us": 1875.1009368896484,
+          "synchronized_wall_us": 1877.3278902517632
+        },
+        "resident_copy_graph": {
+          "event_us": 1886.228256225586,
+          "synchronized_wall_us": 1888.8238002546132
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 2111.1104583740234,
+          "synchronized_wall_us": 2113.103909941856
+        },
+        "graph_replay": {
+          "event_us": 1966.3835906982422,
+          "synchronized_wall_us": 1968.8452500849962
+        },
+        "resident_copy_graph": {
+          "event_us": 1982.3070526123047,
+          "synchronized_wall_us": 1984.842259553261
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1940.2350616455078,
+          "synchronized_wall_us": 1942.3759198980406
+        },
+        "graph_replay": {
+          "event_us": 1822.6683807373047,
+          "synchronized_wall_us": 1824.473770102486
+        },
+        "resident_copy_graph": {
+          "event_us": 1826.7967987060547,
+          "synchronized_wall_us": 1828.5136698978022
+        }
+      }
+    },
+    "threat/20261021/32": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 1156.253318786621,
+          "synchronized_wall_us": 1157.5074496795423
+        },
+        "graph_replay": {
+          "event_us": 446.22575759887695,
+          "synchronized_wall_us": 447.893499804195
+        },
+        "resident_copy_graph": {
+          "event_us": 446.47775650024414,
+          "synchronized_wall_us": 448.16800975240767
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 1490.0641632080078,
+          "synchronized_wall_us": 1491.6289102984592
+        },
+        "graph_replay": {
+          "event_us": 518.4559631347656,
+          "synchronized_wall_us": 519.8499601101503
+        },
+        "resident_copy_graph": {
+          "event_us": 528.8752555847168,
+          "synchronized_wall_us": 530.0831602653489
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 1579.1509246826172,
+          "synchronized_wall_us": 1580.1376500166953
+        },
+        "graph_replay": {
+          "event_us": 542.9121589660645,
+          "synchronized_wall_us": 544.3026599823497
+        },
+        "resident_copy_graph": {
+          "event_us": 546.8402099609375,
+          "synchronized_wall_us": 548.3485601143911
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 1500.0546264648438,
+          "synchronized_wall_us": 1501.398109830916
+        },
+        "graph_replay": {
+          "event_us": 598.7689971923828,
+          "synchronized_wall_us": 600.1362798269838
+        },
+        "resident_copy_graph": {
+          "event_us": 603.7226676940918,
+          "synchronized_wall_us": 605.5246901814826
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 1438.6824798583984,
+          "synchronized_wall_us": 1440.0254900101572
+        },
+        "graph_replay": {
+          "event_us": 494.69974517822266,
+          "synchronized_wall_us": 497.0133400638588
+        },
+        "resident_copy_graph": {
+          "event_us": 500.11058807373047,
+          "synchronized_wall_us": 502.05154984723777
+        }
+      }
+    },
+    "threat/conditioned/20261021/complete_root": {
+      "fp32_value": {
+        "eager": {
+          "event_us": 3155.894012451172,
+          "synchronized_wall_us": 3157.197310065385
+        },
+        "graph_replay": {
+          "event_us": 1515.6681060791016,
+          "synchronized_wall_us": 1517.4983299220912
+        },
+        "resident_copy_graph": {
+          "event_us": 1525.7138061523438,
+          "synchronized_wall_us": 1527.622620051261
+        }
+      },
+      "int8_fused": {
+        "eager": {
+          "event_us": 3817.088623046875,
+          "synchronized_wall_us": 3818.4755196562037
+        },
+        "graph_replay": {
+          "event_us": 1538.8153839111328,
+          "synchronized_wall_us": 1540.6204399187118
+        },
+        "resident_copy_graph": {
+          "event_us": 1546.3223266601562,
+          "synchronized_wall_us": 1548.1328399619088
+        }
+      },
+      "native_fp16_affine": {
+        "eager": {
+          "event_us": 3783.4552001953125,
+          "synchronized_wall_us": 3784.730310435407
+        },
+        "graph_replay": {
+          "event_us": 1590.8979034423828,
+          "synchronized_wall_us": 1592.7182603627443
+        },
+        "resident_copy_graph": {
+          "event_us": 1602.8404998779297,
+          "synchronized_wall_us": 1604.5890701934695
+        }
+      },
+      "torch_autocast_fp16": {
+        "eager": {
+          "event_us": 3699.9501037597656,
+          "synchronized_wall_us": 3701.331570337061
+        },
+        "graph_replay": {
+          "event_us": 1793.0414581298828,
+          "synchronized_wall_us": 1794.9614400276914
+        },
+        "resident_copy_graph": {
+          "event_us": 1798.9704132080078,
+          "synchronized_wall_us": 1801.2902600457892
+        }
+      },
+      "torch_fp16_affine": {
+        "eager": {
+          "event_us": 3637.3013305664062,
+          "synchronized_wall_us": 3638.7292301515117
+        },
+        "graph_replay": {
+          "event_us": 1573.4549713134766,
+          "synchronized_wall_us": 1575.7424500770867
+        },
+        "resident_copy_graph": {
+          "event_us": 1583.0758666992188,
+          "synchronized_wall_us": 1585.576859943103
+        }
+      }
+    }
+  }
+}

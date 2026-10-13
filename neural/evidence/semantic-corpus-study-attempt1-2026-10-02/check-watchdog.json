@@ -1,0 +1,1 @@
+{"passed": true, "fixtures": ["normal completion and child retirement", "exclusive durable claim rejects duplicate before spawn", "parent SIGTERM retires owned process group and journals terminal"], "GPU_calls": 0, "training": false}

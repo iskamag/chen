@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "neural/exchange_targets.py": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+    "neural/tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "neural/tests/test_exchange_targets.py": "cf194fda6921bab348cc0abfc2629921cf3bb5ae1f7cea3871cca64357583505"
+  },
+  "focused_tests": {
+    "passed": 8,
+    "test_body_seconds": 0.02
+  },
+  "pilot": {
+    "families": 256,
+    "complete_root_capture_promotion_support": true,
+    "cpu_affinity": [
+      3
+    ],
+    "max_plies": 16,
+    "nodes_per_action": 4096,
+    "global_nodes": 250000,
+    "wall_seconds": 180,
+    "external_seconds": 240
+  }
+}

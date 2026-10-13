@@ -1,0 +1,22 @@
+{
+  "kind": "semantic_outer_runner_review_evidence_v1",
+  "payload_sha256": {
+    "cpu-tests.log": "1e2cd6ce04b8adee8210bf0d12af877051d9b59262ab749ef11d9895d607909f",
+    "host-reviewed-unsealed-proposal.json": "6c6859d0f913f7f55a43c707ca85b028fcf34415dbe7a7f3adf825dd87888fd2",
+    "host-unsealed-proposal.json": "73e9ff362e210341cd9f382c6579b3fd6210bba24a5a2eab39f95eb3f998b549",
+    "independent-failure-probes.jsonl": "963604ef3198cca3dc35d23ee4a87f2f5aca785e981ff417f5b137e8bcefbc18",
+    "independent-failure-probes.py": "d190e6371e09ee01241ac058b762cfb80b95b325dac89931f5860c1ab205c0fb",
+    "independent-failure-probes.stderr": "ecce33ff96a0e11a0e519d1b73c0980e185bf59dfe061be9d21e2e5b4778bb8f",
+    "independent-fixed-admission.jsonl": "08a89b9a5e76026a6d0a7a1af1d2293da6192ec74f97594c3cddb2c1a705b879",
+    "independent-fixed-admission.py": "93f5c1f2dc8cab01746bc504b4689cfe0c4b3cc0f3ca4b629ff6b695db695100",
+    "independent-fixed-admission.stderr": "ecce33ff96a0e11a0e519d1b73c0980e185bf59dfe061be9d21e2e5b4778bb8f",
+    "independent-review.json": "5a721db6c94f86316fcd855298f03b938996ff615ee026b69813e83b668188cf",
+    "independent-unit-tests-fixed.log": "2ebd16d32a27a062f3e939bd371b46d9137cb1659dc96c22ca2d4c697b9c8a2a",
+    "independent-unit-tests.log": "e3dc8ef776c52d676e20377a995aff319154652d67a4c705dd6855f39f77b4fa",
+    "source-freeze-before-independent-review.json": "3a4566d10578d07e9076617e441984cb2bfff420d1594ef04a99ee9fc478d109",
+    "source-freeze.json": "5ac92bbe21d6084049e2a67db38fc924cad7af49ee69e8a8ac10ca2b860b49b7",
+    "sources/docs/SEMANTIC_CORPUS_STUDY.md": "7614e6b12217ef5bca2b93fb65d13b50e20e1c221bcfcd4c24e459bc625c4dbe",
+    "sources/neural/run_semantic_corpus_study.py": "d7f110745237a8f1453bb1e0ea8ad274ece7fbc1d44de2513809b7e7810a66ad",
+    "sources/neural/tests/test_run_semantic_corpus_study.py": "20ad7e5ab416ce40426deb0d9808d56216a26414c3a43c7af9822aa4988b1829"
+  }
+}

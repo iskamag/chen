@@ -1,0 +1,173 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+{
+  "kind": "compact_resident_replay_smoke",
+  "strength_evidence": false,
+  "environment": {
+    "torch": "2.10.0+rocm7.0",
+    "hip": "7.0.51831",
+    "device": "cuda",
+    "architecture": "gfx1030"
+  },
+  "source": {
+    "schema_version": 1,
+    "kind": "synthetic_legal_smoke",
+    "seed": 20260930,
+    "count": 192,
+    "max_plies": 48,
+    "games": 4,
+    "oracle": "chess==1.11.2",
+    "fingerprint_sha256": "863923c05e93a25649240fc9afdc36acb44d6f8964006c031d95e1e83dc8c069",
+    "labels": "immediate capture/check/mate heuristic + material proxy",
+    "strength_evidence": false,
+    "ingestion_device": "cpu"
+  },
+  "cpu_source_generation_seconds": 0.34816938592121005,
+  "cpu_compact_conversion_seconds": 0.10740784113295376,
+  "config": {
+    "capacity": 65536,
+    "source_samples": 192,
+    "batch_size": 128,
+    "repeats": 100,
+    "steps": 16,
+    "seed": 20260930,
+    "max_slots": 256
+  },
+  "results": [
+    {
+      "mode": "dense",
+      "replay": {
+        "schema_version": 1,
+        "device": "cuda:0",
+        "capacity": 65536,
+        "size": 65536,
+        "cursor": 0,
+        "total_inserted": 65536,
+        "bytes_per_record": 29733,
+        "allocated_bytes": 1948581888
+      },
+      "source_ingress_and_ring_fill_seconds": 0.5185443568043411,
+      "sample_decode_seconds_per_batch": 9.902284014970064e-05,
+      "training_seconds": 0.21516727306880057,
+      "training_positions_per_second": 9518.176118471065,
+      "first_loss": {
+        "total": 4.889747619628906,
+        "policy": 3.3462538719177246,
+        "material_proxy": 0.3354117274284363,
+        "board": 0.7317203879356384,
+        "successor_board": 0.7452036738395691,
+        "rules": 4.164242744445801,
+        "successor_rules": 4.189977169036865,
+        "latent_consistency": 0.034292127937078476
+      },
+      "final_loss": {
+        "total": 4.453429222106934,
+        "policy": 3.139540433883667,
+        "material_proxy": 0.2234560251235962,
+        "board": 0.7209023237228394,
+        "successor_board": 0.7423237562179565,
+        "rules": 3.685626983642578,
+        "successor_rules": 3.5313758850097656,
+        "latent_consistency": 0.029258619993925095
+      },
+      "sample_sequence_sha256": "5ac6649a28d2d86a32e82bf9431ff213bc98d790dc4d0827debec6535cec1bbf",
+      "baseline_torch_allocated_bytes": 0,
+      "baseline_torch_reserved_bytes": 0,
+      "resident_torch_allocated_bytes": 1948581888,
+      "resident_torch_reserved_bytes": 1973420032,
+      "replay_torch_allocated_delta_bytes": 1948581888,
+      "driver_before_free_total_bytes": [
+        16777216000,
+        17163091968
+      ],
+      "driver_resident_free_total_bytes": [
+        14610857984,
+        17163091968
+      ],
+      "peak_torch_allocated_bytes": 2123039232,
+      "torch_reserved_bytes": 2132803584,
+      "post_cleanup_torch_allocated_bytes": 67108864,
+      "post_cleanup_torch_reserved_bytes": 67108864,
+      "post_cleanup_driver_free_total_bytes": [
+        15734931456,
+        17163091968
+      ]
+    },
+    {
+      "mode": "compact",
+      "replay": {
+        "compact_version": 1,
+        "feature_schema_version": 1,
+        "device": "cuda:0",
+        "capacity": 65536,
+        "size": 65536,
+        "cursor": 0,
+        "total_inserted": 65536,
+        "max_slots": 256,
+        "bytes_per_record": 801,
+        "allocated_payload_bytes": 52494336,
+        "history_scope": "opaque external handles, no repetition adjudication",
+        "admission": "same-device exact tensors; validation synchronizes at ingress"
+      },
+      "source_ingress_and_ring_fill_seconds": 0.6220546769909561,
+      "sample_decode_seconds_per_batch": 0.0009224843396805226,
+      "training_seconds": 0.22422857698984444,
+      "training_positions_per_second": 9133.53698040351,
+      "first_loss": {
+        "total": 4.889747619628906,
+        "policy": 3.3462538719177246,
+        "material_proxy": 0.3354117274284363,
+        "board": 0.7317203879356384,
+        "successor_board": 0.7452036738395691,
+        "rules": 4.164242744445801,
+        "successor_rules": 4.189977169036865,
+        "latent_consistency": 0.034292127937078476
+      },
+      "final_loss": {
+        "total": 4.453429222106934,
+        "policy": 3.139540433883667,
+        "material_proxy": 0.2234560251235962,
+        "board": 0.7209023237228394,
+        "successor_board": 0.7423237562179565,
+        "rules": 3.685626983642578,
+        "successor_rules": 3.5313758850097656,
+        "latent_consistency": 0.029258619993925095
+      },
+      "sample_sequence_sha256": "5ac6649a28d2d86a32e82bf9431ff213bc98d790dc4d0827debec6535cec1bbf",
+      "baseline_torch_allocated_bytes": 67108864,
+      "baseline_torch_reserved_bytes": 67108864,
+      "resident_torch_allocated_bytes": 119603200,
+      "resident_torch_reserved_bytes": 127926272,
+      "replay_torch_allocated_delta_bytes": 52494336,
+      "driver_before_free_total_bytes": [
+        15734931456,
+        17163091968
+      ],
+      "driver_resident_free_total_bytes": [
+        16242442240,
+        17163091968
+      ],
+      "peak_torch_allocated_bytes": 227475968,
+      "torch_reserved_bytes": 241172480,
+      "post_cleanup_torch_allocated_bytes": 67108864,
+      "post_cleanup_torch_reserved_bytes": 67108864,
+      "post_cleanup_driver_free_total_bytes": [
+        16303259648,
+        17163091968
+      ]
+    }
+  ],
+  "limitations": [
+    "bounded CPU oracle ingestion, tiled legal source, no direct HIP producer",
+    "dense masks/logits still materialized per minibatch",
+    "first optimizer allocation remains in measured training",
+    "single owner and ordered stream; external history handles only",
+    "short mechanics timings; no chess strength or steady-state claim"
+  ],
+  "source_sha256": {
+    "neural/compact.py": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3",
+    "neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "neural/train.py": "9c0ec4bedad92da75353aee08838fb63cf482348777ad994a5f5ffd6dcb90a4f",
+    "neural/data.py": "62eefa0ec1e0ae385c8200cf11203a0bd4968f9d42597d0d00dd5d13ad9dad16"
+  }
+}

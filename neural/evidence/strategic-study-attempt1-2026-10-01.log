@@ -1,0 +1,20 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+{"stage": "validation", "architecture": "square", "control": "transport", "seed": 20261003, "cp_mae": 193.62649536132812, "regret_cp": 130.8}
+{"stage": "validation", "architecture": "square", "control": "conditioned", "seed": 20261003, "cp_mae": 191.0358123779297, "regret_cp": 137.2}
+{"stage": "validation", "architecture": "square", "control": "action_blind", "seed": 20261003, "cp_mae": 201.70375061035156, "regret_cp": 141.17777777777778}
+{"stage": "validation", "architecture": "square", "control": "transport_fixed_encoder", "seed": 20261003, "cp_mae": 201.65016174316406, "regret_cp": 136.53333333333333}
+{"stage": "validation", "architecture": "square", "control": "transport_zero_anchor", "seed": 20261003, "cp_mae": 323.2998352050781, "regret_cp": 310.4}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/chen-strategic-methods/project/neural/strategic_study.py", line 656, in <module>
+    main()
+  File "/tmp/chen-strategic-methods/project/neural/strategic_study.py", line 652, in main
+    run_strategic(**options)
+  File "/tmp/chen-strategic-methods/project/neural/strategic_study.py", line 516, in run_strategic
+    target_sha = _tensor_fingerprint(target.state_dict())  # cold model-weight audit, not data ingress
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/chen-strategic-methods/project/neural/strategic_study.py", line 427, in _tensor_fingerprint
+    digest.update(bytes(tensor.detach().cpu().contiguous().view(torch.uint8).flatten().tolist()))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: self.dim() cannot be 0 to view Float as Byte (different element sizes)

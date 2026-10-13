@@ -5,14 +5,14 @@ search architectures can be compared under controlled compute budgets, ultimatel
 validated at 2500 Lichess rating in a declared time-control pool. Most
 development evaluations remain offline. Adjustable play strength is also a target.
 
-## Teams and branches
+## Source ownership
 
-- Main worktree `chen`, branch `master`: GPU researcher plus integration/harness lead.
-- Separate worktree `../chen-neural`, branch `research/neural`: neural architecture
-  researcher and neural data/training/methods researcher, with disjoint file ownership.
+- Main checkout `chen`, branch `main`: Rust engine, GPU integration and harness.
+- `neural/` in the same checkout: optional model/data/training experiments.
+  The former `research/neural` worktree is merged and retired.
 - Baseline commit `d3d6e5e` freezes the original Rust rules/search oracle.
 
-Both teams verify primary literature and record hypotheses before choosing a
+Research verifies primary literature and records hypotheses before choosing a
 production architecture. Neural designs are independent experiments; global
 novelty is unproven. Branch isolation preserves a runnable engine while models,
 features, and losses evolve.
@@ -63,15 +63,15 @@ and claims about optimal chess decisions. [Architecture direction](../DIRECTION.
 defines the residual, quantization and proof ownership boundaries.
 
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) now owns implementation
-priority: bounded GPU alpha-beta/quiescence and useful work allocation; a scalable
-transformer and recurrent tactical processor; shared exact topology; fresh learning curves and
+priority: bounded GPU alpha-beta/quiescence and useful work allocation; a compact
+recurrent tactical processor; shared exact topology; fresh learning curves and
 tuning before persistent memory or adaptive refresh. Prior microkernel results
 remain controls, not the primary strength program.
 
-Current bounded ownership: coherence implements tactical processor mechanics
-in the neural worktree; fusion implements the standalone GPU bounded-search
-reference; RDNA independently reviews search completion and topology ingress.
-Root reviews sources/evidence, maintains direction and commits milestones.
+The engine owns exact rules/search and topology ingress; `neural/` owns tactical
+processor mechanics and controlled learning. Large-transformer training is
+outside the current scope. Historical transformer/scaling designs remain
+available as research records.
 Offline training is amortized: train to declared convergence/new-data checks
 and compare quality at inference budgets. Tiny defaults and short update counts
 are mechanics/learning-curve controls, not preferred-size assumptions. A separate

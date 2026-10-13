@@ -100,7 +100,7 @@ producer-throughput comparison.
 The [combined integration report](../gpu/evidence/bridge-integration-2026-09-30.json)
 records the later wrapper build: 62 actual-GPU neural tests without skips and
 six Rust hardware tests after the extension. The Python adapter and its
-[stream/ownership contract](../../chen-neural/docs/VRAM_BRIDGE_CONTRACT.md)
+[stream/ownership contract](VRAM_BRIDGE_CONTRACT.md)
 live in the separate neural worktree. Run the combined suite with the
 `neural-test` wrapper mode described in [GPU integration](GPU_INTEGRATION.md).
 

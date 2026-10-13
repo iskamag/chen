@@ -1,0 +1,143 @@
+{
+  "scope": "CPU admission/labels/mechanics and unexecuted GPU declaration",
+  "training_performed": false,
+  "test_gate": "CLOSED",
+  "payloads": {
+    ".gitignore": {
+      "sha256": "de0d1ea975b186f3e37ae25b460be80e4940a69e276eb9e793834450d68a7ad0",
+      "bytes": 26
+    },
+    "admission-label-source.py": {
+      "sha256": "102e255527844c0f3b6132318eb86681797149095efbf05e4553c030ec91165f",
+      "bytes": 18407
+    },
+    "admission.json": {
+      "sha256": "cb183a2864ebfee71461fbb49247fdc2de96d8c292bb056ebe12a0544fc30909",
+      "bytes": 36590
+    },
+    "cpu-mechanics.json": {
+      "sha256": "e8cea0a0f8e2f117044a6db0110d666735c73acf191d53fd56e54a21d0d6a77d",
+      "bytes": 3072
+    },
+    "declaration.json": {
+      "sha256": "1afdf911587bf3e581fadf9aeac093568f487bb21fcf290937ec76558cd1bf72",
+      "bytes": 8234
+    },
+    "inputs-dev.jsonl.gz": {
+      "sha256": "38713a8e43d062438fff0a034e8c546f2dde27b02985803ba866253c91e3aa94",
+      "bytes": 769055
+    },
+    "inputs-test.jsonl.gz": {
+      "sha256": "c28ce54d6535c69e4f07fdc749e9f82a05566065096ce1e7fd8917f41da24ef3",
+      "bytes": 731177
+    },
+    "inputs-train.jsonl.gz": {
+      "sha256": "746f1a0d884c3c944009e67d7aa70cde4eb7e4b12d80c497543be01bdc2250b8",
+      "bytes": 3027257
+    },
+    "labels-dev.json": {
+      "sha256": "ae9ab04063e1718d11ff88cfac1a9f30e525f8c6055afe0154bd6905f30bd786",
+      "bytes": 997
+    },
+    "labels-train.json": {
+      "sha256": "c6bb261ee408938efc2708dc2b00ce0703335f17a352fd5c25a0c82ec7c39ba4",
+      "bytes": 1030
+    },
+    "pack-archive.json": {
+      "sha256": "92e885b7ae2e23e622dd4aef0faf2bcceb87c5621954ae21ca1099935397bb68",
+      "bytes": 495
+    },
+    "packs.tar.gz": {
+      "sha256": "b858d8d9e584caedb64d8c3d43829180aa03c66e02a860de6a79a95275a7687e",
+      "bytes": 2988214
+    },
+    "source/audit_semantic_admission.py": {
+      "sha256": "ef90b1352b667a9152ee38d3c045b476a2d4a72f27500e1c6cb305349331f37b",
+      "bytes": 10379
+    },
+    "source/diamonds.py": {
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+      "bytes": 18005
+    },
+    "source/dynamics.py": {
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+      "bytes": 23362
+    },
+    "source/exchange_model.py": {
+      "sha256": "5e31b13e41d1bf4f3527c9f29becdb340ae9b392135bc924f702f3207575a317",
+      "bytes": 6802
+    },
+    "source/exchange_study.py": {
+      "sha256": "25d786ade8832d61c56dc2e10be80ebf4606b05fc02be7322f777d1611ba8831",
+      "bytes": 25717
+    },
+    "source/exchange_study_data.py": {
+      "sha256": "5ea621c84c6157046809f2a926d6953cf945552f4086e939a88c8fa1ee009eee",
+      "bytes": 19999
+    },
+    "source/exchange_targets.py": {
+      "sha256": "45b4c5a9ba390f5e08ec20bebd303fdad126eaa7958357f56f9aaeedc97d0a1e",
+      "bytes": 14489
+    },
+    "source/features.py": {
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+      "bytes": 4380
+    },
+    "source/generate_synthetic.py": {
+      "sha256": "6790ba6cadd47f8cdb6d04114f390f2c9ce720d653332771683de68b81fd4cee",
+      "bytes": 16342
+    },
+    "source/int8_inference.py": {
+      "sha256": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9",
+      "bytes": 17643
+    },
+    "source/models.py": {
+      "sha256": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f",
+      "bytes": 11564
+    },
+    "source/score_frames.py": {
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+      "bytes": 6675
+    },
+    "source/semantic_strategy.py": {
+      "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+      "bytes": 24381
+    },
+    "source/strategic_transport.py": {
+      "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+      "bytes": 16838
+    },
+    "source/tactical_inputs.py": {
+      "sha256": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+      "bytes": 18206
+    },
+    "source/tactical_operator.py": {
+      "sha256": "636e75320f7517620277db53310e013a56fc1f3a43704fdcdabf3ad3294b8a0e",
+      "bytes": 21816
+    },
+    "source/test_exchange_study.py": {
+      "sha256": "87683e6f14af842e344d6ba5281186f40fef13c2f1eecfc02e1607dec3718ff0",
+      "bytes": 8237
+    },
+    "source/test_tactical_operator.py": {
+      "sha256": "98b049e6f8fd35d297b48331340db4e01412fd64d11c0f3e4a67f41ba7d4d5de",
+      "bytes": 17803
+    },
+    "source/value_heads.py": {
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+      "bytes": 10832
+    },
+    "targets-dev.jsonl.gz": {
+      "sha256": "32678a5e95cc48d10b2d39a7b768fe336434c115ec69e48003dfd1355030feef",
+      "bytes": 141980
+    },
+    "targets-train.jsonl.gz": {
+      "sha256": "d0a068dee568e374752ea23964c4dbed0b75b3cc31fe22b03befa83de7294cf9",
+      "bytes": 585149
+    },
+    "training-declaration.json": {
+      "sha256": "bfa00679b95048bc15b18124fa2c73bba6f5be137d591c2e475d4c62f11b568e",
+      "bytes": 4647
+    }
+  }
+}

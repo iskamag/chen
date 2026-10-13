@@ -138,13 +138,13 @@ composition are hypotheses, not validated novelty claims.
 
 Completed studies:
 
-- [Value](../../../chen-neural/docs/VALUE_STUDY.md): 27 runs, three encoders,
+- [Value](../VALUE_STUDY.md): 27 runs, three encoders,
   three heads, three seeds. No aggregate MAE or chosen-child regret winner over
   material; width 32/depth 1, 2048 updates.
-- [Strategic](../../../chen-neural/docs/STRATEGIC_STUDY.md): 30 runs,
+- [Strategic](../STRATEGIC_STUDY.md): 30 runs,
   conditioning/anchor controls, two seeds. Joint gate selected NULL;
   width 16/depth 1, 1024 updates.
-- [Semantic corpus](../../../chen-neural/docs/SEMANTIC_CORPUS_STUDY.md): eight
+- [Semantic corpus](../SEMANTIC_CORPUS_STUDY.md): eight
   anchors and 32 transitions; width 32/depth 1, 384 anchor/192 transition updates.
   Selection NONE; TEST closed. Some scalar/ranking improvements miss the joint
   two-seed gate. Transport and conditioned rankings coincide despite latent
@@ -165,19 +165,20 @@ untested allocation of learning objectives, not decoder cost at deployment.
 
 ## One new processor, with two substantive extensions
 
-The [scalable transformer program](../../../chen-neural/docs/SCALING_STUDY.md)
-is a serious parallel candidate, with allocation-free profiles around 1M, 10M,
-50M, 100M and 270M value-path parameters. No large model has been allocated or
-trained. Tiny mechanics defaults are not deployment size targets. Compare
-converged/overtrained models at actual inference budgets; an equal-short-update
-study can describe a learning curve but cannot select the best architecture.
+The [scalable transformer program](../SCALING_STUDY.md)
+is retained as a historical proposal. As of 2026-10-13, large-transformer
+training and its 10M–270M parameter ladder are outside the current scope.
+Prioritize the compact recurrent tactical/exchange processor, whose width256
+task model has 1,067,521 parameters shared across recurrent steps. Compare
+converged models at actual inference budgets; an equal-short-update study can
+describe a learning curve but cannot select the best architecture.
 Separate data-family and training-compute curves from the parameter ladder.
 Our [local curve fitter](../../scripts/analyze_scaling.py) cannot extract a
 chess exponent from the old fixed-size experiments; no real curve exists yet.
 
 ### A. Recurrent tactical operator network — implement first
 
-The [mechanics prototype](../../../chen-neural/docs/TACTICAL_OPERATOR.md) is
+The [mechanics prototype](../TACTICAL_OPERATOR.md) is
 committed as neural `1ff620b` with nine focused CPU tests. It is untrained;
 native topology production and trace supervision remain pending.
 
@@ -267,7 +268,7 @@ controls for actual model/search batch shapes after a quality winner exists.
    teacher-query protocol per target; retain terminal utility outside ordinary CP.
    Record label instability and tactical/quiet strata. Earlier consumed validation
    can explain failure but cannot serve as a fresh final evaluation.
-4. Train exact-child, recurrent-action and scalable-transformer controls on
+4. Train compact exact-child and recurrent-action controls on
    comparable admitted data. Report
    convergence and data-scaling curves. Start with value and complete-root ranking
    objectives; auxiliary board reconstruction is an explicit on/off experiment.
@@ -290,7 +291,7 @@ abort publication under explicit premises. Dependency cancellation and topology
 repair remain further obligations. Existing
 cache/selection certificates do not prove chess-policy optimality or GPU latency.
 
-Ownership: main worktree owns GPU reference/search contracts and integration;
-neural worktree owns the tactical processor and training studies. Root coordinates
+Ownership: `main` contains GPU reference/search contracts and integration;
+`neural/` contains the tactical processor and training studies. Root coordinates
 commits and hardware windows; an independent reviewer checks search/topology
 boundaries. Reuse admitted evidence; no duplicate search/model implementations.

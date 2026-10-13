@@ -1,0 +1,294 @@
+{"families": 1, "roots": 8, "actions": 12}
+{"families": 2, "roots": 16, "actions": 33}
+{"families": 3, "roots": 24, "actions": 42}
+{"families": 4, "roots": 32, "actions": 70}
+{"families": 5, "roots": 33, "actions": 70}
+{"families": 6, "roots": 41, "actions": 87}
+{"families": 7, "roots": 49, "actions": 89}
+{"families": 8, "roots": 57, "actions": 109}
+{"families": 9, "roots": 65, "actions": 110}
+{"families": 10, "roots": 73, "actions": 129}
+{"families": 11, "roots": 81, "actions": 140}
+{"families": 12, "roots": 89, "actions": 164}
+{"families": 13, "roots": 97, "actions": 169}
+{"families": 14, "roots": 105, "actions": 191}
+{"families": 15, "roots": 113, "actions": 201}
+{"families": 16, "roots": 121, "actions": 221}
+{"families": 17, "roots": 129, "actions": 247}
+{"families": 18, "roots": 133, "actions": 251}
+{"families": 19, "roots": 141, "actions": 276}
+{"families": 20, "roots": 149, "actions": 277}
+{"families": 21, "roots": 157, "actions": 293}
+{"families": 22, "roots": 165, "actions": 301}
+{"families": 23, "roots": 173, "actions": 343}
+{"families": 24, "roots": 181, "actions": 348}
+{"families": 25, "roots": 189, "actions": 377}
+{"families": 26, "roots": 197, "actions": 386}
+{"families": 27, "roots": 205, "actions": 426}
+{"families": 28, "roots": 213, "actions": 438}
+{"families": 29, "roots": 221, "actions": 451}
+{"families": 30, "roots": 229, "actions": 462}
+{"families": 31, "roots": 237, "actions": 488}
+{"families": 32, "roots": 245, "actions": 493}
+{"families": 33, "roots": 253, "actions": 527}
+{"families": 34, "roots": 261, "actions": 532}
+{"families": 35, "roots": 269, "actions": 561}
+{"families": 36, "roots": 277, "actions": 572}
+{"families": 37, "roots": 285, "actions": 606}
+{"families": 38, "roots": 293, "actions": 630}
+{"families": 39, "roots": 301, "actions": 635}
+{"families": 40, "roots": 309, "actions": 667}
+{"families": 41, "roots": 317, "actions": 673}
+{"families": 42, "roots": 325, "actions": 690}
+{"families": 43, "roots": 333, "actions": 690}
+{"families": 44, "roots": 341, "actions": 708}
+{"families": 45, "roots": 349, "actions": 714}
+{"families": 46, "roots": 357, "actions": 730}
+{"families": 47, "roots": 365, "actions": 733}
+{"families": 48, "roots": 369, "actions": 758}
+{"families": 49, "roots": 377, "actions": 763}
+{"families": 50, "roots": 385, "actions": 790}
+{"families": 51, "roots": 393, "actions": 800}
+{"families": 52, "roots": 401, "actions": 811}
+{"families": 53, "roots": 409, "actions": 818}
+{"families": 54, "roots": 417, "actions": 842}
+{"families": 55, "roots": 425, "actions": 848}
+{"families": 56, "roots": 433, "actions": 910}
+{"families": 57, "roots": 441, "actions": 915}
+{"families": 58, "roots": 449, "actions": 941}
+{"families": 59, "roots": 457, "actions": 953}
+{"families": 60, "roots": 465, "actions": 988}
+{"families": 61, "roots": 473, "actions": 994}
+{"families": 62, "roots": 481, "actions": 1005}
+{"families": 63, "roots": 488, "actions": 1012}
+{"families": 64, "roots": 496, "actions": 1027}
+{"families": 65, "roots": 500, "actions": 1036}
+{"families": 66, "roots": 508, "actions": 1047}
+{"families": 67, "roots": 516, "actions": 1051}
+{"families": 68, "roots": 524, "actions": 1078}
+{"families": 69, "roots": 532, "actions": 1089}
+{"families": 70, "roots": 540, "actions": 1090}
+{"families": 71, "roots": 548, "actions": 1117}
+{"families": 72, "roots": 556, "actions": 1118}
+{"families": 73, "roots": 564, "actions": 1140}
+{"families": 74, "roots": 572, "actions": 1148}
+{"families": 75, "roots": 580, "actions": 1168}
+{"families": 76, "roots": 588, "actions": 1173}
+{"families": 77, "roots": 595, "actions": 1201}
+{"families": 78, "roots": 603, "actions": 1206}
+{"families": 79, "roots": 611, "actions": 1234}
+{"families": 80, "roots": 615, "actions": 1240}
+{"families": 81, "roots": 623, "actions": 1271}
+{"families": 82, "roots": 627, "actions": 1278}
+{"families": 83, "roots": 635, "actions": 1315}
+{"families": 84, "roots": 643, "actions": 1320}
+{"families": 85, "roots": 651, "actions": 1326}
+{"families": 86, "roots": 655, "actions": 1333}
+{"families": 87, "roots": 663, "actions": 1374}
+{"families": 88, "roots": 671, "actions": 1379}
+{"families": 89, "roots": 679, "actions": 1400}
+{"families": 90, "roots": 680, "actions": 1401}
+{"families": 91, "roots": 688, "actions": 1432}
+{"families": 92, "roots": 696, "actions": 1443}
+{"families": 93, "roots": 704, "actions": 1490}
+{"families": 94, "roots": 712, "actions": 1495}
+{"families": 95, "roots": 720, "actions": 1529}
+{"families": 96, "roots": 728, "actions": 1534}
+{"families": 97, "roots": 736, "actions": 1584}
+{"families": 98, "roots": 744, "actions": 1592}
+{"families": 99, "roots": 752, "actions": 1621}
+{"families": 100, "roots": 760, "actions": 1624}
+{"families": 101, "roots": 768, "actions": 1645}
+{"families": 102, "roots": 770, "actions": 1647}
+{"families": 103, "roots": 778, "actions": 1676}
+{"families": 104, "roots": 785, "actions": 1680}
+{"families": 105, "roots": 793, "actions": 1700}
+{"families": 106, "roots": 800, "actions": 1706}
+{"families": 107, "roots": 808, "actions": 1727}
+{"families": 108, "roots": 816, "actions": 1729}
+{"families": 109, "roots": 824, "actions": 1749}
+{"families": 110, "roots": 832, "actions": 1754}
+{"families": 111, "roots": 840, "actions": 1775}
+{"families": 112, "roots": 848, "actions": 1780}
+{"families": 113, "roots": 856, "actions": 1821}
+{"families": 114, "roots": 864, "actions": 1832}
+{"families": 115, "roots": 872, "actions": 1878}
+{"families": 116, "roots": 880, "actions": 1885}
+{"families": 117, "roots": 888, "actions": 1907}
+{"families": 118, "roots": 896, "actions": 1910}
+{"families": 119, "roots": 904, "actions": 1915}
+{"families": 120, "roots": 912, "actions": 1923}
+{"families": 121, "roots": 920, "actions": 1944}
+{"families": 122, "roots": 928, "actions": 1952}
+{"families": 123, "roots": 936, "actions": 1963}
+{"families": 124, "roots": 943, "actions": 1969}
+{"families": 125, "roots": 951, "actions": 1992}
+{"families": 126, "roots": 959, "actions": 2002}
+{"families": 127, "roots": 966, "actions": 2031}
+{"families": 128, "roots": 974, "actions": 2037}
+{"families": 129, "roots": 982, "actions": 2075}
+{"families": 130, "roots": 990, "actions": 2079}
+{"families": 131, "roots": 998, "actions": 2117}
+{"families": 132, "roots": 1006, "actions": 2119}
+{"families": 133, "roots": 1014, "actions": 2130}
+{"families": 134, "roots": 1022, "actions": 2132}
+{"families": 135, "roots": 1030, "actions": 2165}
+{"families": 136, "roots": 1034, "actions": 2169}
+{"families": 137, "roots": 1042, "actions": 2199}
+{"families": 138, "roots": 1050, "actions": 2208}
+{"families": 139, "roots": 1058, "actions": 2219}
+{"families": 140, "roots": 1065, "actions": 2227}
+{"families": 141, "roots": 1073, "actions": 2253}
+{"families": 142, "roots": 1081, "actions": 2264}
+{"families": 143, "roots": 1089, "actions": 2287}
+{"families": 144, "roots": 1097, "actions": 2297}
+{"families": 145, "roots": 1105, "actions": 2309}
+{"families": 146, "roots": 1113, "actions": 2310}
+{"families": 147, "roots": 1121, "actions": 2326}
+{"families": 148, "roots": 1129, "actions": 2332}
+{"families": 149, "roots": 1137, "actions": 2360}
+{"families": 150, "roots": 1145, "actions": 2366}
+{"families": 151, "roots": 1153, "actions": 2385}
+{"families": 152, "roots": 1161, "actions": 2388}
+{"families": 153, "roots": 1169, "actions": 2426}
+{"families": 154, "roots": 1177, "actions": 2431}
+{"families": 155, "roots": 1185, "actions": 2451}
+{"families": 156, "roots": 1191, "actions": 2458}
+{"families": 157, "roots": 1199, "actions": 2472}
+{"families": 158, "roots": 1207, "actions": 2472}
+{"families": 159, "roots": 1215, "actions": 2486}
+{"families": 160, "roots": 1223, "actions": 2493}
+{"families": 161, "roots": 1231, "actions": 2516}
+{"families": 162, "roots": 1239, "actions": 2525}
+{"families": 163, "roots": 1247, "actions": 2551}
+{"families": 164, "roots": 1255, "actions": 2561}
+{"families": 165, "roots": 1263, "actions": 2576}
+{"families": 166, "roots": 1271, "actions": 2584}
+{"families": 167, "roots": 1279, "actions": 2619}
+{"families": 168, "roots": 1287, "actions": 2622}
+{"families": 169, "roots": 1295, "actions": 2645}
+{"families": 170, "roots": 1303, "actions": 2648}
+{"families": 171, "roots": 1311, "actions": 2660}
+{"families": 172, "roots": 1319, "actions": 2667}
+{"families": 173, "roots": 1327, "actions": 2682}
+{"families": 174, "roots": 1335, "actions": 2690}
+{"families": 175, "roots": 1343, "actions": 2711}
+{"families": 176, "roots": 1351, "actions": 2713}
+{"families": 177, "roots": 1359, "actions": 2741}
+{"families": 178, "roots": 1367, "actions": 2743}
+{"families": 179, "roots": 1375, "actions": 2768}
+{"families": 180, "roots": 1383, "actions": 2776}
+{"families": 181, "roots": 1391, "actions": 2795}
+{"families": 182, "roots": 1399, "actions": 2804}
+{"families": 183, "roots": 1407, "actions": 2819}
+{"families": 184, "roots": 1409, "actions": 2822}
+{"families": 185, "roots": 1417, "actions": 2833}
+{"families": 186, "roots": 1421, "actions": 2839}
+{"families": 187, "roots": 1429, "actions": 2860}
+{"families": 188, "roots": 1433, "actions": 2863}
+{"families": 189, "roots": 1441, "actions": 2882}
+{"families": 190, "roots": 1449, "actions": 2886}
+{"families": 191, "roots": 1457, "actions": 2912}
+{"families": 192, "roots": 1465, "actions": 2915}
+{"families": 193, "roots": 1473, "actions": 2952}
+{"families": 194, "roots": 1481, "actions": 2957}
+{"families": 195, "roots": 1488, "actions": 2980}
+{"families": 196, "roots": 1490, "actions": 2982}
+{"families": 197, "roots": 1498, "actions": 3007}
+{"families": 198, "roots": 1506, "actions": 3013}
+{"families": 199, "roots": 1514, "actions": 3022}
+{"families": 200, "roots": 1522, "actions": 3051}
+{"families": 201, "roots": 1530, "actions": 3056}
+{"families": 202, "roots": 1538, "actions": 3078}
+{"families": 203, "roots": 1546, "actions": 3092}
+{"families": 204, "roots": 1554, "actions": 3113}
+{"families": 205, "roots": 1562, "actions": 3117}
+{"families": 206, "roots": 1570, "actions": 3140}
+{"families": 207, "roots": 1578, "actions": 3143}
+{"families": 208, "roots": 1586, "actions": 3167}
+{"families": 209, "roots": 1594, "actions": 3172}
+{"families": 210, "roots": 1602, "actions": 3213}
+{"families": 211, "roots": 1610, "actions": 3217}
+{"families": 212, "roots": 1618, "actions": 3230}
+{"families": 213, "roots": 1622, "actions": 3237}
+{"families": 214, "roots": 1630, "actions": 3266}
+{"families": 215, "roots": 1638, "actions": 3269}
+{"families": 216, "roots": 1646, "actions": 3280}
+{"families": 217, "roots": 1654, "actions": 3280}
+{"families": 218, "roots": 1662, "actions": 3303}
+{"families": 219, "roots": 1666, "actions": 3307}
+{"families": 220, "roots": 1674, "actions": 3345}
+{"families": 221, "roots": 1682, "actions": 3356}
+{"families": 222, "roots": 1690, "actions": 3373}
+{"families": 223, "roots": 1692, "actions": 3376}
+{"families": 224, "roots": 1700, "actions": 3394}
+{"families": 225, "roots": 1708, "actions": 3402}
+{"families": 226, "roots": 1716, "actions": 3431}
+{"families": 227, "roots": 1724, "actions": 3439}
+{"families": 228, "roots": 1732, "actions": 3477}
+{"families": 229, "roots": 1740, "actions": 3482}
+{"families": 230, "roots": 1748, "actions": 3502}
+{"families": 231, "roots": 1756, "actions": 3507}
+{"families": 232, "roots": 1764, "actions": 3527}
+{"families": 233, "roots": 1772, "actions": 3531}
+{"families": 234, "roots": 1780, "actions": 3557}
+{"families": 235, "roots": 1788, "actions": 3558}
+{"families": 236, "roots": 1796, "actions": 3581}
+{"families": 237, "roots": 1804, "actions": 3589}
+{"families": 238, "roots": 1812, "actions": 3606}
+{"families": 239, "roots": 1820, "actions": 3608}
+{"families": 240, "roots": 1828, "actions": 3639}
+{"families": 241, "roots": 1836, "actions": 3648}
+{"families": 242, "roots": 1844, "actions": 3669}
+{"families": 243, "roots": 1845, "actions": 3671}
+{"families": 244, "roots": 1849, "actions": 3681}
+{"families": 245, "roots": 1857, "actions": 3683}
+{"families": 246, "roots": 1865, "actions": 3702}
+{"families": 247, "roots": 1873, "actions": 3709}
+{"families": 248, "roots": 1881, "actions": 3723}
+{"families": 249, "roots": 1889, "actions": 3730}
+{"families": 250, "roots": 1897, "actions": 3750}
+{"families": 251, "roots": 1905, "actions": 3761}
+{"families": 252, "roots": 1913, "actions": 3806}
+{"families": 253, "roots": 1916, "actions": 3807}
+{"families": 254, "roots": 1924, "actions": 3832}
+{"families": 255, "roots": 1932, "actions": 3836}
+{"families": 256, "roots": 1940, "actions": 3864}
+{
+  "status": "complete",
+  "counts": {
+    "roots": 1940,
+    "entered_states": 7244,
+    "initial_actions": 3864,
+    "ep_initial": 15,
+    "promotion_initial": 672,
+    "closed_exact": 3175,
+    "closed_with_recapture": 1344,
+    "sum_dependency_rounds": 5069,
+    "families": 256
+  },
+  "missing": {
+    "unsupported_check_evasion": 604,
+    "typed_terminal": 85
+  },
+  "closed_motifs": {
+    "capture": 2943,
+    "castling": 188,
+    "check": 325,
+    "pin": 923,
+    "promotion": 734,
+    "low_material": 553,
+    "en_passant": 50
+  },
+  "return_vs_immediate": {
+    "nonzero_correction": 1172,
+    "sum_abs_correction_cp": 465080,
+    "sum_return_cp": 474870
+  },
+  "generation_wall_seconds": 4.4038836900144815,
+  "max_action_seconds": 0.011055676004616544,
+  "target_sha256": "44fd685f66416cd517d89114f4cf05cacbc235a94bf94117286352d86933ac35",
+  "strategic_quality_claim": false,
+  "training": false,
+  "gpu": false
+}

@@ -1,0 +1,6 @@
+{
+  "checkpoint_sha256": "3c05f5b775febe637d2cdb95ce5116c58abed0c5b75d6fba028c326724a88015",
+  "corpus_manifest_sha256": "55cc6ceea5bd1ebb1c9c4c07dcde8604c15a0f33f199a31a21c8b4fac70ed010",
+  "kind": "semantic_frozen_checkpoint_v1",
+  "packing_source_sha256": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9"
+}

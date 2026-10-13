@@ -1,0 +1,91 @@
+{
+  "schema": "chen_synthetic_teacher_declaration_v1",
+  "status": "frozen_for_one_bounded_train_pilot",
+  "plan_sha256": "2b8d194b6d7a7cfd02274c92018b0685ac40f9e835b59f21de9bf710876a6187",
+  "shard_sha256": "b876235575681f742db2683efc5e87c7c3f40618a180c03cc89057f75133d5f1",
+  "source_sha256": {
+    "neural/synthetic_teacher.py": "82406b7d1d38f3e8154b6891144e9086604b03ef858a1ca8233db949c3a1fa58",
+    "neural/ordinary_packets.py": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f",
+    "neural/teacher_session.py": "7ee6d3863a5497e4803ffd6be0b2c881857c3b7181c0ffee236ca8308f9ea684",
+    "neural/tactical_inputs.py": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e",
+    "neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57"
+  },
+  "stockfish": {
+    "binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "source_sha256": {
+      "src/search.cpp": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+      "src/uci.cpp": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+      "src/score.cpp": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01",
+      "src/evaluate.h": "bab0750b2d80c72bb121bfe730a55ecba5fc221394d3d8a7ae2aa3ae04fe9998",
+      "src/nnue/network.cpp": "95cafe51c0d05842fdeffb8d2690549e9deee43edc0b56caf277f21fda63ec4b",
+      "Copying.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "release": "sf_19",
+    "embedded_net_name": "nn-1a298aa575a0.nnue",
+    "embedded_net_sha256": "1a298aa575a085434d29027978dc36867fe9c5bcea9376654b7a8eba1e52dfc2",
+    "source_license": "GPL-3.0-or-later",
+    "options": "verbatim teacher_session setup trace"
+  },
+  "protocol": {
+    "version": 2,
+    "emission_boundary": "each_rank_one_starts_new_emission_finalize_at_next_rank_one_or_end",
+    "selection": "highest_eligible_common_reported_depth_latest_completion_ordinal_tiebreak",
+    "eligible": "ordered_1_to_K_same_depth_same_nodes_complete_unique_legal_support_ordinary_unbounded_cp_min_depth6",
+    "ineligible": "clean_incomplete_mixed_depth_bound_only_below_depth_floor",
+    "query_rejection": "malformed_scored_grammar_rank_duplicate_gap_excess_support_PV_rank_score_or_any_mate_tbhits_reserved_decisive_cp",
+    "final_bestmove": "record_separately_may_differ_from_selected_packet_PV1",
+    "search_source_url": "https://github.com/official-stockfish/Stockfish/blob/sf_19/src/search.cpp",
+    "search_source_sha256": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a",
+    "source_context": "output_pv_2273_2342_final_inexact_250_264_completed_iteration_495_498"
+  },
+  "score_frame": {
+    "frame_version": 1,
+    "kind": "sf19_reference_material58_approx_cp",
+    "stockfish_tag": "sf_19",
+    "uci_source_url": "https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_19/src/uci.cpp",
+    "uci_source_sha256": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+    "score_source_url": "https://raw.githubusercontent.com/official-stockfish/Stockfish/sf_19/src/score.cpp",
+    "score_source_sha256": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01",
+    "material_weights": [
+      1,
+      3,
+      3,
+      5,
+      9,
+      0
+    ],
+    "material_clamp": [
+      17,
+      78
+    ],
+    "material_divisor": 58.0,
+    "normalization_coefficients": [
+      -142.72052667,
+      372.35176398,
+      -340.71073572,
+      415.23490212
+    ],
+    "reference_material": 58,
+    "reference_a": 304.15540371,
+    "source_rounding": "std_round_nearest_half_away_from_zero",
+    "recovery": "closed_half_uci_unit_interval_not_exact_hidden_value",
+    "numeric_guard_relative": 1e-09,
+    "batch_midpoint_dtype": "float32",
+    "batch_halfwidth": "float32_outward_including_midpoint_cast_error",
+    "perspective": "caller_declared_query_root_mover_or_negation",
+    "required_source_kind": "ordinary_unbounded_cp_no_tablebase"
+  },
+  "cpu_affinity": [
+    4
+  ],
+  "limits": {
+    "request_seconds": 20,
+    "cooperative_seconds": 600,
+    "external_seconds": 660,
+    "min_depth": 6
+  },
+  "strength_evidence": false,
+  "heldout_reads": false,
+  "metadata_sha256": "7c9b7a6e877c542f885dbd67bd50569bb38c9f8cb13a045c2d9a58d3635c160b",
+  "pilot_contains_training": false
+}

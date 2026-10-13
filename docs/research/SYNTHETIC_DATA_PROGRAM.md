@@ -12,7 +12,7 @@ still need implementation and execution.
 
 The [algorithmic redesign](ALGORITHMIC_REDESIGN.md) defines the bounded search
 reference and recurrent tactical operator. The neural worktree's
-[scaling study](../../../chen-neural/docs/SCALING_STUDY.md) owns model sizes,
+[scaling study](../SCALING_STUDY.md) owns model sizes,
 optimization and execution declarations. The simulator owns legality, terminal
 values, history and exact topology throughout.
 

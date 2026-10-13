@@ -1,0 +1,23 @@
+{
+  "status": "between_fit_boundary",
+  "wall_seconds": 78.62338006001664,
+  "retired_jobs": [
+    "r1-typed-hpo-lr0.001-wd0.0",
+    "r1-typed-hpo-lr0.001-wd0.0001"
+  ],
+  "next_job": {
+    "name": "r1-typed-hpo-lr0.0003-wd0.0",
+    "steps": 1,
+    "typed": true,
+    "seed": 6101,
+    "lr": 0.0003,
+    "wd": 0.0
+  },
+  "hpo_selected": {},
+  "test_gate": "CLOSED",
+  "test_evaluated": false,
+  "architecture_winner": null,
+  "strategic_value": false,
+  "quality_claim": false,
+  "all_device_fences_completed": true
+}

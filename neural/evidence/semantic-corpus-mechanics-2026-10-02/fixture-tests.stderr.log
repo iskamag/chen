@@ -1,0 +1,17 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+test_action_blind_exact_same_material_ties_and_shuffle_true_prior (neural.tests.test_semantic_corpus_study.StudyTests.test_action_blind_exact_same_material_ties_and_shuffle_true_prior) ... ok
+test_anchor_semantic_and_interval_gradient_without_host_reads (neural.tests.test_semantic_corpus_study.StudyTests.test_anchor_semantic_and_interval_gradient_without_host_reads) ... ok
+test_common_initialization_all_four_encoders_and_pair_replay (neural.tests.test_semantic_corpus_study.StudyTests.test_common_initialization_all_four_encoders_and_pair_replay) ... ok
+test_complete_root_interval_metrics_canonical_ties_terminal_required (neural.tests.test_semantic_corpus_study.StudyTests.test_complete_root_interval_metrics_canonical_ties_terminal_required) ... ok
+test_joint_gate_requires_every_seed_every_baseline_and_none (neural.tests.test_semantic_corpus_study.StudyTests.test_joint_gate_requires_every_seed_every_baseline_and_none) ... ok
+test_protocol_is_concrete_unsealed_and_bounded (neural.tests.test_semantic_corpus_study.StudyTests.test_protocol_is_concrete_unsealed_and_bounded) ... ok
+test_scale_known_optimum_bounds_mask_sign_and_flat_tie (neural.tests.test_semantic_corpus_study.StudyTests.test_scale_known_optimum_bounds_mask_sign_and_flat_tie) ... ok
+test_shared_loader_uses_pinned_normal_import_and_source_mismatch_rejected (neural.tests.test_semantic_corpus_study.StudyTests.test_shared_loader_uses_pinned_normal_import_and_source_mismatch_rejected) ... ok
+test_transition_initialization_and_detached_exact_child_loss (neural.tests.test_semantic_corpus_study.StudyTests.test_transition_initialization_and_detached_exact_child_loss) ... ok
+test_unsealed_declaration_never_authorizes_real_training (neural.tests.test_semantic_corpus_study.StudyTests.test_unsealed_declaration_never_authorizes_real_training) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.049s
+
+OK

@@ -1,0 +1,1022 @@
+{
+  "checkpoint_sha256": "31ec4d511b81de56415bad6f9e85c142f57ad8317441a1b9b0de140f483b4617",
+  "control": "action_blind",
+  "fidelity": {
+    "fp32_value": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0,
+        "mean_absolute": 0.0,
+        "mean_squared": 0.0
+      },
+      "roots": 233
+    },
+    "int8_fused": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.05133056640625,
+        "mean_absolute": 1.8238094591287224,
+        "mean_squared": 5.047550031145156
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02749115228652954,
+        "mean_absolute": 0.005543574284649203,
+        "mean_squared": 4.706746170020708e-05
+      },
+      "roots": 233
+    },
+    "int8_hybrid": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.05133056640625,
+        "mean_absolute": 1.8238094591287224,
+        "mean_squared": 5.047550031145156
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02749115228652954,
+        "mean_absolute": 0.005543574284649203,
+        "mean_squared": 4.706746170020708e-05
+      },
+      "roots": 233
+    },
+    "int8_multi": {
+      "changed_fp32_best_second_gap_cp": {
+        "at_most_1": 0,
+        "at_most_10": 0,
+        "at_most_5": 0,
+        "exact_ties": 0,
+        "maximum": null,
+        "mean": null,
+        "minimum": null
+      },
+      "changed_roots": 0,
+      "cp": {
+        "count": 8477,
+        "maximum_absolute": 7.05133056640625,
+        "mean_absolute": 1.8238094591287224,
+        "mean_squared": 5.047550031145156
+      },
+      "first_canonical_action_agreement": 1.0,
+      "latent": {
+        "count": 2170112,
+        "maximum_absolute": 0.02749115228652954,
+        "mean_absolute": 0.005543574284649203,
+        "mean_squared": 4.706746170020708e-05
+      },
+      "roots": 233
+    }
+  },
+  "phase": "transition",
+  "separate_instrumented_linear_profile": {
+    "fp32_value": [
+      {
+        "event_us": 68.84100288152695,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": false,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 40.95999896526337,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 28.039999306201935,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 37.20000013709068,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 35.40100157260895,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 48.24100062251091,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 43.35999861359596,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": false,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 34.68000143766403,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 48.31999912858009,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": false,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 43.64100098609924,
+        "input_shape": [
+          4,
+          8,
+          96
+        ],
+        "int8_module": false,
+        "name": "update.0",
+        "output_shape": [
+          4,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 45.52000015974045,
+        "input_shape": [
+          4,
+          8,
+          64
+        ],
+        "int8_module": false,
+        "name": "update.2",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 45.48100009560585,
+        "input_shape": [
+          4,
+          256
+        ],
+        "int8_module": false,
+        "name": "anchor.cp",
+        "output_shape": [
+          4,
+          1
+        ]
+      }
+    ],
+    "int8_fused": [
+      {
+        "event_us": 80.11999726295471,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 59.59999933838844,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.36000019311905,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.15999922156334,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 56.48000165820122,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 74.8400017619133,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 59.51999872922897,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 61.64100021123886,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.71999734640121,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 57.999998331069946,
+        "input_shape": [
+          4,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          4,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 64.08099830150604,
+        "input_shape": [
+          4,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 63.520997762680054,
+        "input_shape": [
+          4,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          4,
+          1
+        ]
+      }
+    ],
+    "int8_hybrid": [
+      {
+        "event_us": 69.23999637365341,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 60.92099845409393,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 16.840999945998192,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 12.079999782145023,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 12.600000016391277,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 68.68100166320801,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 60.4810006916523,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 55.56099861860275,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 61.480000615119934,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 64.32099640369415,
+        "input_shape": [
+          4,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          4,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 63.919998705387115,
+        "input_shape": [
+          4,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 65.32000005245209,
+        "input_shape": [
+          4,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          4,
+          1
+        ]
+      }
+    ],
+    "int8_multi": [
+      {
+        "event_us": 219.72200274467468,
+        "input_shape": [
+          4,
+          64,
+          20
+        ],
+        "int8_module": true,
+        "name": "anchor.objects",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 271.76201343536377,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.0",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 189.32099640369415,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.1",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 191.32100045681,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.2",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 188.1610006093979,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.messages.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 221.32200002670288,
+        "input_shape": [
+          4,
+          64,
+          160
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.1",
+        "output_shape": [
+          4,
+          64,
+          64
+        ]
+      },
+      {
+        "event_us": 187.92100250720978,
+        "input_shape": [
+          4,
+          64,
+          64
+        ],
+        "int8_module": true,
+        "name": "anchor.messages.0.update.3",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 179.00100350379944,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.key",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 189.08199667930603,
+        "input_shape": [
+          4,
+          64,
+          32
+        ],
+        "int8_module": true,
+        "name": "anchor.value",
+        "output_shape": [
+          4,
+          64,
+          32
+        ]
+      },
+      {
+        "event_us": 183.44099819660187,
+        "input_shape": [
+          4,
+          8,
+          96
+        ],
+        "int8_module": true,
+        "name": "update.0",
+        "output_shape": [
+          4,
+          8,
+          64
+        ]
+      },
+      {
+        "event_us": 185.2010041475296,
+        "input_shape": [
+          4,
+          8,
+          64
+        ],
+        "int8_module": true,
+        "name": "update.2",
+        "output_shape": [
+          4,
+          8,
+          32
+        ]
+      },
+      {
+        "event_us": 181.64199590682983,
+        "input_shape": [
+          4,
+          256
+        ],
+        "int8_module": true,
+        "name": "anchor.cp",
+        "output_shape": [
+          4,
+          1
+        ]
+      }
+    ]
+  },
+  "setup": {
+    "int8_fused": {
+      "event_ms": 9.687477111816406,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 9.735753992572427
+    },
+    "int8_hybrid": {
+      "event_ms": 9.809277534484863,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 9.853505005594343
+    },
+    "int8_multi": {
+      "event_ms": 9.308633804321289,
+      "linears": [
+        "anchor.objects",
+        "anchor.messages.0.messages.0",
+        "anchor.messages.0.messages.1",
+        "anchor.messages.0.messages.2",
+        "anchor.messages.0.messages.3",
+        "anchor.messages.0.update.1",
+        "anchor.messages.0.update.3",
+        "anchor.key",
+        "anchor.value",
+        "anchor.cp",
+        "local.0",
+        "local.2",
+        "event.0",
+        "event.2",
+        "query",
+        "update.0",
+        "update.2"
+      ],
+      "scope": "one_time_owned_copy_finite_admission_weight_quantization_and_static_packing",
+      "synchronized_wall_ms": 9.364964993437752
+    }
+  },
+  "timing_root_plan": {
+    "K": 32,
+    "batch": 4,
+    "key": 18,
+    "selection": "closest_K32_then_largest_batch_then_key_no_labels"
+  },
+  "timings": {
+    "complete_root": {
+      "fp32_full": {
+        "event_us_median": 2632.9647064208984,
+        "samples": [
+          {
+            "event_us": 3032.2080612182617,
+            "iterations": 10,
+            "synchronized_wall_us": 3038.266400108114
+          },
+          {
+            "event_us": 2632.9647064208984,
+            "iterations": 10,
+            "synchronized_wall_us": 2638.835200923495
+          },
+          {
+            "event_us": 2614.4968032836914,
+            "iterations": 10,
+            "synchronized_wall_us": 2622.0342988381162
+          }
+        ],
+        "synchronized_wall_us_median": 2638.835200923495
+      },
+      "fp32_value": {
+        "event_us_median": 2334.9063873291016,
+        "samples": [
+          {
+            "event_us": 2617.732810974121,
+            "iterations": 10,
+            "synchronized_wall_us": 2623.8582999212667
+          },
+          {
+            "event_us": 2334.9063873291016,
+            "iterations": 10,
+            "synchronized_wall_us": 2340.023100259714
+          },
+          {
+            "event_us": 2210.1455688476562,
+            "iterations": 10,
+            "synchronized_wall_us": 2217.271100380458
+          }
+        ],
+        "synchronized_wall_us_median": 2340.023100259714
+      },
+      "int8_fused": {
+        "event_us_median": 2826.482391357422,
+        "samples": [
+          {
+            "event_us": 3131.7808151245117,
+            "iterations": 10,
+            "synchronized_wall_us": 3137.0155018521473
+          },
+          {
+            "event_us": 2826.482391357422,
+            "iterations": 10,
+            "synchronized_wall_us": 2832.086299895309
+          },
+          {
+            "event_us": 2612.0248794555664,
+            "iterations": 10,
+            "synchronized_wall_us": 2616.937202401459
+          }
+        ],
+        "synchronized_wall_us_median": 2832.086299895309
+      },
+      "int8_hybrid": {
+        "event_us_median": 2784.206008911133,
+        "samples": [
+          {
+            "event_us": 3033.296012878418,
+            "iterations": 10,
+            "synchronized_wall_us": 3038.619499420747
+          },
+          {
+            "event_us": 2784.206008911133,
+            "iterations": 10,
+            "synchronized_wall_us": 2790.723301586695
+          },
+          {
+            "event_us": 2555.868339538574,
+            "iterations": 10,
+            "synchronized_wall_us": 2561.241199146025
+          }
+        ],
+        "synchronized_wall_us_median": 2790.723301586695
+      },
+      "int8_multi": {
+        "event_us_median": 4718.253707885742,
+        "samples": [
+          {
+            "event_us": 4965.359115600586,
+            "iterations": 10,
+            "synchronized_wall_us": 4971.2134001310915
+          },
+          {
+            "event_us": 4718.253707885742,
+            "iterations": 10,
+            "synchronized_wall_us": 4727.7011995902285
+          },
+          {
+            "event_us": 4413.419342041016,
+            "iterations": 10,
+            "synchronized_wall_us": 4419.241097639315
+          }
+        ],
+        "synchronized_wall_us_median": 4727.7011995902285
+      }
+    }
+  }
+}

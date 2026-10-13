@@ -1,0 +1,17 @@
+{
+  "python": "3.14.7 (main, Aug 10 2026, 16:33:18) [GCC 16.1.1 20260728]",
+  "python_executable": "/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/bin/python",
+  "python_resolved_sha256": "e3c371470ad5f0551cbf7ac7925009daf5afe3ff067e6ce069c8dc27fd374c3b",
+  "platform": "Linux-7.2.7-zen1-1-zen-x86_64-with-glibc2.44",
+  "torch": "2.10.0+cpu",
+  "torch_hip": null,
+  "torch_cuda": null,
+  "chess": "1.11.2",
+  "chess_source_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+  "stockfish_binary_path": "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal",
+  "stockfish_binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "net_storage": "pinned embedded default; metadata export fullhash recorded; no duplicated network artifact",
+  "watchdog_command": "timeout --kill-after=10s 660s taskset -c4 qa-cpu-venv/bin/python -m neural.synthetic_teacher run --declaration-sha256 1a8e22068f8fab5650496f30d192ee06a02ff5ee87ece0859d5a4b07127130d9",
+  "runtime_module_source": "immutable source closure",
+  "gpu_runtime_invoked": false
+}

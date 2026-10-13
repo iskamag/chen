@@ -3,7 +3,7 @@
 The additive [tactical ABI1](../gpu/chen_tactical.h) exports the complete sparse
 `chen_tactical_exact_v1` observation from an owned native search arena into
 caller-owned Torch storage. It matches the neural worktree's CPU replay schema;
-[NativeTacticalProducer](../../chen-neural/neural/native_tactical.py) supplies
+[NativeTacticalProducer](../neural/native_tactical.py) supplies
 `TacticalBatch` directly to the recurrent processor. No teacher, future PV,
 CPU board download or CPU graph reconstruction occurs in this producer.
 Exact mate/draw adjudication stays authoritative in the terminal sidecar.

@@ -1,0 +1,87 @@
+{
+  "calibration": false,
+  "config": {
+    "anchor_batches": [
+      1,
+      4,
+      32,
+      256
+    ],
+    "depth": 1,
+    "fp32_wider_rows": 16384,
+    "timing_iterations": 10,
+    "timing_rounds": 3,
+    "wall_seconds": 600,
+    "warmups": 3,
+    "width": 32
+  },
+  "dependencies": {
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/engine.py": "40a1407749ea43b4ed3174f0603e0316a9c971b8943113fbea5be47c82bde22b",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/gaviota.py": "2ba4d8ebceb5538e52ace325dfbd71358596c52b4799911c77fe666b79df164d",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/pgn.py": "0e280ee44cb3c27cde903c40fe166419df71a030b05793c63f3e0ffffd6ff0c4",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/polyglot.py": "8dc20733bdc1297a9e8993a76737ba4f328a99185ae94b311ddbb5342fce32fc",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/svg.py": "32840c66e33bf55ea2de49eadc856d45dc3cd661b87a0a1ea99d8b6c3b143b99",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/chess/variant.py": "fc0b384707fc9ffb9348c4683fc430ee4ed5b601d9cc40cf7fc5ecda2d9cc431",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/control/watch-model.py": "fceb1dc017a480a523902c48b5707b117b7e73b10b6210ab9c69519046bd3d07",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/lib/libchen_int8.so": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/native/chen_int8_linear.hip": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/int8_inference.py": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/profile_int8_inference.py": "70a45f0b1f51f1c3ed36aea03bca1d15ae9cca068a7fb2fa2c632c5a3261efc5",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/run_semantic_corpus_study.py": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/semantic_corpus_study.py": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/neural-worktree/neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/__init__.py": "bce8890d3c407020a1479a4df012d5b33fa670284c017a08376842323f768f8e",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/packing.py": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/experiments/semantic_corpus/resident.py": "107fd446941d494570bde1f72faf325373ad6c719f2b6ab9c73550d8bba56a59"
+  },
+  "frozen_manifest": {
+    "path": "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/attempt-1/all-frozen-checkpoints.json",
+    "sha256": "3c05f5b775febe637d2cdb95ce5116c58abed0c5b75d6fba028c326724a88015"
+  },
+  "kind": "chen_frozen_train_only_int8_diagnostic_v1",
+  "main_root": "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main",
+  "native": {
+    "compiler_hip": "7.2.4",
+    "device": "gfx1030",
+    "library_path": "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/lib/libchen_int8.so",
+    "library_sha256": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+    "runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "runtime_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "runtime_version": 70051831,
+    "source_sha256": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+    "torch_rocm_build": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "promotion": false,
+  "protocol": {
+    "activation_quantization": "zero_scale1_else_max_times_FP32reciprocal127_clamp_FP32tiny_true_division_round_even_clamp127",
+    "attention_norm_nonlinearity_residuals": "FP32",
+    "checkpoints": "all8anchors_all32transitions_from_closed_corrected_run_no_promotion",
+    "dynamic": "fused_sourceK_rows_no_FP32_padding_all_N_packed_including_N1",
+    "engine_latency_claim": false,
+    "fidelity": "all1864TRAINobservations_and_all233completeTRAINroots_against_same_frozenFP32",
+    "policy": "child_mover_CP_argmin_first_canonical_no_teacher_or_terminal_adjudication",
+    "runtime": "actual_Torch_loaded_provider_path_hash_dladdr_API_version_not_compiler_version",
+    "timing": "eager_intervals_include_host_gaps_plus_synchronized_wall;one_time_packing_separate;instrumented_linear_pass_separate",
+    "weight_quantization": "same_symmetric_policy_per_output_channel_zero_padK4"
+  },
+  "splits": [
+    "train"
+  ],
+  "status": "declared_mechanical_diagnostic",
+  "train": {
+    "manifest_sha256": "b068256c757c93810f330b07bd4703bc35ec072b816a105fe76a33cc4d4376a4",
+    "packing_source_sha256": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "path": "/tmp/chen-semantic-study-manifest-20261002.RSfOo6ef/main/results/semantic-corpus/packet-v2/train"
+  },
+  "training": false
+}

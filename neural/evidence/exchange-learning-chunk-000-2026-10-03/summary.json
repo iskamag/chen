@@ -1,0 +1,197 @@
+{
+  "kind": "actual_GPU_restricted_exchange_DEV_HPO_chunk",
+  "execution_declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+  "original_declaration_sha256": "bfa00679b95048bc15b18124fa2c73bba6f5be137d591c2e475d4c62f11b568e",
+  "retired_fits": [
+    "r1-typed-hpo-lr0.001-wd0.0",
+    "r1-typed-hpo-lr0.001-wd0.0001"
+  ],
+  "fits": {
+    "r1-typed-hpo-lr0.001-wd0.0": {
+      "status": "declared_dev_plateau",
+      "converged": true,
+      "best_dev_macro_mae_cp": 12.70512813534212,
+      "best_dev_metrics": {
+        "macro_family_mae_cp": 12.70512813534212,
+        "macro_nontrivial_family_mae_cp": 22.35389988793267,
+        "micro_action_mae_cp": 17.488756849492017,
+        "strata": {
+          "correction_nonzero": {
+            "count": 244,
+            "mae_cp": 25.06828294034864
+          },
+          "correction_zero": {
+            "count": 407,
+            "mae_cp": 12.944765777823672
+          },
+          "dependency_1": {
+            "count": 378,
+            "mae_cp": 8.628429262450448
+          },
+          "dependency_2": {
+            "count": 199,
+            "mae_cp": 15.366693237918106
+          },
+          "dependency_3-4": {
+            "count": 70,
+            "mae_cp": 70.47853048528944
+          },
+          "dependency_5+": {
+            "count": 4,
+            "mae_cp": 33.04133987426758
+          },
+          "motif_capture": {
+            "count": 614,
+            "mae_cp": 18.067078737390354
+          },
+          "motif_castling": {
+            "count": 36,
+            "mae_cp": 14.603863048470682
+          },
+          "motif_check": {
+            "count": 52,
+            "mae_cp": 16.54529605805874
+          },
+          "motif_en_passant": {
+            "count": 16,
+            "mae_cp": 9.677974484860897
+          },
+          "motif_low_material": {
+            "count": 72,
+            "mae_cp": 7.807953966160615
+          },
+          "motif_pin": {
+            "count": 209,
+            "mae_cp": 24.7467013775019
+          },
+          "motif_promotion": {
+            "count": 134,
+            "mae_cp": 22.852538566091166
+          }
+        },
+        "roots": 229,
+        "families": 62,
+        "closed_actions": 651
+      },
+      "epochs": 39,
+      "updates": 4446,
+      "steps": 1,
+      "typed": true,
+      "seed": 6101,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "wall_seconds": 35.504157399002,
+      "training_forward_backward_optimizer_event_ms": 22721.228660345078,
+      "cold_collation_upload_synchronized_wall_seconds": 8.00335877307225,
+      "recurrence_capacity_edges": 9249920,
+      "recurrence_capacity_nodes": 4615234,
+      "peak_device_allocated_bytes": 141450752,
+      "test_gate": "CLOSED",
+      "quality_claim": false
+    },
+    "r1-typed-hpo-lr0.001-wd0.0001": {
+      "status": "declared_dev_plateau",
+      "converged": true,
+      "best_dev_macro_mae_cp": 13.505965215873026,
+      "best_dev_metrics": {
+        "macro_family_mae_cp": 13.505965215873026,
+        "macro_nontrivial_family_mae_cp": 25.107228110843234,
+        "micro_action_mae_cp": 17.87076791502913,
+        "strata": {
+          "correction_nonzero": {
+            "count": 244,
+            "mae_cp": 27.686378604075948
+          },
+          "correction_zero": {
+            "count": 407,
+            "mae_cp": 11.986224897517033
+          },
+          "dependency_1": {
+            "count": 378,
+            "mae_cp": 8.103451195453841
+          },
+          "dependency_2": {
+            "count": 199,
+            "mae_cp": 17.673715888555325
+          },
+          "dependency_3-4": {
+            "count": 70,
+            "mae_cp": 70.76437670801367
+          },
+          "dependency_5+": {
+            "count": 4,
+            "mae_cp": 25.047382354736328
+          },
+          "motif_capture": {
+            "count": 614,
+            "mae_cp": 18.562901406072637
+          },
+          "motif_castling": {
+            "count": 36,
+            "mae_cp": 15.022644073598915
+          },
+          "motif_check": {
+            "count": 52,
+            "mae_cp": 15.265178203582764
+          },
+          "motif_en_passant": {
+            "count": 16,
+            "mae_cp": 7.82086805254221
+          },
+          "motif_low_material": {
+            "count": 72,
+            "mae_cp": 7.081887902485
+          },
+          "motif_pin": {
+            "count": 209,
+            "mae_cp": 27.105241406762428
+          },
+          "motif_promotion": {
+            "count": 134,
+            "mae_cp": 18.784956613805758
+          }
+        },
+        "roots": 229,
+        "families": 62,
+        "closed_actions": 651
+      },
+      "epochs": 43,
+      "updates": 4902,
+      "steps": 1,
+      "typed": true,
+      "seed": 6101,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "wall_seconds": 38.58414442799403,
+      "training_forward_backward_optimizer_event_ms": 24218.202211380005,
+      "cold_collation_upload_synchronized_wall_seconds": 9.006540543516167,
+      "recurrence_capacity_edges": 10198564,
+      "recurrence_capacity_nodes": 5088616,
+      "peak_device_allocated_bytes": 141450752,
+      "test_gate": "CLOSED",
+      "quality_claim": false
+    }
+  },
+  "next_job": {
+    "name": "r1-typed-hpo-lr0.0003-wd0.0",
+    "steps": 1,
+    "typed": true,
+    "seed": 6101,
+    "lr": 0.0003,
+    "wd": 0.0
+  },
+  "watchdog": {
+    "kind": "exchange_fit_group_terminal",
+    "exit_code": 0,
+    "timed_out": false,
+    "wall_seconds": 81.00978844799101,
+    "owned_pgid_absent": true,
+    "declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa"
+  },
+  "test_evaluated": false,
+  "architecture_winner": null,
+  "quality_scope": "restricted_task_DEV_tuning_not_chess_strength",
+  "source_commit": "58cd90c",
+  "shared_CPU_power_cache": "not_controlled",
+  "no_competing_GPU_jobs": true
+}

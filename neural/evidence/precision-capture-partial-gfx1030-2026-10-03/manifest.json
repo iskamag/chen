@@ -1,0 +1,137 @@
+{
+  "kind": "chen_precision_capture_partial_archive_v1",
+  "payloads": {
+    "CPU-import-closure-final.stderr.log": {
+      "bytes": 63,
+      "sha256": "4aae0fdd603efa15b144dc12adb55ce8ed1a76eb22a15579efcb244db85861b4"
+    },
+    "CPU-import-closure-final.stdout.log": {
+      "bytes": 169,
+      "sha256": "fe331946c1b97d4ed8b013a5812067a78b3ea7a98203c3b666c2d65643f0ff01"
+    },
+    "README.md": {
+      "bytes": 1255,
+      "sha256": "e0de5cc027aeddca5a123b2d2ebd45acd454ef42edb6b8aa913381cd0d119f03"
+    },
+    "analysis.json": {
+      "bytes": 11663,
+      "sha256": "d85b0711fa7b5208b5221a2f0dfe4eb9dc9b24a233e71a7280184374cd0fd15d"
+    },
+    "attempt-1/anchor-square-20261021.json": {
+      "bytes": 58839,
+      "sha256": "0ea938f34e05f4a834b38cf1b70b4029401f28cfae3929f4e3f3d25dc16e4011"
+    },
+    "attempt-1/device-admission.json": {
+      "bytes": 1151,
+      "sha256": "93aabdfa4f4dff7a620443da64de9ffa61410628ef36b89b138de3b188c3ac31"
+    },
+    "attempt-1/train-rocm-admission.json": {
+      "bytes": 387,
+      "sha256": "cb3e12a6598b1ff9f3938e92e0e9697aca2f1f06860891af3bb8c3553bedf215"
+    },
+    "control/declaration.json": {
+      "bytes": 10677,
+      "sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f"
+    },
+    "control/stderr.log": {
+      "bytes": 3589,
+      "sha256": "3574ee2cebb98c88e69b1be97320dda5d1e6c3de78ffe445ee6fd3fe031de05c"
+    },
+    "control/stdout.log": {
+      "bytes": 75,
+      "sha256": "a2265aaff74e0c3078b5155ef6ad75ea69cca2bc00cc98838b181b30c60c192e"
+    },
+    "control/watch-precision.py": {
+      "bytes": 2647,
+      "sha256": "c7593eb21b7883c27ebe94fe1d874c886906a41e8b760835c99cddccd2ce325d"
+    },
+    "control/watchdog-claim.json": {
+      "bytes": 161,
+      "sha256": "fc950b304c2f2846762216fff2c5563bf7b56f8e096801f22a4b04c8cf4ffdd1"
+    },
+    "control/watchdog-started.json": {
+      "bytes": 682,
+      "sha256": "e4cb2ade9fc36b91b394bcec5ab3997d91389074ee41913a13e831b443e75411"
+    },
+    "control/watchdog-terminal.json": {
+      "bytes": 377,
+      "sha256": "52824da34cd151d7590dc4a9f78c6fd0d65c7a922a16aff93e7fa979205dac00"
+    },
+    "source-freeze.json": {
+      "bytes": 740,
+      "sha256": "897f2f85f83af0f2e82cf7cdac530e647bbc286d4782daadb67eebee267de26c"
+    },
+    "source/docs/PRECISION_CAPTURE.md": {
+      "bytes": 4233,
+      "sha256": "6907925a44430d2966a3c9fd8a487b81ecb312144e337baf4cdf6ba6c630294a"
+    },
+    "source/lib/libchen_float_linear.so": {
+      "bytes": 25232,
+      "sha256": "428541f4da764777ed10ea5b07550d7d356e0f1c402578999717ea15cd17278d"
+    },
+    "source/native/float_linear_reference.hip": {
+      "bytes": 2250,
+      "sha256": "ab2e4161c6a8035ef7f8b14a1e0a96c2e6f2b80b78eb131b87aa116a898a4346"
+    },
+    "source/neural-worktree/neural/diamonds.py": {
+      "bytes": 18005,
+      "sha256": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854"
+    },
+    "source/neural-worktree/neural/dynamics.py": {
+      "bytes": 23362,
+      "sha256": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc"
+    },
+    "source/neural-worktree/neural/features.py": {
+      "bytes": 4380,
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+    },
+    "source/neural-worktree/neural/int8_inference.py": {
+      "bytes": 17643,
+      "sha256": "7eced2a8b914fbf0ee337433e51b795c54178c89d1f38a49fcd86dffb1fbb5d9"
+    },
+    "source/neural-worktree/neural/models.py": {
+      "bytes": 11476,
+      "sha256": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b"
+    },
+    "source/neural-worktree/neural/precision_inference.py": {
+      "bytes": 10747,
+      "sha256": "9319e2dfc58e5fc2b7f2ef2ad12079f144b5d7d5643c8ce8f8e4de8b9e1e20fb"
+    },
+    "source/neural-worktree/neural/profile_int8_inference.py": {
+      "bytes": 15562,
+      "sha256": "70a45f0b1f51f1c3ed36aea03bca1d15ae9cca068a7fb2fa2c632c5a3261efc5"
+    },
+    "source/neural-worktree/neural/profile_precision_capture.py": {
+      "bytes": 14330,
+      "sha256": "783484352005541be955c0d1aae06bbfbb5646c117de537274db254ca079d418"
+    },
+    "source/neural-worktree/neural/run_semantic_corpus_study.py": {
+      "bytes": 35900,
+      "sha256": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c"
+    },
+    "source/neural-worktree/neural/score_frames.py": {
+      "bytes": 6675,
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57"
+    },
+    "source/neural-worktree/neural/semantic_corpus_study.py": {
+      "bytes": 32851,
+      "sha256": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da"
+    },
+    "source/neural-worktree/neural/semantic_strategy.py": {
+      "bytes": 24381,
+      "sha256": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84"
+    },
+    "source/neural-worktree/neural/strategic_transport.py": {
+      "bytes": 16838,
+      "sha256": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f"
+    },
+    "source/neural-worktree/neural/value_heads.py": {
+      "bytes": 10832,
+      "sha256": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+    },
+    "source/neural/tests/test_precision_inference.py": {
+      "bytes": 2130,
+      "sha256": "9e925119dc253992b4864a0d9785c6d340557ffecc689c0e1ce8d321223f4f5f"
+    }
+  }
+}

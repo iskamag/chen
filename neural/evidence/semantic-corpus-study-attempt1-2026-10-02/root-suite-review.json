@@ -1,0 +1,21 @@
+{
+  "external_watchdog_sha256": "9a7536756a856cec98985729dd8f3262e6e28baa2341241ee43bbfc4470245ad",
+  "gpu_runtime_admission": "actual_unoverridden_ROCm_gfx1030_required_by_runner",
+  "kernel_sealed_sha256": "0f3c33ef47e72782df316741973819d83b789f5597579e806fab0f28069f4a78",
+  "kind": "root_semantic_runtime_suite_review_v1",
+  "launch_condition": "exclusive_GPU_after_bounded_kernel_studies",
+  "no_retry_or_resume": true,
+  "no_training_or_quality_metrics_before_this_seal": true,
+  "owned_child_retirement": "TERM30_then_KILL15;finally_retires_on_bookkeeping_error",
+  "runtime_metadata_verification": {
+    "fresh_attempt": true,
+    "gpu_calls": 0,
+    "proposal_exact": true,
+    "witness_admission": true
+  },
+  "runtime_witness_sha256": "a6756eeed59e72c7fdf3a6850c2834ea9df225924277a2376e59d2775e81796c",
+  "status": "sealed_for_one_bounded_gpu_attempt",
+  "suite_proposed_sha256": "507da9d9429d5fe41fc2a90bd0c1abd278b43c9823e18cd10282c7ca065b16e0",
+  "suite_sealed_sha256": "5567f57a43f8738b3f5170de58ad8301cc0867ec7b760e5362ef61c4a0e4cd42",
+  "watchdog_external_seconds": 7350
+}

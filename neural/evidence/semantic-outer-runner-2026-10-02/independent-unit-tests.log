@@ -1,0 +1,15 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+test_actual_sweep_masks_scalars_and_weights_unequal_root_batches (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_actual_sweep_masks_scalars_and_weights_unequal_root_batches) ... ok
+test_checkpoint_has_owned_cpu_storage_and_exclusive_path (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_checkpoint_has_owned_cpu_storage_and_exclusive_path) ... ok
+test_complete_8_anchors_32_controls_then_none_keeps_test_closed (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_complete_8_anchors_32_controls_then_none_keeps_test_closed) ... ok
+test_failed_phase_has_no_validation_or_test_promotion (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_failed_phase_has_no_validation_or_test_promotion) ... ok
+test_json_duplicate_nonfinite_pins_and_exclusive_publication (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_json_duplicate_nonfinite_pins_and_exclusive_publication) ... ok
+test_native_witness_rejects_mates_missing_support_and_boolean_ids (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_native_witness_rejects_mates_missing_support_and_boolean_ids) ... ok
+test_selected_pair_is_frozen_before_one_test_open (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_selected_pair_is_frozen_before_one_test_open) ... ok
+test_unequal_batch_aggregation_uses_root_and_observation_counts (neural.tests.test_run_semantic_corpus_study.RunnerTests.test_unequal_batch_aggregation_uses_root_and_observation_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 6.369s
+
+OK

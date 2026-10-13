@@ -1,0 +1,21 @@
+{
+  "child_pgid": 8939,
+  "child_pid": 8939,
+  "command": [
+    "python3",
+    "-m",
+    "neural.profile_precision_capture",
+    "--declaration",
+    "/tmp/chen-precision-capture-20261003.7ao0nMLy/control/declaration.json",
+    "--sha256",
+    "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f",
+    "--output",
+    "/tmp/chen-precision-capture-20261003.7ao0nMLy/attempt-1"
+  ],
+  "declaration_sha256": "ae2939e606fed6c2d93968ab113bdb7870a617da199eaaf85215932399e4cd6f",
+  "external_cap_seconds": 660,
+  "runner_cap_seconds": 600,
+  "source_sha256": "c7593eb21b7883c27ebe94fe1d874c886906a41e8b760835c99cddccd2ce325d",
+  "status": "running",
+  "watchdog_pid": 8933
+}

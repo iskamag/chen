@@ -1,0 +1,29 @@
+{
+  "device": {
+    "architecture": "gfx1030",
+    "name": "AMD Radeon Graphics",
+    "override": false,
+    "rocm_build": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "native": {
+    "compiler_hip": "7.2.4",
+    "device": "gfx1030",
+    "library_path": "/tmp/chen-int8-model-corrected-20261002.6l2hxLME/lib/libchen_int8.so",
+    "library_sha256": "4429e400dea73f6eb05275068dee9030e36744b0991541221a95360ae4b1db3b",
+    "runtime_path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "runtime_sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "runtime_version": 70051831,
+    "source_sha256": "7154af3253f5bf430cbdf6f987be9dbf3755ffc915ff2028a92da2f110ee1a44",
+    "torch_rocm_build": "7.0.51831",
+    "torch_version": "2.10.0+rocm7.0"
+  },
+  "runtime": {
+    "hipRuntimeGetVersion": 70051831,
+    "path": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so",
+    "sha256": "c13a873d6444aa9c32d846feaa888de2108a5ed3c15f8a1b7708c5742a894e81",
+    "symbol": "hipRuntimeGetVersion",
+    "symbol_owner": "/usr/local/lib/python3.12/dist-packages/torch/lib/libamdhip64.so"
+  },
+  "variant": "mixed INT8 linears; FP32 attention/norm/nonlinearity/residuals"
+}

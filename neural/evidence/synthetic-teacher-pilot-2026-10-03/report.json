@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-03T10:08:19.348153+00:00",
+  "owner_pid": 30093,
+  "declaration_sha256": "1a8e22068f8fab5650496f30d192ee06a02ff5ee87ece0859d5a4b07127130d9",
+  "stockfish_pid": 30101,
+  "queries": 40,
+  "accepted": {
+    "base": 21,
+    "calibration_4x": 3
+  },
+  "missing_reasons": {
+    "decisive_mate_tablebase_or_extreme_evidence": 16
+  },
+  "ordinary_action_rows": 475,
+  "generation_wall_seconds": 18.02050228198641,
+  "requested_nodes": 16777216,
+  "sum_maximum_reported_nodes": 16314458,
+  "sum_selected_packet_nodes": 4659174,
+  "calibration": [
+    {
+      "root_id": "846c46fcf2a84691cb53b4795469089d71033dee46db723c1902450520168679",
+      "comparable": true,
+      "base_choice": 375,
+      "high_choice": 375,
+      "choice_changed": false,
+      "pairs": 300,
+      "ordering_or_tie_changed": 0,
+      "strict_reversal": 0,
+      "base_tie": 1,
+      "high_tie": 1
+    },
+    {
+      "root_id": "312636997746373c9c7d4ca47d0b40f0b9c5656f48c017e51467053e7f1c3302",
+      "comparable": false,
+      "reason": "one_or_both_ordinary_packets_missing"
+    },
+    {
+      "root_id": "d8e96834fa385d2fa55c152c538807de7210bd875fdcb74374bd31a098b09866",
+      "comparable": true,
+      "base_choice": 9135,
+      "high_choice": 9135,
+      "choice_changed": false,
+      "pairs": 351,
+      "ordering_or_tie_changed": 27,
+      "strict_reversal": 26,
+      "base_tie": 1,
+      "high_tie": 0
+    },
+    {
+      "root_id": "217fe006cba727eb847b549ad1ddb8e1a63d78e80399a757218f67578e4abc1a",
+      "comparable": false,
+      "reason": "one_or_both_ordinary_packets_missing"
+    },
+    {
+      "root_id": "a6dea6bf571b864bbda12f41e2485ff0d43742b54bd90ffaa8d82886b4e9b2df",
+      "comparable": false,
+      "reason": "one_or_both_ordinary_packets_missing"
+    },
+    {
+      "root_id": "75a46fb9c2c8069a352fafe5f77459cafe9bdf9581940a062a6cf95669979e2b",
+      "comparable": false,
+      "reason": "one_or_both_ordinary_packets_missing"
+    },
+    {
+      "root_id": "dbed6536e43103229b795c8049edca8ecea35f592d66342297d78c89f50ebe74",
+      "comparable": true,
+      "base_choice": 14665,
+      "high_choice": 7730,
+      "choice_changed": true,
+      "pairs": 78,
+      "ordering_or_tie_changed": 33,
+      "strict_reversal": 32,
+      "base_tie": 0,
+      "high_tie": 1
+    },
+    {
+      "root_id": "c9044c0adad092f09b54215130cfad827a3fdcc4cfb47bda986463d694597846",
+      "comparable": false,
+      "reason": "one_or_both_ordinary_packets_missing"
+    }
+  ],
+  "strength_evidence": false,
+  "training": false,
+  "teacher_inputs": false,
+  "terminal_utc": "2026-10-03T10:08:37.368685+00:00",
+  "stockfish_retired": true
+}

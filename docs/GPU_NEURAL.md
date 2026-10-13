@@ -11,8 +11,8 @@ on heldout teacher positions; integration does not establish a strength gain.
 ## Train, export and select
 
 The separate `../chen-neural` worktree owns the
-[search-teacher pipeline](../../chen-neural/docs/SEARCH_TEACHER.md) and
-[same-model deployment contract](../../chen-neural/docs/NEURAL_DEPLOYMENT.md).
+[search-teacher pipeline](SEARCH_TEACHER.md) and
+[same-model deployment contract](NEURAL_DEPLOYMENT.md).
 Existing experimental checkpoints and deployment archives are retained under
 that worktree's ignored `results/neural/` directory, with hashes in tracked
 evidence. A clean clone requires regeneration or the matching local artifacts.

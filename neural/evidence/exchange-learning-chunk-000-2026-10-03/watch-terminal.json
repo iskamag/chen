@@ -1,0 +1,8 @@
+{
+  "kind": "exchange_fit_group_terminal",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 81.00978844799101,
+  "owned_pgid_absent": true,
+  "declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "counts": {
+    "roots": 1940,
+    "entered_states": 7244,
+    "initial_actions": 3864,
+    "ep_initial": 15,
+    "promotion_initial": 672,
+    "closed_exact": 3175,
+    "closed_with_recapture": 1344,
+    "sum_dependency_rounds": 5069,
+    "families": 256
+  },
+  "missing": {
+    "unsupported_check_evasion": 604,
+    "typed_terminal": 85
+  },
+  "closed_motifs": {
+    "capture": 2943,
+    "castling": 188,
+    "check": 325,
+    "pin": 923,
+    "promotion": 734,
+    "low_material": 553,
+    "en_passant": 50
+  },
+  "return_vs_immediate": {
+    "nonzero_correction": 1172,
+    "sum_abs_correction_cp": 465080,
+    "sum_return_cp": 474870
+  },
+  "generation_wall_seconds": 4.4038836900144815,
+  "max_action_seconds": 0.011055676004616544,
+  "target_sha256": "44fd685f66416cd517d89114f4cf05cacbc235a94bf94117286352d86933ac35",
+  "strategic_quality_claim": false,
+  "training": false,
+  "gpu": false
+}

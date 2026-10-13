@@ -1,0 +1,39 @@
+{
+  "kind": "primary_source_transformer_architecture_review",
+  "original_local_hypothesis": {
+    "GPU_profile": "actual batchK-dependent forward and training times, event timing and peak allocator memory; fixed widths/parameter counts do not assert equal compute",
+    "claim": "experimental_hypothesis_not_proven_prior_art_novelty",
+    "control": "Common multihead preLN attention block, common eight-role readout, same TRAIN identities/update counts/paired seeds; change token ownership and typed routing only.",
+    "experiment": "Action-conditioned sparse occupied-piece tokens plus eight typed threat/plan tokens versus64 dense square tokens.",
+    "material_prior": "same positive TRAIN-only physical material scale and true-action algebraic prior",
+    "quality": "separate sealed joint scalar/root validation gate with NONE, no new heldout peeks",
+    "simulator": "exact legality/history/terminal classification remains external to learned latents"
+  },
+  "sources": [
+    {
+      "finding": "Square tokens; compressed global board representation generates head-specific additive attention biases. Separate attention source-destination policy head. Its positional bias is dynamically generated rather than six static geometry indicators plus one pseudoattack coefficient.",
+      "inference": "A controlled dynamic or typed bias ablation is plausible, but published large-data strength does not predict the strength of this small corpus or establish Lichess rating.",
+      "local_relation": "Our relation backend has single-head square self-attention with learned coefficients on fixed geometry and pseudoattack edges. Our plan backend adds eight plan-token cross-attention and returns square slots before the independent eight-role bottleneck. Neither is a reproduced Chessformer.",
+      "read": "sections3.1-3.3 and5.1-5.2",
+      "title": "Chessformer: A Unified Architecture for Chess Modeling",
+      "url": "https://arxiv.org/html/2605.19091v1"
+    },
+    {
+      "finding": "External MCTS and internally generated linearized minimax trees are separate mechanisms. Internal search is trained with serialized tree traces; its input specifies breadth/depth. Authors separately report internal/external rating calibration.",
+      "inference": "Any future latent-search claim needs a separately admitted multi-ply curriculum and explicit refresh policy, not a relabeling of one-step prediction.",
+      "local_relation": "Our one-step transported role latents plus exact simulator sidecars are neither a serialized internal search tree nor wholly learned game rules. Sparse observations are insufficient contiguous rollout training data.",
+      "read": "sections3-4 and5.1",
+      "title": "Mastering Board Games by External and Internal Planning with Language Models",
+      "url": "https://arxiv.org/html/2412.12119v3"
+    },
+    {
+      "finding": "The paper separates legal-move accuracy, Stockfish topK move quality and variant/game evaluation. Promotion-derived excess-piece positions and same-color bishops test compositional generalization.",
+      "inference": "A later OOD probe should test value/order behavior under promotions and rare material patterns; Chess960 requires an actual rules extension and separate admission.",
+      "local_relation": "Our simulator legal masks already certify action legality, so neural legal accuracy would be tautological. Scalar intervals, complete-root choice and actual playing strength must remain separate evidence.",
+      "read": "sections3.2-3.3 and Chess960 evaluation discussion",
+      "title": "Out-of-distribution Tests Reveal Compositionality in Chess Transformers",
+      "url": "https://arxiv.org/html/2510.20783v1"
+    }
+  ],
+  "status": "research_only_no_training"
+}

@@ -53,7 +53,8 @@ cargo clippy --locked --all-targets --all-features -- -D warnings
 
 Optional HIP experiments target AMD gfx1030 and require ROCm;
 see [GPU setup](docs/GPU_INTEGRATION.md).
-The neural training worktree is separate and is not required to build or play.
+Optional [neural experiments](neural/README.md) live in `neural/` and focus on
+compact recurrent tactical models. They are not required to build or play.
 [Research status](docs/research/STATUS.md) records historical experiments and
 their limitations. [Artifact policy](docs/ARTIFACTS.md) explains which evidence
 is included in Git. MIT licensed; see [LICENSE](LICENSE) and

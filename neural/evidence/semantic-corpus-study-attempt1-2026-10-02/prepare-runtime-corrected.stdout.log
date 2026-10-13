@@ -1,0 +1,104 @@
+{
+  "actual_training": false,
+  "base": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy",
+  "config": {
+    "anchor_updates": 384,
+    "clip_grad_norm": 1.0,
+    "depth": 1,
+    "learning_rate": 0.0003,
+    "material_bisections": 64,
+    "material_lower": 0.05,
+    "material_upper": 5.0,
+    "phase_wall_seconds": 900,
+    "seeds": [
+      20261021,
+      20261022
+    ],
+    "total_wall_seconds": 7200,
+    "transition_updates": 192,
+    "weight_decay": 0.0,
+    "width": 32
+  },
+  "dependencies": {
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/experiments/semantic_corpus/__init__.py": "bce8890d3c407020a1479a4df012d5b33fa670284c017a08376842323f768f8e",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/experiments/semantic_corpus/packing.py": "d175a5659ca703479e356c3b48e2c07dd431bb9f5c663cdf41fdb1fc157e2ce9",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/experiments/semantic_corpus/resident.py": "107fd446941d494570bde1f72faf325373ad6c719f2b6ab9c73550d8bba56a59",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/diamonds.py": "a2d33bff2b61c7ad09c23fb60509bb0246d0901c5ff5d60e0ffd18796aff1854",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/dynamics.py": "a2c31c3d22c47a8b0b6b56f844b2cb54f12ffaea39ee35a3649a74311f9712dc",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/features.py": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/models.py": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/score_frames.py": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/semantic_corpus_study.py": "c2569a277188b809685d4af1066683f90469a97b9c6f84fbdb36414eef01a4da",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/semantic_strategy.py": "943b5ba6c7947a8107acbafab4f8f463c21e5a2556efcf29e7fd0eca16aa9b84",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/strategic_transport.py": "319f9bb99e712d1164ae7f7744ec715278a6071cc41dace2b4e77c044c5c6a6f",
+    "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/neural-worktree/neural/value_heads.py": "788c328c2a325c6ab85c1652d3d97b5ceeabba0377184f47fc7b4590885b5e6b"
+  },
+  "gpu_runtime_calls": 0,
+  "heldout_quality_metrics": false,
+  "kernel_proposal_sha256": "507a2b5984d73c2ab1f2fba504fc1b47ff5c1c7eedd80db64dadbe1b6da4c129",
+  "kernel_protocol_except_dependencies_identical": true,
+  "kind": "semantic_runtime_metadata_path_rebinding_review_v1",
+  "native_provenance_rebinding": {
+    "/home/iskam/src/vibe/chen/docs/research/evidence/semantic-corpus-2026-10-02/corpus-oracle": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/docs/research/evidence/semantic-corpus-2026-10-02/corpus-oracle",
+    "/home/iskam/src/vibe/chen/docs/research/evidence/semantic-corpus-2026-10-02/rust-oracle-build.json": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/docs/research/evidence/semantic-corpus-2026-10-02/rust-oracle-build.json",
+    "/home/iskam/src/vibe/chen/examples/corpus_baselines.rs": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/examples/corpus_baselines.rs",
+    "/home/iskam/src/vibe/chen/results/qa-venv/lib/python3.14/site-packages/chess/__init__.py": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/chess/__init__.py",
+    "/home/iskam/src/vibe/chen/results/semantic-corpus/corpus-baselines": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/results/semantic-corpus/corpus-baselines",
+    "/home/iskam/src/vibe/chen/scripts/prepare_semantic_baselines.py": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/scripts/prepare_semantic_baselines.py",
+    "/home/iskam/src/vibe/chen/src/core.rs": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/src/core.rs",
+    "/home/iskam/src/vibe/chen/src/eval.rs": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/src/eval.rs"
+  },
+  "original_witness_sha256": "f7e96742dcc0a555bcb44e774bdc737134e394685fde028cdbebc39aada5c7d9",
+  "payloads_verified": 44,
+  "runner_source_sha256": "d7f110745237a8f1453bb1e0ea8ad274ece7fbc1d44de2513809b7e7810a66ad",
+  "runtime_witness_sha256": "a6756eeed59e72c7fdf3a6850c2834ea9df225924277a2376e59d2775e81796c",
+  "splits": {
+    "test": {
+      "counts": {
+        "edges": 2118,
+        "families": 55,
+        "history": 90619,
+        "observations": 440,
+        "queries": 495,
+        "root_offsets": 56,
+        "roots": 55,
+        "state_offsets": 2559,
+        "states": 2558
+      },
+      "manifest_sha256": "b5ed6f585936d8ff16e8658bee6d19e581fa2e84d9025ebfaf158aa0095662a7",
+      "path": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/results/semantic-corpus/packet-v2/test"
+    },
+    "train": {
+      "counts": {
+        "edges": 8477,
+        "families": 233,
+        "history": 366733,
+        "observations": 1864,
+        "queries": 2097,
+        "root_offsets": 234,
+        "roots": 233,
+        "state_offsets": 10342,
+        "states": 10341
+      },
+      "manifest_sha256": "b068256c757c93810f330b07bd4703bc35ec072b816a105fe76a33cc4d4376a4",
+      "path": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/results/semantic-corpus/packet-v2/train"
+    },
+    "validation": {
+      "counts": {
+        "edges": 2106,
+        "families": 62,
+        "history": 92688,
+        "observations": 496,
+        "queries": 558,
+        "root_offsets": 63,
+        "roots": 62,
+        "state_offsets": 2603,
+        "states": 2602
+      },
+      "manifest_sha256": "55cc6ceea5bd1ebb1c9c4c07dcde8604c15a0f33f199a31a21c8b4fac70ed010",
+      "path": "/tmp/chen-semantic-study-20261002.s7Yn6Mcy/main/results/semantic-corpus/packet-v2/validation"
+    }
+  },
+  "suite_preseal_proposal_sha256": "c9cab64b335435b3a053e76871cc23f965ec1d46906ce08b8b18e190e6ae42fc",
+  "witness_splits_byte_value_unchanged": true
+}

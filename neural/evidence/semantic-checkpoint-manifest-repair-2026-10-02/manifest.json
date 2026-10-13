@@ -1,0 +1,16 @@
+{
+  "kind": "semantic_checkpoint_manifest_repair_evidence_v1",
+  "payload_sha256": {
+    "CPU-tests.log": "4e05688fc647fd86ffb4aebdf1b64f43e9fd181c8420fe170eef294fbe803b1f",
+    "actual40-mechanical-check.json": "582f34438ee2a779b6a1d7d462cbf91f5510009f56831d6fb18ab8d11c8123d8",
+    "actual40.stderr.log": "ecce33ff96a0e11a0e519d1b73c0980e185bf59dfe061be9d21e2e5b4778bb8f",
+    "actual40.stdout.log": "362caafcc3ee4b2dd6fc79cd0b0f030ea5859378b34d84029be77cb3ed1d118d",
+    "check-actual40.py": "51338dbd769d67bb396a930ed3af71769b3044be4ca6de01256fa69879c06b04",
+    "mechanical-only-failed-attempt-file-manifest.json": "8ec32b76a034d799190fb4e9629a7768ffdebb0fbc2745b28985f74c5b42445e",
+    "root-review.json": "5d6b42e241d16fc3ea151f9111cbe1f54cebb0fcd77a6664c555f17e34b80d98",
+    "source-freeze.json": "7830f1a91c4c62f4ed5d1d2400b1b2ccabea20d526541a374ca1e5ec574078cf",
+    "sources/docs/SEMANTIC_CORPUS_STUDY.md": "5f5cdc9009319cacf4d17d5eab3925830f258d1ab451ddb33ebe253510e9bbbc",
+    "sources/neural/run_semantic_corpus_study.py": "479ed55e702fc9f14468b017823d86988dcc52a752d11ed1ba8317845c6b295c",
+    "sources/neural/tests/test_run_semantic_corpus_study.py": "dfdf683a30157d8abee668b908087b2bbf08536420b1f20f48c2208e8641b03e"
+  }
+}

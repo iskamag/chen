@@ -1,0 +1,24 @@
+{
+  "all_own_eager_capture_checks_exact": true,
+  "complete_sha256": "e63cddd19937513e9a544cc1a4137d0d87b589fc093a243473a859414734ebf3",
+  "completed_remaining_keys": [
+    "relation/20261021",
+    "plan/20261021",
+    "threat/20261021",
+    "square/conditioned/20261021",
+    "relation/conditioned/20261021",
+    "plan/conditioned/20261021",
+    "threat/conditioned/20261021"
+  ],
+  "declaration_sha256": "abeb9491083d8b1fc652100de2f75cb4352e865000755a37446a937d3459cd4e",
+  "kind": "chen_precision_continuation_mechanical_terminal_check_v1",
+  "owned_processes_absent": [
+    9034,
+    9040
+  ],
+  "parent_manifest_sha256": "dc4d5aca14804e0b90506dc31563bbb8f7c85715db5b94a9b5541ab84c9c73f8",
+  "records_match_individual_files": true,
+  "scope": "CPU-only admission of terminal JSON and source copies; no forward execution, checkpoint loads or quality recalculation",
+  "square_anchor_replayed": false,
+  "status": "PASS"
+}

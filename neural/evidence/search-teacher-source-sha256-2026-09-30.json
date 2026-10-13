@@ -1,0 +1,153 @@
+{
+  "kind": "resident_search_teacher_artifact_manifest",
+  "date": "2026-09-30",
+  "strength_evidence": false,
+  "result": "All three trained models trail material value and one-ply material-greedy policy control on heldout inputs.",
+  "environment": {
+    "torch": "2.10.0+rocm7.0",
+    "torch_hip": "7.0.51831",
+    "architecture": "gfx1030"
+  },
+  "configuration": {
+    "steps": 256,
+    "batch_size": 64,
+    "seed": 20260930,
+    "width": 32,
+    "depth": 1,
+    "tree_depth": 3,
+    "parent_horizon": 2,
+    "evaluator": 1,
+    "scale_cp": 800.0,
+    "mate_band_value_excluded": 29000,
+    "initialization": "shared input/position/norm/value/policy weights equal; architectures not parameter-matched"
+  },
+  "sample_stream_sha256": "4c94f501f1ad31d2b5adecfe5dafcb659f3c06d00896fa2586ce8717325834fe",
+  "data_fingerprints": {
+    "train_sha256": "f8a0e09538e4508e1282af6bc3f087e2837cf91c6eaeffdd13b3cd4a9e31d4e0",
+    "heldout_sha256": "36557f225e22d5caee54b4196dc41cbe8acad4c61d1f96293d12c0d942bcbd19",
+    "scope": "post-learning payload audit download only, never returned to producer/training"
+  },
+  "source": [
+    {
+      "path": "neural/teacher.py",
+      "bytes": 36360,
+      "sha256": "d0587c2e2cbd6917b4bfe1906944e0782146a69988a6f2e0983faca9169b1918"
+    },
+    {
+      "path": "neural/tests/test_teacher.py",
+      "bytes": 15801,
+      "sha256": "1b6f386d93f95d14f1ae3c68adb8a0a9d1867bb16e035145c1f3244f2f3f00f8"
+    },
+    {
+      "path": "neural/bridge.py",
+      "bytes": 26867,
+      "sha256": "e77c3408d6011b99587b476ae5e84dfe5efee2577d61dd8bd407729774b3a73e"
+    },
+    {
+      "path": "neural/compact.py",
+      "bytes": 25337,
+      "sha256": "a52ba420dca331edf999e539cc37ea5b9208630ed0f9d9587fe24501b2c944d3"
+    },
+    {
+      "path": "neural/models.py",
+      "bytes": 11476,
+      "sha256": "5ffb8cc859df168548214b0e487a5c612f3be256af854995d6c06d72ec647c0b"
+    },
+    {
+      "path": "neural/features.py",
+      "bytes": 4380,
+      "sha256": "3aecc21de78d1c586543117aca78b3e8920b84b3694377d700228425a5e67cfc"
+    },
+    {
+      "path": "docs/SEARCH_TEACHER.md",
+      "bytes": 12592,
+      "sha256": "546f7c4f2cfe46fd1c93992249a1472bf9e1efbf1972fe09632209046e8f5df0"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "bytes": 1234260,
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.log",
+      "bytes": 1234323,
+      "sha256": "be3e6d20bc3e6854d5dbebb3ef89a5dbafbd8b217906880752c33b899d8bf133"
+    },
+    {
+      "path": "neural/evidence/search-teacher-tests-gfx1030-2026-09-30.log",
+      "bytes": 1987,
+      "sha256": "be7e391f2ff5bc3547c6232eefe56eb7ebaf17ea117e81aed15d44e4d4f79bad"
+    },
+    {
+      "path": "neural/evidence/search-teacher-tests-cpu-2026-09-30.log",
+      "bytes": 2119,
+      "sha256": "c7369aa7a077e8287018a5d5ad12a1fa113a4dbdf2dfc6b22d5011d9faff8c9a"
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "results/neural/search-teacher/square.pt",
+      "bytes": 1583269,
+      "sha256": "9578e63d0b59f7164be15c3fca649243ad90b39d3e629a79c040f1606e711ea2",
+      "model": "square"
+    },
+    {
+      "path": "results/neural/search-teacher/relation.pt",
+      "bytes": 1605373,
+      "sha256": "1b1706d407adbd76eac8a3c73504705c5482734076363aca03806238d6631b83",
+      "model": "relation"
+    },
+    {
+      "path": "results/neural/search-teacher/plan.pt",
+      "bytes": 1622487,
+      "sha256": "280abd80bdc0d8d365d46731d0bc6a39cd9ea2d3d3e8e5ce9075d2007d908a10",
+      "model": "plan"
+    }
+  ],
+  "deployment_index": {
+    "path": "results/neural/deployment/index.json",
+    "bytes": 4316,
+    "sha256": "e132f4267629bff466f59586a73cd7d7cfe024255e8560425901d49aa0014143"
+  },
+  "producer_library": {
+    "path": "/tmp/chen-teacher-stage/libchen_gpu.so",
+    "sha256": "5e0e0dd026211a6489c20faf90dcf0c3d3e7677daa64f5bd85a6a79765e167c4"
+  },
+  "producer_source_sha256": {
+    "gpu/chen_rules.h": "1ece98e87769197389362e903976123195efa10fd13c7aeafe1ec55137320391",
+    "gpu/chen_rules.hip": "5440d05054a6673f42a3aa4e14e2573579d45f9bbca32aa0662b6c1d55fdebc9",
+    "gpu/chen_teacher.h": "a8382ff212d66d46a033e254b52f3b82eea9f98ebf1d41515e0187d1e6f2ccb9",
+    "gpu/chen_replay.h": "4522e2d08f1cc34684877464f16a1fe5175fb3b61b77abb51cf70a8eceb8ded6",
+    "gpu/chen_gpu.h": "657f808e2c0335d06d69bad28feb509ae184a91115c01214edc65cd0bd26f0e8",
+    "gpu/chen_gpu.hip": "b757a827610107da87c974a5255052c3f567803917ae062515184939ddbee2c5",
+    "gpu/build.sh": "b6305b323eec007049f2e7c0a567a733dfb6ad608908caa7bbd212fdeaaa8adf",
+    "gpu/teacher_probe.py": "e3d9ea9c02c8ecab6bb8d54cd143691c3be91c3b5d837c407dae2060a2f529d6",
+    "gpu/rules_probe.py": "2b1cb6be09329f0e842a7eca8ceb069ddb8b188bdbbb64530862584ef9b138f4",
+    "gpu/replay_probe.py": "e0f3b3d6e7e53a1c4941869fcebb1ea7f205a763d97041aa3588b1622bb6c3b4",
+    "gpu/replay_copy_trace.cpp": "320f43b9608c6c111058bdf475a4a16b680fccf56d75843c566c18a46495e192"
+  },
+  "comparison_command": "CHEN_GPU_LIBRARY=/tmp/chen-teacher-stage/libchen_gpu.so PYTHONPATH=/tmp/chen-neural-methods/deps OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m neural.teacher --train-families 64 --heldout-families 16 --steps 256 --batch-size 64 --width 32 --depth 1 --tree-depth 3 --arena-capacity 100000 --seed 20260930 --producer-manifest results/neural/teacher-producer-evidence.json --output results/neural/search-teacher-gfx1030.json",
+  "gpu_test_command": "CHEN_TEACHER_TEST_GPU=1 CHEN_GPU_LIBRARY=/tmp/chen-teacher-stage/libchen_gpu.so PYTHONPATH=/tmp/chen-neural-methods/deps OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittest neural.tests.test_teacher -v",
+  "cpu_test_command": "PYTHONPATH=/tmp/chen-neural-methods/deps OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittest neural.tests.test_teacher -v",
+  "container_workdir": "cpp-rocm:/tmp/chen-neural-methods/project",
+  "test_scope": {
+    "gpu": {
+      "passed": 9,
+      "skipped": 0,
+      "seconds": 2.813
+    },
+    "cpu": {
+      "passed": 7,
+      "skipped": 2,
+      "seconds": 1.322
+    }
+  },
+  "limitations": [
+    "uniform legal random-game root distribution, finite-depth classical teacher, no real outcomes",
+    "policy accuracy uses first-tie chosen action; equivalent tied actions may be scored wrong",
+    "scalar ingress/control synchronizes; payload diagnostic checksums download after learning",
+    "single seed, short bounded training; no engine matches or Lichess rating evidence"
+  ]
+}

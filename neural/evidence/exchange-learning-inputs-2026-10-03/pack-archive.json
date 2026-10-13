@@ -1,0 +1,16 @@
+{
+  "archive": "packs.tar.gz",
+  "sha256": "b858d8d9e584caedb64d8c3d43829180aa03c66e02a860de6a79a95275a7687e",
+  "members": {
+    "pack-train.pt": {
+      "sha256": "f3ba1f230cded8df0b9e45f338c64aee1d14e3f1cac681c42ba9a52eada31fba",
+      "bytes": 19958407
+    },
+    "pack-dev.pt": {
+      "sha256": "ce957d6af5786bdd134b0f986e96099b9900f7886dac52c41855d92a022635a1",
+      "bytes": 4968546
+    }
+  },
+  "restore": "tar -xzf packs.tar.gz -C this-directory",
+  "logical_bytes_unchanged": true
+}

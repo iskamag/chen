@@ -1,0 +1,145 @@
+{
+  "kind": "fresh_licensed_real_game_family_admission",
+  "pgn_sha256": "8963b6a1620a0e9c77e5515a0744ec133e86869487188af047bb0a74400dee37",
+  "seed": 20261007,
+  "families": {
+    "train": 256,
+    "validation": 64,
+    "test": 64
+  },
+  "plies": [
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72
+  ],
+  "action_root_ply": 32,
+  "admission_revision": 2,
+  "mover_schedule": "base_ply+((observation_index+game_id_last_hex_parity)%2)",
+  "mover_counts": {
+    "train": {
+      "observations": {
+        "black": 1024,
+        "white": 1024
+      },
+      "action_roots": {
+        "black": 135,
+        "white": 121
+      },
+      "all_legal_child_rows": 9297
+    },
+    "validation": {
+      "observations": {
+        "white": 256,
+        "black": 256
+      },
+      "action_roots": {
+        "white": 33,
+        "black": 31
+      },
+      "all_legal_child_rows": 2457
+    },
+    "test": {
+      "observations": {
+        "black": 256,
+        "white": 256
+      },
+      "action_roots": {
+        "black": 34,
+        "white": 30
+      },
+      "all_legal_child_rows": 2302
+    }
+  },
+  "filter": {
+    "both_min_rating": 1800,
+    "estimated_base_plus40increments_min_seconds": 180,
+    "standard_start_rated_only": true,
+    "game_min_plies_inclusive": 73
+  },
+  "index_counts": {
+    "games_scanned": 121332,
+    "rating_filter": 111589,
+    "estimated_bullet_or_unbounded_control": 4508,
+    "missing_rating": 218,
+    "header_candidates": 5017
+  },
+  "rejections": {
+    "game_length": 436,
+    "cross_game_canonical_collision": 1
+  },
+  "canonical_counts": {
+    "train": 11345,
+    "validation": 2969,
+    "test": 2814
+  },
+  "cross_split_overlap": 0,
+  "spent_input_overlap": 0,
+  "spent_position_count": 751183,
+  "spent_reports": [
+    {
+      "path": "neural/evidence/search-teacher-gfx1030-2026-09-30.json",
+      "sha256": "8d1551f1ac34a1376a127ef99fa97eed092aa9b9cb05a363eb0c655e2e37ba19"
+    },
+    {
+      "path": "neural/evidence/value-study-gfx1030-2026-10-01.json",
+      "sha256": "ec3976db7ccf8c3a9fcafaaeba3fed25a940d1fe991bb52bacbf721e1d7d9c35"
+    },
+    {
+      "path": "neural/evidence/value-study-pilot-2026-10-01.json",
+      "sha256": "6b4845a72de967841dfcb5c36440c20c72a794f6120fd28757a703954eec957c"
+    },
+    {
+      "path": "neural/evidence/strategic-study-spent-mechanics-2026-10-01.json",
+      "sha256": "708d74a2e8f883a14bd43faa75b3ccfb23064c204c4917b5d5b401163f11ca78"
+    },
+    {
+      "path": "neural/evidence/strategic-study-pilot-lineages-2026-10-01.json",
+      "sha256": "0638efac0d17b8b469b68d33b27fa332ffc2891e94910d22162e8756f4958a38"
+    },
+    {
+      "path": "neural/evidence/strategic-study-gfx1030-2026-10-01.json",
+      "sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208"
+    },
+    {
+      "path": "neural/evidence/strategic-study-actionblind-roundoff-2026-10-01.json",
+      "sha256": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14"
+    }
+  ],
+  "source_sha256": "17a28937d35999e6e0b9a0313c9fbff4d3da730b2af8f22d6d1d23d4ecbf2ceb",
+  "outcomes_comments_embedded_evaluations_used_as_labels": false,
+  "scope": "whole game families and all planned root/child model inputs; shared players/unobserved opening ancestry may remain",
+  "source": {
+    "kind": "official_cc0_lichess_full_month_shard",
+    "url": "https://database.lichess.org/standard/lichess_db_standard_rated_2013-01.pgn.zst",
+    "license": "CC0-1.0",
+    "license_source": "https://database.lichess.org/",
+    "checksum_source": "https://database.lichess.org/standard/sha256sums.txt",
+    "archive_path": "results/semantic-data/lichess_db_standard_rated_2013-01.pgn.zst",
+    "archive_sha256": "aa40b3671fa3cf1072eb182892cd90b0e1e003a4a5943492f64b77e7f3fd1635",
+    "compressed_bytes": 17761302,
+    "pgn_path": "results/semantic-data/lichess_db_standard_rated_2013-01.pgn",
+    "pgn_sha256": "8963b6a1620a0e9c77e5515a0744ec133e86869487188af047bb0a74400dee37",
+    "decompressed_bytes": 92811021,
+    "temporal_scope": "January2013; old rating/timecontrol population, not contemporary strength evidence",
+    "limits": {
+      "compressed_bytes": 33554432,
+      "pgn_bytes": 268435456
+    }
+  },
+  "admission_wall_seconds": 29.096142913999756,
+  "teacher_labels_generated": false,
+  "revision_reason": "Correct all-White draft sampling before any labels/training/metrics; four each mover observations and hash-parity root32/33. Original admission remains unscored, not a trained/consumed test set.",
+  "previous_unscored_admission_sha256": "e38919f1a928ecb13064eed8a730a32f377bc24fc0bcbe183b6c888cf0f26024",
+  "admission_source_sha256": "425840388b157e7b7de197d15b6d223a44115c54ded1b8a7c89d3d32a3bee578",
+  "full_provenance": {
+    "path": "neural/evidence/semantic-data-admission-2026-10-01.json.gz",
+    "gzip_sha256": "5f18a4dc742dad3a07934760f0631ae6b777512edb7fddb4f0973e0514455425",
+    "decoded_json_sha256": "a386527a05e036cedfec6f48cc3b753fed5343a5150b2f5bbaed9b97dcdaa61f",
+    "gzip_bytes": 785956
+  }
+}

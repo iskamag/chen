@@ -1,0 +1,3090 @@
+{
+  "kind": "strategic_study_artifact_audit_and_frozen_summary",
+  "strength_evidence": false,
+  "report_sha256": "d38ff6934e9f5c3be9c2c14b74c61d664bf837d1e0ce70ee27425daf75c78208",
+  "predeclaration_sha256": "034658e5680adc50f172b57a9294f525983fb783f3798cc2bfa7f36d885cddc4",
+  "selection_sha256": "55fddef0ba2e80ab94673bd1ad6490806b64239f2149bf390e1a7d1507a33311",
+  "selected": null,
+  "all_source_sha256_match": true,
+  "all30_strict_cpu_checkpoint_loads_pass": true,
+  "checkpoints": [
+    {
+      "path": "results/neural/strategic-study/square-transport-20261003.pt",
+      "sha256": "7d9134e327ed904d3a67682164112ff105449b840741ad77bef977f40a5beb25",
+      "bytes": 1630306,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/square-conditioned-20261003.pt",
+      "sha256": "2372e295f27e281e19fcdf4ce66c8e82819c29405bda44b22c712fc85295ebba",
+      "bytes": 1630440,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "conditioned",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/square-action_blind-20261003.pt",
+      "sha256": "2b0dabae2910de2db36aa134a2892f21f6caab3a5dd1ff63b2ececadf8e490f2",
+      "bytes": 1630507,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "action_blind",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/square-transport_fixed_encoder-20261003.pt",
+      "sha256": "16644fb8e800d1b73d9acfb69dca422ca57daae87d21269ae85c86cbd0030e37",
+      "bytes": 1631372,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport_fixed_encoder",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/square-transport_zero_anchor-20261003.pt",
+      "sha256": "569109b0712bdb07040120d46d918438031b499d2d287b50c444561b08dfd252",
+      "bytes": 1631110,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport_zero_anchor",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport-20261003.pt",
+      "sha256": "9c1a824d63e31d5e150e5dad37b6151a72ad1afa15bd061d011771f500f3f321",
+      "bytes": 1637616,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/relation-conditioned-20261003.pt",
+      "sha256": "b44e6ce0ffd2b90b64732ff7e46e89e7aafe2589e31fb84163b373f9aa929061",
+      "bytes": 1637766,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "conditioned",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/relation-action_blind-20261003.pt",
+      "sha256": "9bd0565c2c4b13a642c153e8494c3aa586e5fbf382836e17c984555de2ecb519",
+      "bytes": 1637841,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "action_blind",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport_fixed_encoder-20261003.pt",
+      "sha256": "16628ddea060a7f0d2a950ac80ad52566af07492639ae21eac918c41f4e19e80",
+      "bytes": 1638858,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport_fixed_encoder",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport_zero_anchor-20261003.pt",
+      "sha256": "44902fc4ae1252bf1bc7c55c04d4df9471cb77ecbb9c4d98996700b09a343014",
+      "bytes": 1638644,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport_zero_anchor",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport-20261003.pt",
+      "sha256": "23c37c90a038bd9eae00892762c744e96f568cb5f610a4f57c2b78a176e0f9d6",
+      "bytes": 1645049,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/plan-conditioned-20261003.pt",
+      "sha256": "147ede01bc666adfbabe57f8ac11c23f1548602ee2ea1d38cbec4f99aaf51021",
+      "bytes": 1645281,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "conditioned",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/plan-action_blind-20261003.pt",
+      "sha256": "a69a9b403aa2651b9e0e5593fc6a136d97cd83d8909724672b0889aaef9a616b",
+      "bytes": 1645365,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "action_blind",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport_fixed_encoder-20261003.pt",
+      "sha256": "886990bd252c5313fa910d3b3cf025041b0b28e1ee8d5250ccbb430d0f6face6",
+      "bytes": 1646289,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport_fixed_encoder",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport_zero_anchor-20261003.pt",
+      "sha256": "d16123df3b399b9aed8ee53cfb18e090fab7a05347c62c6a162024c0f3ec49a0",
+      "bytes": 1646121,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport_zero_anchor",
+      "seed": 20261003
+    },
+    {
+      "path": "results/neural/strategic-study/square-transport-20261004.pt",
+      "sha256": "358f6d22d133c441208ba6ce6aee8d0a8cfb280f2f12ff59c6ca140ba5d78809",
+      "bytes": 1630306,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/square-conditioned-20261004.pt",
+      "sha256": "2499e6030991d9f9f6bcdc62deac9c177db64c3c834c360016d081c55e443ffe",
+      "bytes": 1630440,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "conditioned",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/square-action_blind-20261004.pt",
+      "sha256": "70d367731a03097be3a0f01122458ebea2009e1fd46ba24cc8e36c6b7e8c0edc",
+      "bytes": 1630507,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "action_blind",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/square-transport_fixed_encoder-20261004.pt",
+      "sha256": "7e50252325acbfc35108da9ad0c00de725db8fd74e5a382f8fc57ae6173b48ef",
+      "bytes": 1631372,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport_fixed_encoder",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/square-transport_zero_anchor-20261004.pt",
+      "sha256": "fe147fd6c4753094135f61b500e2ac08b4b550a40b1eb1a505e476b5826b6b82",
+      "bytes": 1631110,
+      "strict_cpu_loader_passed": true,
+      "architecture": "square",
+      "control": "transport_zero_anchor",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport-20261004.pt",
+      "sha256": "71e461204cdbed0f2edd3f35d52ceb91565bc5abc78133dcf6fa8bb7711356b0",
+      "bytes": 1637616,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/relation-conditioned-20261004.pt",
+      "sha256": "0ca2580e6bdca2e60b8d104c846d3e2414db52f923ec0f3192797249414585f1",
+      "bytes": 1637766,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "conditioned",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/relation-action_blind-20261004.pt",
+      "sha256": "09ad84e221e8d8e90c24147e68ec78e7001ba13eb0a68cf175e4cbf4148a6b12",
+      "bytes": 1637841,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "action_blind",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport_fixed_encoder-20261004.pt",
+      "sha256": "512b2bb9ccab3eff0fd611ba36da484ecfe58aff038c8567f45e24c25a9d238e",
+      "bytes": 1638858,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport_fixed_encoder",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/relation-transport_zero_anchor-20261004.pt",
+      "sha256": "18bc924ff0f2a5fefa0dfd5626e9086100521e06b5d12081f68e45f4f7d9629e",
+      "bytes": 1638644,
+      "strict_cpu_loader_passed": true,
+      "architecture": "relation",
+      "control": "transport_zero_anchor",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport-20261004.pt",
+      "sha256": "abab8588b43d88e57b9f6b6e7bcd282cfcb89ef6712a1a2dc7588cd5cc96d673",
+      "bytes": 1645049,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/plan-conditioned-20261004.pt",
+      "sha256": "0dfe9322ab6b2f80033df4b5ca45373eef34f429fe18e5d7a7baa3b10680247b",
+      "bytes": 1645281,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "conditioned",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/plan-action_blind-20261004.pt",
+      "sha256": "447a9dc2aa1c6b9764ba7048425b74c5aaadd3cbb59d55456f5329f771bafffc",
+      "bytes": 1645365,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "action_blind",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport_fixed_encoder-20261004.pt",
+      "sha256": "ff7cfc595a9e49eea6f0e8cc67279ecbd8f60746b89b442c27c9cc708cf48a7c",
+      "bytes": 1646289,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport_fixed_encoder",
+      "seed": 20261004
+    },
+    {
+      "path": "results/neural/strategic-study/plan-transport_zero_anchor-20261004.pt",
+      "sha256": "512704121d7a122633a14e67e69dea983ad063a117b103325cb174a366f5e150",
+      "bytes": 1646121,
+      "strict_cpu_loader_passed": true,
+      "architecture": "plan",
+      "control": "transport_zero_anchor",
+      "seed": 20261004
+    }
+  ],
+  "means": [
+    {
+      "architecture": "square",
+      "control": "transport",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 199.53355407714844,
+          "seeds": [
+            192.52304077148438,
+            206.5440673828125
+          ],
+          "population_sd": 7.0105133056640625
+        },
+        "regret_cp": {
+          "mean": 145.3423913043478,
+          "seeds": [
+            147.7173913043478,
+            142.9673913043478
+          ],
+          "population_sd": 2.375
+        },
+        "same_material_direction": {
+          "mean": 0.6102557182312012,
+          "seeds": [
+            0.6270982623100281,
+            0.5934131741523743
+          ],
+          "population_sd": 0.016842544078826904
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 382.1680145263672,
+          "seeds": [
+            369.78363037109375,
+            394.5523986816406
+          ],
+          "population_sd": 12.384384155273438
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 400.6365203857422,
+          "seeds": [
+            399.24090576171875,
+            402.0321350097656
+          ],
+          "population_sd": 1.3956146240234375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.1817432641983032,
+          "seeds": [
+            1.3804067373275757,
+            0.9830797910690308
+          ],
+          "population_sd": 0.19866347312927246
+        },
+        "full_refresh_cp_mae": {
+          "mean": 240.85672760009766,
+          "seeds": [
+            251.01454162597656,
+            230.69891357421875
+          ],
+          "population_sd": 10.157814025878906
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 200.37416076660156,
+          "seeds": [
+            193.62649536132812,
+            207.121826171875
+          ],
+          "population_sd": 6.7476654052734375
+        },
+        "regret_cp": {
+          "mean": 132.36666666666667,
+          "seeds": [
+            130.8,
+            133.93333333333334
+          ],
+          "population_sd": 1.5666666666666629
+        },
+        "same_material_direction": {
+          "mean": 0.5562419891357422,
+          "seeds": [
+            0.5802547335624695,
+            0.5322292447090149
+          ],
+          "population_sd": 0.024012744426727295
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 366.0310821533203,
+          "seeds": [
+            366.8646240234375,
+            365.1975402832031
+          ],
+          "population_sd": 0.8335418701171875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 369.0978546142578,
+          "seeds": [
+            373.1153259277344,
+            365.08038330078125
+          ],
+          "population_sd": 4.0174713134765625
+        },
+        "latent_separation_ratio": {
+          "mean": 1.073802500963211,
+          "seeds": [
+            1.1889933347702026,
+            0.9586116671562195
+          ],
+          "population_sd": 0.11519083380699158
+        },
+        "full_refresh_cp_mae": {
+          "mean": 239.65414428710938,
+          "seeds": [
+            248.05848693847656,
+            231.2498016357422
+          ],
+          "population_sd": 8.404342651367188
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 192.1664581298828,
+          "seeds": [
+            182.10472106933594,
+            202.2281951904297
+          ],
+          "population_sd": 10.061737060546875
+        },
+        "regret_cp": {
+          "mean": 122.6590909090909,
+          "seeds": [
+            133.54545454545453,
+            111.77272727272727
+          ],
+          "population_sd": 10.886363636363633
+        },
+        "same_material_direction": {
+          "mean": 0.6321323812007904,
+          "seeds": [
+            0.6283012628555298,
+            0.635963499546051
+          ],
+          "population_sd": 0.00383111834526062
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 362.0964813232422,
+          "seeds": [
+            357.126708984375,
+            367.0662536621094
+          ],
+          "population_sd": 4.9697723388671875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 375.4408721923828,
+          "seeds": [
+            376.40130615234375,
+            374.4804382324219
+          ],
+          "population_sd": 0.9604339599609375
+        },
+        "latent_separation_ratio": {
+          "mean": 0.893191933631897,
+          "seeds": [
+            1.0628769397735596,
+            0.7235069274902344
+          ],
+          "population_sd": 0.1696850061416626
+        },
+        "full_refresh_cp_mae": {
+          "mean": 236.38700103759766,
+          "seeds": [
+            255.88133239746094,
+            216.89266967773438
+          ],
+          "population_sd": 19.49433135986328
+        }
+      }
+    },
+    {
+      "architecture": "square",
+      "control": "conditioned",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 195.70368194580078,
+          "seeds": [
+            192.77847290039062,
+            198.62889099121094
+          ],
+          "population_sd": 2.9252090454101562
+        },
+        "regret_cp": {
+          "mean": 153.39673913043478,
+          "seeds": [
+            153.6413043478261,
+            153.15217391304347
+          ],
+          "population_sd": 0.24456521739131176
+        },
+        "same_material_direction": {
+          "mean": 0.6075331270694733,
+          "seeds": [
+            0.6130534410476685,
+            0.6020128130912781
+          ],
+          "population_sd": 0.00552031397819519
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 382.02113342285156,
+          "seeds": [
+            378.7030944824219,
+            385.33917236328125
+          ],
+          "population_sd": 3.3180389404296875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 400.21539306640625,
+          "seeds": [
+            399.625244140625,
+            400.8055419921875
+          ],
+          "population_sd": 0.59014892578125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.0654255151748657,
+          "seeds": [
+            1.2560573816299438,
+            0.8747936487197876
+          ],
+          "population_sd": 0.19063186645507812
+        },
+        "full_refresh_cp_mae": {
+          "mean": 256.8571014404297,
+          "seeds": [
+            241.01470947265625,
+            272.6994934082031
+          ],
+          "population_sd": 15.842391967773438
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 195.2647476196289,
+          "seeds": [
+            191.0358123779297,
+            199.49368286132812
+          ],
+          "population_sd": 4.228935241699219
+        },
+        "regret_cp": {
+          "mean": 136.14444444444445,
+          "seeds": [
+            137.2,
+            135.0888888888889
+          ],
+          "population_sd": 1.055555555555543
+        },
+        "same_material_direction": {
+          "mean": 0.5625477135181427,
+          "seeds": [
+            0.5690445303916931,
+            0.5560508966445923
+          ],
+          "population_sd": 0.006496816873550415
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 366.9960021972656,
+          "seeds": [
+            366.5571594238281,
+            367.4348449707031
+          ],
+          "population_sd": 0.4388427734375
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 369.5744934082031,
+          "seeds": [
+            370.08135986328125,
+            369.067626953125
+          ],
+          "population_sd": 0.506866455078125
+        },
+        "latent_separation_ratio": {
+          "mean": 0.9356338679790497,
+          "seeds": [
+            1.0650928020477295,
+            0.8061749339103699
+          ],
+          "population_sd": 0.1294589340686798
+        },
+        "full_refresh_cp_mae": {
+          "mean": 258.1784973144531,
+          "seeds": [
+            240.55636596679688,
+            275.8006286621094
+          ],
+          "population_sd": 17.62213134765625
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 184.8482666015625,
+          "seeds": [
+            181.0831298828125,
+            188.6134033203125
+          ],
+          "population_sd": 3.76513671875
+        },
+        "regret_cp": {
+          "mean": 114.11363636363637,
+          "seeds": [
+            116.18181818181819,
+            112.04545454545455
+          ],
+          "population_sd": 2.06818181818182
+        },
+        "same_material_direction": {
+          "mean": 0.6284643113613129,
+          "seeds": [
+            0.6271601319313049,
+            0.6297684907913208
+          ],
+          "population_sd": 0.0013041794300079346
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 360.95819091796875,
+          "seeds": [
+            360.1058654785156,
+            361.8105163574219
+          ],
+          "population_sd": 0.852325439453125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 373.8844757080078,
+          "seeds": [
+            376.9699401855469,
+            370.79901123046875
+          ],
+          "population_sd": 3.0854644775390625
+        },
+        "latent_separation_ratio": {
+          "mean": 0.7634217441082001,
+          "seeds": [
+            0.9282219409942627,
+            0.5986215472221375
+          ],
+          "population_sd": 0.16480019688606262
+        },
+        "full_refresh_cp_mae": {
+          "mean": 254.00150299072266,
+          "seeds": [
+            239.2766876220703,
+            268.726318359375
+          ],
+          "population_sd": 14.724815368652344
+        }
+      }
+    },
+    {
+      "architecture": "square",
+      "control": "action_blind",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 211.19712829589844,
+          "seeds": [
+            205.28956604003906,
+            217.1046905517578
+          ],
+          "population_sd": 5.907562255859375
+        },
+        "regret_cp": {
+          "mean": 158.0,
+          "seeds": [
+            158.0,
+            158.0
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.5,
+          "seeds": [
+            0.5,
+            0.5
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 211.52323150634766,
+          "seeds": [
+            206.62449645996094,
+            216.42196655273438
+          ],
+          "population_sd": 4.898735046386719
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 207.90103149414062,
+          "seeds": [
+            201.70375061035156,
+            214.0983123779297
+          ],
+          "population_sd": 6.1972808837890625
+        },
+        "regret_cp": {
+          "mean": 141.17777777777778,
+          "seeds": [
+            141.17777777777778,
+            141.17777777777778
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.4999999701976776,
+          "seeds": [
+            0.4999999701976776,
+            0.4999999701976776
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 209.9695587158203,
+          "seeds": [
+            202.30528259277344,
+            217.6338348388672
+          ],
+          "population_sd": 7.664276123046875
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 200.0765151977539,
+          "seeds": [
+            191.193359375,
+            208.9596710205078
+          ],
+          "population_sd": 8.883155822753906
+        },
+        "regret_cp": {
+          "mean": 118.02272727272727,
+          "seeds": [
+            118.02272727272727,
+            118.02272727272727
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.5,
+          "seeds": [
+            0.5,
+            0.5
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 196.44901275634766,
+          "seeds": [
+            190.93316650390625,
+            201.96485900878906
+          ],
+          "population_sd": 5.515846252441406
+        }
+      }
+    },
+    {
+      "architecture": "square",
+      "control": "transport_fixed_encoder",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 208.24879455566406,
+          "seeds": [
+            203.35971069335938,
+            213.13787841796875
+          ],
+          "population_sd": 4.8890838623046875
+        },
+        "regret_cp": {
+          "mean": 156.0625,
+          "seeds": [
+            157.10326086956522,
+            155.02173913043478
+          ],
+          "population_sd": 1.0407608695652186
+        },
+        "same_material_direction": {
+          "mean": 0.5417214035987854,
+          "seeds": [
+            0.5491381287574768,
+            0.534304678440094
+          ],
+          "population_sd": 0.007416725158691406
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 405.8228759765625,
+          "seeds": [
+            405.1404724121094,
+            406.5052795410156
+          ],
+          "population_sd": 0.682403564453125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 405.2362365722656,
+          "seeds": [
+            404.4587707519531,
+            406.0137023925781
+          ],
+          "population_sd": 0.7774658203125
+        },
+        "latent_separation_ratio": {
+          "mean": 0.8231854438781738,
+          "seeds": [
+            0.8776573538780212,
+            0.7687135338783264
+          ],
+          "population_sd": 0.05447190999984741
+        },
+        "full_refresh_cp_mae": {
+          "mean": 213.2378387451172,
+          "seeds": [
+            211.2726593017578,
+            215.20301818847656
+          ],
+          "population_sd": 1.965179443359375
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 205.87029266357422,
+          "seeds": [
+            201.65016174316406,
+            210.09042358398438
+          ],
+          "population_sd": 4.220130920410156
+        },
+        "regret_cp": {
+          "mean": 140.54444444444442,
+          "seeds": [
+            136.53333333333333,
+            144.55555555555554
+          ],
+          "population_sd": 4.011111111111106
+        },
+        "same_material_direction": {
+          "mean": 0.5417197048664093,
+          "seeds": [
+            0.5547770261764526,
+            0.528662383556366
+          ],
+          "population_sd": 0.013057321310043335
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 365.2256317138672,
+          "seeds": [
+            365.77996826171875,
+            364.6712951660156
+          ],
+          "population_sd": 0.5543365478515625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 364.67132568359375,
+          "seeds": [
+            365.1261901855469,
+            364.2164611816406
+          ],
+          "population_sd": 0.454864501953125
+        },
+        "latent_separation_ratio": {
+          "mean": 0.8810683488845825,
+          "seeds": [
+            0.9160087704658508,
+            0.8461279273033142
+          ],
+          "population_sd": 0.03494042158126831
+        },
+        "full_refresh_cp_mae": {
+          "mean": 211.22463989257812,
+          "seeds": [
+            210.09193420410156,
+            212.3573455810547
+          ],
+          "population_sd": 1.1327056884765625
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 196.59410095214844,
+          "seeds": [
+            185.76522827148438,
+            207.4229736328125
+          ],
+          "population_sd": 10.828872680664062
+        },
+        "regret_cp": {
+          "mean": 92.3409090909091,
+          "seeds": [
+            97.88636363636364,
+            86.79545454545455
+          ],
+          "population_sd": 5.545454545454547
+        },
+        "same_material_direction": {
+          "mean": 0.595859169960022,
+          "seeds": [
+            0.594391942024231,
+            0.597326397895813
+          ],
+          "population_sd": 0.0014672279357910156
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 380.32293701171875,
+          "seeds": [
+            379.34515380859375,
+            381.30072021484375
+          ],
+          "population_sd": 0.977783203125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 381.2140655517578,
+          "seeds": [
+            380.722412109375,
+            381.7057189941406
+          ],
+          "population_sd": 0.4916534423828125
+        },
+        "latent_separation_ratio": {
+          "mean": 0.6227957010269165,
+          "seeds": [
+            0.7184545397758484,
+            0.5271368622779846
+          ],
+          "population_sd": 0.09565883874893188
+        },
+        "full_refresh_cp_mae": {
+          "mean": 198.84231567382812,
+          "seeds": [
+            196.77072143554688,
+            200.91390991210938
+          ],
+          "population_sd": 2.07159423828125
+        }
+      }
+    },
+    {
+      "architecture": "square",
+      "control": "transport_zero_anchor",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 275.94712829589844,
+          "seeds": [
+            272.9305114746094,
+            278.9637451171875
+          ],
+          "population_sd": 3.0166168212890625
+        },
+        "regret_cp": {
+          "mean": 266.4891304347826,
+          "seeds": [
+            250.53804347826087,
+            282.4402173913044
+          ],
+          "population_sd": 15.951086956521749
+        },
+        "same_material_direction": {
+          "mean": 0.6110818982124329,
+          "seeds": [
+            0.627398669719696,
+            0.5947651267051697
+          ],
+          "population_sd": 0.016316771507263184
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 381.7539978027344,
+          "seeds": [
+            372.7852783203125,
+            390.72271728515625
+          ],
+          "population_sd": 8.968719482421875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 402.4618225097656,
+          "seeds": [
+            401.4967346191406,
+            403.4269104003906
+          ],
+          "population_sd": 0.965087890625
+        },
+        "latent_separation_ratio": {
+          "mean": 1.2506086826324463,
+          "seeds": [
+            1.3894537687301636,
+            1.111763596534729
+          ],
+          "population_sd": 0.13884508609771729
+        },
+        "full_refresh_cp_mae": {
+          "mean": 319.03810119628906,
+          "seeds": [
+            327.15325927734375,
+            310.9229431152344
+          ],
+          "population_sd": 8.115158081054688
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 337.88267517089844,
+          "seeds": [
+            323.2998352050781,
+            352.46551513671875
+          ],
+          "population_sd": 14.582839965820312
+        },
+        "regret_cp": {
+          "mean": 287.75555555555553,
+          "seeds": [
+            310.4,
+            265.1111111111111
+          ],
+          "population_sd": 22.644444444444446
+        },
+        "same_material_direction": {
+          "mean": 0.5666241645812988,
+          "seeds": [
+            0.5756687521934509,
+            0.5575795769691467
+          ],
+          "population_sd": 0.0090445876121521
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 366.7283477783203,
+          "seeds": [
+            369.0694885253906,
+            364.38720703125
+          ],
+          "population_sd": 2.3411407470703125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 368.4069061279297,
+          "seeds": [
+            371.39886474609375,
+            365.4149475097656
+          ],
+          "population_sd": 2.9919586181640625
+        },
+        "latent_separation_ratio": {
+          "mean": 1.1739623546600342,
+          "seeds": [
+            1.2871119976043701,
+            1.0608127117156982
+          ],
+          "population_sd": 0.11314964294433594
+        },
+        "full_refresh_cp_mae": {
+          "mean": 385.99339294433594,
+          "seeds": [
+            391.75604248046875,
+            380.2307434082031
+          ],
+          "population_sd": 5.7626495361328125
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 273.6212158203125,
+          "seeds": [
+            258.35296630859375,
+            288.88946533203125
+          ],
+          "population_sd": 15.26824951171875
+        },
+        "regret_cp": {
+          "mean": 318.0,
+          "seeds": [
+            272.4318181818182,
+            363.5681818181818
+          ],
+          "population_sd": 45.56818181818181
+        },
+        "same_material_direction": {
+          "mean": 0.6372677087783813,
+          "seeds": [
+            0.6403651833534241,
+            0.6341702342033386
+          ],
+          "population_sd": 0.0030974745750427246
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 360.0147399902344,
+          "seeds": [
+            357.82110595703125,
+            362.2083740234375
+          ],
+          "population_sd": 2.193634033203125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 375.82325744628906,
+          "seeds": [
+            379.0,
+            372.6465148925781
+          ],
+          "population_sd": 3.1767425537109375
+        },
+        "latent_separation_ratio": {
+          "mean": 0.9328864216804504,
+          "seeds": [
+            1.0642096996307373,
+            0.8015631437301636
+          ],
+          "population_sd": 0.13132327795028687
+        },
+        "full_refresh_cp_mae": {
+          "mean": 331.0004119873047,
+          "seeds": [
+            341.809814453125,
+            320.1910095214844
+          ],
+          "population_sd": 10.809402465820312
+        }
+      }
+    },
+    {
+      "architecture": "relation",
+      "control": "transport",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 186.24056243896484,
+          "seeds": [
+            175.86981201171875,
+            196.61131286621094
+          ],
+          "population_sd": 10.370750427246094
+        },
+        "regret_cp": {
+          "mean": 148.0923913043478,
+          "seeds": [
+            151.2554347826087,
+            144.92934782608697
+          ],
+          "population_sd": 3.1630434782608603
+        },
+        "same_material_direction": {
+          "mean": 0.599703311920166,
+          "seeds": [
+            0.6092230081558228,
+            0.5901836156845093
+          ],
+          "population_sd": 0.009519696235656738
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 384.1962585449219,
+          "seeds": [
+            374.68841552734375,
+            393.7041015625
+          ],
+          "population_sd": 9.507843017578125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 401.0938720703125,
+          "seeds": [
+            401.0075378417969,
+            401.1802062988281
+          ],
+          "population_sd": 0.086334228515625
+        },
+        "latent_separation_ratio": {
+          "mean": 1.3763700723648071,
+          "seeds": [
+            1.577275037765503,
+            1.1754651069641113
+          ],
+          "population_sd": 0.2009049654006958
+        },
+        "full_refresh_cp_mae": {
+          "mean": 232.78240203857422,
+          "seeds": [
+            247.94166564941406,
+            217.62313842773438
+          ],
+          "population_sd": 15.159263610839844
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 205.8354034423828,
+          "seeds": [
+            210.06423950195312,
+            201.6065673828125
+          ],
+          "population_sd": 4.2288360595703125
+        },
+        "regret_cp": {
+          "mean": 138.82222222222222,
+          "seeds": [
+            141.46666666666667,
+            136.17777777777778
+          ],
+          "population_sd": 2.6444444444444457
+        },
+        "same_material_direction": {
+          "mean": 0.5527388155460358,
+          "seeds": [
+            0.5592356324195862,
+            0.5462419986724854
+          ],
+          "population_sd": 0.006496816873550415
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 373.7751159667969,
+          "seeds": [
+            378.9064636230469,
+            368.6437683105469
+          ],
+          "population_sd": 5.13134765625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 373.14662170410156,
+          "seeds": [
+            378.7273864746094,
+            367.56585693359375
+          ],
+          "population_sd": 5.5807647705078125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.3902564644813538,
+          "seeds": [
+            1.4737451076507568,
+            1.3067678213119507
+          ],
+          "population_sd": 0.08348864316940308
+        },
+        "full_refresh_cp_mae": {
+          "mean": 233.38874053955078,
+          "seeds": [
+            251.38424682617188,
+            215.3932342529297
+          ],
+          "population_sd": 17.995506286621094
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 184.88884735107422,
+          "seeds": [
+            174.39149475097656,
+            195.38619995117188
+          ],
+          "population_sd": 10.497352600097656
+        },
+        "regret_cp": {
+          "mean": 109.1590909090909,
+          "seeds": [
+            129.5909090909091,
+            88.72727272727273
+          ],
+          "population_sd": 20.43181818181818
+        },
+        "same_material_direction": {
+          "mean": 0.6255298256874084,
+          "seeds": [
+            0.6199869513511658,
+            0.6310727000236511
+          ],
+          "population_sd": 0.005542874336242676
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 362.69610595703125,
+          "seeds": [
+            359.4099426269531,
+            365.9822692871094
+          ],
+          "population_sd": 3.286163330078125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 375.72296142578125,
+          "seeds": [
+            377.9123840332031,
+            373.5335388183594
+          ],
+          "population_sd": 2.189422607421875
+        },
+        "latent_separation_ratio": {
+          "mean": 1.0458211600780487,
+          "seeds": [
+            1.2003499269485474,
+            0.89129239320755
+          ],
+          "population_sd": 0.15452876687049866
+        },
+        "full_refresh_cp_mae": {
+          "mean": 227.45504760742188,
+          "seeds": [
+            247.9214324951172,
+            206.98866271972656
+          ],
+          "population_sd": 20.466384887695312
+        }
+      }
+    },
+    {
+      "architecture": "relation",
+      "control": "conditioned",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 190.36649322509766,
+          "seeds": [
+            180.9214630126953,
+            199.8115234375
+          ],
+          "population_sd": 9.445030212402344
+        },
+        "regret_cp": {
+          "mean": 153.45652173913044,
+          "seeds": [
+            149.8641304347826,
+            157.04891304347825
+          ],
+          "population_sd": 3.592391304347828
+        },
+        "same_material_direction": {
+          "mean": 0.5962859988212585,
+          "seeds": [
+            0.6016373038291931,
+            0.590934693813324
+          ],
+          "population_sd": 0.00535130500793457
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 388.2712097167969,
+          "seeds": [
+            382.4956970214844,
+            394.0467224121094
+          ],
+          "population_sd": 5.7755126953125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 398.90785217285156,
+          "seeds": [
+            395.36383056640625,
+            402.4518737792969
+          ],
+          "population_sd": 3.5440216064453125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.1426994502544403,
+          "seeds": [
+            1.311376690864563,
+            0.9740222096443176
+          ],
+          "population_sd": 0.16867724061012268
+        },
+        "full_refresh_cp_mae": {
+          "mean": 242.40479278564453,
+          "seeds": [
+            260.7832946777344,
+            224.0262908935547
+          ],
+          "population_sd": 18.378501892089844
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 204.8763198852539,
+          "seeds": [
+            210.10357666015625,
+            199.64906311035156
+          ],
+          "population_sd": 5.227256774902344
+        },
+        "regret_cp": {
+          "mean": 138.55555555555554,
+          "seeds": [
+            139.0,
+            138.11111111111111
+          ],
+          "population_sd": 0.44444444444444287
+        },
+        "same_material_direction": {
+          "mean": 0.5326114296913147,
+          "seeds": [
+            0.5208916664123535,
+            0.5443311929702759
+          ],
+          "population_sd": 0.011719763278961182
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 372.7215270996094,
+          "seeds": [
+            377.6114196777344,
+            367.8316345214844
+          ],
+          "population_sd": 4.889892578125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 370.85166931152344,
+          "seeds": [
+            374.79962158203125,
+            366.9037170410156
+          ],
+          "population_sd": 3.9479522705078125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.0602937638759613,
+          "seeds": [
+            1.1207454204559326,
+            0.99984210729599
+          ],
+          "population_sd": 0.060451656579971313
+        },
+        "full_refresh_cp_mae": {
+          "mean": 241.70913696289062,
+          "seeds": [
+            260.3525695800781,
+            223.06570434570312
+          ],
+          "population_sd": 18.6434326171875
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 185.4715805053711,
+          "seeds": [
+            178.5763397216797,
+            192.3668212890625
+          ],
+          "population_sd": 6.895240783691406
+        },
+        "regret_cp": {
+          "mean": 102.11363636363637,
+          "seeds": [
+            118.3409090909091,
+            85.88636363636364
+          ],
+          "population_sd": 16.227272727272727
+        },
+        "same_material_direction": {
+          "mean": 0.6223508417606354,
+          "seeds": [
+            0.6180306673049927,
+            0.6266710162162781
+          ],
+          "population_sd": 0.0043201744556427
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 367.24806213378906,
+          "seeds": [
+            366.724853515625,
+            367.7712707519531
+          ],
+          "population_sd": 0.5232086181640625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 376.57611083984375,
+          "seeds": [
+            378.34527587890625,
+            374.80694580078125
+          ],
+          "population_sd": 1.7691650390625
+        },
+        "latent_separation_ratio": {
+          "mean": 0.7716460227966309,
+          "seeds": [
+            0.8390339016914368,
+            0.704258143901825
+          ],
+          "population_sd": 0.06738787889480591
+        },
+        "full_refresh_cp_mae": {
+          "mean": 238.83285522460938,
+          "seeds": [
+            264.8276672363281,
+            212.83804321289062
+          ],
+          "population_sd": 25.99481201171875
+        }
+      }
+    },
+    {
+      "architecture": "relation",
+      "control": "action_blind",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 191.73199462890625,
+          "seeds": [
+            182.51473999023438,
+            200.94924926757812
+          ],
+          "population_sd": 9.217254638671875
+        },
+        "regret_cp": {
+          "mean": 158.0,
+          "seeds": [
+            158.0,
+            158.0
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.5,
+          "seeds": [
+            0.5,
+            0.5
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 215.4547348022461,
+          "seeds": [
+            211.70877075195312,
+            219.20069885253906
+          ],
+          "population_sd": 3.7459640502929688
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 213.18173217773438,
+          "seeds": [
+            208.20330810546875,
+            218.16015625
+          ],
+          "population_sd": 4.978424072265625
+        },
+        "regret_cp": {
+          "mean": 141.17777777777778,
+          "seeds": [
+            141.17777777777778,
+            141.17777777777778
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.4999999701976776,
+          "seeds": [
+            0.4999999701976776,
+            0.4999999701976776
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 215.3683090209961,
+          "seeds": [
+            213.88682556152344,
+            216.84979248046875
+          ],
+          "population_sd": 1.4814834594726562
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 195.64844512939453,
+          "seeds": [
+            187.75027465820312,
+            203.54661560058594
+          ],
+          "population_sd": 7.898170471191406
+        },
+        "regret_cp": {
+          "mean": 118.02272727272727,
+          "seeds": [
+            118.02272727272727,
+            118.02272727272727
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_direction": {
+          "mean": 0.5,
+          "seeds": [
+            0.5,
+            0.5
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 0.0,
+          "seeds": [
+            0.0,
+            0.0
+          ],
+          "population_sd": 0.0
+        },
+        "full_refresh_cp_mae": {
+          "mean": 209.435791015625,
+          "seeds": [
+            211.49317932128906,
+            207.37840270996094
+          ],
+          "population_sd": 2.0573883056640625
+        }
+      }
+    },
+    {
+      "architecture": "relation",
+      "control": "transport_fixed_encoder",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 208.11446380615234,
+          "seeds": [
+            202.79794311523438,
+            213.4309844970703
+          ],
+          "population_sd": 5.316520690917969
+        },
+        "regret_cp": {
+          "mean": 155.5951086956522,
+          "seeds": [
+            151.2826086956522,
+            159.9076086956522
+          ],
+          "population_sd": 4.3125
+        },
+        "same_material_direction": {
+          "mean": 0.5367832183837891,
+          "seeds": [
+            0.5336663126945496,
+            0.5399001240730286
+          ],
+          "population_sd": 0.003116905689239502
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 406.0535430908203,
+          "seeds": [
+            405.6949157714844,
+            406.41217041015625
+          ],
+          "population_sd": 0.3586273193359375
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 405.271728515625,
+          "seeds": [
+            404.73956298828125,
+            405.80389404296875
+          ],
+          "population_sd": 0.53216552734375
+        },
+        "latent_separation_ratio": {
+          "mean": 0.9930963516235352,
+          "seeds": [
+            1.0924116373062134,
+            0.8937810659408569
+          ],
+          "population_sd": 0.09931528568267822
+        },
+        "full_refresh_cp_mae": {
+          "mean": 213.51808166503906,
+          "seeds": [
+            213.7676239013672,
+            213.26853942871094
+          ],
+          "population_sd": 0.249542236328125
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 205.7511444091797,
+          "seeds": [
+            201.89083862304688,
+            209.6114501953125
+          ],
+          "population_sd": 3.8603057861328125
+        },
+        "regret_cp": {
+          "mean": 144.06666666666666,
+          "seeds": [
+            145.57777777777778,
+            142.55555555555554
+          ],
+          "population_sd": 1.51111111111112
+        },
+        "same_material_direction": {
+          "mean": 0.5328662097454071,
+          "seeds": [
+            0.5220381617546082,
+            0.543694257736206
+          ],
+          "population_sd": 0.01082804799079895
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 366.4640350341797,
+          "seeds": [
+            367.1491394042969,
+            365.7789306640625
+          ],
+          "population_sd": 0.6851043701171875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 365.8620910644531,
+          "seeds": [
+            366.01983642578125,
+            365.704345703125
+          ],
+          "population_sd": 0.157745361328125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.0801461338996887,
+          "seeds": [
+            1.0884405374526978,
+            1.0718517303466797
+          ],
+          "population_sd": 0.008294403553009033
+        },
+        "full_refresh_cp_mae": {
+          "mean": 209.8598403930664,
+          "seeds": [
+            210.38661193847656,
+            209.33306884765625
+          ],
+          "population_sd": 0.5267715454101562
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 199.91600799560547,
+          "seeds": [
+            188.84378051757812,
+            210.9882354736328
+          ],
+          "population_sd": 11.072227478027344
+        },
+        "regret_cp": {
+          "mean": 88.22727272727272,
+          "seeds": [
+            93.4090909090909,
+            83.04545454545455
+          ],
+          "population_sd": 5.18181818181818
+        },
+        "same_material_direction": {
+          "mean": 0.5899087190628052,
+          "seeds": [
+            0.5862406492233276,
+            0.5935767889022827
+          ],
+          "population_sd": 0.003668069839477539
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 380.99610900878906,
+          "seeds": [
+            379.3994140625,
+            382.5928039550781
+          ],
+          "population_sd": 1.5966949462890625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 381.8757019042969,
+          "seeds": [
+            380.32037353515625,
+            383.4310302734375
+          ],
+          "population_sd": 1.555328369140625
+        },
+        "latent_separation_ratio": {
+          "mean": 0.7992708086967468,
+          "seeds": [
+            0.9320313334465027,
+            0.666510283946991
+          ],
+          "population_sd": 0.13276052474975586
+        },
+        "full_refresh_cp_mae": {
+          "mean": 197.66966247558594,
+          "seeds": [
+            193.19984436035156,
+            202.1394805908203
+          ],
+          "population_sd": 4.469818115234375
+        }
+      }
+    },
+    {
+      "architecture": "relation",
+      "control": "transport_zero_anchor",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 253.63668060302734,
+          "seeds": [
+            223.1371612548828,
+            284.1361999511719
+          ],
+          "population_sd": 30.49951934814453
+        },
+        "regret_cp": {
+          "mean": 287.74184782608694,
+          "seeds": [
+            341.29347826086956,
+            234.19021739130434
+          ],
+          "population_sd": 53.55163043478261
+        },
+        "same_material_direction": {
+          "mean": 0.5807578265666962,
+          "seeds": [
+            0.5820346474647522,
+            0.5794810056686401
+          ],
+          "population_sd": 0.0012768208980560303
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 396.3286437988281,
+          "seeds": [
+            391.82366943359375,
+            400.8336181640625
+          ],
+          "population_sd": 4.504974365234375
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 405.74034118652344,
+          "seeds": [
+            405.4754943847656,
+            406.00518798828125
+          ],
+          "population_sd": 0.2648468017578125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.124989628791809,
+          "seeds": [
+            1.2011172771453857,
+            1.0488619804382324
+          ],
+          "population_sd": 0.07612764835357666
+        },
+        "full_refresh_cp_mae": {
+          "mean": 313.02317810058594,
+          "seeds": [
+            325.3626708984375,
+            300.6836853027344
+          ],
+          "population_sd": 12.339492797851562
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 360.0335693359375,
+          "seeds": [
+            367.1333312988281,
+            352.9338073730469
+          ],
+          "population_sd": 7.099761962890625
+        },
+        "regret_cp": {
+          "mean": 356.66666666666663,
+          "seeds": [
+            446.64444444444445,
+            266.68888888888887
+          ],
+          "population_sd": 89.97777777777779
+        },
+        "same_material_direction": {
+          "mean": 0.5585349798202515,
+          "seeds": [
+            0.5435668230056763,
+            0.5735031366348267
+          ],
+          "population_sd": 0.014968156814575195
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 363.9714813232422,
+          "seeds": [
+            363.8511962890625,
+            364.0917663574219
+          ],
+          "population_sd": 0.1202850341796875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 365.29905700683594,
+          "seeds": [
+            363.829345703125,
+            366.7687683105469
+          ],
+          "population_sd": 1.4697113037109375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.164369523525238,
+          "seeds": [
+            1.1395387649536133,
+            1.1892002820968628
+          ],
+          "population_sd": 0.024830758571624756
+        },
+        "full_refresh_cp_mae": {
+          "mean": 359.84197998046875,
+          "seeds": [
+            359.73687744140625,
+            359.94708251953125
+          ],
+          "population_sd": 0.1051025390625
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 293.4488067626953,
+          "seeds": [
+            283.834716796875,
+            303.0628967285156
+          ],
+          "population_sd": 9.614089965820312
+        },
+        "regret_cp": {
+          "mean": 348.39772727272725,
+          "seeds": [
+            397.79545454545456,
+            299.0
+          ],
+          "population_sd": 49.39772727272728
+        },
+        "same_material_direction": {
+          "mean": 0.6150962114334106,
+          "seeds": [
+            0.6150962114334106,
+            0.6150962114334106
+          ],
+          "population_sd": 0.0
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 373.6524353027344,
+          "seeds": [
+            372.24560546875,
+            375.05926513671875
+          ],
+          "population_sd": 1.406829833984375
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 379.4072570800781,
+          "seeds": [
+            378.975830078125,
+            379.83868408203125
+          ],
+          "population_sd": 0.431427001953125
+        },
+        "latent_separation_ratio": {
+          "mean": 0.8806297183036804,
+          "seeds": [
+            0.9429088234901428,
+            0.818350613117218
+          ],
+          "population_sd": 0.0622791051864624
+        },
+        "full_refresh_cp_mae": {
+          "mean": 324.0789489746094,
+          "seeds": [
+            348.3874206542969,
+            299.7704772949219
+          ],
+          "population_sd": 24.3084716796875
+        }
+      }
+    },
+    {
+      "architecture": "plan",
+      "control": "transport",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 191.07298278808594,
+          "seeds": [
+            173.47215270996094,
+            208.67381286621094
+          ],
+          "population_sd": 17.600830078125
+        },
+        "regret_cp": {
+          "mean": 148.79891304347825,
+          "seeds": [
+            148.8804347826087,
+            148.7173913043478
+          ],
+          "population_sd": 0.08152173913043725
+        },
+        "same_material_direction": {
+          "mean": 0.5987832844257355,
+          "seeds": [
+            0.606782078742981,
+            0.59078449010849
+          ],
+          "population_sd": 0.007998794317245483
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 387.98126220703125,
+          "seeds": [
+            376.8727111816406,
+            399.0898132324219
+          ],
+          "population_sd": 11.108551025390625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 399.4201965332031,
+          "seeds": [
+            396.48016357421875,
+            402.3602294921875
+          ],
+          "population_sd": 2.940032958984375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.69662743806839,
+          "seeds": [
+            2.0809457302093506,
+            1.3123091459274292
+          ],
+          "population_sd": 0.3843182921409607
+        },
+        "full_refresh_cp_mae": {
+          "mean": 230.38133239746094,
+          "seeds": [
+            226.31739807128906,
+            234.4452667236328
+          ],
+          "population_sd": 4.063934326171875
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 208.88941192626953,
+          "seeds": [
+            207.76438903808594,
+            210.01443481445312
+          ],
+          "population_sd": 1.1250228881835938
+        },
+        "regret_cp": {
+          "mean": 132.33333333333331,
+          "seeds": [
+            133.06666666666666,
+            131.6
+          ],
+          "population_sd": 0.7333333333333343
+        },
+        "same_material_direction": {
+          "mean": 0.5620381832122803,
+          "seeds": [
+            0.5694267153739929,
+            0.5546496510505676
+          ],
+          "population_sd": 0.0073885321617126465
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 370.9342498779297,
+          "seeds": [
+            375.7220458984375,
+            366.1464538574219
+          ],
+          "population_sd": 4.7877960205078125
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 371.3127899169922,
+          "seeds": [
+            376.5857849121094,
+            366.039794921875
+          ],
+          "population_sd": 5.2729949951171875
+        },
+        "latent_separation_ratio": {
+          "mean": 1.726942241191864,
+          "seeds": [
+            1.9471535682678223,
+            1.5067309141159058
+          ],
+          "population_sd": 0.22021132707595825
+        },
+        "full_refresh_cp_mae": {
+          "mean": 230.23772430419922,
+          "seeds": [
+            229.24990844726562,
+            231.2255401611328
+          ],
+          "population_sd": 0.9878158569335938
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 193.04417419433594,
+          "seeds": [
+            176.59303283691406,
+            209.4953155517578
+          ],
+          "population_sd": 16.451141357421875
+        },
+        "regret_cp": {
+          "mean": 113.30681818181819,
+          "seeds": [
+            138.13636363636363,
+            88.47727272727273
+          ],
+          "population_sd": 24.829545454545446
+        },
+        "same_material_direction": {
+          "mean": 0.629116415977478,
+          "seeds": [
+            0.623736560344696,
+            0.63449627161026
+          ],
+          "population_sd": 0.005379855632781982
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 365.80982971191406,
+          "seeds": [
+            358.9674987792969,
+            372.65216064453125
+          ],
+          "population_sd": 6.8423309326171875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 374.5955352783203,
+          "seeds": [
+            372.3648986816406,
+            376.826171875
+          ],
+          "population_sd": 2.2306365966796875
+        },
+        "latent_separation_ratio": {
+          "mean": 1.3229449689388275,
+          "seeds": [
+            1.7133980989456177,
+            0.9324918389320374
+          ],
+          "population_sd": 0.39045313000679016
+        },
+        "full_refresh_cp_mae": {
+          "mean": 225.52005004882812,
+          "seeds": [
+            225.63951110839844,
+            225.4005889892578
+          ],
+          "population_sd": 0.1194610595703125
+        }
+      }
+    },
+    {
+      "architecture": "plan",
+      "control": "conditioned",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 186.58940887451172,
+          "seeds": [
+            171.65724182128906,
+            201.52157592773438
+          ],
+          "population_sd": 14.932167053222656
+        },
+        "regret_cp": {
+          "mean": 147.42934782608694,
+          "seeds": [
+            145.6141304347826,
+            149.2445652173913
+          ],
+          "population_sd": 1.8152173913043583
+        },
+        "same_material_direction": {
+          "mean": 0.5936760604381561,
+          "seeds": [
+            0.5997596383094788,
+            0.5875924825668335
+          ],
+          "population_sd": 0.006083577871322632
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 383.88134765625,
+          "seeds": [
+            377.3426208496094,
+            390.4200744628906
+          ],
+          "population_sd": 6.538726806640625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 397.3999938964844,
+          "seeds": [
+            393.781494140625,
+            401.01849365234375
+          ],
+          "population_sd": 3.618499755859375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.5824251770973206,
+          "seeds": [
+            1.9881565570831299,
+            1.1766937971115112
+          ],
+          "population_sd": 0.4057313799858093
+        },
+        "full_refresh_cp_mae": {
+          "mean": 231.08639526367188,
+          "seeds": [
+            231.73353576660156,
+            230.4392547607422
+          ],
+          "population_sd": 0.6471405029296875
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 205.42311096191406,
+          "seeds": [
+            207.40086364746094,
+            203.4453582763672
+          ],
+          "population_sd": 1.977752685546875
+        },
+        "regret_cp": {
+          "mean": 134.43333333333334,
+          "seeds": [
+            138.44444444444446,
+            130.42222222222222
+          ],
+          "population_sd": 4.01111111111112
+        },
+        "same_material_direction": {
+          "mean": 0.5604458451271057,
+          "seeds": [
+            0.5687897801399231,
+            0.5521019101142883
+          ],
+          "population_sd": 0.008343935012817383
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 374.00733947753906,
+          "seeds": [
+            378.6949768066406,
+            369.3197021484375
+          ],
+          "population_sd": 4.6876373291015625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 373.84681701660156,
+          "seeds": [
+            378.495361328125,
+            369.1982727050781
+          ],
+          "population_sd": 4.6485443115234375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.526283085346222,
+          "seeds": [
+            1.8059134483337402,
+            1.2466527223587036
+          ],
+          "population_sd": 0.2796303629875183
+        },
+        "full_refresh_cp_mae": {
+          "mean": 230.56934356689453,
+          "seeds": [
+            234.47122192382812,
+            226.66746520996094
+          ],
+          "population_sd": 3.9018783569335938
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 185.8968048095703,
+          "seeds": [
+            176.4586639404297,
+            195.33494567871094
+          ],
+          "population_sd": 9.438140869140625
+        },
+        "regret_cp": {
+          "mean": 95.47727272727273,
+          "seeds": [
+            101.72727272727273,
+            89.22727272727273
+          ],
+          "population_sd": 6.25
+        },
+        "same_material_direction": {
+          "mean": 0.6269155442714691,
+          "seeds": [
+            0.6268340349197388,
+            0.6269970536231995
+          ],
+          "population_sd": 8.150935173034668e-05
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 361.80848693847656,
+          "seeds": [
+            355.17626953125,
+            368.4407043457031
+          ],
+          "population_sd": 6.6322174072265625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 372.4708251953125,
+          "seeds": [
+            368.51385498046875,
+            376.42779541015625
+          ],
+          "population_sd": 3.95697021484375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.1185492873191833,
+          "seeds": [
+            1.3866289854049683,
+            0.8504695892333984
+          ],
+          "population_sd": 0.2680796980857849
+        },
+        "full_refresh_cp_mae": {
+          "mean": 232.95993041992188,
+          "seeds": [
+            238.90325927734375,
+            227.0166015625
+          ],
+          "population_sd": 5.943328857421875
+        }
+      }
+    },
+    {
+      "architecture": "plan",
+      "control": "action_blind",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 197.61398315429688,
+          "seeds": [
+            180.56900024414062,
+            214.65896606445312
+          ],
+          "population_sd": 17.04498291015625
+        },
+        "regret_cp": {
+          "mean": 169.03804347826087,
+          "seeds": [
+            166.45108695652175,
+            171.625
+          ],
+          "population_sd": 2.5869565217391255
+        },
+        "same_material_direction": {
+          "mean": 0.49765293300151825,
+          "seeds": [
+            0.49320289492607117,
+            0.5021029710769653
+          ],
+          "population_sd": 0.0044500380754470825
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 409.6858825683594,
+          "seeds": [
+            409.6858825683594,
+            409.6858825683594
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 2.9771307197279384e-07,
+          "seeds": [
+            3.160495225529303e-07,
+            2.793766213926574e-07
+          ],
+          "population_sd": 1.8336450580136443e-08
+        },
+        "full_refresh_cp_mae": {
+          "mean": 215.68883514404297,
+          "seeds": [
+            209.34971618652344,
+            222.0279541015625
+          ],
+          "population_sd": 6.339118957519531
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 209.4670867919922,
+          "seeds": [
+            206.76348876953125,
+            212.17068481445312
+          ],
+          "population_sd": 2.7035980224609375
+        },
+        "regret_cp": {
+          "mean": 140.77777777777777,
+          "seeds": [
+            140.9111111111111,
+            140.64444444444445
+          ],
+          "population_sd": 0.13333333333332575
+        },
+        "same_material_direction": {
+          "mean": 0.5030254572629929,
+          "seeds": [
+            0.5078343749046326,
+            0.49821653962135315
+          ],
+          "population_sd": 0.0048089176416397095
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 370.2220764160156,
+          "seeds": [
+            370.2220764160156,
+            370.2220764160156
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 3.159465080670998e-07,
+          "seeds": [
+            3.198283025085402e-07,
+            3.1206471362565935e-07
+          ],
+          "population_sd": 3.881794441440434e-09
+        },
+        "full_refresh_cp_mae": {
+          "mean": 216.5677719116211,
+          "seeds": [
+            214.71177673339844,
+            218.42376708984375
+          ],
+          "population_sd": 1.8559951782226562
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 200.2330322265625,
+          "seeds": [
+            189.9137420654297,
+            210.5523223876953
+          ],
+          "population_sd": 10.319290161132812
+        },
+        "regret_cp": {
+          "mean": 116.45454545454545,
+          "seeds": [
+            114.88636363636364,
+            118.02272727272727
+          ],
+          "population_sd": 1.568181818181813
+        },
+        "same_material_direction": {
+          "mean": 0.5118601322174072,
+          "seeds": [
+            0.5092109441757202,
+            0.5145093202590942
+          ],
+          "population_sd": 0.0026491880416870117
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 392.5089416503906,
+          "seeds": [
+            392.5089416503906,
+            392.5089416503906
+          ],
+          "population_sd": 0.0
+        },
+        "latent_separation_ratio": {
+          "mean": 2.521483111195266e-07,
+          "seeds": [
+            2.7463349283607386e-07,
+            2.296631294029794e-07
+          ],
+          "population_sd": 2.248518171654723e-08
+        },
+        "full_refresh_cp_mae": {
+          "mean": 210.65103149414062,
+          "seeds": [
+            208.51625061035156,
+            212.7858123779297
+          ],
+          "population_sd": 2.1347808837890625
+        }
+      }
+    },
+    {
+      "architecture": "plan",
+      "control": "transport_fixed_encoder",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 208.87242126464844,
+          "seeds": [
+            203.7002410888672,
+            214.0446014404297
+          ],
+          "population_sd": 5.17218017578125
+        },
+        "regret_cp": {
+          "mean": 158.71467391304347,
+          "seeds": [
+            154.17391304347825,
+            163.2554347826087
+          ],
+          "population_sd": 4.540760869565219
+        },
+        "same_material_direction": {
+          "mean": 0.5480866730213165,
+          "seeds": [
+            0.5517668724060059,
+            0.5444064736366272
+          ],
+          "population_sd": 0.003680199384689331
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 406.1544647216797,
+          "seeds": [
+            405.5664367675781,
+            406.74249267578125
+          ],
+          "population_sd": 0.5880279541015625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 405.51719665527344,
+          "seeds": [
+            404.9123840332031,
+            406.12200927734375
+          ],
+          "population_sd": 0.6048126220703125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.1299042999744415,
+          "seeds": [
+            1.2872211933135986,
+            0.9725874066352844
+          ],
+          "population_sd": 0.1573168933391571
+        },
+        "full_refresh_cp_mae": {
+          "mean": 214.5481185913086,
+          "seeds": [
+            212.2667236328125,
+            216.8295135498047
+          ],
+          "population_sd": 2.2813949584960938
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 205.94058227539062,
+          "seeds": [
+            202.44796752929688,
+            209.43319702148438
+          ],
+          "population_sd": 3.49261474609375
+        },
+        "regret_cp": {
+          "mean": 142.05555555555554,
+          "seeds": [
+            140.0,
+            144.11111111111111
+          ],
+          "population_sd": 2.055555555555557
+        },
+        "same_material_direction": {
+          "mean": 0.5457324385643005,
+          "seeds": [
+            0.5513375401496887,
+            0.5401273369789124
+          ],
+          "population_sd": 0.005605101585388184
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 366.48179626464844,
+          "seeds": [
+            367.4900207519531,
+            365.47357177734375
+          ],
+          "population_sd": 1.0082244873046875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 365.97752380371094,
+          "seeds": [
+            366.3710632324219,
+            365.583984375
+          ],
+          "population_sd": 0.3935394287109375
+        },
+        "latent_separation_ratio": {
+          "mean": 1.2152719497680664,
+          "seeds": [
+            1.240815281867981,
+            1.1897286176681519
+          ],
+          "population_sd": 0.02554333209991455
+        },
+        "full_refresh_cp_mae": {
+          "mean": 210.74051666259766,
+          "seeds": [
+            208.1652374267578,
+            213.3157958984375
+          ],
+          "population_sd": 2.5752792358398438
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 199.69973754882812,
+          "seeds": [
+            187.38311767578125,
+            212.016357421875
+          ],
+          "population_sd": 12.316619873046875
+        },
+        "regret_cp": {
+          "mean": 100.18181818181819,
+          "seeds": [
+            97.52272727272727,
+            102.8409090909091
+          ],
+          "population_sd": 2.6590909090909136
+        },
+        "same_material_direction": {
+          "mean": 0.5928431749343872,
+          "seeds": [
+            0.5891751050949097,
+            0.5965112447738647
+          ],
+          "population_sd": 0.003668069839477539
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 381.4469451904297,
+          "seeds": [
+            379.5711975097656,
+            383.32269287109375
+          ],
+          "population_sd": 1.8757476806640625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 382.20680236816406,
+          "seeds": [
+            380.08154296875,
+            384.3320617675781
+          ],
+          "population_sd": 2.1252593994140625
+        },
+        "latent_separation_ratio": {
+          "mean": 0.9206250309944153,
+          "seeds": [
+            1.1358418464660645,
+            0.7054082155227661
+          ],
+          "population_sd": 0.21521681547164917
+        },
+        "full_refresh_cp_mae": {
+          "mean": 199.61754608154297,
+          "seeds": [
+            193.50411987304688,
+            205.73097229003906
+          ],
+          "population_sd": 6.113426208496094
+        }
+      }
+    },
+    {
+      "architecture": "plan",
+      "control": "transport_zero_anchor",
+      "seeds": [
+        20261003,
+        20261004
+      ],
+      "after_training": {
+        "cp_mae": {
+          "mean": 252.68058013916016,
+          "seeds": [
+            225.01600646972656,
+            280.34515380859375
+          ],
+          "population_sd": 27.664573669433594
+        },
+        "regret_cp": {
+          "mean": 311.6766304347826,
+          "seeds": [
+            331.6195652173913,
+            291.73369565217394
+          ],
+          "population_sd": 19.94293478260869
+        },
+        "same_material_direction": {
+          "mean": 0.5859401226043701,
+          "seeds": [
+            0.5806826949119568,
+            0.5911975502967834
+          ],
+          "population_sd": 0.00525742769241333
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 394.9975280761719,
+          "seeds": [
+            396.2148742675781,
+            393.7801818847656
+          ],
+          "population_sd": 1.21734619140625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 403.2472686767578,
+          "seeds": [
+            403.7250061035156,
+            402.76953125
+          ],
+          "population_sd": 0.4777374267578125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.4938159584999084,
+          "seeds": [
+            1.5343788862228394,
+            1.4532530307769775
+          ],
+          "population_sd": 0.04056292772293091
+        },
+        "full_refresh_cp_mae": {
+          "mean": 318.415283203125,
+          "seeds": [
+            332.0352478027344,
+            304.7953186035156
+          ],
+          "population_sd": 13.619964599609375
+        }
+      },
+      "after_validation": {
+        "cp_mae": {
+          "mean": 363.75779724121094,
+          "seeds": [
+            376.3133544921875,
+            351.2022399902344
+          ],
+          "population_sd": 12.555557250976562
+        },
+        "regret_cp": {
+          "mean": 331.91111111111115,
+          "seeds": [
+            412.8888888888889,
+            250.93333333333334
+          ],
+          "population_sd": 80.97777777777779
+        },
+        "same_material_direction": {
+          "mean": 0.5745222568511963,
+          "seeds": [
+            0.584585964679718,
+            0.5644585490226746
+          ],
+          "population_sd": 0.010063707828521729
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 364.359619140625,
+          "seeds": [
+            365.4372253417969,
+            363.2820129394531
+          ],
+          "population_sd": 1.077606201171875
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 365.88963317871094,
+          "seeds": [
+            366.41131591796875,
+            365.3679504394531
+          ],
+          "population_sd": 0.5216827392578125
+        },
+        "latent_separation_ratio": {
+          "mean": 1.5162448287010193,
+          "seeds": [
+            1.5019407272338867,
+            1.5305489301681519
+          ],
+          "population_sd": 0.014304101467132568
+        },
+        "full_refresh_cp_mae": {
+          "mean": 368.88478088378906,
+          "seeds": [
+            373.23388671875,
+            364.5356750488281
+          ],
+          "population_sd": 4.3491058349609375
+        }
+      },
+      "after_test": {
+        "cp_mae": {
+          "mean": 291.2508087158203,
+          "seeds": [
+            281.57537841796875,
+            300.9262390136719
+          ],
+          "population_sd": 9.675430297851562
+        },
+        "regret_cp": {
+          "mean": 365.5568181818182,
+          "seeds": [
+            385.79545454545456,
+            345.3181818181818
+          ],
+          "population_sd": 20.238636363636374
+        },
+        "same_material_direction": {
+          "mean": 0.6077600419521332,
+          "seeds": [
+            0.6040104627609253,
+            0.6115096211433411
+          ],
+          "population_sd": 0.0037495791912078857
+        },
+        "same_material_gap_rmse_cp": {
+          "mean": 372.10780334472656,
+          "seeds": [
+            371.1435546875,
+            373.0720520019531
+          ],
+          "population_sd": 0.9642486572265625
+        },
+        "shuffled_gap_rmse_cp": {
+          "mean": 378.5199737548828,
+          "seeds": [
+            378.0360412597656,
+            379.00390625
+          ],
+          "population_sd": 0.4839324951171875
+        },
+        "latent_separation_ratio": {
+          "mean": 1.2043967247009277,
+          "seeds": [
+            1.2962455749511719,
+            1.1125478744506836
+          ],
+          "population_sd": 0.09184885025024414
+        },
+        "full_refresh_cp_mae": {
+          "mean": 333.02296447753906,
+          "seeds": [
+            362.638916015625,
+            303.4070129394531
+          ],
+          "population_sd": 29.615951538085938
+        }
+      }
+    }
+  ],
+  "baseline": {
+    "after_training": {
+      "material": {
+        "cp_mae": 197.96034240722656,
+        "regret_cp": 158.0
+      },
+      "static_tapered": {
+        "cp_mae": 191.7762451171875,
+        "regret_cp": 165.72826086956522
+      }
+    },
+    "after_validation": {
+      "material": {
+        "cp_mae": 191.8072052001953,
+        "regret_cp": 141.17777777777778
+      },
+      "static_tapered": {
+        "cp_mae": 189.80296325683594,
+        "regret_cp": 137.06666666666666
+      }
+    },
+    "after_test": {
+      "material": {
+        "cp_mae": 162.4102020263672,
+        "regret_cp": 118.02272727272727
+      },
+      "static_tapered": {
+        "cp_mae": 156.8082275390625,
+        "regret_cp": 101.75
+      }
+    }
+  },
+  "total_measured_training_seconds": 358.20934899700023,
+  "ranking_only_validation_candidates": [
+    {
+      "architecture": "square",
+      "control": "transport",
+      "seeds": 2,
+      "validation_cp_mae_mean": 200.37416076660156,
+      "validation_root_regret_mean": 132.36666666666667,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "square",
+      "control": "conditioned",
+      "seeds": 2,
+      "validation_cp_mae_mean": 195.2647476196289,
+      "validation_root_regret_mean": 136.14444444444445,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "transport",
+      "seeds": 2,
+      "validation_cp_mae_mean": 208.88941192626953,
+      "validation_root_regret_mean": 132.33333333333331,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    },
+    {
+      "architecture": "plan",
+      "control": "conditioned",
+      "seeds": 2,
+      "validation_cp_mae_mean": 205.42311096191406,
+      "validation_root_regret_mean": 134.43333333333334,
+      "mae_gate": 189.80296325683594,
+      "regret_gate": 137.06666666666666,
+      "eligible": false
+    }
+  ],
+  "plan_action_blind_raw_float_ordering_caveat": "CPU semantic ties exact; original GPU informative-pair gaps are microCP and cause/location unverified; numerical-sensitive ranking is not learned action reasoning"
+}

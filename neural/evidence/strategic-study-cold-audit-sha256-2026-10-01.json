@@ -1,0 +1,17 @@
+{
+  "kind": "frozen_cpu_only_diagnostics",
+  "sha256": {
+    "strategic-study-actionblind-diagnostic-source-2026-10-01.py": "3bb1d479657af1e17614f5f5a511a775437b52451c957bee624f8db96ab553df",
+    "strategic-study-admission-source-2026-10-01.py": "2c47d91a882b0465458ed89800da48ad4250814fff0cdbfd2bf3e9cddd540262",
+    "strategic-study-actionblind-roundoff-2026-10-01.json": "fe7a4abc8ae51783c0d86494fcc6237cf57c286c279eb9d7be40d268a36f9b14",
+    "strategic-study-admission-2026-10-01.log": "6a5ddf0949962c746557bd530877b80fb8dbefb06a6d734ddda7fa1b50d27ce7",
+    "strategic-study-actionblind-diagnostic-2026-10-01.log": "f657a9c89812eb6cafa413e54bf1b896f08ef42bd0df55f54e245ebf891c406b",
+    "strategic-study-artifacts-2026-10-01.json": "1aa530d0beecbfba0be9f99ad7cd64620986d43f6b1216a4a5201006b07cd211",
+    "strategic-study-restart-equivalence-2026-10-01.json": "662743ab331695193e062df923dcb3ee49959a464fe636890b07431d756b394a"
+  },
+  "commands": [
+    "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. results/qa-cpu-venv/bin/python neural/evidence/strategic-study-actionblind-diagnostic-source-2026-10-01.py",
+    "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. results/qa-cpu-venv/bin/python neural/evidence/strategic-study-admission-source-2026-10-01.py"
+  ],
+  "scope": "no training/GPU/label regeneration; checkpoint/root geometry and existing frozen report aggregates only"
+}

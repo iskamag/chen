@@ -1,0 +1,193 @@
+{
+  "declaration_sha256": "2e3e79a693db9daa7cfe2a8e2dc36a9f29209626f4b41ca7cd45cf5f17abcdfa",
+  "completed": {
+    "r1-typed-hpo-lr0.001-wd0.0": {
+      "report": {
+        "status": "declared_dev_plateau",
+        "converged": true,
+        "best_dev_macro_mae_cp": 12.70512813534212,
+        "best_dev_metrics": {
+          "macro_family_mae_cp": 12.70512813534212,
+          "macro_nontrivial_family_mae_cp": 22.35389988793267,
+          "micro_action_mae_cp": 17.488756849492017,
+          "strata": {
+            "correction_nonzero": {
+              "count": 244,
+              "mae_cp": 25.06828294034864
+            },
+            "correction_zero": {
+              "count": 407,
+              "mae_cp": 12.944765777823672
+            },
+            "dependency_1": {
+              "count": 378,
+              "mae_cp": 8.628429262450448
+            },
+            "dependency_2": {
+              "count": 199,
+              "mae_cp": 15.366693237918106
+            },
+            "dependency_3-4": {
+              "count": 70,
+              "mae_cp": 70.47853048528944
+            },
+            "dependency_5+": {
+              "count": 4,
+              "mae_cp": 33.04133987426758
+            },
+            "motif_capture": {
+              "count": 614,
+              "mae_cp": 18.067078737390354
+            },
+            "motif_castling": {
+              "count": 36,
+              "mae_cp": 14.603863048470682
+            },
+            "motif_check": {
+              "count": 52,
+              "mae_cp": 16.54529605805874
+            },
+            "motif_en_passant": {
+              "count": 16,
+              "mae_cp": 9.677974484860897
+            },
+            "motif_low_material": {
+              "count": 72,
+              "mae_cp": 7.807953966160615
+            },
+            "motif_pin": {
+              "count": 209,
+              "mae_cp": 24.7467013775019
+            },
+            "motif_promotion": {
+              "count": 134,
+              "mae_cp": 22.852538566091166
+            }
+          },
+          "roots": 229,
+          "families": 62,
+          "closed_actions": 651
+        },
+        "epochs": 39,
+        "updates": 4446,
+        "steps": 1,
+        "typed": true,
+        "seed": 6101,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0,
+        "wall_seconds": 35.504157399002,
+        "training_forward_backward_optimizer_event_ms": 22721.228660345078,
+        "cold_collation_upload_synchronized_wall_seconds": 8.00335877307225,
+        "recurrence_capacity_edges": 9249920,
+        "recurrence_capacity_nodes": 4615234,
+        "peak_device_allocated_bytes": 141450752,
+        "test_gate": "CLOSED",
+        "quality_claim": false
+      },
+      "report_path": "r1-typed-hpo-lr0.001-wd0.0/report.json",
+      "report_sha256": "fabcf907c50d6f6950a911a360cd17d4489ae45da7b688dfd309765ab8809fc5",
+      "checkpoint_path": "r1-typed-hpo-lr0.001-wd0.0/best.pt",
+      "checkpoint_sha256": "5b12397cdd71a0c1adcfdf22c1da8d7a36eb76305e22b0e04388484f23fe910e"
+    },
+    "r1-typed-hpo-lr0.001-wd0.0001": {
+      "report": {
+        "status": "declared_dev_plateau",
+        "converged": true,
+        "best_dev_macro_mae_cp": 13.505965215873026,
+        "best_dev_metrics": {
+          "macro_family_mae_cp": 13.505965215873026,
+          "macro_nontrivial_family_mae_cp": 25.107228110843234,
+          "micro_action_mae_cp": 17.87076791502913,
+          "strata": {
+            "correction_nonzero": {
+              "count": 244,
+              "mae_cp": 27.686378604075948
+            },
+            "correction_zero": {
+              "count": 407,
+              "mae_cp": 11.986224897517033
+            },
+            "dependency_1": {
+              "count": 378,
+              "mae_cp": 8.103451195453841
+            },
+            "dependency_2": {
+              "count": 199,
+              "mae_cp": 17.673715888555325
+            },
+            "dependency_3-4": {
+              "count": 70,
+              "mae_cp": 70.76437670801367
+            },
+            "dependency_5+": {
+              "count": 4,
+              "mae_cp": 25.047382354736328
+            },
+            "motif_capture": {
+              "count": 614,
+              "mae_cp": 18.562901406072637
+            },
+            "motif_castling": {
+              "count": 36,
+              "mae_cp": 15.022644073598915
+            },
+            "motif_check": {
+              "count": 52,
+              "mae_cp": 15.265178203582764
+            },
+            "motif_en_passant": {
+              "count": 16,
+              "mae_cp": 7.82086805254221
+            },
+            "motif_low_material": {
+              "count": 72,
+              "mae_cp": 7.081887902485
+            },
+            "motif_pin": {
+              "count": 209,
+              "mae_cp": 27.105241406762428
+            },
+            "motif_promotion": {
+              "count": 134,
+              "mae_cp": 18.784956613805758
+            }
+          },
+          "roots": 229,
+          "families": 62,
+          "closed_actions": 651
+        },
+        "epochs": 43,
+        "updates": 4902,
+        "steps": 1,
+        "typed": true,
+        "seed": 6101,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "wall_seconds": 38.58414442799403,
+        "training_forward_backward_optimizer_event_ms": 24218.202211380005,
+        "cold_collation_upload_synchronized_wall_seconds": 9.006540543516167,
+        "recurrence_capacity_edges": 10198564,
+        "recurrence_capacity_nodes": 5088616,
+        "peak_device_allocated_bytes": 141450752,
+        "test_gate": "CLOSED",
+        "quality_claim": false
+      },
+      "report_path": "r1-typed-hpo-lr0.001-wd0.0001/report.json",
+      "report_sha256": "baf80e85f723c5999690d83e3d8cce66478855eb420d7cf0e9bc76bff5ad7147",
+      "checkpoint_path": "r1-typed-hpo-lr0.001-wd0.0001/best.pt",
+      "checkpoint_sha256": "afebfa7452c290ff53012ad0ce4076977b7424029cc8f1428a0263d16c9f828e"
+    }
+  },
+  "active_job": null,
+  "groups": [
+    {
+      "path": "group-000",
+      "terminal_sha256": "7935df3e69eaa84aa82a51f84eb6e41fb1f387b5c1da3495392519eff4c25b43",
+      "wall_seconds": 78.62338006001664
+    }
+  ],
+  "active_wall_seconds": 78.62338006001664,
+  "test_gate": "CLOSED",
+  "baseline_sha256": "ead96a24648b358539a58a85bc958263ed11b5dc35894686a4733e12ae1a6a4e",
+  "hpo_selected": {}
+}

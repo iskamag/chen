@@ -1,0 +1,753 @@
+{
+  "baselines": {
+    "raw_material100": {
+      "diagnostics": null,
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.70606347708213
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "raw_tapered": {
+      "diagnostics": null,
+      "metrics": {
+        "interval_regret_cp": 399.41236772844866,
+        "optimal_agreement": 0.17741935580007492,
+        "scalar_error_cp": 217.37489150224192
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "scaled_material": {
+      "diagnostics": null,
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 228.7602946623078
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    }
+  },
+  "candidates": {
+    "plan/action_blind": {
+      "20261021": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "20261022": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 224.74276275554251
+      }
+    },
+    "plan/conditioned": {
+      "20261021": {
+        "interval_regret_cp": 320.5578723415252,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "20261022": {
+        "interval_regret_cp": 349.76778873320546,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.74276275554251
+      }
+    },
+    "plan/shuffled_conditioned": {
+      "20261021": {
+        "interval_regret_cp": 334.1079537176317,
+        "optimal_agreement": 0.274193549348462,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "20261022": {
+        "interval_regret_cp": 355.5269325010238,
+        "optimal_agreement": 0.20967742031620396,
+        "scalar_error_cp": 224.74276275554251
+      }
+    },
+    "plan/transport": {
+      "20261021": {
+        "interval_regret_cp": 320.5578723415252,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "20261022": {
+        "interval_regret_cp": 349.76778873320546,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.74276275554251
+      }
+    },
+    "relation/action_blind": {
+      "20261021": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "20261022": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 224.86964144557714
+      }
+    },
+    "relation/conditioned": {
+      "20261021": {
+        "interval_regret_cp": 318.24977179496517,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "20261022": {
+        "interval_regret_cp": 324.56614925015356,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 224.86964144557714
+      }
+    },
+    "relation/shuffled_conditioned": {
+      "20261021": {
+        "interval_regret_cp": 333.2231876004127,
+        "optimal_agreement": 0.274193549348462,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "20261022": {
+        "interval_regret_cp": 334.9753910187752,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.86964144557714
+      }
+    },
+    "relation/transport": {
+      "20261021": {
+        "interval_regret_cp": 318.24977179496517,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "20261022": {
+        "interval_regret_cp": 324.56614925015356,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 224.86964144557714
+      }
+    },
+    "square/action_blind": {
+      "20261021": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "20261022": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      }
+    },
+    "square/conditioned": {
+      "20261021": {
+        "interval_regret_cp": 355.177907513034,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "20261022": {
+        "interval_regret_cp": 311.22890638536023,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      }
+    },
+    "square/shuffled_conditioned": {
+      "20261021": {
+        "interval_regret_cp": 330.40621136080836,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "20261022": {
+        "interval_regret_cp": 335.905953068887,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 216.46820216379578
+      }
+    },
+    "square/transport": {
+      "20261021": {
+        "interval_regret_cp": 355.177907513034,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "20261022": {
+        "interval_regret_cp": 311.22890638536023,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      }
+    },
+    "threat/action_blind": {
+      "20261021": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "20261022": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 197.5611052003599
+      }
+    },
+    "threat/conditioned": {
+      "20261021": {
+        "interval_regret_cp": 333.7064134536251,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "20261022": {
+        "interval_regret_cp": 325.03704354070845,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 197.5611052003599
+      }
+    },
+    "threat/shuffled_conditioned": {
+      "20261021": {
+        "interval_regret_cp": 348.39825414842176,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "20261022": {
+        "interval_regret_cp": 331.26490832913305,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 197.5611052003599
+      }
+    },
+    "threat/transport": {
+      "20261021": {
+        "interval_regret_cp": 333.7064134536251,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "20261022": {
+        "interval_regret_cp": 325.03704354070845,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 197.5611052003599
+      }
+    }
+  },
+  "checkpoint_bundle_sha256": "3c05f5b775febe637d2cdb95ce5116c58abed0c5b75d6fba028c326724a88015",
+  "diagnostics": {
+    "plan/action_blind/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.16158460031779528,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 315.5346444652927
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/action_blind/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.2068285818884585,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 340.2027282714844
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 224.74276275554251
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.15893374301445953,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 315.5346444652927
+      },
+      "metrics": {
+        "interval_regret_cp": 320.5578723415252,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.20488677918922907,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 340.2027282714844
+      },
+      "metrics": {
+        "interval_regret_cp": 349.76778873320546,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.74276275554251
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/shuffled_conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.15849459714908992,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 315.5346444652927
+      },
+      "metrics": {
+        "interval_regret_cp": 334.1079537176317,
+        "optimal_agreement": 0.274193549348462,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/shuffled_conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.20431177815629356,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 340.2027282714844
+      },
+      "metrics": {
+        "interval_regret_cp": 355.5269325010238,
+        "optimal_agreement": 0.20967742031620396,
+        "scalar_error_cp": 224.74276275554251
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/transport/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.1589393914121207,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 315.5346444652927
+      },
+      "metrics": {
+        "interval_regret_cp": 320.5578723415252,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 232.4077180513451
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "plan/transport/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.20486953377639763,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 340.2027282714844
+      },
+      "metrics": {
+        "interval_regret_cp": 349.76778873320546,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.74276275554251
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/action_blind/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17632917283982993,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 322.7185126273863
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/action_blind/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17101826716137128,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 318.2368348644626
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 224.86964144557714
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17431816118283325,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 322.7185126273863
+      },
+      "metrics": {
+        "interval_regret_cp": 318.24977179496517,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.16852501026727754,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 318.2368348644626
+      },
+      "metrics": {
+        "interval_regret_cp": 324.56614925015356,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 224.86964144557714
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/shuffled_conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17388142363657086,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 322.7185126273863
+      },
+      "metrics": {
+        "interval_regret_cp": 333.2231876004127,
+        "optimal_agreement": 0.274193549348462,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/shuffled_conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.16790161231512257,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 318.2368348644626
+      },
+      "metrics": {
+        "interval_regret_cp": 334.9753910187752,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 224.86964144557714
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/transport/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17432168708788645,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 322.7185126273863
+      },
+      "metrics": {
+        "interval_regret_cp": 318.24977179496517,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 229.01058559053607
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "relation/transport/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.16853007905448672,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 318.2368348644626
+      },
+      "metrics": {
+        "interval_regret_cp": 324.56614925015356,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 224.86964144557714
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/action_blind/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17875035354320729,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.76647887691377
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/action_blind/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17710089006509958,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.6793997979933
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17560366284732995,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.76647887691377
+      },
+      "metrics": {
+        "interval_regret_cp": 355.177907513034,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17163579103377125,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.6793997979933
+      },
+      "metrics": {
+        "interval_regret_cp": 311.22890638536023,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/shuffled_conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17490995984177538,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.76647887691377
+      },
+      "metrics": {
+        "interval_regret_cp": 330.40621136080836,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/shuffled_conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.1712076479620224,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.6793997979933
+      },
+      "metrics": {
+        "interval_regret_cp": 335.905953068887,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 216.46820216379578
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/transport/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.1756126070448236,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.76647887691377
+      },
+      "metrics": {
+        "interval_regret_cp": 355.177907513034,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 213.10916235970873
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "square/transport/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.17162969622313012,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 328.6793997979933
+      },
+      "metrics": {
+        "interval_regret_cp": 311.22890638536023,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 216.46820216379578
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/action_blind/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.22007151604678785,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 290.45185676697764
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/action_blind/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.21400894786398056,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 298.137575457173
+      },
+      "metrics": {
+        "interval_regret_cp": 399.48686692022505,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 197.5611052003599
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.21545470781860449,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 290.45185676697764
+      },
+      "metrics": {
+        "interval_regret_cp": 333.7064134536251,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.21060157391740758,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 298.137575457173
+      },
+      "metrics": {
+        "interval_regret_cp": 325.03704354070845,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 197.5611052003599
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/shuffled_conditioned/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.21505467850025617,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 290.45185676697764
+      },
+      "metrics": {
+        "interval_regret_cp": 348.39825414842176,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/shuffled_conditioned/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.2104354471808127,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 298.137575457173
+      },
+      "metrics": {
+        "interval_regret_cp": 331.26490832913305,
+        "optimal_agreement": 0.2580645170903975,
+        "scalar_error_cp": 197.5611052003599
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/transport/20261021": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.2154660184508642,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 290.45185676697764
+      },
+      "metrics": {
+        "interval_regret_cp": 333.7064134536251,
+        "optimal_agreement": 0.22580645257426846,
+        "scalar_error_cp": 207.88400196914952
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    },
+    "threat/transport/20261022": {
+      "diagnostics": {
+        "mean_child_role_latent_mse": 0.21059279798677602,
+        "mean_parentPV_interval_vs_frozen_child_value_gap_cp": 298.137575457173
+      },
+      "metrics": {
+        "interval_regret_cp": 325.03704354070845,
+        "optimal_agreement": 0.241935484832333,
+        "scalar_error_cp": 197.5611052003599
+      },
+      "support": {
+        "legal_candidates": 2106,
+        "ordinary_observations": 496,
+        "roots": 62
+      }
+    }
+  },
+  "selected": "NONE"
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "chen_synthetic_teacher_pilot_evidence_v1",
+  "payloads": {
+    "README.md": {
+      "bytes": 2965,
+      "sha256": "f178f81d04f7fc52b9d0cbcf406ced04d93cadad94a3e02023d03c6ead31d522"
+    },
+    "declaration-before-metadata-correction.json": {
+      "bytes": 4334,
+      "sha256": "9357f8cf4c59dba4bf013c25a933268c2863aeb7d01d163105a77281496a79ac"
+    },
+    "declaration.json": {
+      "bytes": 4338,
+      "sha256": "1a8e22068f8fab5650496f30d192ee06a02ff5ee87ece0859d5a4b07127130d9"
+    },
+    "mechanical-replay.json": {
+      "bytes": 17803,
+      "sha256": "e32ec5c138d6ef2dd93abd174919d02d60a5fcb44457ea2107e72b1f7fd9a300"
+    },
+    "metadata.json": {
+      "bytes": 3707,
+      "sha256": "7c9b7a6e877c542f885dbd67bd50569bb38c9f8cb13a045c2d9a58d3635c160b"
+    },
+    "plan.json": {
+      "bytes": 88073,
+      "sha256": "2b8d194b6d7a7cfd02274c92018b0685ac40f9e835b59f21de9bf710876a6187"
+    },
+    "query-records-manifest.json": {
+      "bytes": 7354,
+      "sha256": "f7c746311f92d1dabfba2051db6e27b76863952cb693d916f899b366a1f321aa"
+    },
+    "query-records.tar.gz": {
+      "bytes": 537909,
+      "sha256": "f75327cd8b851261d42cd79cc186c2fe337c51eda6eec228773ad2b842a57bf2"
+    },
+    "replay-label-records.py": {
+      "bytes": 3769,
+      "sha256": "997b75efcf379276db24f733567b896a67dcdbcaef803aeea484ba6c23f83aea"
+    },
+    "report.json": {
+      "bytes": 2659,
+      "sha256": "c69afca0d21e174b91e2a872e439c50ffd5661f43b092900b71c83a1cb19dc9a"
+    },
+    "run.stderr.log": {
+      "bytes": 328,
+      "sha256": "ecce33ff96a0e11a0e519d1b73c0980e185bf59dfe061be9d21e2e5b4778bb8f"
+    },
+    "run.stdout.log": {
+      "bytes": 6722,
+      "sha256": "97c74a8872853d55e5d2040b69740671c45fd2f6e332491afb924a5fe886801e"
+    },
+    "runtime.json": {
+      "bytes": 1129,
+      "sha256": "b2224f8782e8c37b3712bb10f693c52ca47a10d6fc1378797625131d3481bb57"
+    },
+    "setup.json": {
+      "bytes": 3390,
+      "sha256": "c03488a50656f0e20f359c81c2f2a346eb85d74352330de7109a1dc94d19f048"
+    },
+    "source/neural/ordinary_packets.py": {
+      "bytes": 9993,
+      "sha256": "4e6d7e9461fe0c001622acb39f5be48d461c95e1994526f9ca48f09a27cbd83f"
+    },
+    "source/neural/score_frames.py": {
+      "bytes": 6675,
+      "sha256": "efc0e8da2ad65b41523fdcf0fd514fa70e3ddbff066854a88c2ad64726a02f57"
+    },
+    "source/neural/synthetic_teacher.py": {
+      "bytes": 16958,
+      "sha256": "82406b7d1d38f3e8154b6891144e9086604b03ef858a1ca8233db949c3a1fa58"
+    },
+    "source/neural/tactical_inputs.py": {
+      "bytes": 18206,
+      "sha256": "7edf5075f5b4eed53ce706c4e203e0cde40f01e3211eba29dce8161cc001920e"
+    },
+    "source/neural/teacher_session.py": {
+      "bytes": 6943,
+      "sha256": "7ee6d3863a5497e4803ffd6be0b2c881857c3b7181c0ffee236ca8308f9ea684"
+    },
+    "source/neural/tests/test_synthetic_teacher.py": {
+      "bytes": 5680,
+      "sha256": "f39ad13415c11c1612c8ec560376b07047ae3975f58a0b8204e8e68bdb0d7078"
+    },
+    "source-freeze.json": {
+      "bytes": 1096,
+      "sha256": "c91b76d9793a413ea3285b82ea68fa680055ec1ebdb48596cc2dc1ce9d4b2e3a"
+    },
+    "stockfish-source/Copying.txt": {
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "stockfish-source/src/evaluate.h": {
+      "bytes": 1767,
+      "sha256": "bab0750b2d80c72bb121bfe730a55ecba5fc221394d3d8a7ae2aa3ae04fe9998"
+    },
+    "stockfish-source/src/nnue/network.cpp": {
+      "bytes": 12385,
+      "sha256": "95cafe51c0d05842fdeffb8d2690549e9deee43edc0b56caf277f21fda63ec4b"
+    },
+    "stockfish-source/src/score.cpp": {
+      "bytes": 1414,
+      "sha256": "c5877628d70984fef345f2ace3f155ea883f316505485f2115701aac313dfb01"
+    },
+    "stockfish-source/src/search.cpp": {
+      "bytes": 94212,
+      "sha256": "a934524dd2f386ec38cdf95b7b2e41cecdc85c9b17e12c0668621e6ae16be28a"
+    },
+    "stockfish-source/src/uci.cpp": {
+      "bytes": 22760,
+      "sha256": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21"
+    },
+    "summary.json": {
+      "bytes": 1303,
+      "sha256": "4e3c3408340005c1f0072a2f597014abc499d32d445642c7763382417a3b0aa1"
+    }
+  }
+}

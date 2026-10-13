@@ -1,0 +1,22 @@
+/home/iskam/src/vibe/chen-neural/results/qa-cpu-venv/lib/python3.14/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+test_bit_exact_edges_and_encoder_float32_float64 (neural.tests.test_capture_mask.CaptureMaskFixtures.test_bit_exact_edges_and_encoder_float32_float64) ... ok
+test_nonpersistent_mask_preserves_old_schema_and_device_dtype_movement (neural.tests.test_capture_mask.CaptureMaskFixtures.test_nonpersistent_mask_preserves_old_schema_and_device_dtype_movement) ... ok
+test_actual_closed_parent_admits_exact_remaining_keys (neural.tests.test_precision_continuation.ContinuationFixtures.test_actual_closed_parent_admits_exact_remaining_keys) ... ok
+test_no_generic_skip_replay_or_parent_substitution (neural.tests.test_precision_continuation.ContinuationFixtures.test_no_generic_skip_replay_or_parent_substitution) ... ok
+test_cpu_controls_cannot_be_runtime_fallbacks (neural.tests.test_precision_inference.PrecisionFixtures.test_cpu_controls_cannot_be_runtime_fallbacks) ... ok
+test_half_pair_layout_restores_odd_width_and_channel_tails (neural.tests.test_precision_inference.PrecisionFixtures.test_half_pair_layout_restores_odd_width_and_channel_tails) ... ok
+test_pack_rejects_untyped_weights (neural.tests.test_precision_inference.PrecisionFixtures.test_pack_rejects_untyped_weights) ... ok
+test_cpu_linear_cannot_become_a_gpu_runtime_fallback (neural.tests.test_int8_inference.Int8Fixtures.test_cpu_linear_cannot_become_a_gpu_runtime_fallback) ... ok
+test_integer_dot_reference_matches_declared_dequantization (neural.tests.test_int8_inference.Int8Fixtures.test_integer_dot_reference_matches_declared_dequantization) ... ok
+test_quantization_padding_zero_and_rounding_error_bound (neural.tests.test_int8_inference.Int8Fixtures.test_quantization_padding_zero_and_rounding_error_bound) ... ok
+test_symbolic_channels_feed_actual_learned_residual_not_unused_metadata (neural.tests.test_int8_inference.Int8Fixtures.test_symbolic_channels_feed_actual_learned_residual_not_unused_metadata) ... ok
+test_symbolic_runtime_rejects_cpu_and_untyped_teacher_fields (neural.tests.test_int8_inference.Int8Fixtures.test_symbolic_runtime_rejects_cpu_and_untyped_teacher_fields) ... ok
+test_value_only_anchor_exact_parity_with_nonzero_head_all_encoders (neural.tests.test_int8_inference.Int8Fixtures.test_value_only_anchor_exact_parity_with_nonzero_head_all_encoders) ... ok
+test_value_only_transition_exact_parity_and_action_blind_ties (neural.tests.test_int8_inference.Int8Fixtures.test_value_only_transition_exact_parity_and_action_blind_ties) ... ok
+test_zero_tiny_and_half_ties_match_v3_policy (neural.tests.test_int8_inference.Int8Fixtures.test_zero_tiny_and_half_ties_match_v3_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.643s
+
+OK

@@ -1,0 +1,17 @@
+{
+  "CPU_fixture_tests": 15,
+  "GPU_calls_started": false,
+  "declaration_sha256": "abeb9491083d8b1fc652100de2f75cb4352e865000755a37446a937d3459cd4e",
+  "files": {
+    "docs/PRECISION_CAPTURE.md": "2bd27bb5cc1167519ad1fe3c437c15b628234d8aa6d5589bca962d14c9a756d1",
+    "neural/models.py": "ee928f814f66ad0371a3bb5def37efddd79ab010f2c107097629d20321399c4f",
+    "neural/precision_inference.py": "9319e2dfc58e5fc2b7f2ef2ad12079f144b5d7d5643c8ce8f8e4de8b9e1e20fb",
+    "neural/profile_precision_capture.py": "b9af0cda1aef7ebd9f7dd40eb94ef3cc7cb140046c98e8b0ce1a9a3f92f27dac",
+    "neural/tests/test_capture_mask.py": "20407e607a464f0ed6b2f18d10ff3c3b5d058dae19766a4bfafa7a130440ae4d",
+    "neural/tests/test_precision_continuation.py": "8238e57cf0dc2b958354ed726b4266f833d7cb0fa3a8defc05ee6bd8fd88d437",
+    "neural/tests/test_precision_inference.py": "9e925119dc253992b4864a0d9785c6d340557ffecc689c0e1ce8d321223f4f5f"
+  },
+  "kind": "chen_precision_capture_continuation_source_freeze_v1",
+  "parent_archive_manifest_sha256": "dc4d5aca14804e0b90506dc31563bbb8f7c85715db5b94a9b5541ab84c9c73f8",
+  "runtime": "/tmp/chen-precision-continuation-20261003.NGmYzRH1"
+}
