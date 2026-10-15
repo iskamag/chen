@@ -1,0 +1,1625 @@
+{
+  "date": "2026-10-15",
+  "machine": "AMD Ryzen 5 3600",
+  "cpu_affinity": 1,
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28) (Artix Linux rust 1:1.99.0-1)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "base_commit": "076432a",
+  "protocol": "four alternating portable/znver2 process pairs, reps20; reverse method order on odd rounds; precomputed ingress for sibling/trajectory; event sibling update+undo vs scalar precomputed child",
+  "source_sha256": "e67693c29966a12d91abc79071ebb5febc147078bbd66ed4e1ffd22fff47f443",
+  "binary_sha256": {
+    "portable": "524dd7521570a592a13e709c5e082fc2c21d24634f523c4ba12bb5a18208ed73",
+    "znver2": "52957677020be848777f455369ef2ccac9dcb098a34ed09bbbdb887fb1eb7a1f"
+  },
+  "corpus_sha256": "524983ca720e2e1a945accc2ccff7d716659641a08cf2a918564bccc64fd3cac",
+  "transitions_sha256": "5497ad60d57edb29f892475f189e961e7a2f6cf62d5b8edb35ee601f0ebfd2c3",
+  "validation": [
+    {
+      "kind": "metadata",
+      "roots": 727,
+      "siblings": 16721,
+      "source_state_bytes": 816,
+      "line_state_bytes": 1504,
+      "tree_state_bytes": 2744,
+      "board_bytes": 64,
+      "geometry_bytes": 97872,
+      "allocations_per_update": 0,
+      "scope": "exact attack unions and king attack predicates; mate and strength N/A"
+    },
+    {
+      "kind": "shared_trajectory_validation",
+      "transitions": 3210,
+      "boolean_answers": 410880,
+      "all_exact": true
+    },
+    {
+      "kind": "validation",
+      "transitions": 39417,
+      "boolean_answers": 5045376,
+      "all_exact": true
+    }
+  ],
+  "python_chess": {
+    "all_exact": true,
+    "answers_sha256": "1662cc8354621e3d8a95cc3b93c942ee5a0b06c3bb3883a774631d9ca8be392c",
+    "boolean_answers": 2233344,
+    "oracle": "python-chess",
+    "rows": 17448,
+    "version": "1.11.2"
+  },
+  "aggregate_timing": [
+    {
+      "build": "portable",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "line_counts",
+      "median_ns": 1567.7359999999999,
+      "runs_ns": [
+        1570.377,
+        1557.712,
+        1565.095,
+        1586.271
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "scalar_full",
+      "median_ns": 52.6175,
+      "runs_ns": [
+        52.695,
+        52.574,
+        52.661,
+        50.27
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "source_counts",
+      "median_ns": 1561.8705,
+      "runs_ns": [
+        1574.217,
+        1549.922,
+        1573.819,
+        1533.815
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "source_tree",
+      "median_ns": 1684.9415,
+      "runs_ns": [
+        1677.525,
+        1701.635,
+        1669.492,
+        1692.358
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "demand_king",
+      "median_ns": 118.50450000000001,
+      "runs_ns": [
+        118.511,
+        118.498,
+        119.42,
+        118.344
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "flat_indexed",
+      "median_ns": 181.108,
+      "runs_ns": [
+        183.162,
+        178.733,
+        182.679,
+        179.537
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "ingress_packet",
+      "median_ns": 65.1875,
+      "runs_ns": [
+        64.899,
+        65.489,
+        65.339,
+        65.036
+      ],
+      "checksum": 670060,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "lazy_king",
+      "median_ns": 110.897,
+      "runs_ns": [
+        110.918,
+        110.876,
+        111.916,
+        110.34
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "line_delta",
+      "median_ns": 559.077,
+      "runs_ns": [
+        557.437,
+        557.729,
+        569.813,
+        560.425
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "orthodox_king",
+      "median_ns": 34.7525,
+      "runs_ns": [
+        34.611,
+        34.688,
+        35.147,
+        34.817
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "scalar_full",
+      "median_ns": 61.786500000000004,
+      "runs_ns": [
+        65.92,
+        60.599,
+        62.463,
+        61.11
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_coarse",
+      "median_ns": 955.6115,
+      "runs_ns": [
+        1027.264,
+        947.683,
+        960.351,
+        950.872
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_fine",
+      "median_ns": 667.966,
+      "runs_ns": [
+        719.103,
+        662.075,
+        672.359,
+        663.573
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_indexed",
+      "median_ns": 283.08349999999996,
+      "runs_ns": [
+        304.893,
+        281.135,
+        284.104,
+        282.063
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_rebuild",
+      "median_ns": 1095.684,
+      "runs_ns": [
+        1183.42,
+        1088.697,
+        1100.403,
+        1090.965
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_coarse",
+      "median_ns": 917.504,
+      "runs_ns": [
+        991.632,
+        910.281,
+        922.717,
+        912.291
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_fine",
+      "median_ns": 640.643,
+      "runs_ns": [
+        687.318,
+        633.75,
+        645.429,
+        635.857
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_indexed",
+      "median_ns": 246.637,
+      "runs_ns": [
+        257.793,
+        243.256,
+        247.803,
+        245.471
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "demand_king",
+      "median_ns": 126.747,
+      "runs_ns": [
+        126.354,
+        127.14,
+        126.162,
+        128.802
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "flat_indexed",
+      "median_ns": 120.384,
+      "runs_ns": [
+        121.911,
+        118.779,
+        118.857,
+        125.796
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "ingress_packet",
+      "median_ns": 84.94300000000001,
+      "runs_ns": [
+        85.013,
+        84.873,
+        84.398,
+        85.145
+      ],
+      "checksum": 128460,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "lazy_king",
+      "median_ns": 113.50049999999999,
+      "runs_ns": [
+        113.395,
+        113.606,
+        112.906,
+        114.279
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "line_delta",
+      "median_ns": 336.488,
+      "runs_ns": [
+        337.501,
+        337.901,
+        334.695,
+        335.475
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "orthodox_king",
+      "median_ns": 34.707499999999996,
+      "runs_ns": [
+        34.796,
+        37.725,
+        34.619,
+        34.6
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "scalar_full",
+      "median_ns": 63.258,
+      "runs_ns": [
+        62.442,
+        62.877,
+        63.639,
+        70.941
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_coarse",
+      "median_ns": 620.6165,
+      "runs_ns": [
+        620.915,
+        617.092,
+        620.872,
+        620.361
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_fine",
+      "median_ns": 416.38300000000004,
+      "runs_ns": [
+        414.882,
+        418.251,
+        414.532,
+        417.884
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_indexed",
+      "median_ns": 160.985,
+      "runs_ns": [
+        159.12,
+        161.897,
+        160.518,
+        161.452
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_rebuild",
+      "median_ns": 1240.7069999999999,
+      "runs_ns": [
+        1243.669,
+        1239.289,
+        1230.52,
+        1242.125
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_coarse",
+      "median_ns": 610.5545,
+      "runs_ns": [
+        609.449,
+        619.737,
+        609.302,
+        611.66
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_fine",
+      "median_ns": 402.975,
+      "runs_ns": [
+        401.432,
+        404.518,
+        399.223,
+        407.158
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "portable",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_indexed",
+      "median_ns": 141.9155,
+      "runs_ns": [
+        141.531,
+        146.577,
+        142.019,
+        141.812
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "line_counts",
+      "median_ns": 1652.0405,
+      "runs_ns": [
+        1640.242,
+        1727.721,
+        1663.839,
+        1635.828
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "scalar_full",
+      "median_ns": 45.3555,
+      "runs_ns": [
+        46.184,
+        44.971,
+        45.74,
+        44.955
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "source_counts",
+      "median_ns": 1644.727,
+      "runs_ns": [
+        1647.833,
+        1693.192,
+        1641.621,
+        1601.065
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "fresh_ingress",
+      "family": "all",
+      "method": "source_tree",
+      "median_ns": 1701.4540000000002,
+      "runs_ns": [
+        1695.718,
+        1701.227,
+        1728.152,
+        1701.681
+      ],
+      "checksum": 438831026113661272,
+      "allocations": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "demand_king",
+      "median_ns": 122.23150000000001,
+      "runs_ns": [
+        122.433,
+        120.931,
+        122.328,
+        122.135
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "flat_indexed",
+      "median_ns": 187.139,
+      "runs_ns": [
+        186.128,
+        184.947,
+        188.15,
+        189.976
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "ingress_packet",
+      "median_ns": 68.4055,
+      "runs_ns": [
+        69.158,
+        67.543,
+        68.412,
+        68.399
+      ],
+      "checksum": 670060,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "lazy_king",
+      "median_ns": 117.958,
+      "runs_ns": [
+        118.529,
+        116.713,
+        117.835,
+        118.081
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "line_delta",
+      "median_ns": 560.6700000000001,
+      "runs_ns": [
+        561.928,
+        557.753,
+        559.412,
+        570.698
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "orthodox_king",
+      "median_ns": 30.9145,
+      "runs_ns": [
+        30.876,
+        30.862,
+        32.302,
+        30.953
+      ],
+      "checksum": 20980,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "scalar_full",
+      "median_ns": 56.172,
+      "runs_ns": [
+        56.171,
+        56.17,
+        56.173,
+        56.371
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_coarse",
+      "median_ns": 975.8299999999999,
+      "runs_ns": [
+        977.6,
+        972.881,
+        975.055,
+        976.605
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_fine",
+      "median_ns": 649.5165,
+      "runs_ns": [
+        648.584,
+        646.237,
+        650.449,
+        654.154
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_indexed",
+      "median_ns": 267.159,
+      "runs_ns": [
+        265.866,
+        264.079,
+        268.452,
+        270.348
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_rebuild",
+      "median_ns": 1135.6665,
+      "runs_ns": [
+        1134.776,
+        1134.786,
+        1136.547,
+        1140.039
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_coarse",
+      "median_ns": 930.876,
+      "runs_ns": [
+        930.841,
+        928.39,
+        930.911,
+        939.583
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_fine",
+      "median_ns": 609.2660000000001,
+      "runs_ns": [
+        608.908,
+        606.802,
+        609.624,
+        623.997
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_indexed",
+      "median_ns": 230.1345,
+      "runs_ns": [
+        229.198,
+        221.087,
+        231.071,
+        232.173
+      ],
+      "checksum": 9668131347683193720,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "demand_king",
+      "median_ns": 126.90549999999999,
+      "runs_ns": [
+        126.341,
+        138.0,
+        126.582,
+        127.229
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "flat_indexed",
+      "median_ns": 113.41749999999999,
+      "runs_ns": [
+        113.333,
+        113.626,
+        113.502,
+        112.769
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "ingress_packet",
+      "median_ns": 78.10249999999999,
+      "runs_ns": [
+        77.982,
+        77.98,
+        78.799,
+        78.223
+      ],
+      "checksum": 128460,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "lazy_king",
+      "median_ns": 117.5945,
+      "runs_ns": [
+        117.201,
+        117.988,
+        116.16,
+        119.31
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "line_delta",
+      "median_ns": 339.6825,
+      "runs_ns": [
+        339.074,
+        357.814,
+        340.291,
+        336.709
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "orthodox_king",
+      "median_ns": 32.662499999999994,
+      "runs_ns": [
+        32.675,
+        32.616,
+        32.724,
+        32.65
+      ],
+      "checksum": 6440,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "scalar_full",
+      "median_ns": 58.722,
+      "runs_ns": [
+        59.207,
+        58.369,
+        58.904,
+        58.54
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_coarse",
+      "median_ns": 641.188,
+      "runs_ns": [
+        642.026,
+        641.024,
+        641.352,
+        640.831
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_fine",
+      "median_ns": 402.275,
+      "runs_ns": [
+        404.528,
+        401.609,
+        402.941,
+        401.575
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_indexed",
+      "median_ns": 153.69,
+      "runs_ns": [
+        153.065,
+        154.814,
+        153.064,
+        154.315
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_rebuild",
+      "median_ns": 1298.036,
+      "runs_ns": [
+        1298.9,
+        1297.172,
+        1299.519,
+        1296.752
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_coarse",
+      "median_ns": 627.413,
+      "runs_ns": [
+        625.802,
+        630.728,
+        624.797,
+        629.024
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_fine",
+      "median_ns": 388.8395,
+      "runs_ns": [
+        388.548,
+        389.783,
+        385.796,
+        389.131
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "build": "znver2",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_indexed",
+      "median_ns": 130.5555,
+      "runs_ns": [
+        130.54,
+        131.113,
+        130.075,
+        130.571
+      ],
+      "checksum": 6456728105498219276,
+      "allocations": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "aggregate_event_counts": [
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_coarse",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 1027.264,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2270600,
+      "recomputed": 1270860,
+      "changed": 902020,
+      "changed_targets": 5821460,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_fine",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 719.103,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2270600,
+      "recomputed": 945520,
+      "changed": 902020,
+      "changed_targets": 5821460,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "source_indexed",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 304.893,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2270600,
+      "recomputed": 945520,
+      "changed": 902020,
+      "changed_targets": 5821460,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "tree_indexed",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 257.793,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2270600,
+      "recomputed": 945520,
+      "changed": 902020,
+      "changed_targets": 5821460,
+      "aggregate_visited": 5264680,
+      "aggregate_written": 6002620,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "flat_indexed",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 183.162,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2270600,
+      "recomputed": 945520,
+      "changed": 902020,
+      "changed_targets": 5821460,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "line_delta",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 557.437,
+      "checksum": 9668131347683193720,
+      "updates": 334420,
+      "edits": 670060,
+      "occupancy_events": 632740,
+      "dirty_lines": 2305340,
+      "recomputed": 2305340,
+      "changed": 936640,
+      "changed_targets": 2833480,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "siblings_roundtrip",
+      "family": "all",
+      "method": "lazy_king",
+      "reps": 20,
+      "cases": 16721,
+      "ns_per_child": 110.918,
+      "checksum": 20980,
+      "updates": 668840,
+      "edits": 0,
+      "occupancy_events": 0,
+      "dirty_lines": 0,
+      "recomputed": 392220,
+      "changed": 0,
+      "changed_targets": 0,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_coarse",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 620.915,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 434240,
+      "recomputed": 250420,
+      "changed": 172840,
+      "changed_targets": 940800,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_fine",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 414.882,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 434240,
+      "recomputed": 182140,
+      "changed": 172840,
+      "changed_targets": 940800,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "source_indexed",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 159.12,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 434240,
+      "recomputed": 182140,
+      "changed": 172840,
+      "changed_targets": 940800,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "tree_indexed",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 141.531,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 434240,
+      "recomputed": 182140,
+      "changed": 172840,
+      "changed_targets": 940800,
+      "aggregate_visited": 1009680,
+      "aggregate_written": 1153120,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "flat_indexed",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 121.911,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 434240,
+      "recomputed": 182140,
+      "changed": 172840,
+      "changed_targets": 940800,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "line_delta",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 337.501,
+      "checksum": 6456728105498219276,
+      "updates": 64200,
+      "edits": 128460,
+      "occupancy_events": 120680,
+      "dirty_lines": 443820,
+      "recomputed": 443820,
+      "changed": 156500,
+      "changed_targets": 398860,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    },
+    {
+      "kind": "timing",
+      "mode": "trajectory",
+      "family": "generated",
+      "method": "lazy_king",
+      "reps": 20,
+      "cases": 3210,
+      "ns_per_child": 113.395,
+      "checksum": 6440,
+      "updates": 128400,
+      "edits": 0,
+      "occupancy_events": 0,
+      "dirty_lines": 0,
+      "recomputed": 60820,
+      "changed": 0,
+      "changed_targets": 0,
+      "aggregate_visited": 0,
+      "aggregate_written": 0,
+      "allocations": 0
+    }
+  ],
+  "raw_directory": "results/radical-round1/causal-final",
+  "simd_evidence": {
+    "portable_dense_union": "movdqu xmm + por xmm (SSE2)",
+    "znver2_dense_union": "vmovdqu ymm + vpor ymm (AVX2); compiler generated, no isolated AVX2 causal gain claim"
+  },
+  "limitations": [
+    "Primitive only; mate/strength N/A",
+    "Scalar state ingress is precomputed and sibling event variants include inverse update",
+    "Tree/event counters are compiled into timed kernels",
+    "Frequency/thermal/host interference uncontrolled",
+    "Lazy predicates individually checked on shared/generated trajectories; sibling timing checksum only"
+  ]
+}
