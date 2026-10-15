@@ -8,7 +8,7 @@ policy are controls, not the definition of the research objective.
 | --- | --- | --- |
 | Causal | Computation follows changed observable consequences | Persistent source/line summaries, dependency subscriptions, event stopping, demand-driven proof support |
 | Relation | Adversarial obligations can be discharged over shared alternatives | Reply operators, existential witness masks, exhaustive certificates, packed or streamed root/reply work |
-| Bands | Chess operators admit small sufficient representations in different bases | 2x2 semantic blocks, 2x8/interlaced bands, transfer automata, hierarchical composition, explicit CPU vector kernels |
+| Bands | Chess operators admit small sufficient representations in different bases | 2x2 semantic blocks, 2x8 source bands, overlapping directional lines, transfer automata, hierarchical composition, explicit CPU vector kernels |
 
 Implementations live in independent standalone Rust crates under this directory.
 They depend on Chen for common state/oracles; experiment runtime/control roles
@@ -72,6 +72,11 @@ the primary checkout. `.ready` is a generation-complete marker, not evidence
 that a process or experiment remains live.
 
 ## Work ownership and retained scope
+
+The completed round's joint findings and proposed next branches are in
+[`COMPARISON.md`](../../docs/research/round1/COMPARISON.md). In particular,
+staggered 2x8/8x2 band stores remain untested, and no playing-strength result is
+claimed for the research kernels.
 
 Each agent owns its architecture crate and its corresponding report in
 `docs/research/round1/`. The root owns corpus generation, independent output
