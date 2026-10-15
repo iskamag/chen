@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "status": "frozen before source execution, training, or outcomes",
+  "question": "Does additional recurrence with tied learned weights improve joint resource feasibility at fixed input and parameter count, especially on longer structural dependencies?",
+  "scope": "A learned experimental control, not a novel chess architecture or chess strength test. No runtime matching oracle, branch search, child boards, or revealed inputs.",
+  "corpus_schema": "version1 rows with id, split(train/dev/eval/structure), family, targets, resources, columns(target-indexed resource bitmasks), feasible label; maximum_matching is ignored by model.",
+  "input": "All incidence and counts are fixed and available before round1. At most10 targets/resources. Each real target/resource has features[1,degree/10,1], padded slots0. Global features[target_count/10,resource_count/10,edge_count/100]. Labels/family/id/split never enter the network.",
+  "model": "Typed bipartite recurrent network width24. Separate3->24 initial ReLU projections; separate24->24 ReLU message projections; adjacency-masked sum messages divided by10; separate GRUCells input48 hidden24 take concat(initial_embedding,neighbor_message). Both node types update synchronously from old states, with the same parameters at every round. Readout: target/resource hidden sums/10 and masked maxima, global3 features -> ReLU48 -> scalar logit. All real nodes participate; no identity-specific trainable weights.",
+  "train": {
+    "seeds": [17,29],
+    "regimes": {"fixed4": [4], "variable1to8": [1,2,3,4,5,6,7,8]},
+    "fits": 4,
+    "steps": 600,
+    "batch_size": 128,
+    "optimizer": "AdamW lr0.002 weight_decay0.0001, global gradient norm clipped1",
+    "loss": "BCEWithLogitsLoss pos_weight=TRAIN_negative_count/TRAIN_positive_count; batches sampled uniformly with replacement; variable-depth regime samples one depth uniformly for each minibatch",
+    "checkpoint": "Evaluate DEV at100,200,300,400,500,600 steps using regime's training max depth(4 or8); choose highest balanced accuracy at fixed0.5 threshold, tie lower logloss, tie earlier step. TRAIN only fits, DEV only selects. No EVAL/STRUCTURE metrics inspected until all4 checkpoint selections are frozen.",
+    "hardware": "CPU1 affinity, torch threads1 and interop threads1; no GPU"
+  },
+  "evaluation": {
+    "rounds": [1,2,4,8,16,32],
+    "variants": ["feedback", "reset_every_round", "zero_coupling", "independent_target_alignment"],
+    "reset_every_round": "Every round starts from initial embeddings; execute the same number of GRU/message updates but retain only last independent one-round state. Identical numerical output across depths is expected; repeated compute is not latent propagation.",
+    "zero_coupling": "Set every edge message tozero; preserve all node degree/global inputs and recurrent state. This tests recurrence without cross-node coupling, not removal of every aggregate graph fact.",
+    "independent_target_alignment": "Deterministically permute resource rows separately pertarget using SHA256(id,target). Only message adjacency is corrupted; original degree/global inputs and label remain fixed. This is not a label-preserving invariance test; it measures dependence on genuine channel alignment.",
+    "metrics": ["accuracy", "balanced_accuracy where both classes exist", "FP/FN", "Brier score", "binary logloss", "mean probability", "depth-to-depth classification flips and probability drift", "per-depth inference wall time"],
+    "grouping": "Report DEV/EVAL/STRUCTURE separately, and each split's family. One-class family balanced accuracy null; report accuracy and class counts.",
+    "numeric_checks": "Selected checkpoint save/load logits must match on first8DEV inputs; coherent joint resource/target permutation on first16DEV graphs must preserve full-model probabilities within1e-5. Store selected weights SHA and per-query logits in compactNPZ for independent replay."
+  },
+  "evidence": "Source committed before first execution. Corpus SHA recorded, all training logs retained. Exact matching labels supplied offline by root. No evaluation-based checkpoint/depth/model selection; negative outcomes, oversmoothing, oscillation, and shortcut failures reported."
+}
