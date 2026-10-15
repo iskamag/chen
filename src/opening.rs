@@ -121,21 +121,28 @@ impl OpeningBook {
         }
         let key = position.hash();
         let node = self.nodes.get(&key)?;
-        let total = u64::from(node.total);
-        let draw = mix(seed ^ key) % total.max(1);
-        let mut cumulative = 0;
-        for &(mv, weight) in &node.moves {
-            cumulative += u64::from(weight);
-            if draw < cumulative {
-                return Some(BookMove {
-                    mv,
-                    name: self
-                        .name_for(position, mv)
-                        .unwrap_or_else(|| node.name.clone()),
-                });
+        let mv = if seed == 0 {
+            let mut best = node.moves.first()?;
+            for edge in &node.moves[1..] {
+                if edge.1 > best.1 {
+                    best = edge;
+                }
             }
-        }
-        None
+            best.0
+        } else {
+            let draw = mix(seed ^ key) % u64::from(node.total).max(1);
+            let mut cumulative = 0;
+            node.moves.iter().find_map(|&(mv, weight)| {
+                cumulative += u64::from(weight);
+                (draw < cumulative).then_some(mv)
+            })?
+        };
+        Some(BookMove {
+            mv,
+            name: self
+                .name_for(position, mv)
+                .unwrap_or_else(|| node.name.clone()),
+        })
     }
 
     fn name_for(&self, position: &Position, mv: Move) -> Option<String> {
@@ -398,6 +405,28 @@ mod tests {
         }
         assert_eq!(e4 + d4, 256);
         assert!(e4 > d4 && d4 > 0, "e4={e4} d4={d4}");
+    }
+
+    #[test]
+    fn zero_seed_chooses_highest_weight_with_stable_authored_ties() {
+        let start = Position::startpos();
+        // Check several totals and insertion orders: seed zero must not be a
+        // weighted random draw that happens to select the common move once.
+        for count in 2..12 {
+            for common_first in [false, true] {
+                let common = "e\tcommon\t1. d4\n".repeat(count);
+                let rare = "e\trare\t1. e4\n";
+                let text = if common_first {
+                    format!("{common}{rare}")
+                } else {
+                    format!("{rare}{common}")
+                };
+                let book = OpeningBook::from_pgn_tsv(&text).unwrap();
+                assert_eq!(book.probe(&start, 0, 0).unwrap().uci(), "d2d4");
+            }
+        }
+        let tied = OpeningBook::from_pgn_tsv("e\tfirst\t1. e4\ne\tsecond\t1. d4\n").unwrap();
+        assert_eq!(tied.probe(&start, 0, 0).unwrap().uci(), "e2e4");
     }
 
     #[test]
