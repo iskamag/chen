@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "device": "cpu",
+  "torch": "2.14.1+cpu",
+  "numpy": "2.5.4",
+  "seed": 83137,
+  "data": {
+    "train": 7585,
+    "dev": 1877,
+    "test_closed": 1809,
+    "exported_actions": 297817,
+    "train_pairs": 2615,
+    "dev_pairs": 767,
+    "manifest_sha256": "52b3bc34fd2a061385fd3b7d261504ea4bb7254ff9422d7d45e084cd4597c08c"
+  },
+  "models": {
+    "v1-interaction": {
+      "parameters": 37442,
+      "best_epoch": 3,
+      "sha256": "81ac9098e1c5a3c4b8781124a78ad079eed0d1a547fe2524e2980a7587994d16",
+      "feature_schema_sha256": "890278fadee8d12099254c2e1edc428a84157977ddffe5a32335f9b690ed8d5f",
+      "dev": {
+        "roots": 1877,
+        "hard_ce": 2.9264036248704506,
+        "top1": 0.2349493873201918,
+        "top3": 0.41822056473095365,
+        "cost_sensitive_selection": 3.2866484778818315,
+        "regret_pairs": 767,
+        "pair_softplus": 1.8865545722977672,
+        "pair_order_fail_fraction": 0.21251629726205998,
+        "known_bad_pair_selected_fraction": 0.04563233376792699,
+        "macro_component_top1": 0.22485556349668503,
+        "base_full_choice_changes": 1019,
+        "ordinary_covered_regret_cp": 60.89986282578875,
+        "ordinary_regret_covered_roots": 729,
+        "complete_support_regret_cp": 105.30232558139535,
+        "complete_support_regret_roots": 129,
+        "closed_test_opened": false
+      }
+    },
+    "v2-interaction": {
+      "parameters": 41602,
+      "best_epoch": 3,
+      "sha256": "351551f831e916b8f1b730f5ff915a07597c1ab8aeab082ff22d81d97f831332",
+      "feature_schema_sha256": "d70273878dad4b215e50d13bf24c3c045c8eaffb43a2a6e6f974244f419fd5d2",
+      "dev": {
+        "roots": 1877,
+        "hard_ce": 2.9182213410838336,
+        "top1": 0.2216302610548748,
+        "top3": 0.4054342035162493,
+        "cost_sensitive_selection": 3.2670579651338008,
+        "regret_pairs": 767,
+        "pair_softplus": 1.8668240260422246,
+        "pair_order_fail_fraction": 0.2151238591916558,
+        "known_bad_pair_selected_fraction": 0.048239895697522815,
+        "macro_component_top1": 0.2104258580925106,
+        "base_full_choice_changes": 914,
+        "ordinary_covered_regret_cp": 58.989085948158255,
+        "ordinary_regret_covered_roots": 733,
+        "complete_support_regret_cp": 105.0077519379845,
+        "complete_support_regret_roots": 129,
+        "closed_test_opened": false
+      }
+    },
+    "v2-flat": {
+      "parameters": 41539,
+      "best_epoch": 14,
+      "sha256": "9d287c799b6add85429c21547faf308b473f7d28027e6454433d276b56d6bd6e",
+      "feature_schema_sha256": "d70273878dad4b215e50d13bf24c3c045c8eaffb43a2a6e6f974244f419fd5d2",
+      "dev": {
+        "roots": 1877,
+        "hard_ce": 2.826295467533199,
+        "top1": 0.2402770378263186,
+        "top3": 0.4358018114011721,
+        "cost_sensitive_selection": 3.1377472180287267,
+        "regret_pairs": 767,
+        "pair_softplus": 1.7859281562657332,
+        "pair_order_fail_fraction": 0.17861799217731422,
+        "known_bad_pair_selected_fraction": 0.03650586701434159,
+        "macro_component_top1": 0.2386600547258705,
+        "base_full_choice_changes": 0,
+        "ordinary_covered_regret_cp": 57.42199488491048,
+        "ordinary_regret_covered_roots": 782,
+        "complete_support_regret_cp": 83.3953488372093,
+        "complete_support_regret_roots": 129,
+        "closed_test_opened": false
+      }
+    },
+    "v2-additive": {
+      "parameters": 41665,
+      "best_epoch": 4,
+      "sha256": "7dff10074b933c2954175113fbe727a7381ea9a117e65534f33fcfc16499f930",
+      "feature_schema_sha256": "d70273878dad4b215e50d13bf24c3c045c8eaffb43a2a6e6f974244f419fd5d2",
+      "dev": {
+        "roots": 1877,
+        "hard_ce": 2.886910521355346,
+        "top1": 0.22322855620671284,
+        "top3": 0.4070324986680874,
+        "cost_sensitive_selection": 3.1682823186840476,
+        "regret_pairs": 767,
+        "pair_softplus": 1.800484808554228,
+        "pair_order_fail_fraction": 0.19035202086049544,
+        "known_bad_pair_selected_fraction": 0.041720990873533245,
+        "macro_component_top1": 0.21939196461229876,
+        "base_full_choice_changes": 0,
+        "ordinary_covered_regret_cp": 56.11772665764547,
+        "ordinary_regret_covered_roots": 739,
+        "complete_support_regret_cp": 94.82170542635659,
+        "complete_support_regret_roots": 129,
+        "closed_test_opened": false
+      }
+    }
+  },
+  "initial_interaction_posthoc_bank3": {
+    "roots": 1877,
+    "hard_ce": 2.484634602647801,
+    "top1": 0.2743740010655301,
+    "top3": 0.48748002131060203,
+    "cost_sensitive_selection": 3.515559211241922,
+    "regret_pairs": 767,
+    "pair_softplus": 2.340043966768644,
+    "pair_order_fail_fraction": 0.25945241199478486,
+    "known_bad_pair_selected_fraction": 0.1316818774445893,
+    "macro_component_top1": 0.27120641632555886,
+    "base_full_choice_changes": 779,
+    "ordinary_covered_regret_cp": 50.53063725490196,
+    "ordinary_regret_covered_roots": 816,
+    "complete_support_regret_cp": 82.0077519379845,
+    "complete_support_regret_roots": 129,
+    "closed_test_opened": false
+  },
+  "qualification": "DEV diagnostics; game strength and graph benefit not established; forced teacher scores approximate unequal-budget estimates"
+}
