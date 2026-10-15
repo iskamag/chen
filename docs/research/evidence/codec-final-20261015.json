@@ -1,0 +1,20 @@
+{
+  "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=3905.0\nscalar_queries_full_relation_ns_per_position=53030.3\nscalar_queries_over_codec=13.580\nscalar_piece_union_full_relation_ns_per_position=3545.3\ncodec_over_scalar_piece_union=1.101\northodox_legal_only_ns_per_position=1672.6 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+  "affinity": [
+    2
+  ],
+  "binary_sha256": "076e16a290e712bf3da1fab16ff1b74acd25701d6f1adfc757f8f7af0757122a",
+  "source_sha256": {
+    "src/codec.rs": "97108aab10b24ab8f9aadc6d4fdb0e4cffa30392a1d9ed553e90a99c6628b2c7",
+    "examples/codec_probe.rs": "6b365506ed904e80b522be8ffb63cdbf8d944cef6008c44fa9c7f7ad36da7d90"
+  },
+  "argv": [
+    "taskset",
+    "-c",
+    "2",
+    "target/release/examples/codec_probe",
+    "512",
+    "20"
+  ],
+  "scope": "One final integrated shared-host diagnostic, fixed method order; no scalar speedup or strength claim"
+}

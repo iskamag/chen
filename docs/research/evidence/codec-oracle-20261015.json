@@ -1,0 +1,22 @@
+{
+  "positions": 15641,
+  "legal_actions": 414731,
+  "checking_actions": 22399,
+  "special_actions": {
+    "castling": 263,
+    "en_passant": 75,
+    "promotion": 1432,
+    "in_check": 696
+  },
+  "seed": 20261015,
+  "games": 128,
+  "max_plies": 128,
+  "seconds": 9.209563740994781,
+  "python_chess": "1.11.2",
+  "oracle_sha256": "ddbc77e7d1ca5c32b469ae4507725db52902423a2db274248fb25a1f9d6ef9fe",
+  "script_sha256": "c8f43cb32528f788dac8c9892aacdc075efc61b970439649eca6a7c0058b37e5",
+  "input_sha256": "3008e34a5d7c3bdf0eebb038eb2479a4df6836dd9abe37f8b400b6dc0b4b94b0",
+  "scope": "Exact legal action sets and check effects on sampled roots; no strength claim",
+  "codec_source_sha256": "97108aab10b24ab8f9aadc6d4fdb0e4cffa30392a1d9ed553e90a99c6628b2c7",
+  "oracle_source_sha256": "9de3b8f23f93273976d88913510b2a96f6c9e8db21c700f18dd6459f76681524"
+}

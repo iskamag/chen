@@ -1,4 +1,18 @@
-# Research checkpoint — 2026-10-03
+# Research checkpoints
+
+2026-10-15 [integrated CPU result](CPU_IMPROVEMENTS_20261015.md): [compile-time evaluation geometry](CPU_EVAL_20261015.md)
+and [search scratch reuse](CPU_SEARCH_20261015.md) preserve fixed-work search
+outputs while reducing runtime/allocation work. `BookSeed=0` now selects the
+most common opening edge as documented, with stable authored-order ties;
+nonzero seeds retain weighted selection. The new
+[counterfactual codec](CHESS_CODEC.md) computes exact attacks and legality
+across sparse alternatives without constructing successor positions. Its
+[linear transfer refinement](CODEC_TRANSFER.md) reduces repeated channel work;
+the strong scalar comparison remains explicit. The selectable
+[codec-policy](CODEC_POLICY.md) consumes that relation without recursive search,
+with untrained geometric preferences and depth/nodes zero. Independent
+python-chess checks cover complete legal sets/check effects. These are CPU
+implementation and mechanism results, without a new match rating or GPU run.
 
 2026-10-13 consolidation: `research/neural` is merged into `main`; optional
 experiments now live in `neural/` in the engine checkout. The separate worktree

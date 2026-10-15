@@ -1,6 +1,7 @@
 use chen::{
     OpeningBook, Position, SearchConfig, SearchLimits, Searcher,
     backend::{CpuBatchEvaluator, SearchBackend},
+    codec_policy::CodecPolicy,
     core::perft,
     drowsy::{DrowsyConfig, DrowsySearch},
     eval::evaluator,
@@ -71,7 +72,7 @@ fn run() -> Result<(), String> {
         Some("gpu-perft") => gpu_perft(&args[1..]),
         Some("help") | Some("--help") | Some("-h") => {
             println!(
-                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--book] [--book-seed N] [--book-plies N] [--suite FILE] [--hash MB] [--backend alphabeta|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool|hip-root-retry] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
+                "Chen chess engine\n  chen [uci]\n  chen perft|divide DEPTH [FEN]\n  chen gpu-perft DEPTH [--max-positions N] [FEN]\n  chen bench [--depth N] [--movetime MS] [--nodes N] [--eval material|tapered|neural] [--no-tt] [--no-qsearch] [--no-ordering] [--pvs] [--aspiration CP] [--book] [--book-seed N] [--book-plies N] [--suite FILE] [--hash MB] [--backend alphabeta|codec-policy|drowsy|cpu-frontier|hip-frontier|cpu-resident|hip-resident|cpu-selective|hip-selective|hip-bounded|hip-root-pool|hip-root-retry] [--batch-size N] [--max-positions N] [--selective-batch N] [--selective-candidates N]\nBench emits JSON Lines, with a fresh searcher/table per position."
             );
             Ok(())
         }
@@ -154,6 +155,14 @@ fn make_backend(
 ) -> Result<Box<dyn SearchBackend>, String> {
     match name {
         "alphabeta" => Ok(Box::new(Searcher::new(evaluator(eval)?, config))),
+        "codec-policy" => {
+            if eval != "tapered" {
+                return Err(
+                    "codec-policy owns tapered patch evaluation; set Eval to tapered".into(),
+                );
+            }
+            Ok(Box::new(CodecPolicy::default()))
+        }
         "drowsy" => {
             if eval != "tapered" {
                 return Err("Drowsy owns the tapered evaluator; set Eval to tapered".into());
@@ -324,7 +333,7 @@ fn uci() -> Result<(), String> {
                 output("option name PVS type check default false");
                 output("option name AspirationWindow type spin default 0 min 0 max 32000");
                 output(
-                    "option name Backend type combo default alphabeta var alphabeta var drowsy var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool var hip-root-retry",
+                    "option name Backend type combo default alphabeta var alphabeta var codec-policy var drowsy var cpu-frontier var hip-frontier var cpu-resident var hip-resident var cpu-selective var hip-selective var hip-bounded var hip-root-pool var hip-root-retry",
                 );
                 output("option name DrowsyDelta type spin default 80 min 0 max 32000");
                 output("option name DrowsyTheta type string default 0.55");
@@ -418,6 +427,7 @@ fn uci() -> Result<(), String> {
                             if matches!(
                                 value.as_str(),
                                 "alphabeta"
+                                    | "codec-policy"
                                     | "drowsy"
                                     | "cpu-frontier"
                                     | "hip-frontier"
@@ -576,6 +586,16 @@ fn uci() -> Result<(), String> {
                                     #[cfg(feature = "hip")]
                                     if let Some(stats) = searcher.bounded_stats() {
                                         output(format!("info string bounded {}", stats.to_json()));
+                                    }
+                                    if let Some(stats) = searcher.codec_stats() {
+                                        output(format!(
+                                            "info string codec-policy score-kind {} alternatives {} legal {} scored {} lane-words {} counterfactual-boards 0 tree-nodes 0",
+                                            stats.score_kind,
+                                            stats.alternatives,
+                                            stats.legal_alternatives,
+                                            stats.scored_alternatives,
+                                            stats.lane_words
+                                        ));
                                     }
                                     if let Some(stats) = searcher.drowsy_stats() {
                                         output(format!(
@@ -866,6 +886,11 @@ fn bench(args: &[String]) -> Result<(), String> {
             .map_or_else(|| "null".to_owned(), |s| s.to_json());
         #[cfg(not(feature = "hip"))]
         let bounded = "null";
+        let codec = searcher.codec_stats().map_or_else(|| "null".to_owned(), |s| format!(
+            "{{\"alternatives\":{},\"legal_alternatives\":{},\"scored_alternatives\":{},\"lane_words\":{},\"boundary_compositions\":{},\"patch_edits\":{},\"attack_bytes\":{},\"counterfactual_boards\":0,\"tree_nodes\":0,\"score_kind\":{}}}",
+            s.alternatives, s.legal_alternatives, s.scored_alternatives, s.lane_words,
+            s.boundary_compositions, s.patch_edits, s.attack_bytes, json_string(s.score_kind)
+        ));
         let drowsy = searcher.drowsy_stats().map_or_else(|| "null".to_owned(), |s| {
             let theta = if drowsy_config.theta.is_infinite() { json_string("inf") }
                 else { drowsy_config.theta.to_string() };
@@ -883,7 +908,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             s.minimum_frontier_depth, s.maximum_frontier_depth, s.pv_depth, s.root_flags, s.stop_reason,
         ));
         println!(
-            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"drowsy\":{},\"book\":{},\"book_seed\":{},\"book_plies\":{},\"opening\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
+            "{{\"engine\":\"chen\",\"version\":\"{}\",\"backend\":{},\"batch_size\":{},\"max_positions\":{},\"evaluated_positions\":{},\"h2d_ms\":{},\"kernel_ms\":{},\"d2h_ms\":{},\"position\":{},\"fen\":{},\"eval\":{},\"evaluator_artifact_sha256\":{},\"neural_execution\":{},\"selective\":{},\"bounded\":{},\"root_pool\":{},\"drowsy\":{},\"codec\":{},\"book\":{},\"book_seed\":{},\"book_plies\":{},\"opening\":{},\"requested_movetime_ms\":{},\"requested_nodes\":{},\"tt\":{},\"quiescence\":{},\"ordering\":{},\"pvs\":{},\"aspiration_window\":{},\"hash_mb\":{},\"requested_depth\":{},\"depth\":{},\"score_cp\":{},\"bestmove\":{},\"nodes\":{},\"qnodes\":{},\"elapsed_ns\":{},\"nps\":{},\"stopped\":{},\"pv\":{}}}",
             env!("CARGO_PKG_VERSION"),
             json_string(&backend_name),
             frontier_config.batch_size,
@@ -901,6 +926,7 @@ fn bench(args: &[String]) -> Result<(), String> {
             bounded,
             root_pool,
             drowsy,
+            codec,
             result.book_move.is_some(),
             book_seed,
             book_plies,

@@ -51,6 +51,10 @@ cargo clippy --locked --all-targets --all-features -- -D warnings
 ./target/release/chen perft 5 # 4,865,609
 ```
 
+A CPU-only [counterfactual codec experiment](docs/research/CHESS_CODEC.md)
+composes sparse alternatives together. Its searchless policy is selectable with
+`setoption name Backend value codec-policy`; see [how it works](docs/research/CODEC_POLICY.md).
+
 Optional HIP experiments target AMD gfx1030 and require ROCm;
 see [GPU setup](docs/GPU_INTEGRATION.md).
 Optional [neural experiments](neural/README.md) live in `neural/` and focus on

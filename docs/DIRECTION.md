@@ -1,5 +1,15 @@
 # Chen architecture and near-term direction
 
+The 2026-10-15 work is CPU-only: exact evaluator/search implementation
+improvements and a separate [counterfactual codec](research/CHESS_CODEC.md).
+The codec composes sparse alternatives in movement channels; its
+[searchless policy](research/CODEC_POLICY.md) is runnable through UCI but has
+untrained static preferences. The [linear transfer refinement](research/CODEC_TRANSFER.md)
+reuses channel prefixes and packed lane words. Exact rule consequences and
+playing strength remain separate questions; no new strength estimate or GPU
+execution accompanies this work. The earlier GPU/neural program below remains
+a historical direction, not a requirement to run unavailable hardware.
+
 Chen's `main` checkout contains the runnable Rust engine, gfx1030 runtime,
 evaluation harness and optional model/data experiments in `neural/`. The former
 `research/neural` worktree is merged and retired. The
@@ -42,6 +52,7 @@ not alternative implementations to import or edit.
 | Boundary | Authority | Extensions belong here |
 | --- | --- | --- |
 | Exact chess state and legal moves | `src/core.rs`, `src/rules.rs`; CPU reference and `RulesBackend` | Faster attacks or GPU transitions, checked against exact state/hash/legal-action oracles |
+| Counterfactual channel consequences | `src/codec.rs`; independently checked legal/check/attack relation | Sparse alternative composition without successor boards; history remains outside the codec |
 | Scheduling, budgets, cancellation and terminal decisions | `SearchBackend`; `src/search.rs`, `frontier.rs`, `resident.rs`, `selective.rs`, `drowsy.rs` | Named search policies with explicit work, completed horizon and failure semantics |
 | Position scores | `Evaluator`, `BatchEvaluator`; `src/eval.rs`, `backend.rs` | Classical, fully observed neural or incremental scoring, always with a declared score frame |
 | Device storage and dispatch | `src/hip.rs`, `device.rs`, `gpu/` | Versioned HIP ABI, bounded arenas, stream ownership and measured kernels |

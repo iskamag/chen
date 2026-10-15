@@ -145,6 +145,9 @@ pub trait SearchBackend: Send {
     fn drowsy_stats(&self) -> Option<crate::drowsy::DrowsyStats> {
         None
     }
+    fn codec_stats(&self) -> Option<crate::codec_policy::CodecPolicyStats> {
+        None
+    }
     fn root_pool_stats(&self) -> Option<String> {
         None
     }

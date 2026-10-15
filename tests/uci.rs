@@ -305,3 +305,38 @@ fn drowsy_uci_controls_telemetry_and_infinite_attention() {
     assert_eq!(engine.until("bestmove "), "bestmove 0000");
     engine.send("quit");
 }
+
+#[test]
+fn codec_policy_is_selectable_and_reports_symbolic_work_separately() {
+    let mut engine = Engine::new();
+    engine.send("uci");
+    let handshake = engine.collect_until("uciok");
+    assert!(
+        handshake
+            .iter()
+            .any(|line| line.contains("var codec-policy"))
+    );
+    engine.send("setoption name Backend value codec-policy");
+    engine.send("position startpos");
+    engine.send("go depth 64");
+    let lines = engine.collect_until("bestmove ");
+    assert!(
+        lines
+            .iter()
+            .any(|line| line.contains("depth 0 score cp") && line.contains("nodes 0"))
+    );
+    assert!(lines.iter().any(
+        |line| line.contains("codec-policy score-kind static_heuristic")
+            && line.contains("counterfactual-boards 0 tree-nodes 0")
+    ));
+    let best = lines.last().unwrap().split_whitespace().nth(1).unwrap();
+    assert!(Position::startpos().parse_uci_move(best).is_ok());
+    engine.send("setoption name Eval value material");
+    engine.until("info string backend creation failed:");
+    engine.send("setoption name Eval value tapered");
+    engine.send("setoption name Backend value alphabeta");
+    engine.send("go depth 2");
+    assert!(engine.until("info depth ").starts_with("info depth 1 "));
+    engine.until("bestmove ");
+    engine.send("quit");
+}

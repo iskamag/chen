@@ -88,6 +88,7 @@ pub struct RelationStats {
 pub struct MoveRelation {
     decisions: Vec<Decision>,
     attacks: Vec<[u64; 128]>,
+    legal_words: Vec<u64>,
     stats: RelationStats,
 }
 impl MoveRelation {
@@ -100,6 +101,24 @@ impl MoveRelation {
             .filter(|d| d.legal)
             .map(|d| d.mv)
             .collect()
+    }
+    /// Candidate i is bit i. Parent, castling-transit and padding lanes are excluded.
+    pub fn legal_words(&self) -> &[u64] {
+        &self.legal_words
+    }
+    /// Attack predicates for whole alternative classes, in the same coordinates
+    /// as `legal_words`. Consumers can intersect channels without unpacking boards.
+    pub fn attacked_words(&self, by: Color, target: u8) -> impl Iterator<Item = u64> + '_ {
+        assert!(target < 64, "target outside board");
+        let row = by.index() * 64 + target as usize;
+        (0..self.legal_words.len()).map(move |word| {
+            // Physical lane zero is the unchanged parent. Shift across the word
+            // boundary so public bit zero denotes decision zero in every word.
+            let low = self.attacks[word][row] >> 1;
+            let high = self.attacks.get(word + 1).map_or(0, |next| next[row] << 63);
+            let valid = (self.decisions.len() - word * 64).min(64);
+            (low | high) & (u64::MAX >> (64 - valid))
+        })
     }
     pub fn stats(&self) -> RelationStats {
         self.stats
@@ -351,6 +370,7 @@ impl CodecPosition {
         let mut relation = MoveRelation {
             decisions: Vec::new(),
             attacks,
+            legal_words: vec![0; decisions.len().div_ceil(64)],
             stats,
         };
         for (index, decision) in decisions.iter_mut().enumerate() {
@@ -374,6 +394,11 @@ impl CodecPosition {
                         self.side.opposite(),
                         square,
                     );
+        }
+        for (index, decision) in decisions.iter().enumerate() {
+            if decision.legal {
+                relation.legal_words[index / 64] |= 1 << (index % 64);
+            }
         }
         relation.decisions = decisions;
         relation

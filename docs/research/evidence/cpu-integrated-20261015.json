@@ -1,0 +1,1950 @@
+{
+  "source_scope": "Exact implementation comparison, not a strength test",
+  "platform": "Linux-7.2.8-zen1-1-zen-x86_64-with-glibc2.44",
+  "affinity": [
+    2
+  ],
+  "config": {
+    "base": "/tmp/chen-baseline-20261015/target/release/chen",
+    "candidate": "/tmp/chen-integration/target/release/chen",
+    "suite": "/tmp/chen-integration/benches/positions.txt",
+    "rounds": 6,
+    "nodes": 200000,
+    "depth": 64,
+    "cpu": 2,
+    "out": "results/cpu-integrated-20261015"
+  },
+  "sha256": {
+    "base": "22fff64bacf99aaf70dc0ca6be42d73369826fc6cd1c2439e1b7d2cdbc5b2ef5",
+    "candidate": "d94f95f0d8c2c72f7307896325d7aa8cf1118328f8b0d45e9e079f192b78cdb3",
+    "suite": "76d7d7d7df2011c9dd9f6be45fbb173c1d2266d4dc826f644ab6066cf5c84d74"
+  },
+  "runner_sha256": "c9fe669cb34d4dc27a7f3a379a1de8ce5a5cd7871e70e7103241f3eed8d9ab27",
+  "process_wall_ns": [
+    {
+      "round": 0,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 744236647
+    },
+    {
+      "round": 0,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 757654719
+    },
+    {
+      "round": 0,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 641318227
+    },
+    {
+      "round": 0,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 628361196
+    },
+    {
+      "round": 1,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 620215120
+    },
+    {
+      "round": 1,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 629796394
+    },
+    {
+      "round": 1,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 692211868
+    },
+    {
+      "round": 1,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 704320080
+    },
+    {
+      "round": 2,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 693168047
+    },
+    {
+      "round": 2,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 704659580
+    },
+    {
+      "round": 2,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 617866792
+    },
+    {
+      "round": 2,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 628326365
+    },
+    {
+      "round": 3,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 615691243
+    },
+    {
+      "round": 3,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 629076995
+    },
+    {
+      "round": 3,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 696399635
+    },
+    {
+      "round": 3,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 705361019
+    },
+    {
+      "round": 4,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 691967318
+    },
+    {
+      "round": 4,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 703984390
+    },
+    {
+      "round": 4,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 617422782
+    },
+    {
+      "round": 4,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 628418975
+    },
+    {
+      "round": 5,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 617800892
+    },
+    {
+      "round": 5,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 629025035
+    },
+    {
+      "round": 5,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 694059096
+    },
+    {
+      "round": 5,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 705003820
+    },
+    {
+      "round": 6,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 691924878
+    },
+    {
+      "round": 6,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 704210290
+    },
+    {
+      "round": 6,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 616756842
+    },
+    {
+      "round": 6,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 628085116
+    },
+    {
+      "round": 7,
+      "variant": "candidate",
+      "pvs": false,
+      "elapsed_ns": 618785061
+    },
+    {
+      "round": 7,
+      "variant": "candidate",
+      "pvs": true,
+      "elapsed_ns": 630541114
+    },
+    {
+      "round": 7,
+      "variant": "base",
+      "pvs": false,
+      "elapsed_ns": 693933596
+    },
+    {
+      "round": 7,
+      "variant": "base",
+      "pvs": true,
+      "elapsed_ns": 707094399
+    }
+  ],
+  "summary": {
+    "pvs_False": {
+      "candidate_over_base_round_total_ratios": [
+        0.8910022408873001,
+        0.8845191068161292,
+        0.8912650573817898,
+        0.8886200047541162,
+        0.8900995140276314,
+        0.8905729465135968
+      ],
+      "median_speedup": 1.1231711863461447,
+      "per_position_median_speedup": {
+        "mate": 0.9760935352726147,
+        "start": 1.1665575772611765,
+        "promotion": 1.0660681431926537,
+        "rook-ending": 1.101245875756984,
+        "middlegame": 1.1603813223729225,
+        "kiwipete": 1.1159093325759495
+      }
+    },
+    "pvs_True": {
+      "candidate_over_base_round_total_ratios": [
+        0.8915070492523061,
+        0.8897679383531117,
+        0.8914580309441716,
+        0.8908851672594444,
+        0.8905748460177252,
+        0.8905464112997418
+      ],
+      "median_speedup": 1.122674651742985,
+      "per_position_median_speedup": {
+        "mate": 0.9837303992542907,
+        "start": 1.1645466806044271,
+        "promotion": 1.0658846321847513,
+        "rook-ending": 1.1007745897830659,
+        "middlegame": 1.1588903598930462,
+        "kiwipete": 1.1170155731507199
+      }
+    }
+  },
+  "signatures_checked": 12,
+  "timings": [
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 154261408
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 164237802
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 130679712
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 153786548
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 132017071
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 22750
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 154409878
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 171700757
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 134403000
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 157814866
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 131026622
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 19990
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 132037481
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 146984742
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 114941481
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123216086
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115337241
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16809
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 122688887
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142768305
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 113912922
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126100625
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114365512
+    },
+    {
+      "round": 0,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17550
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 122791497
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 136874958
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110925404
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123950566
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115419152
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16350
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123059947
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142619555
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 114472902
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126324105
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114768082
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17420
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143410145
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 152660909
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121683998
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 142619995
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 123127606
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16130
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143671554
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159655735
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125190045
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 146076832
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 121932737
+    },
+    {
+      "round": 1,
+      "warmup": true,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 16830
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143558994
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 152867449
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121522497
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 143421204
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 123240006
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 15980
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143359005
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159239525
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125466236
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 145761663
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 122067037
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 18070
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 123121057
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 137363248
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110253454
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123590446
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115658951
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16260
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 122957857
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142851854
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 113965242
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 125881395
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114728952
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 24740
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 123089167
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 136356189
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110364904
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 122866347
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115418612
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 15320
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123062127
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 143099234
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 114410942
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 125959215
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114107922
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17220
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143736524
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 156475677
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121526678
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 142801865
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 122947726
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 15660
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143277424
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159151745
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125285156
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 147858622
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 121958678
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17290
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143383845
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 152698499
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121402198
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 143016725
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 122762357
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 15690
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143376624
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159242625
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125116035
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 145638513
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 121970887
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17540
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 122879117
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 137138588
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110119435
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123718596
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115110891
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16350
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123214916
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142490305
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 113649102
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126030714
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114483392
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17810
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 122844797
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 136776908
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110572044
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123296237
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115427651
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 17050
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123473156
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142532075
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 114157001
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126077115
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114066152
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17810
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143403564
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 153423829
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121643657
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 143764534
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 123007346
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 15880
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143266624
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159220235
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125234735
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 146559952
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 122001307
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17110
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143199835
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 152563109
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121438127
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 142933614
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 123122726
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16210
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143536294
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 159354285
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125149726
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 146270543
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 121934138
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 18270
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 123034277
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 136567048
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110262314
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123186007
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115115152
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16720
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123225687
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142669435
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 113705133
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126111195
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114345352
+    },
+    {
+      "round": 6,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17740
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 123058246
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 137155029
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 110469554
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 123967366
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 115508131
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16510
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 123226276
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 142986425
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 114406211
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 126527774
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 114657941
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "candidate",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17840
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "start",
+      "elapsed_ns": 143516214
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "kiwipete",
+      "elapsed_ns": 152885559
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "rook-ending",
+      "elapsed_ns": 121509948
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "middlegame",
+      "elapsed_ns": 143751974
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "promotion",
+      "elapsed_ns": 123468347
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": false,
+      "position": "mate",
+      "elapsed_ns": 16590
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "start",
+      "elapsed_ns": 143537265
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "kiwipete",
+      "elapsed_ns": 160635004
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "rook-ending",
+      "elapsed_ns": 125963495
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "middlegame",
+      "elapsed_ns": 146337112
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "promotion",
+      "elapsed_ns": 121757837
+    },
+    {
+      "round": 7,
+      "warmup": false,
+      "variant": "base",
+      "pvs": true,
+      "position": "mate",
+      "elapsed_ns": 17530
+    }
+  ],
+  "signatures": {
+    "False/start": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 6,
+      "score_cp": 0,
+      "bestmove": "b1c3",
+      "nodes": 200000,
+      "qnodes": 160020,
+      "stopped": true,
+      "pv": "b1c3 b8c6 g1f3 g8f6 a2a4 a7a5"
+    },
+    "False/kiwipete": {
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 4,
+      "score_cp": -18,
+      "bestmove": "e2a6",
+      "nodes": 200000,
+      "qnodes": 195278,
+      "stopped": true,
+      "pv": "e2a6 e6d5 g2h3 e7e5"
+    },
+    "False/rook-ending": {
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 8,
+      "score_cp": 54,
+      "bestmove": "b4f4",
+      "nodes": 200000,
+      "qnodes": 154566,
+      "stopped": true,
+      "pv": "b4f4 h4g3 f4d4 g3g2 a5b4 g2g3 e2e4 g3f4"
+    },
+    "False/middlegame": {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "depth": 5,
+      "score_cp": 8,
+      "bestmove": "d4c5",
+      "nodes": 200000,
+      "qnodes": 178421,
+      "stopped": true,
+      "pv": "d4c5 a7a5 b2b4 a5b4 c3b4 c6b4"
+    },
+    "False/promotion": {
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "depth": 9,
+      "score_cp": 903,
+      "bestmove": "a7a8q",
+      "nodes": 200000,
+      "qnodes": 160813,
+      "stopped": true,
+      "pv": "a7a8q e8e7 a8h1 e7d6 e1d2 d6e5 h1h2 e5d4 h2f4 d4d5"
+    },
+    "False/mate": {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "depth": 1,
+      "score_cp": 29999,
+      "bestmove": "f7g7",
+      "nodes": 29,
+      "qnodes": 28,
+      "stopped": false,
+      "pv": "f7g7"
+    },
+    "True/start": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "depth": 6,
+      "score_cp": 0,
+      "bestmove": "b1c3",
+      "nodes": 200000,
+      "qnodes": 158868,
+      "stopped": true,
+      "pv": "b1c3 b8c6 g1f3 g8f6 a2a4 a7a5"
+    },
+    "True/kiwipete": {
+      "fen": "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+      "depth": 4,
+      "score_cp": -18,
+      "bestmove": "e2a6",
+      "nodes": 200000,
+      "qnodes": 193625,
+      "stopped": true,
+      "pv": "e2a6 e6d5 g2h3 e7e5"
+    },
+    "True/rook-ending": {
+      "fen": "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1",
+      "depth": 8,
+      "score_cp": 54,
+      "bestmove": "b4f4",
+      "nodes": 200000,
+      "qnodes": 149883,
+      "stopped": true,
+      "pv": "b4f4 h4g3 f4d4 g3g2 a5b4 g2g3 e2e4 g3f4"
+    },
+    "True/middlegame": {
+      "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P4/2PBPN2/PP1N1PPP/R1BQ1RK1 w - - 2 8",
+      "depth": 5,
+      "score_cp": 8,
+      "bestmove": "d4c5",
+      "nodes": 200000,
+      "qnodes": 176630,
+      "stopped": true,
+      "pv": "d4c5 a7a5 b2b4 a5b4 c3b4 c6b4"
+    },
+    "True/promotion": {
+      "fen": "4k3/P7/8/8/8/8/7p/4K3 w - - 0 1",
+      "depth": 9,
+      "score_cp": 903,
+      "bestmove": "a7a8q",
+      "nodes": 200000,
+      "qnodes": 164531,
+      "stopped": true,
+      "pv": "a7a8q e8e7 a8h1 e7d6 e1d2 d6e5 h1h2 e5e4 h2d6"
+    },
+    "True/mate": {
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 w - - 0 1",
+      "depth": 1,
+      "score_cp": 29999,
+      "bestmove": "f7g7",
+      "nodes": 33,
+      "qnodes": 32,
+      "stopped": false,
+      "pv": "f7g7"
+    }
+  },
+  "source_sha256": {
+    "src/codec.rs": "97108aab10b24ab8f9aadc6d4fdb0e4cffa30392a1d9ed553e90a99c6628b2c7",
+    "src/search.rs": "62e993c97a588ee4c1e84f708ed5449d4ee1862c8b5771c1d9e7139198cdcdfd",
+    "src/eval.rs": "918ba98b6e8f6c53c40030b1bed322659b717818ff7ce13145d2988d329a675d",
+    "src/lib.rs": "11f5ee80e89bf9523d0567267edffd94c02336d824b20a4c44c81979a2bf31ce",
+    "src/codec_policy.rs": "48a91fce79dae0e9c4049e6b7c87ea687966351efa501332a4a91b684a59579b",
+    "src/two_fidelity.rs": "57c36a4f2764e68494ede8fc1aa907db1ac05aa90b12ff2d62f11f82a55850d4",
+    "src/tt.rs": "03fb1384c81d925a4223ed4e2808c057ffdcbfa1599ae6e8cbe83808b1672558",
+    "src/strength.rs": "96a76f56cd8fb8edbf16253fb73d209eee82a3a96eae4394546d2ba31b8483e5",
+    "src/selective.rs": "7ddbab16f5d2ccc24814e737d85a665d7e315fb01150269db472fcb0a04ac31e",
+    "src/rules.rs": "e03c7fdc0084ed920f1539feafdf900298082e866ea8f89fc3a07484936540a6",
+    "src/resident.rs": "6db810a62aa8d77f27995ea0f2e44c31701bd6ed3a0feb7fb81024df72b7c84b",
+    "src/opening.rs": "0e48256c075b5b771501b0e9ab11235b0ef904f2266609fb3bdbffa6ca446878",
+    "src/neural.rs": "6ca0305a804329e147c581cef96e29bdf241c6b67d175ff160477ec8826efdbf",
+    "src/main.rs": "ebfb02b8fa838646e24c96828deffd07cf425c473455158ef55832e8e55017d7",
+    "src/hip_root_retry.rs": "e38da922e39aad353feeeb77a4a91733a4f463e2621744c483cb4ecf8d5fc9ed",
+    "src/hip_root_pool.rs": "fb61d26e2602978efd902702f0c978013963491dcf6672fe39a5d659d4a5428a",
+    "src/hip_bounded.rs": "0702695d30b35ac5d2e57af44fe09daf6de4fc2ea0cefd39e66fb81b0ae487d8",
+    "src/hip.rs": "627a1930d61e3cbe726dc801eeced503ec24b703f85311a3c9846f94f376da23",
+    "src/frontier.rs": "e6c7f2f8194aee18bf7bad716de02275abb2b755a71847ed20a9e7ac765c94f4",
+    "src/drowsy.rs": "46fa9c5aaf01974689e806e7712e3c3127ae24e1b845cb21bd779af88e0e970c",
+    "src/device.rs": "5783403f7ad85a7ae741bedd4265efd15d8de8bd3ad9727199acab85b0861386",
+    "src/core.rs": "e19244c163d5304ab286fe5680975b03b49917ec081d16d130e2973e280bb20b",
+    "src/backend.rs": "095462a2e472d4fdab51e22c1814e253746a1a24f72ab1a48b9768d607391d9b",
+    "src/attacks.rs": "92b2cc778517740c5d1a60c8c0ae097b62168a35797054ae79036e3a806054e9",
+    "Cargo.toml": "250aa605ef6d6170b746c2a9e1ebb47860a6dface5843e0950c63a7184a2be68",
+    "Cargo.lock": "bb158b896e60f7c25b3ec34becd27ab1a447b593513267d389ca0f1b973a9601",
+    "build.rs": "0e355b7356b69aeec377bb435f29d15b8a0f20ec007ff5d28a5963ab58821e79"
+  },
+  "baseline_revision": "c4c90961e87778dee811da9d78873a07ab205876",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28) (Artix Linux rust 1:1.99.0-1)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "retained_directory": "/home/iskam/src/vibe/chen/results/improve-20261015"
+}

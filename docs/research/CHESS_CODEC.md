@@ -1,5 +1,11 @@
 # Counterfactual chess codec
 
+The current implementation includes [linear channel transfers and shared
+geometry](CODEC_TRANSFER.md), plus [whole-set queries and a selectable static
+policy](CODEC_POLICY.md). The measurements below retain the initial implementation
+and the discovery of its weak comparator; the refinement report owns the newer
+near-parity result against the strong scalar control.
+
 This executable CPU experiment changes the unit of work from one successor board
 to a relation of sparse alternatives. It constructs exact legality and all-square
 attack consequences together, without constructing or making a `Position` for
@@ -69,7 +75,7 @@ cargo test --test codec
 cargo run --release --example codec_probe -- 512 10
 ```
 
-The four tests cover boundary associativity and first-blocker semantics, packed
+The original four tests cover boundary associativity and first-blocker semantics, packed
 board identity, exact square patches and every color/target attack answer for all
 candidates in special-rule fixtures, deterministic legal walks, cross-word lane
 sets, and known independent perft counts. Fixtures include pinned en passant,
@@ -79,7 +85,9 @@ stalemate and a locally valid many-queen position. Known depth-three counts are
 8,902 (start), 97,862 (Kiwipete), and 2,812 (rook/pawn ending). Only the tests and
 probe use the orthodox kernel to construct oracle successors; production
 `src/codec.rs` does not call `make_move`, `legal_moves` or the orthodox attack code.
-Both debug and release tests passed on 2026-10-15.
+Both debug and release tests passed on 2026-10-15. The refinement adds focused
+linear-work and target-exclusion tests; the whole-set query interface has
+separate cross-word/padding controls.
 
 The probe compares identical Boolean attack questions for every candidate,
 including illegal candidates. Both scalar controls receive precomputed candidate
@@ -137,8 +145,11 @@ example and executable hashes. Reproduce the focused check with
 `cargo test --release --example codec_probe`; strict example Clippy and formatting
 also passed.
 
-The current codec is roughly four times slower than scalar piece union on this
-workload; this rejects a general full-relation speedup claim for this version. Its
+The original codec was roughly four times slower than scalar piece union on
+this workload; this rejects a general full-relation speedup claim for that
+version. The [subsequent refinement](CODEC_TRANSFER.md) reduces codec runtime
+about fourfold and reaches approximate scalar parity, without a scalar speed
+advantage claim. Its
 retained all-square answers are a transposed representation, not an output-size
 gain over two ordinary attack bitboards per candidate: those masks need 16 bytes
 per candidate, while codec padding needs 1,024 bytes per 64-lane word. The full

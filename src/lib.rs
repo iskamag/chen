@@ -2,6 +2,7 @@
 pub mod attacks;
 pub mod backend;
 pub mod codec;
+pub mod codec_policy;
 pub mod core;
 #[cfg(all(feature = "hip", target_os = "linux"))]
 pub mod device;
