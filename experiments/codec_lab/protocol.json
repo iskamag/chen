@@ -1,0 +1,29 @@
+{
+  "round": "codec-composition-20261015",
+  "purpose": "Understand compositional algorithms through small exact ablations, not build chess bots",
+  "registration": "Before lane outcomes",
+  "lanes": [
+    {"name": "phase", "directory": "phase", "question": "Which alignment information survives transform and magnitude ablations?"},
+    {"name": "overlap", "directory": "overlap", "question": "When can local or overlapping operators recover cross-boundary visibility?"},
+    {"name": "identity", "directory": "identity", "question": "Which separable summaries preserve joint resource feasibility and conditional identity?"}
+  ],
+  "constraints": {
+    "cpu_only": true,
+    "full_chess_bots": false,
+    "teacher_engine": false,
+    "neural_training": false,
+    "production_changes": false,
+    "media_artifacts": false
+  },
+  "required_evidence": [
+    "lane protocol fixed before outcomes",
+    "exact independently expressed oracle",
+    "complete output comparisons",
+    "explicit information-loss controls",
+    "counterexamples and negative outcomes",
+    "representation footprint",
+    "setup and query cost distinguished if timed",
+    "parent rerun and counterexample audit"
+  ],
+  "cross_lane_aggregate_ranking": false
+}
