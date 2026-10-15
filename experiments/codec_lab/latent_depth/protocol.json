@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "question": "Does repeated computation within a fixed latent state resolve additional interactions without conventional move search?",
+  "registration": "Before corpus generation and lane measurements",
+  "depth_definition": "All incidence input is available from round zero; subsequent rounds reuse or compose internal state. No additional target or move is revealed per round.",
+  "lanes": ["algebra", "messages", "learned"],
+  "depths": [1, 2, 4, 8, 16, 32],
+  "corpus_seed": 2026101507,
+  "random_per_size": {
+    "3": {"train": 160, "dev": 40, "eval": 80},
+    "4": {"train": 320, "dev": 80, "eval": 160},
+    "5": {"train": 640, "dev": 160, "eval": 320},
+    "6": {"train": 640, "dev": 160, "eval": 320},
+    "7": {"eval": 160},
+    "8": {"eval": 160},
+    "10": {"eval": 160}
+  },
+  "random_sampling": "Rejection sample equal positive/negative labels per size/split; density drawn uniformly from 0.15,0.25,0.4,0.55,0.7,0.85. Distinct raw graphs throughout corpus, not an isomorphism holdout.",
+  "structure_sizes": [2, 3, 4, 6, 8, 10],
+  "structure_templates": ["forced_chain", "forced_chain_missing_last_resource", "cycle", "cycle_resource_deficit", "Hall_core_and_degree_preserving_feasible_rewire", "old_Gram_equal_pair"],
+  "structure_permutations": "Up to 8 distinct coherent target/resource permutations per template or pair, at most 128 attempts; structural rows reserved before random sampling",
+  "oracle": "Offline Hall-deficiency formula for maximum matching, independently checked by resource-subset dynamic programming on every corpus row",
+  "learning": "TRAIN fits, DEV checkpoint selection only. EVAL and STRUCTURE measured only after all model checkpoints frozen. Separate size/family metrics.",
+  "runtime_constraints": ["CPU only", "no chess engine", "no position successors", "no branch or move tree", "no runtime oracle in inference", "no production changes"],
+  "interpretation": "Algebraic interaction order, local message propagation radius, and learned recurrent inference are different meanings of latent depth and must be reported separately. Extra rounds are not assumed to improve accuracy."
+}
