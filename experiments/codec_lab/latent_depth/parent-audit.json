@@ -1,0 +1,65 @@
+{
+  "audit_source_sha256": "5844c4d69518bb8a34def279361776968d32f84ee597bc837edd74e9d6e0889f",
+  "corpus_sha256": "441a37e200d9460403e95b9318a9d4751790c13d4813e6f51cb3dcf5568311ab",
+  "independent_augmenting_path_oracle_rows": 3800,
+  "algebra": {
+    "independent_oracle_cases": 210,
+    "all_maximum_cardinality_facts_complete_by_round": 3,
+    "incorrect_exact_certificates": 0
+  },
+  "messages": {
+    "cases": 1600,
+    "incorrect_trusted_certificates": 0,
+    "forced_chain_formula_checked": "2*n-1",
+    "feasible_edge_audit": {
+      "feasible_roots": 803,
+      "removed_supported_edges": 0,
+      "forced_nonrequired_edges": 0
+    }
+  },
+  "learned": {
+    "fits": [
+      {
+        "regime": "fixed4",
+        "seed": 17,
+        "parameters": 16897,
+        "checkpoint_sha256": "2bf02e11a0c454d130162db7e1648b4f092a415e6b467d0455efa4a642b6e89a",
+        "recorded_accuracy_recomputed": true,
+        "parent_prediction_replay_identical": true
+      },
+      {
+        "regime": "fixed4",
+        "seed": 29,
+        "parameters": 16897,
+        "checkpoint_sha256": "9944a1fc03cb50660319b7bf6464644ab484f6daaa4570ee71080f4a60b15a7d",
+        "recorded_accuracy_recomputed": true,
+        "parent_prediction_replay_identical": true
+      },
+      {
+        "regime": "variable1to8",
+        "seed": 17,
+        "parameters": 16897,
+        "checkpoint_sha256": "0663d65925498b2f795a471a8ddd8835756680513b25888deef6989b38c2f12c",
+        "recorded_accuracy_recomputed": true,
+        "parent_prediction_replay_identical": true
+      },
+      {
+        "regime": "variable1to8",
+        "seed": 29,
+        "parameters": 16897,
+        "checkpoint_sha256": "0f43b426c60a79dc24ed94647179afce967dc773a5490b1a79f529986d58cbc0",
+        "recorded_accuracy_recomputed": true,
+        "parent_prediction_replay_identical": true
+      }
+    ],
+    "oracle_metadata_absent_from_encoder": true,
+    "selection_rows": 2040,
+    "retraining_replayed": false
+  },
+  "parent_replays": {
+    "algebra": true,
+    "messages": true,
+    "learned_frozen_inference": true
+  },
+  "separate_source_review": "Astra checked synchronous old-state updates, tied learned parameters, no labels/oracles in inference, train/dev/eval boundaries and sound message certificates. Corruption-control confounds documented."
+}

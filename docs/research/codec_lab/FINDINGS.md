@@ -1,5 +1,9 @@
 # What the interaction experiments show
 
+Follow-up: [latent depth without a move tree](LATENT_DEPTH.md) tests repeated
+algebraic closure, synchronous constraint messages, and learned recurrence on
+the same fixed input.
+
 This round studies how components combine. It does not optimize compressed
 storage or build a chess bot. Three agents work in isolated worktrees; the
 parent supplies an actual MDCT control and independent checks.

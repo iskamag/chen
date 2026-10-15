@@ -125,7 +125,7 @@ examples in this corpus are feasible, so getting that family right alone
 does not establish a complete compatibility solver. Missing-resource chains
 also admit simpler count/degree cues.
 
-## Controls: recurrence, coupling, and actual alignment
+## Controls: recurrence and destructive coupling interventions
 
 The controls use the **same selected weights**, not separately trained models.
 Their four-round random EVAL accuracies are:
@@ -147,8 +147,10 @@ local recurrence. Its failure shows that these trained weights use coupling;
 it does not show that a separately trained degree-only classifier must fail
 on the random distribution. Independently permuting resource identities per
 target corrupts message alignment while leaving original degree/global inputs
-and labels fixed. Its degradation shows reliance on the actual support
-relations. It is deliberately **not** a label-preserving graph transformation.
+and labels fixed. In particular the retained resource degrees generally
+contradict the altered adjacency, and original labels need not describe the
+rewired graph. This is an inconsistent-input, distribution-shifting lesion,
+not an isolated causal test of alignment or accuracy on rewired graphs.
 Coherent joint node relabelling, in contrast, preserves logits to within
 `4.77e-7` on the preregistered numerical check.
 
