@@ -1,0 +1,124 @@
+# Playable JPEG experiments
+
+This adds two explicitly different UCI policies, without changing Chen's
+production defaults. Neither establishes a 2500 Elo engine or an architectural
+breakthrough. Match results, rather than the name, must determine which is
+strongest among the tested candidates.
+
+Build and run:
+
+```sh
+cargo build --release --manifest-path experiments/jpeg_play/Cargo.toml
+experiments/jpeg_play/target/release/chen-jpeg-play --mode pure
+experiments/jpeg_play/target/release/chen-jpeg-play --mode hybrid
+```
+
+Both expose `Policy` (`pure`/`hybrid`), `Hash` (default 16 MiB), and one fixed
+CPU thread. Opening-book use is disabled. `go movetime 1000` leaves a 35 ms
+internal margin, with the relational prepass limited to the earlier of 25 ms
+and the remaining deadline. Normal clock/increment controls are also supported.
+The UCI process handles `stop` concurrently, preserves previous-position hashes
+from `position ... moves ...`, and retains the conventional searcher's TT between
+hybrid searches. The pure policy does not use that conventional searcher.
+
+## Shared exact prepass
+
+The counterfactual codec supplies every legal root move, sparse edits, and exact
+post-action attack answers. `Preferences` supplies the existing untuned
+piece-square/material/exposure ranking. The shared reply relation then certifies:
+
+- Root move checkmate and stalemate, including the original missed mate-in-one.
+- Whether each root move permits an immediate opposing checkmate. Only checking
+  opponent actions need complete reply exhaustion for this obligation.
+- Whether a child meets Chen's draw-clock, insufficient-material or repetition
+  conditions, with mate taking priority over a draw-clock transition.
+
+"Known safe" in telemetry means *certified not to allow opponent mate-in-one*,
+not general tactical safety. A proven mating root move is selected immediately.
+Otherwise a certified mate-in-one loss is excluded whenever a certified safe
+move exists. If the prepass times out, unresolved alternatives remain unknown;
+they never become negative certificates. A legal static fallback is retained
+before proof work starts. When at least one certified safe move exists,
+unresolved alternatives are also excluded from the final root selection.
+
+Each shared classification call has a 4,096 operator-word budget. Budget
+exhaustion returns `Unknown`. Deadlines are checked between relation calls and
+minimax nodes, so a single bounded relation call is not preempted midway through
+its own instruction sequence. The 35 ms margin is deliberate protection against
+that granularity and conventional search polling overhead; wall-clock compliance
+is still checked separately by the match harness.
+
+## `pure`: JPEG relation minimax
+
+This is a playable relation-based policy with **full-width iterative minimax**,
+not a static policy, beam search, alpha-beta implementation, or delegated Chen
+search. Every completed iteration visits all eligible root alternatives and all
+legal opponent continuations. There is no width cap that can silently omit a
+quiet defense. The only root exclusion is the exact immediate-mate safety gate
+above; finding a proven immediate mate can also end a node early.
+
+Each node obtains its legal alternative relation from `CodecPosition`. Shared
+reply classification distinguishes terminal consequences. A depth-one frontier
+reduces all legal move preferences, overriding heuristic values with proven
+checkmate/stalemate and draw consequences. Greater depths perform full minimax
+over these relations. The untuned geometric exposure score is a frontier
+heuristic, not an exchange proof. There is no capture quiescence or TT in this
+pure implementation. An interrupted iteration is discarded; the last fully
+completed root iteration remains the choice.
+
+This still uses conventional game-tree minimax reasoning. The codec and shared
+quantifiers are the position/consequence mechanisms; they have not removed the
+need for continuation reasoning. Scalar `Position` copies/makes are used when
+moving between relation roots. It would be inaccurate to call this a searchless
+engine or a complete implementation of the broader JPEG proposal.
+
+## `hybrid`: JPEG-assisted Chen PVS
+
+The same exact relational prepass is followed by the existing conventional
+`Searcher` using Tapered evaluation, PVS, TT, quiescence, move ordering, and a
+25 cp aspiration window. It receives only the time left before the common
+internal deadline, so the prepass does not add a second time allowance.
+
+This is deliberately named **JPEG-assisted Chen PVS**. Its ordinary game-tree
+search, evaluation, and TT are existing Chen mechanisms. A conventional result
+is accepted only if it respects a completed immediate-mate safety certificate;
+otherwise the prepass's certified-safe fallback is used. This is an honest
+hybrid strength control, not evidence that the radical representation itself
+has achieved conventional engine strength.
+
+## Verification and frozen executable
+
+The frozen v1 executable used for subsequent variant selection is SHA-256:
+
+`d3820f466ed095ee81a4a7cbc23dad2f40850886936c879c8ffc2d913637ef09`
+
+Source SHA-256:
+
+`5b93330aa1a8865ec0b6c1de32ce910fce0770e509c0e99756ea83e64db4abe9`
+
+Commands:
+
+```sh
+cargo test --release --manifest-path experiments/jpeg_play/Cargo.toml
+cargo clippy --release --manifest-path experiments/jpeg_play/Cargo.toml -- -D warnings
+```
+
+All four focused release tests pass. They cover mate-in-one for both colors even
+at draw clock 100; explicit detection/rejection of `g2g4` allowing Fool's Mate
+and its color mirror; preserved repetition history and 99-to-100 draw-clock
+transitions; malformed position input; and an exhausted deadline returning an
+unknown certificate with a legal fallback rather than a mate claim.
+
+Independent python-chess UCI smoke before the final name/cleanup freeze found:
+
+| Policy | Start-position completed depth | Move wall time | White/black mate-in-one |
+| --- | ---: | ---: | --- |
+| Pure relation minimax | 4 | 0.967 s | Both immediate mates, under 1 ms |
+| JPEG-assisted Chen PVS | 7 | 0.967 s | Both immediate mates, under 1 ms |
+
+Those are local smoke observations, not strength measurements. Root/bands agents
+own the independent final-binary special-rule smoke, paired pure-versus-hybrid
+selection, Stockfish matches, complete move audits, and video artifacts. The
+initial hybrid v0 was frozen separately for its first Stockfish pair; v0 results
+must not be silently attributed to v1. Both executable identities should remain
+in the match manifests. No GPU code is required or executed.
