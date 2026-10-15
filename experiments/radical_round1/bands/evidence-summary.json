@@ -1,0 +1,169 @@
+{
+  "scope": "DEV medians, three alternating warmed portable/native pairs; query kernels, strength N/A",
+  "architecture": {
+    "avx2_available": true,
+    "encoded_bytes": 392,
+    "full_line_attack_input_classes": 65536,
+    "full_line_attack_output_classes": 6921,
+    "kind": "architecture",
+    "king_target_obligation_input_classes": 78125,
+    "king_target_obligation_output_classes_by_king_file": [
+      14,
+      24,
+      40,
+      48,
+      48,
+      40,
+      24,
+      14
+    ],
+    "line_count": 46,
+    "lut_payload_bytes": 583952,
+    "micro_combined_attack_projection_classes": 28507,
+    "micro_entries": 28561,
+    "micro_leaper_classes": 1999,
+    "micro_ray_classes": 4096,
+    "positions": 727,
+    "pyramid_bytes": 456,
+    "strength": "N/A: geometry and constraint kernel, no move policy",
+    "target_cpu": "portable",
+    "variant": "bands"
+  },
+  "exactness": {
+    "all_masks_match": true,
+    "all_obligations_match": true,
+    "dirty_macro_counts": [
+      7971,
+      6759,
+      1991,
+      0,
+      0
+    ],
+    "kind": "exactness",
+    "legal_transitions": 16721,
+    "oracle": "independent piece/ray walker plus independent king-ray constraints; external python-chess replay requested",
+    "root_positions": 727,
+    "transition_edit_counts": [
+      0,
+      0,
+      16688,
+      5,
+      28
+    ]
+  },
+  "timing_medians": {
+    "portable": {
+      "bands-avx2": {
+        "attacks_query_ns": 324.50053731086655,
+        "attacks_build_query_ns": 954.6276113308115,
+        "complete_packet_ns": 368.42181052269603
+      },
+      "bands-scalar": {
+        "attacks_query_ns": 332.87097016850066,
+        "attacks_build_query_ns": 938.5068990715268,
+        "complete_packet_ns": 337.54600455639616
+      },
+      "micro-avx2": {
+        "attacks_query_ns": 627.1671359181568,
+        "attacks_build_query_ns": 1284.9288492950482,
+        "complete_packet_ns": 691.9958089752407
+      },
+      "micro-scalar": {
+        "attacks_query_ns": 609.4300851100413,
+        "attacks_build_query_ns": 1265.8407840440166,
+        "complete_packet_ns": 653.6232268741403
+      },
+      "pyramid-avx2": {
+        "attacks_query_ns": 310.38625128954607,
+        "attacks_build_query_ns": 1106.6497485385144,
+        "complete_packet_ns": 351.42420692916096
+      },
+      "pyramid-scalar": {
+        "attacks_query_ns": 287.969007909216,
+        "attacks_build_query_ns": 1069.7173852303988,
+        "complete_packet_ns": 325.8567099381018
+      },
+      "union-control": {
+        "attacks_query_ns": 36.72877980284273,
+        "attacks_build_query_ns": 37.34513745605991,
+        "complete_packet_ns": 88.83220856258598
+      },
+      "constraints": {
+        "control_both_kings_ns": 46.214049297504424,
+        "progressive_both_kings_ns": 29.748774931224208,
+        "query_both_kings_ns": 86.5021653627923
+      },
+      "transitions": {
+        "copy_patch_bands_query_ns": 408.3540336627594,
+        "copy_patch_ns": 87.2645681328868,
+        "copy_patch_pyramid_query_ns": 457.6881690688356,
+        "union_child_query_ns": 33.97511830183601
+      }
+    },
+    "native": {
+      "bands-avx2": {
+        "attacks_query_ns": 322.36375945667123,
+        "attacks_build_query_ns": 1010.3916351444292,
+        "complete_packet_ns": 351.5960389442916
+      },
+      "bands-scalar": {
+        "attacks_query_ns": 304.97058760316366,
+        "attacks_build_query_ns": 990.8880136691885,
+        "complete_packet_ns": 324.38845426409904
+      },
+      "micro-avx2": {
+        "attacks_query_ns": 621.3721415061898,
+        "attacks_build_query_ns": 1303.1697902338376,
+        "complete_packet_ns": 663.9928000343879
+      },
+      "micro-scalar": {
+        "attacks_query_ns": 572.6361330811554,
+        "attacks_build_query_ns": 1282.7880953404401,
+        "complete_packet_ns": 617.7489468707015
+      },
+      "pyramid-avx2": {
+        "attacks_query_ns": 305.29200696354883,
+        "attacks_build_query_ns": 1161.5059211657497,
+        "complete_packet_ns": 346.41731860385147
+      },
+      "pyramid-scalar": {
+        "attacks_query_ns": 279.94696741746907,
+        "attacks_build_query_ns": 1145.2256383253095,
+        "complete_packet_ns": 316.5403950309491
+      },
+      "union-control": {
+        "attacks_query_ns": 35.679726525736626,
+        "attacks_build_query_ns": 36.17454006189821,
+        "complete_packet_ns": 82.47593384628611
+      },
+      "constraints": {
+        "control_both_kings_ns": 42.176353486072905,
+        "progressive_both_kings_ns": 26.006139958734526,
+        "query_both_kings_ns": 73.69536623108665
+      },
+      "transitions": {
+        "copy_patch_bands_query_ns": 415.0592677247174,
+        "copy_patch_ns": 78.28009127743556,
+        "copy_patch_pyramid_query_ns": 473.2235643053645,
+        "union_child_query_ns": 33.78931994198911
+      }
+    }
+  },
+  "binary_sha256": {
+    "portable": "c30fd87951568a3d83008f503062a3ba5842153654f1226ce0859d8592d7e238",
+    "native": "7a5a835c9f2990275ef785cfffa4dbf08a04d65f256a4d4ac91f3ba61b5f08ed"
+  },
+  "artifact_sha256": {
+    "corpus/dev.tsv": "524983ca720e2e1a945accc2ccff7d716659641a08cf2a918564bccc64fd3cac",
+    "bands/portable-isa.json": "5544aaf545f11078c450564f5b96ffaf2c7dbd03079760d2048bd860673a78d6",
+    "bands/native-isa.json": "42ae92a223a1a0ecca6f0ac2a8aa0adf7fb47428d70777ecf1c2a81bd7d58caa",
+    "bands/dev-independent.json": "e27c1a790777ac9061545a02d29e8dc56e02d5651de8aa644f75b63e4b9f966e",
+    "bands/cert-independent.json": "040fb5043fc2d25ad924772dc493cd680fd9fbe9b319731287bf93cb64174e02",
+    "bands/matrix/native-0.jsonl": "27a7f801912fe45a4d4d450a8dcece335dd598fff5ec5c5c878c72ae27bc56b7",
+    "bands/matrix/native-1.jsonl": "c8742c1808b8052f4465d9e04c11541fdfa8d51440268fb2b562ac108d28b597",
+    "bands/matrix/native-2.jsonl": "7a36285f8032e37cf881169a96faf2675d71284124d8c4fee3833532d24bfdce",
+    "bands/matrix/portable-0.jsonl": "b628e021b82805960a87c6d872be6c3989d16020d8eb60a9b5c1c9a65374677a",
+    "bands/matrix/portable-1.jsonl": "a6c00206cec1b1af0a11e6d15817104f83198f38ecaf3da37cd845bd89a162f6",
+    "bands/matrix/portable-2.jsonl": "b769032be0db017f7a94d8f1bc7e36f6f2465f75a9e989097747873379ab6011"
+  }
+}

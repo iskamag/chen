@@ -1,0 +1,12 @@
+[package]
+name = "chen-radical-bands"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chen = { path = "../../.." }
+serde_json = "1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
