@@ -36,10 +36,11 @@ def sha(path):
 
 
 class Renderer:
-    def __init__(self, names, candidate_color, row, analysis, pacing, architecture):
+    def __init__(self, names, candidate_color, row, analysis, pacing, architecture, budget_seconds=1.0):
         self.names, self.candidate_color = names, candidate_color
         self.row, self.analysis, self.pacing = row, analysis, pacing
         self.architecture = architecture
+        self.budget_ms = round(budget_seconds * 1000)
         self.fonts = {}
         self.pieces = {}
         for symbol in 'PNBRQKpnbrqk':
@@ -63,7 +64,9 @@ class Renderer:
         image = Image.new('RGB', (WIDTH, HEIGHT), BG)
         draw = ImageDraw.Draw(image)
         self.text(draw, (60, 29), 'JPEG / CHESS', 26, bold=True)
-        self.text(draw, (766, 33), 'THE ONE-SECOND TEST', 23, fill=JPEG, bold=True)
+        title_text = ('THE HALF-SECOND TEST' if self.budget_ms == 500 else
+                      'THE ONE-SECOND TEST' if self.budget_ms == 1000 else f'{self.budget_ms} MS PER MOVE')
+        self.text(draw, (766, 33), title_text, 23, fill=JPEG, bold=True)
         self.text(draw, (61, 70), 'CPU only / 1 thread per bot / 16 MiB hash / books off', 15, fill=MUTED)
         hidden = set()
         if animation:
@@ -129,12 +132,13 @@ class Renderer:
         if total and index:
             draw.rounded_rectangle((762, 667, 762 + int(458 * index / total), 671), radius=2, fill=JPEG)
         self.text(draw, (762, 688), f'Ply {index:03d} / {total:03d}', 13, fill=MUTED, mono=True)
-        self.text(draw, (61, 770), f'Rendered replay · {self.pacing:g} s/ply · requested budget 1000 ms/move', 13, fill=MUTED)
+        self.text(draw, (61, 770), f'Rendered replay · {self.pacing:g} s/ply · requested budget {self.budget_ms} ms/move', 13, fill=MUTED)
         if title or final:
             overlay = Image.new('RGBA', image.size)
             d = ImageDraw.Draw(overlay)
             d.rounded_rectangle((151, 316, 590, 499), radius=16, fill=(16, 23, 32, 240))
-            heading = self.row['result'] if final else 'ONE SECOND.'
+            heading = self.row['result'] if final else ('HALF A SECOND.' if self.budget_ms == 500 else
+                                                       'ONE SECOND.' if self.budget_ms == 1000 else f'{self.budget_ms} MS.')
             sub = self.row['termination'].replace('_', ' ').title() if final else 'Every move. Both bots.'
             self.text(d, (181, 344), heading, 42, bold=True, fill=JPEG)
             self.text(d, (182, 411), sub, 20)
@@ -201,7 +205,8 @@ def main():
     args = parser.parse_args()
     assert args.fps > 0 and args.seconds_per_ply > 0
     metadata = json.loads((args.run / 'metadata.json').read_text())
-    assert metadata['budgets']['movetime'] == 1, 'This video template labels a one-second experiment.'
+    budget_seconds = metadata['budgets']['movetime']
+    assert budget_seconds is not None and budget_seconds > 0, 'A fixed positive move-time budget is required.'
     for engine in metadata['config'].values():
         assert engine['options'].get('Hash') == 16
         assert engine['options'].get('Threads', 1) == 1
@@ -232,7 +237,7 @@ def main():
     analysis = analyse(boards, args.stockfish, analysis_path, args.analysis_nodes)
     candidate_color = row['candidate_color'] == 'white'
     names = {candidate_color: args.candidate_label, not candidate_color: args.base_label}
-    renderer = Renderer(names, candidate_color, row, analysis, args.seconds_per_ply, args.architecture)
+    renderer = Renderer(names, candidate_color, row, analysis, args.seconds_per_ply, args.architecture, budget_seconds)
     preview = renderer.frame(boards[min(12, len(moves))], sans[:min(12, len(moves))], min(12, len(moves)), last=moves[min(11, len(moves) - 1)])
     preview.save(args.preview or args.out.with_suffix('.png'))
     if args.preview_only:
@@ -278,6 +283,7 @@ def main():
                 'result': row['result'], 'termination': row['termination'], 'plies': len(moves),
                 'candidate_label': args.candidate_label, 'base_label': args.base_label,
                 'architecture': args.architecture, 'playing_config': metadata['config'],
+                'requested_seconds_per_move': budget_seconds,
                 'resolution': [WIDTH, HEIGHT], 'fps': args.fps, 'frames': total_frames,
                 'seconds': total_frames / args.fps, 'seconds_per_ply_requested': args.seconds_per_ply,
                 'analysis': 'Independent post-game full-strength Stockfish, not used by either playing bot',

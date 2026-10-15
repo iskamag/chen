@@ -19,7 +19,7 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def timing(values):
+def timing(values, seconds_per_move=1.0):
     ordered = sorted(values)
     return {
         "moves": len(values),
@@ -28,13 +28,15 @@ def timing(values):
         "max_ms": max(values) / 1e6,
         "over_1100ms": sum(x > 1.1e9 for x in values),
         "over_1500ms": sum(x > 1.5e9 for x in values),
+        "over_budget_plus_100ms": sum(x > (seconds_per_move + 0.1) * 1e9 for x in values),
     }
 
 
-def audit(directory):
+def audit(directory, seconds_per_move=1.0):
     metadata = json.loads((directory / "metadata.json").read_text())
     budget = metadata["budgets"]
-    assert budget["movetime"] == 1.0, "this protocol requires one second per move"
+    assert seconds_per_move > 0
+    assert budget["movetime"] == seconds_per_move, "collector budget differs from declared audit budget"
     assert budget["max_plies"] == 512, "512-ply safety cap must remain unscored"
     rows = [json.loads(x) for x in (directory / "games.jsonl").read_text().splitlines() if x.strip()]
     games = []
@@ -125,8 +127,10 @@ def audit(directory):
         "candidate_wdl": dict(score),
         "terminations": dict(terminations),
         "special_moves": dict(special),
-        "timing": {key: timing(values) for key, values in elapsed.items()},
-        "timing_within_100ms_transport_allowance": all(max(values) <= 1.1e9 for values in elapsed.values()),
+        "requested_seconds_per_move": seconds_per_move,
+        "transport_allowance_ms": 100,
+        "timing": {key: timing(values, seconds_per_move) for key, values in elapsed.items()},
+        "timing_within_100ms_transport_allowance": all(max(values) <= (seconds_per_move + 0.1) * 1e9 for values in elapsed.values()),
         "games": per_game,
         "engines": metadata["config"],
         "python_chess": chess.__version__,
@@ -140,8 +144,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--seconds-per-move", type=float, default=1.0,
+                        help="expected fixed budget; defaults to the original one-second protocol")
     args = parser.parse_args()
-    result = audit(args.directory)
+    result = audit(args.directory, args.seconds_per_move)
     text = json.dumps(result, indent=2) + "\n"
     if args.out:
         args.out.write_text(text)

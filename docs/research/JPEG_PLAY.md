@@ -81,6 +81,16 @@ need for continuation reasoning. Scalar `Position` copies/makes are used when
 moving between relation roots. It would be inaccurate to call this a searchless
 engine or a complete implementation of the broader JPEG proposal.
 
+The separate microblock/pyramid and persistent causal experiments are **not
+integrated into this playable policy**. This bot tests the counterfactual codec
+and shared reply proofs. It reconstructs a local relation at successive game-tree
+nodes; it does not maintain a shared representation of equivalent continuations
+across those nodes. Learned/lossy strategic decision channels are also absent.
+Its reported depth is nominal minimax half-moves, not full chess moves, and
+terminal reply proofs can inspect consequences beyond that nominal frontier.
+Depth four in the one-second starting-position smoke is not a guarantee of
+depth four in complex positions or at a half-second budget.
+
 ## `hybrid`: JPEG-assisted Chen PVS
 
 The same exact relational prepass is followed by the existing conventional

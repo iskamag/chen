@@ -1,0 +1,302 @@
+{
+  "scope": "Eight-game development screen; no Elo estimate or statistical parity claim",
+  "requested_seconds_per_move_both": 0.5,
+  "opponent": "Stockfish19 configuredUCI_Elo1800",
+  "audits": {
+    "pure": {
+      "status": "PASS",
+      "completed_recorded_games": 4,
+      "expected_games": 4,
+      "all_expected_games_recorded": true,
+      "audited_legal_moves": 378,
+      "candidate_wdl": {
+        "losses": 4
+      },
+      "terminations": {
+        "CHECKMATE": 4
+      },
+      "special_moves": {
+        "castles": 5,
+        "en_passant": 0,
+        "promotions": 0,
+        "captures": 81
+      },
+      "requested_seconds_per_move": 0.5,
+      "transport_allowance_ms": 100,
+      "timing": {
+        "candidate": {
+          "moves": 188,
+          "median_ms": 465.5882775,
+          "p95_ms": 465.802682,
+          "max_ms": 469.398261,
+          "over_1100ms": 0,
+          "over_1500ms": 0,
+          "over_budget_plus_100ms": 0
+        },
+        "base": {
+          "moves": 190,
+          "median_ms": 500.543697,
+          "p95_ms": 501.186991,
+          "max_ms": 505.592409,
+          "over_1100ms": 0,
+          "over_1500ms": 0,
+          "over_budget_plus_100ms": 0
+        }
+      },
+      "timing_within_100ms_transport_allowance": true,
+      "games": [
+        {
+          "opening": "open-game",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 54,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "open-game",
+          "candidate_color": "black",
+          "result": "1-0",
+          "candidate_score": 0.0,
+          "plies": 153,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "queen-gambit",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 106,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "queen-gambit",
+          "candidate_color": "black",
+          "result": "1-0",
+          "candidate_score": 0.0,
+          "plies": 65,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ],
+      "engines": {
+        "base": {
+          "command": [
+            "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+          ],
+          "options": {
+            "Threads": 1,
+            "Hash": 16,
+            "NumaPolicy": "none",
+            "UCI_LimitStrength": true,
+            "UCI_Elo": 1800,
+            "SyzygyPath": "",
+            "SyzygyProbeLimit": 0
+          }
+        },
+        "candidate": {
+          "command": [
+            "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v1",
+            "--mode",
+            "pure"
+          ],
+          "options": {
+            "Policy": "pure",
+            "Threads": 1,
+            "Hash": 16
+          }
+        }
+      },
+      "python_chess": "1.11.2",
+      "auditor_sha256": "c9672d46269dd9fd8c1c37893f3ccac5765047be1e362450e4b61db9c0d3e4d4",
+      "sha256": {
+        "metadata.json": "d0e2bb2f0bb593424d4e5bd5baec6b749457b61a06f212356f1472bfef1c180a",
+        "games.pgn": "101c839df8d4ff7035a26a23feba8f5bf1484ff7a7602ccb208bffe32a29b399",
+        "games.jsonl": "c100c64a98572ffdb66d4f2a70897a03ac9be6d11059dc51ba5cb880eb99ace7"
+      },
+      "interpretation": "Exact trace/rule-outcome audit only. Small paired sample selects observed behavior; no Elo estimate or target-parity claim."
+    },
+    "hybrid": {
+      "status": "PASS",
+      "completed_recorded_games": 4,
+      "expected_games": 4,
+      "all_expected_games_recorded": true,
+      "audited_legal_moves": 296,
+      "candidate_wdl": {
+        "wins": 2,
+        "losses": 2
+      },
+      "terminations": {
+        "CHECKMATE": 4
+      },
+      "special_moves": {
+        "castles": 6,
+        "en_passant": 0,
+        "promotions": 1,
+        "captures": 78
+      },
+      "requested_seconds_per_move": 0.5,
+      "transport_allowance_ms": 100,
+      "timing": {
+        "candidate": {
+          "moves": 148,
+          "median_ms": 465.709232,
+          "p95_ms": 465.900352,
+          "max_ms": 469.32567,
+          "over_1100ms": 0,
+          "over_1500ms": 0,
+          "over_budget_plus_100ms": 0
+        },
+        "base": {
+          "moves": 148,
+          "median_ms": 500.507977,
+          "p95_ms": 501.142771,
+          "max_ms": 505.328079,
+          "over_1100ms": 0,
+          "over_1500ms": 0,
+          "over_budget_plus_100ms": 0
+        }
+      },
+      "timing_within_100ms_transport_allowance": true,
+      "games": [
+        {
+          "opening": "open-game",
+          "candidate_color": "white",
+          "result": "1-0",
+          "candidate_score": 1.0,
+          "plies": 77,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "open-game",
+          "candidate_color": "black",
+          "result": "1-0",
+          "candidate_score": 0.0,
+          "plies": 79,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "queen-gambit",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 78,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "queen-gambit",
+          "candidate_color": "black",
+          "result": "0-1",
+          "candidate_score": 1.0,
+          "plies": 62,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ],
+      "engines": {
+        "base": {
+          "command": [
+            "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+          ],
+          "options": {
+            "Threads": 1,
+            "Hash": 16,
+            "NumaPolicy": "none",
+            "UCI_LimitStrength": true,
+            "UCI_Elo": 1800,
+            "SyzygyPath": "",
+            "SyzygyProbeLimit": 0
+          }
+        },
+        "candidate": {
+          "command": [
+            "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v0",
+            "--mode",
+            "hybrid"
+          ],
+          "options": {
+            "Policy": "hybrid",
+            "Threads": 1,
+            "Hash": 16
+          }
+        }
+      },
+      "python_chess": "1.11.2",
+      "auditor_sha256": "c9672d46269dd9fd8c1c37893f3ccac5765047be1e362450e4b61db9c0d3e4d4",
+      "sha256": {
+        "metadata.json": "2350bc9eba461006ddc8aceaedcec57445a31ef1b445a2e0aa213ee909bd63f7",
+        "games.pgn": "04aeaa0a6b8ebd42cc10547222813e8f45f2c7b3bfb2a33a0bb490fa1819b142",
+        "games.jsonl": "035047316e46606bfc814396c478d811b03720be7e5aedf0386e1691c049caaf"
+      },
+      "interpretation": "Exact trace/rule-outcome audit only. Small paired sample selects observed behavior; no Elo estimate or target-parity claim."
+    }
+  },
+  "video": {
+    "kind": "rendered_replay_of_actual_bot_game",
+    "run": "results/jpeg-halfsecond-sf1800-20261015/hybrid",
+    "game": 0,
+    "result": "1-0",
+    "termination": "CHECKMATE",
+    "plies": 77,
+    "candidate_label": "JPEG-assisted Chen",
+    "base_label": "Stockfish 19 \u00b7 setting 1800",
+    "architecture": "Relational proofs + conventional Chen PVS",
+    "playing_config": {
+      "base": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+        ],
+        "options": {
+          "Threads": 1,
+          "Hash": 16,
+          "NumaPolicy": "none",
+          "UCI_LimitStrength": true,
+          "UCI_Elo": 1800,
+          "SyzygyPath": "",
+          "SyzygyProbeLimit": 0
+        }
+      },
+      "candidate": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v0",
+          "--mode",
+          "hybrid"
+        ],
+        "options": {
+          "Policy": "hybrid",
+          "Threads": 1,
+          "Hash": 16
+        }
+      }
+    },
+    "requested_seconds_per_move": 0.5,
+    "resolution": [
+      1280,
+      800
+    ],
+    "fps": 24,
+    "frames": 2064,
+    "seconds": 86.0,
+    "seconds_per_ply_requested": 1.0,
+    "analysis": "Independent post-game full-strength Stockfish, not used by either playing bot",
+    "analysis_nodes_per_position": 20000,
+    "sha256": {
+      "results/jpeg-halfsecond-sf1800-20261015/jpeg-vs-stockfish1800.mp4": "0ffbab38381250c58bef0d0a7e5e1101f2d761e2b99bbfb66e811c4b75b8987d",
+      "results/jpeg-halfsecond-sf1800-20261015/hybrid/games.jsonl": "035047316e46606bfc814396c478d811b03720be7e5aedf0386e1691c049caaf",
+      "results/jpeg-halfsecond-sf1800-20261015/hybrid/games.pgn": "04aeaa0a6b8ebd42cc10547222813e8f45f2c7b3bfb2a33a0bb490fa1819b142",
+      "results/jpeg-halfsecond-sf1800-20261015/hybrid/metadata.json": "2350bc9eba461006ddc8aceaedcec57445a31ef1b445a2e0aa213ee909bd63f7",
+      "results/match-tools/stockfish/stockfish-linux-x86-64-universal": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "/home/iskam/src/vibe/chen/scripts/render_chess_video.py": "7142ec3c114b94a89fa977766e0684b1f146f17989dd36280e2fc963062e4d07"
+    }
+  },
+  "source_sha256": {
+    "scripts/jpeg_strength_audit.py": "c9672d46269dd9fd8c1c37893f3ccac5765047be1e362450e4b61db9c0d3e4d4",
+    "scripts/render_chess_video.py": "7142ec3c114b94a89fa977766e0684b1f146f17989dd36280e2fc963062e4d07"
+  }
+}
