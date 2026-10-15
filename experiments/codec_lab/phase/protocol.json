@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "task": "For two real signed 8x8 maps S,T, return every finite-board cross-correlation C[dy,dx]=sum S[y,x]*T[y+dy,x+dx], offsets -7..7; also sum C over eight knight offsets. This is an interaction computation, not reconstruction.",
+  "variants": ["spatial_direct", "complex_phase_padded16", "magnitude_only_padded16", "power_only_padded16", "complex_phase_circular8"],
+  "families": {"exhaustive_impulse_pairs":4096,"sparse_binary":64,"dense_signed":64,"edge_binary":64},
+  "random_seed":20261015,
+  "tolerance_absolute":1e-9,
+  "oracle":"explicit finite-board offset slicing and dot products; independent knight enumeration",
+  "counterexamples":"a1 versus b1 knight-source with fixed c2 target; equal Fourier magnitudes/powers, different knight relation; a1 to g2 wrap-only knight relation",
+  "failure_control":"rook a1 horizontal reach for all128 blocker subsets on b1..h1; fixed unblocked linear kernel versus first-blocker-inclusive oracle",
+  "metrics":["full225-output max absolute error and mismatching cases","knight scalar absolute error and mismatches","magnitude collision counts and distinct true correlations","explicit array bytes","exploratory median/min/max latency"],
+  "timing":{"cases":64,"repeats":7,"warmup":1,"scope":"same full225-output obligation; total encoding+composition+decode, and separately cached-channel composition+decode for spectral variants; Python/NumPy implementation, no optimized chess speed claim"},
+  "limits":"No engine, training, move-choice policy, Elo or novelty inference. Fourier phase is an experimental alignment representation, not a claim that JPEG stores arbitrary complex phase. No MDCT/TDAC implementation in this experiment."
+}
