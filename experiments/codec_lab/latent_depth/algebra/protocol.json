@@ -1,0 +1,15 @@
+{
+ "version":1,
+ "task":"Repeated nonlinear closure of fixed simultaneous target/resource compatibility state; all input edges supplied at round0, never additional factors per round.",
+ "input":"Shared labelled corpus; explicitly EVAL only, resource/target dimensions each<=6; choose at most16 rows per (resources,targets) by SHA256('latent-algebra-v1|'+id), independent of outcomes. Include two declared Gram-equal four-target worked graphs separately.",
+ "rounds":[0,1,2,3,4],
+ "state":"One fixed Boolean array of2^(targets+resources) coordinates indexed by used-target subset and used-resource subset. Initialize unit and every singleton input edge. No stored assignment path, per-path object, dynamic frontier, or new input per round.",
+ "update":"A_next=A OR (A disjoint-product A). Product unions both subsets only when target subsets and resource subsets are disjoint. Boolean coefficients retain existence, not assignment counts. Interaction order at most doubles each round.",
+ "readout":"Any full-target monomial certifies feasible. A true-operator round with unchanged state certifies saturation; if full-target absent, impossible. Before saturation, absent full-target is UNKNOWN. Report max represented target cardinality and active-state count.",
+ "variants":["nilpotent_closure","frozen_state","additive_reinject_same_edges","omit_resource_exclusion"],
+ "controls":"Frozen/additive cannot certify original-task impossibility merely because their update is unchanged; absent full coverage stays unknown. Omit-resource-exclusion is an intentionally unsound positive-certificate ablation; report its claimed positives and oracle errors, never describe them as valid certificates.",
+ "oracle":"Independent maximum-cardinality matching by sequential target/resource-mask dynamic programming. Compare supplied full-feasibility label when available; record format and exact label field. Oracle runs outside latent update and never supplies state.",
+ "metrics":["perround correct feasible certificates, correct impossible certificates, unknowns, false positives, false negatives","max target coverage","active coordinates","full fixed-state bytes and precomputed composition-index bytes","exploratory update latency, matched same inputs across rounds, no speed claim"],
+ "resource_limits":"CPU only; dimensions<=6; fixed exponential2^(T+D) state and up to3^(T+D) sparse multiplication incidences. No training, game search, chess engine, Elo, scalability or learned reasoning claim. Omit Walsh variant to keep one mechanism isolated.",
+ "registration":"Commit protocol then source before measured run; output compact deterministic result JSON separately from timing JSON. Source/exact corpus/protocol hashes bind run."
+}
