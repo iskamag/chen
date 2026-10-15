@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "registration": "Before source execution",
+  "task": "Reconstruct complete finite real signals using actual sine-window MDCT analysis, inverse synthesis, and overlap-add; measure cancellation of isolated-block alias residuals",
+  "coefficient_counts": [8, 16],
+  "signal_length": 256,
+  "hop": "N samples for a 2N-sample analysis block with N coefficients",
+  "padding": "N zeros before and after the complete signal; score only original 256 samples",
+  "variants": [
+    "signed_matched_overlap_add",
+    "absolute_coefficients_matched_overlap_add",
+    "signed_mismatched_synthesis_window",
+    "signed_alternate_block_polarity",
+    "signed_quantized_step_0.25"
+  ],
+  "seed": 2026101504,
+  "families": {
+    "impulses": "all256 positions and both signs:512 signals",
+    "sinusoids": "frequencies1,3,7,17,31,63; phases0,pi/3,pi/2,pi:24 signals",
+    "steps": "edges1,7,8,15,16,31,32,127,128,255:10 signals",
+    "dense_signed": "32 seeded normal signals"
+  },
+  "tolerance_max_absolute": 1e-10,
+  "metrics": [
+    "complete_signal_max_abs_error_and_error_case_count",
+    "mean_relative_l2_error",
+    "gain_aligned_relative_l2_error_for_mismatched_window",
+    "isolated_block_alias_norm_and_overlapped_alias_max_abs",
+    "matrix_rank_and_coefficient_count",
+    "window_power_complementarity_error",
+    "x_versus_minus_x_equal_magnitude_counterexample"
+  ],
+  "reference": "Independent input signal array; algebraic decomposition of each reconstructed block into window_squared_times_input plus alias residual",
+  "limits": "Actual transform microexperiment only; no chess query, chess strength, compressed-domain decision, or optimized latency claim",
+  "source": "https://ieeexplore.ieee.org/document/1164954"
+}

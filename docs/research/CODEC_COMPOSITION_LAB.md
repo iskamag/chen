@@ -70,6 +70,10 @@ is a useful concrete witness.
    exact shared-resource answer? Are counts, energies, or pairwise
    correlations sufficient, including when a particular defender becomes
    unavailable?
+4. **Actual alias cancellation:** Reproduce the MDCT mechanism itself, including
+   isolated-block alias residuals, and ablate coefficient signs, synthesis
+   window agreement, adjacent-block polarity, and quantization. This is a
+   signal-processing control, not a chess query.
 
 These questions connect to chess geometry and shared defenders, but their
 oracles concern explicitly defined small domains. A matching problem is not a

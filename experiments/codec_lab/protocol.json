@@ -5,7 +5,8 @@
   "lanes": [
     {"name": "phase", "directory": "phase", "question": "Which alignment information survives transform and magnitude ablations?"},
     {"name": "overlap", "directory": "overlap", "question": "When can local or overlapping operators recover cross-boundary visibility?"},
-    {"name": "identity", "directory": "identity", "question": "Which separable summaries preserve joint resource feasibility and conditional identity?"}
+    {"name": "identity", "directory": "identity", "question": "Which separable summaries preserve joint resource feasibility and conditional identity?"},
+    {"name": "mdct", "directory": "mdct", "question": "Can an actual overlapping transform demonstrate cancellation before we transfer the analogy?", "owner": "parent"}
   ],
   "constraints": {
     "cpu_only": true,
