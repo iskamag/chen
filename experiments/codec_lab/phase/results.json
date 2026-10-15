@@ -1,0 +1,195 @@
+{
+  "protocol_sha256": "513769b373c8de0758e8d51bb2d46d2fa6a3db9cff3426bad975781e0826ce10",
+  "families": {
+    "exhaustive_impulse_pairs": {
+      "spatial_direct": {
+        "cases": 4096,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 0.0,
+        "max_knight_error": 0.0
+      },
+      "complex_phase_padded16": {
+        "cases": 4096,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 2.220446049250313e-16,
+        "max_knight_error": 1.8615960942732068e-16
+      },
+      "magnitude_only_padded16": {
+        "cases": 4096,
+        "full_mismatches": 4032,
+        "knight_mismatches": 336,
+        "max_full_error": 1.0000000000000004,
+        "max_knight_error": 1.0
+      },
+      "power_only_padded16": {
+        "cases": 4096,
+        "full_mismatches": 4032,
+        "knight_mismatches": 336,
+        "max_full_error": 1.0000000000000004,
+        "max_knight_error": 1.0
+      },
+      "complex_phase_circular8": {
+        "cases": 4096,
+        "full_mismatches": 4032,
+        "knight_mismatches": 176,
+        "max_full_error": 1.0000000000000002,
+        "max_knight_error": 1.0
+      }
+    },
+    "sparse_binary": {
+      "spatial_direct": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 0.0,
+        "max_knight_error": 0.0
+      },
+      "complex_phase_padded16": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 4.926614671774132e-16,
+        "max_knight_error": 8.881784197001252e-16
+      },
+      "magnitude_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 8.257021561477172,
+        "max_knight_error": 6.94576962059238
+      },
+      "power_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 8.257021561477172,
+        "max_knight_error": 6.94576962059238
+      },
+      "complex_phase_circular8": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 53,
+        "max_full_error": 7.0,
+        "max_knight_error": 11.0
+      }
+    },
+    "dense_signed": {
+      "spatial_direct": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 0.0,
+        "max_knight_error": 0.0
+      },
+      "complex_phase_padded16": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 2.842170943040401e-14,
+        "max_knight_error": 2.842170943040401e-14
+      },
+      "magnitude_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 277.49879286242134,
+        "max_knight_error": 440.6082358135992
+      },
+      "power_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 277.49879286242134,
+        "max_knight_error": 440.6082358135992
+      },
+      "complex_phase_circular8": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 114.0,
+        "max_knight_error": 147.00000000000006
+      }
+    },
+    "edge_binary": {
+      "spatial_direct": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 0.0,
+        "max_knight_error": 0.0
+      },
+      "complex_phase_padded16": {
+        "cases": 64,
+        "full_mismatches": 0,
+        "knight_mismatches": 0,
+        "max_full_error": 8.881784197001252e-16,
+        "max_knight_error": 1.7763568394002505e-15
+      },
+      "magnitude_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 8.96220169422065,
+        "max_knight_error": 2.7755056062034322
+      },
+      "power_only_padded16": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 8.96220169422065,
+        "max_knight_error": 2.7755056062034322
+      },
+      "complex_phase_circular8": {
+        "cases": 64,
+        "full_mismatches": 64,
+        "knight_mismatches": 64,
+        "max_full_error": 11.0,
+        "max_knight_error": 35.0
+      }
+    }
+  },
+  "alignment_counterexample": {
+    "sources": [
+      "a1",
+      "b1"
+    ],
+    "target": "c2",
+    "source_magnitude_max_difference": 2.220446049250313e-16,
+    "true_knight_counts": [
+      1.0,
+      0.0
+    ],
+    "phase_erased_knight_counts": [
+      0.0,
+      0.0
+    ]
+  },
+  "impulse_collision": {
+    "pairs_in_one_magnitude_power_class": 4096,
+    "distinct_full_correlations": 225,
+    "true_knight_pairs": 336
+  },
+  "boundary_counterexample": {
+    "source": "a1",
+    "target": "g2",
+    "finite_knight": 0.0,
+    "circular8_knight": 1.0,
+    "padded16_knight": 4.502278394844762e-18
+  },
+  "blocked_slider_control": {
+    "cases": 128,
+    "fixed_linear_unblocked_kernel_failures": 126,
+    "query": "rook a1 ray b1..h1, first blocker included; all7 occupancy bits exhaustive",
+    "explanation": "A fixed unblocked kernel has no occupancy-dependent stopping operation. Signed phase alone does not supply one."
+  },
+  "explicit_array_footprints_bytes": {
+    "input_two_8x8_float64": 1024,
+    "encoded_two_16x16_complex128": 8192,
+    "encoded_two_16x16_float64_magnitudes_or_powers": 4096,
+    "encoded_two_8x8_complex128": 2048,
+    "full225_float64_output": 1800,
+    "scope": "Explicit persistent arrays only; FFT temporaries/Python object overhead excluded. No compression claimed."
+  }
+}
