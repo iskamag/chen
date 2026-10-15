@@ -1,0 +1,116 @@
+{
+  "audit_source_sha256": "3eebbaa347f3288ebe9a58fc715349631d8131ffb25fe6bc05f9fd4bebd772b6",
+  "phase": {
+    "independent_pair_enumeration_cases": 24,
+    "full_outputs_per_case": 225,
+    "maximum_absolute_error": 7.105427357601002e-15,
+    "negative_control_circular_false_knight_count": 1.0
+  },
+  "mdct": {
+    "8": {
+      "signal_samples": 64,
+      "analysis_shape": [
+        72,
+        64
+      ],
+      "analysis_rank": 64,
+      "synthesis_analysis_identity_max_error": 2.023443102336664e-15
+    },
+    "16": {
+      "signal_samples": 64,
+      "analysis_shape": [
+        80,
+        64
+      ],
+      "analysis_rank": 64,
+      "synthesis_analysis_identity_max_error": 3.850660065289884e-15
+    }
+  },
+  "overlap": {
+    "independently_checked_counterexamples": 12,
+    "oracle": "closed intervening-cell emptiness predicate",
+    "exact_line_cases": 26937,
+    "substitution_queries_per_variant": 30336
+  },
+  "resource_example": {
+    "oracle": "direct subset-coefficient composition",
+    "star_columns": [
+      3,
+      5,
+      9,
+      3
+    ],
+    "triangle_columns": [
+      3,
+      5,
+      6,
+      3
+    ],
+    "equal_pairwise_gram": [
+      [
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        2
+      ]
+    ],
+    "star_joint_assignment_count_stages": [
+      1,
+      2,
+      3,
+      4,
+      2
+    ],
+    "triangle_joint_assignment_count_stages": [
+      1,
+      2,
+      3,
+      2,
+      0
+    ]
+  },
+  "identity": {
+    "independent_subset_composition_count_queries": 9504,
+    "matching_count_mismatches": 0,
+    "scope": "Deterministic independent graph sample, all demands and labelled removal conditions; full exhaustive replay is separate"
+  },
+  "files": {
+    "phase/protocol.json": "513769b373c8de0758e8d51bb2d46d2fa6a3db9cff3426bad975781e0826ce10",
+    "phase/results.json": "185fe34544e868285a49bf7938fbd1cf3cee35746bd44bd486fc004def8afaa5",
+    "phase/run.py": "ab04555395717ffc1a40c295d409c433d1b275f34ef6eea993b7a01e077e6c9c",
+    "phase/timing.json": "066760837df6c81529c1dcae879196732fab002932fc172d833baf9cbdc15157",
+    "mdct/protocol.json": "eda235261eb86100184c044b952f3019747921144c8f02010d8fcd9eb4524460",
+    "mdct/results.json": "46d44b941f7529e8eca3d981996945d7f2174090220ee46966954f8ffd2c989c",
+    "mdct/run.py": "92f8ed2bc7ac1df9b8f0cd4a13a8276cb95ce5d73757a67f052982f275cf1ae5",
+    "overlap/Cargo.lock": "2aea2f6b5fe87753b7285ca11e2379e3070c5e16bcf5ddd257a481c54735a4f6",
+    "overlap/Cargo.toml": "9f9a30735dcfc69da90376c77ec83f0bea2cc260cb5799984d450e266a90facf",
+    "overlap/protocol.json": "ae26607be428ecc73eb05e39b8189d07833a818eaff37fbbf6cabae532a04276",
+    "overlap/results/correctness.json": "69e3e33ba71d58863d5f12d223de2ad8c524161e3998714bdbba10d96d6f7bb8",
+    "overlap/results/run.json": "ab004902db0c2d5bcc2b5394038e601d8a8897f6d6d236bbbeb9698714e7d914",
+    "overlap/results/timings.json": "5b7c0b768330699737f8843ef5933a223aa3cb202c4df1057d37e4921dcbdeee",
+    "overlap/run.py": "ad3d418a816db9439d267028ac4b2fdbb89a03e7e4a060514127ea2a37fc1ca9",
+    "overlap/src/main.rs": "075d20d57a9c1b0262f35d7576aed9b16b86f8ae204532a8d20b155df0ceb6b3",
+    "identity/alignment_addendum.json": "056fbd1e2ac468dd770964317877e957cd84247c23e6ce181f884de96703b6c4",
+    "identity/protocol.json": "b7f909b9831374102dc42200caacb77ac8f8e94f9978dde1304b8f8400322447",
+    "identity/results.json": "e3966e9fef59679cfbca5af61f73bf2059b4d179b4e1932dd48efc27ab6dc69a",
+    "identity/run.py": "6cc082833c0274097be6a11fdca326a3dd80fad371a1af41997beb83ec9986e5"
+  }
+}

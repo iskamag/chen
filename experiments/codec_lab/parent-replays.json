@@ -1,0 +1,54 @@
+{
+  "round": "codec-composition-20261015",
+  "root_reran_all_lanes": true,
+  "replays": {
+    "phase": {
+      "comparison": "byte-for-byte",
+      "frozen_sha256": "185fe34544e868285a49bf7938fbd1cf3cee35746bd44bd486fc004def8afaa5",
+      "replay_sha256": "185fe34544e868285a49bf7938fbd1cf3cee35746bd44bd486fc004def8afaa5",
+      "match": true
+    },
+    "mdct": {
+      "comparison": "byte-for-byte",
+      "frozen_sha256": "46d44b941f7529e8eca3d981996945d7f2174090220ee46966954f8ffd2c989c",
+      "replay_sha256": "46d44b941f7529e8eca3d981996945d7f2174090220ee46966954f8ffd2c989c",
+      "match": true
+    },
+    "overlap": {
+      "comparison": "byte-for-byte",
+      "frozen_sha256": "69e3e33ba71d58863d5f12d223de2ad8c524161e3998714bdbba10d96d6f7bb8",
+      "replay_sha256": "69e3e33ba71d58863d5f12d223de2ad8c524161e3998714bdbba10d96d6f7bb8",
+      "match": true,
+      "parent_binary_sha256": "1e11ba39b066b51497f9a4c0f76b100496a19bf762793018483d19cdb21429b2",
+      "parent_source_sha256": {
+        "protocol.json": "ae26607be428ecc73eb05e39b8189d07833a818eaff37fbbf6cabae532a04276",
+        "Cargo.toml": "9f9a30735dcfc69da90376c77ec83f0bea2cc260cb5799984d450e266a90facf",
+        "Cargo.lock": "2aea2f6b5fe87753b7285ca11e2379e3070c5e16bcf5ddd257a481c54735a4f6",
+        "src/main.rs": "075d20d57a9c1b0262f35d7576aed9b16b86f8ae204532a8d20b155df0ceb6b3",
+        "run.py": "ad3d418a816db9439d267028ac4b2fdbb89a03e7e4a060514127ea2a37fc1ca9"
+      },
+      "compiler": "rustc 1.99.0 (b940084d7 2026-09-28) (Artix Linux rust 1:1.99.0-1)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1",
+      "rustflags": "-C target-cpu=x86-64",
+      "affinity": [
+        4
+      ]
+    },
+    "identity": {
+      "comparison": "all fields except diagnostic wall times",
+      "excluded_field_names": [
+        "seconds",
+        "oracle_seconds",
+        "total_seconds"
+      ],
+      "stable_json_sha256": "c0ce1d7624e3d9e420d89ea260fdb1b96cd278968c039530f51d9639ff46762c",
+      "match": true,
+      "query_cases": 5505024
+    }
+  },
+  "separate_read_only_review": {
+    "reviewer": "Astra",
+    "mdct": "Independent global analysis matrices have full signal rank and synthesis-analysis identity error below3.85e-15; formula, scaling, residual decomposition and limits checked.",
+    "identity": "Independently checked resource creation matrices in Walsh coordinates, normalization by8, retained parent states, exact assignment oracle, fixed-context grouping and conditional projections."
+  },
+  "limits": "Small exact interaction tasks and a signal-processing control. No chess bot, training, GPU, deployment, or strength claim."
+}

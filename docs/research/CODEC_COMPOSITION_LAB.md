@@ -112,6 +112,12 @@ No aggregate ranking is appropriate across different task contracts.
 
 ## Results
 
-Pending at registration. Lane reports will be linked here after execution;
-the final comparison must distinguish algebraic guarantees, observed errors,
-and architectural hypotheses.
+Completed and independently replayed. Start with
+[the interaction findings](codec_lab/FINDINGS.md). Individual reports:
+[phase/alignment](codec_lab/PHASE.md),
+[contextual boundary gating](codec_lab/OVERLAP.md),
+[shared-resource composition](codec_lab/IDENTITY.md), and
+[actual MDCT background control](codec_lab/MDCT.md).
+
+The findings distinguish known algebraic identities, measured implementations,
+and unresolved architectural questions. They establish no chess playing strength.

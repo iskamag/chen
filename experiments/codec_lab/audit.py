@@ -171,6 +171,39 @@ def audit_resource_example():
     }
 
 
+def audit_identity():
+    identity = load_module("identity_experiment", HERE / "identity/run.py")
+    rng = random.Random(2026101506)
+    checked = 0
+    for defenders in (3, 4):
+        graph_count = 1 << (defenders * 4)
+        graph_ids = sorted({0, graph_count - 1, *rng.sample(range(graph_count), 64)})
+        # Independently unpack the declared incidence bits.
+        incidence = np.array([
+            [[(graph >> (4 * d + t)) & 1 for t in range(4)] for d in range(defenders)]
+            for graph in graph_ids
+        ], dtype=np.int64)
+        encoded = identity.signed(incidence)
+        tensor = identity.creation_tensor(defenders)
+        for disabled in (None, *range(defenders)):
+            actual = identity.compose_signed(identity.remove_in_signed_basis(encoded, disabled), tensor)
+            for index, matrix in enumerate(incidence):
+                columns = [
+                    sum(1 << d for d in range(defenders) if d != disabled and matrix[d, t])
+                    for t in range(4)
+                ]
+                for demand in range(16):
+                    selected = [column for t, column in enumerate(columns) if demand & (1 << t)]
+                    expected = resource_stages(selected, defenders)[-1]
+                    assert actual[index, demand] == expected * 8 ** demand.bit_count()
+                    checked += 1
+    return {
+        "independent_subset_composition_count_queries": checked,
+        "matching_count_mismatches": 0,
+        "scope": "Deterministic independent graph sample, all demands and labelled removal conditions; full exhaustive replay is separate",
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, required=True)
@@ -181,11 +214,12 @@ def main():
         "mdct": audit_mdct(),
         "overlap": audit_overlap(),
         "resource_example": audit_resource_example(),
+        "identity": audit_identity(),
         "files": {
             str(path.relative_to(HERE)): digest(path)
             for lane in ("phase", "mdct", "overlap", "identity")
             for path in sorted((HERE / lane).rglob("*"))
-            if path.is_file() and path.suffix in (".py", ".rs", ".json", ".toml")
+            if path.is_file() and (path.suffix in (".py", ".rs", ".json", ".toml") or path.name == "Cargo.lock")
             and "target" not in path.parts
         },
     }

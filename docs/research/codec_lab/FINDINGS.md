@@ -57,8 +57,25 @@ check gives partial assignment counts 1,2,3,4,2 versus 1,2,3,2,0.
 
 The important operation is the compatibility product. A signed Walsh basis
 is a way to express that operation, not the source of its semantics.
-The exhaustive transformed implementation and alignment interventions are
-pending at the time this section is drafted.
+The transformed compatibility operator matches independent explicit assignment
+counts on all **5,505,024** graph/demand/availability cases in the frozen
+three- and four-defender domains. It composes target operators and reads the
+joint count directly, without reconstructing incidence or calling the oracle.
+
+The alignment intervention isolates the effect of coupling: swapping two
+resource identities for only one target preserves every individual target's
+coverage, but changes feasibility in 17,440 of 1,048,576 unconditional
+four-defender queries. Relabelling the resources consistently across every
+target, with any unavailable-resource condition remapped too, changes no
+assignment count. With a fixed unavailable resource, the independent swap can
+also change effective individual coverage; those cases are reported separately.
+
+Pairwise Gram information answers the feasibility query throughout the smaller
+three-defender domain, but not the larger domain: there are 288 ambiguous
+four-defender cases with all four targets demanded and no removal. The
+four-way counterexample above explains why pairwise agreement is insufficient.
+
+[Shared-resource experiment](IDENTITY.md)
 
 ## The codec analogy has an actual cancellation example
 
@@ -81,3 +98,18 @@ combination, move timing, legal counterplay, or move selection.
 
 The frozen [round note](../CODEC_COMPOSITION_LAB.md) and lane protocols retain
 the initial questions, controls, source references, and subsequent steering.
+
+## Verification
+
+The parent reran every lane. Phase and MDCT deterministic outputs match
+byte-for-byte; overlap correctness matches its frozen JSON; identity results
+match after removing only diagnostic wall-time fields. An independent audit
+also uses pair enumeration, a complete MDCT analysis-matrix identity, closed
+ray predicates, and direct coefficient-domain resource composition. Astra
+separately reviewed the MDCT formulas and the transformed resource creation
+operators, including normalization and conditional identity handling.
+
+The lab retains small source and results, with no game replay media. See
+[commands](../../../experiments/codec_lab/README.md),
+[parent audit](../../../experiments/codec_lab/parent-audit.json), and
+[replay inventory](../../../experiments/codec_lab/parent-replays.json).
