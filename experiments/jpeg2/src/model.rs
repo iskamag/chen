@@ -1,4 +1,5 @@
 //! Direct learned heterogeneous-channel factors. No chess transitions or search.
+#[cfg(test)]
 use crate::features::DIM;
 use serde_json::Value;
 use std::{fs, path::Path};
@@ -16,6 +17,7 @@ pub struct Group {
     pub end: usize,
 }
 pub struct Model {
+    pub dim: usize,
     pub name: String,
     pub groups: Vec<Group>,
     width: usize,
@@ -103,12 +105,13 @@ impl Model {
     pub fn load(path: &Path) -> Result<Self, String> {
         let v: Value = serde_json::from_slice(&fs::read(path).map_err(|e| e.to_string())?)
             .map_err(|e| e.to_string())?;
-        if v["format"] != "jpeg2-channel-policy-f32-v1" || v["dim"] != DIM {
-            return Err("unsupported model format or feature dimension".into());
+        if v["format"] != "jpeg2-channel-policy-f32-v1" {
+            return Err("unsupported model format".into());
         }
-        if v["feature_schema_sha256"].as_str()
-            != Some(crate::features::schema_fingerprint().as_str())
-        {
+        let dim = v["dim"].as_u64().ok_or("missing feature dimension")? as usize;
+        let fingerprint =
+            crate::features::schema_fingerprint_for(dim).ok_or("unsupported feature dimension")?;
+        if v["feature_schema_sha256"].as_str() != Some(fingerprint.as_str()) {
             return Err("model feature schema fingerprint mismatch or missing".into());
         }
         let width = v["projection_width"]
@@ -121,7 +124,7 @@ impl Model {
         for c in v["channels"].as_array().ok_or("missing model channels")? {
             let start = c["start"].as_u64().ok_or("channel start")? as usize;
             let end = c["end"].as_u64().ok_or("channel end")? as usize;
-            if start >= end || end > DIM {
+            if start >= end || end > dim {
                 return Err("invalid channel range".into());
             }
             groups.push(Group {
@@ -146,8 +149,8 @@ impl Model {
         let base = vector(&v["base"]["weight"], h)?;
         let base_bias = number(&v["base"]["bias"])?;
         let norm = &v["normalization"];
-        let mean = vector(&norm["mean"], DIM)?;
-        let inverse_std = vector(&norm["inverse_std"], DIM)?;
+        let mean = vector(&norm["mean"], dim)?;
+        let inverse_std = vector(&norm["inverse_std"], dim)?;
         if inverse_std.iter().any(|x| *x < 0.) {
             return Err("negative inverse_std".into());
         }
@@ -195,6 +198,7 @@ impl Model {
             None
         };
         Ok(Self {
+            dim,
             name: v["name"]
                 .as_str()
                 .unwrap_or("unnamed direct channel model")
@@ -211,17 +215,19 @@ impl Model {
             residual,
         })
     }
-    pub fn score(&self, rows: &[[f32; DIM]], controls: &Controls) -> Scores {
+    pub fn score<T: AsRef<[f32]>>(&self, rows: &[T], controls: &Controls) -> Scores {
         let h = self.width * self.groups.len();
         let input_len = h + self.pairs.len() * self.width;
-        let mut normalized = [0.; DIM];
+        let mut normalized = vec![0.; self.dim];
         let mut hidden = vec![0.; h];
         let mut interaction_input = vec![0.; input_len];
         let mut residual_hidden = vec![0.; self.residual.as_ref().map_or(0, |(l, _, _)| l.rows)];
         let mut logits = Vec::with_capacity(rows.len());
         let mut base_logits = Vec::with_capacity(rows.len());
         for row in rows {
-            for i in 0..DIM {
+            let row = row.as_ref();
+            assert_eq!(row.len(), self.dim, "model/input dimension mismatch");
+            for i in 0..self.dim {
                 normalized[i] =
                     ((row[i] - self.mean[i]) * self.inverse_std[i]).clamp(-self.clip, self.clip);
             }

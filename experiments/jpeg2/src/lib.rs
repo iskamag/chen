@@ -1,6 +1,7 @@
 pub mod features;
 pub mod model;
-use features::{DIM, RootFacts};
+pub mod support;
+use features::RootFacts;
 use serde_json::{Value, json};
 use sha2::{Digest, Sha256};
 use std::{
@@ -24,7 +25,7 @@ impl Write for HashWriter<'_> {
         Ok(())
     }
 }
-fn export(input: &str, out: &str) {
+fn export(input: &str, out: &str, dim: usize) {
     fs::create_dir_all(out).unwrap();
     let output = Path::new(out);
     let featurepath = output.join("features.f32");
@@ -55,8 +56,9 @@ fn export(input: &str, out: &str) {
             actual.sort();
             assert_eq!(actual, expected, "provided legal inventory mismatch {id}");
         }
-        for a in &actions {
-            for value in a.values {
+        let rows = root.feature_rows(&actions, dim).unwrap();
+        for row in rows {
+            for value in row {
                 data.write_all(&value.to_le_bytes()).unwrap();
             }
         }
@@ -69,13 +71,13 @@ fn export(input: &str, out: &str) {
     }
     data.flush().unwrap();
     index.flush().unwrap();
-    let mut manifest = features::schema();
-    manifest["schema_sha256"] = json!(features::schema_fingerprint());
+    let mut manifest = features::schema_for_dimension(dim).unwrap();
+    manifest["schema_sha256"] = json!(features::schema_fingerprint_for(dim).unwrap());
     manifest["features_sha256"] = Value::String(hash(&featurepath));
     manifest["index_sha256"] = Value::String(hash(&indexpath));
     manifest["positions"] = json!(positions);
     manifest["actions"] = json!(offset);
-    manifest["row_bytes"] = json!(DIM * 4);
+    manifest["row_bytes"] = json!(dim * 4);
     fs::write(
         output.join("manifest.json"),
         serde_json::to_vec_pretty(&manifest).unwrap(),
@@ -105,25 +107,40 @@ pub fn diagnose(
     let started = std::time::Instant::now();
     let root = RootFacts::new(position);
     let actions = root.actions();
+    let rows = root
+        .feature_rows(&actions, model.dim)
+        .expect("validated model feature dimension");
     let encoded = started.elapsed();
-    let rows: Vec<_> = actions.iter().map(|a| a.values).collect();
     let scores = model.score(&rows, controls);
     let elapsed = started.elapsed();
-    json!({"model":model.name,"fen":position.to_fen(),"base_best":scores.base_best.map(|i|actions[i].mv.to_string()),"full_best":scores.full_best.map(|i|actions[i].mv.to_string()),"ranking_changed":scores.base_best!=scores.full_best,"encode_ns":encoded.as_nanos(),"inference_ns":(elapsed-encoded).as_nanos(),"interaction_terms":scores.interaction_terms,"tactical_helper_applied":false,"actions":actions.iter().enumerate().map(|(i,a)|json!({"uci":a.mv.to_string(),"base_logit":scores.base_logits[i],"full_logit":scores.logits[i]})).collect::<Vec<_>>()})
+    json!({"model":model.name,"feature_dim":model.dim,"fen":position.to_fen(),"base_best":scores.base_best.map(|i|actions[i].mv.to_string()),"full_best":scores.full_best.map(|i|actions[i].mv.to_string()),"ranking_changed":scores.base_best!=scores.full_best,"encode_ns":encoded.as_nanos(),"inference_ns":(elapsed-encoded).as_nanos(),"interaction_terms":scores.interaction_terms,"tactical_helper_applied":false,"actions":actions.iter().enumerate().map(|(i,a)|json!({"uci":a.mv.to_string(),"base_logit":scores.base_logits[i],"full_logit":scores.logits[i]})).collect::<Vec<_>>()})
 }
 pub fn run(args: Vec<String>) -> Result<(), String> {
     let command = args.get(1).map_or("uci", String::as_str);
     match command {
         "export" => {
-            if args.len() != 4 {
+            if args.len() < 4 {
                 return Err("export INPUT.tsv OUTPUTDIR".into());
             }
-            export(&args[2], &args[3]);
+            export(
+                &args[2],
+                &args[3],
+                if args.iter().any(|a| a == "--support") {
+                    features::SUPPORT_DIM
+                } else {
+                    features::DIM
+                },
+            );
             Ok(())
         }
         "schema" => {
-            let mut schema = features::schema();
-            schema["schema_sha256"] = json!(features::schema_fingerprint());
+            let dim = if args.iter().any(|a| a == "--support") {
+                features::SUPPORT_DIM
+            } else {
+                features::DIM
+            };
+            let mut schema = features::schema_for_dimension(dim).unwrap();
+            schema["schema_sha256"] = json!(features::schema_fingerprint_for(dim).unwrap());
             println!("{schema}");
             Ok(())
         }

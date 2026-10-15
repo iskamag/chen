@@ -38,8 +38,10 @@ fn choose(
         emit("bestmove 0000");
         return;
     }
+    let rows = root
+        .feature_rows(&actions, model.dim)
+        .expect("validated model feature dimension");
     let encoded = started.elapsed();
-    let rows: Vec<_> = actions.iter().map(|a| a.values).collect();
     let scores = model.score(&rows, &controls);
     let inferred = started.elapsed();
     let learned = scores.full_best.unwrap_or(0);
@@ -93,7 +95,7 @@ fn choose(
         .filter(|&&h| h == p.hash())
         .count();
     emit(format!(
-        "info string direct_model={} actions={} encode_us={} infer_us={} pair_terms={} base_choice={} learned_choice={} final_choice={} ranking_changed={} checking_actions={} mate_certificates={} certificate_unknown={} repetition_prior={} search_nodes=0 successor_positions=0 decision_source={}",
+        "info string direct_model={} actions={} encode_us={} infer_us={} pair_terms={} base_choice={} learned_choice={} final_choice={} ranking_changed={} checking_actions={} mate_certificates={} certificate_unknown={} repetition_prior={} search_nodes=0 successor_position_objects=0 counterfactual_graph_rebuilds={} decision_source={}",
         model.name,
         actions.len(),
         encoded.as_micros(),
@@ -107,6 +109,11 @@ fn choose(
         mate_certificates,
         certificate_unknown,
         repeated,
+        if model.dim == crate::features::SUPPORT_DIM {
+            actions.len()
+        } else {
+            0
+        },
         if selected == learned {
             "learned_policy"
         } else {

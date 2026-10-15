@@ -741,3 +741,87 @@ pub fn schema_fingerprint() -> String {
         .map(|b| format!("{b:02x}"))
         .collect()
 }
+
+pub const SUPPORT_DIM: usize = DIM + crate::support::DIM;
+pub fn schema_for_dimension(dim: usize) -> Option<Value> {
+    if dim == DIM {
+        return Some(schema());
+    }
+    if dim != SUPPORT_DIM {
+        return None;
+    }
+    let mut v = schema();
+    v["version"] = json!(2);
+    v["dim"] = json!(SUPPORT_DIM);
+    v["channels"]
+        .as_array_mut()
+        .unwrap()
+        .push(json!({"name":"support_obligations","start":DIM,"end":SUPPORT_DIM}));
+    v["feature_names"].as_array_mut().unwrap().extend(
+        crate::support::feature_names()
+            .into_iter()
+            .map(Value::String),
+    );
+    v["support_semantics"] = json!(
+        "source-identity support incidence; absolute-pin-ray filtering; two-pass target demand to shared defender load to target pressure; geometric, not an exchange proof"
+    );
+    v["support_computation"] = json!(
+        "root graph cached once; each action copies 64 symbols and reconstructs its counterfactual graph; no successor Position or game-tree reasoning"
+    );
+    Some(v)
+}
+pub fn schema_fingerprint_for(dim: usize) -> Option<String> {
+    use sha2::{Digest, Sha256};
+    let bytes = serde_json::to_vec(&schema_for_dimension(dim)?).ok()?;
+    Some(
+        Sha256::digest(bytes)
+            .iter()
+            .map(|b| format!("{b:02x}"))
+            .collect(),
+    )
+}
+impl RootFacts {
+    pub fn feature_rows(
+        &self,
+        actions: &[ActionFeatures],
+        dim: usize,
+    ) -> Result<Vec<Vec<f32>>, String> {
+        if dim != DIM && dim != SUPPORT_DIM {
+            return Err(format!("unsupported feature dimension {dim}"));
+        }
+        let support = (dim == SUPPORT_DIM).then(|| crate::support::SupportRoot::new(&self.p));
+        Ok(actions
+            .iter()
+            .map(|action| {
+                let mut row = Vec::with_capacity(dim);
+                row.extend_from_slice(&action.values);
+                if let Some(root) = &support {
+                    let d = &self.relation.decisions()[action.decision_index];
+                    row.extend_from_slice(&root.describe(
+                        action.mv,
+                        &d.patch,
+                        self.p.side_to_move(),
+                    ));
+                }
+                row
+            })
+            .collect())
+    }
+}
+
+#[cfg(test)]
+mod schema_tests {
+    use super::*;
+    #[test]
+    fn frozen_contracts_have_distinct_stable_fingerprints() {
+        assert_eq!(
+            schema_fingerprint(),
+            "890278fadee8d12099254c2e1edc428a84157977ddffe5a32335f9b690ed8d5f"
+        );
+        assert_eq!(
+            schema_fingerprint_for(SUPPORT_DIM).unwrap(),
+            "d70273878dad4b215e50d13bf24c3c045c8eaffb43a2a6e6f974244f419fd5d2"
+        );
+        assert!(schema_fingerprint_for(257).is_none());
+    }
+}
