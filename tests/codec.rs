@@ -175,3 +175,35 @@ fn independently_composed_legality_matches_known_perft() {
         2_812
     );
 }
+
+#[test]
+fn line_scans_exclude_the_target_and_stop_at_the_nearest_blocker() {
+    let position = Position::from_fen("7k/8/8/8/R2N3r/8/8/7K w - - 0 1").unwrap();
+    let relation = CodecPosition::from_position(&position).relation();
+    // The occupied d4 target is attacked from either end. Beyond it, the
+    // blocker suppresses the more distant slider rather than the nearest one.
+    for file in 0..8 {
+        assert_eq!(
+            relation.attacked_before(Color::White, 24 + file),
+            (1..=3).contains(&file)
+        );
+        assert_eq!(
+            relation.attacked_before(Color::Black, 24 + file),
+            (3..=6).contains(&file)
+        );
+    }
+    check(&position, true);
+}
+
+#[test]
+fn boundary_work_is_linear_in_board_channels_and_alternative_words() {
+    for fen in FIXTURES {
+        let relation = CodecPosition::from_position(&Position::from_fen(fen).unwrap()).relation();
+        // Four line families each visit 64 squares in two directions, for two
+        // colors. More alternatives add words, never another per-target ray fold.
+        assert_eq!(
+            relation.stats().boundary_compositions,
+            1024 * relation.stats().lane_words
+        );
+    }
+}

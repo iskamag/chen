@@ -87,7 +87,7 @@ pub struct RelationStats {
 #[derive(Clone, Debug)]
 pub struct MoveRelation {
     decisions: Vec<Decision>,
-    attacks: Vec<u64>,
+    attacks: Vec<[u64; 128]>,
     stats: RelationStats,
 }
 impl MoveRelation {
@@ -116,9 +116,7 @@ impl MoveRelation {
     }
     fn attacked_lane(&self, lane: usize, by: Color, target: u8) -> bool {
         assert!(target < 64, "target outside board");
-        self.attacks[(by.index() * 64 + target as usize) * self.stats.lane_words + lane / 64]
-            & (1 << (lane % 64))
-            != 0
+        self.attacks[lane / 64][by.index() * 64 + target as usize] & (1 << (lane % 64)) != 0
     }
 }
 
@@ -126,7 +124,44 @@ impl MoveRelation {
 struct Line {
     squares: [u8; 8],
     len: u8,
-    occupied: u8,
+}
+
+struct Geometry {
+    lines: [Line; 46],
+    memberships: [[(u8, u8); 4]; 64],
+}
+static GEOMETRY: Geometry = board_geometry();
+
+const fn board_geometry() -> Geometry {
+    let mut geometry = Geometry {
+        lines: [Line {
+            squares: [0; 8],
+            len: 0,
+        }; 46],
+        memberships: [[(0, 0); 4]; 64],
+    };
+    let mut square = 0u8;
+    while square < 64 {
+        let rank = square / 8;
+        let file = square % 8;
+        let ids = [
+            rank,
+            8 + file,
+            16 + (7 + rank as i8 - file as i8) as u8,
+            31 + rank + file,
+        ];
+        let mut family = 0;
+        while family < 4 {
+            let id = ids[family] as usize;
+            let slot = geometry.lines[id].len;
+            geometry.lines[id].squares[slot as usize] = square;
+            geometry.lines[id].len += 1;
+            geometry.memberships[square as usize][family] = (ids[family], slot);
+            family += 1;
+        }
+        square += 1;
+    }
+    geometry
 }
 
 /// The board is a lossless 4-bit symbol stream; movement uses four overlapping
@@ -135,8 +170,7 @@ struct Line {
 #[derive(Clone, Debug)]
 pub struct CodecPosition {
     symbols: [u8; 32],
-    lines: [Line; 46],
-    memberships: [[(u8, u8); 4]; 64],
+    occupied_lines: [u8; 46],
     side: Color,
     castling: u8,
     ep: Option<u8>,
@@ -146,8 +180,7 @@ impl CodecPosition {
     pub fn from_position(position: &Position) -> Self {
         let mut codec = Self {
             symbols: [0; 32],
-            lines: [Line::default(); 46],
-            memberships: [[(0, 0); 4]; 64],
+            occupied_lines: [0; 46],
             side: position.side_to_move(),
             castling: position.castling_rights(),
             ep: position.en_passant_square(),
@@ -156,28 +189,18 @@ impl CodecPosition {
                 position.king_square(Color::Black),
             ],
         };
-        for sq in 0..64u8 {
-            let symbol = position
-                .piece_at(sq)
-                .map_or(0, |(c, p)| 1 + c as u8 * 6 + p as u8);
-            codec.symbols[sq as usize / 2] |= symbol << ((sq % 2) * 4);
-            let rank = sq / 8;
-            let file = sq % 8;
-            let ids = [
-                rank,
-                8 + file,
-                16 + (7 + rank as i8 - file as i8) as u8,
-                31 + rank + file,
-            ];
-            for (family, id) in ids.into_iter().enumerate() {
-                let line = &mut codec.lines[id as usize];
-                let slot = line.len;
-                line.squares[slot as usize] = sq;
-                line.len += 1;
-                if symbol != 0 {
-                    line.occupied |= 1 << slot;
+        for color in [Color::White, Color::Black] {
+            for piece in crate::core::PIECES {
+                let mut sources = position.pieces(color, piece);
+                while sources != 0 {
+                    let sq = sources.trailing_zeros() as u8;
+                    sources &= sources - 1;
+                    let symbol = 1 + color as u8 * 6 + piece as u8;
+                    codec.symbols[sq as usize / 2] |= symbol << ((sq % 2) * 4);
+                    for &(id, slot) in &GEOMETRY.memberships[sq as usize] {
+                        codec.occupied_lines[id as usize] |= 1 << slot;
+                    }
                 }
-                codec.memberships[sq as usize][family] = (id, slot);
             }
         }
         codec
@@ -215,13 +238,15 @@ impl CodecPosition {
         }
         let lanes = 1 + decisions.len() + transits.len();
         let words = lanes.div_ceil(64);
-        let mut planes = vec![0u64; 12 * 64 * words];
-        let mut occupied = vec![0u64; 64 * words];
+        let mut planes = vec![[[0u64; 64]; 12]; words];
+        let mut occupied = vec![[0u64; 64]; words];
+        let mut possible_sources = [[0u64; 6]; 2];
         for sq in 0..64u8 {
             if let Some((color, piece)) = self.piece_at(sq) {
+                possible_sources[color.index()][piece.index()] |= 1 << sq;
                 for word in 0..words {
-                    planes[plane_index(color, piece, sq, word, words)] = !0;
-                    occupied[sq as usize * words + word] = !0;
+                    planes[word][color.index() * 6 + piece.index()][sq as usize] = !0;
+                    occupied[word][sq as usize] = !0;
                 }
             }
         }
@@ -237,68 +262,81 @@ impl CodecPosition {
             for edit in patch.edits() {
                 edits += 1;
                 if let Some((color, piece)) = self.piece_at(edit.square) {
-                    planes[plane_index(color, piece, edit.square, word, words)] &= !bit;
+                    planes[word][color.index() * 6 + piece.index()][edit.square as usize] &= !bit;
                 }
-                let cell = &mut occupied[edit.square as usize * words + word];
+                let cell = &mut occupied[word][edit.square as usize];
                 if let Some((color, piece)) = edit.piece {
-                    planes[plane_index(color, piece, edit.square, word, words)] |= bit;
+                    possible_sources[color.index()][piece.index()] |= 1 << edit.square;
+                    planes[word][color.index() * 6 + piece.index()][edit.square as usize] |= bit;
                     *cell |= bit;
                 } else {
                     *cell &= !bit;
                 }
             }
         }
-        let mut attacks = vec![0u64; 128 * words];
+        let mut attacks = vec![[0u64; 128]; words];
         let mut compositions = 0;
         for color in [Color::White, Color::Black] {
-            for target in 0..64u8 {
-                for word in 0..words {
-                    let mut attack = 0;
-                    for (piece, offsets) in [
-                        (Piece::Knight, &KNIGHT_STEPS[..]),
-                        (Piece::King, &KING_STEPS[..]),
-                    ] {
-                        for &(df, dr) in offsets {
-                            if let Some(source) = offset(target, df, dr) {
-                                attack |= planes[plane_index(color, piece, source, word, words)];
+            for word in 0..words {
+                let planes = &planes[word];
+                let occupied = &occupied[word];
+                let attack_word = &mut attacks[word];
+                // Propagate only populated source planes. The alternatives stay
+                // bit-sliced; a source mask reaches all destinations together.
+                for (piece, table) in [
+                    (Piece::Pawn, &crate::core::PAWN_ATTACKS[color.index()]),
+                    (Piece::Knight, &crate::core::KNIGHT_ATTACKS),
+                    (Piece::King, &crate::core::KING_ATTACKS),
+                ] {
+                    let mut sources = possible_sources[color.index()][piece.index()];
+                    while sources != 0 {
+                        let source = sources.trailing_zeros() as u8;
+                        sources &= sources - 1;
+                        let alternatives =
+                            planes[color.index() * 6 + piece.index()][source as usize];
+                        if alternatives == 0 {
+                            continue;
+                        }
+                        let mut destinations = table[source as usize];
+                        while destinations != 0 {
+                            let target = destinations.trailing_zeros() as usize;
+                            destinations &= destinations - 1;
+                            attack_word[color.index() * 64 + target] |= alternatives;
+                        }
+                    }
+                }
+                for (line_id, line) in GEOMETRY.lines.iter().enumerate() {
+                    let slider = if line_id < 16 {
+                        Piece::Rook
+                    } else {
+                        Piece::Bishop
+                    };
+                    // Before visiting the target, the boundary describes all
+                    // preceding squares, with the nearest one first. A new
+                    // square is prepended because it becomes nearest at the
+                    // following target. Include blockers only AFTER answering
+                    // this target, so occupied squares can themselves be attacked.
+                    for reverse in [false, true] {
+                        let mut boundary = Boundary::default();
+                        for cursor in 0..line.len as usize {
+                            let slot = if reverse {
+                                line.len as usize - 1 - cursor
+                            } else {
+                                cursor
+                            };
+                            let square = line.squares[slot];
+                            attack_word[color.index() * 64 + square as usize] |= boundary.attacker;
+                            let hostile = planes[color.index() * 6 + slider.index()]
+                                [square as usize]
+                                | planes[color.index() * 6 + Piece::Queen.index()][square as usize];
+                            boundary = Boundary {
+                                occupied: occupied[square as usize],
+                                attacker: hostile,
                             }
+                            .then(boundary);
+                            compositions += 1;
                         }
                     }
-                    let pawn_back = if color == Color::White { -1 } else { 1 };
-                    for df in [-1, 1] {
-                        if let Some(source) = offset(target, df, pawn_back) {
-                            attack |= planes[plane_index(color, Piece::Pawn, source, word, words)];
-                        }
-                    }
-                    // Each channel's near-to-far fold is an exact finite-state
-                    // boundary composition operating on 64 alternatives at once.
-                    for (family, &(line_id, slot)) in
-                        self.memberships[target as usize].iter().enumerate()
-                    {
-                        let line = self.lines[line_id as usize];
-                        let slider = if family < 2 {
-                            Piece::Rook
-                        } else {
-                            Piece::Bishop
-                        };
-                        for direction in [-1i8, 1] {
-                            let mut boundary = Boundary::default();
-                            let mut cursor = slot as i8 + direction;
-                            while (0..line.len as i8).contains(&cursor) {
-                                let sq = line.squares[cursor as usize];
-                                let hostile = planes[plane_index(color, slider, sq, word, words)]
-                                    | planes[plane_index(color, Piece::Queen, sq, word, words)];
-                                boundary = boundary.then(Boundary {
-                                    occupied: occupied[sq as usize * words + word],
-                                    attacker: hostile,
-                                });
-                                compositions += 1;
-                                cursor += direction;
-                            }
-                            attack |= boundary.attacker;
-                        }
-                    }
-                    attacks[(color.index() * 64 + target as usize) * words + word] = attack;
                 }
             }
         }
@@ -308,7 +346,7 @@ impl CodecPosition {
             lane_words: words,
             patch_edits: edits,
             boundary_compositions: compositions,
-            attack_bytes: attacks.len() * 8,
+            attack_bytes: attacks.len() * std::mem::size_of::<[u64; 128]>(),
         };
         let mut relation = MoveRelation {
             decisions: Vec::new(),
@@ -396,9 +434,10 @@ impl CodecPosition {
                         {
                             continue;
                         }
-                        let (line_id, slot) = self.memberships[from as usize][family];
-                        let line = self.lines[line_id as usize];
-                        let reach = LINE_REACH[slot as usize][line.occupied as usize];
+                        let (line_id, slot) = GEOMETRY.memberships[from as usize][family];
+                        let line = GEOMETRY.lines[line_id as usize];
+                        let reach = LINE_REACH[slot as usize]
+                            [self.occupied_lines[line_id as usize] as usize];
                         for cursor in 0..line.len {
                             if reach & (1 << cursor) != 0 {
                                 targets |= 1 << line.squares[cursor as usize];
@@ -466,9 +505,6 @@ impl CodecPosition {
             gives_check: false,
         }
     }
-}
-fn plane_index(color: Color, piece: Piece, sq: u8, word: usize, words: usize) -> usize {
-    ((color.index() * 6 + piece.index()) * 64 + sq as usize) * words + word
 }
 const KNIGHT_STEPS: [(i8, i8); 8] = [
     (1, 2),

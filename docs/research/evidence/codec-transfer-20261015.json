@@ -1,0 +1,106 @@
+{
+  "cpu": "AMD Ryzen 5 3600",
+  "affinity": [
+    4
+  ],
+  "rustc": "1.99.0 (b940084d7 2026-09-28)",
+  "build": "ordinary release, default CPU features, ThinLTO/codegen-units1",
+  "scope": "Shared-host mechanism diagnostic; no scalar speed advantage or strength claim",
+  "argv": [
+    "taskset",
+    "-c",
+    "4",
+    "PROBE",
+    "512",
+    "20"
+  ],
+  "sha256": {
+    "/tmp/chen-codec-original-final-probe": "7e69378ffc1992463d293ac835a815bc2cba37a7a62cfa9a334ce1dde7d7dc81",
+    "/tmp/chen-codec-refined-probe": "6d2e67e22e3891edea9e55e0e51c997c6fd49301298095361ea59126d75fa894",
+    "/tmp/chen-codec-original.rs": "8d26d902d4a41beb51c28730eced1760dc1ca10284bbf150b3640c26c77946eb",
+    "src/codec.rs": "3cc68f28ca004ed2cda7133b014c9a18a8b6877279bab2fc3ac2e0e04005e858",
+    "examples/codec_probe.rs": "0ff07219d405765525a2b8d62a8979f4ad36f6b8be5c9bce8536724ef25b8398"
+  },
+  "runs": [
+    {
+      "run": 0,
+      "codec": "original",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=14472.4\nscalar_queries_full_relation_ns_per_position=53565.5\nscalar_queries_over_codec=3.701\nscalar_piece_union_full_relation_ns_per_position=3592.5\ncodec_over_scalar_piece_union=4.028\northodox_legal_only_ns_per_position=1694.6 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 14472.4,
+      "scalar_queries_full_relation_ns_per_position": 53565.5,
+      "scalar_queries_over_codec": 3.701,
+      "scalar_piece_union_full_relation_ns_per_position": 3592.5,
+      "codec_over_scalar_piece_union": 4.028
+    },
+    {
+      "run": 0,
+      "codec": "refined",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=3530.5\nscalar_queries_full_relation_ns_per_position=53423.2\nscalar_queries_over_codec=15.132\nscalar_piece_union_full_relation_ns_per_position=3530.4\ncodec_over_scalar_piece_union=1.000\northodox_legal_only_ns_per_position=1690.3 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 3530.5,
+      "scalar_queries_full_relation_ns_per_position": 53423.2,
+      "scalar_queries_over_codec": 15.132,
+      "scalar_piece_union_full_relation_ns_per_position": 3530.4,
+      "codec_over_scalar_piece_union": 1.0
+    },
+    {
+      "run": 1,
+      "codec": "refined",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=3526.2\nscalar_queries_full_relation_ns_per_position=49746.3\nscalar_queries_over_codec=14.108\nscalar_piece_union_full_relation_ns_per_position=3268.6\ncodec_over_scalar_piece_union=1.079\northodox_legal_only_ns_per_position=1555.3 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 3526.2,
+      "scalar_queries_full_relation_ns_per_position": 49746.3,
+      "scalar_queries_over_codec": 14.108,
+      "scalar_piece_union_full_relation_ns_per_position": 3268.6,
+      "codec_over_scalar_piece_union": 1.079
+    },
+    {
+      "run": 1,
+      "codec": "original",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=13447.7\nscalar_queries_full_relation_ns_per_position=49189.2\nscalar_queries_over_codec=3.658\nscalar_piece_union_full_relation_ns_per_position=3309.6\ncodec_over_scalar_piece_union=4.063\northodox_legal_only_ns_per_position=1556.6 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 13447.7,
+      "scalar_queries_full_relation_ns_per_position": 49189.2,
+      "scalar_queries_over_codec": 3.658,
+      "scalar_piece_union_full_relation_ns_per_position": 3309.6,
+      "codec_over_scalar_piece_union": 4.063
+    },
+    {
+      "run": 2,
+      "codec": "original",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=13266.6\nscalar_queries_full_relation_ns_per_position=49026.4\nscalar_queries_over_codec=3.695\nscalar_piece_union_full_relation_ns_per_position=3332.8\ncodec_over_scalar_piece_union=3.981\northodox_legal_only_ns_per_position=1576.3 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 13266.6,
+      "scalar_queries_full_relation_ns_per_position": 49026.4,
+      "scalar_queries_over_codec": 3.695,
+      "scalar_piece_union_full_relation_ns_per_position": 3332.8,
+      "codec_over_scalar_piece_union": 3.981
+    },
+    {
+      "run": 2,
+      "codec": "refined",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=3291.9\nscalar_queries_full_relation_ns_per_position=49283.2\nscalar_queries_over_codec=14.971\nscalar_piece_union_full_relation_ns_per_position=3267.9\ncodec_over_scalar_piece_union=1.007\northodox_legal_only_ns_per_position=1575.9 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 3291.9,
+      "scalar_queries_full_relation_ns_per_position": 49283.2,
+      "scalar_queries_over_codec": 14.971,
+      "scalar_piece_union_full_relation_ns_per_position": 3267.9,
+      "codec_over_scalar_piece_union": 1.007
+    },
+    {
+      "run": 3,
+      "codec": "refined",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=3330.4\nscalar_queries_full_relation_ns_per_position=50041.7\nscalar_queries_over_codec=15.026\nscalar_piece_union_full_relation_ns_per_position=3312.9\ncodec_over_scalar_piece_union=1.005\northodox_legal_only_ns_per_position=1556.8 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 3330.4,
+      "scalar_queries_full_relation_ns_per_position": 50041.7,
+      "scalar_queries_over_codec": 15.026,
+      "scalar_piece_union_full_relation_ns_per_position": 3312.9,
+      "codec_over_scalar_piece_union": 1.005
+    },
+    {
+      "run": 3,
+      "codec": "original",
+      "stdout": "positions=512 repeats=20 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=13503.6\nscalar_queries_full_relation_ns_per_position=49032.3\nscalar_queries_over_codec=3.631\nscalar_piece_union_full_relation_ns_per_position=3297.6\ncodec_over_scalar_piece_union=4.095\northodox_legal_only_ns_per_position=1551.1 (smaller workload)\nattack_checksum=20793680 legal_checksum=283620\n",
+      "codec_full_relation_ns_per_position": 13503.6,
+      "scalar_queries_full_relation_ns_per_position": 49032.3,
+      "scalar_queries_over_codec": 3.631,
+      "scalar_piece_union_full_relation_ns_per_position": 3297.6,
+      "codec_over_scalar_piece_union": 4.095
+    }
+  ]
+}
