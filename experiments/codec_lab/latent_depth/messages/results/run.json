@@ -1,0 +1,15 @@
+{
+  "python": "3.14.8",
+  "affinity": [
+    4
+  ],
+  "corpus_sha256": "441a37e200d9460403e95b9318a9d4751790c13d4813e6f51cb3dcf5568311ab",
+  "source_sha256": {
+    "solver.py": "7d050801676d882e1dab30ec2a5ab32dad703a872c3a578144b18c2e099482a3",
+    "audit.py": "11e6e1d604b28207f88be94fca8d548c2e54f9fb284efd3be4e7935c5ca6846e",
+    "run.py": "a08f600324f01eab2fb47ce411628af4d42f9cf324fd2dd79eeb786b3857567b",
+    "protocol.json": "e518bc4b5c4dc2402620f60d412f54ffc31584fdbdf62ed7e5bc63ab71217732"
+  },
+  "curves_sha256": "230e76edcd33e3fef029e32620e2ce031ff586d29394f9545ccfbd1041167663",
+  "examples_sha256": "68069698333ff18978294e76b14f63d3e706002789619d49dcd1048e07bebc03"
+}

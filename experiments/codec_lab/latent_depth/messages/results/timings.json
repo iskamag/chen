@@ -1,0 +1,317 @@
+[
+  {
+    "mode": "coupled_synchronous",
+    "depth": 1,
+    "roots": 752,
+    "median_ns_per_root": 4734.757978723404,
+    "min_ns": 4720.303191489362,
+    "max_ns": 4790.515957446809,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 2,
+    "roots": 752,
+    "median_ns_per_root": 8725.912234042553,
+    "min_ns": 8716.511968085106,
+    "max_ns": 8884.715425531915,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 4,
+    "roots": 752,
+    "median_ns_per_root": 16319.869680851063,
+    "min_ns": 16283.6875,
+    "max_ns": 16486.372340425532,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 8,
+    "roots": 752,
+    "median_ns_per_root": 31162.255319148935,
+    "min_ns": 31063.917553191488,
+    "max_ns": 31531.922872340427,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 16,
+    "roots": 752,
+    "median_ns_per_root": 59048.51462765958,
+    "min_ns": 59017.425531914894,
+    "max_ns": 59455.04388297872,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 19,
+    "roots": 752,
+    "median_ns_per_root": 70196.76595744681,
+    "min_ns": 69796.8869680851,
+    "max_ns": 74125.8204787234,
+    "repetitions": 5
+  },
+  {
+    "mode": "coupled_synchronous",
+    "depth": 32,
+    "roots": 752,
+    "median_ns_per_root": 115436.3005319149,
+    "min_ns": 114963.18882978724,
+    "max_ns": 116084.89095744681,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 1,
+    "roots": 752,
+    "median_ns_per_root": 4745.156914893617,
+    "min_ns": 4728.242021276596,
+    "max_ns": 4895.170212765957,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 2,
+    "roots": 752,
+    "median_ns_per_root": 4733.587765957447,
+    "min_ns": 4727.829787234043,
+    "max_ns": 4769.505319148936,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 4,
+    "roots": 752,
+    "median_ns_per_root": 4818.960106382979,
+    "min_ns": 4793.240691489362,
+    "max_ns": 5142.949468085107,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 8,
+    "roots": 752,
+    "median_ns_per_root": 4952.962765957447,
+    "min_ns": 4943.760638297872,
+    "max_ns": 4985.130319148936,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 16,
+    "roots": 752,
+    "median_ns_per_root": 5225.23670212766,
+    "min_ns": 5215.037234042553,
+    "max_ns": 5543.413563829788,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 19,
+    "roots": 752,
+    "median_ns_per_root": 5307.271276595745,
+    "min_ns": 5303.960106382979,
+    "max_ns": 5323.772606382979,
+    "repetitions": 5
+  },
+  {
+    "mode": "input_only_onepass",
+    "depth": 32,
+    "roots": 752,
+    "median_ns_per_root": 5751.247340425532,
+    "min_ns": 5726.978723404255,
+    "max_ns": 5786.206117021276,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 1,
+    "roots": 752,
+    "median_ns_per_root": 4705.343085106383,
+    "min_ns": 4691.553191489362,
+    "max_ns": 4734.784574468085,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 2,
+    "roots": 752,
+    "median_ns_per_root": 8817.015957446809,
+    "min_ns": 8761.13829787234,
+    "max_ns": 9169.28989361702,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 4,
+    "roots": 752,
+    "median_ns_per_root": 16843.566489361703,
+    "min_ns": 16810.402925531915,
+    "max_ns": 17158.10106382979,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 8,
+    "roots": 752,
+    "median_ns_per_root": 32910.23271276596,
+    "min_ns": 32883.796542553195,
+    "max_ns": 33306.85505319149,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 16,
+    "roots": 752,
+    "median_ns_per_root": 64910.17420212766,
+    "min_ns": 64885.33377659575,
+    "max_ns": 64989.522606382976,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 19,
+    "roots": 752,
+    "median_ns_per_root": 77056.72340425532,
+    "min_ns": 76927.76063829787,
+    "max_ns": 77158.84973404255,
+    "repetitions": 5
+  },
+  {
+    "mode": "repeat_original_no_feedback",
+    "depth": 32,
+    "roots": 752,
+    "median_ns_per_root": 129299.59042553192,
+    "min_ns": 129149.1914893617,
+    "max_ns": 129857.07712765958,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 1,
+    "roots": 752,
+    "median_ns_per_root": 2626.594414893617,
+    "min_ns": 2611.753989361702,
+    "max_ns": 2641.845744680851,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 2,
+    "roots": 752,
+    "median_ns_per_root": 4406.726063829788,
+    "min_ns": 4389.890957446809,
+    "max_ns": 4430.781914893617,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 4,
+    "roots": 752,
+    "median_ns_per_root": 7824.622340425532,
+    "min_ns": 7820.341755319149,
+    "max_ns": 7837.615691489362,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 8,
+    "roots": 752,
+    "median_ns_per_root": 14700.76329787234,
+    "min_ns": 14629.844414893618,
+    "max_ns": 14995.097074468085,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 16,
+    "roots": 752,
+    "median_ns_per_root": 28270.301861702126,
+    "min_ns": 28232.337765957447,
+    "max_ns": 28514.251329787236,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 19,
+    "roots": 752,
+    "median_ns_per_root": 33322.054521276594,
+    "min_ns": 33262.4414893617,
+    "max_ns": 33651.11037234042,
+    "repetitions": 5
+  },
+  {
+    "mode": "target_only_no_capacity_messages",
+    "depth": 32,
+    "roots": 752,
+    "median_ns_per_root": 55275.65824468085,
+    "min_ns": 54979.382978723406,
+    "max_ns": 55555.445478723406,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 1,
+    "roots": 752,
+    "median_ns_per_root": 4723.029255319149,
+    "min_ns": 4707.337765957447,
+    "max_ns": 5148.466755319149,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 2,
+    "roots": 752,
+    "median_ns_per_root": 8662.507978723404,
+    "min_ns": 8638.531914893618,
+    "max_ns": 8678.718085106382,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 4,
+    "roots": 752,
+    "median_ns_per_root": 16008.833776595744,
+    "min_ns": 15986.918882978724,
+    "max_ns": 16422.23670212766,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 8,
+    "roots": 752,
+    "median_ns_per_root": 29199.929521276597,
+    "min_ns": 29174.51728723404,
+    "max_ns": 29893.041223404256,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 16,
+    "roots": 752,
+    "median_ns_per_root": 54451.15159574468,
+    "min_ns": 54361.65558510638,
+    "max_ns": 54839.6210106383,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 19,
+    "roots": 752,
+    "median_ns_per_root": 63812.90159574468,
+    "min_ns": 63753.08776595745,
+    "max_ns": 64183.09973404255,
+    "repetitions": 5
+  },
+  {
+    "mode": "rowwise_shuffled_resource_coupling",
+    "depth": 32,
+    "roots": 752,
+    "median_ns_per_root": 105536.77127659574,
+    "min_ns": 104721.58643617021,
+    "max_ns": 106166.83909574468,
+    "repetitions": 5
+  }
+]
