@@ -82,33 +82,70 @@ probe use the orthodox kernel to construct oracle successors; production
 Both debug and release tests passed on 2026-10-15.
 
 The probe compares identical Boolean attack questions for every candidate,
-including illegal candidates. Its scalar control receives precomputed candidate
-packets for free, makes one successor for each, and asks the ordinary attack
-kernel about all 128 color/target combinations. The codec timing includes encoding,
-proposal construction, sparse plane construction, the full relation and queries.
-A separate orthodox legal-only timing makes the workload difference explicit.
+including illegal candidates. Both scalar controls receive precomputed candidate
+packets for free and make one successor for each. The original **query control**
+asks `attackers_to` about all 128 color/target combinations. The stronger
+**piece-union control** computes occupancy once per child, unions pawn shifts,
+precomputed leaper masks and SWAR slider rays, and retains two ordinary attack
+bitboards per candidate before answering the same 128 Boolean questions. The
+codec timing includes encoding, proposal construction, sparse plane construction,
+the full relation and queries. A separate orthodox legal-only timing makes the
+workload difference explicit.
+
+Before timing, every candidate's complete two-color attack masks are compared
+individually between piece union, the codec and the query API. This catches
+differences that could cancel in a checksum. A focused example test repeats that
+comparison on castling, both colors' en passant, promotion and multi-word roots.
 
 A deterministic 512-position corpus with 10 repetitions contains 15,865 candidate
 packets, 31,825 sparse edits including transit lanes, and 512 lane words. Each
 position's retained attack result occupies 1,024 bytes in this corpus. All four
 runs produced attack checksum 10,396,840 and legal checksum 141,810.
 
-On an AMD Ryzen 5 3600, Rust 1.99.0, default release settings, observed runs were:
+On an AMD Ryzen 5 3600, Rust 1.99.0, default release settings, the original
+query-control observations were:
 
-| Run | Codec full relation, us/position | Scalar full relation, us/position | Scalar / codec | Orthodox legal only, us/position |
+| Run | Codec full relation, us/position | Scalar queries, us/position | Queries / codec | Orthodox legal only, us/position |
 | --- | ---: | ---: | ---: | ---: |
 | 1 | 13.27 | 49.22 | 3.708 | 1.65 |
 | 2 | 17.07 | 63.86 | 3.741 | 2.19 |
 | 3 | 16.83 | 62.50 | 3.713 | 2.09 |
 | 4 | 17.09 | 63.21 | 3.699 | 2.08 |
 
-These are local wall-clock observations under shared machine load, with no core
-isolation or controlled thermal/frequency conditions. They demonstrate useful
-amortization for a much richer counterfactual workload; they do not demonstrate
-faster ordinary move generation, search throughput, match strength, GPU behavior,
-or an engine-level speedup. The full relation is substantially more expensive
-than Chen's legal-only path. The 512-position timing corpus fits into one lane
-word per position; separate exactness tests exercise multiple words.
+Those local wall-clock observations used shared machine load, with no core
+isolation or controlled thermal/frequency conditions. They establish a gain over
+the repeated-query API, whose occupancy and ray work is redundant for this
+Boolean output. They do not establish a gain over an efficient orthodox attack
+producer. The stronger control below corrects that comparison.
+
+Four corrected probe runs pinned to CPU3 on the same shared host produced:
+
+| Run | Codec, us/position | Scalar piece union, us/position | Codec / union |
+| --- | ---: | ---: | ---: |
+| 1 | 14.39 | 3.59 | 4.004 |
+| 2 | 14.41 | 3.59 | 4.013 |
+| 3 | 14.74 | 4.14 | 3.561 |
+| 4 | 16.65 | 3.36 | 4.958 |
+
+These are diagnostic runs with fixed method order (codec, repeated queries,
+piece union, legal only), not isolated frequency/thermal controls. Complete
+mask equality was checked outside timing before every run. The stronger scalar
+control retains its output before consumption, including its vector allocation;
+the gap is not an artifact of streaming one attack mask and discarding it.
+The [raw observations](evidence/codec-piece-union-20261015.json) bind the corrected
+example and executable hashes. Reproduce the focused check with
+`cargo test --release --example codec_probe`; strict example Clippy and formatting
+also passed.
+
+The current codec is roughly four times slower than scalar piece union on this
+workload; this rejects a general full-relation speedup claim for this version. Its
+retained all-square answers are a transposed representation, not an output-size
+gain over two ordinary attack bitboards per candidate: those masks need 16 bytes
+per candidate, while codec padding needs 1,024 bytes per 64-lane word. The full
+codec relation is also substantially more expensive than Chen's legal-only path.
+The 512-position timing corpus fits into one lane word per position; separate
+exactness tests exercise multiple words. None of these measurements establish
+search throughput, match strength, GPU behavior or an engine-level speedup.
 
 ## Boundary of the result
 

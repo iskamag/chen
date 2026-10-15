@@ -1,0 +1,18 @@
+{
+  "cpu": "AMD Ryzen 5 3600",
+  "affinity": [
+    3
+  ],
+  "build": "release default features; ThinLTO; codegen-units=1",
+  "rustc": "1.99.0 (b940084d7 2026-09-28)",
+  "source_revision": "7c61452 plus examples/codec_probe.rs comparator correction",
+  "source_sha256": "6b365506ed904e80b522be8ffb63cdbf8d944cef6008c44fa9c7f7ad36da7d90",
+  "binary_sha256": "250d3c106d39c178a019970b39200e8313e92da9442e51306aaab8f19fa12a2f",
+  "scope": "Shared-host diagnostic with fixed method order; all full masks individually checked before timing; scalar union retains two bitboards per candidate; not engine speed or strength",
+  "runs": [
+    "positions=512 repeats=10 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=14391.4\nscalar_queries_full_relation_ns_per_position=53491.7\nscalar_queries_over_codec=3.717\nscalar_piece_union_full_relation_ns_per_position=3593.9\ncodec_over_scalar_piece_union=4.004\northodox_legal_only_ns_per_position=1695.1 (smaller workload)\nattack_checksum=10396840 legal_checksum=141810\n",
+    "positions=512 repeats=10 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=14405.7\nscalar_queries_full_relation_ns_per_position=53341.4\nscalar_queries_over_codec=3.703\nscalar_piece_union_full_relation_ns_per_position=3589.6\ncodec_over_scalar_piece_union=4.013\northodox_legal_only_ns_per_position=1694.5 (smaller workload)\nattack_checksum=10396840 legal_checksum=141810\n",
+    "positions=512 repeats=10 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=14741.1\nscalar_queries_full_relation_ns_per_position=60562.5\nscalar_queries_over_codec=4.108\nscalar_piece_union_full_relation_ns_per_position=4139.9\ncodec_over_scalar_piece_union=3.561\northodox_legal_only_ns_per_position=1955.3 (smaller workload)\nattack_checksum=10396840 legal_checksum=141810\n",
+    "positions=512 repeats=10 seed=8ac6c0de20261015\ncandidates=15865 lane_words=512 sparse_edits=31825 retained_attack_bytes=524288\ncodec_full_relation_ns_per_position=16651.5\nscalar_queries_full_relation_ns_per_position=52907.4\nscalar_queries_over_codec=3.177\nscalar_piece_union_full_relation_ns_per_position=3358.8\ncodec_over_scalar_piece_union=4.958\northodox_legal_only_ns_per_position=1572.8 (smaller workload)\nattack_checksum=10396840 legal_checksum=141810\n"
+  ]
+}
