@@ -70,6 +70,7 @@ fn export(input: &str, out: &str) {
     data.flush().unwrap();
     index.flush().unwrap();
     let mut manifest = features::schema();
+    manifest["schema_sha256"] = json!(features::schema_fingerprint());
     manifest["features_sha256"] = Value::String(hash(&featurepath));
     manifest["index_sha256"] = Value::String(hash(&indexpath));
     manifest["positions"] = json!(positions);
@@ -92,7 +93,7 @@ fn option<'a>(args: &'a [String], name: &str) -> Option<&'a str> {
 fn controls(args: &[String]) -> model::Controls {
     model::Controls {
         base_only: args.iter().any(|a| a == "--base-only"),
-        no_interaction: args.iter().any(|a| a == "--no-interaction"),
+        pair_products_off: args.iter().any(|a| a == "--pair-products-off"),
         omit_channel: option(args, "--omit-channel").map(String::from),
     }
 }
@@ -121,7 +122,9 @@ pub fn run(args: Vec<String>) -> Result<(), String> {
             Ok(())
         }
         "schema" => {
-            println!("{}", features::schema());
+            let mut schema = features::schema();
+            schema["schema_sha256"] = json!(features::schema_fingerprint());
+            println!("{schema}");
             Ok(())
         }
         "predict" => {
@@ -164,7 +167,7 @@ pub fn run(args: Vec<String>) -> Result<(), String> {
         }
         "uci" => {
             let model_path = option(&args, "--model").ok_or(
-                "uci --model MODEL.json [--base-only|--no-interaction|--omit-channel NAME]",
+                "uci --model MODEL.json [--base-only|--pair-products-off|--omit-channel NAME]",
             )?;
             let model = model::Model::load(Path::new(model_path))?;
             uci::run(model, controls(&args))

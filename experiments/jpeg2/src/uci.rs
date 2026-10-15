@@ -174,10 +174,10 @@ fn finish(job: &mut Option<thread::JoinHandle<()>>, stop: &AtomicBool) {
     }
 }
 pub fn run(model: Model, controls: Controls) -> Result<(), String> {
-    if let Some(name) = &controls.omit_channel {
-        if !model.groups.iter().any(|g| &g.name == name) {
-            return Err(format!("unknown model channel {name}"));
-        }
+    if let Some(name) = &controls.omit_channel
+        && !model.groups.iter().any(|g| &g.name == name)
+    {
+        return Err(format!("unknown model channel {name}"));
     }
     let model = Arc::new(model);
     let stop = Arc::new(AtomicBool::new(false));

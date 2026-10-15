@@ -361,10 +361,10 @@ impl RootFacts {
                 for xx in 0..2 {
                     for yy in 0..2 {
                         let (a, b) = (x + dx + xx, y + (dy + yy) * vertical);
-                        if on_board(a, b) {
-                            if let Some((c, _)) = v.cell((b * 8 + a) as u8) {
-                                f[16 + endpoint * 8 + q * 2 + self.role(c)] += 0.25;
-                            }
+                        if on_board(a, b)
+                            && let Some((c, _)) = v.cell((b * 8 + a) as u8)
+                        {
+                            f[16 + endpoint * 8 + q * 2 + self.role(c)] += 0.25;
                         }
                     }
                 }
@@ -381,10 +381,11 @@ impl RootFacts {
     fn root_attackers(&self, c: Color, t: u8) -> [f32; 6] {
         let mut count = [0.; 6];
         for s in bits(self.sources) {
-            if let Some((color, k)) = self.cells[s as usize] {
-                if color == c && source_attacks(s, color, k, self.sources) & (1 << t) != 0 {
-                    count[k.index()] += 1.;
-                }
+            if let Some((color, k)) = self.cells[s as usize]
+                && color == c
+                && source_attacks(s, color, k, self.sources) & (1 << t) != 0
+            {
+                count[k.index()] += 1.;
             }
         }
         count
@@ -729,4 +730,14 @@ mod tests {
             }
         }
     }
+}
+
+/// Binds the semantic feature contract, independently of model grouping/width.
+pub fn schema_fingerprint() -> String {
+    use sha2::{Digest, Sha256};
+    let bytes = serde_json::to_vec(&schema()).expect("schema serializes");
+    Sha256::digest(bytes)
+        .iter()
+        .map(|b| format!("{b:02x}"))
+        .collect()
 }

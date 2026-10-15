@@ -31,7 +31,7 @@ pub struct Model {
 #[derive(Clone, Default)]
 pub struct Controls {
     pub base_only: bool,
-    pub no_interaction: bool,
+    pub pair_products_off: bool,
     pub omit_channel: Option<String>,
 }
 #[derive(Clone)]
@@ -76,7 +76,7 @@ fn linear(v: &Value, rows: usize, cols: usize, weight: &str, bias: &str) -> Resu
 fn dot(a: &[f32], b: &[f32]) -> f32 {
     debug_assert_eq!(a.len(), b.len());
     let mut s = [0.; 4];
-    let mut chunks = a.chunks_exact(4).zip(b.chunks_exact(4));
+    let mut chunks = a.as_chunks::<4>().0.iter().zip(b.as_chunks::<4>().0.iter());
     for (x, y) in &mut chunks {
         s[0] += x[0] * y[0];
         s[1] += x[1] * y[1];
@@ -105,6 +105,11 @@ impl Model {
             .map_err(|e| e.to_string())?;
         if v["format"] != "jpeg2-channel-policy-f32-v1" || v["dim"] != DIM {
             return Err("unsupported model format or feature dimension".into());
+        }
+        if v["feature_schema_sha256"].as_str()
+            != Some(crate::features::schema_fingerprint().as_str())
+        {
+            return Err("model feature schema fingerprint mismatch or missing".into());
         }
         let width = v["projection_width"]
             .as_u64()
@@ -231,21 +236,21 @@ impl Model {
             let base = self.base_bias + dot(&self.base, &hidden);
             base_logits.push(base);
             let mut value = base;
-            if !controls.base_only {
-                if let Some((layer, weight, bias)) = &self.residual {
-                    interaction_input[..h].copy_from_slice(&hidden);
-                    for (i, &(a, b)) in self.pairs.iter().enumerate() {
-                        for d in 0..self.width {
-                            interaction_input[h + i * self.width + d] = if controls.no_interaction {
-                                0.
-                            } else {
-                                hidden[a * self.width + d] * hidden[b * self.width + d]
-                            };
-                        }
+            if !controls.base_only
+                && let Some((layer, weight, bias)) = &self.residual
+            {
+                interaction_input[..h].copy_from_slice(&hidden);
+                for (i, &(a, b)) in self.pairs.iter().enumerate() {
+                    for d in 0..self.width {
+                        interaction_input[h + i * self.width + d] = if controls.pair_products_off {
+                            0.
+                        } else {
+                            hidden[a * self.width + d] * hidden[b * self.width + d]
+                        };
                     }
-                    layer.apply_relu(&interaction_input, &mut residual_hidden);
-                    value += bias + dot(weight, &residual_hidden);
                 }
+                layer.apply_relu(&interaction_input, &mut residual_hidden);
+                value += bias + dot(weight, &residual_hidden);
             }
             logits.push(value);
         }
@@ -257,7 +262,7 @@ impl Model {
             base_best,
             full_best,
             interaction_terms: if controls.base_only
-                || controls.no_interaction
+                || controls.pair_products_off
                 || self.residual.is_none()
             {
                 0
@@ -281,7 +286,7 @@ mod tests {
     use serde_json::json;
     #[test]
     fn channel_interaction_changes_decision_and_independent_additive_layout_loads() {
-        let mut value = json!({"format":"jpeg2-channel-policy-f32-v1","dim":DIM,"channels":[{"name":"a","start":0,"end":1},{"name":"b","start":1,"end":2}],"normalization":{"mean":vec![0.;DIM],"inverse_std":vec![1.;DIM],"clip":8.},"projection_width":1,"projections":[{"weight":[[1.]],"bias":[0.]},{"weight":[[1.]],"bias":[0.]}],"base":{"weight":[1.,0.],"bias":0.},"interaction_pairs":[[0,1]],"residual":{"enabled":true,"weight1":[[0.,0.,1.]],"bias1":[0.],"weight2":[1.],"bias2":0.}});
+        let mut value = json!({"format":"jpeg2-channel-policy-f32-v1","feature_schema_sha256":crate::features::schema_fingerprint(),"dim":DIM,"channels":[{"name":"a","start":0,"end":1},{"name":"b","start":1,"end":2}],"normalization":{"mean":vec![0.;DIM],"inverse_std":vec![1.;DIM],"clip":8.},"projection_width":1,"projections":[{"weight":[[1.]],"bias":[0.]},{"weight":[[1.]],"bias":[0.]}],"base":{"weight":[1.,0.],"bias":0.},"interaction_pairs":[[0,1]],"residual":{"enabled":true,"weight1":[[0.,0.,1.]],"bias1":[0.],"weight2":[1.],"bias2":0.}});
         let path =
             std::env::temp_dir().join(format!("jpeg2-model-test-{}.json", std::process::id()));
         fs::write(&path, serde_json::to_vec(&value).unwrap()).unwrap();
@@ -300,7 +305,7 @@ mod tests {
                 ..Controls::default()
             },
             Controls {
-                no_interaction: true,
+                pair_products_off: true,
                 ..Controls::default()
             },
             Controls {

@@ -20,8 +20,8 @@ coarse logit, explicit elementwise products between selected channel projections
 and a learned residual interaction network. Its decision is the legal argmax.
 Actual independently trained additive and parameter-matched flat controls can
 use the same runtime with dynamic model groups/projection widths and disabled
-residuals. Post-hoc `--base-only`, `--no-interaction`, and `--omit-channel NAME`
-are available for diagnosis; they must not be presented as independently trained
+residuals. Post-hoc `--base-only`, `--pair-products-off`, and `--omit-channel NAME`
+are available for diagnosis; disabling pair products still leaves nonlinear cross-channel computation in the residual MLP. They must not be presented as independently trained
 controls. There is no claim that evaluating this fixed circuit lazily is a new
 reasoning algorithm.
 
