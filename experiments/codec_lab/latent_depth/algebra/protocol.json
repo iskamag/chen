@@ -1,7 +1,7 @@
 {
  "version":1,
  "task":"Repeated nonlinear closure of fixed simultaneous target/resource compatibility state; all input edges supplied at round0, never additional factors per round.",
- "input":"Shared labelled corpus; explicitly EVAL only, resource/target dimensions each<=6; choose at most16 rows per (resources,targets) by SHA256('latent-algebra-v1|'+id), independent of outcomes. Include two declared Gram-equal four-target worked graphs separately.",
+ "input":"Shared labelled corpus; explicitly EVAL plus STRUCTURE only, resource/target dimensions each<=6; include all bounded STRUCTURE rows and choose at most16 EVAL rows per (resources,targets) by SHA256('latent-algebra-v1|'+id), independent of outcomes. Include two declared Gram-equal four-target worked graphs separately.",
  "rounds":[0,1,2,3,4],
  "state":"One fixed Boolean array of2^(targets+resources) coordinates indexed by used-target subset and used-resource subset. Initialize unit and every singleton input edge. No stored assignment path, per-path object, dynamic frontier, or new input per round.",
  "update":"A_next=A OR (A disjoint-product A). Product unions both subsets only when target subsets and resource subsets are disjoint. Boolean coefficients retain existence, not assignment counts. Interaction order at most doubles each round.",
