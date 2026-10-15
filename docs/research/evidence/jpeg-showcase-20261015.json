@@ -1,0 +1,287 @@
+{
+  "purpose": "Curated entertainment sample, not a rating experiment",
+  "declaration": {
+    "purpose": "Select an entertaining real game for sharing, not a rating sample",
+    "settings": "HybridChen v0 vs Stockfish19configured1800; .5s/move both,1thread16MiB,sharedbookmax12ply",
+    "selection": "Three book seeds, both colors; inspect opening coherence, early blunders, tactical finish and length; retain all games and identify selected sample; additional three seeds after the first batch contained conspicuous tactical misses",
+    "seeds": {
+      "Open Sicilian": 4,
+      "Italian": 22,
+      "Scotch": 334
+    },
+    "additional_seeds": {
+      "Ruy Lopez": 2,
+      "Queens Gambit": 93,
+      "Caro Kann": 1875
+    },
+    "selected": {
+      "seed": 1875,
+      "game": 1,
+      "reason": "Compact 34-move attack with rook lift, pawn advance and back-rank mating net; no large early tactical drops in the 40k-node review."
+    }
+  },
+  "playing_config": {
+    "base": {
+      "command": [
+        "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+      ],
+      "options": {
+        "Threads": 1,
+        "Hash": 16,
+        "NumaPolicy": "none",
+        "UCI_LimitStrength": true,
+        "UCI_Elo": 1800,
+        "SyzygyPath": "",
+        "SyzygyProbeLimit": 0
+      }
+    },
+    "candidate": {
+      "command": [
+        "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v0",
+        "--mode",
+        "hybrid"
+      ],
+      "options": {
+        "Policy": "hybrid",
+        "Threads": 1,
+        "Hash": 16
+      }
+    }
+  },
+  "selected_game": {
+    "seed": 1875,
+    "game": 1,
+    "candidate_color": "black",
+    "result": "0-1",
+    "plies": 68,
+    "last_move": "Rb1#"
+  },
+  "all_games": [
+    {
+      "seed": 4,
+      "audit_status": "PASS",
+      "legal_moves": 165,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "1-0",
+          "candidate_score": 1.0,
+          "plies": 83,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "0-1",
+          "candidate_score": 1.0,
+          "plies": 82,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "audit_status": "PASS",
+      "legal_moves": 129,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 80,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "1-0",
+          "candidate_score": 0.0,
+          "plies": 49,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "seed": 334,
+      "audit_status": "PASS",
+      "legal_moves": 133,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 78,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "1-0",
+          "candidate_score": 0.0,
+          "plies": 55,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "audit_status": "PASS",
+      "legal_moves": 300,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 216,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "0-1",
+          "candidate_score": 1.0,
+          "plies": 84,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "seed": 93,
+      "audit_status": "PASS",
+      "legal_moves": 132,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "0-1",
+          "candidate_score": 0.0,
+          "plies": 70,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "0-1",
+          "candidate_score": 1.0,
+          "plies": 62,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    },
+    {
+      "seed": 1875,
+      "audit_status": "PASS",
+      "legal_moves": 185,
+      "games": [
+        {
+          "opening": "startpos",
+          "candidate_color": "white",
+          "result": "1-0",
+          "candidate_score": 1.0,
+          "plies": 117,
+          "termination": "CHECKMATE",
+          "failure": null
+        },
+        {
+          "opening": "startpos",
+          "candidate_color": "black",
+          "result": "0-1",
+          "candidate_score": 1.0,
+          "plies": 68,
+          "termination": "CHECKMATE",
+          "failure": null
+        }
+      ]
+    }
+  ],
+  "total_games": 12,
+  "total_legal_moves": 1044,
+  "candidate_wdl": {
+    "wins": 6,
+    "draws": 0,
+    "losses": 6
+  },
+  "video": {
+    "seconds": 77,
+    "frames": 1848,
+    "fps": 24,
+    "resolution": [
+      1280,
+      800
+    ],
+    "decode_to_eof": "PASS",
+    "visually_inspected": "Opening preview and final mating position",
+    "captions": [
+      {
+        "start_ply": 0,
+        "end_ply": 12,
+        "lines": [
+          "A sharp Caro-Kann. Books on both sides.",
+          "Chen plays Black. Watch the rooks coordinate."
+        ]
+      },
+      {
+        "start_ply": 24,
+        "end_ply": 30,
+        "lines": [
+          "The centre opens; White cannot castle.",
+          "Chen gains time with the queen and pawns."
+        ]
+      },
+      {
+        "start_ply": 42,
+        "end_ply": 48,
+        "lines": [
+          "21...Rh3 activates the kingside rook.",
+          "The other rook will enter along the c-file."
+        ]
+      },
+      {
+        "start_ply": 49,
+        "end_ply": 54,
+        "lines": [
+          "White trades a rook for the knight on e4,",
+          "26.Nxc6 grabs a pawn, but danger remains."
+        ]
+      },
+      {
+        "start_ply": 55,
+        "end_ply": 60,
+        "lines": [
+          "28.Rg1 leaves the knight on c6 undefended.",
+          "Chen takes it, then collects c2 and b2."
+        ]
+      },
+      {
+        "start_ply": 64,
+        "end_ply": 68,
+        "lines": [
+          "The bishop cuts off d2 and e3.",
+          "...d3 closes e2; ...Rb1 is checkmate."
+        ]
+      }
+    ]
+  },
+  "sha256": {
+    "results/jpeg-showcase-20261015/showcase.mp4": "7847468bde99fb8c51091b00b3cd948c51aa74b7f5826607995d9d63b812b423",
+    "results/jpeg-showcase-20261015/showcase.pgn": "3a07806d4d1107d272f1274d398edb1055032dd20fa9a594eb789f6863451c4e",
+    "results/jpeg-showcase-20261015/showcase.manifest.json": "77cba126cea21a39bffe7c8e29b597a7eca395ed6f7b2536c9de457e5f0f273d",
+    "results/jpeg-showcase-20261015/selection-analysis.json": "6cabc87c740ffb1480725f1a8429bd849e8f2dcbd85780a35aeb633aec88904e",
+    "results/jpeg-showcase-20261015/declaration.json": "8b23a665d2622aaf35104e34e07028b6d8eae1459449f4fa7100d46d25a0b88a",
+    "results/jpeg-showcase-20261015/captions.json": "d67dd766c7ae870b442f9ea36cf2290c87ea05dada8fb2d13c41bcd1b82cd74f"
+  }
+}

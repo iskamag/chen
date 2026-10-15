@@ -36,12 +36,15 @@ def sha(path):
 
 
 class Renderer:
-    def __init__(self, names, candidate_color, row, analysis, pacing, architecture, budget_seconds=1.0, book_plies=0):
+    def __init__(self, names, candidate_color, row, analysis, pacing, architecture, budget_seconds=1.0, book_plies=0,
+                 selection_note=None, captions=()):
         self.names, self.candidate_color = names, candidate_color
         self.row, self.analysis, self.pacing = row, analysis, pacing
         self.architecture = architecture
         self.budget_ms = round(budget_seconds * 1000)
         self.book_plies = book_plies
+        self.selection_note = selection_note
+        self.captions = captions
         self.fonts = {}
         self.pieces = {}
         for symbol in 'PNBRQKpnbrqk':
@@ -126,15 +129,21 @@ class Renderer:
         self.text(draw, (763, 420), 'POST-GAME STOCKFISH ANALYSIS', 11, fill=MUTED, bold=True)
         self.text(draw, (763, 441), entry['label'] + '  ·  White perspective', 17)
         # Visible move history does not run off the bottom of the sidebar.
-        shown = sans[max(0, index - 10):index]
+        caption = next((c for c in self.captions if c['start_ply'] <= index <= c['end_ply']), None)
+        shown = sans[max(0, index - (6 if caption else 10)):index]
         for j, (label, _) in enumerate(shown):
             self.text(draw, (764 + (j % 2) * 228, 492 + (j // 2) * 29), label, 16, fill=TEXT if j == len(shown) - 1 else MUTED, mono=True)
+        if caption:
+            for j, line in enumerate(caption['lines']):
+                self.text(draw, (763, 594 + j * 22), line, 16, fill=JPEG)
 
         total = len(self.row['move_trace'])
         draw.rounded_rectangle((762, 667, 1220, 671), radius=2, fill='#2a3845')
         if total and index:
             draw.rounded_rectangle((762, 667, 762 + int(458 * index / total), 671), radius=2, fill=JPEG)
         self.text(draw, (762, 688), f'Ply {index:03d} / {total:03d}', 13, fill=MUTED, mono=True)
+        if self.selection_note:
+            self.text(draw, (61, 749), self.selection_note, 13, fill=JPEG)
         self.text(draw, (61, 770), f'Rendered replay · {self.pacing:g} s/ply · requested budget {self.budget_ms} ms/move', 13, fill=MUTED)
         if title or final:
             overlay = Image.new('RGBA', image.size)
@@ -145,7 +154,7 @@ class Renderer:
             sub = self.row['termination'].replace('_', ' ').title() if final else 'Every move. Both bots.'
             self.text(d, (181, 344), heading, 42, bold=True, fill=JPEG)
             self.text(d, (182, 411), sub, 20)
-            self.text(d, (182, 451), 'Unscripted game · saved PGN', 14, fill=MUTED)
+            self.text(d, (182, 451), 'Selected game · saved PGN' if self.selection_note else 'Unscripted game · saved PGN', 14, fill=MUTED)
             image = Image.alpha_composite(image.convert('RGBA'), overlay).convert('RGB')
         return image
 
@@ -203,6 +212,8 @@ def main():
     parser.add_argument('--seconds-per-ply', type=float, default=1.1)
     parser.add_argument('--analysis-nodes', type=int, default=20000)
     parser.add_argument('--architecture', default='Relational proofs + conventional Chen PVS')
+    parser.add_argument('--selection-note', help='Visible disclosure for a curated game, also saved in the manifest')
+    parser.add_argument('--captions', type=Path, help='Post-game captions: start_ply, end_ply, lines (up to three)')
     parser.add_argument('--preview', type=Path)
     parser.add_argument('--preview-only', action='store_true')
     args = parser.parse_args()
@@ -241,8 +252,13 @@ def main():
     candidate_color = row['candidate_color'] == 'white'
     names = {candidate_color: args.candidate_label, not candidate_color: args.base_label}
     book_metadata = metadata.get('opening_book')
+    captions = json.loads(args.captions.read_text()) if args.captions else []
+    for caption in captions:
+        assert 0 <= caption['start_ply'] <= caption['end_ply'] <= len(moves)
+        assert 1 <= len(caption['lines']) <= 3
+        assert all(isinstance(line, str) and len(line) <= 48 for line in caption['lines'])
     renderer = Renderer(names, candidate_color, row, analysis, args.seconds_per_ply, args.architecture, budget_seconds,
-                        book_metadata['plies'] if book_metadata else 0)
+                        book_metadata['plies'] if book_metadata else 0, args.selection_note, captions)
     preview = renderer.frame(boards[min(12, len(moves))], sans[:min(12, len(moves))], min(12, len(moves)), last=moves[min(11, len(moves) - 1)])
     preview.save(args.preview or args.out.with_suffix('.png'))
     if args.preview_only:
@@ -289,6 +305,8 @@ def main():
                 'candidate_label': args.candidate_label, 'base_label': args.base_label,
                 'architecture': args.architecture, 'playing_config': metadata['config'],
                 'requested_seconds_per_move': budget_seconds,
+                'selection_note': args.selection_note,
+                'captions': captions,
                 'opening_book': book_metadata,
                 'resolution': [WIDTH, HEIGHT], 'fps': args.fps, 'frames': total_frames,
                 'seconds': total_frames / args.fps, 'seconds_per_ply_requested': args.seconds_per_ply,
