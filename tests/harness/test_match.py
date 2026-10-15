@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import tempfile
 try:
     import chess
     import chess.engine
@@ -50,6 +51,30 @@ class MatchTests(unittest.TestCase):
         _, row = self.module.play([Mate(), Mate()], ['a', 'b'], ('mate', '7k/5Q2/6K1/8/8/8/8/8 w - - 0 1'), chess.WHITE, chess.engine.Limit(depth=1), 1)
         self.assertEqual(row['candidate_score'], 1)
         self.assertEqual(row['termination'], 'CHECKMATE')
+
+    def test_shared_book_applies_to_both_sides_then_preserves_search_history(self):
+        class Engine:
+            def __init__(self):
+                self.histories = []
+            def play(self, board, *args, **kwargs):
+                self.histories.append(len(board.move_stack))
+                return chess.engine.PlayResult(next(iter(board.legal_moves)), None)
+        with tempfile.TemporaryDirectory() as directory:
+            for c in 'abcde':
+                Path(directory, c + '.tsv').write_text('eco\tname\tpgn\n')
+            Path(directory, 'a.tsv').write_text('eco\tname\tpgn\nC20\tTest\t1. e4 e5 2. Nf3 Nc6\n')
+            book = self.module.SharedOpeningBook(directory, plies=2, seed=42)
+            engines = [Engine(), Engine()]
+            _, row = self.module.play(engines, ['candidate', 'base'], ('start', chess.STARTING_FEN),
+                                     chess.WHITE, chess.engine.Limit(time=.5), 3, book)
+            self.assertEqual([r['book'] for r in row['move_trace']], [True, True, False])
+            self.assertEqual([r['move'] for r in row['move_trace'][:2]], ['e2e4', 'e7e5'])
+            self.assertEqual(engines[0].histories, [2])
+            self.assertEqual(engines[1].histories, [])
+            # Reversing player identities retains the same declared book line.
+            _, second = self.module.play([Engine(), Engine()], ['base', 'candidate'],
+                ('start', chess.STARTING_FEN), chess.BLACK, chess.engine.Limit(time=.5), 2, book)
+            self.assertEqual([r['move'] for r in second['move_trace']], ['e2e4', 'e7e5'])
 
 
 if __name__ == '__main__':

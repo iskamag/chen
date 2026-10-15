@@ -1,0 +1,213 @@
+{
+  "scope": "Book-on color-paired exhibition; no rating or causal book-strength inference",
+  "opponent": "Stockfish19 configured1800",
+  "seconds_per_move_both": 0.5,
+  "book_revision": "a6189a30dc273ccb21fc2536a9a2fefd5592a67a",
+  "audit": {
+    "status": "PASS",
+    "completed_recorded_games": 2,
+    "expected_games": 2,
+    "all_expected_games_recorded": true,
+    "audited_legal_moves": 200,
+    "candidate_wdl": {
+      "losses": 1,
+      "wins": 1
+    },
+    "terminations": {
+      "CHECKMATE": 2
+    },
+    "special_moves": {
+      "castles": 4,
+      "en_passant": 1,
+      "promotions": 1,
+      "captures": 39
+    },
+    "book_moves": {
+      "candidate": 7,
+      "base": 7
+    },
+    "opening_book": {
+      "kind": "shared_controller_opening_book",
+      "source": "CC0 Lichess chess-openings ECO TSV",
+      "plies": 12,
+      "seed": 20261015,
+      "lines": 3865,
+      "positions": 3562,
+      "files_sha256": {
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/a.tsv": "3282e4c9155289a29224f9a85fba0decb46efa35c2fa5e39662d2ac48fb0f793",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/b.tsv": "1d5ed134ebbd87915ead5683416e37583bb3e5ae3582b4d8cb5cb4aa7ef4f623",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/c.tsv": "45e843c7b7e79a0d04d5bda879c9bd23f5a10974488bd8615e4f4c5d0749986f",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/d.tsv": "1cf4057a8aece94f27bb3f278ad410ee2844831a642364eeceaafa091dbcceda",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/e.tsv": "48c6f6645b031a5937c8386839debab0e2e48837251687ba1afb6369677f8546"
+      },
+      "selection": "most common for seed 0, otherwise deterministic weighted position-based selection",
+      "applies_to": [
+        "base",
+        "candidate"
+      ]
+    },
+    "requested_seconds_per_move": 0.5,
+    "transport_allowance_ms": 100,
+    "timing": {
+      "candidate": {
+        "moves": 100,
+        "median_ms": 465.7485625,
+        "p95_ms": 465.965512,
+        "max_ms": 466.604862,
+        "over_1100ms": 0,
+        "over_1500ms": 0,
+        "over_budget_plus_100ms": 0
+      },
+      "base": {
+        "moves": 100,
+        "median_ms": 500.533611,
+        "p95_ms": 501.233421,
+        "max_ms": 555.657829,
+        "over_1100ms": 0,
+        "over_1500ms": 0,
+        "over_budget_plus_100ms": 0
+      }
+    },
+    "timing_within_100ms_transport_allowance": true,
+    "games": [
+      {
+        "opening": "startpos",
+        "candidate_color": "white",
+        "result": "0-1",
+        "candidate_score": 0.0,
+        "plies": 136,
+        "termination": "CHECKMATE",
+        "failure": null
+      },
+      {
+        "opening": "startpos",
+        "candidate_color": "black",
+        "result": "0-1",
+        "candidate_score": 1.0,
+        "plies": 64,
+        "termination": "CHECKMATE",
+        "failure": null
+      }
+    ],
+    "engines": {
+      "base": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+        ],
+        "options": {
+          "Threads": 1,
+          "Hash": 16,
+          "NumaPolicy": "none",
+          "UCI_LimitStrength": true,
+          "UCI_Elo": 1800,
+          "SyzygyPath": "",
+          "SyzygyProbeLimit": 0
+        }
+      },
+      "candidate": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v0",
+          "--mode",
+          "hybrid"
+        ],
+        "options": {
+          "Policy": "hybrid",
+          "Threads": 1,
+          "Hash": 16
+        }
+      }
+    },
+    "python_chess": "1.11.2",
+    "auditor_sha256": "24fb3ccfe94409b0b9ed165a0df2441dd6e7a3a75d97bc519dc94d57b947fbac",
+    "sha256": {
+      "metadata.json": "af9f72858bafd8f6c16c0c5e422c6f128c1c4b24101751d998669428c4448c41",
+      "games.pgn": "a2378e4373e441663ab6d9d35523ab3e6120d1055b162427c8dc3fa7c777c6a9",
+      "games.jsonl": "404d220b9b2d510daa730a5c9bbf9c64aef2a4df10a6729a7b9845e87b20b766"
+    },
+    "interpretation": "Exact trace/rule-outcome audit only. Small paired sample selects observed behavior; no Elo estimate or target-parity claim."
+  },
+  "video": {
+    "kind": "rendered_replay_of_actual_bot_game",
+    "run": "results/jpeg-book-both-20261015/match",
+    "game": 0,
+    "result": "0-1",
+    "termination": "CHECKMATE",
+    "plies": 136,
+    "candidate_label": "JPEG-assisted Chen",
+    "base_label": "Stockfish 19 \u00b7 setting 1800",
+    "architecture": "Relational proofs + conventional Chen PVS",
+    "playing_config": {
+      "base": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/match-tools/stockfish/stockfish-linux-x86-64-universal"
+        ],
+        "options": {
+          "Threads": 1,
+          "Hash": 16,
+          "NumaPolicy": "none",
+          "UCI_LimitStrength": true,
+          "UCI_Elo": 1800,
+          "SyzygyPath": "",
+          "SyzygyProbeLimit": 0
+        }
+      },
+      "candidate": {
+        "command": [
+          "/home/iskam/src/vibe/chen/results/jpeg-video-20261015/chen-jpeg-play-v0",
+          "--mode",
+          "hybrid"
+        ],
+        "options": {
+          "Policy": "hybrid",
+          "Threads": 1,
+          "Hash": 16
+        }
+      }
+    },
+    "requested_seconds_per_move": 0.5,
+    "opening_book": {
+      "kind": "shared_controller_opening_book",
+      "source": "CC0 Lichess chess-openings ECO TSV",
+      "plies": 12,
+      "seed": 20261015,
+      "lines": 3865,
+      "positions": 3562,
+      "files_sha256": {
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/a.tsv": "3282e4c9155289a29224f9a85fba0decb46efa35c2fa5e39662d2ac48fb0f793",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/b.tsv": "1d5ed134ebbd87915ead5683416e37583bb3e5ae3582b4d8cb5cb4aa7ef4f623",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/c.tsv": "45e843c7b7e79a0d04d5bda879c9bd23f5a10974488bd8615e4f4c5d0749986f",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/d.tsv": "1cf4057a8aece94f27bb3f278ad410ee2844831a642364eeceaafa091dbcceda",
+        "/home/iskam/src/vibe/chen/results/jpeg-book-both-20261015/book/e.tsv": "48c6f6645b031a5937c8386839debab0e2e48837251687ba1afb6369677f8546"
+      },
+      "selection": "most common for seed 0, otherwise deterministic weighted position-based selection",
+      "applies_to": [
+        "base",
+        "candidate"
+      ]
+    },
+    "resolution": [
+      1280,
+      800
+    ],
+    "fps": 24,
+    "frames": 2800,
+    "seconds": 116.66666666666667,
+    "seconds_per_ply_requested": 0.8,
+    "analysis": "Independent post-game full-strength Stockfish, not used by either playing bot",
+    "analysis_nodes_per_position": 20000,
+    "sha256": {
+      "results/jpeg-book-both-20261015/books-both-sides.mp4": "ecca878c6cb066810a8f5ee77aa2d5096ab91ad0cb3f59ef2c5ae71a7f396634",
+      "results/jpeg-book-both-20261015/match/games.jsonl": "404d220b9b2d510daa730a5c9bbf9c64aef2a4df10a6729a7b9845e87b20b766",
+      "results/jpeg-book-both-20261015/match/games.pgn": "a2378e4373e441663ab6d9d35523ab3e6120d1055b162427c8dc3fa7c777c6a9",
+      "results/jpeg-book-both-20261015/match/metadata.json": "af9f72858bafd8f6c16c0c5e422c6f128c1c4b24101751d998669428c4448c41",
+      "results/match-tools/stockfish/stockfish-linux-x86-64-universal": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "/home/iskam/src/vibe/chen/scripts/render_chess_video.py": "b4c0db9580dc9ff837548ee4cbcdca1dcae57eec33aab9094f9af31a22636fc5"
+    }
+  },
+  "source_sha256": {
+    "scripts/match.py": "e4800592db0b6e74c19d68aec26fdb2fcb70120c676b9ab33e202ca0ece4106d",
+    "harness/opening_book.py": "1bb9ab9bae5d67f64e1c0a8dcf19cf4d8342b30e09c6387827db2980b85c03a5",
+    "scripts/jpeg_strength_audit.py": "24fb3ccfe94409b0b9ed165a0df2441dd6e7a3a75d97bc519dc94d57b947fbac",
+    "scripts/render_chess_video.py": "b4c0db9580dc9ff837548ee4cbcdca1dcae57eec33aab9094f9af31a22636fc5"
+  }
+}

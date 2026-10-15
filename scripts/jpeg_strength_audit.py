@@ -10,9 +10,13 @@ import hashlib
 import json
 from pathlib import Path
 import statistics
+import sys
 
 import chess
 import chess.pgn
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from harness.opening_book import SharedOpeningBook
 
 
 def sha(path):
@@ -38,6 +42,14 @@ def audit(directory, seconds_per_move=1.0):
     assert seconds_per_move > 0
     assert budget["movetime"] == seconds_per_move, "collector budget differs from declared audit budget"
     assert budget["max_plies"] == 512, "512-ply safety cap must remain unscored"
+    book_metadata = metadata.get('opening_book')
+    book = None
+    if book_metadata is not None:
+        for path, digest in book_metadata['files_sha256'].items():
+            assert sha(path) == digest, 'changed opening book'
+        directory_path = Path(next(iter(book_metadata['files_sha256']))).parent
+        book = SharedOpeningBook(directory_path, book_metadata['plies'], book_metadata['seed'])
+        assert book.metadata() == book_metadata
     rows = [json.loads(x) for x in (directory / "games.jsonl").read_text().splitlines() if x.strip()]
     games = []
     with (directory / "games.pgn").open() as source:
@@ -59,6 +71,7 @@ def audit(directory, seconds_per_move=1.0):
     score = Counter()
     terminations = Counter()
     special = Counter()
+    book_moves = Counter()
     audited_moves = 0
     per_game = []
     for index, (game, row) in enumerate(zip(games, rows)):
@@ -80,6 +93,12 @@ def audit(directory, seconds_per_move=1.0):
             assert mv in board.legal_moves, (index, ply, "illegal move", mv.uci())
             expected_engine = game.headers["White" if board.turn else "Black"]
             assert move["engine"] == expected_engine
+            book_move = book.choose(board) if book is not None else None
+            assert move.get('book', False) == (book_move is not None), (index, ply, 'book usage mismatch')
+            if book_move is not None:
+                assert mv == book_move, (index, ply, 'move differs from declared opening book')
+                assert move['reported']['nodes'] == 0
+                book_moves[expected_engine] += 1
             assert move["wall_ns"] > 0
             elapsed[expected_engine].append(move["wall_ns"])
             special["castles"] += board.is_castling(mv)
@@ -127,6 +146,8 @@ def audit(directory, seconds_per_move=1.0):
         "candidate_wdl": dict(score),
         "terminations": dict(terminations),
         "special_moves": dict(special),
+        "book_moves": dict(book_moves),
+        "opening_book": book_metadata,
         "requested_seconds_per_move": seconds_per_move,
         "transport_allowance_ms": 100,
         "timing": {key: timing(values, seconds_per_move) for key, values in elapsed.items()},

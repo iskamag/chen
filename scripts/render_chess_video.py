@@ -36,11 +36,12 @@ def sha(path):
 
 
 class Renderer:
-    def __init__(self, names, candidate_color, row, analysis, pacing, architecture, budget_seconds=1.0):
+    def __init__(self, names, candidate_color, row, analysis, pacing, architecture, budget_seconds=1.0, book_plies=0):
         self.names, self.candidate_color = names, candidate_color
         self.row, self.analysis, self.pacing = row, analysis, pacing
         self.architecture = architecture
         self.budget_ms = round(budget_seconds * 1000)
+        self.book_plies = book_plies
         self.fonts = {}
         self.pieces = {}
         for symbol in 'PNBRQKpnbrqk':
@@ -67,7 +68,8 @@ class Renderer:
         title_text = ('THE HALF-SECOND TEST' if self.budget_ms == 500 else
                       'THE ONE-SECOND TEST' if self.budget_ms == 1000 else f'{self.budget_ms} MS PER MOVE')
         self.text(draw, (766, 33), title_text, 23, fill=JPEG, bold=True)
-        self.text(draw, (61, 70), 'CPU only / 1 thread per bot / 16 MiB hash / books off', 15, fill=MUTED)
+        book_label = f'shared book (up to {self.book_plies} ply)' if self.book_plies else 'books off'
+        self.text(draw, (61, 70), 'CPU only / 1 thread per bot / 16 MiB hash / ' + book_label, 15, fill=MUTED)
         hidden = set()
         if animation:
             hidden = {target for _, target, _, _ in animation}
@@ -119,7 +121,8 @@ class Renderer:
             trace = self.row['move_trace'][index - 1]
             wall = trace['wall_ns'] / 1e6
             depth = trace['reported'].get('depth', '—')
-            self.text(draw, (763, 386), f'Actual move: {wall:.0f} ms   /   depth {depth}', 16, fill=MUTED)
+            timing_label = f'Opening book · {wall:.0f} ms' if trace.get('book') else f'Actual move: {wall:.0f} ms   /   depth {depth}'
+            self.text(draw, (763, 386), timing_label, 16, fill=MUTED)
         self.text(draw, (763, 420), 'POST-GAME STOCKFISH ANALYSIS', 11, fill=MUTED, bold=True)
         self.text(draw, (763, 441), entry['label'] + '  ·  White perspective', 17)
         # Visible move history does not run off the bottom of the sidebar.
@@ -237,7 +240,9 @@ def main():
     analysis = analyse(boards, args.stockfish, analysis_path, args.analysis_nodes)
     candidate_color = row['candidate_color'] == 'white'
     names = {candidate_color: args.candidate_label, not candidate_color: args.base_label}
-    renderer = Renderer(names, candidate_color, row, analysis, args.seconds_per_ply, args.architecture, budget_seconds)
+    book_metadata = metadata.get('opening_book')
+    renderer = Renderer(names, candidate_color, row, analysis, args.seconds_per_ply, args.architecture, budget_seconds,
+                        book_metadata['plies'] if book_metadata else 0)
     preview = renderer.frame(boards[min(12, len(moves))], sans[:min(12, len(moves))], min(12, len(moves)), last=moves[min(11, len(moves) - 1)])
     preview.save(args.preview or args.out.with_suffix('.png'))
     if args.preview_only:
@@ -284,6 +289,7 @@ def main():
                 'candidate_label': args.candidate_label, 'base_label': args.base_label,
                 'architecture': args.architecture, 'playing_config': metadata['config'],
                 'requested_seconds_per_move': budget_seconds,
+                'opening_book': book_metadata,
                 'resolution': [WIDTH, HEIGHT], 'fps': args.fps, 'frames': total_frames,
                 'seconds': total_frames / args.fps, 'seconds_per_ply_requested': args.seconds_per_ply,
                 'analysis': 'Independent post-game full-strength Stockfish, not used by either playing bot',

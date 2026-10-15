@@ -15,6 +15,7 @@ import chess.engine
 import chess.pgn
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from harness.stats import summarize_pairs
+from harness.opening_book import SharedOpeningBook
 
 
 def sha(path):
@@ -36,7 +37,7 @@ def opening_rows(path):
     return rows
 
 
-def play(engines, names, opening, candidate_color, limit, max_plies):
+def play(engines, names, opening, candidate_color, limit, max_plies, book=None):
     board = chess.Board(opening[1])
     game = chess.pgn.Game()
     game.setup(board)
@@ -54,19 +55,26 @@ def play(engines, names, opening, candidate_color, limit, max_plies):
             engine_index = 0 if board.turn == chess.WHITE else 1
             initial_fen = board.fen(en_passant='fen')
             started = time.perf_counter_ns()
-            result = engines[engine_index].play(board, limit, game=game,
-                                                info=chess.engine.INFO_BASIC)
+            book_move = book.choose(board) if book is not None else None
+            if book_move is not None:
+                result = chess.engine.PlayResult(book_move, None, info={'depth': 0, 'nodes': 0, 'time': 0.0})
+            else:
+                result = engines[engine_index].play(board, limit, game=game,
+                                                    info=chess.engine.INFO_BASIC)
             elapsed_ns = time.perf_counter_ns() - started
             if result.move not in board.legal_moves:
                 raise ValueError(f'illegal or missing move: {result.move}')
             move_trace.append({'ply': ply, 'engine': names[engine_index],
                                'fen': initial_fen, 'move': result.move.uci(),
                                'wall_ns': elapsed_ns,
+                               'book': book_move is not None,
                                'reported': {key: result.info[key] for key in
                                             ('depth', 'seldepth', 'nodes', 'nps', 'time', 'hashfull', 'tbhits')
                                             if key in result.info}})
             board.push(result.move)
             node = node.add_variation(result.move)
+            if book_move is not None:
+                node.comment = 'Shared opening book'
         except Exception as error:
             failure = f'{type(error).__name__}: {error}'
             break
@@ -98,12 +106,16 @@ def main():
     p.add_argument('--independent-opening-pairs', action='store_true',
                    help='assert an independent opening-pair sampling design before emitting a bootstrap interval')
     p.add_argument('--out', required=True)
+    p.add_argument('--book-dir', help='use the same controller-supplied ECO TSV book for both engines')
+    p.add_argument('--book-plies', type=int, default=12)
+    p.add_argument('--book-seed', type=int, default=0)
     args = p.parse_args()
     if sum(v is not None for v in (args.depth, args.nodes, args.movetime)) != 1:
         p.error('choose exactly one depth, nodes, or movetime budget')
     if args.rounds < 1 or args.max_plies < 1 or any(v is not None and v <= 0 for v in (args.depth, args.nodes, args.movetime)):
         p.error('budgets, rounds and max-plies must be positive')
     config = json.loads(Path(args.config).read_text())
+    book = SharedOpeningBook(args.book_dir, args.book_plies, args.book_seed) if args.book_dir else None
     openings = opening_rows(args.openings)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=False)
@@ -111,6 +123,7 @@ def main():
     metadata = {'config': config, 'budgets': vars(args), 'opening_sha256': sha(args.openings), 'chess_version': chess.__version__, 'platform': platform.platform(), 'concurrency': 1, 'launcher_sha256': {name: sha(entry['command'][0]) for name, entry in config.items()}, 'declared_artifact_sha256': {name: {label: sha(path) for label, path in entry.get('artifacts', {}).items()} for name, entry in config.items()}, 'artifact_scope': {name: 'declared-files' if entry.get('artifacts') else 'launcher-only' for name, entry in config.items()}, 'rating_target': '2500 Lichess in a declared time-control pool; this offline match does not certify it'}
     metadata['inherited_runtime_environment'] = {key: os.environ[key] for key in ['CHEN_GPU_LIBRARY', 'CHEN_NEURAL_MODEL', 'CHEN_NEURAL_LIBRARY', 'CHEN_NEURAL_HIP_RUNTIME', 'CHEN_NEURAL_EXECUTION', 'CHEN_NEURAL_GRAPH_SHAPES', 'CHEN_NEURAL_GRAPH_BYTES', 'HSA_OVERRIDE_GFX_VERSION', 'HIP_VISIBLE_DEVICES', 'ROCR_VISIBLE_DEVICES', 'CUDA_VISIBLE_DEVICES', 'PYTORCH_ROCM_ARCH', 'OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS'] if key in os.environ}
     metadata['match_script_sha256'] = sha(__file__)
+    metadata['opening_book'] = book.metadata() if book is not None else None
     (out / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
     engines = {}
     try:
@@ -130,7 +143,7 @@ def main():
                     pair = []
                     for color in [chess.WHITE, chess.BLACK]:
                         order = ['candidate', 'base'] if color == chess.WHITE else ['base', 'candidate']
-                        game, row = play([engines[name] for name in order], order, opening, color, limit, args.max_plies)
+                        game, row = play([engines[name] for name in order], order, opening, color, limit, args.max_plies, book)
                         row['round'] = round_index
                         pgn.write(str(game) + '\n\n'); pgn.flush()
                         log.write(json.dumps(row) + '\n'); log.flush()
