@@ -39,7 +39,7 @@ The largest isolated alias residual was 2.043 for N=8 and 1.809 for N=16.
 After overlap-add, the largest residual was 1.34e-14 and 2.09e-14 respectively.
 Maximum complete reconstruction error was 2.05e-14 across both sizes.
 The mismatched window retains about 0.380 mean relative L2 error even after
-fitting an optimal global output gain, so the failure is not just a scale
+fitting an optimal scalar output gain per signal, so the failure is not just a scale
 convention.
 
 The complete analysis matrix for an individual block has rank N, not 2N.

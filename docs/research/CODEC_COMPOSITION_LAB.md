@@ -1,6 +1,13 @@
-# Codec composition: questions and small experiments
+# Codec-inspired interactions: questions and small experiments
 
 Date: 2026-10-15. This is an algorithm laboratory, not a new chess engine.
+
+The target is **interaction**. Hold individual component strengths fixed,
+change their relative alignment or coupling, and inspect the change in the
+joint answer. Representation size, reconstruction, and timing are secondary
+controls. A successful result must explain an interaction, not merely retain
+enough data to recover the inputs. This emphasis records the user's steering
+during the round; it does not replace the frozen lane protocols or outcomes.
 
 ## What we are trying to understand
 
