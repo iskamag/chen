@@ -1,0 +1,167 @@
+{
+  "seed": 2026101501,
+  "python_chess": "1.11.2",
+  "seconds": 11.371265583002241,
+  "scope": "Exact board-local legal/check/mate1/stalemate obligations; no repetition-history or reachability claim for constructed roots; no strength inference",
+  "generator_sha256": "3dcbc5929b34ff826e41498c5b624e85e36d569d9f9403656bfa0b524d025d35",
+  "inventory": {
+    "dev-sparse-queen": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 871
+    },
+    "dev-sparse-rook": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 1441
+    },
+    "dev-sparse-minor": {
+      "counts": {
+        "mate": 4,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 4,
+        "nonmate": 28
+      },
+      "trials": 4943
+    },
+    "dev-sparse-promotion": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 6725
+    },
+    "dev": {
+      "roots": 727,
+      "events": 3210,
+      "mate_positive_roots": 76,
+      "mate_actions": 165,
+      "legal_actions": 16721,
+      "families": {
+        "constructed-minor-mate": 4,
+        "constructed-minor-nonmate": 28,
+        "constructed-promotion-mate": 20,
+        "constructed-promotion-nonmate": 28,
+        "constructed-queen-mate": 20,
+        "constructed-queen-nonmate": 28,
+        "constructed-rook-mate": 20,
+        "constructed-rook-nonmate": 28,
+        "fixture-castle": 2,
+        "fixture-castle-in-check": 2,
+        "fixture-castle-transit": 2,
+        "fixture-clock100": 2,
+        "fixture-clock99": 2,
+        "fixture-double-check": 2,
+        "fixture-ep": 2,
+        "fixture-ep-check-evasion": 2,
+        "fixture-ep-pin": 2,
+        "fixture-ep-rook-discovery": 2,
+        "fixture-kiwipete": 2,
+        "fixture-mate": 2,
+        "fixture-mate-one": 2,
+        "fixture-middlegame": 2,
+        "fixture-phase-promotions": 2,
+        "fixture-promotion": 2,
+        "fixture-promotion-capture": 2,
+        "fixture-rook-end": 2,
+        "fixture-stalemate": 2,
+        "fixture-start": 2,
+        "reachable-capture": 107,
+        "reachable-check": 128,
+        "reachable-quiet": 138,
+        "reachable-uniform": 138
+      }
+    },
+    "cert-sparse-queen": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 884
+    },
+    "cert-sparse-rook": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 1706
+    },
+    "cert-sparse-minor": {
+      "counts": {
+        "mate": 4,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 4,
+        "nonmate": 28
+      },
+      "trials": 10471
+    },
+    "cert-sparse-promotion": {
+      "counts": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "target": {
+        "mate": 20,
+        "nonmate": 28
+      },
+      "trials": 5045
+    },
+    "cert": {
+      "roots": 659,
+      "events": 3036,
+      "mate_positive_roots": 68,
+      "mate_actions": 95,
+      "legal_actions": 14834,
+      "families": {
+        "constructed-minor-mate": 4,
+        "constructed-minor-nonmate": 28,
+        "constructed-promotion-mate": 20,
+        "constructed-promotion-nonmate": 28,
+        "constructed-queen-mate": 20,
+        "constructed-queen-nonmate": 28,
+        "constructed-rook-mate": 20,
+        "constructed-rook-nonmate": 28,
+        "reachable-capture": 110,
+        "reachable-check": 97,
+        "reachable-quiet": 138,
+        "reachable-uniform": 138
+      }
+    }
+  },
+  "sha256": {
+    "dev-transitions.tsv": "5497ad60d57edb29f892475f189e961e7a2f6cf62d5b8edb35ee601f0ebfd2c3",
+    "cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+    "dev.tsv": "524983ca720e2e1a945accc2ccff7d716659641a08cf2a918564bccc64fd3cac",
+    "cert-transitions.tsv": "b34b695ee23066990a12817c2a8b3477365383c6d17f6a3508f178fe86e8dd4e",
+    "cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+    "dev-oracle.jsonl": "769aa741ed832d1f928239f57b043638f8000bc33c18f09a631a5dfefa9eac06"
+  }
+}

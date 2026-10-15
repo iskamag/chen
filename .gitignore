@@ -96,3 +96,6 @@ __pycache__/
 /neural/evidence/strategic-study-gfx1030-2026-10-01.json
 /neural/evidence/value-study-gfx1030-2026-10-01.json
 /neural/evidence/value-study-pilot-2026-10-01.json
+
+# Independent architecture experiments keep build products local.
+/experiments/radical_round1/*/target/
