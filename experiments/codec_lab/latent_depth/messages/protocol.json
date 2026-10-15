@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "task": "Repeated simultaneous local constraint messages over a fixed target-resource incidence graph; no child graphs, branch decisions or assignment enumeration in inference",
+  "input": "Root frozen common corpus --corpus path; rows with targets,resources,columns bitmasks; use eval and structure partitions only",
+  "labels": "Root offline maximum_matching and feasible; independent audit-only augmenting matching verifies labels and retained edge support, never imported by inference",
+  "variables": "One Boolean for every original allowed edge; each target exactly one chosen edge; each resource at most one",
+  "main": "Synchronous monotone Boolean support propagation. Every row and capacity factor reads previous-round domains; outputs intersect only after all factor messages computed. No in-place wave, matching call, assignment choice or graph expansion.",
+  "depths": [1,2,4,8,16,19,32],
+  "scan": "Save states0..32 to measure first certified status and first fixed point; no new input appears after round0",
+  "variants": ["coupled_synchronous", "input_only_onepass", "repeat_original_no_feedback", "target_only_no_capacity_messages", "rowwise_shuffled_resource_coupling"],
+  "shuffled_control": "Fixed seed1729 row-specific resource relabeling preserves row degrees but deliberately changes shared identity. Certificates concern modified graph only; any comparison to original labels is an untrusted ablation, never a valid original-graph proof. A consistent global resource permutation would be an isomorphism, not this ablation.",
+  "contract": {"FEASIBLE": "Only an explicit complete injective selection of forced edges", "INFEASIBLE": "Only empty edge-domain, target zero candidates/multiple forced choices, or resource multiple forced choices from valid local deductions", "UNKNOWN": "Neither certificate; cannot imply feasibility or infeasibility"},
+  "controls_contract": "Original-graph controls remain sound partial solvers; shuffled control's raw statuses are explicitly untrusted for original graph",
+  "metrics": ["per-family/depth FEASIBLE INFEASIBLE UNKNOWN and false certificates", "newly forced/forbidden edge values", "feasible-root deduction support audit", "minimal certificate round", "first fixed-point round", "stage-by-stage forced-chain/cycle/Hall examples", "proof dependency radius versus stationary repeated pass", "CPU wall time with literal round budget"],
+  "timing": {"cpu": 4, "repetitions": 5, "sample": "first512 eval roots and allstructure roots", "depths": [1,2,4,8,16,19,32], "runtime": "Python3 standard library, matched implementation, exploratory not engine performance"},
+  "seed": 1729,
+  "limits": "CPU only; no engine/model/training/GPU; 32 iterations; tiny corpus outputs, no per-root bulky traces except selected examples",
+  "hypothesis": "A forced chain of n targets needs2n-1 synchronous rounds to certify all choices: additional rounds extend dependency radius. Ambiguous cycles and Hall-deficient non-singleton cores may reach a fixed point UNKNOWN; support propagation is not complete matching.",
+  "frozen_before_measured_runs": true
+}
