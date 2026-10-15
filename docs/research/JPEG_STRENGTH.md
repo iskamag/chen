@@ -21,9 +21,9 @@ The hybrid
 uses a bounded JPEG certificate prepass followed by ordinary Chen PVS. It is
 explicitly a JPEG-assisted conventional search engine. The filmed hybrid v0 is
 the exact hybrid executable used in the direct selection games.
-The executed hybrid v0 is a pinned first prototype. Later source corrections,
-including the root qualification-gate correction, do not retroactively change
-the frozen executable that produced these games.
+The executed hybrid v0 is a pinned first prototype. The later pure minimax
+implementation and documentation corrections do not retroactively change the
+frozen executable that produced these games.
 
 Every match uses one second per move, one computation thread, 16 MiB hash, no
 book, no tablebases and a 512-ply safety cap. Caps and technical failures remain
