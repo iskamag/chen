@@ -1,0 +1,277 @@
+{
+  "scope": "Quick half-second direct match, not a rating or an equivalence test",
+  "protocol": {
+    "purpose": "Quick direct Hybrid v0 versus stock web Serious Chen screen; not an Elo measurement",
+    "seed_rule": "Eight consecutive new seeds 101-108 fixed before play; both colors; no selection by result",
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "movetime_seconds": 0.5,
+    "book_plies": 12,
+    "CPU_lanes": [
+      1,
+      2,
+      4
+    ],
+    "primary_stock": "Web Serious settings: PVS true, aspiration 0, Tapered, TT/qsearch/ordering on",
+    "storage": "Raw traces in RAM; retain PGNs, compact metrics and compressed trace only; no renders"
+  },
+  "counts": {
+    "losses": 7,
+    "hybrid_searched_decisions": 818,
+    "search_proposal_disagreements": 0,
+    "immediate_mate_shortcuts": 5,
+    "conventional_search_decisions": 813,
+    "positions_with_mate_loss_alternatives": 64,
+    "all_moves_certified_safe": 749,
+    "wins": 5,
+    "draws": 4
+  },
+  "candidate_points": 7.0,
+  "games": [
+    {
+      "seed": 101,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "0-1",
+      "candidate_score": 0.0,
+      "plies": 70,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 101,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "0-1",
+      "candidate_score": 1.0,
+      "plies": 92,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 102,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "1-0",
+      "candidate_score": 1.0,
+      "plies": 149,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 102,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "1/2-1/2",
+      "candidate_score": 0.5,
+      "plies": 66,
+      "termination": "THREEFOLD_REPETITION"
+    },
+    {
+      "seed": 103,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "0-1",
+      "candidate_score": 0.0,
+      "plies": 122,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 103,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "0-1",
+      "candidate_score": 1.0,
+      "plies": 126,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 104,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "0-1",
+      "candidate_score": 0.0,
+      "plies": 118,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 104,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "1-0",
+      "candidate_score": 0.0,
+      "plies": 117,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 105,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "1/2-1/2",
+      "candidate_score": 0.5,
+      "plies": 91,
+      "termination": "THREEFOLD_REPETITION"
+    },
+    {
+      "seed": 105,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "1-0",
+      "candidate_score": 0.0,
+      "plies": 105,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 106,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "0-1",
+      "candidate_score": 0.0,
+      "plies": 96,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 106,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "0-1",
+      "candidate_score": 1.0,
+      "plies": 90,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 107,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "0-1",
+      "candidate_score": 0.0,
+      "plies": 120,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 107,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "0-1",
+      "candidate_score": 1.0,
+      "plies": 124,
+      "termination": "CHECKMATE"
+    },
+    {
+      "seed": 108,
+      "game": 0,
+      "candidate_color": "white",
+      "result": "1/2-1/2",
+      "candidate_score": 0.5,
+      "plies": 165,
+      "termination": "THREEFOLD_REPETITION"
+    },
+    {
+      "seed": 108,
+      "game": 1,
+      "candidate_color": "black",
+      "result": "1/2-1/2",
+      "candidate_score": 0.5,
+      "plies": 153,
+      "termination": "INSUFFICIENT_MATERIAL"
+    }
+  ],
+  "timing_ms": {
+    "candidate": {
+      "median": 465.76530249999996,
+      "max": 467.098771
+    },
+    "base": {
+      "median": 500.75582699999995,
+      "max": 502.027081
+    }
+  },
+  "actual_game_move_features": {
+    "candidate": {
+      "moves": 818,
+      "captures": 165,
+      "checks": 78,
+      "pawn_moves": 167,
+      "castles": 15
+    },
+    "base": {
+      "moves": 818,
+      "captures": 177,
+      "checks": 87,
+      "pawn_moves": 192,
+      "castles": 15
+    }
+  },
+  "audit": {
+    "status": "PASS",
+    "games": 16,
+    "legal_plies": 1804,
+    "timing_within_100ms_allowance": true
+  },
+  "same_position_probes": {
+    "count": 32,
+    "selection": "8 book endpoints and plies 24,40,56 of the candidate-White game in each seed; fixed before outcomes; fresh TT each probe",
+    "controls": {
+      "stock": "Web Serious PVS, aspiration0, .5s",
+      "hybrid": "Frozen Hybrid v0, .5s requested",
+      "matched": "Stock PVS, aspiration25, .465s (matches Hybrid margin but includes no prepass cost)",
+      "repeat": "Separate identical matched-control process for scheduling variability"
+    },
+    "agreement": {
+      "stock_vs_hybrid": {
+        "same": 32,
+        "total": 32
+      },
+      "matched_vs_hybrid": {
+        "same": 31,
+        "total": 32
+      },
+      "matched_vs_repeat": {
+        "same": 32,
+        "total": 32
+      }
+    },
+    "move_features": {
+      "stock": {
+        "capture": 3,
+        "check": 2,
+        "pawn": 10,
+        "castle": 3
+      },
+      "matched": {
+        "capture": 3,
+        "check": 2,
+        "pawn": 9,
+        "castle": 3
+      },
+      "repeat": {
+        "capture": 3,
+        "check": 2,
+        "pawn": 9,
+        "castle": 3
+      },
+      "hybrid": {
+        "capture": 3,
+        "check": 2,
+        "pawn": 10,
+        "castle": 3
+      }
+    }
+  },
+  "interpretation": "Do not attribute match move differences to JPEG: the gate never overrode the PVS proposal here, and both search timing and aspiration differ from stock. A small sample cannot rule out modest strength changes.",
+  "artifact_sha256": {
+    "results/jpeg-vs-stock-20261015/report.json": "db1f6eeda9c49cc543d5601060d236969a1cbed14c18dcc4cbb8179e2bed88d4",
+    "results/jpeg-vs-stock-20261015/evidence.tar.gz": "8bc6e3073ad9822c26cdb5c84bcbbf935566746be196d2471d1779a429da0be0",
+    "results/jpeg-vs-stock-20261015/games.pgn": "f993d9186bab645bb196ba85894e0fba8b84050339244ca447e8738cafdc9e2c"
+  },
+  "retained_artifact_bytes": 156792,
+  "executables_sha256": {
+    "base": "d94f95f0d8c2c72f7307896325d7aa8cf1118328f8b0d45e9e079f192b78cdb3",
+    "candidate": "f42e48387ef7fb5cec50df5fb95197e5121cb6d68caeeb7856dff6b4a8228682"
+  }
+}

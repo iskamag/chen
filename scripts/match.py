@@ -37,7 +37,7 @@ def opening_rows(path):
     return rows
 
 
-def play(engines, names, opening, candidate_color, limit, max_plies, book=None):
+def play(engines, names, opening, candidate_color, limit, max_plies, book=None, decision_info=False):
     board = chess.Board(opening[1])
     game = chess.pgn.Game()
     game.setup(board)
@@ -60,7 +60,7 @@ def play(engines, names, opening, candidate_color, limit, max_plies, book=None):
                 result = chess.engine.PlayResult(book_move, None, info={'depth': 0, 'nodes': 0, 'time': 0.0})
             else:
                 result = engines[engine_index].play(board, limit, game=game,
-                                                    info=chess.engine.INFO_BASIC)
+                                                    info=chess.engine.INFO_BASIC | (chess.engine.INFO_PV if decision_info else 0))
             elapsed_ns = time.perf_counter_ns() - started
             if result.move not in board.legal_moves:
                 raise ValueError(f'illegal or missing move: {result.move}')
@@ -71,6 +71,12 @@ def play(engines, names, opening, candidate_color, limit, max_plies, book=None):
                                'reported': {key: result.info[key] for key in
                                             ('depth', 'seldepth', 'nodes', 'nps', 'time', 'hashfull', 'tbhits')
                                             if key in result.info}})
+            if decision_info and book_move is None:
+                pv = result.info.get('pv', [])
+                move_trace[-1]['decision'] = {
+                    'searched_move': pv[0].uci() if pv else None,
+                    'diagnostic': result.info.get('string'),
+                }
             board.push(result.move)
             node = node.add_variation(result.move)
             if book_move is not None:
@@ -109,6 +115,7 @@ def main():
     p.add_argument('--book-dir', help='use the same controller-supplied ECO TSV book for both engines')
     p.add_argument('--book-plies', type=int, default=12)
     p.add_argument('--book-seed', type=int, default=0)
+    p.add_argument('--decision-info', action='store_true', help='retain the searched root move and final UCI diagnostic')
     args = p.parse_args()
     if sum(v is not None for v in (args.depth, args.nodes, args.movetime)) != 1:
         p.error('choose exactly one depth, nodes, or movetime budget')
@@ -143,7 +150,7 @@ def main():
                     pair = []
                     for color in [chess.WHITE, chess.BLACK]:
                         order = ['candidate', 'base'] if color == chess.WHITE else ['base', 'candidate']
-                        game, row = play([engines[name] for name in order], order, opening, color, limit, args.max_plies, book)
+                        game, row = play([engines[name] for name in order], order, opening, color, limit, args.max_plies, book, args.decision_info)
                         row['round'] = round_index
                         pgn.write(str(game) + '\n\n'); pgn.flush()
                         log.write(json.dumps(row) + '\n'); log.flush()

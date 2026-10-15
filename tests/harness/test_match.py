@@ -44,6 +44,20 @@ class MatchTests(unittest.TestCase):
         self.assertIn('illegal', row['failure'])
         self.assertEqual(row['move_trace'], [])
 
+    def test_decision_info_distinguishes_search_proposal_from_played_move(self):
+        class Override:
+            def play(self, board, *args, **kwargs):
+                self_test.assertTrue(kwargs['info'] & chess.engine.INFO_PV)
+                return chess.engine.PlayResult(chess.Move.from_uci('e2e4'), None,
+                    info={'pv': [chess.Move.from_uci('d2d4')], 'string': 'guard selected e2e4'})
+        self_test = self
+        _, row = self.module.play([Override(), Override()], ['candidate', 'base'],
+            ('start', chess.STARTING_FEN), chess.WHITE, chess.engine.Limit(time=.5), 1,
+            decision_info=True)
+        self.assertEqual(row['move_trace'][0]['move'], 'e2e4')
+        self.assertEqual(row['move_trace'][0]['decision'],
+            {'searched_move': 'd2d4', 'diagnostic': 'guard selected e2e4'})
+
     def test_mate_at_ply_cap_is_completed(self):
         class Mate:
             def play(self, *args, **kwargs):

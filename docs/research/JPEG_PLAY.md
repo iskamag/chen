@@ -93,6 +93,11 @@ depth four in complex positions or at a half-second budget.
 
 ## `hybrid`: JPEG-assisted Chen PVS
 
+The direct [half-second stock-Chen comparison](JPEG_VS_STOCK_20261015.md) found
+no demonstrated improvement: 5 wins, 4 draws and 7 losses; no overrides of 813
+conventional search decisions; identical choices on 32 same-position probes.
+Treat this policy as an experimental safety wrapper, not a validated upgrade.
+
 The same exact relational prepass is followed by the existing conventional
 `Searcher` using Tapered evaluation, PVS, TT, quiescence, move ordering, and a
 25 cp aspiration window. It receives only the time left before the common
