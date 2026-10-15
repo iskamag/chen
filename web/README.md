@@ -2,8 +2,10 @@
 
 A small local chess board playing the actual native Chen CPU engine. No browser
 chess engine, external service or neural model is substituted. Legal moves and
-game results come from Chen's rules kernel. Serious Chen defaults to tapered
-evaluation and PVS. This is a playable development checkpoint, not a rated release.
+game results come from Chen's rules kernel. Hybrid Chen is the default opponent:
+she checks forcing replies before running Chen's tapered evaluation and PVS
+within the remaining move budget. Serious Chen remains available. This is a
+playable development checkpoint, not a rated release.
 
 From the repository root:
 

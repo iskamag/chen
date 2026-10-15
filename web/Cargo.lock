@@ -7,10 +7,18 @@ name = "chen"
 version = "0.1.0"
 
 [[package]]
+name = "chen-relation-r1"
+version = "0.1.0"
+dependencies = [
+ "chen",
+]
+
+[[package]]
 name = "chen-web"
 version = "0.1.0"
 dependencies = [
  "chen",
+ "chen-relation-r1",
  "serde_json",
 ]
 

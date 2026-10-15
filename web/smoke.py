@@ -77,6 +77,7 @@ class ApiSmoke(Server):
     def test_01_real_engine_and_legal_moves(self):
         white = self.done(self.submit(side="white"))["state"]
         self.assertEqual(len(white["legal"]), 20)
+        self.assertEqual(white["backend"], "hybrid")
         result = self.call("/api/move", {"side": "white", "level": 20,
             "time_ms": 50, "moves": [], "fen": white["fen"], "move": "e2e4"})
         state = self.done(result["id"])["state"]
@@ -156,7 +157,7 @@ class ApiSmoke(Server):
         self.assertIn("fail_zoomies", cat["telemetry"]["drowsy"])
         distracted = self.done(self.submit(backend="drowsy", theta=1, nodes=128))["state"]
         self.assertGreater(distracted["telemetry"]["drowsy"]["ignored_boring"], 0)
-        serious = self.done(self.submit(nodes=128))["state"]
+        serious = self.done(self.submit(backend="serious", nodes=128))["state"]
         self.assertEqual(serious["backend"], "serious")
         self.assertIsNone(serious["telemetry"]["drowsy"])
         with self.assertRaises(urllib.error.HTTPError) as error:
@@ -184,6 +185,18 @@ class ApiSmoke(Server):
         plain = self.done(self.submit(side="black", time_ms=50))["state"]
         self.assertFalse(plain["telemetry"]["book"])
         self.assertGreater(plain["telemetry"]["nodes"], 0)
+
+
+    def test_09_hybrid_default_finds_mate_and_preserves_history(self):
+        options = {"side": "white", "level": 20, "time_ms": 100,
+                   "moves": ["f2f3", "e7e5"], "backend": "hybrid"}
+        before = self.call("/api/state", options)
+        ticket = self.call("/api/move", {**options, "fen": before["fen"], "move": "g2g4"})
+        state = self.done(ticket["id"])["state"]
+        self.assertEqual(state["backend"], "hybrid")
+        self.assertEqual(state["moves"], ["f2f3", "e7e5", "g2g4", "d8h4"])
+        self.assertEqual(state["san_moves"][-1], "Qh4#")
+        self.assertEqual(state["outcome"], "Checkmate — Chen wins")
 
 
 class PoolSmoke(Server):

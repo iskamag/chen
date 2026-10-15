@@ -1,9 +1,11 @@
+mod hybrid;
 mod notation;
 
 use chen::backend::SearchBackend;
 use chen::drowsy::{DrowsyConfig, DrowsySearch};
 use chen::strength::{BudgetStrength, StrengthPolicy};
 use chen::{Color, OpeningBook, Position, SearchConfig, SearchLimits, Searcher, Tapered};
+use hybrid::HybridSearch;
 use serde_json::{Value, json};
 use std::{
     collections::HashMap,
@@ -36,18 +38,21 @@ fn random_seed() -> u64 {
 }
 
 enum WebSearch {
+    Hybrid(Box<HybridSearch>),
     Serious(Box<Searcher>),
     Drowsy(Box<DrowsySearch>),
 }
 impl WebSearch {
     fn stop_handle(&self) -> Arc<AtomicBool> {
         match self {
+            Self::Hybrid(searcher) => searcher.stop_handle(),
             Self::Serious(searcher) => searcher.stop_handle(),
             Self::Drowsy(searcher) => searcher.stop_handle(),
         }
     }
     fn set_book(&mut self, book: Option<Arc<OpeningBook>>, seed: u64) {
         match self {
+            Self::Hybrid(searcher) => searcher.set_book(book, seed, BOOK_PLIES),
             Self::Serious(searcher) => searcher.set_book(book, seed, BOOK_PLIES),
             Self::Drowsy(searcher) => searcher.set_book(book, seed, BOOK_PLIES),
         }
@@ -59,13 +64,14 @@ impl WebSearch {
         history: &[u64],
     ) -> Result<chen::SearchResult, String> {
         match self {
+            Self::Hybrid(searcher) => Ok(searcher.search(position, limits, history)),
             Self::Serious(searcher) => Ok(searcher.search(position, limits, history, |_| {})),
             Self::Drowsy(searcher) => searcher.search(position, limits, history, &mut |_| {}),
         }
     }
     fn drowsy_stats(&self) -> Value {
         match self {
-            Self::Serious(_) => Value::Null,
+            Self::Serious(_) | Self::Hybrid(_) => Value::Null,
             Self::Drowsy(searcher) => {
                 let stats = searcher.stats();
                 json!({"ignored_boring":stats.ignored_boring, "fail_meow":stats.fail_meow,
@@ -105,18 +111,12 @@ impl Game {
             milliseconds: 1000,
             depth_limit: 64,
             node_limit: None,
-            backend: "serious",
+            backend: "hybrid",
             delta_cp: 80,
             theta: 0.55,
             book: false,
             book_seed: 0,
-            searcher: WebSearch::Serious(Box::new(Searcher::new(
-                Box::new(Tapered),
-                SearchConfig {
-                    pvs: true,
-                    ..Default::default()
-                },
-            ))),
+            searcher: WebSearch::Hybrid(Box::new(HybridSearch::new())),
             telemetry: Value::Null,
         }
     }
@@ -237,9 +237,10 @@ impl Game {
             ),
         };
         game.backend = match data["backend"].as_str() {
-            None | Some("serious") => "serious",
+            None | Some("hybrid") => "hybrid",
+            Some("serious") => "serious",
             Some("drowsy") => "drowsy",
-            _ => return Err("Backend must be serious or drowsy".into()),
+            _ => return Err("Backend must be hybrid, serious or drowsy".into()),
         };
         game.delta_cp = match data.get("delta_cp") {
             None => 80,
@@ -257,7 +258,15 @@ impl Game {
         };
         game.book = data.get("book").and_then(Value::as_bool).unwrap_or(false);
         game.book_seed = random_seed();
-        if game.backend == "drowsy" {
+        if game.backend == "serious" {
+            game.searcher = WebSearch::Serious(Box::new(Searcher::new(
+                Box::new(Tapered),
+                SearchConfig {
+                    pvs: true,
+                    ..Default::default()
+                },
+            )));
+        } else if game.backend == "drowsy" {
             game.searcher = WebSearch::Drowsy(Box::new(DrowsySearch::new(DrowsyConfig {
                 delta_cp: game.delta_cp,
                 theta: game.theta,

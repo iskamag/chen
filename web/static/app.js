@@ -99,7 +99,7 @@ function render() {
   }
   if(focused)document.querySelector(`[data-square="${focused}"]`)?.focus({preventScroll:true});
   $('player').textContent='You · '+capitalize(state.human);
-  $('opponent').textContent='Chen · '+(state.human==='white'?'Black':'White');
+  $('opponent').textContent=({hybrid:'Hybrid Chen',serious:'Serious Chen',drowsy:'Drowsy Chen'}[state.backend]||'Hybrid Chen')+' · '+(state.human==='white'?'Black':'White');
   $('status').textContent=state.outcome || (state.side===state.human ? 'Your move'+(state.check?' — check!':'.') : 'Chen to move.');
   $('moves').replaceChildren();
   if (!state.moves.length) $('moves').textContent='The board is all yours.';
@@ -109,8 +109,8 @@ function render() {
   const horizon=t?.book ? (t.opening ? `Opening: ${t.opening}` : 'From the book') : (t?.drowsy ? `Explored ply ${t.drowsy.deepest_ply}` : `Depth ${t?.depth}`);
   $('telemetry').textContent=t ? `${horizon} · ${t.nodes.toLocaleString()} nodes · ${Math.round(t.nps/1000)}k nodes/s · ${t.ms} ms search · ${Math.round(state.queue_ms||0)} ms queue` : 'No search yet.';
   if(t?.drowsy) $('telemetry').textContent+=` · ${t.drowsy.fail_meow} fail-meows · ${t.drowsy.fail_zoomies} zoomies · ${t.drowsy.ignored_boring} ignored moves`;
-  $('search-description').textContent=state.backend==='drowsy' ? 'Drowsy Chen: an experimental drifting-score, selective attention search toy. Strength is unmeasured. Search time excludes queue wait.' : 'Native Chen CPU search, tapered evaluation, PVS enabled. The opening book plays varied named lines for the first plies, then search takes over. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.';
-  $('revision').textContent='Build '+state.revision+' · '+(state.backend==='drowsy'?'Drowsy':'Serious')+' · resource level '+state.level;
+  $('search-description').textContent=state.backend==='drowsy' ? 'Drowsy Chen: an experimental drifting-score, selective attention search toy. Strength is unmeasured. Search time excludes queue wait.' : state.backend==='hybrid' ? 'Hybrid Chen checks forcing replies before her main CPU search. The selected move time includes both stages; queue wait is separate.' : 'Native Chen CPU search, tapered evaluation, PVS enabled. The opening book plays varied named lines for the first plies, then search takes over. The selected time starts when search runs; queue wait is separate. This is our playable development checkpoint.';
+  $('revision').textContent='Build '+state.revision+' · '+({hybrid:'Hybrid',drowsy:'Drowsy',serious:'Serious'}[state.backend]||'Hybrid')+' · resource level '+state.level;
 }
 function capitalize(s){return s[0].toUpperCase()+s.slice(1);}
 async function promotion(moves) {
@@ -127,7 +127,7 @@ async function click(name) {
     if(move==='cancel')return;
     selected=null;setBusy(true);
     const before=state;
-    try{const next=await submit('/api/move',{backend:state.backend||'serious',delta_cp:state.delta_cp??80,theta:state.theta??0.55,book:!!state.book,side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
+    try{const next=await submit('/api/move',{backend:state.backend||'hybrid',delta_cp:state.delta_cp??80,theta:state.theta??0.55,book:!!state.book,side:state.human,level:state.level,time_ms:state.milliseconds,depth:state.depth_limit,nodes:state.node_limit,moves:state.moves,move,fen:state.fen});if(!next)return;state=next;save();react(before,state);}catch(error){$('status').textContent=error.message;setBusy(false);mood('idle','My paws are back. Your board is safe.');return;}
     setBusy(false);render();return;
   }
   selected=selected===name ? null : (state.legal.some(m=>m.startsWith(name)) ? name : null);render();
@@ -163,7 +163,7 @@ fetch('./chen.svg').then(response=>response.text()).then(svg=>{$('avatar').inner
       state.san_moves=replay.san_moves;
     }
     save();
-    $('backend').value=state.backend||'serious';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);drowsyControls();if(restored)$('book').checked=state.book!==false;
+    $('backend').value=state.backend||'hybrid';$('delta').value=state.delta_cp??80;$('delta-value').textContent=$('delta').value;$('theta').value=state.theta??0.55;$('theta-value').textContent=Number($('theta').value).toFixed(2);drowsyControls();if(restored)$('book').checked=state.book!==false;
     flipped=state.human==='black';$('side').value=state.human;$('level').value=state.level;$('level-value').textContent=state.level;$('time').value=state.milliseconds;
     $('depth').value=state.depth_limit===64?'':state.depth_limit||'';$('nodes').value=state.node_limit||'';render();
   }catch(error){$('status').textContent='Could not connect: '+error.message;}

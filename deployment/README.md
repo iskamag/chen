@@ -1,8 +1,8 @@
 # Public Chen checkpoint
 
 **https://iskamag.com/games/play-with-chen/** proxies through nginx on
-`iskamag.com` to this machine's native CPU server. Both serious Chen and the
-experimental δ–θ Drowsy mood use the same bounded request queue. The selected
+`iskamag.com` to this machine's native CPU server. Hybrid Chen is the default;
+Serious Chen and the experimental δ–θ Drowsy mood remain available. All use the same bounded request queue. The selected
 search time excludes queue wait. Six independent single-threaded searches can
 run at once; eight additional requests may wait. HTTP handling is separate.
 
