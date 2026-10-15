@@ -1,0 +1,39 @@
+{
+  "protocol_version": 1,
+  "title": "Signed components, shared identities, and conditional resource compatibility",
+  "status": "frozen before any experiment outcomes",
+  "scope": "Finite bipartite resource experiment, not chess attack-defense cancellation, chess legality, an engine, or an Elo test.",
+  "domains": [{"defenders": 3, "targets": 4}, {"defenders": 4, "targets": 4}],
+  "enumeration": "Every binary incidence matrix A[d,t], graph integer bit d*4+t. Every demand mask 0..15, including empty. Conditions: none or disable one fixed labelled defender d. Uniform original graph weighting; condition and demand are known query context.",
+  "query": "Is there an injective assignment from demanded targets to available adjacent defenders? Each defender serves at most one demanded target.",
+  "oracle": "Enumerate every injective assignment/permutation of the available labelled defenders for the demanded targets. A query is feasible iff one assignment's required incidence bits are all present. Oracle uses graph bits, not transforms, Gram matrices, Hall summaries, or the experimental composition operator.",
+  "representations": [
+    {"name":"counts_after","meaning":"All four per-target available-defender counts; energy-only baseline","storage_bytes":4},
+    {"name":"energy_after","meaning":"Per-target sum of squared signed Walsh coefficients divided by 4; expected information-equivalent to binary incidence counts","storage_bytes":4},
+    {"name":"signed_dc_after","meaning":"Walsh frequency 0 for each target","storage_bytes":4},
+    {"name":"signed_two_after","meaning":"Walsh frequencies [0,1] for each target","storage_bytes":8},
+    {"name":"signed_three_after","meaning":"Walsh frequencies [0,1,2] for each target","storage_bytes":12},
+    {"name":"signed_full_after","meaning":"All four signed Walsh coefficients for each target, with a fixed shared defender basis","storage_bytes":16},
+    {"name":"magnitude_full_after","meaning":"Absolute values of all four Walsh coefficients per target; discarded relative sign","storage_bytes":16},
+    {"name":"pooled_signed_after","meaning":"Sum of complete signed target vectors over demanded targets; target separation discarded","storage_bytes":4},
+    {"name":"counts_plus_pooled_after","meaning":"All per-target counts plus the pooled signed vector over demanded targets","storage_bytes":8},
+    {"name":"gram_after","meaning":"Upper triangle of A^T A after the condition, including diagonal counts","storage_bytes":10},
+    {"name":"gram_root","meaning":"Upper triangle of root A^T A; fixed labelled removal condition is supplied but source identities are absent","storage_bytes":10},
+    {"name":"independently_relabelled_full_after","meaning":"Each target independently renames its adjacent defenders to 0..count-1, then retains its full signed Walsh vector; demonstrates loss of cross-channel identity alignment","storage_bytes":16},
+    {"name":"incidence_after","meaning":"Complete available incidence, packed as n*4 bits","storage_bytes":2}
+  ],
+  "transform": "Unnormalized 4x4 Sylvester Walsh-Hadamard H[f,d]=(-1)^popcount(f&d), zero-pad the 3-defender domain to four slots. For each target F_t=H*A_t. Signed components are exact integers. This is a reversible sum/difference change of basis, not a compression-size claim.",
+  "conditional_operator": "Disable fixed defender d directly in the signed basis: F'_t=(I-h_d*h_d^T/4)*F_t, where h_d is column d of H. Check exact integer divisibility and compare against separately encoded available incidence.",
+  "direct_joint_operator": "Represent compatible used-resource assignments by a multilinear polynomial with x_d^2=0. Walsh-transform its 2^n coefficient vector. A demanded target multiplies by sum_d A[d,t]*x_d. Precompute the transformed creation tensor C_f[k,l]=sum_d H[f,d]*(-1)^bit_d(k)*(delta(l,k)+delta(l,k xor 2^d)). Update z'=sum_f F_t[f]*C_f*z/8. Initial z is all ones; final z[0] is the number of injective assignments. Implementation keeps exact scaled integers and answers z[0]>0 without reconstructing incidence or calling the matching oracle.",
+  "operator_ablations": ["full signed", "zero-fill frequencies missing from [0]", "zero-fill frequencies missing from [0,1]", "zero-fill frequency missing from [0,1,2]", "absolute coefficients interpreted by the same operator", "three-frequency completion using a known unavailable/padded defender, otherwise zero-fill"],
+  "completion_rule": "If a known defender d is unavailable, A[d,t]=0 implies F_missing=-H[missing,d]*sum_kept H[f,d]*F[f]. For n=3, padded defender 3 is always known unavailable. For n=4, a removal condition supplies such a defender. Completion is not used when no zero component is known.",
+  "metrics": ["cases and oracle-positive count per domain/condition/demand", "unique representation groups", "groups containing both exact answers", "number/fraction of graphs in ambiguous groups", "minimum deterministic decoder errors=sum_group min(positive_count,negative_count)", "fixed representation bytes and observed log2(unique signatures)", "actual direct-operator false positives/false negatives/negative outputs", "conditional projection mismatches", "exact matching count mismatch for full signed operator", "CPU wall times recorded as diagnostic, no performance-gain claim"],
+  "collision_method": "Within each fixed domain, condition, and demand, group every graph by the representation. A mixed-label group is an information collision. Retain deterministic first graph pair as a reproducible witness. Do not infer different queries from the same key: query context remains fixed.",
+  "predeclared_worked_cases": [
+    "Counts and complete demanded-vector pooling can share row/column margins while different source-target incidence changes matching.",
+    "Test a four-defender Gram collision built from the star-plus-unique and triangle-plus-empty incidence patterns, with target 3 duplicating target 0.",
+    "Test two row-permuted graphs under removal of the same labelled defender: unconditioned Gram equality need not preserve the conditional answer."
+  ],
+  "hypotheses": ["Counts/energies cannot generally answer joint resource compatibility.", "A complete signed representation is sufficient only with shared identity alignment and a compatible joint operator; invertibility alone is not an algorithmic gain.", "Pairwise Gram information may suffice on the smaller domain but lose higher intersections or fixed labels on the larger/conditional tasks; report whatever exhaustive results show.", "Discarding a coefficient can be harmless when a declared boundary condition determines it, but a fixed zero-fill decoder need not exploit that fact.", "The transformed compatibility operator may cost more than an ordinary small matching procedure; correctness and ambiguity, not speedup, are this experiment's primary outcomes."],
+  "execution": "CPU only, one pinned core where available. NumPy exact integer arrays; record Python/NumPy versions, source SHA-256 and protocol SHA-256. Commit protocol first, then source before first measured run. Deterministic enumeration, no fit/MLP/training/search/gameplay. Commit compact JSON and report, not per-graph arrays."
+}
