@@ -1,0 +1,171 @@
+{
+  "experiment": "actual-mdct-alias-cancellation",
+  "protocol_sha256": "eda235261eb86100184c044b952f3019747921144c8f02010d8fcd9eb4524460",
+  "source_sha256": "92f8ed2bc7ac1df9b8f0cd4a13a8276cb95ce5d73757a67f052982f275cf1ae5",
+  "numpy_version": "2.5.4",
+  "results": {
+    "8": {
+      "cases": 578,
+      "analysis_block_samples": 16,
+      "coefficients_per_block": 8,
+      "analysis_matrix_rank": 8,
+      "overlap_hop": 8,
+      "window_complementarity_max_error": 2.220446049250313e-16,
+      "maximum_isolated_block_alias_abs": 2.0432868451494652,
+      "maximum_overlapped_alias_abs": 1.3322676295501878e-14,
+      "mismatched_window_mean_gain_aligned_relative_l2": 0.3800911019288054,
+      "variants": {
+        "signed_matched_overlap_add": {
+          "error_cases": 0,
+          "max_abs_error": 1.3100631690576847e-14,
+          "mean_relative_l2_error": 2.75890297490573e-15
+        },
+        "absolute_coefficients_matched_overlap_add": {
+          "error_cases": 578,
+          "max_abs_error": 7.357403532393409,
+          "mean_relative_l2_error": 1.3963855641749983
+        },
+        "signed_mismatched_synthesis_window": {
+          "error_cases": 578,
+          "max_abs_error": 3.818474474350931,
+          "mean_relative_l2_error": 0.6488789331499372
+        },
+        "signed_alternate_block_polarity": {
+          "error_cases": 578,
+          "max_abs_error": 6.876952929889514,
+          "mean_relative_l2_error": 1.2915245919787763
+        },
+        "signed_quantized_step_0.25": {
+          "error_cases": 578,
+          "max_abs_error": 0.13350369127746023,
+          "mean_relative_l2_error": 0.1290024581190786
+        }
+      },
+      "magnitude_collision": {
+        "input": "impulse-8-1",
+        "opposite_input": "impulse-8--1",
+        "max_abs_magnitude_difference": 0.0,
+        "different_original_signal_l2": 2.0,
+        "identical_absolute_coefficient_decodes": true,
+        "nonzero_encoded_rows": [
+          {
+            "block_start": 8,
+            "coefficients": [
+              -0.7692881967445464,
+              0.46912683269234634,
+              0.9523324064572588,
+              -0.09754516100806272,
+              -0.9903926402016154,
+              -0.2888868771906088,
+              0.8776745724069157,
+              0.6313385071030734
+            ]
+          },
+          {
+            "block_start": 16,
+            "coefficients": [
+              0.06218141555799886,
+              -0.08644340032725623,
+              -0.028452873945971853,
+              0.09754516100806414,
+              -0.009607359798384714,
+              -0.09379655517448074,
+              0.04620496010437073,
+              0.07576827408347273
+            ]
+          }
+        ]
+      }
+    },
+    "16": {
+      "cases": 578,
+      "analysis_block_samples": 32,
+      "coefficients_per_block": 16,
+      "analysis_matrix_rank": 16,
+      "overlap_hop": 16,
+      "window_complementarity_max_error": 2.220446049250313e-16,
+      "maximum_isolated_block_alias_abs": 1.809174604269727,
+      "maximum_overlapped_alias_abs": 2.0872192862952943e-14,
+      "mismatched_window_mean_gain_aligned_relative_l2": 0.3800402285073121,
+      "variants": {
+        "signed_matched_overlap_add": {
+          "error_cases": 0,
+          "max_abs_error": 2.042810365310288e-14,
+          "mean_relative_l2_error": 4.3772189765587725e-15
+        },
+        "absolute_coefficients_matched_overlap_add": {
+          "error_cases": 578,
+          "max_abs_error": 6.149646554086331,
+          "mean_relative_l2_error": 1.3986427847801939
+        },
+        "signed_mismatched_synthesis_window": {
+          "error_cases": 578,
+          "max_abs_error": 3.871129288168798,
+          "mean_relative_l2_error": 0.6505888720655794
+        },
+        "signed_alternate_block_polarity": {
+          "error_cases": 578,
+          "max_abs_error": 6.5980853516768985,
+          "mean_relative_l2_error": 1.289541345936129
+        },
+        "signed_quantized_step_0.25": {
+          "error_cases": 578,
+          "max_abs_error": 0.09441411579085007,
+          "mean_relative_l2_error": 0.1255086835619405
+        }
+      },
+      "magnitude_collision": {
+        "input": "impulse-8-1",
+        "opposite_input": "impulse-8--1",
+        "max_abs_magnitude_difference": 0.0,
+        "different_original_signal_l2": 2.0,
+        "identical_absolute_coefficient_decodes": true,
+        "nonzero_encoded_rows": [
+          {
+            "block_start": 0,
+            "coefficients": [
+              -0.6707500326750967,
+              -0.6642903431911699,
+              -0.6514331745642719,
+              -0.6323023483567234,
+              -0.607082104882875,
+              -0.5760153288741704,
+              -0.5394012103663964,
+              -0.49759236333610135,
+              -0.4509914298352214,
+              -0.40004720232803836,
+              -0.34525030157438663,
+              -0.28712845168356044,
+              -0.22624139784265257,
+              -0.1631755156643827,
+              -0.0985381640694543,
+              -0.0329518360880972
+            ]
+          },
+          {
+            "block_start": 16,
+            "coefficients": [
+              -0.03635674851145101,
+              0.1087201101715675,
+              -0.18003643773827427,
+              0.24961891599163274,
+              -0.316797427628412,
+              0.380925006858041,
+              -0.4413840700368353,
+              0.49759236333609846,
+              -0.5490085701647801,
+              0.5951375243441622,
+              -0.6355349788288472,
+              0.6698118840486499,
+              -0.6976381346686426,
+              0.7187457486839788,
+              -0.7329314482330954,
+              0.7400586172746423
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "limits": "Actual transform microexperiment only; no chess query, chess strength, compressed-domain decision, or optimized latency claim"
+}
