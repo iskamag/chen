@@ -1,0 +1,3757 @@
+{
+  "scope": "CPU-only architecture round; challenge-corpus exactness and query cost, no Elo or general search replacement claim",
+  "code_revision": "a91e7d3130e4cfe25e471cf93f59b561fe5cc24c",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28) (Artix Linux rust 1:1.99.0-1)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1",
+  "cpu": "AMD Ryzen 5 3600; serial replay CPU 2; shared host",
+  "release_profile": "thin LTO, codegen-units=1; native adds -C target-cpu=znver2; matched candidate/control flags",
+  "corpus": {
+    "seed": 2026101501,
+    "python_chess": "1.11.2",
+    "seconds": 11.371265583002241,
+    "scope": "Exact board-local legal/check/mate1/stalemate obligations; no repetition-history or reachability claim for constructed roots; no strength inference",
+    "generator_sha256": "3dcbc5929b34ff826e41498c5b624e85e36d569d9f9403656bfa0b524d025d35",
+    "inventory": {
+      "dev-sparse-queen": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 871
+      },
+      "dev-sparse-rook": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 1441
+      },
+      "dev-sparse-minor": {
+        "counts": {
+          "mate": 4,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 4,
+          "nonmate": 28
+        },
+        "trials": 4943
+      },
+      "dev-sparse-promotion": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 6725
+      },
+      "dev": {
+        "roots": 727,
+        "events": 3210,
+        "mate_positive_roots": 76,
+        "mate_actions": 165,
+        "legal_actions": 16721,
+        "families": {
+          "constructed-minor-mate": 4,
+          "constructed-minor-nonmate": 28,
+          "constructed-promotion-mate": 20,
+          "constructed-promotion-nonmate": 28,
+          "constructed-queen-mate": 20,
+          "constructed-queen-nonmate": 28,
+          "constructed-rook-mate": 20,
+          "constructed-rook-nonmate": 28,
+          "fixture-castle": 2,
+          "fixture-castle-in-check": 2,
+          "fixture-castle-transit": 2,
+          "fixture-clock100": 2,
+          "fixture-clock99": 2,
+          "fixture-double-check": 2,
+          "fixture-ep": 2,
+          "fixture-ep-check-evasion": 2,
+          "fixture-ep-pin": 2,
+          "fixture-ep-rook-discovery": 2,
+          "fixture-kiwipete": 2,
+          "fixture-mate": 2,
+          "fixture-mate-one": 2,
+          "fixture-middlegame": 2,
+          "fixture-phase-promotions": 2,
+          "fixture-promotion": 2,
+          "fixture-promotion-capture": 2,
+          "fixture-rook-end": 2,
+          "fixture-stalemate": 2,
+          "fixture-start": 2,
+          "reachable-capture": 107,
+          "reachable-check": 128,
+          "reachable-quiet": 138,
+          "reachable-uniform": 138
+        }
+      },
+      "cert-sparse-queen": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 884
+      },
+      "cert-sparse-rook": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 1706
+      },
+      "cert-sparse-minor": {
+        "counts": {
+          "mate": 4,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 4,
+          "nonmate": 28
+        },
+        "trials": 10471
+      },
+      "cert-sparse-promotion": {
+        "counts": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "target": {
+          "mate": 20,
+          "nonmate": 28
+        },
+        "trials": 5045
+      },
+      "cert": {
+        "roots": 659,
+        "events": 3036,
+        "mate_positive_roots": 68,
+        "mate_actions": 95,
+        "legal_actions": 14834,
+        "families": {
+          "constructed-minor-mate": 4,
+          "constructed-minor-nonmate": 28,
+          "constructed-promotion-mate": 20,
+          "constructed-promotion-nonmate": 28,
+          "constructed-queen-mate": 20,
+          "constructed-queen-nonmate": 28,
+          "constructed-rook-mate": 20,
+          "constructed-rook-nonmate": 28,
+          "reachable-capture": 110,
+          "reachable-check": 97,
+          "reachable-quiet": 138,
+          "reachable-uniform": 138
+        }
+      }
+    },
+    "sha256": {
+      "dev-transitions.tsv": "5497ad60d57edb29f892475f189e961e7a2f6cf62d5b8edb35ee601f0ebfd2c3",
+      "cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+      "dev.tsv": "524983ca720e2e1a945accc2ccff7d716659641a08cf2a918564bccc64fd3cac",
+      "cert-transitions.tsv": "b34b695ee23066990a12817c2a8b3477365383c6d17f6a3508f178fe86e8dd4e",
+      "cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+      "dev-oracle.jsonl": "769aa741ed832d1f928239f57b043638f8000bc33c18f09a631a5dfefa9eac06"
+    }
+  },
+  "audits": {
+    "causal_portable": {
+      "status": "PASS",
+      "rows": 15493,
+      "variants": {
+        "default": 15493
+      },
+      "full_attack_predicates": 1983104,
+      "extra_obligation_masks": 0,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+        "results/radical-round1/causal-cert-answers.jsonl": "0b0a2dbb2001b57aab1f58d509072a470e4c4fa14baafbeb760a78da6f9a3ffd",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_answers.py": "f74186c49d925f5aec20ddf9052ce7e2c7b8be66b5b218e68219f93130e2f117"
+      }
+    },
+    "causal_native": {
+      "status": "PASS",
+      "rows": 15493,
+      "variants": {
+        "default": 15493
+      },
+      "full_attack_predicates": 1983104,
+      "extra_obligation_masks": 0,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+        "results/radical-round1/causal-cert-native-answers.jsonl": "0b0a2dbb2001b57aab1f58d509072a470e4c4fa14baafbeb760a78da6f9a3ffd",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_answers.py": "f74186c49d925f5aec20ddf9052ce7e2c7b8be66b5b218e68219f93130e2f117"
+      }
+    },
+    "bands_portable": {
+      "status": "PASS",
+      "rows": 3954,
+      "variants": {
+        "micro-scalar": 659,
+        "bands-scalar": 659,
+        "micro-avx2": 659,
+        "bands-avx2": 659,
+        "pyramid-scalar": 659,
+        "pyramid-avx2": 659
+      },
+      "full_attack_predicates": 506112,
+      "extra_obligation_masks": 15816,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+        "results/radical-round1/bands/cert-final-portable-answers.jsonl": "f8a8cc9b5ee545ad63f900eb392533bb9a565251515debb06fa1720175dce64d",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_answers.py": "f74186c49d925f5aec20ddf9052ce7e2c7b8be66b5b218e68219f93130e2f117"
+      }
+    },
+    "bands_native": {
+      "status": "PASS",
+      "rows": 3954,
+      "variants": {
+        "micro-scalar": 659,
+        "bands-scalar": 659,
+        "micro-avx2": 659,
+        "bands-avx2": 659,
+        "pyramid-scalar": 659,
+        "pyramid-avx2": 659
+      },
+      "full_attack_predicates": 506112,
+      "extra_obligation_masks": 15816,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert.tsv": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+        "results/radical-round1/bands/cert-final-native-answers.jsonl": "f8a8cc9b5ee545ad63f900eb392533bb9a565251515debb06fa1720175dce64d",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_answers.py": "f74186c49d925f5aec20ddf9052ce7e2c7b8be66b5b218e68219f93130e2f117"
+      }
+    },
+    "relation_portable": {
+      "status": "PASS",
+      "roots": 659,
+      "classification_variants": {
+        "Stream": 659,
+        "Full": 659,
+        "Grouped": 659
+      },
+      "nested_actions": 14834,
+      "positive_mate_witnesses": 79,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+        "results/radical-round1/quality/cert-threats.jsonl": "8c50f323d412966d023ad20be1ec3184531873306a3f24e12d79da7d9c7e5c00",
+        "results/radical-round1/relation/cert-root-audit.jsonl": "5275a91b2398b34575e959ce3b98460fc10e8944862fe7b672c4de707a8c73d5",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_relation.py": "daa626c1d5f705f3563b70e090138dfb48dbade4dec2917f53683cf285ad4c7f"
+      }
+    },
+    "relation_native": {
+      "status": "PASS",
+      "roots": 659,
+      "classification_variants": {
+        "Stream": 659,
+        "Full": 659,
+        "Grouped": 659
+      },
+      "nested_actions": 14834,
+      "positive_mate_witnesses": 79,
+      "python_chess": "1.11.2",
+      "sha256": {
+        "results/radical-round1/corpus/cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+        "results/radical-round1/quality/cert-threats.jsonl": "8c50f323d412966d023ad20be1ec3184531873306a3f24e12d79da7d9c7e5c00",
+        "results/radical-round1/relation/cert-native-audit.jsonl": "143a7718a82debde913ec9b35a5eba00a8aac494b1bce7d53bfc341a5f94e064",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_relation.py": "daa626c1d5f705f3563b70e090138dfb48dbade4dec2917f53683cf285ad4c7f"
+      }
+    },
+    "old_policy_choices": {
+      "roots": 659,
+      "excluded_root_draw_contexts": 0,
+      "mate1_roots": 68,
+      "mate1_selected": 22,
+      "avoidable_opposing_mate1_roots": 15,
+      "opposing_mate1_blunders": 1,
+      "illegal_selected": 0,
+      "miss_examples": [
+        {
+          "id": "cert-00182",
+          "fen": "kr3br1/7Q/p5pp/2Ppq1P1/1P1P1P2/1P4P1/R1K1Nn2/1NBR4 w - - 4 35",
+          "chosen": "f4e5",
+          "mates": [
+            "a2a6"
+          ]
+        },
+        {
+          "id": "cert-00183",
+          "fen": "kr3brq/7Q/p5pp/2Pp2P1/1P2NP2/1P1n2P1/R1K5/2BR2N1 w - - 2 38",
+          "chosen": "h7h8",
+          "mates": [
+            "a2a6"
+          ]
+        },
+        {
+          "id": "cert-00255",
+          "fen": "2b2b2/3Q1pr1/pr1N1k2/4n1pp/2P1P2N/1P2P3/4KnB1/6R1 w - - 1 44",
+          "chosen": "d7c8",
+          "mates": [
+            "d6e8"
+          ]
+        },
+        {
+          "id": "cert-00511",
+          "fen": "k7/p1Q5/8/8/8/4K3/8/8 w - - 0 20",
+          "chosen": "c7c6",
+          "mates": [
+            "c7c8"
+          ]
+        },
+        {
+          "id": "cert-00512",
+          "fen": "2K5/k7/8/8/8/5Q2/8/8 w - - 0 20",
+          "chosen": "c8d7",
+          "mates": [
+            "f3b7"
+          ]
+        }
+      ],
+      "scope": "Actual selected moves on constructed/seeded held-out challenge corpus; no Elo estimate",
+      "sha256": {
+        "results/radical-round1/corpus/cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+        "results/radical-round1/quality/cert-threats.jsonl": "8c50f323d412966d023ad20be1ec3184531873306a3f24e12d79da7d9c7e5c00",
+        "results/radical-round1/quality/cert-oldpolicy.jsonl": "26386fb562dbff9cc015dda100d9e8d8d6cb2ddf2bbb09488f130c1ffed778ff",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_choices.py": "e24fca59a9b7c0687cb4259bc6f91789fbd90e1e100947dfe047b5e2cdf2a39f"
+      }
+    },
+    "depth1_choices": {
+      "roots": 659,
+      "excluded_root_draw_contexts": 0,
+      "mate1_roots": 68,
+      "mate1_selected": 68,
+      "avoidable_opposing_mate1_roots": 15,
+      "opposing_mate1_blunders": 1,
+      "illegal_selected": 0,
+      "miss_examples": [],
+      "scope": "Actual selected moves on constructed/seeded held-out challenge corpus; no Elo estimate",
+      "sha256": {
+        "results/radical-round1/corpus/cert-oracle.jsonl": "647c7a3bff453daad8d139953c3b11f3cd1f83d458127b57ed47bfff0f53e94a",
+        "results/radical-round1/quality/cert-threats.jsonl": "8c50f323d412966d023ad20be1ec3184531873306a3f24e12d79da7d9c7e5c00",
+        "results/radical-round1/quality/cert-depth1.jsonl": "5f01b7535154c9ea78dd91bb2db654dc241f9f11d87a913a8f44a5808cdc8bbd",
+        "/home/iskam/src/vibe/chen/experiments/radical_round1/harness/check_choices.py": "e24fca59a9b7c0687cb4259bc6f91789fbd90e1e100947dfe047b5e2cdf2a39f"
+      }
+    },
+    "auditor_negative_checks": [
+      {
+        "case": "wrong-attack-bit",
+        "rejected": true,
+        "diagnostic": "AssertionError: (1, 'cert-00000', 'micro-scalar', 'white', '0x47a4ffff7f', '0x47a4ffff7e')"
+      },
+      {
+        "case": "wrong-classification",
+        "rejected": true,
+        "diagnostic": "AssertionError: ('cert-00000', 'Stream', 'legal', {'e2e3', 'g1h3', 'c2c3', 'c2c4', 'f2f3', 'f1h3', 'd2d4', 'h4h5', 'a1a8', 'a3b5', 'f2f4', 'a3b1', 'c1b2', 'h1h3', 'g3g4', 'g1f3', 'a3c4', 'h1h2', 'f1g2', 'd2d3', 'b4a5', 'a1b1', 'e2e4'}, ['a1b1', 'a3b1', 'a3b5', 'a3c4', 'b4a5', 'c1b2', 'c2c3', 'c2c4', 'd2d3', 'd2d4', 'e2e3', 'e2e4', 'f1g2', 'f1h3', 'f2f3', 'f2f4', 'g1f3', 'g1h3', 'g3g4', 'h1h2', 'h1h3', 'h4h5'])"
+      },
+      {
+        "case": "missing-threat-action",
+        "rejected": true,
+        "diagnostic": "AssertionError: ('missing threat coverage', 1)"
+      },
+      {
+        "case": "illegal-positive-witness",
+        "rejected": true,
+        "diagnostic": "chess.InvalidMoveError: invalid uci (use 0000 for null moves): 'a1a1'"
+      }
+    ]
+  },
+  "matrices": {
+    "causal": {
+      "branch": "causal",
+      "cpu": 2,
+      "runs": 6,
+      "rounds": 3,
+      "corpus_sha256": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+      "binaries": {
+        "portable": {
+          "source_path": "/tmp/chen-r1-causal/experiments/radical_round1/causal/target/release/chen-causal-round1",
+          "sha256": "524dd7521570a592a13e709c5e082fc2c21d24634f523c4ba12bb5a18208ed73"
+        },
+        "native": {
+          "source_path": "/tmp/chen-r1-causal/experiments/radical_round1/causal/target-znver2/release/chen-causal-round1",
+          "sha256": "52957677020be848777f455369ef2ccac9dcb098a34ed09bbbdb887fb1eb7a1f"
+        }
+      },
+      "manifest_sha256": "838744ed8cbba09121cf1966744d3b1e9a6b4d57b0f9c4482e63c972038dbb92",
+      "summary": [
+        {
+          "key": [
+            "native",
+            "fresh_ingress",
+            "all",
+            "line_counts",
+            "ns_per_root"
+          ],
+          "median": 1686.515,
+          "samples": [
+            1686.515,
+            1666.646,
+            1690.996
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "fresh_ingress",
+            "all",
+            "scalar_full",
+            "ns_per_root"
+          ],
+          "median": 46.642,
+          "samples": [
+            46.642,
+            45.615,
+            46.675
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "fresh_ingress",
+            "all",
+            "source_counts",
+            "ns_per_root"
+          ],
+          "median": 1666.888,
+          "samples": [
+            1666.888,
+            1630.096,
+            1672.362
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "fresh_ingress",
+            "all",
+            "source_tree",
+            "ns_per_root"
+          ],
+          "median": 1735.05,
+          "samples": [
+            1732.566,
+            1735.05,
+            1741.412
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "demand_king",
+            "ns_per_child"
+          ],
+          "median": 120.677,
+          "samples": [
+            121.254,
+            120.677,
+            120.169
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "flat_indexed",
+            "ns_per_child"
+          ],
+          "median": 188.539,
+          "samples": [
+            187.319,
+            190.942,
+            188.539
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "ingress_packet",
+            "ns_per_child"
+          ],
+          "median": 67.407,
+          "samples": [
+            67.407,
+            68.124,
+            67.228
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "lazy_king",
+            "ns_per_child"
+          ],
+          "median": 115.145,
+          "samples": [
+            115.145,
+            115.175,
+            114.585
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "line_delta",
+            "ns_per_child"
+          ],
+          "median": 561.84,
+          "samples": [
+            558.816,
+            563.327,
+            561.84
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "orthodox_king",
+            "ns_per_child"
+          ],
+          "median": 31.161,
+          "samples": [
+            31.136,
+            31.219,
+            31.161
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "scalar_full",
+            "ns_per_child"
+          ],
+          "median": 57.038,
+          "samples": [
+            57.038,
+            56.957,
+            57.188
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "source_coarse",
+            "ns_per_child"
+          ],
+          "median": 976.851,
+          "samples": [
+            977.312,
+            976.851,
+            976.078
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "source_fine",
+            "ns_per_child"
+          ],
+          "median": 649.01,
+          "samples": [
+            649.01,
+            645.599,
+            649.09
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "source_indexed",
+            "ns_per_child"
+          ],
+          "median": 267.68,
+          "samples": [
+            267.68,
+            270.644,
+            267.27
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "source_rebuild",
+            "ns_per_child"
+          ],
+          "median": 1154.033,
+          "samples": [
+            1154.033,
+            1151.68,
+            1167.596
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "tree_coarse",
+            "ns_per_child"
+          ],
+          "median": 940.062,
+          "samples": [
+            940.062,
+            942.237,
+            937.117
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "tree_fine",
+            "ns_per_child"
+          ],
+          "median": 609.03,
+          "samples": [
+            607.914,
+            613.303,
+            609.03
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "siblings_roundtrip",
+            "all",
+            "tree_indexed",
+            "ns_per_child"
+          ],
+          "median": 231.756,
+          "samples": [
+            231.64,
+            232.025,
+            231.756
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "demand_king",
+            "ns_per_child"
+          ],
+          "median": 124.47,
+          "samples": [
+            124.319,
+            124.888,
+            124.47
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "flat_indexed",
+            "ns_per_child"
+          ],
+          "median": 115.589,
+          "samples": [
+            115.486,
+            115.589,
+            116.432
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "ingress_packet",
+            "ns_per_child"
+          ],
+          "median": 79.43,
+          "samples": [
+            78.983,
+            79.43,
+            80.174
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "lazy_king",
+            "ns_per_child"
+          ],
+          "median": 115.577,
+          "samples": [
+            115.005,
+            115.577,
+            115.614
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "line_delta",
+            "ns_per_child"
+          ],
+          "median": 340.244,
+          "samples": [
+            341.935,
+            339.14,
+            340.244
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "orthodox_king",
+            "ns_per_child"
+          ],
+          "median": 32.492,
+          "samples": [
+            32.492,
+            32.277,
+            32.721
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "scalar_full",
+            "ns_per_child"
+          ],
+          "median": 59.536,
+          "samples": [
+            59.699,
+            59.383,
+            59.536
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "source_coarse",
+            "ns_per_child"
+          ],
+          "median": 648.231,
+          "samples": [
+            645.18,
+            648.231,
+            648.417
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "source_fine",
+            "ns_per_child"
+          ],
+          "median": 405.219,
+          "samples": [
+            405.219,
+            403.296,
+            405.679
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "source_indexed",
+            "ns_per_child"
+          ],
+          "median": 155.755,
+          "samples": [
+            155.322,
+            156.071,
+            155.755
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "source_rebuild",
+            "ns_per_child"
+          ],
+          "median": 1317.814,
+          "samples": [
+            1317.814,
+            1315.314,
+            1318.337
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "tree_coarse",
+            "ns_per_child"
+          ],
+          "median": 632.729,
+          "samples": [
+            631.656,
+            636.175,
+            632.729
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "tree_fine",
+            "ns_per_child"
+          ],
+          "median": 389.367,
+          "samples": [
+            389.367,
+            395.122,
+            387.946
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "trajectory",
+            "generated",
+            "tree_indexed",
+            "ns_per_child"
+          ],
+          "median": 135.516,
+          "samples": [
+            135.516,
+            135.096,
+            136.21
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "fresh_ingress",
+            "all",
+            "line_counts",
+            "ns_per_root"
+          ],
+          "median": 1604.815,
+          "samples": [
+            1605.267,
+            1598.491,
+            1604.815
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "fresh_ingress",
+            "all",
+            "scalar_full",
+            "ns_per_root"
+          ],
+          "median": 52.583,
+          "samples": [
+            54.004,
+            50.994,
+            52.583
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "fresh_ingress",
+            "all",
+            "source_counts",
+            "ns_per_root"
+          ],
+          "median": 1596.425,
+          "samples": [
+            1596.425,
+            1555.762,
+            1604.954
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "fresh_ingress",
+            "all",
+            "source_tree",
+            "ns_per_root"
+          ],
+          "median": 1718.53,
+          "samples": [
+            1718.53,
+            1715.245,
+            1720.992
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "demand_king",
+            "ns_per_child"
+          ],
+          "median": 117.358,
+          "samples": [
+            119.713,
+            117.267,
+            117.358
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "flat_indexed",
+            "ns_per_child"
+          ],
+          "median": 183.718,
+          "samples": [
+            195.419,
+            182.04,
+            183.718
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "ingress_packet",
+            "ns_per_child"
+          ],
+          "median": 65.052,
+          "samples": [
+            65.007,
+            65.052,
+            65.411
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "lazy_king",
+            "ns_per_child"
+          ],
+          "median": 107.82,
+          "samples": [
+            107.82,
+            107.526,
+            108.81
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "line_delta",
+            "ns_per_child"
+          ],
+          "median": 569.438,
+          "samples": [
+            603.364,
+            569.438,
+            567.924
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "orthodox_king",
+            "ns_per_child"
+          ],
+          "median": 34.8,
+          "samples": [
+            34.8,
+            34.8,
+            35.068
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "scalar_full",
+            "ns_per_child"
+          ],
+          "median": 61.23,
+          "samples": [
+            66.241,
+            61.23,
+            61.14
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "source_coarse",
+            "ns_per_child"
+          ],
+          "median": 958.276,
+          "samples": [
+            1028.987,
+            958.276,
+            955.92
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "source_fine",
+            "ns_per_child"
+          ],
+          "median": 664.426,
+          "samples": [
+            716.905,
+            661.744,
+            664.426
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "source_indexed",
+            "ns_per_child"
+          ],
+          "median": 284.147,
+          "samples": [
+            307.222,
+            284.061,
+            284.147
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "source_rebuild",
+            "ns_per_child"
+          ],
+          "median": 1109.95,
+          "samples": [
+            1187.529,
+            1109.95,
+            1101.649
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "tree_coarse",
+            "ns_per_child"
+          ],
+          "median": 926.645,
+          "samples": [
+            993.454,
+            926.645,
+            920.197
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "tree_fine",
+            "ns_per_child"
+          ],
+          "median": 636.454,
+          "samples": [
+            687.061,
+            636.454,
+            635.323
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "siblings_roundtrip",
+            "all",
+            "tree_indexed",
+            "ns_per_child"
+          ],
+          "median": 250.21,
+          "samples": [
+            268.724,
+            249.905,
+            250.21
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "demand_king",
+            "ns_per_child"
+          ],
+          "median": 124.729,
+          "samples": [
+            124.255,
+            125.064,
+            124.729
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "flat_indexed",
+            "ns_per_child"
+          ],
+          "median": 122.355,
+          "samples": [
+            122.355,
+            121.959,
+            122.421
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "ingress_packet",
+            "ns_per_child"
+          ],
+          "median": 84.276,
+          "samples": [
+            83.388,
+            84.377,
+            84.276
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "lazy_king",
+            "ns_per_child"
+          ],
+          "median": 111.774,
+          "samples": [
+            111.774,
+            112.117,
+            110.825
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "line_delta",
+            "ns_per_child"
+          ],
+          "median": 338.696,
+          "samples": [
+            340.225,
+            338.046,
+            338.696
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "orthodox_king",
+            "ns_per_child"
+          ],
+          "median": 34.611,
+          "samples": [
+            34.46,
+            34.611,
+            34.72
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "scalar_full",
+            "ns_per_child"
+          ],
+          "median": 63.452,
+          "samples": [
+            63.74,
+            63.017,
+            63.452
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "source_coarse",
+            "ns_per_child"
+          ],
+          "median": 626.18,
+          "samples": [
+            626.095,
+            626.987,
+            626.18
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "source_fine",
+            "ns_per_child"
+          ],
+          "median": 416.187,
+          "samples": [
+            416.187,
+            416.49,
+            415.296
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "source_indexed",
+            "ns_per_child"
+          ],
+          "median": 163.051,
+          "samples": [
+            163.301,
+            163.051,
+            162.311
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "source_rebuild",
+            "ns_per_child"
+          ],
+          "median": 1251.046,
+          "samples": [
+            1255.964,
+            1251.046,
+            1251.025
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "tree_coarse",
+            "ns_per_child"
+          ],
+          "median": 617.548,
+          "samples": [
+            617.548,
+            612.912,
+            618.52
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "tree_fine",
+            "ns_per_child"
+          ],
+          "median": 404.256,
+          "samples": [
+            404.256,
+            406.35,
+            402.951
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "trajectory",
+            "generated",
+            "tree_indexed",
+            "ns_per_child"
+          ],
+          "median": 146.748,
+          "samples": [
+            146.295,
+            151.631,
+            146.748
+          ]
+        }
+      ]
+    },
+    "relation": {
+      "branch": "relation",
+      "cpu": 2,
+      "runs": 18,
+      "rounds": 3,
+      "corpus_sha256": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+      "binaries": {
+        "portable": {
+          "source_path": "/tmp/chen-r1-relation/experiments/radical_round1/relation/target/release/chen-relation-r1",
+          "sha256": "556cc95910ec4d641e50895c5713f6d8b732f4be9513728f05792d7dec10b539"
+        },
+        "native": {
+          "source_path": "/tmp/chen-r1-relation-native/release/chen-relation-r1",
+          "sha256": "afde6f1a73855dad9f7cbf45b7b2bfed89011f5ac68e9c13ad8b31ba0ceb9e7f"
+        }
+      },
+      "manifest_sha256": "b5ba68e186f43bd521e674dad174b2425365eae80343ce8a407a9b944c43566b",
+      "summary": [
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.968223323216977,
+          "samples": [
+            6.980061836115327,
+            6.968223323216977,
+            6.965787966616078
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.220300212443089,
+          "samples": [
+            5.245541031866464,
+            5.220300212443089,
+            5.209738012139602
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.30815707132019,
+          "samples": [
+            5.324862837632776,
+            5.30815707132019,
+            5.300055128983308
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 4.9684642792109255,
+          "samples": [
+            5.001523732928678,
+            4.961977663125951,
+            4.9684642792109255
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.709938012139606,
+          "samples": [
+            5.709938012139606,
+            5.623323216995439,
+            5.734727845220022
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.6495755083459804,
+          "samples": [
+            2.698215068285281,
+            2.616173095599392,
+            2.6495755083459804
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.983427981790593,
+          "samples": [
+            5.027065128983305,
+            4.9223864643399065,
+            4.983427981790593
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 4.781534324734446,
+          "samples": [
+            4.793479377845218,
+            4.756598391502278,
+            4.781534324734446
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.5278622306525005,
+          "samples": [
+            3.538979104704094,
+            3.5278622306525005,
+            3.524453717754178
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.4351155235204864,
+          "samples": [
+            1.4351155235204864,
+            1.4506954628224575,
+            1.4220937177541726
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.8802126707132014,
+          "samples": [
+            1.8925635204855882,
+            1.8681118209408227,
+            1.8802126707132014
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.1762631714719274,
+          "samples": [
+            1.1762631714719274,
+            1.1769719726858874,
+            1.173206798179058
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.555046600910473,
+          "samples": [
+            4.557471305007584,
+            4.5402335811836085,
+            4.555046600910473
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.7064912443095598,
+          "samples": [
+            0.7064912443095598,
+            0.7180766616084966,
+            0.7018673899848258
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.5490458118361168,
+          "samples": [
+            1.5636497723823977,
+            1.5490458118361168,
+            1.5475155993930196
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "codec",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.9997708497723818,
+          "samples": [
+            0.9997708497723818,
+            1.0080435963581194,
+            0.9923435356600913
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.525260910470404,
+          "samples": [
+            5.51170855842185,
+            5.526558922610013,
+            5.525260910470404
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.8234845068285264,
+          "samples": [
+            3.8077699696509812,
+            3.829465386949927,
+            3.8234845068285264
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.8327150531107805,
+          "samples": [
+            3.826710910470412,
+            3.8327150531107805,
+            3.8438911836115297
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.5565688770864896,
+          "samples": [
+            3.5378718057663123,
+            3.6135719119878633,
+            3.5565688770864896
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.636709074355082,
+          "samples": [
+            5.636709074355082,
+            5.724818740515936,
+            5.631737177541738
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.6161872078907464,
+          "samples": [
+            2.6161872078907464,
+            2.659362306525035,
+            2.5774410925644973
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.5149364491654,
+          "samples": [
+            3.5149364491654,
+            3.513528406676785,
+            3.552352959028831
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.368953080424885,
+          "samples": [
+            3.3461731107739,
+            3.384859301972686,
+            3.368953080424885
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.550952063732931,
+          "samples": [
+            3.550952063732931,
+            3.543546145675262,
+            3.5740238391502266
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.4559611684370266,
+          "samples": [
+            1.4465635053110775,
+            1.467183626707133,
+            1.4559611684370266
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.8664594233687406,
+          "samples": [
+            1.8565272382397573,
+            1.8830222458270085,
+            1.8664594233687406
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.180197511380879,
+          "samples": [
+            1.174440106221548,
+            1.1907505462822459,
+            1.180197511380879
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.5738195599393,
+          "samples": [
+            4.5738195599393,
+            4.551918983308044,
+            4.5805877086494675
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.7133188315629754,
+          "samples": [
+            0.7209708952959032,
+            0.7133188315629754,
+            0.7121340212443104
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.55047239757208,
+          "samples": [
+            1.55047239757208,
+            1.5324337025796662,
+            1.5675995295902883
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "orthodox",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.0037317147192717,
+          "samples": [
+            0.996437192716236,
+            1.0216965098634283,
+            1.0037317147192717
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 7.751625857359625,
+          "samples": [
+            7.692448543247346,
+            7.751946100151729,
+            7.751625857359625
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.997845144157815,
+          "samples": [
+            5.96423286798179,
+            5.997845144157815,
+            6.021590637329287
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.083480273141125,
+          "samples": [
+            6.026426145675271,
+            6.089209286798179,
+            6.083480273141125
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.739069408194234,
+          "samples": [
+            5.709257298937784,
+            5.739069408194234,
+            5.781153459787557
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.601184977238235,
+          "samples": [
+            5.605381775417302,
+            5.601184977238235,
+            5.598207890743555
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.587614264036417,
+          "samples": [
+            2.587614264036417,
+            2.5842876934749612,
+            2.622632579666163
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.730659089529588,
+          "samples": [
+            5.679949256449171,
+            5.78037301972686,
+            5.730659089529588
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.555810955993931,
+          "samples": [
+            5.5154349317147195,
+            5.622431896813355,
+            5.555810955993931
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.5128848861912,
+          "samples": [
+            3.505829772382393,
+            3.5128848861912,
+            3.595861866464341
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.4231657814871022,
+          "samples": [
+            1.4231657814871022,
+            1.4226105159332327,
+            1.4346957966616083
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.8738888467374821,
+          "samples": [
+            1.8639813050075889,
+            1.8738888467374821,
+            1.8779604704097108
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.1813325341426415,
+          "samples": [
+            1.1813325341426415,
+            1.1673604552352044,
+            1.1866183915022763
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.527337177541731,
+          "samples": [
+            4.527337177541731,
+            4.519117632776928,
+            4.553336767830042
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.7063408801213962,
+          "samples": [
+            0.7059635053110782,
+            0.7063408801213962,
+            0.7132610166919581
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.5473594537177549,
+          "samples": [
+            1.5422008952959032,
+            1.5933385735963566,
+            1.5473594537177549
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "own",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.9968862367223074,
+          "samples": [
+            0.9871655538694983,
+            1.0020234142640374,
+            0.9968862367223074
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 7.119069210925645,
+          "samples": [
+            7.1610163732928696,
+            7.119069210925645,
+            7.096757071320179
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.241484582701059,
+          "samples": [
+            5.2626742792109225,
+            5.23494344461305,
+            5.241484582701059
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.493857253414267,
+          "samples": [
+            5.49964330804248,
+            5.493857253414267,
+            5.472702503793625
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.003975022761754,
+          "samples": [
+            5.033750546282242,
+            5.003975022761754,
+            4.994745113808807
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.235972443095593,
+          "samples": [
+            6.155999666160845,
+            6.25806150227618,
+            6.235972443095593
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.7917153262518952,
+          "samples": [
+            2.7917153262518952,
+            2.7826279210925615,
+            2.806734901365707
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.9298810015174555,
+          "samples": [
+            4.941325432473444,
+            4.9298810015174555,
+            4.890685705614567
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 4.747705356600911,
+          "samples": [
+            4.772644628224584,
+            4.733711745068286,
+            4.747705356600911
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.780343748103188,
+          "samples": [
+            3.780343748103188,
+            3.7386188619119887,
+            3.804397283763276
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.573707572078907,
+          "samples": [
+            1.5653359180576618,
+            1.573707572078907,
+            1.582844628224583
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 2.183316570561455,
+          "samples": [
+            2.183316570561455,
+            2.1707797420333836,
+            2.198182291350531
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.3156166767830055,
+          "samples": [
+            1.308288300455236,
+            1.3156166767830055,
+            1.3170650682852796
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.031492276176018,
+          "samples": [
+            5.0178539301972735,
+            5.031492276176018,
+            5.043845371775419
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.775717116843704,
+          "samples": [
+            0.775717116843704,
+            0.7757116691957533,
+            0.7776397268588775
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.629371411229135,
+          "samples": [
+            1.629371411229135,
+            1.6102131562974193,
+            1.6353797268588786
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "codec",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.0764763125948413,
+          "samples": [
+            1.0759336267071302,
+            1.0774928528072842,
+            1.0764763125948413
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.818341426403641,
+          "samples": [
+            5.818341426403641,
+            5.794548740515926,
+            5.86630939301973
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.9617506069802704,
+          "samples": [
+            3.9617506069802704,
+            3.9385037177541737,
+            3.983280318664642
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 4.16297579666161,
+          "samples": [
+            4.145346388467374,
+            4.16297579666161,
+            4.178812230652502
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.716943004552353,
+          "samples": [
+            3.716943004552353,
+            3.683838300455242,
+            3.740747389984828
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.224435432473442,
+          "samples": [
+            6.203834081942336,
+            6.224435432473442,
+            6.235983383915014
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.79326054628225,
+          "samples": [
+            2.79326054628225,
+            2.793215948406676,
+            2.8033242792109228
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.612398801213961,
+          "samples": [
+            3.612398801213961,
+            3.5797320182094046,
+            3.6429243702579663
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 3.4446252503793655,
+          "samples": [
+            3.4446252503793655,
+            3.439128133535657,
+            3.458811441578148
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.816434613050071,
+          "samples": [
+            3.816434613050071,
+            3.7935986342943826,
+            3.840051122913504
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.5695860091047058,
+          "samples": [
+            1.5695860091047058,
+            1.5750462367223053,
+            1.5538096813353561
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 2.167100531107743,
+          "samples": [
+            2.167100531107743,
+            2.1662234446130513,
+            2.17607383915023
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.3151355235204853,
+          "samples": [
+            1.3123334901365697,
+            1.3238617147192726,
+            1.3151355235204853
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.028790500758726,
+          "samples": [
+            5.028790500758726,
+            5.0129915477997,
+            5.052117359635809
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.7771794840667691,
+          "samples": [
+            0.7731185735963589,
+            0.7771794840667691,
+            0.7774544613050081
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.6305680880121407,
+          "samples": [
+            1.6305680880121407,
+            1.6294014719271646,
+            1.6433363429438543
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "orthodox",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.0674614415781494,
+          "samples": [
+            1.0674614415781494,
+            1.0812520030349004,
+            1.0584557966616088
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 8.142763125948417,
+          "samples": [
+            8.59205345978755,
+            8.142763125948417,
+            8.067866206373298
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 6.202808452200314,
+          "samples": [
+            6.155630166919574,
+            6.282360895295902,
+            6.202808452200314
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.492945128983303,
+          "samples": [
+            6.710302670713192,
+            6.492945128983303,
+            6.435443657056146
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.972817981790589,
+          "samples": [
+            5.9371355993930175,
+            6.008888209408193,
+            5.972817981790589
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 6.258513717754175,
+          "samples": [
+            6.656955811836104,
+            6.164453368740514,
+            6.258513717754175
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 2.800324430955994,
+          "samples": [
+            2.772868907435505,
+            2.8062361153262487,
+            2.800324430955994
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.968741077389985,
+          "samples": [
+            6.254752701062216,
+            5.968741077389985,
+            5.860675887708643
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 5.697796130500761,
+          "samples": [
+            5.662340622154781,
+            5.7832035508345925,
+            5.697796130500761
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "full",
+            "all",
+            "us_per_root"
+          ],
+          "median": 3.789857936267074,
+          "samples": [
+            3.7760125948406724,
+            3.8056222913505273,
+            3.789857936267074
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "full",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.545445477996964,
+          "samples": [
+            1.5425147192716238,
+            1.5569142185128995,
+            1.545445477996964
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "grouped",
+            "all",
+            "us_per_root"
+          ],
+          "median": 2.1694285887708658,
+          "samples": [
+            2.161620379362673,
+            2.2202475872534166,
+            2.1694285887708658
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "grouped",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.3092769347496198,
+          "samples": [
+            1.3092769347496198,
+            1.3041866160849789,
+            1.3211268740515951
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "scalar",
+            "all",
+            "us_per_root"
+          ],
+          "median": 5.026638133535655,
+          "samples": [
+            4.994886251896815,
+            5.026638133535655,
+            5.037539696509863
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "scalar",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 0.7740890440060703,
+          "samples": [
+            0.7681654476479509,
+            0.7740890440060703,
+            0.7746910773899851
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "stream",
+            "all",
+            "us_per_root"
+          ],
+          "median": 1.6146222913505301,
+          "samples": [
+            1.6103441426403624,
+            1.6312694385432474,
+            1.6146222913505301
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "own",
+            "kernel_aggregate",
+            "stream",
+            "checking",
+            "us_per_root"
+          ],
+          "median": 1.0623577845220036,
+          "samples": [
+            1.0580554931714712,
+            1.0683472989377847,
+            1.0623577845220036
+          ]
+        }
+      ]
+    },
+    "bands": {
+      "branch": "bands",
+      "cpu": 2,
+      "runs": 6,
+      "rounds": 3,
+      "corpus_sha256": "e4da392f42cb59df26c1daf4fe100685ec265a92a555554edd56e38efb3cc032",
+      "binaries": {
+        "portable": {
+          "source_path": "/tmp/chen-r1-bands/experiments/radical_round1/bands/target/release/chen-radical-bands",
+          "sha256": "c30fd87951568a3d83008f503062a3ba5842153654f1226ce0859d8592d7e238"
+        },
+        "native": {
+          "source_path": "/tmp/chen-r1-bands-native/release/chen-radical-bands",
+          "sha256": "7a5a835c9f2990275ef785cfffa4dbf08a04d65f256a4d4ac91f3ba61b5f08ed"
+        }
+      },
+      "manifest_sha256": "6d1e8950463602f8dc50936566e8109d31231d703bc779d53ee954a2e8d3f0cf",
+      "summary": [
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 1039.0983971927162,
+          "samples": [
+            1026.3061978376327,
+            1048.0490705614568,
+            1039.0983971927162
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 332.5494499241275,
+          "samples": [
+            328.11958933990894,
+            334.92392830045526,
+            332.5494499241275
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 359.659782814871,
+          "samples": [
+            359.659782814871,
+            358.11198311836114,
+            362.082535091047
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 1003.5796377086494,
+          "samples": [
+            1000.8509768588771,
+            1003.5796377086494,
+            1004.6491559180577
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 289.46165591805766,
+          "samples": [
+            276.71820940819424,
+            289.46165591805766,
+            296.9707558801214
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "bands-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 325.8954808421851,
+          "samples": [
+            325.8954808421851,
+            323.480842185129,
+            330.65766312594843
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 1326.754618740516,
+          "samples": [
+            1314.3061172230653,
+            1326.754618740516,
+            1334.4261333459788
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 628.0276033763278,
+          "samples": [
+            640.0083886570561,
+            628.0276033763278,
+            625.295243740516
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 676.2947410849772,
+          "samples": [
+            672.8528784142641,
+            676.2947410849772,
+            682.646405538695
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 1301.9961399848255,
+          "samples": [
+            1279.261044195751,
+            1304.1834028831563,
+            1301.9961399848255
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 577.4167630880121,
+          "samples": [
+            572.4819233687405,
+            577.4167630880121,
+            593.8241464339909
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "micro-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 633.3187642261001,
+          "samples": [
+            607.0771718512898,
+            634.662277124431,
+            633.3187642261001
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 1172.833658952959,
+          "samples": [
+            1172.833658952959,
+            1177.461314491654,
+            1169.5959455614568
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 310.4086731790592,
+          "samples": [
+            310.35627371016693,
+            310.4086731790592,
+            310.9663837253414
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 350.22138657056144,
+          "samples": [
+            350.81655918057663,
+            349.31537367223063,
+            350.22138657056144
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 1141.5035849772382,
+          "samples": [
+            1141.5035849772382,
+            1141.3240990136571,
+            1154.8421139984825
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 278.20900512139605,
+          "samples": [
+            276.17709123672233,
+            278.20900512139605,
+            282.83736722306526
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "pyramid-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 321.3297135811836,
+          "samples": [
+            316.68413315629743,
+            322.005595599393,
+            321.3297135811836
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "union-control",
+            "attacks_build_query_ns"
+          ],
+          "median": 36.96595220030349,
+          "samples": [
+            36.599300550075874,
+            36.96595220030349,
+            37.64643149508825
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "union-control",
+            "attacks_query_ns"
+          ],
+          "median": 36.173608213201824,
+          "samples": [
+            36.05325540591806,
+            36.40328860015175,
+            36.173608213201824
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "benchmark",
+            "union-control",
+            "complete_packet_ns"
+          ],
+          "median": 79.95831752655539,
+          "samples": [
+            80.42683042488619,
+            79.60086305007587,
+            79.95831752655539
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "constraints",
+            "constraints",
+            "control_both_kings_ns"
+          ],
+          "median": 39.83226637582195,
+          "samples": [
+            39.83226637582195,
+            39.54350288737144,
+            40.19197595262182
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "constraints",
+            "constraints",
+            "progressive_both_kings_ns"
+          ],
+          "median": 26.73031704883943,
+          "samples": [
+            26.856859087843535,
+            26.456473402461643,
+            26.73031704883943
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "constraints",
+            "constraints",
+            "query_both_kings_ns"
+          ],
+          "median": 69.7765640088288,
+          "samples": [
+            71.6341094461305,
+            69.28938474272313,
+            69.7765640088288
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "transitions",
+            "transitions",
+            "copy_patch_bands_query_ns"
+          ],
+          "median": 391.6844200822435,
+          "samples": [
+            391.6844200822435,
+            391.273739803829,
+            401.1546773880949
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "transitions",
+            "transitions",
+            "copy_patch_ns"
+          ],
+          "median": 59.77707041256573,
+          "samples": [
+            59.77707041256573,
+            57.83881939294863,
+            69.08579003471755
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "transitions",
+            "transitions",
+            "copy_patch_pyramid_query_ns"
+          ],
+          "median": 450.7792012858973,
+          "samples": [
+            450.7792012858973,
+            446.75159051840365,
+            457.1177078417824
+          ]
+        },
+        {
+          "key": [
+            "native",
+            "transitions",
+            "transitions",
+            "union_child_query_ns"
+          ],
+          "median": 34.114860708507486,
+          "samples": [
+            34.14124751415667,
+            34.114860708507486,
+            33.86739395139544
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 948.3319470789074,
+          "samples": [
+            948.3319470789074,
+            964.4712585356601,
+            946.0867839529591
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 322.8574544764795,
+          "samples": [
+            322.0884816009105,
+            327.73415686646433,
+            322.8574544764795
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 370.30403072837635,
+          "samples": [
+            369.29269726858877,
+            376.9299269726859,
+            370.30403072837635
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 946.5227190819423,
+          "samples": [
+            995.1086162746586,
+            946.5227190819423,
+            928.4014273520486
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 304.81407435508345,
+          "samples": [
+            313.16351005311077,
+            304.81407435508345,
+            300.42660280728376
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "bands-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 346.2345694233687,
+          "samples": [
+            360.6948216995448,
+            346.2345694233687,
+            335.51554438543246
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 1286.4774658573597,
+          "samples": [
+            1286.4774658573597,
+            1296.3321177921093,
+            1275.2389036418817
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 638.453902693475,
+          "samples": [
+            675.9958507207891,
+            638.453902693475,
+            631.1653072837632
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 689.849838770865,
+          "samples": [
+            684.4396054628224,
+            706.1289880500759,
+            689.849838770865
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 1277.955140364188,
+          "samples": [
+            1333.2667962822459,
+            1277.955140364188,
+            1249.0897809180576
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 605.619750569044,
+          "samples": [
+            634.7114946889226,
+            605.619750569044,
+            604.6120732169954
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "micro-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 656.2575303490137,
+          "samples": [
+            695.9178774658574,
+            656.2575303490137,
+            653.1859256449166
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-avx2",
+            "attacks_build_query_ns"
+          ],
+          "median": 1107.7294195751138,
+          "samples": [
+            1109.1676308801214,
+            1107.7294195751138,
+            1105.3519584597875
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-avx2",
+            "attacks_query_ns"
+          ],
+          "median": 305.7455472306525,
+          "samples": [
+            304.6280443854325,
+            310.24768114567524,
+            305.7455472306525
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-avx2",
+            "complete_packet_ns"
+          ],
+          "median": 349.89134104704095,
+          "samples": [
+            349.89134104704095,
+            350.87450682852807,
+            349.59368361153264
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-scalar",
+            "attacks_build_query_ns"
+          ],
+          "median": 1099.2226005311077,
+          "samples": [
+            1155.7397334977238,
+            1099.2226005311077,
+            1081.9157530349014
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-scalar",
+            "attacks_query_ns"
+          ],
+          "median": 294.64943569802733,
+          "samples": [
+            306.42584408194233,
+            294.64943569802733,
+            292.3464719271624
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "pyramid-scalar",
+            "complete_packet_ns"
+          ],
+          "median": 335.54613050075875,
+          "samples": [
+            348.3463391502276,
+            335.54613050075875,
+            327.65965952200304
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "union-control",
+            "attacks_build_query_ns"
+          ],
+          "median": 36.951180766312596,
+          "samples": [
+            39.29186716316588,
+            36.774468892261,
+            36.951180766312596
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "union-control",
+            "attacks_query_ns"
+          ],
+          "median": 36.548060508345976,
+          "samples": [
+            39.113738918616725,
+            36.548060508345976,
+            36.53639747723824
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "benchmark",
+            "union-control",
+            "complete_packet_ns"
+          ],
+          "median": 87.4576963201821,
+          "samples": [
+            91.68488713960546,
+            86.69650512139606,
+            87.4576963201821
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "constraints",
+            "constraints",
+            "control_both_kings_ns"
+          ],
+          "median": 45.4500812073217,
+          "samples": [
+            45.24566993076631,
+            45.4500812073217,
+            46.839256923368744
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "constraints",
+            "constraints",
+            "progressive_both_kings_ns"
+          ],
+          "median": 30.659638578022257,
+          "samples": [
+            30.196243124051595,
+            30.659638578022257,
+            30.729996522508852
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "constraints",
+            "constraints",
+            "query_both_kings_ns"
+          ],
+          "median": 82.37006828528072,
+          "samples": [
+            81.47538410470409,
+            82.8302778831563,
+            82.37006828528072
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "transitions",
+            "transitions",
+            "copy_patch_bands_query_ns"
+          ],
+          "median": 390.6998481107591,
+          "samples": [
+            390.6998481107591,
+            402.8506745483349,
+            388.7147136645544
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "transitions",
+            "transitions",
+            "copy_patch_ns"
+          ],
+          "median": 67.73575590703788,
+          "samples": [
+            67.55537532021033,
+            68.05530264089255,
+            67.73575590703788
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "transitions",
+            "transitions",
+            "copy_patch_pyramid_query_ns"
+          ],
+          "median": 439.056477096535,
+          "samples": [
+            439.056477096535,
+            443.27733058345694,
+            434.5650132297425
+          ]
+        },
+        {
+          "key": [
+            "portable",
+            "transitions",
+            "transitions",
+            "union_child_query_ns"
+          ],
+          "median": 34.24185991640825,
+          "samples": [
+            34.23796367298099,
+            34.57346720372118,
+            34.24185991640825
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "experiments/radical_round1/README.md": "a6c7e3c5ce8b1db54318aad5c5a8d5a2849d5c2a36b3315641955965a1220ec7",
+    "experiments/radical_round1/bands/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "experiments/radical_round1/bands/Cargo.lock": "c37449d5952b4bbec1315fa5a7bdb3181dd8c4f1bae43bf9296ec7f3a37f45f5",
+    "experiments/radical_round1/bands/Cargo.toml": "4833eaff50e255a90e80bccc476d376e1734560532997a97986f0f384b7dfa29",
+    "experiments/radical_round1/bands/evidence-summary.json": "1c0b9dcaae44337be93df9ec8539026624f79396af76a425d4f5d45e9a485335",
+    "experiments/radical_round1/bands/inspect_isa.py": "4f517ec1a87bfca3f20d9c6aa7279facbd66e8831c96e67eda3b5470d822713b",
+    "experiments/radical_round1/bands/run_matrix.py": "50f337d64028c32b1f330a86573edcf10bb9eb9d0e748589f980bc1ed794d8e9",
+    "experiments/radical_round1/bands/src/lib.rs": "09ab387f4361bc5f20d124419d60728a32a7eac7a5405c7a85b77fe869c620b0",
+    "experiments/radical_round1/bands/src/main.rs": "4f66da814e9627605bf700cd1fb82f1e04d9fbc79eb69114ab4bd99b3afd847f",
+    "experiments/radical_round1/causal/.gitignore": "8a9d40df4bfdfba6af9e542ca8fe41db0ae8f08cee412da7461930d56cd822a6",
+    "experiments/radical_round1/causal/Cargo.lock": "38d2f8a42460127d95f355a9f92f936f20f74731a40c5d658c8e311bd8b6c4f4",
+    "experiments/radical_round1/causal/Cargo.toml": "de3c8ee589bf6875c0314819a59b2ceabb2eece8e80a9cada805d1d57655bf7c",
+    "experiments/radical_round1/causal/benchmark.py": "23230558a22761c1fd2b8f1d297b9ad9962fdc8404c37796062ad8768e3c7141",
+    "experiments/radical_round1/causal/evidence/dev-summary.json": "1f231e7fcc3042c2480401c720310d12af2978e0c58bc5892fcf27e8b20a7853",
+    "experiments/radical_round1/causal/src/main.rs": "e67693c29966a12d91abc79071ebb5febc147078bbd66ed4e1ffd22fff47f443",
+    "experiments/radical_round1/causal/verify_answers.py": "10ef4d3fce254691ec4544f8d7ea7066ef5cbff8f9fca84059599207b64635f4",
+    "experiments/radical_round1/harness/assemble_evidence.py": "16992da97ec78746107be1d8487950612e24fa0da30f956ce02069fe3d392b60",
+    "experiments/radical_round1/harness/check_answers.py": "f74186c49d925f5aec20ddf9052ce7e2c7b8be66b5b218e68219f93130e2f117",
+    "experiments/radical_round1/harness/check_choices.py": "e24fca59a9b7c0687cb4259bc6f91789fbd90e1e100947dfe047b5e2cdf2a39f",
+    "experiments/radical_round1/harness/check_relation.py": "daa626c1d5f705f3563b70e090138dfb48dbade4dec2917f53683cf285ad4c7f",
+    "experiments/radical_round1/harness/make_corpus.py": "3dcbc5929b34ff826e41498c5b624e85e36d569d9f9403656bfa0b524d025d35",
+    "experiments/radical_round1/harness/make_threats.py": "4c47c6459d342d8015470db51ce227a798b9c956441c21d74f964b3c589f6ac8",
+    "experiments/radical_round1/harness/requirements.txt": "2caecd28e19cddfc13dd9a6639a5386ae8da7285f854dd7d6643e7910de8d10d",
+    "experiments/radical_round1/harness/run_matrix.py": "97d1e1b81e71051ad42c502caf20adf17f1212a1cd279e7b80673f436b2c0c76",
+    "experiments/radical_round1/harness/summarize_matrix.py": "a91625fdcdea65685a94b49f5026931f0ff776bc58178589e33db248fb2553aa",
+    "experiments/radical_round1/relation/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "experiments/radical_round1/relation/Cargo.lock": "e1b60264160efe2f0d1ba3383c0c7e4027476e3840fc1295306980d151683cbb",
+    "experiments/radical_round1/relation/Cargo.toml": "01cf9796a2c630c9662289bd57e8656731c6724f7a9bae72ab0040e53c24e3b6",
+    "experiments/radical_round1/relation/check_oracle.py": "d5838db288b646e98e9f81f7df5a5ecf28ca3196fdf1dd0d51743832e5b98a54",
+    "experiments/radical_round1/relation/run_matrix.py": "3c46ef951e4917a4583e93d6849956bffe16b5298424da50d0ff5dcf19dcee30",
+    "experiments/radical_round1/relation/src/lib.rs": "7b404dd4604f918b2711e96b5f5a25a43c84029c8236fa8f209ad564211fce26",
+    "experiments/radical_round1/relation/src/main.rs": "e8b78a8f22ea18dc9b23afd01e4719c7552b98411784854af6f4478e18dfb516",
+    "experiments/radical_round1/relation/summarize.py": "c1968bb6e26a799747e386f0dfcbda812f27d7bf9dc28fb45ce54a01ea00186c",
+    "experiments/radical_round1/relation/tests/differential.rs": "023738bac20092a349d353d8edc32f79751a0d189c30588a63db575ee0d54374"
+  }
+}
