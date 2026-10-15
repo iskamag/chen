@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "frozen_before_execution": "2026-10-15",
+  "task": "Exact complete directed slider visibility relation on 8- and 16-cell ternary lines; blocker squares included, source square excluded",
+  "alphabet": {"0": "empty", "1": "opaque non-slider blocker", "2": "bidirectional slider"},
+  "outputs": "one u16 target mask per possible slider source, not an attack union or checksum",
+  "variants": ["direct_source_ray_oracle", "directional_band_operator", "full8_lut", "hard4_local", "stagger4_stride2_or", "stagger4_stride2_mean_majority", "boundary4_lut", "lapped_lifting_inverse_boundary4", "lifting_dc_only_boundary4"],
+  "datasets": {"exhaustive8": 6561, "random16": 20000, "constructed16": "Every distinct slider/blocker pair against empty background; every single slider; slider pairs; boundary-local and long-ray configurations included by enumeration"},
+  "random_seed": 12587763,
+  "random_generator": "xorshift64 shifts13,7,17; each cell next()%3",
+  "action_classes": "All 3 substitutions at each of 16 cells, including no-op: 48 exact outputs per selected root; first 256 random16 roots and all constructed16 roots",
+  "class_variants": ["independent_source_oracles", "boundary4_rebuild_each_query", "boundary4_shared_descriptor_edits"],
+  "lifting": "Toy integer boundary prefilter plus pairwise reversible Haar/S lifting, not JPEG XR conformance; exact inverse then visibility composition vs discarding all detail coefficients",
+  "metrics": ["whole_relation_errors", "wrong_relation_bits", "false_positive_bits", "false_negative_bits", "distance_1_cross_hard_block_edge_errors", "distance_at_least4_errors", "first_counterexample", "lookup_entries", "actual_packed_descriptor_bytes", "boundary_operator_equivalence_classes", "transform_roundtrip_errors", "complete_48_query_class_errors"],
+  "timing": {"cpu": 4, "compiler": "rustc release opt-level3 portable default target", "repetitions": 7, "position_loops": 20, "inputs": "first4096 random16 roots; exhaustive8 for full8 LUT", "metric": "median ns/complete relation; full class ns/48-query class; black_box outputs", "limitations": "exploratory single CPU wall-clock; includes lookup-code extraction and transform when applicable; no SIMD speedup claim"},
+  "resource_limits": "No GPU, full engine, neural training, huge tables, or media. Full16 LUT prohibited (3^16 entries).",
+  "primary_source": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/spie2008_hierarchical_lbts.pdf",
+  "claims_boundary": "Overlap union/averaging is not alias cancellation. Reversible transform invertibility is not a proof of a nonlinear visibility operator. Exact boundary composition will be checked against a separately written direct source-ray oracle."
+}
