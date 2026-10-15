@@ -1,0 +1,134 @@
+{
+  "numpy": "2.5.4",
+  "scope": "Single exploratory update per selected instance per depth. No optimized-kernel or throughput comparison. Readout, oracle, index precomputation excluded; full fixed state and fixed pair tables traversed.",
+  "variants": {
+    "nilpotent_closure": [
+      {
+        "depth": 0,
+        "samples": 0,
+        "median_us": null,
+        "total_ms": 0.0
+      },
+      {
+        "depth": 1,
+        "samples": 210,
+        "median_us": 95.365,
+        "total_ms": 433.307448
+      },
+      {
+        "depth": 2,
+        "samples": 210,
+        "median_us": 103.14,
+        "total_ms": 444.695642
+      },
+      {
+        "depth": 3,
+        "samples": 210,
+        "median_us": 103.425,
+        "total_ms": 458.973908
+      },
+      {
+        "depth": 4,
+        "samples": 210,
+        "median_us": 103.715,
+        "total_ms": 459.077473
+      }
+    ],
+    "frozen_state": [
+      {
+        "depth": 0,
+        "samples": 0,
+        "median_us": null,
+        "total_ms": 0.0
+      },
+      {
+        "depth": 1,
+        "samples": 210,
+        "median_us": 0.64,
+        "total_ms": 0.14637
+      },
+      {
+        "depth": 2,
+        "samples": 210,
+        "median_us": 0.51,
+        "total_ms": 0.11501
+      },
+      {
+        "depth": 3,
+        "samples": 210,
+        "median_us": 0.48,
+        "total_ms": 0.10799
+      },
+      {
+        "depth": 4,
+        "samples": 210,
+        "median_us": 0.48,
+        "total_ms": 0.1166
+      }
+    ],
+    "additive_reinject_same_edges": [
+      {
+        "depth": 0,
+        "samples": 0,
+        "median_us": null,
+        "total_ms": 0.0
+      },
+      {
+        "depth": 1,
+        "samples": 210,
+        "median_us": 1.18,
+        "total_ms": 0.293369
+      },
+      {
+        "depth": 2,
+        "samples": 210,
+        "median_us": 0.9,
+        "total_ms": 0.19459
+      },
+      {
+        "depth": 3,
+        "samples": 210,
+        "median_us": 0.85,
+        "total_ms": 0.18666
+      },
+      {
+        "depth": 4,
+        "samples": 210,
+        "median_us": 0.85,
+        "total_ms": 0.18909
+      }
+    ],
+    "omit_resource_exclusion": [
+      {
+        "depth": 0,
+        "samples": 0,
+        "median_us": null,
+        "total_ms": 0.0
+      },
+      {
+        "depth": 1,
+        "samples": 210,
+        "median_us": 280.6995,
+        "total_ms": 2378.303484
+      },
+      {
+        "depth": 2,
+        "samples": 210,
+        "median_us": 300.355,
+        "total_ms": 2434.565307
+      },
+      {
+        "depth": 3,
+        "samples": 210,
+        "median_us": 304.055,
+        "total_ms": 2512.071826
+      },
+      {
+        "depth": 4,
+        "samples": 210,
+        "median_us": 303.77,
+        "total_ms": 2514.952495
+      }
+    ]
+  }
+}
