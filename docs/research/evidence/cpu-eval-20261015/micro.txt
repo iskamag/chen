@@ -1,0 +1,8 @@
+micro round=0 evaluator=arithmetic positions=1100 evaluations=22000000 elapsed_ns=1367464165 checksum=-341600000
+micro round=0 evaluator=lookup positions=1100 evaluations=22000000 elapsed_ns=565602132 checksum=-341600000
+micro round=1 evaluator=lookup positions=1100 evaluations=22000000 elapsed_ns=545794585 checksum=-341600000
+micro round=1 evaluator=arithmetic positions=1100 evaluations=22000000 elapsed_ns=1262611368 checksum=-341600000
+micro round=2 evaluator=arithmetic positions=1100 evaluations=22000000 elapsed_ns=1265164955 checksum=-341600000
+micro round=2 evaluator=lookup positions=1100 evaluations=22000000 elapsed_ns=541562868 checksum=-341600000
+micro round=3 evaluator=lookup positions=1100 evaluations=22000000 elapsed_ns=541282507 checksum=-341600000
+micro round=3 evaluator=arithmetic positions=1100 evaluations=22000000 elapsed_ns=1280751127 checksum=-341600000
