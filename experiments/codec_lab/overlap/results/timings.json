@@ -1,0 +1,130 @@
+{
+  "class_timing_ns_per48queries": {
+    "boundary4_rebuild_each_query": {
+      "max_ns": 934.3099609375,
+      "median_ns": 798.1810546875,
+      "min_ns": 793.5875,
+      "repetitions": 7
+    },
+    "boundary4_shared_descriptor_edits": {
+      "max_ns": 870.2845703125,
+      "median_ns": 785.5130859375,
+      "min_ns": 782.8646484375,
+      "repetitions": 7
+    },
+    "independent_source_oracles": {
+      "max_ns": 2941.6486328125,
+      "median_ns": 2864.0998046875,
+      "min_ns": 2827.7521484375,
+      "repetitions": 7
+    }
+  },
+  "timing": {
+    "n16_complete_relation": {
+      "boundary4_lut": {
+        "max_ns": 45.2428955078125,
+        "median_ns": 39.3197998046875,
+        "min_ns": 39.1960205078125,
+        "repetitions": 7
+      },
+      "direct_source_ray_oracle": {
+        "max_ns": 96.79425048828125,
+        "median_ns": 92.08173828125,
+        "min_ns": 91.0908935546875,
+        "repetitions": 7
+      },
+      "directional_band_operator": {
+        "max_ns": 162.52994384765626,
+        "median_ns": 158.33572998046876,
+        "min_ns": 154.2505126953125,
+        "repetitions": 7
+      },
+      "hard4_local": {
+        "max_ns": 14.3624267578125,
+        "median_ns": 14.14793701171875,
+        "min_ns": 14.0853271484375,
+        "repetitions": 7
+      },
+      "lapped_lifting_inverse_boundary4": {
+        "max_ns": 72.075634765625,
+        "median_ns": 66.7683837890625,
+        "min_ns": 66.68819580078124,
+        "repetitions": 7
+      },
+      "lifting_dc_only_boundary4": {
+        "max_ns": 70.12593994140624,
+        "median_ns": 64.13594970703124,
+        "min_ns": 63.82149658203125,
+        "repetitions": 7
+      },
+      "stagger4_stride2_mean_majority": {
+        "max_ns": 271.6381469726563,
+        "median_ns": 271.0232788085938,
+        "min_ns": 259.3401733398438,
+        "repetitions": 7
+      },
+      "stagger4_stride2_or": {
+        "max_ns": 41.86885986328125,
+        "median_ns": 39.55576171875,
+        "min_ns": 39.33482666015625,
+        "repetitions": 7
+      }
+    },
+    "n8_complete_relation": {
+      "boundary4_lut": {
+        "max_ns": 17.469577808260937,
+        "median_ns": 15.199580856576741,
+        "min_ns": 15.006698673982624,
+        "repetitions": 7
+      },
+      "direct_source_ray_oracle": {
+        "max_ns": 42.986633135192804,
+        "median_ns": 40.5581237616217,
+        "min_ns": 38.84702789208962,
+        "repetitions": 7
+      },
+      "directional_band_operator": {
+        "max_ns": 60.83199969516842,
+        "median_ns": 60.36165218716659,
+        "min_ns": 60.20275110501448,
+        "repetitions": 7
+      },
+      "full8_lut": {
+        "max_ns": 5.96197226032617,
+        "median_ns": 5.895816186556927,
+        "min_ns": 5.888203017832647,
+        "repetitions": 7
+      },
+      "hard4_local": {
+        "max_ns": 11.292021033379058,
+        "median_ns": 11.149283645785703,
+        "min_ns": 11.128250266727633,
+        "repetitions": 7
+      },
+      "lapped_lifting_inverse_boundary4": {
+        "max_ns": 39.20344459686023,
+        "median_ns": 37.1115454961134,
+        "min_ns": 35.8642508763908,
+        "repetitions": 7
+      },
+      "lifting_dc_only_boundary4": {
+        "max_ns": 37.01841944825484,
+        "median_ns": 36.846875476299346,
+        "min_ns": 36.692325864959614,
+        "repetitions": 7
+      },
+      "stagger4_stride2_mean_majority": {
+        "max_ns": 94.3076741350404,
+        "median_ns": 91.07059137326627,
+        "min_ns": 90.2598917847889,
+        "repetitions": 7
+      },
+      "stagger4_stride2_or": {
+        "max_ns": 20.89871208657217,
+        "median_ns": 20.558588629782044,
+        "min_ns": 20.499070263679318,
+        "repetitions": 7
+      }
+    }
+  }
+}
