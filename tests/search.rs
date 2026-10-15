@@ -231,6 +231,59 @@ fn node_limit_and_stop_restore_position() {
     assert_eq!(p, before);
 }
 #[test]
+fn reused_scratch_preserves_publications_after_aborted_searches() {
+    for pvs in [false, true] {
+        let config = SearchConfig {
+            pvs,
+            aspiration_window: 1,
+            hash_mb: 1,
+            ..SearchConfig::default()
+        };
+        let mut reused = Searcher::new(Box::new(Tapered), config.clone());
+        for fen in [
+            "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1",
+            "7k/P7/8/8/8/8/8/7K w - - 0 1",
+            "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+            "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        ] {
+            let original = Position::from_fen(fen).unwrap();
+            let mut position = original;
+            reused.clear();
+            let limits = SearchLimits {
+                depth: 64,
+                nodes: Some(10_000),
+                time: None,
+            };
+            let signature = |r: &chen::SearchResult| {
+                (
+                    r.depth,
+                    r.score,
+                    r.best_move,
+                    r.nodes,
+                    r.qnodes,
+                    r.pv.clone(),
+                    r.stopped,
+                )
+            };
+            let mut reused_trace = Vec::new();
+            let actual = reused.search(&mut position, limits.clone(), &[], |r| {
+                reused_trace.push(signature(r));
+            });
+            assert_eq!(position, original);
+            let mut fresh = Searcher::new(Box::new(Tapered), config.clone());
+            let mut fresh_trace = Vec::new();
+            let expected = fresh.search(&mut position, limits, &[], |r| {
+                fresh_trace.push(signature(r));
+            });
+            assert_eq!(signature(&actual), signature(&expected), "{fen} pvs={pvs}");
+            assert_eq!(reused_trace, fresh_trace, "{fen} pvs={pvs}");
+            assert_eq!(reused.stats(), fresh.stats());
+            assert_eq!(position, original);
+        }
+    }
+}
+
+#[test]
 fn evaluator_orientation() {
     let p = Position::from_fen("4k3/8/8/8/8/8/4P3/4K3 w - - 0 1").unwrap();
     let b = Position::from_fen("4k3/8/8/8/8/8/4P3/4K3 b - - 0 1").unwrap();

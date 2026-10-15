@@ -127,6 +127,11 @@ pub struct Searcher {
     history: Vec<u64>,
     killers: [[Option<Move>; 2]; MAX_PLY],
     quiet_history: [[i32; 64]; 64],
+    // Each active ply borrows its own child-PV scratch buffer. Reusing capacity
+    // across siblings and iterations avoids allocating a Vec for every edge.
+    child_pvs: [Vec<Move>; MAX_PLY],
+    // Ordering completes before descent, so all plies can share this storage.
+    order_scratch: Vec<(i32, usize, Move)>,
     stats: SearchStats,
     /// Book probe depth and, when loaded, the book itself. Disabled by default.
     book: Option<BookSetting>,
@@ -152,6 +157,8 @@ impl Searcher {
             history: Vec::new(),
             killers: [[None; 2]; MAX_PLY],
             quiet_history: [[0; 64]; 64],
+            child_pvs: std::array::from_fn(|_| Vec::new()),
+            order_scratch: Vec::new(),
             stats: SearchStats::default(),
             book: None,
         }
@@ -350,11 +357,12 @@ impl Searcher {
                 .is_some_and(|(_, piece)| piece == Piece::Pawn)
                 && mv.from % 8 != mv.to % 8)
     }
-    fn ordered(&self, p: &Position, moves: &mut [Move], hash_move: Option<Move>, ply: usize) {
-        if !self.config.move_ordering {
+    fn ordered(&mut self, p: &Position, moves: &mut [Move], hash_move: Option<Move>, ply: usize) {
+        if !self.config.move_ordering || moves.len() < 2 {
             return;
         }
-        moves.sort_by_cached_key(|&mv| {
+        self.order_scratch.clear();
+        for (index, &mv) in moves.iter().enumerate() {
             let score = if Some(mv) == hash_move {
                 2_000_000
             } else if Self::capture(p, mv) {
@@ -375,8 +383,15 @@ impl Searcher {
             } else {
                 self.quiet_history[mv.from as usize][mv.to as usize]
             };
-            -score
-        });
+            self.order_scratch.push((-score, index, mv));
+        }
+        // The original index preserves the previous stable ordering for equal
+        // scores while the unstable sort needs no temporary allocation.
+        self.order_scratch
+            .sort_unstable_by_key(|&(score, index, _)| (score, index));
+        for (mv, &(_, _, ordered)) in moves.iter_mut().zip(&self.order_scratch) {
+            *mv = ordered;
+        }
     }
     fn negamax(
         &mut self,
@@ -434,12 +449,13 @@ impl Searcher {
         let original_alpha = alpha;
         let mut best = -INF;
         let mut best_move = None;
+        let mut child = std::mem::take(&mut self.child_pvs[ply]);
         for (index, mv) in moves.into_iter().enumerate() {
             let quiet = !Self::capture(p, mv) && mv.promotion.is_none();
             let undo = p.make_move(mv);
             self.evaluator.after_make(p, mv);
             self.history.push(p.hash());
-            let mut child = Vec::new();
+            child.clear();
             let score = if self.config.pvs && index > 0 && beta - alpha > 1 {
                 self.stats.pvs_probes += 1;
                 let probe = -self.negamax(p, depth - 1, ply + 1, -alpha - 1, -alpha, &mut child);
@@ -457,6 +473,7 @@ impl Searcher {
             p.unmake_move(mv, undo);
             self.evaluator.after_unmake(p, mv);
             if self.aborted {
+                self.child_pvs[ply] = child;
                 return 0;
             }
             if score > best {
@@ -464,7 +481,7 @@ impl Searcher {
                 best_move = Some(mv);
                 pv.clear();
                 pv.push(mv);
-                pv.extend(child);
+                pv.extend_from_slice(&child);
             }
             alpha = alpha.max(score);
             if alpha >= beta {
@@ -479,6 +496,7 @@ impl Searcher {
                 break;
             }
         }
+        self.child_pvs[ply] = child;
         if self.config.tt {
             self.table.store(Entry {
                 key,
@@ -531,29 +549,32 @@ impl Searcher {
             alpha = alpha.max(best);
         }
         self.ordered(p, &mut moves, None, ply);
+        let mut child = std::mem::take(&mut self.child_pvs[ply]);
         for mv in moves {
             let undo = p.make_move(mv);
             self.evaluator.after_make(p, mv);
             self.history.push(p.hash());
-            let mut child = Vec::new();
+            child.clear();
             let score = -self.quiesce(p, ply + 1, -beta, -alpha, &mut child);
             self.history.pop();
             p.unmake_move(mv, undo);
             self.evaluator.after_unmake(p, mv);
             if self.aborted {
+                self.child_pvs[ply] = child;
                 return 0;
             }
             if score > best {
                 best = score;
                 pv.clear();
                 pv.push(mv);
-                pv.extend(child);
+                pv.extend_from_slice(&child);
             }
             alpha = alpha.max(score);
             if alpha >= beta {
                 break;
             }
         }
+        self.child_pvs[ply] = child;
         best
     }
 }
