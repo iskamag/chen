@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "status": "preregistered before source execution and outcomes; original protocol unchanged",
+  "reason": "Center interaction: hold every individual target strength/energy fixed while changing relative source alignment.",
+  "domain": "Both original exhaustive 3x4 and 4x4 domains, all demand sets.",
+  "interventions": [
+    "Coherent global relabelling: swap defenders 0 and 1 for every target; compare exact matching counts after remapping a disabled-defender condition by the same permutation.",
+    "Independent alignment change: swap defenders 0 and 1 only in target 0; keep all other target columns and physical conditions fixed."
+  ],
+  "checks": [
+    "Every per-target count and signed-vector energy is unchanged under either intervention.",
+    "Coherent global relabelling must preserve all matching counts with the condition remapped.",
+    "Report exact count/feasibility changes under the independent target change, separately for no condition and each labelled removal.",
+    "Retain a deterministic worked witness with unchanged individual strengths, changed signed cross-correlation, and changed collective answer."
+  ],
+  "interpretation": "The independent intervention changes the resource-sharing network, not merely its coordinate names. The coherent intervention changes coordinates only. Neither is a chess legality/refutation experiment."
+}
