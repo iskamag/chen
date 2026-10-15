@@ -23,6 +23,16 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def verify_engine_artifacts(metadata):
+    for label, entry in metadata['config'].items():
+        assert sha(entry['command'][0]) == metadata['launcher_sha256'][label], 'changed engine executable'
+        declared = entry.get('artifacts', {})
+        recorded = metadata.get('declared_artifact_sha256', {}).get(label, {})
+        assert set(declared) == set(recorded), 'declared artifact inventory differs from recorded hashes'
+        for name, path in declared.items():
+            assert sha(path) == recorded[name], f'changed engine artifact: {label}/{name}'
+
+
 def timing(values, seconds_per_move=1.0):
     ordered = sorted(values)
     return {
@@ -135,8 +145,7 @@ def audit(directory, seconds_per_move=1.0):
     for name, colors in pairs.items():
         assert len(colors) <= 2 and len(set(colors)) == len(colors), (name, "duplicate color")
     # No loaded files may silently change after the run: check every launcher.
-    for label, entry in metadata["config"].items():
-        assert sha(entry["command"][0]) == metadata["launcher_sha256"][label]
+    verify_engine_artifacts(metadata)
     return {
         "status": "PASS",
         "completed_recorded_games": len(rows),

@@ -1,0 +1,10 @@
+[package]
+name="chen-jpeg-legacy-v1"
+version="0.1.0"
+edition="2024"
+[dependencies]
+chen={path="../.."}
+chen-relation-r1={path="../radical_round1/relation"}
+[profile.release]
+lto="thin"
+codegen-units=1

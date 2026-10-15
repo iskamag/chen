@@ -1,4 +1,18 @@
-# Playable JPEG experiments
+# Historical JPEG v1 experiments
+
+The canonical `experiments/jpeg_play` entry point now runs the direct learned
+channel engine described in [JPEG2.md](JPEG2.md). It requires an explicit model:
+
+```sh
+cargo build --release --manifest-path experiments/jpeg_play/Cargo.toml
+experiments/jpeg_play/target/release/chen-jpeg-play uci --model /path/to/policy.json
+```
+
+The minimax and PVS-wrapper implementations below are archived under
+`experiments/jpeg_legacy_v1/`. They are historical controls and do not implement
+the intended decision architecture. Previously frozen executables and results
+retain their original identities. The new runtime has no search fallback;
+its strength must be measured independently.
 
 This adds two explicitly different UCI policies, without changing Chen's
 production defaults. Neither establishes a 2500 Elo engine or an architectural
@@ -8,9 +22,9 @@ strongest among the tested candidates.
 Build and run:
 
 ```sh
-cargo build --release --manifest-path experiments/jpeg_play/Cargo.toml
-experiments/jpeg_play/target/release/chen-jpeg-play --mode pure
-experiments/jpeg_play/target/release/chen-jpeg-play --mode hybrid
+cargo build --release --manifest-path experiments/jpeg_legacy_v1/Cargo.toml
+experiments/jpeg_legacy_v1/target/release/chen-jpeg-legacy-v1 --mode pure
+experiments/jpeg_legacy_v1/target/release/chen-jpeg-legacy-v1 --mode hybrid
 ```
 
 Both expose `Policy` (`pure`/`hybrid`), `Hash` (default 16 MiB), and one fixed
@@ -123,8 +137,8 @@ Source SHA-256:
 Commands:
 
 ```sh
-cargo test --release --manifest-path experiments/jpeg_play/Cargo.toml
-cargo clippy --release --manifest-path experiments/jpeg_play/Cargo.toml -- -D warnings
+cargo test --release --manifest-path experiments/jpeg_legacy_v1/Cargo.toml
+cargo clippy --release --manifest-path experiments/jpeg_legacy_v1/Cargo.toml -- -D warnings
 ```
 
 All four focused release tests pass. They cover mate-in-one for both colors even

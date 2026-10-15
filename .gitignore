@@ -99,3 +99,5 @@ __pycache__/
 
 # Independent architecture experiments keep build products local.
 /experiments/radical_round1/*/target/
+/experiments/jpeg_play/target/
+/experiments/jpeg_legacy_v1/target/
