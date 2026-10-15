@@ -19,7 +19,11 @@ internal margin, with the relational prepass limited to the earlier of 25 ms
 and the remaining deadline. Normal clock/increment controls are also supported.
 The UCI process handles `stop` concurrently, preserves previous-position hashes
 from `position ... moves ...`, and retains the conventional searcher's TT between
-hybrid searches. The pure policy does not use that conventional searcher.
+hybrid searches. The pure policy does not use that conventional searcher. Frozen v1 telemetry
+reports `prepass_candidates`, `known_safe`, and `known_mate_losses`; the number
+unresolved by the opposing-mate gate is exactly
+`prepass_candidates - known_safe - known_mate_losses`. That count is derivable
+from every recorded decision without changing the frozen executable.
 
 ## Shared exact prepass
 
@@ -50,12 +54,17 @@ is still checked separately by the match harness.
 
 ## `pure`: JPEG relation minimax
 
-This is a playable relation-based policy with **full-width iterative minimax**,
-not a static policy, beam search, alpha-beta implementation, or delegated Chen
-search. Every completed iteration visits all eligible root alternatives and all
-legal opponent continuations. There is no width cap that can silently omit a
-quiet defense. The only root exclusion is the exact immediate-mate safety gate
-above; finding a proven immediate mate can also end a node early.
+This is a playable relation-based policy with iterative minimax that is
+**full-width only after the conservative root safety gate**. It is not a static
+policy, beam search, alpha-beta implementation, or delegated Chen search. Every
+completed iteration visits all *eligible* root alternatives and all legal
+opponent continuations. There is no numerical width cap. However, when at least
+one certified safe root exists, the gate excludes **both proven immediate-mate
+losses and unresolved root candidates**. An incomplete prepass can therefore
+omit a sole quiet defense without proving that candidate bad. The remaining
+minimax values are conditional on that eligible root set; this is not full-width
+minimax over all legal root moves. Finding a proven immediate mate can also end
+a node early.
 
 Each node obtains its legal alternative relation from `CodecPosition`. Shared
 reply classification distinguishes terminal consequences. A depth-one frontier
