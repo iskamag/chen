@@ -1,8 +1,11 @@
 # Overlap, integer lifting, and exact occlusion boundaries
 
-This experiment asks whether local overlapping operators recover complete slider
-visibility, and what additional interface makes composition exact. It is a small
-geometry laboratory: no engine, search, training, or GPU is linked.
+This experiment isolates a cross-boundary interaction: a slider in one block
+makes occupancy in another block consequential, even when that second block has
+no slider and produces no local attack. Conditional operator composition answers
+that interaction exactly; independently computed local attacks and overlap
+reduction do not. It is a small geometry laboratory: no engine, search, training,
+or GPU is linked. Representation size is a secondary implementation measurement.
 
 The protocol was committed as `f0c64a9` before execution; measured source was
 committed as `dc450df` before execution. Protocol SHA256:
@@ -51,6 +54,30 @@ their error frequency is not a natural chess distribution. Sixteen cells are a
 boundary-composition stress domain, not a literal single chessboard ray.
 
 ## What boundary information suffices
+
+Consider these two-block compositions, where `S` is a slider and `B` an opaque
+blocker. In both cases the left block's independent source-zero answer is
+`0x0e` (targets 1,2,3), and the right block's independent local answer is zero.
+
+| Left block | Right block | Independent local OR | Exact composed source-zero answer |
+|---|---|---:|---:|
+| `S...` | `....` | `0x0e` | `0xfe` (targets 1 through 7) |
+| `S...` | `.B..` | `0x0e` | `0x3e` (targets 1 through 5) |
+
+The coupling is concrete. The left operator sends **an incoming source-zero
+ray**, making the right block answer a different question from its own local
+attack query. The empty right block passes the ray and emits all four targets.
+The blocked right block emits only its first two targets and terminates it. No
+new local slider was introduced, yet composition adds four or two attack bits
+and changes whether the relationship can continue into another block.
+
+For a source at zero and a target at six, the exact predicate is
+`[cell0=slider] * product(j=1..5)[cellj=empty]`. The target itself may be occupied.
+This is contextual gating across supports, not a sum of independent attack
+strengths. A boundary entry therefore stores a **conditional operator**, not just
+the block's answer in an empty external context. Redundant overlap can expose
+more such interactions to a local operator; explicit transfer composes them
+across arbitrarily many blocks without extending every window to the full line.
 
 A four-cell lookup entry contains:
 
@@ -171,8 +198,10 @@ only saves about 1.6% in this run. Different call sites and within-root correlat
 also affect compiler optimization and branch prediction. These are narrow CPU
 kernel measurements, not engine throughput or chess strength.
 
-The exact small boundary operator is the useful result. Ordinary overlap fixes
-some edge interactions but does not replace cross-block occlusion composition.
+The useful result is the exact conditional interaction between an external ray
+and another block's stopping/transmission geometry. Its small lookup is merely
+one implementation. Ordinary overlap fixes some edge interactions but does not
+replace cross-block occlusion composition.
 The reversible signed transform is faithful yet adds work when decoded before
 the same query. The current class mechanism shares code/lookup work but barely
 improves an already cheap exact query. A next distinct experiment could reuse
