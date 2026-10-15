@@ -61,10 +61,20 @@ def reference(sf, board, nodes, move=None):
     started = time.perf_counter()
     try:
         with launch({'command': [sf], 'options': {'Threads': 1, 'Hash': 16}}) as engine:
-            info = engine.analyse(board, chess.engine.Limit(nodes=nodes),
-                                  root_moves=[chess.Move.from_uci(move)] if move else None,
-                                  game=object(), info=chess.engine.INFO_ALL)
-            result = score_info(info, board.turn)
+            latest = {}; completed = None; consumed = 0
+            with engine.analysis(board, chess.engine.Limit(nodes=nodes),
+                                 root_moves=[chess.Move.from_uci(move)] if move else None,
+                                 game=object(), info=chess.engine.INFO_ALL) as stream:
+                for info in stream:
+                    consumed = max(consumed, info.get('nodes', 0))
+                    if 'score' in info:
+                        latest = dict(info)
+                        if not info.get('lowerbound') and not info.get('upperbound'):
+                            completed = dict(info)
+            result = score_info(completed if completed is not None else latest, board.turn)
+            result['query_nodes'] = consumed
+            result['score_selection'] = 'latest_unbounded_message' if completed is not None else 'last_bounded_message'
+            result['last_scored_message'] = score_info(latest, board.turn)
             result.update({'engine_id': engine.id, 'error': None})
     except Exception as exc:
         result = {'error': f'{type(exc).__name__}: {exc}'}
@@ -126,6 +136,7 @@ def summarize(rows):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config', required=True); p.add_argument('--dev'); p.add_argument('--positions')
+    p.add_argument('--reuse-decisions', help='prior records with identical positions/config; teacher rescore only')
     p.add_argument('--out', required=True); p.add_argument('--sf', required=True)
     p.add_argument('--count', type=int, default=128); p.add_argument('--seed', default='jpeg2-dev-probe-20261015')
     p.add_argument('--seconds', type=float, default=.5); p.add_argument('--nodes', type=int, default=128000)
@@ -141,12 +152,18 @@ def main():
     rows=[{k:r[k] for k in ('id','split','fen','history') if k in r} for r in rows]
     (out/'positions.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
     config=json.loads(Path(args.config).read_text())
-    metadata={'arguments':vars(args), 'config':config, 'source_sha256':sha(source),
+    metadata={'reused_decisions_sha256': sha(args.reuse_decisions) if args.reuse_decisions else None, 'arguments':vars(args), 'config':config, 'source_sha256':sha(source),
         'positions_sha256':sha(out/'positions.jsonl'), 'script_sha256':sha(__file__),
         'config_sha256':sha(args.config), 'sf_sha256':sha(args.sf), 'python_chess':chess.__version__,
         'affinity':sorted(os.sched_getaffinity(0)), 'fresh_process_per_decision_and_teacher_query':True,
         'artifacts':{name:{'binary':sha(entry['command'][0]),'declared':{k:sha(v) for k,v in entry.get('artifacts',{}).items()}} for name,entry in config.items()}}
+    if args.reuse_decisions:
+        prior_metadata = json.loads((Path(args.reuse_decisions).parent/'metadata.json').read_text())
+        for field in ('config_sha256', 'positions_sha256', 'artifacts'):
+            if prior_metadata[field] != metadata[field]:
+                raise ValueError(f'reused decision provenance mismatch: {field}')
     dump(out/'metadata.json',metadata)
+    reused = {r['id']: r for r in (json.loads(line) for line in Path(args.reuse_decisions).read_text().splitlines())} if args.reuse_decisions else {}
     results=[]
     with (out/'records.jsonl').open('w') as log:
         for i,row in enumerate(rows):
@@ -157,7 +174,13 @@ def main():
                 if not any(board.legal_moves): raise ValueError('no legal root actions')
                 # Alternate execution order to reduce systematic wall-budget order effects.
                 order=['base','candidate'] if i%2==0 else ['candidate','base']
-                record['decisions']={name:decision(config[name],board,args.seconds) for name in order}
+                if args.reuse_decisions:
+                    prior = reused[row['id']]
+                    if prior['fen'] != row['fen']: raise ValueError('reused decision FEN mismatch')
+                    record['decisions'] = prior['decisions']
+                    record['decisions_reused_from'] = args.reuse_decisions
+                else:
+                    record['decisions']={name:decision(config[name],board,args.seconds) for name in order}
                 record['reference']=reference(args.sf,board,args.nodes)
                 moves=sorted({v['move'] for v in record['decisions'].values() if not v.get('error')})
                 record['forced']={m:reference(args.sf,board,args.nodes,m) for m in moves}
